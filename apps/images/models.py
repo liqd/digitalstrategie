@@ -1,0 +1,27 @@
+from django.db import models
+from wagtail.images.models import AbstractImage
+from wagtail.images.models import AbstractRendition
+from wagtail.images.models import Image
+
+from apps.contrib.translations import TranslatedField
+from apps.contrib.translations import TranslatedModelMetaclass
+
+
+class CustomImage(AbstractImage, metaclass=TranslatedModelMetaclass):
+
+    caption = TranslatedField(
+        'caption',
+        models.CharField(max_length=255, blank=True),
+
+    )
+
+
+class CustomRendition(AbstractRendition):
+    image = models.ForeignKey(CustomImage,
+                              related_name='renditions',
+                              on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = (
+            ('image', 'filter_spec', 'focal_point_key'),
+        )

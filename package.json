@@ -1,0 +1,51 @@
+{
+  "name": "digitalstrategie",
+  "dependencies": {
+    "@babel/core": "7.13.16",
+    "@babel/plugin-transform-modules-commonjs": "7.13.8",
+    "@babel/plugin-transform-runtime": "7.13.15",
+    "@babel/preset-env": "7.13.15",
+    "@babel/runtime": "7.13.16",
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "@popperjs/core": "2.10.1",
+    "autoprefixer": "10.2.5",
+    "babel-loader": "8.2.2",
+    "bootstrap": "5.1.1",
+    "copy-webpack-plugin": "7.0.0",
+    "css-loader": "3.6.0",
+    "file-loader": "6.2.0",
+    "flatpickr": "4.6.9",
+    "jquery": "3.6.0",
+    "jquery-colorbox": "1.6.4",
+    "mini-css-extract-plugin": "1.5.0",
+    "node-sass": "5.0.0",
+    "path-browserify": "1.0.1",
+    "postcss-loader": "5.2.0",
+    "roboto-fontface": "0.10.0",
+    "sass-loader": "11.0.1",
+    "sass-planifolia": "0.6.0",
+    "terser-webpack-plugin": "5.1.1",
+    "webpack": "5.34.0",
+    "webpack-merge": "5.7.3"
+  },
+  "devDependencies": {
+    "husky": "6.0.0",
+    "stylelint": "13.13.1",
+    "stylelint-config-standard": "22.0.0",
+    "stylelint-declaration-strict-value": "1.7.12",
+    "webpack-cli": "4.6.0",
+    "postcss": "8.2.13"
+  },
+  "scripts": {
+    "build:prod": "webpack --config webpack.prod.js --mode production",
+    "build": "webpack --config webpack.dev.js --mode development",
+    "watch": "webpack --config webpack.dev.js --watch --mode development",
+    "lint": "stylelint 'digitalstrategie/assets/scss/**/*.scss' --syntax scss"
+  },
+  "browserslist": "last 3 versions, ie >= 10",
+  "husky": {
+    "hooks": {
+      "pre-commit": "make lint"
+    }
+  }
+}

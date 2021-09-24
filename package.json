@@ -30,7 +30,7 @@
     "webpack-merge": "5.8.0"
   },
   "devDependencies": {
-    "husky": "6.0.0",
+    "husky": "7.0.2",
     "stylelint": "13.13.1",
     "stylelint-config-standard": "22.0.0",
     "stylelint-declaration-strict-value": "1.7.12",

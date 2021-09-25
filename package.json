@@ -34,7 +34,7 @@
     "stylelint-config-standard": "22.0.0",
     "stylelint-declaration-strict-value": "1.7.12",
     "webpack-cli": "4.6.0",
-    "postcss": "8.2.13"
+    "postcss": "8.3.8"
   },
   "scripts": {
     "build:prod": "webpack --config webpack.prod.js --mode production",

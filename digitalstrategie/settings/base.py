@@ -8,6 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 # Quick-start development settings - unsuitable for production

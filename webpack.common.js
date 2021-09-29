@@ -38,7 +38,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules\/(?!(bootstrap)\/).*/, // exclude all dependencies but adhocracy4
+        exclude: /node_modules\/(?!(bootstrap)\/).*/, // exclude all dependencies but bootstrap
         use: {
           loader: 'babel-loader',
           options: {

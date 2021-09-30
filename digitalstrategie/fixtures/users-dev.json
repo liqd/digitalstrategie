@@ -1,0 +1,20 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$y34xL2OaZFISbNwADxpkk5$b9i/7uTY2fRuj86fQkoiusCUqDWm73Rv+5pATVgKyAk=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "admin@liqd.net",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-09-30T11:27:31.898Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+]

@@ -25,7 +25,6 @@ help:
 	@echo "  make fixtures        -- load example data"
 	@echo "  make server          -- start a dev server"
 	@echo "  make watch           -- start a dev server and rebuild js and css files on changes"
-	@echo "  make background      -- start background processes"
 	@echo "  make test            -- run all test cases with pytest"
 	@echo "  make test-lastfailed -- run test that failed last"
 	@echo "  make test-clean      -- test on new database"
@@ -68,10 +67,6 @@ watch:
 	trap 'kill %1' KILL; \
 	npm run watch & \
 	$(VIRTUAL_ENV)/bin/python3 manage.py runserver 8006
-
-.PHONY: background
-background:
-	$(VIRTUAL_ENV)/bin/python3 manage.py process_tasks
 
 .PHONY: test
 test:
@@ -126,11 +121,6 @@ po:
 
 .PHONY: mo
 mo:
-	$(VIRTUAL_ENV)/bin/python manage.py compilemessages
-
-.PHONY: tx-mo
-tx-mo:
-	$(VIRTUAL_ENV)/bin/tx pull -a
 	$(VIRTUAL_ENV)/bin/python manage.py compilemessages
 
 .PHONY: release

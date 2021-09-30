@@ -10,11 +10,28 @@ Install dependencies
 ```
 $ make install
 ```
-Start server at port 8000
+
+### Start a local server:
 ```
 $ make watch
 ```
-Run the tests
+### Create superuser:
 ```
-$ make test
+$ source venv/bin/activate  # to start the virtual env
+$ python manage.py createsuperuser
 ```
+and fill in the following prompts
+```
+$ Username (leave blank to use '...'):
+$ Email address:
+$ Password:
+$ Password (again):
+```
+
+or do:
+```
+$ make fixtures
+```
+This will add an user with name `admin` and PW `password`.
+
+Login with credentials at http://localhost:8006/admin/

@@ -84,7 +84,7 @@ module.exports = {
         test: /\.svg$|\.png$/,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name].[ext]'
+          filename: 'images/[name][ext]'
         }
       }
     ]
@@ -127,7 +127,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [{
         from: './digitalstrategie/assets/images/**/*',
-        to: 'images/[name].[ext]'
+        to: 'images/[name][ext]'
       }]
     })
   ]

@@ -4,15 +4,20 @@ from wagtail.images.models import AbstractRendition
 from wagtail.images.models import Image
 
 from apps.contrib.translations import TranslatedField
-from apps.contrib.translations import TranslatedModelMetaclass
 
 
-class CustomImage(AbstractImage, metaclass=TranslatedModelMetaclass):
+class CustomImage(AbstractImage):
+
+    caption_de = models.CharField(max_length=255, blank=True)
+    caption_en = models.CharField(max_length=255, blank=True)
+
+    admin_form_fields = Image.admin_form_fields + (
+        'caption_de', 'caption_en'
+    )
 
     caption = TranslatedField(
-        'caption',
-        models.CharField(max_length=255, blank=True),
-
+        'caption_de',
+        'caption_en'
     )
 
 

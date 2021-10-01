@@ -14,7 +14,8 @@ class HomePage(Page):
         ('call_to_action', apps_blocks.CallToActionBlock()),
         ('image_call_to_action', apps_blocks.ImageCallToActionBlock()),
         ('columns_text', apps_blocks.ColumnsBlock()),
-        ('accordion', apps_blocks.DocsBlock())
+        ('accordion', apps_blocks.DocsBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock())
     ])
 
     subtitle = models.CharField(max_length=120, blank=True)
@@ -38,11 +39,14 @@ class HomePage(Page):
 
 
 class SimplePage(Page):
-    body = fields.RichTextField(blank=True)
+    body = fields.StreamField([
+        ('paragraph', blocks.RichTextBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock())
+    ])
 
     content_panels = [
         edit_handlers.FieldPanel('title'),
-        edit_handlers.FieldPanel('body'),
+        edit_handlers.StreamFieldPanel('body'),
     ]
 
 subpage_types = []

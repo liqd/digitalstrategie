@@ -1,6 +1,7 @@
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
+
 class CallToActionBlock(blocks.StructBlock):
     body = blocks.RichTextBlock()
     link = blocks.CharBlock()
@@ -47,4 +48,13 @@ class DocsBlock(blocks.StructBlock):
 
     class Meta:
         template = 'apps_home/blocks/docs_block.html'
+        icon = 'arrow-down'
+
+
+class FaqBlock(blocks.StructBlock):
+    title = blocks.CharBlock()
+    body = blocks.RichTextBlock(required=False)
+
+    class Meta:
+        template = 'apps_home/blocks/faq_block.html'
         icon = 'arrow-down'

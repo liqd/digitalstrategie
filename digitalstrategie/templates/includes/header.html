@@ -1,0 +1,45 @@
+{% load snippet_tags %}
+{% load_site_menu "header" as header_menu_items %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+        <a class="navbar-brand" href="/">digitalstrategie</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            {% for menuitem in header_menu_items %}
+                {% if menuitem.subpages %}
+                <li class="nav-item dropdown">
+                    <a href="#"
+                        class="nav-link dropdown-toggle"
+                        id="navbarDropdown{{ forloop.counter }}"
+                        data-bs-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                        {{ menuitem.title }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ forloop.counter }}">
+                        {% for subpage in menuitem.subpages %}
+                        <li><a class="dropdown-item" href="{{ subpage.value.link.url }}">{{ subpage.value.link_text }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <li class="nav-item {% if request.path == menuitem.url %} active{% endif %}">
+                    <a class="nav-link" href="{{ menuitem.url }}" {% if request.path == menuitem.url %}aria-current="page"{% endif %}> {{ menuitem.title }} </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+            <li class="nav-item header-upper__lang">
+                {% include 'includes/header_language_switch.html' %}
+            </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>

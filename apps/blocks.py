@@ -41,10 +41,10 @@ class ColumnsBlock(blocks.StructBlock):
         icon = 'grip'
 
 
-class DocsBlock(blocks.StructBlock):
+class FaqBlock(blocks.StructBlock):
     title = blocks.CharBlock()
     body = blocks.RichTextBlock(required=False)
 
     class Meta:
-        template = 'apps_home/blocks/docs_block.html'
+        template = 'apps_home/blocks/faq_block.html'
         icon = 'arrow-down'

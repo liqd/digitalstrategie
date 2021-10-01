@@ -1,0 +1,24 @@
+{% load snippet_tags %}
+{% load_site_menu "footer" as footer_menu_items %}
+
+<footer id="footer" class="footer">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    {% for menuitem in footer_menu_items %}
+                        {% if menuitem.url %}
+                        <li class="nav-item">
+                            <a href="{{ menuitem.url }}"
+                                class="nav-link footer-entry {% if request.path == menuitem.url %} active{% endif %}"
+                                {% if request.path == menuitem.url %}aria-current="page"{% endif %}>
+                                {{ menuitem.title }}
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</footer>

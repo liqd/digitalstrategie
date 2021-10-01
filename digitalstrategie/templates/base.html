@@ -16,7 +16,7 @@
     </head>
     <body>
         {% wagtailuserbar %}
-        {% include 'header.html' %}
+        {% include 'includes/header.html' %}
         <div class="base__wrapper">
             <div class="page-header mb-5">
                 <h1>
@@ -45,7 +45,7 @@
             {# Override this in templates to add extra javascript #}
             {% endblock %}
         </div>
-        <div class="footer bg-light"></div>
+        {% include 'includes/footer.html' %}
     </body>
 </html>
 

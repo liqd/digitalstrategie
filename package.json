@@ -19,7 +19,7 @@
     "jquery": "3.6.0",
     "jquery-colorbox": "1.6.4",
     "mini-css-extract-plugin": "2.3.0",
-    "node-sass": "5.0.0",
+    "node-sass": "6.0.1",
     "path-browserify": "1.0.1",
     "postcss-loader": "6.1.1",
     "roboto-fontface": "0.10.0",

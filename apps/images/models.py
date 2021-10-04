@@ -10,14 +10,16 @@ class CustomImage(AbstractImage):
 
     caption_de = models.CharField(max_length=255, blank=True)
     caption_en = models.CharField(max_length=255, blank=True)
+    caption_de_ls = models.CharField(max_length=255, blank=True)
 
     admin_form_fields = Image.admin_form_fields + (
-        'caption_de', 'caption_en'
+        'caption_de', 'caption_en', 'caption_de_ls'
     )
 
     caption = TranslatedField(
         'caption_de',
-        'caption_en'
+        'caption_en',
+        'caption_de_ls',
     )
 
 

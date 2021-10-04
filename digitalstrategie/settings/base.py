@@ -4,6 +4,7 @@ Django settings for digitalstrategie project.
 """
 import os
 
+from django.conf import locale
 from django.utils.translation import gettext_lazy as _
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -111,8 +112,21 @@ USE_TZ = True
 
 LANGUAGES = [
     ('en', _('English')),
-    ('de', _('German'))
+    ('de', _('German')),
+    ('de-ls', _('Easy German'))
 ]
+
+# adding language info for easy german
+EXTRA_LANG_INFO = {
+    'de-ls': {
+        'bidi': False,
+        'code': 'de-ls',
+        'name': 'Easy German',
+        'name_local': 'Leichte Sprache',
+    },
+}
+LANG_INFO = dict(locale.LANG_INFO, **EXTRA_LANG_INFO)
+locale.LANG_INFO = LANG_INFO
 
 # The default language is used for emails and strings
 # that are stored translated to the database.

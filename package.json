@@ -9,7 +9,7 @@
     "@babel/runtime": "7.15.4",
     "@fortawesome/fontawesome-free": "5.15.4",
     "@popperjs/core": "2.10.2",
-    "autoprefixer": "10.3.6",
+    "autoprefixer": "10.3.7",
     "babel-loader": "8.2.2",
     "bootstrap": "5.1.1",
     "copy-webpack-plugin": "9.0.1",

@@ -23,9 +23,11 @@ class HomePage(Page):
 
     subtitle_de = models.CharField(max_length=120, blank=True)
     subtitle_en = models.CharField(max_length=120, blank=True)
+    subtitle_de_ls = models.CharField(max_length=120, blank=True)
 
     body_de = fields.StreamField(page_blocks)
     body_en = fields.StreamField(page_blocks, blank=True)
+    body_de_ls = fields.StreamField(page_blocks, blank=True)
 
     header_image = models.ForeignKey(
                       'apps_images.CustomImage',
@@ -37,12 +39,14 @@ class HomePage(Page):
 
     subtitle = TranslatedField(
         'subtitle_de',
-        'subtitle_en'
+        'subtitle_en',
+        'subtitle_de_ls',
     )
 
     body = TranslatedField(
         'body_de',
-        'body_en'
+        'body_en',
+        'body_de_ls',
     )
 
     de_content_panels = [
@@ -55,6 +59,11 @@ class HomePage(Page):
         StreamFieldPanel('body_en'),
     ]
 
+    de_ls_content_panels = [
+        FieldPanel('subtitle_de_ls'),
+        StreamFieldPanel('body_de_ls'),
+    ]
+
     common_panels = [
         FieldPanel('title'),
         ImageChooserPanel('header_image'),
@@ -64,6 +73,7 @@ class HomePage(Page):
         ObjectList(common_panels, heading='Common'),
         ObjectList(de_content_panels, heading='German'),
         ObjectList(en_content_panels, heading='English'),
+        ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
     subpage_types = ['apps_home.SimplePage']
@@ -78,10 +88,12 @@ class SimplePage(Page):
 
     body_de = fields.StreamField(page_blocks)
     body_en = fields.StreamField(page_blocks, blank=True)
+    body_de_ls = fields.StreamField(page_blocks, blank=True)
 
     body = TranslatedField(
         'body_de',
-        'body_en'
+        'body_en',
+        'body_de_ls',
     )
 
     de_content_panels = [
@@ -92,6 +104,10 @@ class SimplePage(Page):
         StreamFieldPanel('body_en'),
     ]
 
+    de_ls_content_panels = [
+        StreamFieldPanel('body_de_ls'),
+    ]
+
     common_panels = [
         FieldPanel('title'),
     ]
@@ -100,6 +116,7 @@ class SimplePage(Page):
         ObjectList(common_panels, heading='Common'),
         ObjectList(de_content_panels, heading='German'),
         ObjectList(en_content_panels, heading='English'),
+        ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
 subpage_types = []

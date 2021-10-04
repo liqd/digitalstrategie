@@ -1,0 +1,35 @@
+.header__nav--sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: $body-bg;
+}
+
+.header__nav--centered {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.header--left {
+    position: absolute;
+    right: 0;
+}
+
+.header__nav {
+    font-weight: bold;
+
+    .nav-link {
+        text-transform: uppercase;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    .nav-link {
+        color: $text-gray !important;
+    }
+}

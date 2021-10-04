@@ -92,7 +92,12 @@ class SimplePage(Page):
         StreamFieldPanel('body_en'),
     ]
 
+    common_panels = [
+        FieldPanel('title'),
+    ]
+
     edit_handler = TabbedInterface([
+        ObjectList(common_panels, heading='Common'),
         ObjectList(de_content_panels, heading='German'),
         ObjectList(en_content_panels, heading='English'),
     ])

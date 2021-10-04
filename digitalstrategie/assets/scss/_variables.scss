@@ -18,6 +18,7 @@ $teal:    #20c997 !default;
 $cyan:    #0dcaf0 !default;
 $white:   #ffffff !default; // added
 $gray:    #545454 !default; // added
+$text-gray:    #1d1d1b !default; // added
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -50,7 +51,7 @@ $danger:        $red !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret:                true !default;
+$enable-caret:                false !default; //edited
 $enable-rounded:              true !default;
 $enable-shadows:              false !default;
 $enable-gradients:            false !default;
@@ -167,7 +168,7 @@ $transition-collapse-width:   width .35s ease !default;
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      "Arial", "Helvetica", sans-serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;

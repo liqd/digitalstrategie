@@ -23,6 +23,11 @@ class MenuItem(models.Model):
         blank=True,
         null=True,
     )
+    title_de_ls = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
 
     link_page = models.ForeignKey(
         'wagtailcore.Page',
@@ -51,7 +56,8 @@ class MenuItem(models.Model):
 
     title = TranslatedField(
         'title_de',
-        'title_en'
+        'title_en',
+        'title_de_ls'
     )
 
     class Meta:
@@ -69,6 +75,7 @@ class MenuItem(models.Model):
     panels = [
         FieldPanel('title_de'),
         FieldPanel('title_en'),
+        FieldPanel('title_de_ls'),
         PageChooserPanel('link_page'),
         StreamFieldPanel('subpages')
     ]

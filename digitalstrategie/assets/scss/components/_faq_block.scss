@@ -1,0 +1,12 @@
+.accordion {
+
+    &.yellow {
+        background-color: $yellow;
+    }
+    &.pink {
+        background-color: $pink;
+    }
+    &.purple {
+        background-color: $purple;
+    }
+}

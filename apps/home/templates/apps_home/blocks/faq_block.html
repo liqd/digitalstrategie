@@ -1,39 +1,30 @@
 {% load wagtailimages_tags wagtailcore_tags block_tags %}
 
 {% get_identifier value as identifier %}
-<div class="row mb-4">
-    <div class="col-md-8 offset-md-2">
-        <div class="accordion">
-            <a
-                id="accordion-{{ identifier }}-title"
-                href="#accordion-{{ identifier }}-body"
-                class="accordion__title collapsed"
-                aria-haspopup="true"
-                aria-expanded="false"
-                data-toggle="collapse">
-                <h2>
-                    {{ value.title }}
-                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                </h2>
-            </a>
-
-            <div
-                class="accordion__body collapse"
-                id="accordion-{{ identifier }}-body"
-                aria-labelledby="accordion-{{ identifier }}-title">
-                {% if value.images %}
-                    {% for image in value.images %}
-                        {% image image width-1440 as big_image %}
-                        <a href="{{ big_image.url }}" class="lightbox-group" title="{{ image.title|title }}">
-                            {% image image height-60 %}
-                        </a>
-                    {% endfor %}
-                {% endif %}
-                {% if value.body %}
-                    {{ value.body|richtext }}
-                {% endif %}
+{% if self.background_color == "yellow" %}
+<section class="panel-group accordion yellow accordion-content accordion-block block" role="tablist" aria-multiselectable="true">
+{% elif self.background_color == "pink"%}
+<section class="panel-group accordion pink accordion-content accordion-block block" role="tablist" aria-multiselectable="true">
+{% elif self.background_color == "purple"%}
+<section class="panel-group accordion purple accordion-content accordion-block block" role="tablist" aria-multiselectable="true">
+{% else %}
+<section class="panel-group accordion accordion-content accordion-block block" role="tablist" aria-multiselectable="true">
+{% endif %}
+{% for item in self.accordion_items %}
+    <div class="card card-default">
+        <div class="card-header" role="tab" id="headingOne">
+            <h3 class="accordion-title" id="heading{{ forloop.counter }}">
+                <a class="accordion-link collapsed" role="button" data-bs-toggle="collapse" data-parent=".accordion-block" href="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                    {{ item.title }}
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            </h3>
+        </div>
+        <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}">
+            <div class="card-body">
+                {{ item.body }}
             </div>
         </div>
     </div>
-</div>
-
+{% endfor %}
+</section>

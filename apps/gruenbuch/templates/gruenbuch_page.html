@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags i18n %}
+
+{% block title %}
+  {{ page.book.title }}
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <nav class="col-sm-4 col-md-3 col-xl-2">
+        {% for chapter in page.chapters %}
+          <div class="m-1 fs-6 fw-bolder">
+            {% if chapter.url == page.active_chapter.url %}
+              <div class="chapter-link chapter-link--active">
+                <i class="fas fa-arrow-right"></i>
+                <a href="{{ chapter.url }}">
+                  {{ chapter.page_title }}
+                </a>
+              </div>
+            {% else %}
+              <div class="chapter-link">
+                <a href="{{ chapter.url }}">
+                  {{ chapter.page_title }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+          <br />
+        {% endfor %}
+      </nav>
+      <div class="col">
+        <h1>
+          {{ page.active_chapter.page_title }}
+        </h1>
+        {% if page.active_chapter.subtitle %}
+          <h2>
+            {{ page.active_chapter.subtitle }}
+          </h2>
+        {% endif %}
+        <p>
+          {{ page.active_chapter.body }}
+        </p>
+        <div>
+          {% if page.prev_chapter %}
+            <div class="my-4 float-start">
+              <a href="{{ page.prev_chapter.url }}" class="btn btn-outline-dark rounded-pill">
+                {% trans 'previous chapter' %}
+              </a>
+            </div>
+          {% endif %}
+          {% if page.next_chapter %}
+            <div class="my-4 float-end">
+              <a href="{{ page.next_chapter.url }}" class="btn btn-outline-dark rounded-pill">
+                {% trans 'next chapter' %}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

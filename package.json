@@ -57,7 +57,7 @@
     "lint-fix": "eslint --fix --ext .js,.jsx .",
     "postinstall": "husky install"
   },
-  "browserslist": "last 3 versions, ie >= 10",
+  "browserslist": "defaults and not dead and >= 0.5%, ie >= 11",
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint"

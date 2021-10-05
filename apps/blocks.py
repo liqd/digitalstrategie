@@ -58,7 +58,8 @@ class AccordionItemBlock(blocks.StructBlock):
 class FaqBlock(blocks.StructBlock):
     accordion_items = blocks.ListBlock(AccordionItemBlock())
     background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in an FAQ block with a white background.',
+        help_text=('Not choosing a colour will result in an FAQ block with '
+                   'a white background.'),
         required=False
     )
 

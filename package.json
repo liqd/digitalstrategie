@@ -30,7 +30,18 @@
     "webpack-merge": "5.8.0"
   },
   "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "7.32.0",
+    "eslint-config-standard": "16.0.3",
+    "eslint-config-standard-jsx": "10.0.0",
+    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.1.0",
+    "eslint-plugin-react": "7.26.1",
+    "eslint-plugin-standard": "4.1.0",
     "husky": "7.0.2",
+    "lint-staged": "11.2.0",
     "stylelint": "13.13.1",
     "stylelint-config-standard": "22.0.0",
     "stylelint-declaration-strict-value": "1.7.12",
@@ -41,12 +52,21 @@
     "build:prod": "webpack --config webpack.prod.js --mode production",
     "build": "webpack --config webpack.dev.js --mode development",
     "watch": "webpack --config webpack.dev.js --watch --mode development",
-    "lint": "stylelint 'digitalstrategie/assets/scss/**/*.scss' --syntax scss"
+    "lint": "eslint digitalstrategie/assets --ext .js,.jsx && stylelint 'digitalstrategie/assets/scss/**/*.scss' --syntax scss",
+    "lint-staged": "lint-staged",
+    "lint-fix": "eslint --fix --ext .js,.jsx .",
+    "postinstall": "husky install"
   },
   "browserslist": "last 3 versions, ie >= 10",
-  "husky": {
-    "hooks": {
-      "pre-commit": "make lint"
-    }
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint"
+    ],
+    "*.scss": [
+      "stylelint"
+    ],
+    "*.py": [
+      "make lint-python-files"
+    ]
   }
 }

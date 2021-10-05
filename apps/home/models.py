@@ -3,7 +3,8 @@ from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.admin.edit_handlers import ObjectList
 from wagtail.admin.edit_handlers import StreamFieldPanel
 from wagtail.admin.edit_handlers import TabbedInterface
-from wagtail.core import blocks, fields
+from wagtail.core import blocks
+from wagtail.core import fields
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 
@@ -30,12 +31,12 @@ class HomePage(Page):
     body_de_ls = fields.StreamField(page_blocks, blank=True)
 
     header_image = models.ForeignKey(
-                      'apps_images.CustomImage',
-                      null=True,
-                      blank=True,
-                      on_delete=models.SET_NULL,
-                      related_name='+'
-                      )
+        'apps_images.CustomImage',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
 
     subtitle = TranslatedField(
         'subtitle_de',
@@ -119,4 +120,4 @@ class SimplePage(Page):
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
-subpage_types = []
+    subpage_types = []

@@ -1,21 +1,67 @@
-*.pyc
-__pycache__
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
 .cache
-myvenv
-*.sqlite3
-/static
-.DS_Store
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache
+
+# Translations
 *.mo
-/media
-.sass-cache
-venv
-/node_modules
-/lib/python*
-/lib64
-/include/python*
-/bin
+*.pot
+
+# Environments
+venv/
 /pyvenv.cfg
-/webpack-stats.json
-/digitalstrategie/settings/local.py
-/digitalstrategie/static
+/pip-selfcheck.json
+
+# Node
+node_modules/
 package-lock.json
+npm-debug.log*
+/webpack-stats.json
+
+# IDEs
+.idea/
+
+# Django databases
+*.sqlite3
+db.sqlite3*
+
+# Local instance specific settings
+/digitalstrategie/settings/local.py
+
+# Generated static files
+/digitalstrategie/static
+static/
+
+# Media
+media/
+
+# setuptools
+/build
+/dist
+/*.egg-info
+/share
+
+# OS
+.DS_Store
+
+# sass
+.sass-cache
+
+# test data
+*.key
+*.pem

@@ -10,10 +10,17 @@ from apps import blocks as apps_blocks
 from apps.contrib.translations import TranslatedField
 
 class GruenbuchIndexPage(Page):
+    template = 'gruenbuch_index_page.html'
+
+    def get_context(self, request):
+        context = super().get_context(request)
+        context['gruenbuch_sections'] = GruenbuchDetailPage.objects.live().public()
+        return context
 
     subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
 
 class GruenbuchDetailPage(Page):
+    template = 'gruenbuch_detail_page.html'
 
     page_blocks = [
         ('paragraph', blocks.RichTextBlock()),

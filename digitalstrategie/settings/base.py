@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'apps.home',
     'apps.images',
     'apps.snippets',
+    'apps.gruenbuch',
 ]
 
 MIDDLEWARE = (

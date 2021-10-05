@@ -13,7 +13,7 @@ module.exports = {
       '@fortawesome/fontawesome-free/scss/solid.scss',
       './digitalstrategie/assets/scss/style.scss',
       './digitalstrategie/assets/js/app.js'
-    ],
+    ]
   },
   output: {
     // exposes exports of entry points
@@ -97,7 +97,7 @@ module.exports = {
     // create aliases to import or require certain modules more easily, $ signifys exact match
     alias: {
       bootstrap$: 'bootstrap/dist/js/bootstrap.bundle.min.js',
-      jquery$: 'jquery/dist/jquery.min.js',
+      jquery$: 'jquery/dist/jquery.min.js'
     },
     // when using `npm link` for a4 dev env, dependencies are resolved against the linked
     // folder by default. This may result in dependencies being included twice.

@@ -77,7 +77,7 @@ class HomePage(Page):
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
-    subpage_types = ['apps_home.DetailPage']
+    subpage_types = ['apps_home.DetailPage', 'apps_home.SimplePage']
 
 
 class DetailPage(Page):
@@ -119,5 +119,48 @@ class DetailPage(Page):
         ObjectList(en_content_panels, heading='English'),
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
+
+    subpage_types = []
+
+
+class SimplePage(Page):
+
+    page_blocks = [
+        ('paragraph', blocks.RichTextBlock())
+    ]
+
+    body_de = fields.StreamField(page_blocks)
+    body_en = fields.StreamField(page_blocks, blank=True)
+    body_de_ls = fields.StreamField(page_blocks, blank=True)
+
+    body = TranslatedField(
+        'body_de',
+        'body_en',
+        'body_de_ls',
+    )
+
+    de_content_panels = [
+        StreamFieldPanel('body_de'),
+    ]
+
+    en_content_panels = [
+        StreamFieldPanel('body_en'),
+    ]
+
+    de_ls_content_panels = [
+        StreamFieldPanel('body_de_ls'),
+    ]
+
+    common_panels = [
+        FieldPanel('title'),
+    ]
+
+    edit_handler = TabbedInterface([
+        ObjectList(common_panels, heading='Common'),
+        ObjectList(de_content_panels, heading='German'),
+        ObjectList(en_content_panels, heading='English'),
+        ObjectList(de_ls_content_panels, heading='Easy German'),
+    ])
+
 
     subpage_types = []

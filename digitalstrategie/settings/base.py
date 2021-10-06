@@ -43,8 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
 
+    'widget_tweaks',
+
+    'apps.contrib',
+    'apps.forms',
     'apps.home',
     'apps.images',
+    'apps.settings',
     'apps.snippets',
 ]
 

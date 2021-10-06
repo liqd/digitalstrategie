@@ -17,8 +17,6 @@ class HomePage(Page):
     page_blocks = [
         ('paragraph', blocks.RichTextBlock()),
         ('call_to_action', apps_blocks.CallToActionBlock()),
-        ('image_call_to_action', apps_blocks.ImageCallToActionBlock()),
-        ('columns_text', apps_blocks.ColumnsBlock()),
         ('faq_accordion', apps_blocks.FaqBlock())
     ]
 

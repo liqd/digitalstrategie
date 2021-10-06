@@ -11,6 +11,11 @@
         </div>
     </div>
 </div>
+{% if page.header_image.caption %}
+<div class="btn" data-bs-toggle="tooltip" data-placement="top" aria-label="'Header image: '{{ page.header_image.caption }}" title="{{ page.header_image.caption }}" tabindex="0">
+    <i class="fas fa-info" aria-hidden="true"></i>
+</div>
+{% endif %}
 {% endblock %}
 
 {% block content %}

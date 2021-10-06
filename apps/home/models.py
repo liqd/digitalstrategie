@@ -77,10 +77,10 @@ class HomePage(Page):
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
-    subpage_types = ['apps_home.SimplePage']
+    subpage_types = ['apps_home.DetailPage']
 
 
-class SimplePage(Page):
+class DetailPage(Page):
 
     page_blocks = [
         ('paragraph', blocks.RichTextBlock()),

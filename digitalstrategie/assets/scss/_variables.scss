@@ -234,3 +234,11 @@ $small-font-size:             .875em !default;
 $sub-sup-font-size:           .75em !default;
 
 // scss-docs-end type-variables
+
+// use different accordion icons
+// https://getbootstrap.com/docs/5.0/components/accordion/
+// https://icons.getbootstrap.com/
+$accordion-icon-transform:                rotate(-45deg);
+
+$accordion-button-icon:     url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$text-gray}'><path d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z'/></svg>");
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$text-gray}'><path d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z'/></svg>");

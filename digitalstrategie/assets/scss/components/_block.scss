@@ -1,0 +1,72 @@
+.block__yellow {
+    background-color: $yellow;
+
+    .accordion-button,
+    .accordion-body {
+        background-color: $yellow;
+    }
+}
+
+.block__pink {
+    background-color: $pink;
+
+    .accordion-button,
+    .accordion-body {
+        background-color: $pink;
+    }
+}
+
+.block__purple {
+    background-color: $purple;
+
+    .accordion-button,
+    .accordion-body {
+        background-color: $purple;
+    }
+}
+
+.block__body-bg {
+    .accordion-button {
+        background-color: $body-bg;
+    }
+}
+
+.faq-block { // this could be used for all blocks instead?
+    padding-top: 5*$spacer;
+    padding-bottom: 5*$spacer;
+}
+
+// FIXME: when we have more blocks, they should get their own components
+// and only common stuff stays in here?!
+// -> for now leave here to identify common stuff
+.faq-block__title {
+    font-size: $h2-font-size;
+    font-weight: $font-weight-bold;
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+
+    border-bottom: solid 1px $text-gray;
+}
+
+.faq-block__item {
+    // important to overwrite bootstraps accordion-item:last-child
+    border-bottom: solid 1px $text-gray !important;
+}
+
+.faq-block__button {
+    color: $text-gray !important;
+    box-shadow: none !important;
+
+    font-size: $h4-font-size;
+    font-weight: $font-weight-bold;
+}
+
+.faq-block__body {
+    p:first-child {
+        margin-top: 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}

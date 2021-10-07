@@ -3,29 +3,31 @@
 {% get_identifier value as identifier %}
 
 {% if self.background_color == "yellow" %}
-<div class="faq-block block__yellow row">
+<div class="faq-block block__yellow container-fluid px-0">
 {% elif self.background_color == "pink"%}
-<div class="faq-block block__pink row">
+<div class="faq-block block__pink container-fluid px-0">
 {% elif self.background_color == "purple"%}
-<div class="faq-block block__purple row">
+<div class="faq-block block__purple container-fluid px-0">
 {% else %}
-<div class="faq-block block__body-bg row">
+<div class="faq-block block__body-bg container-fluid px-0">
 {% endif %}
-    <h2 class="offset-md-2 col-md-8 col-12 px-md-0 mb-0 faq-block__title">Headline still needs to be added!</h2>
-    <section class="accordion accordion-flush px-md-0 offset-md-2 col-md-8 col-12" id="accordion{{ identifier }}{{ forloop.counter }}">
-    {% for item in self.accordion_items %}
-        <div class="accordion-item faq-block__item">
-            <h3 class="accordion-header mt-0" id="heading{{ identifier }}{{ forloop.counter }}">
-                <button class="accordion-button collapsed faq-block__button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ identifier }}{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ identifier }}{{ forloop.counter }}">
-                    {{ item.title }}
-                </button>
-            </h3>
-            <div id="collapse{{ identifier }}{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ identifier }}{{ forloop.counter }}">
-                <div class="accordion-body faq-block__body px-md-0">
-                    {{ item.body }}
+    <div class="row g-0 faq-block__row">
+        <h2 class="offset-md-2 col-md-8 col-12 mb-0 faq-block__title">Headline still needs to be added!</h2>
+        <section class="accordion accordion-flush offset-md-2 col-md-8 col-12" id="accordion{{ identifier }}{{ forloop.counter }}">
+        {% for item in self.accordion_items %}
+            <div class="accordion-item faq-block__item">
+                <h3 class="accordion-header mt-0" id="heading{{ identifier }}{{ forloop.counter }}">
+                    <button class="accordion-button collapsed faq-block__button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ identifier }}{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ identifier }}{{ forloop.counter }}">
+                        {{ item.title }}
+                    </button>
+                </h3>
+                <div id="collapse{{ identifier }}{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ identifier }}{{ forloop.counter }}">
+                    <div class="accordion-body faq-block__body px-0">
+                        {{ item.body }}
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
-    </section>
+        {% endfor %}
+        </section>
+    </div>
 </div>

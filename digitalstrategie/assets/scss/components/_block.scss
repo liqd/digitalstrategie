@@ -31,7 +31,7 @@
     }
 }
 
-.faq-block { // this could be used for all blocks instead? It's now also used for cta block
+.faq-block { // this could be used for all blocks instead? It's now also used for cta & quote blocks, so should be renamed
     padding-top: 5*$spacer;
     padding-bottom: 5*$spacer;
 }
@@ -84,4 +84,23 @@
 
 .cta-block__title {
     font-size: $h2-font-size;
+}
+
+.quote-block__row {
+    padding-right: 2*$spacer;
+    padding-left: 2*$spacer;
+
+    @include media-breakpoint-up(md) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.quote-block__text {
+    font-size: $h2-font-size;
+    font-weight: $font-weight-bold;
+}
+
+.quote-block__link {
+    text-decoration: none;
 }

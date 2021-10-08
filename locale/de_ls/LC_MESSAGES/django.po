@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-08 11:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps/forms/models.py:53
+msgid "First Name"
+msgstr ""
+
+#: apps/forms/models.py:60
+msgid "Surname"
+msgstr ""
+
+#: apps/forms/models.py:67
+msgid "Organisation"
+msgstr ""
+
+#: apps/forms/models.py:74
+msgid "E-Mail"
+msgstr ""
+
+#: apps/forms/models.py:125
+msgid "I have read and accepted the {}data protection policy{}."
+msgstr ""
+
+#: apps/forms/models.py:130
+msgid "Title"
+msgstr ""
+
+#: apps/forms/models.py:137
+msgid "Your message to us..."
+msgstr ""
+
+#: apps/forms/templates/apps_forms/contact_form_page_landing.html:7
+#: digitalstrategie/templates/base_errors.html:11
+msgid "Back to landing page"
+msgstr ""
+
+#: apps/forms/templates/apps_forms/includes/form.html:17
+msgid "Send"
+msgstr ""
+
+#: apps/gruenbuch/templates/gruenbuch_page.html:49
+msgid "previous chapter"
+msgstr ""
+
+#: apps/gruenbuch/templates/gruenbuch_page.html:56
+msgid "next chapter"
+msgstr ""
+
+#: digitalstrategie/settings/base.py:119
+msgid "English"
+msgstr ""
+
+#: digitalstrategie/settings/base.py:120
+msgid "German"
+msgstr ""
+
+#: digitalstrategie/settings/base.py:121
+msgid "Easy German"
+msgstr ""
+
+#: digitalstrategie/templates/403.html:7
+msgid "You are not allowed to access this page."
+msgstr ""
+
+#: digitalstrategie/templates/404.html:7
+msgid "This page could not be found."
+msgstr ""
+
+#: digitalstrategie/templates/500.html:7
+msgid "Internal server error."
+msgstr ""
+
+#: digitalstrategie/templates/base_errors.html:4
+msgid "Error"
+msgstr ""
+
+#: digitalstrategie/templates/email_base.html:19
+msgid "Hello"
+msgstr ""
+
+#: digitalstrategie/templates/includes/header.html:8
+msgid "Toggle navigation"
+msgstr ""
+
+#: digitalstrategie/templates/includes/header.html:39
+msgid "Search"
+msgstr ""
+
+#: digitalstrategie/templates/includes/header_language_switch.html:9
+msgid "Language selector, "
+msgstr ""
+
+#: digitalstrategie/templates/includes/header_language_switch.html:15
+msgid " selected"
+msgstr ""
+
+#: digitalstrategie/templates/includes/header_language_switch.html:30
+msgid "select "
+msgstr ""

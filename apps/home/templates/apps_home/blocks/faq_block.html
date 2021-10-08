@@ -2,17 +2,14 @@
 
 {% get_identifier value as identifier %}
 
-{% if self.background_color == "yellow" %}
-<div class="faq-block block__yellow container-fluid px-0">
-{% elif self.background_color == "pink"%}
-<div class="faq-block block__pink container-fluid px-0">
-{% elif self.background_color == "purple"%}
-<div class="faq-block block__purple container-fluid px-0">
-{% else %}
-<div class="faq-block block__body-bg container-fluid px-0">
-{% endif %}
+
+<div class="faq-block {% if self.background_color %}block__{{ self.background_color }}{% else %}block__body-bg{% endif %} container-fluid px-0">
     <div class="row g-0 faq-block__row">
-        <h2 class="offset-md-2 col-md-8 col-12 mb-0 faq-block__title">Headline still needs to be added!</h2>
+        <h2 class="offset-md-2 col-md-8 col-12 mb-0 faq-block__title">
+        {% if self.faq_title %}
+            {{ self.faq_title }}
+        {% endif %}
+        </h2>
         <section class="accordion accordion-flush offset-md-2 col-md-8 col-12" id="accordion{{ identifier }}{{ forloop.counter }}">
         {% for item in self.accordion_items %}
             <div class="accordion-item faq-block__item">

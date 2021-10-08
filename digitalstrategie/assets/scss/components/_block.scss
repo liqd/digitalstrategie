@@ -31,7 +31,7 @@
     }
 }
 
-.faq-block { // this could be used for all blocks instead?
+.faq-block { // this could be used for all blocks instead? It's now also used for cta block
     padding-top: 5*$spacer;
     padding-bottom: 5*$spacer;
 }
@@ -80,4 +80,8 @@
     p:last-child {
         margin-bottom: 0;
     }
+}
+
+.cta-block__title {
+    font-size: $h2-font-size;
 }

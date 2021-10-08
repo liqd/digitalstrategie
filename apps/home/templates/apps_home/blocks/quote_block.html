@@ -1,0 +1,24 @@
+{% load i18n wagtailcore_tags %}
+
+<div class="faq-block {% if self.background_color %}block__{{ self.background_color }}{% else %}block__body-bg{% endif %} container-fluid px-0">
+    <div class="row g-0 quote-block__row">
+        <div class="col-12 offset-md-1 col-md-5">
+            {{ self.text }}
+                <div>
+                    {% if value.link %}
+                    <a class="quote-block__link" href="{{ value.link.url }}">{% trans 'Read more' %}&#8594;</a>
+                    {% endif %}
+                </div>
+        </div>
+        <div class="col-12 offset-md-1 col-md-4">
+            <p class="quote-block__text">
+                <i class="fas fa-quote-left fa-xs"></i>
+                {{ self.quote }}
+                <i class="fas fa-quote-right fa-xs"></i>
+            </p>
+            <p>
+                {{ self.author }}
+            </p>
+        </div>
+    </div>
+</div>

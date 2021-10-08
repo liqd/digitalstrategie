@@ -7,8 +7,8 @@ from wagtail.core import blocks
 from wagtail.core import fields
 from wagtail.core.models import Page
 
-from apps import blocks as apps_blocks
 from apps.contrib.translations import TranslatedField
+from apps.home import blocks as apps_blocks
 
 
 class GruenbuchIndexPage(Page):

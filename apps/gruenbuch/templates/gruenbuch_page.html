@@ -59,6 +59,14 @@
           {% endif %}
         </div>
       </div>
+      <div class="col-sm-2">
+        {% if settings.apps_settings.Downloads.gruenbuch %}
+        <a class="btn btn-outline-dark rounded-pill" href="{{ settings.apps_settings.Downloads.gruenbuch.url }}" target="_blank">
+          <i class="fas fa-download" aria-hidden="true"></i>
+          {% trans 'Download' %}
+        </a>
+        {% endif %}
+      </div>
     </div>
   </div>
 {% endblock content %}

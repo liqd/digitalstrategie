@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags i18n %}
 
 {% block content %}
     <div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3 text-center mb-md-5">
         {{ page.thank_you_text|richtext }}
-        <p><a href="/">Go to Homepage</a></p>
+        <p><a href="/">{% trans 'Back to landing page' %}</a></p>
     </div>
 {% endblock %}

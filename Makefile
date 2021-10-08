@@ -116,8 +116,8 @@ lint-fix:
 
 .PHONY: po
 po:
-	msgen locale-source/locale/en/LC_MESSAGES/django.po -o locale-source/locale/en/LC_MESSAGES/django.po
-	msgen locale-source/locale/en/LC_MESSAGES/djangojs.po -o locale-source/locale/en/LC_MESSAGES/djangojs.po
+	$(VIRTUAL_ENV)/bin/python manage.py makemessages --all --extension html,email,py,js,jsx --ignore venv --ignore node_modules
+	msgen locale/en/LC_MESSAGES/django.po -o locale/en/LC_MESSAGES/django.po
 
 .PHONY: mo
 mo:

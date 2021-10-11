@@ -1,0 +1,30 @@
+{% load wagtailimages_tags wagtailcore_tags block_tags %}
+
+{% get_identifier value as identifier %}
+
+
+<div class="py-3 {% if self.background_color %}block__{{ self.background_color }}{% else %}block__body-bg{% endif %} container-fluid px-0">
+    <div class="row g-0 faq-block__row">
+        <h2 class="col-12 mb-0 faq-block__title">
+        {% if self.faq_title %}
+            {{ self.faq_title }}
+        {% endif %}
+        </h2>
+        <section class="accordion accordion-flush col-12" id="accordion{{ identifier }}{{ forloop.counter }}">
+        {% for item in self.accordion_items %}
+            <div class="accordion-item faq-block__item">
+                <h3 class="accordion-header mt-0" id="heading{{ identifier }}{{ forloop.counter }}">
+                    <button class="accordion-button collapsed faq-block__button px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ identifier }}{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ identifier }}{{ forloop.counter }}">
+                        {{ item.title }}
+                    </button>
+                </h3>
+                <div id="collapse{{ identifier }}{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ identifier }}{{ forloop.counter }}">
+                    <div class="accordion-body faq-block__body px-0">
+                        {{ item.body }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+    </div>
+</div>

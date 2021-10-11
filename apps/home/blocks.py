@@ -75,3 +75,14 @@ class QuoteBlock(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/quote_block.html'
         icon = 'openquote'
+
+
+class GruenbuchFaqBlock(blocks.StructBlock):
+    faq_title = blocks.CharBlock(
+        required=False
+    )
+    accordion_items = blocks.ListBlock(AccordionItemBlock())
+
+    class Meta:
+        template = 'apps_home/blocks/gruenbuch_faq_block.html'
+        icon = 'arrow-down'

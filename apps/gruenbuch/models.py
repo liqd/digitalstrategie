@@ -38,7 +38,7 @@ class GruenbuchDetailPage(Page):
 
     page_blocks = [
         ('paragraph', blocks.RichTextBlock()),
-        ('faq_accordion', apps_blocks.FaqBlock())
+        ('faq_accordion', apps_blocks.GruenbuchFaqBlock())
     ]
 
     page_title_de = models.CharField(max_length=120)

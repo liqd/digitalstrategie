@@ -75,9 +75,11 @@ class HomePage(Page):
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
-    subpage_types = ['apps_home.DetailPage', 'apps_home.SimplePage',
+    subpage_types = ['apps_home.DetailPage',
+                     'apps_home.SimplePage',
+                     'apps_gruenbuch.GruenbuchIndexPage',
                      'apps_forms.ContactFormPage',
-                     'apps_gruenbuch.GruenbuchIndexPage']
+                     'apps_forms.ParticipationFormPage']
 
 
 class DetailPage(Page):

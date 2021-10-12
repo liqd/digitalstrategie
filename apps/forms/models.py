@@ -1,6 +1,8 @@
+from django import forms
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from modelcluster.fields import ParentalKey
+from modelcluster.fields import ParentalManyToManyField
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.admin.edit_handlers import FieldRowPanel
 from wagtail.admin.edit_handlers import MultiFieldPanel
@@ -20,6 +22,9 @@ class FormField(AbstractFormField):
 
 
 class FormPage(AbstractEmailForm):
+
+    landing_page_template = 'apps_forms/form_page_landing.html'
+
     header_de = models.CharField(
         max_length=500, blank=True, verbose_name="Header")
     header_en = models.CharField(
@@ -48,7 +53,7 @@ class FormPage(AbstractEmailForm):
         fields = list(super().get_form_fields())
 
         fields.append(FormField(
-            label='firstname',
+            label='first name',
             clean_name='firstname',
             help_text=_('First Name'),
             field_type='singleline',
@@ -111,6 +116,9 @@ class FormPage(AbstractEmailForm):
         ObjectList(de_ls_content_panels, heading='Easy German')
     ])
 
+    def get_template(self, request, *args, **kwargs):
+        return 'apps_forms/form_page.html'
+
 
 class ContactFormPage(FormPage):
 
@@ -122,7 +130,8 @@ class ContactFormPage(FormPage):
     def get_form_fields(self):
         fields = list(super().get_form_fields())
 
-        data_protection_help = _('I have read and accepted the {}data protection policy{}.')
+        data_protection_help = _('I have read and accepted the '
+                                 '{}data protection policy{}.')
 
         fields.insert(0, FormField(
             label='title',
@@ -151,5 +160,68 @@ class ContactFormPage(FormPage):
     def get_data_fields(self):
         data_fields = super().get_data_fields()
         # remove data_protection
+        data_fields.pop()
+        return data_fields
+
+
+class ParticipationFormPage(FormPage):
+
+    fields_of_action = ParentalManyToManyField('apps_snippets.FieldOfAction')
+
+    common_panels = FormPage.common_panels +\
+        [FieldPanel('fields_of_action', widget=forms.CheckboxSelectMultiple)]
+
+    edit_handler = TabbedInterface(
+        [ObjectList(common_panels, heading='Common')] +
+        [child for child in FormPage.edit_handler.children[1:]])
+
+    def process_form_submission(self, form):
+        form.fields.pop('data_protection')
+        form.fields.pop('data_storage')
+
+        return super().process_form_submission(form)
+
+    def get_field_of_action_choices(self):
+
+        return ','.join([str(field_of_action) for field_of_action
+                         in self.fields_of_action.all()])
+
+    def get_form_fields(self):
+        fields = list(super().get_form_fields())
+
+        data_storage_help = _('I agree that my contact data is stored')
+        data_protection_help = _('I have read and accepted the '
+                                 '{}data protection policy{}.')
+
+        fields.append(FormField(
+            label='fields of action',
+            clean_name='fields_of_action',
+            help_text=_('I am interested in the following fields of action'),
+            field_type='checkboxes',
+            choices=self.get_field_of_action_choices(),
+            required=True))
+
+        fields.append(FormField(
+            label='data_storage',
+            clean_name='data_storage',
+            field_type='checkbox',
+            help_text=data_storage_help,
+            required=True))
+
+        fields.append(FormField(
+            label='data_protection',
+            clean_name='data_protection',
+            field_type='checkbox',
+            help_text=helpers.add_link_to_helptext(data_protection_help,
+                                                   'data_protection_policy'),
+            required=True))
+
+        return fields
+
+    def get_data_fields(self):
+        data_fields = super().get_data_fields()
+        # remove data_protection
+        data_fields.pop()
+        # remove data_storage
         data_fields.pop()
         return data_fields

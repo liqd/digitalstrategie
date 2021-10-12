@@ -106,3 +106,37 @@ class NavigationMenu(ClusterableModel):
                     label="Menu Items",
                     max_num=6)
     ]
+
+
+@register_snippet
+class FieldOfAction(models.Model):
+
+    name_de = models.CharField(
+        max_length=255
+    )
+    name_en = models.CharField(
+        max_length=255,
+        blank=True
+    )
+    name_de_ls = models.CharField(
+        max_length=255,
+        blank=True
+    )
+
+    name = TranslatedField(
+        'name_de',
+        'name_en',
+        'name_de_ls'
+    )
+
+    panels = [
+        FieldPanel('name_de'),
+        FieldPanel('name_en'),
+        FieldPanel('name_de_ls')
+    ]
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'fields of action'

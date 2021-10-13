@@ -11,8 +11,25 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
         <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon-96x96.png' %}">
         <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+
+        <!-- Berlin theme css start -->
+            <link rel="stylesheet" type="text/css" href="//www.berlin.de/i9f/r1/bundle/berlin_marketing.css">
+            <link rel="stylesheet" type="text/css" href="//www.berlin.de/i9f/r1/bundle/swiper.min.css">
+            <link rel="stylesheet" type="text/css" href="//www.berlin.de/i9f/r1/bundle/shariff.min.css">
+            <link rel="stylesheet" type="text/css" href="//www.berlin.de/i9f/r1/bundle/fontawesome.all.min.css">
+        <!-- Berlin theme css end -->
         <link rel="stylesheet" type="text/css" href="{% static 'digitalstrategie.css' %}" />
-        <script src="{% static 'digitalstrategie.js' %}"></script>
+
+        <script src="{% static 'digitalstrategie.js' %}"></script> <!-- loaded first as loads jquery -->
+
+        <!-- Berlin theme js start -->
+            <script src="//www.berlin.de/i9f/r1/bundle/jquery.min.js"></script>
+            <script src="//www.berlin.de/i9f/r1/bundle/berlin_marketing.js"></script>
+            <script src="//www.berlin.de/i9f/r1/bundle/swiper.min.js"></script>
+            <script src="//www.berlin.de/i9f/r1/bundle/shariff.min.js"></script>
+            <script src="//www.berlin.de/i9f/v4/js/bo-foot-rebrush.js"></script>
+        <!-- Berlin theme js end -->
+
     </head>
     <body>
         {% wagtailuserbar %}

@@ -36,6 +36,14 @@
     padding-bottom: 5*$spacer;
 }
 
+.block__row {
+    padding: 0 1*$spacer;
+
+    @media screen and (min-width: $breakpoint-md) {
+        padding: 0;
+    }
+}
+
 // FIXME: when we have more blocks, they should get their own components
 // and only common stuff stays in here?!
 // -> for now leave here to identify common stuff
@@ -51,48 +59,42 @@
 }
 
 .faq-block__title {
-    font-size: $h2-font-size;
     font-weight: $font-weight-bold;
     padding-top: $spacer;
     padding-bottom: $spacer;
+    margin-bottom: 0;
 
     border-bottom: solid 1px $text-gray;
 }
 
 .faq-block__item {
     // important to overwrite bootstraps accordion-item:last-child
-    border-bottom: solid 1px $text-gray !important;
+    border-bottom: solid 1px $text-gray;
 }
 
 .faq-block__button {
-    color: $text-gray !important;
-    box-shadow: none !important;
+    padding-left: 0;
+    padding-right: 0;
 
     font-size: $h4-font-size;
     font-weight: $font-weight-bold;
+
+    &:focus {
+        color: $text-gray;
+        box-shadow: none;
+    }
 }
 
 .faq-block__body {
+    padding-left: 0;
+    padding-right: 0;
+
     p:first-child {
         margin-top: 0;
     }
 
     p:last-child {
         margin-bottom: 0;
-    }
-}
-
-.cta-block__title {
-    font-size: $h2-font-size;
-}
-
-.quote-block__row {
-    padding-right: 2*$spacer;
-    padding-left: 2*$spacer;
-
-    @include media-breakpoint-up(md) {
-        padding-right: 0;
-        padding-left: 0;
     }
 }
 

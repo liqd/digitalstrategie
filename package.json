@@ -10,8 +10,6 @@
     "css-loader": "6.4.0",
     "file-loader": "6.2.0",
     "flatpickr": "4.6.9",
-    "jquery": "3.6.0",
-    "jquery-colorbox": "1.6.4",
     "mini-css-extract-plugin": "2.4.2",
     "node-sass": "6.0.1",
     "path-browserify": "1.0.1",

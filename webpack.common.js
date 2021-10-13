@@ -94,11 +94,6 @@ module.exports = {
     fallback: { path: require.resolve('path-browserify') },
     // attempt to resolve these extensions in this order.
     extensions: ['*', '.js', '.jsx', '.scss', '.css'],
-    // create aliases to import or require certain modules more easily, $ signifys exact match
-    alias: {
-      bootstrap$: 'bootstrap/dist/js/bootstrap.bundle.min.js',
-      jquery$: 'jquery/dist/jquery.min.js'
-    },
     // when using `npm link` for a4 dev env, dependencies are resolved against the linked
     // folder by default. This may result in dependencies being included twice.
     // Resolving against node_modules will prevent this.
@@ -112,11 +107,7 @@ module.exports = {
   plugins: [
     // automatically load modules instead of import or require them everywhere.
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.$': 'jquery',
-      'window.jQuery': 'jquery',
-      timeago: 'timeago.js'
+      timeago: 'timeago.js' // do we need this?
     }),
     // extracts CSS into separate files
     new MiniCssExtractPlugin({

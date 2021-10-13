@@ -1,46 +1,181 @@
 {% load snippet_tags i18n %}
 {% load_site_menu "header" as header_menu_items %}
+<header id="header" class="kiekma">
 
-<nav class="navbar navbar-expand-lg header__nav">
-    <div class="container">
-        <div class="header__nav--centered">
-            <a class="navbar-brand mt-3" href="/">digitalstrategie</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- Portallogo Berlin Brand -->
+    <div class="header__row-portalbrand">
+        <div class="logo">
+            <a href="">
+              <!-- FIXME add link, images and translatable text, titles and aria-labels -->
+                <img class="logo" title="Zur Startseite" src="" alt="Berlin.de">
+            </a>
+        </div>
+    </div>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  header__nav-links">
-                    {% for menuitem in header_menu_items %}
-                    {% if menuitem.subpages %}
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" {{ forloop.counter }} data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-current="page">
-                            {{ menuitem.title }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" {{ forloop.counter }}>
-                            {% for subpage in menuitem.subpages %}
-                            <li><a class="dropdown-item" href="{{ subpage.value.link.url }}">{{ subpage.value.link_text }}</a></li>
-                            {% endfor %}
+    <div class="header__row-pageheader">
+        <!-- Vertical Logo -->
+        <div class="pageheader__logo">
+            <p class="textlogo">
+                <a href="" title="Zur Startseite">
+                    <span class="institution">digitalstrategie</span>
+                    <span class="title">Marketing</span>
+                </a>
+            </p>
+        </div>
+
+        <!-- Quicklinks -->
+        <nav class="pageheader__quicklinks" aria-label="Bereichsnavigation">
+            <ul>
+              {% for menuitem in header_menu_items %}
+                <li class="{% if request.path == menuitem.url %} active{% endif %}">
+                    <a href="{{ menuitem.url }}" {% if request.path == menuitem.url %}aria-current="page" {% endif %}>{{ menuitem.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+        </nav>
+
+        <!-- ### Service button area with different overlays ## -->
+
+        <div class="pageheader__services">
+            <!-- Accessability button and overlay -->
+
+            <div id="servicebuttonAccessibility" class="service-button-overlay js-service-button-overlay accessibility">
+                <div class="service-button-overlay__button">
+                    <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true">
+                        <i class="icon fas fa-universal-access" aria-hidden="true"></i>
+                        <span class="aural">Öffnen: Barrierefreiheit</span>
+                        <span class="text">Barrierefrei</span>
+                    </button>
+                </div>
+                <div class="service-button-overlay__overlay overlay js-overlay-container" aria-modal="true" hidden="hidden">
+                    <div class="overlay__header">
+                        <h2 class="heading"><span>Barrierefreiheit</span></h2>
+                        <button type="button" class="close-button js-button-overlay-close">
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                            <span class="aural">Schließen: Barrierefreiheit </span>
+                        </button>
+                    </div>
+                    <div class="overlay__body">
+                        <h3>Einstellungen</h3>
+                        <ul class="wcag-linklist">
+                            <li>
+                                <a href="#">
+                                    <img aria-hidden="true" src="https://www.berlin.de/i9f/v4/css/images/misc/leichtesprache.svg" alt="Symbol leichte Sprache">
+                                    Leichte Sprache <span class="aural">für diese Seite anzeigen</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img aria-hidden="true" src="https://www.berlin.de/i9f/v4/css/images/misc/dgs.svg" alt="Symbol Gebärdensprache">
+                                    Gebärdensprache <span class="aural">für diese Seite anzeigen</span>
+                                </a>
+                            </li>
                         </ul>
-                    </li>
-                    {% else %}
-                    <li class="nav-item {% if request.path == menuitem.url %} active{% endif %}">
-                        <a class="nav-link" href="{{ menuitem.url }}" {% if request.path == menuitem.url %}aria-current="page" {% endif %}> {{ menuitem.title }} </a>
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
+
+                        <h3>Wie barrierefrei ist diese Webseite?</h3>
+                        <p>
+                            <a href="#">Erklärung zur digitalen Barrierefreiheit</a>
+                        </p>
+
+
+                        <h3>Wen können Sie bei Anmerkungen oder Fragen zur digitalen Barrierefreiheit (Feedbackoption) kontaktieren?</h3>
+                        <p>
+                            Name: Name<br>
+                            Email: <a href="mailto:">email@empfaenger.dummy</a><br>
+                            Telefon: Telefonnummer
+                        </p>
+
+                        <h3>Wo gibt es zusätzliche Informationen zur Barrierefreiheit im Land Berlin?</h3>
+                        <p>
+                            <a href="#" class="extern" target="_blank">Link</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search button and overlay -->
+
+            <div id="servicebuttonSearch" class="service-button-overlay js-service-button-overlay search fullwidth">
+                <div class="service-button-overlay__button">
+                    <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true">
+                        <i class="icon fa fa-search" aria-hidden="true"></i>
+                        <span class="aural">Öffnen: Suche</span>
+                        <span class="text">Suche</span>
+                    </button>
+                </div>
+                <div class="service-button-overlay__overlay overlay js-overlay-container" aria-modal="true" hidden="hidden">
+                    <div class="overlay__header">
+                        <h2 class="heading"><span class="aural">Suche</span></h2>
+                        <button type="button" class="close-button js-button-overlay-close">
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                            <span class="aural">Schließen: Suche </span>
+                        </button>
+                    </div>
+                    <div class="overlay__body">
+                        <div class="search-container">
+                            <form class="search-form">
+                                <label for="searchFormInput_q">Suche auf der Internetseite "Portalname"</label>
+                                <div class="form-group">
+                                    <input name="q" class="form-control" id="searchFormInput_q" placeholder="Suchbegriff">
+                                    <button type="submit" class="button"><i class="fas fa-search" aria-hidden="true"></i> <span>Suchen</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hamburger navigation button and overlay -->
+
+            <div id="servicebuttonMenu" class="service-button-overlay js-service-button-overlay menu">
+                <div class="service-button-overlay__button">
+                    <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true">
+                        <i class="icon fa fa-bars" aria-hidden="true"></i>
+                        <span class="aural">Öffnen: Menü</span>
+                        <span class="text">Menü</span>
+                    </button>
+                </div>
+                <div class="service-button-overlay__overlay overlay js-overlay-container" aria-modal="true" hidden="hidden">
+                    <div class="overlay__header">
+                        <h2 class="heading"><span>Menü</span></h2>
+                        <button type="button" class="close-button js-button-overlay-close">
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                            <span class="aural">Schließen: Menü </span>
+                        </button>
+                    </div>
+                    <div class="overlay__body">
+                        <nav id="navigation-primary" class="js-navigation-primary">
+                            <div class="tree-wrapper js-navigation-tree-wrapper">
+                                <h3 class="aural">Seitennavigation</h3>
+                                <ul class="navigation-tree">
+                                  {% for menuitem in header_menu_items %}
+                                    {% if menuitem.subpages %}
+                                      <li class="">
+                                          <a href="#">{{ menuitem.title }}</a>
+                                          <ul class="navigation-tree">
+                                              {% for subpage in menuitem.subpages %}
+                                              <li><a href="{{ subpage.value.link.url }}">{{ subpage.value.link_text }}</a></li>
+                                              {% endfor %}
+                                            </ul>
+                                      </li>
+                                    {% else %}
+                                    <li class="{% if request.path == menuitem.url %} active{% endif %}">
+                                        <a href="{{ menuitem.url }}" {% if request.path == menuitem.url %}aria-current="page" {% endif %}>{{ menuitem.title }}</a>
+                                    </li>
+                                    {% endif %}
+
+                                  {% endfor %}
+                                  <li>
+                                      {% include 'includes/header_language_switch.html' %}
+                                  </li>
+                                </ul>
+                            </div>
+
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="header--left">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link"><i class="fa fa-search" aria-label="{% trans 'Search' %}"></i></a>
-            </li>
-            <li class="nav-item">
-                {% include 'includes/header_language_switch.html' %}
-            </li>
-        </ul>
-    </div>
-</nav>
+
+</header>

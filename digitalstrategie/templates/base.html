@@ -18,11 +18,7 @@
         {% wagtailuserbar %}
         {% include 'includes/header.html' %}
         <div class="base__wrapper">
-            <div class="page-header mb-5">
-                <h1>
-                {% block title %}{% endblock %}
-                </h1>
-            </div>
+            {% block title %}{% endblock %}
             {% if messages %}
               {% for message in messages %}
                   <div class="alert alert--{{ message.level_tag }}" role="alert">

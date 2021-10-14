@@ -31,7 +31,7 @@
     }
 }
 
-.faq-block { // this could be used for all blocks instead? It's now also used for cta & quote blocks, so should be renamed
+.block {
     padding-top: 5*$spacer;
     padding-bottom: 5*$spacer;
 }
@@ -47,16 +47,6 @@
 // FIXME: when we have more blocks, they should get their own components
 // and only common stuff stays in here?!
 // -> for now leave here to identify common stuff
-
-.faq-block__row {
-    padding-right: 2*$spacer;
-    padding-left: 2*$spacer;
-
-    @include media-breakpoint-up(md) {
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
 
 .faq-block__title {
     font-weight: $font-weight-bold;
@@ -96,6 +86,10 @@
     p:last-child {
         margin-bottom: 0;
     }
+}
+
+.cta-block__title {
+    font-size: $h2-font-size;
 }
 
 .quote-block__text {

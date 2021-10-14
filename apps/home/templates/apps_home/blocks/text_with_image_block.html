@@ -1,0 +1,20 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% image value.image width-500 as image %}
+
+<div class="{% if self.background_color %}block__{{ self.background_color }}{% else %}block__body-bg{% endif %}">
+    <div class="container-fluid gx-0">
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                <img src="{{ image.url }}" alt="{{ image.alt }}" class="textimg-block-image__img" />
+            </div>
+            <div class="offset-md-1 col d-flex align-items-center">
+                <div class="textimg-block-text__wrapper">
+                    <h1>
+                        {{ value.title }}
+                    </h1>
+                    {{ value.body|richtext }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

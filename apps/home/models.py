@@ -17,7 +17,8 @@ class HomePage(Page):
         ('paragraph', blocks.RichTextBlock()),
         ('call_to_action', apps_blocks.CallToActionBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
-        ('quote', apps_blocks.QuoteBlock())
+        ('quote', apps_blocks.QuoteBlock()),
+        ('text_with_image', apps_blocks.TextWithImageBlock())
     ]
 
     subtitle_de = models.CharField(max_length=120, blank=True)

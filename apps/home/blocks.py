@@ -1,4 +1,5 @@
 from wagtail.core import blocks
+from wagtail.images.blocks import ImageChooserBlock
 
 
 class ColorChoiceBlock(blocks.ChoiceBlock):
@@ -85,4 +86,20 @@ class GruenbuchFaqBlock(blocks.StructBlock):
 
     class Meta:
         template = 'apps_home/blocks/gruenbuch_faq_block.html'
+        icon = 'arrow-down'
+
+
+class TextWithImageBlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True)
+    body = blocks.RichTextBlock(required=True)
+    image = ImageChooserBlock(required=True)
+
+    background_color = ColorChoiceBlock(
+        help_text='Not choosing a colour will result in a Quote block with '
+                  'a white background.',
+        required=False
+    )
+
+    class Meta:
+        template = 'apps_home/blocks/text_with_image_block.html'
         icon = 'arrow-down'

@@ -25,12 +25,12 @@
   },
   "devDependencies": {
     "@babel/core": "7.15.8",
+    "@babel/eslint-parser": "7.15.8",
     "@babel/plugin-transform-modules-commonjs": "7.15.4",
     "@babel/plugin-transform-runtime": "7.15.8",
     "@babel/preset-env": "7.15.8",
     "@babel/preset-react": "7.14.5",
     "@babel/runtime": "7.15.4",
-    "babel-eslint": "10.1.0",
     "eslint": "7.32.0",
     "eslint-config-standard": "16.0.3",
     "eslint-config-standard-jsx": "10.0.0",
@@ -42,11 +42,11 @@
     "eslint-plugin-standard": "4.1.0",
     "husky": "7.0.2",
     "lint-staged": "11.2.3",
+    "postcss": "8.3.9",
     "stylelint": "13.13.1",
     "stylelint-config-standard": "22.0.0",
     "stylelint-declaration-strict-value": "1.7.12",
-    "webpack-cli": "4.9.0",
-    "postcss": "8.3.9"
+    "webpack-cli": "4.9.0"
   },
   "scripts": {
     "build:prod": "webpack --config webpack.prod.js --mode production",

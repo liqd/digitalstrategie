@@ -1,10 +1,11 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true
-    }
+    },
+    "requireConfigFile": false
   },
   "env": {
     "browser": true,
@@ -19,7 +20,7 @@
   ],
   "rules": {
     "jsx-quotes": [2, "prefer-double"],
-    "jsx-a11y/no-onchange": "off",
+    "jsx-a11y/no-onchange": "off"
   },
   "plugins": [
     "jsx-a11y"

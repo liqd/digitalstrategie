@@ -18,3 +18,17 @@ except ImportError:
     pass
 
 INSTALLED_APPS += ('wagtail.contrib.styleguide',)
+
+if os.getenv("DATABASE") == "postgresql":
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '5557',
+        'OPTIONS': {
+            },
+        }
+    }

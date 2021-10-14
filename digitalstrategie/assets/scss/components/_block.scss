@@ -1,4 +1,4 @@
-.block__yellow {
+.ds-block__yellow {
     background-color: $yellow;
 
     .accordion-button,
@@ -7,7 +7,7 @@
     }
 }
 
-.block__pink {
+.ds-block__pink {
     background-color: $pink;
 
     .accordion-button,
@@ -16,7 +16,7 @@
     }
 }
 
-.block__purple {
+.ds-block__purple {
     background-color: $purple;
 
     .accordion-button,
@@ -25,18 +25,18 @@
     }
 }
 
-.block__body-bg {
+.ds-block__body-bg {
     .accordion-button {
         background-color: $body-bg;
     }
 }
 
-.block {
+.ds-block {
     padding-top: 5*$spacer;
     padding-bottom: 5*$spacer;
 }
 
-.block__row {
+.ds-block__row {
     padding: 0 1*$spacer;
 
     @media screen and (min-width: $breakpoint-md) {
@@ -44,11 +44,11 @@
     }
 }
 
-// FIXME: when we have more blocks, they should get their own components
+// FIXME: when we have more ds-blocks, they should get their own components
 // and only common stuff stays in here?!
 // -> for now leave here to identify common stuff
 
-.faq-block__title {
+.faq-ds-block__title {
     font-weight: $font-weight-bold;
     padding-top: $spacer;
     padding-bottom: $spacer;
@@ -57,12 +57,12 @@
     border-bottom: solid 1px $text-gray;
 }
 
-.faq-block__item {
+.faq-ds-block__item {
     // important to overwrite bootstraps accordion-item:last-child
     border-bottom: solid 1px $text-gray;
 }
 
-.faq-block__button {
+.faq-ds-block__button {
     padding-left: 0;
     padding-right: 0;
 
@@ -75,7 +75,7 @@
     }
 }
 
-.faq-block__body {
+.faq-ds-block__body {
     padding-left: 0;
     padding-right: 0;
 
@@ -88,15 +88,15 @@
     }
 }
 
-.cta-block__title {
+.cta-ds-block__title {
     font-size: $h2-font-size;
 }
 
-.quote-block__text {
+.quote-ds-block__text {
     font-size: $h2-font-size;
     font-weight: $font-weight-bold;
 }
 
-.quote-block__link {
+.quote-ds-block__link {
     text-decoration: none;
 }

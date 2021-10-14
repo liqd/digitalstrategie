@@ -3,8 +3,8 @@
 
 {% block title %}
 {% image page.header_image max-1920x560 as header_image %}
-<div class="block__header_img" {% if page.header_image %} style="background-image: url({{ header_image.url }});  background-repeat: no-repeat; background-position: center; background-size: cover; " {% endif %}>
-    <div class="block__header_img_overlay">
+<div class="ds-block__header_img" {% if page.header_image %} style="background-image: url({{ header_image.url }});  background-repeat: no-repeat; background-position: center; background-size: cover; " {% endif %}>
+    <div class="ds-block__header_img_overlay">
         <div class="container">
             {{ page.title }}
             {{ page.subtitle }}
@@ -22,7 +22,7 @@
   {% for block in self.body %}
     {% if block.block_type == 'paragraph' %}
     <div class="container">
-        <div class="block row">
+        <div class="row ds-block">
             <div class="col-md-8 offset-md-2">
             {{ block }}
             </div>

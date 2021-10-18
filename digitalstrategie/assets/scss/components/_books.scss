@@ -1,15 +1,39 @@
+// Books (Grünbuch and Weißbuch) specific overwrites
+.books__wrapper {
+    background-color: $green;
+}
+
+.books__content {
+    color: $white;
+
+    & h1 {
+        color: $white;
+        font-size: $font-size-base * 2;
+        margin-top: 0;
+    }
+
+    & h2 {
+        color: $white;
+        font-size: $font-size-md;
+        font-weight: normal;
+    }
+}
+
+// Books specific nav link colors
 .chapter-link {
+    font-size: $font-size-md;
+    font-weight: bold;
+    color: $white;
+
     & a {
-        text-decoration: none;
-        color: $text-gray;
+        color: $white;
+    }
+
+    & i {
+        color: $white;
     }
 
     &--active {
-        color: $green;
-
-        & a,
-        i {
-            color: $green;
-        }
+        text-decoration: underline;
     }
 }

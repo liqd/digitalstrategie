@@ -66,15 +66,22 @@ class GruenbuchIndexPage(Page, TeaserFieldsMixin):
 
     @property
     def chapters(self):
-        return self.get_children().specific()
+        if self.get_children():
+            return self.get_children().specific()
 
     @property
     def active_chapter(self):
-        return self.chapters.first()
+        if self.chapters:
+            return self.chapters.first()
+        else:
+            return ''
 
     @property
     def next_chapter(self):
-        return self.active_chapter.get_next_sibling()
+        if self.active_chapter:
+            return self.active_chapter.get_next_sibling()
+        else:
+            return ''
 
     subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
 
@@ -152,7 +159,8 @@ class GruenbuchDetailPage(Page):
 
     @property
     def chapters(self):
-        return self.book.get_children().specific()
+        if self.book.get_children():
+            return self.book.get_children().specific()
 
     @property
     def active_chapter(self):
@@ -162,10 +170,14 @@ class GruenbuchDetailPage(Page):
     def next_chapter(self):
         if self.get_next_sibling():
             return self.get_next_sibling().specific
+        else:
+            return ''
 
     @property
     def prev_chapter(self):
         if self.get_prev_sibling():
             return self.get_prev_sibling().specific
+        else:
+            return ''
 
     subpage_types = []

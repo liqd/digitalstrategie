@@ -78,7 +78,8 @@ class HomePage(Page):
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
-    subpage_types = ['apps_home.DetailPage',
+    subpage_types = ['apps_home.OverviewPage',
+                     'apps_home.DetailPage',
                      'apps_home.SimplePage',
                      'apps_gruenbuch.GruenbuchIndexPage',
                      'apps_forms.ContactFormPage',
@@ -188,3 +189,52 @@ class SimplePage(Page):
     ])
 
     subpage_types = []
+
+
+class OverviewPage(Page):
+
+    teaser_blocks = [
+        ('teaser_centered', apps_blocks.TeaserBlockCentered()),
+        ('teaser_two_columns', apps_blocks.TeaserBlockTwoColumns()),
+        ('teaser_image_left', apps_blocks.TeaserBlockImageLeft()),
+        ('teaser_image_right', apps_blocks.TeaserBlockImageRight()),
+    ]
+
+    page_intro_de = fields.RichTextField(
+        max_length=300, blank=True, default="", verbose_name="Teasertext")
+    page_intro_en = fields.RichTextField(
+        max_length=300, blank=True, default="", verbose_name="Teasertext")
+    page_intro_de_ls = fields.RichTextField(
+        max_length=300, blank=True, default="", verbose_name="Teasertext")
+
+    page_intro = TranslatedField(
+        'page_intro_de',
+        'page_intro_en',
+        'page_intro_de_ls'
+    )
+
+    teasers = fields.StreamField(teaser_blocks)
+
+    de_content_panels = [
+        FieldPanel('page_intro_de')
+    ]
+
+    en_content_panels = [
+        FieldPanel('page_intro_en')
+    ]
+
+    de_ls_content_panels = [
+        FieldPanel('page_intro_de_ls')
+    ]
+
+    common_panels = [
+        FieldPanel('title'),
+        StreamFieldPanel('teasers'),
+    ]
+
+    edit_handler = TabbedInterface([
+        ObjectList(common_panels, heading='Common'),
+        ObjectList(de_content_panels, heading='German'),
+        ObjectList(en_content_panels, heading='English'),
+        ObjectList(de_ls_content_panels, heading='Easy German'),
+    ])

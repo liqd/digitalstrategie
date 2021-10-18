@@ -27,6 +27,19 @@
     @extend .btn-lg;
 }
 
+.btn--outline,
+a.btn--outline {
+    color: $white;
+    text-decoration: none;
+    border: 1px solid $white;
+    padding: 0.5rem 0.75rem;
+}
+
+.btn--pill,
+a.btn--pill {
+    border-radius: $border-radius-pill;
+}
+
 // .btn--full {
 //     @extend .btn-full;
 // }

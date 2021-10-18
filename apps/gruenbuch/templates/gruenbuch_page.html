@@ -1,17 +1,13 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags i18n %}
-
-{% block title %}
-  {{ page.book.title }}
-{% endblock title %}
-
 {% block content %}
-  <div class="container">
-    <div class="row">
-      <nav class="col-sm-4 col-md-3 col-xl-2">
-        {% for chapter in page.chapters %}
-          <div class="m-1 fs-6 fw-bolder">
+  <div class="books__wrapper">
+    {{ page.book.title }}
+    <div class="container">
+      <div class="row py-5">
+        <nav class="mt-2 col-sm-4 col-md-3 col-xl-2">
+          {% for chapter in page.chapters %}
             {% if chapter.url == page.active_chapter.url %}
               <div class="chapter-link chapter-link--active">
                 <i class="fas fa-arrow-right"></i>
@@ -26,47 +22,56 @@
                 </a>
               </div>
             {% endif %}
-          </div>
-          <br />
-        {% endfor %}
-      </nav>
-      <div class="col">
-        <h1>
-          {{ page.active_chapter.page_title }}
-        </h1>
-        {% if page.active_chapter.subtitle %}
-          <h2>
-            {{ page.active_chapter.subtitle }}
-          </h2>
-        {% endif %}
-        <p>
-          {{ page.active_chapter.body }}
-        </p>
-        <div>
-          {% if page.prev_chapter %}
-            <div class="my-4 float-start">
-              <a href="{{ page.prev_chapter.url }}" class="btn btn-outline-dark rounded-pill">
-                {% trans 'previous chapter' %}
-              </a>
-            </div>
+            <br />
+          {% empty %}
+            <div>{% trans 'No chapters have been added yet.' %}</div>
+          {% endfor %}
+        </nav>
+        <div class="col books__content">
+          <h1>
+            {{ page.active_chapter.page_title }}
+          </h1>
+          {% if page.active_chapter.subtitle %}
+            <h2>
+              {{ page.active_chapter.subtitle }}
+            </h2>
           {% endif %}
-          {% if page.next_chapter %}
-            <div class="my-4 float-end">
-              <a href="{{ page.next_chapter.url }}" class="btn btn-outline-dark rounded-pill">
-                {% trans 'next chapter' %}
-              </a>
-            </div>
+          <p>
+            {{ page.active_chapter.body }}
+          </p>
+          <div>
+            {% if page.prev_chapter %}
+              <div class="my-4 float-start">
+                <a
+                  href="{{ page.prev_chapter.url }}"
+                  class="btn--outline btn--pill text-capitalize"
+                >
+                  {% trans 'previous chapter' %}
+                </a>
+              </div>
+            {% endif %}
+            {% if page.next_chapter %}
+              <div class="my-4 float-end">
+                <a
+                  href="{{ page.next_chapter.url }}"
+                  class="btn--outline btn--pill text-capitalize"
+                >
+                  {% trans 'next chapter' %}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-sm-2">
+          {% if settings.apps_settings.Downloads.gruenbuch %}
+          <a class="btn btn-outline-dark rounded-pill" href="{{ settings.apps_settings.Downloads.gruenbuch.url }}" target="_blank">
+            <i class="fas fa-download" aria-hidden="true"></i>
+            {% trans 'Download' %}
+          </a>
           {% endif %}
         </div>
-      </div>
-      <div class="col-sm-2">
-        {% if settings.apps_settings.Downloads.gruenbuch %}
-        <a class="btn btn-outline-dark rounded-pill" href="{{ settings.apps_settings.Downloads.gruenbuch.url }}" target="_blank">
-          <i class="fas fa-download" aria-hidden="true"></i>
-          {% trans 'Download' %}
-        </a>
-        {% endif %}
       </div>
     </div>
   </div>
 {% endblock content %}
+

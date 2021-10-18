@@ -13,7 +13,7 @@ $pink:    #f5b4cb !default; // from ds design
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #f8ed45 !default; // from ds design
-$green:   #198754 !default;
+$green:   #0e4c38 !default;
 $teal:    #20c997 !default;
 $cyan:    #0dcaf0 !default;
 $white:   #ffffff !default; // added
@@ -179,6 +179,7 @@ $font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
 $font-size-root:              null !default;
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-sm:                $font-size-base * .875 !default;
+$font-size-md:                $font-size-base * 1.125 !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 
 $font-weight-lighter:         lighter !default;

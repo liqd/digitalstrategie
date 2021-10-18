@@ -1,0 +1,27 @@
+{% load i18n wagtailcore_tags %}
+
+<div class="block {% if self.background_color %}block__{{ self.background_color }}{% else %}block__body-bg{% endif %} container-fluid px-0">
+    <div class="container">
+        <div class="row block__row">
+            <div class="col-12 offset-md-1 col-md-5">
+                <h2 class="cta-block__title">
+                    {{ value.link_1.specific.teaser_title }}
+                </h2>
+                <div>
+                    {{ value.link_1.specific.teaser_intro }}
+                    <a href="{{ value.link_1.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_1_text }}</a>
+                </div>
+            </div>
+            <div class="col-12 offset-md-1 col-md-4">
+                <h2 class="cta-block__title">
+                    {{ value.link_2.specific.teaser_title }}
+                </h2>
+                <div>
+                    {{ value.link_2.specific.teaser_intro }}
+                    <a href="{{ value.link_2.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_2_text }}</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

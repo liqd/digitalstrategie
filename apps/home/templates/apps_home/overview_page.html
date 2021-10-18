@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block title %}
+{{ page.title }}
+{% endblock %}
+
+{% block content %}
+{{ self.page_intro|richtext }}
+{% for teaser in self.teasers %}
+  {{ teaser }}
+{% endfor %}
+{% endblock %}

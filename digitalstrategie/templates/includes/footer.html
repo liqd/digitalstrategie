@@ -1,24 +1,66 @@
-{% load snippet_tags %}
+{% load snippet_tags i18n %}
 {% load_site_menu "footer" as footer_menu_items %}
+{% load_site_menu "content-footer" as content_footer_menu_items %}
 
-<footer id="footer" class="footer">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    {% for menuitem in footer_menu_items %}
-                        {% if menuitem.url %}
-                        <li class="nav-item">
-                            <a href="{{ menuitem.url }}"
-                                class="nav-link footer-entry {% if request.path == menuitem.url %} active{% endif %}"
-                                {% if request.path == menuitem.url %}aria-current="page"{% endif %}>
-                                {{ menuitem.title }}
-                            </a>
-                        </li>
-                        {% endif %}
-                    {% endfor %}
+{% if content_footer_menu_items %}
+<div id="content-footer" role="contentinfo">
+    <div class="content-footer__brand">
+    </div>
+    <a class="to-top" href="#top">{% trans 'Zum Seitenanfang' %}</a>
+    <div class="content-footer__links">
+        <ul class="js-collapse-palm">
+            {% for menuitem in content_footer_menu_items %}
+            <li class="initial-open">
+                <h3 class="heading js-trigger">{{ menuitem.title }}</h3>
+                <ul>
+                    {% if menuitem.subpages %}
+                        {% for subpage in menuitem.subpages %}
+                            <li><a href="{{ subpage.value.link.url }}">{{ subpage.value.link_text }}</a></li>
+                        {% endfor %}
+                    {% else %}
+                        <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
+                    {% endif %}
                 </ul>
-            </div>
-        </div>
-    </nav>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+<footer id="footer" class="kiekma">
+
+    <div class="footer__brand">
+        <!-- FIXME image aria-labels -->
+        <a href="#" title="{% trans 'Zur Startseite von Berlin.de' %}">
+            <img src="" alt="Berlin">
+        </a>
+    </div>
+
+    <div class="footer__links">
+        <ul class="js-collapse-palm">
+            {% for menuitem in footer_menu_items %}
+            <li>
+                <h3 class="heading js-trigger">{{ menuitem.title }}</h3>
+                    <ul>
+                        {% if menuitem.subpages %}
+                            {% for subpage in menuitem.subpages %}
+                                <li><a href="{{ subpage.value.link.url }}">{{ subpage.value.link_text }}</a></li>
+                            {% endfor %}
+                        {% else %}
+                            <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
+                        {% endif %}
+                    </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="footer__claim">
+        <p>
+            {% blocktrans %}Berlin.de ist ein Angebot des Landes Berlin und der BerlinOnline Stadtportal GmbH & Co. KG. {% endblocktrans %}{% if settings.apps_settings.ImportantPages.imprint %}{% blocktrans with imprint_url=settings.apps_settings.ImportantPages.imprint.url %}
+            Weitere Informationen hierzu finden Sie im <a href="{{ imprint_url }}">Impressum</a>.{% endblocktrans %}{% endif %}
+        </p>
+    </div>
+
 </footer>

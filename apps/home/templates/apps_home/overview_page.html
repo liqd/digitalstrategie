@@ -2,11 +2,16 @@
 {% load wagtailcore_tags %}
 
 {% block title %}
-{{ page.title }}
 {% endblock %}
 
 {% block content %}
-{{ self.page_intro|richtext }}
+<div class="container">
+    <div class="row ds-block">
+        <div class="col-md-8 offset-md-2">
+            {{ self.page_intro|richtext }}
+        </div>
+    </div>
+</div>
 {% for teaser in self.teasers %}
   {{ teaser }}
 {% endfor %}

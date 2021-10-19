@@ -33,3 +33,23 @@
         color: $text-gray !important;
     }
 }
+
+.menu__section {
+    user-select: none;
+    background-color: $light-gray;
+}
+
+.menu__btn {
+    cursor: pointer;
+
+    & button {
+        @extend .btn--reset;
+        color: $blue;
+    }
+
+    &:hover {
+        & button {
+            text-decoration: underline;
+        }
+    }
+}

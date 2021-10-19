@@ -40,6 +40,16 @@ a.btn--pill {
     border-radius: $border-radius-pill;
 }
 
+.btn--reset {
+    font-family: $font-family-sans-serif;
+    background: transparent;
+    box-shadow: 0 0 0 transparent;
+    border: 0 solid transparent;
+    text-shadow: 0 0 0 transparent;
+    margin: 0;
+    padding: 0;
+}
+
 // .btn--full {
 //     @extend .btn-full;
 // }

@@ -1,37 +1,31 @@
 {% load static i18n %}
 {% get_current_language as LANGUAGE_CODE %}
-<div class="dropdown ">
-    {% get_available_languages as languages %}
-    <a class="nav-link dropdown-toggle"
-      href="#"
-      id="navbarDropdown"
-      role="button"
-      aria-label="{% trans 'Language selector, ' %}
-      {% for lang_code, lang_name in languages %}
-        {% if lang_code == LANGUAGE_CODE %}
-          {{ lang_name }}
-        {% endif %}
-      {% endfor %}
-      {% trans ' selected' %}"
-      data-bs-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false">
-      {{ LANGUAGE_CODE }}
-      <!--<i class="fa fa-caret-down ps-1" aria-hidden="true"></i>-->
-    </a>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      {% for lang_code, lang_name in languages %}
-          {% get_language_info for lang_code as language %}
-          {% if lang_code != LANGUAGE_CODE %}
-            <form action="{% url 'set_language' %}" method="post">
-                {% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}" />
-                <input name="language" type="hidden" value="{{ lang_code }}">
-                <button class="dropdown-item" role="button" type="submit" aria-label="{% trans 'select ' %}{{ lang_name }}">
-                    {{ language.name_local }}
-                </button>
-            </form>
-        {% endif %}
-    {% endfor %}
-    </div>
-</div>
+{% get_available_languages as languages %}
+
+<li class="menu__section">
+  <span class="fw-bolder">
+    {% trans 'Sprachen' %}
+  </span>
+</li>
+{% for lang_code, lang_name in languages %}
+  {% get_language_info for lang_code as language %}
+  {% if language.code == 'de-ls' %}
+    <li class="menu__section">
+      <span class="fw-bolder">
+        {% trans 'Barrierefreiheit' %}
+      </span>
+    </li>
+  {% endif %}
+  <li class="menu__btn">
+    <form action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ redirect_to }}" />
+      <input name="language" type="hidden" value="{{ lang_code }}">
+      <span>
+        <button role="button" type="submit" aria-label="{% trans 'select ' %}{{ lang_name }}">
+            {{ language.name_local }}
+        </button>
+      </span>
+    </form>
+  </li>
+{% endfor %}

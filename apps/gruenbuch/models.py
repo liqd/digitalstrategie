@@ -4,10 +4,12 @@ from wagtail.admin.edit_handlers import MultiFieldPanel
 from wagtail.admin.edit_handlers import ObjectList
 from wagtail.admin.edit_handlers import StreamFieldPanel
 from wagtail.admin.edit_handlers import TabbedInterface
+from wagtail.api import APIField
 from wagtail.core import blocks
 from wagtail.core import fields
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
 
 from apps.contrib.mixins import TeaserFieldsMixin
 from apps.contrib.translations import TranslatedField
@@ -181,3 +183,14 @@ class GruenbuchDetailPage(Page):
             return ''
 
     subpage_types = []
+    # only needed to display them in the api, not for the search (so can be
+    # removed?)
+    api_fields = [
+        APIField('body_de'),
+        APIField('page_title_de'),
+    ]
+    search_fields = Page.search_fields + [  # Inherit search_fields from Page
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls'),
+    ]

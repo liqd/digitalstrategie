@@ -1,8 +1,9 @@
 // Required
 @import "~bootstrap/scss/functions";
 
-// Project variables overwriting bootstrap's variables
+// Project specific values overwriting bootstrap's variable values
 @import 'variables';
+// Non-bootstrap project specific variables
 @import 'core-variables';
 @import 'base';
 @import 'fonts';
@@ -51,10 +52,9 @@
 @import '~bootstrap/scss/utilities/api';
 
 //Project components
-@import 'components/blocks';
 @import 'components/button';
-@import 'components/documents';
-@import 'components/block';
+@import 'components/document';
+@import 'components/ds-block';
 @import 'components/footer';
-@import 'components/header';
-@import 'components/books';
+@import 'components/menu';
+@import 'components/book';

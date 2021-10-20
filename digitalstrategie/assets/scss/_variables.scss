@@ -22,23 +22,6 @@ $text-gray:    #1d1d1b !default; // added
 $light-gray: #f5f5f5 !default; // added
 // scss-docs-end color-variables
 
-// scss-docs-start colors-map
-$colors: (
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  "white":      $white,
-  "gray":       $gray,
-) !default;
-// scss-docs-end colors-map
-
 // scss-docs-start theme-color-variables
 $primary:       $blue !default;
 $secondary:     $gray !default;
@@ -72,13 +55,6 @@ $enable-important-utilities:  true !default;
 
 $variable-prefix:             bs- !default;
 
-// Body
-//
-// Settings for the `<body>` element.
-
-$body-bg:                   $white !default;
-$body-text-align:           null !default;
-
 // Links
 //
 // Style anchor elements.
@@ -89,15 +65,11 @@ $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   null !default;
 
-$stretched-link-pseudo-element:           after !default;
-$stretched-link-z-index:                  1 !default;
-
-// Paragraphs
+// Body
 //
-// Style p element.
+// Settings for the `<body>` element.
 
-$paragraph-margin-bottom:   1rem !default;
-
+$body-bg: $white !default;
 
 // Grid breakpoints
 //
@@ -147,22 +119,6 @@ $border-radius-lg:            .3rem !default;
 $border-radius-pill:          50rem !default;
 // scss-docs-end border-radius-variables
 
-$component-active-color:      $white !default;
-$component-active-bg:         $primary !default;
-
-// scss-docs-start caret-variables
-$caret-width:                 .3em !default;
-$caret-vertical-align:        $caret-width * .85 !default;
-$caret-spacing:               $caret-width * .85 !default;
-// scss-docs-end caret-variables
-
-$transition-base:             all .2s ease-in-out !default;
-$transition-fade:             opacity .15s linear !default;
-// scss-docs-start collapse-transition
-$transition-collapse:         height .35s ease !default;
-$transition-collapse-width:   width .35s ease !default;
-// scss-docs-end collapse-transition
-
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
@@ -202,40 +158,6 @@ $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 // scss-docs-end font-variables
-
-// scss-docs-start font-sizes
-$font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size
-) !default;
-// scss-docs-end font-sizes
-
-// scss-docs-start display-headings
-$display-font-sizes: (
-  1: 5rem,
-  2: 4.5rem,
-  3: 4rem,
-  4: 3.5rem,
-  5: 3rem,
-  6: 2.5rem
-) !default;
-
-$display-font-weight: 300 !default;
-// scss-docs-end display-headings
-
-// scss-docs-start type-variables
-$lead-font-size:              $font-size-base * 1.25 !default;
-$lead-font-weight:            300 !default;
-
-$small-font-size:             .875em !default;
-
-$sub-sup-font-size:           .75em !default;
-
-// scss-docs-end type-variables
 
 // use different accordion icons
 // https://getbootstrap.com/docs/5.0/components/accordion/

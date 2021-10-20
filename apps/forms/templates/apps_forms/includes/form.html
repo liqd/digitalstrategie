@@ -4,8 +4,8 @@
     <div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3 text-center mb-md-5">
         <h2>{{ page.header }}</h2>
     </div>
-    <div class="row">
-        <div class="col-lg-6">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 form--overwrite">
             <form action="{% pageurl page %}" method="POST">
                 <div class="form-group">
                     {% csrf_token %}
@@ -13,8 +13,18 @@
                         {% include 'apps_forms/includes/form_field.html' with field=field %}
                     {% endfor %}
                 </div>
-                <div class="mb-3">
-                    <button class="btn btn--transparent btn--full" type="submit">{% trans "Send" %}</button>
+                <div class=info-section__form>
+                    <span>{% trans '*Pflichtfelder' %}</span>
+                    {% if page.isParticipation %}
+                        <p>
+                            {% trans 'Wenn Sie ihre personenbezogen Daten löschen lassen möchten, kontaktieren Sie: <span>digitalstrategie@senweb.berlin.de</span>' %}
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="form-actions">
+                    <div class="form-actions__right">
+                        <button class="button" type="submit">{% trans "Send" %}</button>
+                    </div>
                 </div>
             </form>
         </div>

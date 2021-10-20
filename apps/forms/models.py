@@ -175,6 +175,10 @@ class ParticipationFormPage(FormPage):
         [ObjectList(common_panels, heading='Common')] +
         [child for child in FormPage.edit_handler.children[1:]])
 
+    @property
+    def isParticipation(self):
+        return True
+
     def process_form_submission(self, form):
         form.fields.pop('data_protection')
         form.fields.pop('data_storage')

@@ -2,8 +2,14 @@
 {% load wagtailcore_tags i18n %}
 
 {% block content %}
-    <div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3 text-center mb-md-5">
-        {{ page.thank_you_text|richtext }}
-        <p><a href="/">{% trans 'Back to landing page' %}</a></p>
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <div class="col-6 py-5">
+                <p class="fs-5 text-center">{{ page.thank_you_text }}</p>
+                <div class="d-flex justify-content-center">
+                    <a class="button" href="/">{% trans 'Back to Homepage' %}</a>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

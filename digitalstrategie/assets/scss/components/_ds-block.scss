@@ -102,7 +102,7 @@
 }
 
 // FIXME: own component?
-img.textimg-block-image__img {
+img.textimg-ds-block__img {
     width: 100%;
     height: 100%;
     vertical-align: bottom;
@@ -110,7 +110,7 @@ img.textimg-block-image__img {
 
 // this helps to align text symmetrical on mobile,
 // but kind of leftish if viewed on bigger screen
-.textimg-block-text__wrapper {
+.textimg-ds-block__text-wrapper {
     width: 100%;
     padding: 0 1 * $spacer;
 

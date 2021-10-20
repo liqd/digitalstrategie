@@ -2,7 +2,7 @@
 
 {% if field|is_checkbox %}
   <div class="form-check">
-    <label class="form-check__label my-4" for="id_{{ field.name }}">
+    <label class="form-check__label" for="id_{{ field.name }}">
       {% render_field field %}
       {{ field.help_text }} {% if field.field.required %} *{% endif %}
     </label>
@@ -23,6 +23,7 @@
       </div>
     {% endif %}
   </div>
+  <hr>
 {% else %}
   <div class="form-group">
     <label class="mb-1">{{ field.help_text }} {% if field.field.required %} *{% endif %}</label>

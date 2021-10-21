@@ -7,17 +7,17 @@
     <div class="container">
         <div class="row ds-block__row">
             <div class="offset-md-2 col-md-8">
-                <h2 class="faq-ds-block__title">
+                <h2 class="faq-ds-block__title faq-ds-block__title--dark">
                 {% if self.faq_title %}
                     {{ self.faq_title }}
                 {% endif %}
                 </h2>
                 <section class="accordion accordion-flush" id="accordion{{ identifier }}{{ forloop.counter }}">
                 {% for item in self.accordion_items %}
-                    <div class="accordion-item faq-ds-block__item">
+                    <div class="accordion-item faq-ds-block__item faq-ds-block__item--dark">
                         <h3 class="accordion-header mt-0" id="heading{{ identifier }}{{ forloop.counter }}">
                             <button
-                              class="accordion-button collapsed faq-ds-block__button"
+                              class="accordion-button collapsed faq-ds-block__button faq-ds-block__button--dark"
                               type="button"
                               data-bs-toggle="collapse"
                               data-bs-target="#collapse{{ identifier }}{{ forloop.counter }}"

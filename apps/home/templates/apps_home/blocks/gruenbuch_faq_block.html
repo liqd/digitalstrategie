@@ -3,28 +3,32 @@
 {% get_identifier value as identifier %}
 
 
-<div class="ds-block__body-bg container-fluid py-3 px-0">
-    <div class="row faq-ds-block__row">
-        <h2 class="col-12 mb-0 faq-ds-block__title">
-        {% if self.faq_title %}
-            {{ self.faq_title }}
-        {% endif %}
-        </h2>
-        <section class="accordion accordion-flush col-12" id="accordion{{ identifier }}{{ forloop.counter }}">
-        {% for item in self.accordion_items %}
-            <div class="accordion-item faq-ds-block__item">
-                <h3 class="accordion-header mt-0" id="heading{{ identifier }}{{ forloop.counter }}">
-                    <button class="accordion-button collapsed faq-ds-block__button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ identifier }}{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ identifier }}{{ forloop.counter }}">
-                        {{ item.title }}
-                    </button>
-                </h3>
-                <div id="collapse{{ identifier }}{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ identifier }}{{ forloop.counter }}">
-                    <div class="accordion-body faq-ds-block__body px-0">
-                        {{ item.body }}
-                    </div>
+<div class="ds-block__green py-3">
+    <h2 class="faq-ds-block__title faq-ds-block__title--light">
+    {% if self.faq_title %}
+        {{ self.faq_title }}
+    {% endif %}
+    </h2>
+    <section class="accordion accordion-flush" id="accordion{{ identifier }}{{ forloop.counter }}">
+    {% for item in self.accordion_items %}
+        <div class="accordion-item faq-ds-block__item--light">
+            <h3 class="accordion-header mt-0" id="heading{{ identifier }}{{ forloop.counter }}">
+                <button
+                  class="accordion-button collapsed faq-ds-block__button faq-ds-block__button--light"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse{{ identifier }}{{ forloop.counter }}"
+                  aria-expanded="false"
+                  aria-controls="collapse{{ identifier }}{{ forloop.counter }}">
+                    {{ item.title }}
+                </button>
+            </h3>
+            <div id="collapse{{ identifier }}{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ identifier }}{{ forloop.counter }}">
+                <div class="accordion-body faq-ds-block__body">
+                    {{ item.body }}
                 </div>
             </div>
-        {% endfor %}
-        </section>
-    </div>
+        </div>
+    {% endfor %}
+    </section>
 </div>

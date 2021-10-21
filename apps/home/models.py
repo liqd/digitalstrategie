@@ -23,9 +23,12 @@ class HomePage(Page):
         ('text_with_image', apps_blocks.TextWithImageBlock())
     ]
 
-    subtitle_de = models.CharField(max_length=120, blank=True)
-    subtitle_en = models.CharField(max_length=120, blank=True)
-    subtitle_de_ls = models.CharField(max_length=120, blank=True)
+    subtitle_de = models.CharField(
+        max_length=120, blank=True, verbose_name=('Home page title'))
+    subtitle_en = models.CharField(
+        max_length=120, blank=True, verbose_name=('Home page title'))
+    subtitle_de_ls = models.CharField(
+        max_length=120, blank=True, verbose_name=('Home page title'))
 
     body_de = fields.StreamField(page_blocks)
     body_en = fields.StreamField(page_blocks, blank=True)

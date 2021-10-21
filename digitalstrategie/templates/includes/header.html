@@ -1,13 +1,13 @@
-{% load snippet_tags i18n %}
+{% load snippet_tags i18n static %}
 {% load_site_menu "header" as header_menu_items %}
 <header id="header" class="kiekma">
 
     <!-- Portallogo Berlin Brand -->
     <div class="header__row-portalbrand">
         <div class="logo">
-            <a href="">
+            <a href="https://www.berlin.de/">
               <!-- FIXME add link, images and translatable text, titles and aria-labels -->
-                <img class="logo" title="Zur Startseite" src="" alt="Berlin.de">
+                <img class="logo" title="Zur Startseite" src="{% static 'images/logo_berlin.svg' %}" alt="Berlin.de">
             </a>
         </div>
     </div>
@@ -16,9 +16,8 @@
         <!-- Vertical Logo -->
         <div class="pageheader__logo">
             <p class="textlogo">
-                <a href="" title="Zur Startseite">
-                    <span class="institution">digitalstrategie</span>
-                    <span class="title">Marketing</span>
+                <a href="/" title="Zur Startseite">
+                  <img class="logo" title="Zur Startseite" src="{% static 'images/logo_sm.png' %}" alt="Digital Strategie">
                 </a>
             </p>
         </div>

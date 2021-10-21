@@ -25,6 +25,14 @@
     }
 }
 
+.ds-block__green {
+    .accordion-button,
+    .accordion-body {
+        background-color: $green;
+        color: $body-bg;
+    }
+}
+
 .ds-block__body-bg {
     .accordion-button {
         background-color: $body-bg;
@@ -54,26 +62,53 @@
     padding-bottom: $spacer;
     margin-bottom: 0;
 
+    &--dark {
+        border-bottom: solid 1px $text-gray;
+    }
+
+    &--light {
+        border-bottom: solid 1px $body-bg;
+    }
+}
+
+.faq-ds-block__item--dark {
+    // important to overwrite bootstraps accordion-item:last-child
     border-bottom: solid 1px $text-gray;
 }
 
-.faq-ds-block__item {
+.faq-ds-block__item--light {
     // important to overwrite bootstraps accordion-item:last-child
-    border-bottom: solid 1px $text-gray;
+    border-bottom: solid 1px $body-bg;
 }
 
 .faq-ds-block__button {
     padding-left: 0;
     padding-right: 0;
+    border-radius: 0 !important; //overwrite of default bs
 
     font-size: $h4-font-size;
     font-weight: $font-weight-bold;
 
     &:focus {
-        color: $text-gray;
         box-shadow: none;
     }
+
+    &--dark:focus {
+        color: $text-gray;
+    }
+
+    &--light:focus {
+        color: $body-bg;
+    }
 }
+
+.accordion-button.faq-ds-block__button--light:after {
+    background-image: $accordion-button-icon--light;
+}
+
+// .accordion-button.faq-ds-block__button--light:not(.collapsed):after {
+//     background-image: $accordion-button-active-icon--light;
+// }
 
 .faq-ds-block__body {
     padding-left: 0;

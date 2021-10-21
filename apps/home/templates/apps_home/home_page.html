@@ -3,33 +3,37 @@
 
 {% block title %}
 {% image page.header_image max-1920x560 as header_image %}
-<div class="ds-block__header_img" {% if page.header_image %} style="background-image: url({{ header_image.url }});  background-repeat: no-repeat; background-position: center; background-size: cover; " {% endif %}>
+<div class="ds-block__header_img d-none d-md-block" {% if page.header_image %} style="background-image: url({{ header_image.url }});  background-repeat: no-repeat; background-position: center; background-size: cover; " {% endif %}>
+    {% if page.subtitle %}
     <div class="ds-block__header_img_overlay">
-        <div class="container">
-            {{ page.title }}
-            {{ page.subtitle }}
+        <div class="container text-center">
+            <h1>{{ page.subtitle }}</h1>
         </div>
     </div>
+    {% endif %}
+    {% if page.header_image.caption %}
+    {# FIXME: caption currently not shown, fix when design is there #}
+    <div class="ds-block__header_img_overlay">
+        <div class="btn" data-bs-toggle="tooltip" data-placement="top" aria-label="'Header image: '{{ page.header_image.caption }}" title="{{ page.header_image.caption }}" tabindex="0">
+            <i class="fas fa-info" aria-hidden="true"></i>
+        </div>
+    </div>
+    {% endif %}
 </div>
-{% if page.header_image.caption %}
-<div class="btn" data-bs-toggle="tooltip" data-placement="top" aria-label="'Header image: '{{ page.header_image.caption }}" title="{{ page.header_image.caption }}" tabindex="0">
-    <i class="fas fa-info" aria-hidden="true"></i>
-</div>
-{% endif %}
 {% endblock %}
 
 {% block content %}
-  {% for block in self.body %}
-    {% if block.block_type == 'paragraph' %}
-    <div class="container">
-        <div class="row ds-block">
-            <div class="col-md-8 offset-md-2">
-            {{ block }}
+    {% for block in self.body %}
+        {% if block.block_type == 'paragraph' %}
+        <div class="container">
+            <div class="row ds-block">
+                <div class="col-md-8 offset-md-2">
+                {{ block }}
+                </div>
             </div>
         </div>
-    </div>
-    {% else %}
-      {{ block }}
-    {% endif %}
-  {% endfor %}
+        {% else %}
+            {{ block }}
+        {% endif %}
+    {% endfor %}
 {% endblock %}

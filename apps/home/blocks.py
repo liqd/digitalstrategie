@@ -171,9 +171,9 @@ class TeaserBlockImageLeft(blocks.StructBlock):
         required=False
     )
 
-    class Meta:
-        template = 'apps_home/blocks/teaser_image_left.html'
-        icon = 'image'
+    # class Meta:
+    #     template = 'apps_home/blocks/gruenbuch_faq_block.html'
+    #     icon = 'arrow-down'
 
 
 class TeaserBlockImageRight(blocks.StructBlock):
@@ -191,6 +191,6 @@ class TeaserBlockImageRight(blocks.StructBlock):
         required=False
     )
 
-    class Meta:
-        template = 'apps_home/blocks/teaser_image_right.html'
-        icon = 'image'
+    # class Meta:
+    #     template = 'apps_home/blocks/gruenbuch_faq_block.html'
+    #     icon = 'arrow-down'

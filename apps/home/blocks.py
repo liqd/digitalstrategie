@@ -156,7 +156,7 @@ class TeaserBlockTwoColumns(blocks.StructBlock):
         icon = 'arrow-down'
 
 
-class TeaserBlockImage(blocks.StructBlock):
+class TeaserBlockImageLeft(blocks.StructBlock):
 
     link = blocks.PageChooserBlock(
         target_model=['apps_home.DetailPage',
@@ -170,16 +170,27 @@ class TeaserBlockImage(blocks.StructBlock):
                   'block with a white background.',
         required=False
     )
-    image_alignment = blocks.ChoiceBlock(
-        choices=[
-            ('left', 'left'),
-            ('right', 'right'),
-        ],
-        icon='cup',
-        default='left',
-        help_text='How should the image be aligned?'
+
+    class Meta:
+        template = 'apps_home/blocks/teaser_image_left.html'
+        icon = 'image'
+
+
+class TeaserBlockImageRight(blocks.StructBlock):
+
+    link = blocks.PageChooserBlock(
+        target_model=['apps_home.DetailPage',
+                      'apps_gruenbuch.GruenbuchIndexPage'],
+        help_text='Make sure that teaser title, teaser intro and teaser image '
+                  'of the chosen page are set.'
+    )
+    link_text = blocks.CharBlock(max_length=50, label='Link Text')
+    background_color = ColorChoiceBlock(
+        help_text='Not choosing a colour will result in a '
+                  'block with a white background.',
+        required=False
     )
 
     class Meta:
-        template = 'apps_home/blocks/teaser_block_image.html'
+        template = 'apps_home/blocks/teaser_image_right.html'
         icon = 'image'

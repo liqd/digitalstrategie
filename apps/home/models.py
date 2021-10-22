@@ -196,7 +196,8 @@ class OverviewPage(Page):
     teaser_blocks = [
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
         ('teaser_two_columns', apps_blocks.TeaserBlockTwoColumns()),
-        ('teaser_image', apps_blocks.TeaserBlockImage()),
+        ('teaser_image_left', apps_blocks.TeaserBlockImageLeft()),
+        ('teaser_image_right', apps_blocks.TeaserBlockImageRight()),
     ]
 
     page_intro_de = fields.RichTextField(

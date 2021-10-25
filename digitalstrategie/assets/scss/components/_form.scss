@@ -1,10 +1,10 @@
 .form--overwrite {
-    & form label {
+    label {
         font-weight: normal;
         font-size: $font-size-md;
     }
 
-    & form input[type="text"],
+    input[type="text"],
     form input[type="date"],
     form input[type="password"],
     form input[type="file"],
@@ -19,7 +19,7 @@
         }
     }
 
-    & form ul {
+    ul {
         padding: 0;
 
         & > li > label {
@@ -31,7 +31,7 @@
         }
     }
 
-    & form .form-check {
+    .form-check {
         padding: 0;
 
         & > label {
@@ -39,12 +39,12 @@
         }
     }
 
-    & form hr {
+    hr {
         border-top: 1px solid $light-gray;
         margin: 0 0 1rem 0;
     }
 
-    & form .info-section__form {
+    .info-section__form {
         & > span {
             margin: 1rem 0;
         }
@@ -59,8 +59,8 @@
         }
     }
 
-    & form .alert-danger {
+    .alert-danger {
         color: $red;
-        background-color: $red20;
+        background: rgba($red, 0.2);
     }
 }

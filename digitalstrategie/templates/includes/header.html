@@ -6,8 +6,7 @@
     <div class="header__row-portalbrand">
         <div class="logo">
             <a href="https://www.berlin.de/">
-              <!-- FIXME add link, images and translatable text, titles and aria-labels -->
-                <img class="logo" title="Zur Startseite" src="{% static 'images/logo_berlin.svg' %}" alt="Berlin.de">
+                <img class="logo" title="{% trans 'To the home page of Berlin.de' %}" src="{% static 'images/logo_berlin.svg' %}" alt="Berlin.de">
             </a>
         </div>
     </div>
@@ -16,14 +15,14 @@
         <!-- Vertical Logo -->
         <div class="pageheader__logo">
             <p class="textlogo">
-                <a href="/" title="Zur Startseite">
-                  <img class="logo" title="Zur Startseite" src="{% static 'images/logo_sm.png' %}" alt="Digital Strategie">
+                <a href="/" title="{% trans 'To the home page' %}">
+                  <img class="logo" title="{% trans 'To the home page' %}" src="{% static 'images/logo_sm.png' %}" alt="{% trans 'Digital strategy' %}">
                 </a>
             </p>
         </div>
 
         <!-- Quicklinks -->
-        <nav class="pageheader__quicklinks" aria-label="Bereichsnavigation">
+        <nav class="pageheader__quicklinks" aria-label="{% trans 'Area navigation' %}">
             <ul>
               {% for menuitem in header_menu_items %}
                 <li class="{% if request.path == menuitem.url %} active{% endif %}">
@@ -42,20 +41,20 @@
                 <div class="service-button-overlay__button">
                     <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true">
                         <i class="icon fas fa-universal-access" aria-hidden="true"></i>
-                        <span class="aural">Öffnen: Barrierefreiheit</span>
-                        <span class="text">Barrierefrei</span>
+                        <span class="aural">{% trans 'Open: Accessibility' %}</span>
+                        <span class="text">{% trans 'Accessible' %}</span>
                     </button>
                 </div>
                 <div class="service-button-overlay__overlay overlay js-overlay-container" aria-modal="true" hidden="hidden">
                     <div class="overlay__header">
-                        <h2 class="heading"><span>Barrierefreiheit</span></h2>
+                        <h2 class="heading"><span>{% trans 'Accessibility' %}</span></h2>
                         <button type="button" class="close-button js-button-overlay-close">
                             <i class="fas fa-times" aria-hidden="true"></i>
-                            <span class="aural">Schließen: Barrierefreiheit </span>
+                            <span class="aural">{% trans 'Close: Accessibility' %}</span>
                         </button>
                     </div>
                     <div class="overlay__body">
-                        <h3>Einstellungen</h3>
+                        <h3>{% trans 'Settings' %}</h3>
                         <ul class="wcag-linklist">
                             <li>
                                 <a href="#">
@@ -63,32 +62,32 @@
                                     Leichte Sprache <span class="aural">für diese Seite anzeigen</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <img aria-hidden="true" src="https://www.berlin.de/i9f/v4/css/images/misc/dgs.svg" alt="Symbol Gebärdensprache">
-                                    Gebärdensprache <span class="aural">für diese Seite anzeigen</span>
-                                </a>
-                            </li>
                         </ul>
 
                         {% if settings.apps_settings.Accessibility.accessibility_declaration and settings.apps_settings.Accessibility.accessibility_declaration_title %}
-                        <h3>Wie barrierefrei ist diese Webseite?</h3>
+                        <h3>{% trans 'How accessible is this website?' %}</h3>
                         <p>
                             <a href="{{ settings.apps_settings.Accessibility.accessibility_declaration.url }}">{{ settings.apps_settings.Accessibility.accessibility_declaration_title }}</a>
                         </p>
                         {% endif %}
 
                         {% if settings.apps_settings.Accessibility.feedback_name or settings.apps_settings.Accessibility.feedback_email or settings.apps_settings.Accessibility.feedback_phone %}
-                        <h3>Wen können Sie bei Anmerkungen oder Fragen zur digitalen Barrierefreiheit (Feedbackoption) kontaktieren?</h3>
+                        <h3>{% trans 'Whom to contact with comments or questions about digital accessibility (feedback option)?' %}</h3>
                         <p>
-                            {% if settings.apps_settings.Accessibility.feedback_name %}Name: {{ settings.apps_settings.Accessibility.feedback_name }}<br>{% endif %}
-                            {% if settings.apps_settings.Accessibility.feedback_email %}Email: <a href="mailto:{{ settings.apps_settings.Accessibility.feedback_email }}">{{ settings.apps_settings.Accessibility.feedback_email }}</a><br>{% endif %}
-                            {% if settings.apps_settings.Accessibility.feedback_phone %}Telefon: {{ settings.apps_settings.Accessibility.feedback_phone }}{% endif %}
+                            {% if settings.apps_settings.Accessibility.feedback_name %}
+                            {% trans 'Name' %}: {{ settings.apps_settings.Accessibility.feedback_name }}<br>
+                            {% endif %}
+                            {% if settings.apps_settings.Accessibility.feedback_email %}
+                            {% trans 'Email' %}: <a href="mailto:{{ settings.apps_settings.Accessibility.feedback_email }}">{{ settings.apps_settings.Accessibility.feedback_email }}</a><br>
+                            {% endif %}
+                            {% if settings.apps_settings.Accessibility.feedback_phone %}
+                            {% trans 'Phone' %}: {{ settings.apps_settings.Accessibility.feedback_phone }}
+                            {% endif %}
                         </p>
                         {% endif %}
 
                         {% if settings.apps_settings.Accessibility.additional_external_info and settings.apps_settings.Accessibility.additional_external_info_title%}
-                        <h3>Wo gibt es zusätzliche Informationen zur Barrierefreiheit im Land Berlin?</h3>
+                        <h3>{% trans 'Where can I find additional information on accessibility in the state of Berlin?' %}</h3>
                         <p>
                             <a href="{{ settings.apps_settings.Accessibility.additional_external_info }}" class="extern" target="_blank">{{ settings.apps_settings.Accessibility.additional_external_info_title }}</a>
                         </p>
@@ -103,25 +102,25 @@
                 <div class="service-button-overlay__button">
                     <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true">
                         <i class="icon fa fa-search" aria-hidden="true"></i>
-                        <span class="aural">Öffnen: Suche</span>
-                        <span class="text">Suche</span>
+                        <span class="aural">{% trans 'Open: Search' %}</span>
+                        <span class="text">{% trans 'Search' %}</span>
                     </button>
                 </div>
                 <div class="service-button-overlay__overlay overlay js-overlay-container" aria-modal="true" hidden="hidden">
                     <div class="overlay__header">
-                        <h2 class="heading"><span class="aural">Suche</span></h2>
+                        <h2 class="heading"><span class="aural">{% trans 'Search' %}</span></h2>
                         <button type="button" class="close-button js-button-overlay-close">
                             <i class="fas fa-times" aria-hidden="true"></i>
-                            <span class="aural">Schließen: Suche </span>
+                            <span class="aural">{% trans 'Close: Search' %}</span>
                         </button>
                     </div>
                     <div class="overlay__body">
                         <div class="search-container">
                             <form class="search-form">
-                                <label for="searchFormInput_q">Suche auf der Internetseite "Portalname"</label>
+                                <label for="searchFormInput_q">{% trans 'Search on the website "Digitalstrategie Berlin"' %}</label>
                                 <div class="form-group">
                                     <input name="q" class="form-control" id="searchFormInput_q" placeholder="Suchbegriff">
-                                    <button type="submit" class="button"><i class="fas fa-search" aria-hidden="true"></i> <span>Suchen</span></button>
+                                    <button type="submit" class="button"><i class="fas fa-search" aria-hidden="true"></i> <span>{% trans 'Search' %}</span></button>
                                 </div>
                             </form>
                         </div>
@@ -135,22 +134,22 @@
                 <div class="service-button-overlay__button">
                     <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true">
                         <i class="icon fa fa-bars" aria-hidden="true"></i>
-                        <span class="aural">Öffnen: Menü</span>
-                        <span class="text">Menü</span>
+                        <span class="aural">{% trans 'Open: Menu' %}</span>
+                        <span class="text">{% trans 'Menu' %}</span>
                     </button>
                 </div>
                 <div class="service-button-overlay__overlay overlay js-overlay-container" aria-modal="true" hidden="hidden">
                     <div class="overlay__header">
-                        <h2 class="heading"><span>Menü</span></h2>
+                        <h2 class="heading"><span>{% trans 'Menu' %}</span></h2>
                         <button type="button" class="close-button js-button-overlay-close">
                             <i class="fas fa-times" aria-hidden="true"></i>
-                            <span class="aural">Schließen: Menü </span>
+                            <span class="aural">{% trans 'Close: Menu' %}</span>
                         </button>
                     </div>
                     <div class="overlay__body">
                         <nav id="navigation-primary" class="js-navigation-primary">
                             <div class="tree-wrapper js-navigation-tree-wrapper">
-                                <h3 class="aural">Seitennavigation</h3>
+                                <h3 class="aural">{% trans 'Page navigation' %}</h3>
                                 <ul class="navigation-tree">
                                   {% for menuitem in header_menu_items %}
                                     {% if menuitem.subpages %}

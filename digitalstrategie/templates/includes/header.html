@@ -71,23 +71,28 @@
                             </li>
                         </ul>
 
+                        {% if settings.apps_settings.Accessibility.accessibility_declaration and settings.apps_settings.Accessibility.accessibility_declaration_title %}
                         <h3>Wie barrierefrei ist diese Webseite?</h3>
                         <p>
-                            <a href="#">Erklärung zur digitalen Barrierefreiheit</a>
+                            <a href="{{ settings.apps_settings.Accessibility.accessibility_declaration.url }}">{{ settings.apps_settings.Accessibility.accessibility_declaration_title }}</a>
                         </p>
+                        {% endif %}
 
-
+                        {% if settings.apps_settings.Accessibility.feedback_name or settings.apps_settings.Accessibility.feedback_email or settings.apps_settings.Accessibility.feedback_phone %}
                         <h3>Wen können Sie bei Anmerkungen oder Fragen zur digitalen Barrierefreiheit (Feedbackoption) kontaktieren?</h3>
                         <p>
-                            Name: Name<br>
-                            Email: <a href="mailto:">email@empfaenger.dummy</a><br>
-                            Telefon: Telefonnummer
+                            Name: {% if settings.apps_settings.Accessibility.feedback_name %}{{ settings.apps_settings.Accessibility.feedback_name }}<br>{% endif %}
+                            Email: {% if settings.apps_settings.Accessibility.feedback_email %} <a href="mailto:{{ settings.apps_settings.Accessibility.feedback_email }}">{{ settings.apps_settings.Accessibility.feedback_email }}</a><br>{% endif %}
+                            Telefon: {% if settings.apps_settings.Accessibility.feedback_phone %} {{ settings.apps_settings.Accessibility.feedback_phone }}{% endif %}
                         </p>
+                        {% endif %}
 
+                        {% if settings.apps_settings.Accessibility.additional_external_info and settings.apps_settings.Accessibility.additional_external_info_title%}
                         <h3>Wo gibt es zusätzliche Informationen zur Barrierefreiheit im Land Berlin?</h3>
                         <p>
-                            <a href="#" class="extern" target="_blank">Link</a>
+                            <a href="{{ settings.apps_settings.Accessibility.additional_external_info }}" class="extern" target="_blank">{{ settings.apps_settings.Accessibility.additional_external_info_title }}</a>
                         </p>
+                        {% endif %}
                     </div>
                 </div>
             </div>

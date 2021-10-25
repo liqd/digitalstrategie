@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 15:44+0000\n"
+"POT-Creation-Date: 2021-10-25 16:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,115 +20,119 @@ msgstr ""
 
 #: apps/forms/models.py:58
 msgid "First Name"
-msgstr ""
+msgstr "Vorname"
 
 #: apps/forms/models.py:65
 msgid "Surname"
-msgstr ""
+msgstr "Nachname"
 
 #: apps/forms/models.py:72
 msgid "Organisation"
-msgstr ""
+msgstr "Organisation"
 
 #: apps/forms/models.py:79
 msgid "E-Mail"
-msgstr ""
+msgstr "Email"
 
 #: apps/forms/models.py:133 apps/forms/models.py:193
 msgid "I have read and accepted the {}data protection policy{}."
-msgstr ""
+msgstr "Ich habe die {}Datenschutzbestimmungen{} gelesen."
 
 #: apps/forms/models.py:139
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: apps/forms/models.py:146
 msgid "Your message to us..."
-msgstr ""
+msgstr "Ihr Nachricht an uns..."
 
 #: apps/forms/models.py:192
 msgid "I agree that my contact data is stored"
 msgstr ""
+"Hiermit erkläre ich mich einverstanden, dass meine Kontaktdaten gespeichert "
+"werden."
 
 #: apps/forms/models.py:199
 msgid "I am interested in the following fields of action"
-msgstr ""
+msgstr "Ich habe Interesse an folgenden Handlungsfeldern"
 
 #: apps/forms/templates/apps_forms/form_page_landing.html:7
 #: digitalstrategie/templates/base_errors.html:11
 msgid "Back to landing page"
-msgstr ""
+msgstr "Zurück zur Startseite"
 
 #: apps/forms/templates/apps_forms/includes/form.html:17
 msgid "Send"
-msgstr ""
+msgstr "Senden"
 
 #: apps/gruenbuch/templates/gruenbuch_page.html:26
 msgid "No chapters have been added yet."
-msgstr ""
+msgstr "Es wurden noch keine Kapitel hinzugefügt."
 
 #: apps/gruenbuch/templates/gruenbuch_page.html:32
 msgid "Download"
-msgstr ""
+msgstr "Herunterladen"
 
 #: apps/gruenbuch/templates/gruenbuch_page.html:56
 msgid "Previous Chapter"
-msgstr ""
+msgstr "Vorherige Seite"
 
 #: apps/gruenbuch/templates/gruenbuch_page.html:66
 msgid "Next Chapter"
-msgstr ""
+msgstr "Nächste Seite"
 
 #: apps/home/templates/apps_home/blocks/quote_block.html:10
 msgid "Read more"
-msgstr ""
+msgstr "Mehr lesen"
 
 #: digitalstrategie/settings/base.py:120
 msgid "English"
-msgstr ""
+msgstr "Englisch"
 
 #: digitalstrategie/settings/base.py:121
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
 
 #: digitalstrategie/settings/base.py:122
 msgid "Easy German"
-msgstr ""
+msgstr "Leichte Sprache"
 
 #: digitalstrategie/templates/403.html:7
 msgid "You are not allowed to access this page."
-msgstr ""
+msgstr "Sie sind nicht berechtigt, auf diese Seite zuzugreifen."
 
 #: digitalstrategie/templates/404.html:7
 msgid "This page could not be found."
-msgstr ""
+msgstr "Diese Seite konnte nicht gefunden werden."
 
 #: digitalstrategie/templates/500.html:7
 msgid "Internal server error."
-msgstr ""
+msgstr "Interner Serverfehler."
 
 #: digitalstrategie/templates/base_errors.html:4
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: digitalstrategie/templates/email_base.html:19
 msgid "Hello"
-msgstr ""
+msgstr "Hallo"
 
 #: digitalstrategie/templates/includes/footer.html:9
 msgid "To the top of the page"
-msgstr ""
+msgstr "Zum Seitenanfang"
 
 #: digitalstrategie/templates/includes/footer.html:35
 #: digitalstrategie/templates/includes/header.html:9
 msgid "To the home page of Berlin.de"
-msgstr ""
+msgstr "Zur Startseite von Berlin.de"
 
 #: digitalstrategie/templates/includes/footer.html:61
 msgid ""
 "Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
 "GmbH & Co. KG. "
 msgstr ""
+"Berlin.de ist ein Angebot des Landes Berlin und der BerlinOnline Stadtportal "
+"GmbH & Co. KG."
 
 #: digitalstrategie/templates/includes/footer.html:61
 #, python-format
@@ -137,102 +141,108 @@ msgid ""
 "            For more information, please see the <a href=\"%(imprint_url)s"
 "\">imprint</a>."
 msgstr ""
+"\n"
+"            Weitere Informationen hierzu finden Sie im <a href="
+"\"%(imprint_url)s\">Impressum</a>."
 
 #: digitalstrategie/templates/includes/header.html:18
 #: digitalstrategie/templates/includes/header.html:19
 msgid "To the home page"
-msgstr ""
+msgstr "Zur Startseite"
 
 #: digitalstrategie/templates/includes/header.html:19
 msgid "Digital strategy"
-msgstr ""
+msgstr "Digital Strategie"
 
 #: digitalstrategie/templates/includes/header.html:25
 msgid "Area navigation"
-msgstr ""
+msgstr "Bereichsnavigation"
 
 #: digitalstrategie/templates/includes/header.html:44
 msgid "Open: Accessibility"
-msgstr ""
+msgstr "Öffnen: Barrierefreiheit"
 
 #: digitalstrategie/templates/includes/header.html:45
 msgid "Accessible"
-msgstr ""
+msgstr "Barrierefrei"
 
 #: digitalstrategie/templates/includes/header.html:50
 msgid "Accessibility"
-msgstr ""
+msgstr "Barrierefreiheit"
 
 #: digitalstrategie/templates/includes/header.html:53
 msgid "Close: Accessibility"
-msgstr ""
+msgstr "Schließen: Barrierefreiheit"
 
 #: digitalstrategie/templates/includes/header.html:57
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: digitalstrategie/templates/includes/header.html:68
 msgid "How accessible is this website?"
-msgstr ""
+msgstr "Wie barrierefrei ist diese Webseite?"
 
 #: digitalstrategie/templates/includes/header.html:75
 msgid ""
 "Whom to contact with comments or questions about digital accessibility "
 "(feedback option)?"
 msgstr ""
+"Wen können Sie bei Anmerkungen oder Fragen zur digitalen Barrierefreiheit "
+"(Feedbackoption) kontaktieren?"
 
 #: digitalstrategie/templates/includes/header.html:78
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: digitalstrategie/templates/includes/header.html:81
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: digitalstrategie/templates/includes/header.html:84
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: digitalstrategie/templates/includes/header.html:90
 msgid ""
 "Where can I find additional information on accessibility in the state of "
 "Berlin?"
 msgstr ""
+"Wo gibt es zusätzliche Informationen zur Barrierefreiheit im Land Berlin?"
 
 #: digitalstrategie/templates/includes/header.html:105
 msgid "Open: Search"
-msgstr ""
+msgstr "Öffnen: Suche"
 
 #: digitalstrategie/templates/includes/header.html:106
 #: digitalstrategie/templates/includes/header.html:111
 #: digitalstrategie/templates/includes/header.html:123
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: digitalstrategie/templates/includes/header.html:114
 msgid "Close: Search"
-msgstr ""
+msgstr "Schließen: Suche"
 
 #: digitalstrategie/templates/includes/header.html:120
 msgid "Search on the website \"Digitalstrategie Berlin\""
-msgstr ""
+msgstr "Suche auf der Internetseite \"Digitalstrategie Berlin\""
 
 #: digitalstrategie/templates/includes/header.html:137
 msgid "Open: Menu"
-msgstr ""
+msgstr "Öffnen: Menü"
 
 #: digitalstrategie/templates/includes/header.html:138
 #: digitalstrategie/templates/includes/header.html:143
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: digitalstrategie/templates/includes/header.html:146
 msgid "Close: Menu"
-msgstr ""
+msgstr "Schließen: Menü"
 
 #: digitalstrategie/templates/includes/header.html:152
 msgid "Page navigation"
-msgstr ""
+msgstr "Seitennavigation"
 
 #: digitalstrategie/templates/includes/header_language_switch.html:7
 msgid "Sprachen"

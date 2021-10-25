@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-08 11:31+0000\n"
+"POT-Creation-Date: 2021-10-25 15:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps/forms/models.py:53
+#: apps/forms/models.py:58
 msgid "First Name"
 msgstr "First Name"
 
-#: apps/forms/models.py:60
+#: apps/forms/models.py:65
 msgid "Surname"
 msgstr "Surname"
 
-#: apps/forms/models.py:67
+#: apps/forms/models.py:72
 msgid "Organisation"
 msgstr "Organisation"
 
-#: apps/forms/models.py:74
+#: apps/forms/models.py:79
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: apps/forms/models.py:125
+#: apps/forms/models.py:133 apps/forms/models.py:193
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr "I have read and accepted the {}data protection policy{}."
 
-#: apps/forms/models.py:130
+#: apps/forms/models.py:139
 msgid "Title"
 msgstr "Title"
 
-#: apps/forms/models.py:137
+#: apps/forms/models.py:146
 msgid "Your message to us..."
 msgstr "Your message to us..."
 
-#: apps/forms/templates/apps_forms/contact_form_page_landing.html:7
+#: apps/forms/models.py:192
+msgid "I agree that my contact data is stored"
+msgstr "I agree that my contact data is stored"
+
+#: apps/forms/models.py:199
+msgid "I am interested in the following fields of action"
+msgstr "I am interested in the following fields of action"
+
+#: apps/forms/templates/apps_forms/form_page_landing.html:7
 #: digitalstrategie/templates/base_errors.html:11
 msgid "Back to landing page"
 msgstr "Back to landing page"
@@ -55,23 +63,39 @@ msgstr "Back to landing page"
 msgid "Send"
 msgstr "Send"
 
-#: apps/gruenbuch/templates/gruenbuch_page.html:49
-msgid "previous chapter"
-msgstr "previous chapter"
+#: apps/gruenbuch/templates/gruenbuch_page.html:26
+msgid "No chapters have been added yet."
+msgstr "No chapters have been added yet."
+
+#: apps/gruenbuch/templates/gruenbuch_page.html:32
+msgid "Download"
+msgstr "Download"
 
 #: apps/gruenbuch/templates/gruenbuch_page.html:56
-msgid "next chapter"
+#, fuzzy
+#| msgid "previous chapter"
+msgid "Previous Chapter"
+msgstr "previous chapter"
+
+#: apps/gruenbuch/templates/gruenbuch_page.html:66
+#, fuzzy
+#| msgid "next chapter"
+msgid "Next Chapter"
 msgstr "next chapter"
 
-#: digitalstrategie/settings/base.py:119
+#: apps/home/templates/apps_home/blocks/quote_block.html:10
+msgid "Read more"
+msgstr "Read more"
+
+#: digitalstrategie/settings/base.py:120
 msgid "English"
 msgstr "English"
 
-#: digitalstrategie/settings/base.py:120
+#: digitalstrategie/settings/base.py:121
 msgid "German"
 msgstr "German"
 
-#: digitalstrategie/settings/base.py:121
+#: digitalstrategie/settings/base.py:122
 msgid "Easy German"
 msgstr "Easy German"
 
@@ -95,22 +119,156 @@ msgstr "Error"
 msgid "Hello"
 msgstr "Hello"
 
-#: digitalstrategie/templates/includes/header.html:8
-msgid "Toggle navigation"
+#: digitalstrategie/templates/includes/footer.html:9
+msgid "To the top of the page"
+msgstr "To the top of the page"
+
+#: digitalstrategie/templates/includes/footer.html:35
+#: digitalstrategie/templates/includes/header.html:9
+msgid "To the home page of Berlin.de"
+msgstr "To the home page of Berlin.de"
+
+#: digitalstrategie/templates/includes/footer.html:61
+msgid ""
+"Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
+"GmbH & Co. KG. "
+msgstr ""
+"Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
+"GmbH & Co. KG. "
+
+#: digitalstrategie/templates/includes/footer.html:61
+#, python-format
+msgid ""
+"\n"
+"            For more information, please see the <a href=\"%(imprint_url)s"
+"\">imprint</a>."
+msgstr ""
+"\n"
+"            For more information, please see the <a href=\"%(imprint_url)s"
+"\">imprint</a>."
+
+#: digitalstrategie/templates/includes/header.html:18
+#: digitalstrategie/templates/includes/header.html:19
+msgid "To the home page"
+msgstr "To the home page"
+
+#: digitalstrategie/templates/includes/header.html:19
+msgid "Digital strategy"
+msgstr "Digital strategy"
+
+#: digitalstrategie/templates/includes/header.html:25
+#, fuzzy
+#| msgid "Toggle navigation"
+msgid "Area navigation"
 msgstr "Toggle navigation"
 
-#: digitalstrategie/templates/includes/header.html:39
+#: digitalstrategie/templates/includes/header.html:44
+msgid "Open: Accessibility"
+msgstr "Open: Accessibility"
+
+#: digitalstrategie/templates/includes/header.html:45
+msgid "Accessible"
+msgstr "Accessible"
+
+#: digitalstrategie/templates/includes/header.html:50
+msgid "Accessibility"
+msgstr "Accessibility"
+
+#: digitalstrategie/templates/includes/header.html:53
+msgid "Close: Accessibility"
+msgstr "Close: Accessibility"
+
+#: digitalstrategie/templates/includes/header.html:57
+msgid "Settings"
+msgstr "Settings"
+
+#: digitalstrategie/templates/includes/header.html:68
+msgid "How accessible is this website?"
+msgstr "How accessible is this website?"
+
+#: digitalstrategie/templates/includes/header.html:75
+msgid ""
+"Whom to contact with comments or questions about digital accessibility "
+"(feedback option)?"
+msgstr ""
+"Whom to contact with comments or questions about digital accessibility "
+"(feedback option)?"
+
+#: digitalstrategie/templates/includes/header.html:78
+msgid "Name"
+msgstr "Name"
+
+#: digitalstrategie/templates/includes/header.html:81
+msgid "Email"
+msgstr "Email"
+
+#: digitalstrategie/templates/includes/header.html:84
+msgid "Phone"
+msgstr "Phone"
+
+#: digitalstrategie/templates/includes/header.html:90
+msgid ""
+"Where can I find additional information on accessibility in the state of "
+"Berlin?"
+msgstr ""
+"Where can I find additional information on accessibility in the state of "
+"Berlin?"
+
+#: digitalstrategie/templates/includes/header.html:105
+#, fuzzy
+#| msgid "Search"
+msgid "Open: Search"
+msgstr "Search"
+
+#: digitalstrategie/templates/includes/header.html:106
+#: digitalstrategie/templates/includes/header.html:111
+#: digitalstrategie/templates/includes/header.html:123
 msgid "Search"
 msgstr "Search"
 
-#: digitalstrategie/templates/includes/header_language_switch.html:9
-msgid "Language selector, "
-msgstr "Language selector, "
+#: digitalstrategie/templates/includes/header.html:114
+#, fuzzy
+#| msgid "Search"
+msgid "Close: Search"
+msgstr "Search"
+
+#: digitalstrategie/templates/includes/header.html:120
+msgid "Search on the website \"Digitalstrategie Berlin\""
+msgstr "Search on the website \"Digitalstrategie Berlin\""
+
+#: digitalstrategie/templates/includes/header.html:137
+msgid "Open: Menu"
+msgstr "Open: Menu"
+
+#: digitalstrategie/templates/includes/header.html:138
+#: digitalstrategie/templates/includes/header.html:143
+msgid "Menu"
+msgstr "Menu"
+
+#: digitalstrategie/templates/includes/header.html:146
+msgid "Close: Menu"
+msgstr "Close: Menu"
+
+#: digitalstrategie/templates/includes/header.html:152
+#, fuzzy
+#| msgid "Toggle navigation"
+msgid "Page navigation"
+msgstr "Toggle navigation"
+
+#: digitalstrategie/templates/includes/header_language_switch.html:7
+msgid "Sprachen"
+msgstr "Sprachen"
 
 #: digitalstrategie/templates/includes/header_language_switch.html:15
-msgid " selected"
-msgstr " selected"
+msgid "Barrierefreiheit"
+msgstr "Barrierefreiheit"
 
-#: digitalstrategie/templates/includes/header_language_switch.html:30
+#: digitalstrategie/templates/includes/header_language_switch.html:25
 msgid "select "
 msgstr "select "
+
+#~ msgid "Language selector, "
+#~ msgstr "Language selector, "
+
+#~ msgid " selected"
+#~ msgstr " selected"

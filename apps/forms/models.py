@@ -49,7 +49,12 @@ class FormPage(AbstractEmailForm):
         'thank_you_text_de_ls',
     )
 
-    remove_data_email = models.EmailField(max_length=120, blank=True)
+    remove_data_email = models.EmailField(
+        max_length=120,
+        blank=True,
+        help_text=('If you add an email address, users can contact you \
+                   in order to request the removal of personal data.')
+    )
 
     def get_form_fields(self):
         fields = list(super().get_form_fields())

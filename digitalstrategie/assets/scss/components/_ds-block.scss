@@ -40,12 +40,12 @@
 }
 
 .ds-block {
-    padding-top: 5*$spacer;
-    padding-bottom: 5*$spacer;
+    padding-top: 5 * $spacer;
+    padding-bottom: 5 * $spacer;
 }
 
 .ds-block__row {
-    padding: 0 1*$spacer;
+    padding: 0 1 * $spacer;
 
     @media screen and (min-width: $breakpoint-md) {
         padding: 0;
@@ -54,7 +54,7 @@
 
 .ds-block__header_img {
     position: relative;
-    padding: 10*$spacer 0;
+    padding: 10 * $spacer 0;
 }
 
 .ds-block__header_img_overlay {
@@ -64,7 +64,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255 255 255 0);
 }
 
 // FIXME: when we have more ds-blocks, they should get their own components
@@ -99,8 +99,7 @@
 .faq-ds-block__button {
     padding-left: 0;
     padding-right: 0;
-    border-radius: 0 !important; //overwrite of default bs
-
+    border-radius: 0 !important; // overwrite of default bs
     font-size: $h4-font-size;
     font-weight: $font-weight-bold;
 
@@ -175,7 +174,7 @@ img.textimg-ds-block__img {
 
 .teaser-ds-block-img__left img,
 .teaser-ds-block-img__right img {
-    display: block; //rm automatic whitespace from inline elements
+    display: block; // rm automatic whitespace from inline elements
 }
 
 .teaser-ds-block-img__left {

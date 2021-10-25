@@ -24,16 +24,6 @@
 
 {% block content %}
     {% for block in self.body %}
-        {% if block.block_type == 'paragraph' %}
-        <div class="container">
-            <div class="row ds-block">
-                <div class="col-md-8 offset-md-2">
-                {{ block }}
-                </div>
-            </div>
-        </div>
-        {% else %}
-            {{ block }}
-        {% endif %}
+        {{ block }}
     {% endfor %}
 {% endblock %}

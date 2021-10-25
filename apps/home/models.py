@@ -16,7 +16,6 @@ from apps.home import blocks as apps_blocks
 
 class HomePage(Page):
     page_blocks = [
-        ('paragraph', blocks.RichTextBlock()),
         ('call_to_action', apps_blocks.CallToActionBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
@@ -91,7 +90,7 @@ class HomePage(Page):
 
 class DetailPage(Page, TeaserFieldsMixin):
     page_blocks = [
-        ('paragraph', blocks.RichTextBlock()),
+        ('paragraph', apps_blocks.CoulouredParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock())
     ]
 
@@ -200,6 +199,7 @@ class OverviewPage(Page):
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
         ('teaser_two_columns', apps_blocks.TeaserBlockTwoColumns()),
         ('teaser_image', apps_blocks.TeaserBlockImage()),
+        ('paragraph', apps_blocks.CoulouredParagraphBlock()),
     ]
 
     page_intro_de = fields.RichTextField(

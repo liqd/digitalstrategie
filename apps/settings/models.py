@@ -8,6 +8,8 @@ from wagtail.contrib.settings.models import BaseSetting
 from wagtail.contrib.settings.models import register_setting
 from wagtail.documents.edit_handlers import DocumentChooserPanel
 
+from apps.contrib.translations import TranslatedField
+
 
 @register_setting
 class ImportantPages(BaseSetting):
@@ -57,15 +59,44 @@ class Accessibility(BaseSetting):
         help_text='Add link to further information',
         blank=True
     )
-    additional_external_info_title = models.CharField(max_length=255, blank=True)
+    additional_external_info_title_de = models.CharField(
+        max_length=255, blank=True
+    )
+    additional_external_info_title_en = models.CharField(
+        max_length=255, blank=True
+    )
+    additional_external_info_title_de_ls = models.CharField(
+        max_length=255, blank=True
+    )
 
     accessibility_declaration = models.ForeignKey(
         'wagtailcore.Page',
         related_name='accessibility_declaration_page',
         null=True,
         blank=True,
-        on_delete=models.SET_NULL)
-    accessibility_declaration_title = models.CharField(max_length=255, blank=True)
+        on_delete=models.SET_NULL
+    )
+    accessibility_declaration_title_de = models.CharField(
+        max_length=255, blank=True
+    )
+    accessibility_declaration_title_en = models.CharField(
+        max_length=255, blank=True
+    )
+    accessibility_declaration_title_de_ls = models.CharField(
+        max_length=255, blank=True
+    )
+
+    additional_external_info_title = TranslatedField(
+        'additional_external_info_title_de',
+        'additional_external_info_title_en',
+        'additional_external_info_title_de_ls',
+    )
+
+    accessibility_declaration_title = TranslatedField(
+        'accessibility_declaration_title_de',
+        'accessibility_declaration_title_en',
+        'accessibility_declaration_title_de_ls',
+    )
 
     content_panels = [
         MultiFieldPanel(
@@ -80,14 +111,18 @@ class Accessibility(BaseSetting):
             [
                 PageChooserPanel('accessibility_declaration',
                                  ['apps_home.SimplePage']),
-                FieldPanel('accessibility_declaration_title')
+                FieldPanel('accessibility_declaration_title_de'),
+                FieldPanel('accessibility_declaration_title_en'),
+                FieldPanel('accessibility_declaration_title_de_ls'),
             ],
             heading="Accessibility Declaration"
         ),
         MultiFieldPanel(
             [
                 FieldPanel('additional_external_info'),
-                FieldPanel('additional_external_info_title')
+                FieldPanel('additional_external_info_title_de'),
+                FieldPanel('additional_external_info_title_en'),
+                FieldPanel('additional_external_info_title_de_ls'),
             ],
             heading="Further Information on Accessibility"
         )

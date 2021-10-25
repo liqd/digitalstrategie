@@ -41,7 +41,7 @@
     "husky": "7.0.4",
     "lint-staged": "11.2.4",
     "postcss": "8.3.11",
-    "stylelint": "14.0.0",
+    "stylelint": "13.13.1",
     "stylelint-config-standard": "23.0.0",
     "stylelint-declaration-strict-value": "1.7.12",
     "webpack-cli": "4.9.1"

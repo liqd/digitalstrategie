@@ -1,4 +1,4 @@
-{% load snippet_tags i18n %}
+{% load snippet_tags i18n static %}
 {% load_site_menu "footer" as footer_menu_items %}
 {% load_site_menu "content-footer" as content_footer_menu_items %}
 
@@ -31,9 +31,8 @@
 <footer id="footer" class="kiekma">
 
     <div class="footer__brand">
-        <!-- FIXME image aria-labels -->
-        <a href="#" title="{% trans 'To the home page of Berlin.de' %}">
-            <img src="" alt="Berlin">
+        <a href="https://www.berlin.de/" title="{% trans 'To the home page of Berlin.de' %}">
+            <img src="{% static 'images/logo_berlin_negative.svg' %}" alt="Berlin.de">
         </a>
     </div>
 

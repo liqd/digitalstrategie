@@ -58,8 +58,8 @@
 
     <div class="footer__claim">
         <p>
-            {% blocktrans %}Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal GmbH & Co. KG. {% endblocktrans %}{% if settings.apps_settings.ImportantPages.imprint %}{% blocktrans with imprint_url=settings.apps_settings.ImportantPages.imprint.url %}
-            For more information, please see the <a href="{{ imprint_url }}">imprint</a>.{% endblocktrans %}{% endif %}
+            {% blocktrans %}Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal GmbH & Co. KG.{% endblocktrans %}
+            {% if settings.apps_settings.ImportantPages.imprint %}{% blocktrans with imprint_url=settings.apps_settings.ImportantPages.imprint.url %}For more information, please see the <a href="{{ imprint_url }}">imprint</a>.{% endblocktrans %}{% endif %}
         </p>
     </div>
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 16:31+0000\n"
+"POT-Creation-Date: 2021-10-25 16:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,22 +127,20 @@ msgid "To the home page of Berlin.de"
 msgstr "Zur Startseite von Berlin.de"
 
 #: digitalstrategie/templates/includes/footer.html:61
+#, fuzzy
 msgid ""
 "Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
-"GmbH & Co. KG. "
+"GmbH & Co. KG."
 msgstr ""
 "Berlin.de ist ein Angebot des Landes Berlin und der BerlinOnline Stadtportal "
 "GmbH & Co. KG."
 
-#: digitalstrategie/templates/includes/footer.html:61
-#, python-format
+#: digitalstrategie/templates/includes/footer.html:62
+#, fuzzy, python-format
 msgid ""
-"\n"
-"            For more information, please see the <a href=\"%(imprint_url)s"
-"\">imprint</a>."
+"For more information, please see the <a href=\"%(imprint_url)s\">imprint</a>."
 msgstr ""
-"\n"
-"            Weitere Informationen hierzu finden Sie im <a href="
+"Weitere Informationen hierzu finden Sie im <a href="
 "\"%(imprint_url)s\">Impressum</a>."
 
 #: digitalstrategie/templates/includes/header.html:18
@@ -167,6 +165,7 @@ msgid "Accessible"
 msgstr "Barrierefrei"
 
 #: digitalstrategie/templates/includes/header.html:50
+#: digitalstrategie/templates/includes/header_language_switch.html:15
 msgid "Accessibility"
 msgstr "Barrierefreiheit"
 
@@ -245,13 +244,9 @@ msgid "Page navigation"
 msgstr "Seitennavigation"
 
 #: digitalstrategie/templates/includes/header_language_switch.html:7
-msgid "Sprachen"
-msgstr ""
-
-#: digitalstrategie/templates/includes/header_language_switch.html:15
-msgid "Barrierefreiheit"
-msgstr ""
+msgid "Languages"
+msgstr "Sprachen"
 
 #: digitalstrategie/templates/includes/header_language_switch.html:25
-msgid "select "
-msgstr ""
+msgid "select"
+msgstr "auswählen"

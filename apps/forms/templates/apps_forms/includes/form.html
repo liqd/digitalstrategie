@@ -14,10 +14,14 @@
                     {% endfor %}
                 </div>
                 <div class=info-section__form>
-                    <span>*{% trans 'Pflichtfelder' %}</span>
+                    <span>*{% trans 'Required fields' %}</span>
                     {% if page.remove_data_email %}
                         <p>
-                            {% trans 'Wenn Sie ihre personenbezogen Daten löschen lassen möchten, kontaktieren Sie:' %} <span>{{ page.remove_data_email }}</span>
+                            {% blocktrans with remove_email=page.remove_data_email %}
+                                If you wish to have your personal data deleted
+                                please write an e-mail to:
+                                <span>{{ remove_email }}</span>
+                            {% endblocktrans %}
                         </p>
                     {% endif %}
                 </div>

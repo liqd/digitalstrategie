@@ -5,13 +5,13 @@
     }
 
     input[type="text"],
-    form input[type="date"],
-    form input[type="password"],
-    form input[type="file"],
-    form input[type="email"],
-    form button.ui-multiselect,
-    form select,
-    form textarea {
+    input[type="date"],
+    input[type="password"],
+    input[type="file"],
+    input[type="email"],
+    button.ui-multiselect,
+    select,
+    textarea {
         border: solid 1px $text-gray;
 
         &:focus {

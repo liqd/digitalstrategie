@@ -6,7 +6,7 @@
 <div id="content-footer" role="contentinfo">
     <div class="content-footer__brand">
     </div>
-    <a class="to-top" href="#top">{% trans 'Zum Seitenanfang' %}</a>
+    <a class="to-top" href="#top">{% trans 'To the top of the page' %}</a>
     <div class="content-footer__links">
         <ul class="js-collapse-palm">
             {% for menuitem in content_footer_menu_items %}
@@ -32,7 +32,7 @@
 
     <div class="footer__brand">
         <!-- FIXME image aria-labels -->
-        <a href="#" title="{% trans 'Zur Startseite von Berlin.de' %}">
+        <a href="#" title="{% trans 'To the home page of Berlin.de' %}">
             <img src="" alt="Berlin">
         </a>
     </div>
@@ -58,8 +58,8 @@
 
     <div class="footer__claim">
         <p>
-            {% blocktrans %}Berlin.de ist ein Angebot des Landes Berlin und der BerlinOnline Stadtportal GmbH & Co. KG. {% endblocktrans %}{% if settings.apps_settings.ImportantPages.imprint %}{% blocktrans with imprint_url=settings.apps_settings.ImportantPages.imprint.url %}
-            Weitere Informationen hierzu finden Sie im <a href="{{ imprint_url }}">Impressum</a>.{% endblocktrans %}{% endif %}
+            {% blocktrans %}Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal GmbH & Co. KG. {% endblocktrans %}{% if settings.apps_settings.ImportantPages.imprint %}{% blocktrans with imprint_url=settings.apps_settings.ImportantPages.imprint.url %}
+            For more information, please see the <a href="{{ imprint_url }}">imprint</a>.{% endblocktrans %}{% endif %}
         </p>
     </div>
 

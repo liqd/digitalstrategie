@@ -88,6 +88,58 @@ class HomePage(Page):
                      'apps_forms.ParticipationFormPage']
 
 
+class OverviewPage(Page):
+
+    teaser_blocks = [
+        ('teaser_centered', apps_blocks.TeaserBlockCentered()),
+        ('teaser_two_columns', apps_blocks.TeaserBlockTwoColumns()),
+        ('teaser_image', apps_blocks.TeaserBlockImage()),
+        ('paragraph', apps_blocks.CoulouredParagraphBlock()),
+    ]
+
+    page_intro_de = fields.RichTextField(
+        blank=True, default="", verbose_name="Teasertext")
+    page_intro_en = fields.RichTextField(
+        blank=True, default="", verbose_name="Teasertext")
+    page_intro_de_ls = fields.RichTextField(
+        blank=True, default="", verbose_name="Teasertext")
+
+    page_intro = TranslatedField(
+        'page_intro_de',
+        'page_intro_en',
+        'page_intro_de_ls'
+    )
+
+    teasers = fields.StreamField(teaser_blocks)
+
+    de_content_panels = [
+        FieldPanel('page_intro_de')
+    ]
+
+    en_content_panels = [
+        FieldPanel('page_intro_en')
+    ]
+
+    de_ls_content_panels = [
+        FieldPanel('page_intro_de_ls')
+    ]
+
+    common_panels = [
+        FieldPanel('title'),
+        StreamFieldPanel('teasers'),
+    ]
+
+    edit_handler = TabbedInterface([
+        ObjectList(common_panels, heading='Common'),
+        ObjectList(de_content_panels, heading='German'),
+        ObjectList(en_content_panels, heading='English'),
+        ObjectList(de_ls_content_panels, heading='Easy German'),
+    ])
+
+    subpage_types = ['apps_home.DetailPage',
+                     'apps_home.SimplePage']
+
+
 class DetailPage(Page, TeaserFieldsMixin):
     page_blocks = [
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
@@ -191,52 +243,3 @@ class SimplePage(Page):
     ])
 
     subpage_types = []
-
-
-class OverviewPage(Page):
-
-    teaser_blocks = [
-        ('teaser_centered', apps_blocks.TeaserBlockCentered()),
-        ('teaser_two_columns', apps_blocks.TeaserBlockTwoColumns()),
-        ('teaser_image', apps_blocks.TeaserBlockImage()),
-        ('paragraph', apps_blocks.CoulouredParagraphBlock()),
-    ]
-
-    page_intro_de = fields.RichTextField(
-        blank=True, default="", verbose_name="Teasertext")
-    page_intro_en = fields.RichTextField(
-        blank=True, default="", verbose_name="Teasertext")
-    page_intro_de_ls = fields.RichTextField(
-        blank=True, default="", verbose_name="Teasertext")
-
-    page_intro = TranslatedField(
-        'page_intro_de',
-        'page_intro_en',
-        'page_intro_de_ls'
-    )
-
-    teasers = fields.StreamField(teaser_blocks)
-
-    de_content_panels = [
-        FieldPanel('page_intro_de')
-    ]
-
-    en_content_panels = [
-        FieldPanel('page_intro_en')
-    ]
-
-    de_ls_content_panels = [
-        FieldPanel('page_intro_de_ls')
-    ]
-
-    common_panels = [
-        FieldPanel('title'),
-        StreamFieldPanel('teasers'),
-    ]
-
-    edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
-    ])

@@ -6,7 +6,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    digitalstrategie: [ // array of entry points
+    digitalstrategie_external: [ // array of entry points
+      './digitalstrategie/assets/external_css/berlin_marketing.css',
+      './digitalstrategie/assets/external_css/swiper.min.css',
+      './digitalstrategie/assets/external_css/shariff.min.css',
+      'jquery',
+      './digitalstrategie/assets/external_js/berlin_marketing.js',
+      './digitalstrategie/assets/external_js/swiper.min.js',
+      './digitalstrategie/assets/external_js/shariff.min.js',
+      './digitalstrategie/assets/external_js/bo-foot-rebrush.js'
+    ],
+    digitalstrategie: [
       '@fortawesome/fontawesome-free/scss/fontawesome.scss',
       '@fortawesome/fontawesome-free/scss/brands.scss',
       '@fortawesome/fontawesome-free/scss/regular.scss',
@@ -98,6 +108,9 @@ module.exports = {
     // folder by default. This may result in dependencies being included twice.
     // Resolving against node_modules will prevent this.
     // concat merges node_modules and assets and syncs both to ensure no duplication.
+    alias: {
+      jquery$: 'jquery/dist/jquery.min.js'
+    },
     modules: [
       path.resolve('./node_modules')
     ].concat(
@@ -107,7 +120,9 @@ module.exports = {
   plugins: [
     // automatically load modules instead of import or require them everywhere.
     new webpack.ProvidePlugin({
-      timeago: 'timeago.js' // do we need this?
+      timeago: 'timeago.js', // do we need this?
+      $: 'jquery',
+      jQuery: 'jquery'
     }),
     // extracts CSS into separate files
     new MiniCssExtractPlugin({

@@ -2,10 +2,14 @@
 {% load wagtailcore_tags %}
 
 {% block title %}
-{{ page.title }}
 {% endblock %}
 
 {% block content %}
-{{ page.body }}
+<div class="container">
+    <div class="row py-5">
+        <div class="col-md-8 offset-md-2">
+            {{ page.body }}
+        </div>
+    </div>
+</div>
 {% endblock %}
-

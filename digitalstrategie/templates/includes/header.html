@@ -81,9 +81,9 @@
                         {% if settings.apps_settings.Accessibility.feedback_name or settings.apps_settings.Accessibility.feedback_email or settings.apps_settings.Accessibility.feedback_phone %}
                         <h3>Wen können Sie bei Anmerkungen oder Fragen zur digitalen Barrierefreiheit (Feedbackoption) kontaktieren?</h3>
                         <p>
-                            Name: {% if settings.apps_settings.Accessibility.feedback_name %}{{ settings.apps_settings.Accessibility.feedback_name }}<br>{% endif %}
-                            Email: {% if settings.apps_settings.Accessibility.feedback_email %} <a href="mailto:{{ settings.apps_settings.Accessibility.feedback_email }}">{{ settings.apps_settings.Accessibility.feedback_email }}</a><br>{% endif %}
-                            Telefon: {% if settings.apps_settings.Accessibility.feedback_phone %} {{ settings.apps_settings.Accessibility.feedback_phone }}{% endif %}
+                            {% if settings.apps_settings.Accessibility.feedback_name %}Name: {{ settings.apps_settings.Accessibility.feedback_name }}<br>{% endif %}
+                            {% if settings.apps_settings.Accessibility.feedback_email %}Email: <a href="mailto:{{ settings.apps_settings.Accessibility.feedback_email }}">{{ settings.apps_settings.Accessibility.feedback_email }}</a><br>{% endif %}
+                            {% if settings.apps_settings.Accessibility.feedback_phone %}Telefon: {{ settings.apps_settings.Accessibility.feedback_phone }}{% endif %}
                         </p>
                         {% endif %}
 

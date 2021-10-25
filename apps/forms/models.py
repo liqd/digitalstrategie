@@ -49,6 +49,8 @@ class FormPage(AbstractEmailForm):
         'thank_you_text_de_ls',
     )
 
+    remove_data_email = models.EmailField(max_length=120, blank=True)
+
     def get_form_fields(self):
         fields = list(super().get_form_fields())
 
@@ -107,6 +109,7 @@ class FormPage(AbstractEmailForm):
             ]),
             FieldPanel('subject'),
         ], "Email"),
+        FieldPanel('remove_data_email'),
     ]
 
     edit_handler = TabbedInterface([
@@ -174,10 +177,6 @@ class ParticipationFormPage(FormPage):
     edit_handler = TabbedInterface(
         [ObjectList(common_panels, heading='Common')] +
         [child for child in FormPage.edit_handler.children[1:]])
-
-    @property
-    def isParticipation(self):
-        return True
 
     def process_form_submission(self, form):
         form.fields.pop('data_protection')

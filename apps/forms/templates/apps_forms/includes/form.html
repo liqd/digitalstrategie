@@ -14,10 +14,10 @@
                     {% endfor %}
                 </div>
                 <div class=info-section__form>
-                    <span>{% trans '*Pflichtfelder' %}</span>
-                    {% if page.isParticipation %}
+                    <span>*{% trans 'Pflichtfelder' %}</span>
+                    {% if page.remove_data_email %}
                         <p>
-                            {% trans 'Wenn Sie ihre personenbezogen Daten löschen lassen möchten, kontaktieren Sie: <span>digitalstrategie@senweb.berlin.de</span>' %}
+                            {% trans 'Wenn Sie ihre personenbezogen Daten löschen lassen möchten, kontaktieren Sie:' %} <span>{{ page.remove_data_email }}</span>
                         </p>
                     {% endif %}
                 </div>

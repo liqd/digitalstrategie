@@ -3,6 +3,7 @@ from wagtail.core.blocks import CharBlock
 from wagtail.core.blocks import PageChooserBlock
 from wagtail.core.blocks import StructBlock
 from wagtail.core.blocks import StructValue
+from wagtail.core.blocks import URLBlock
 
 
 class TranslatedStructValue(StructValue):
@@ -16,9 +17,18 @@ class TranslatedStructValue(StructValue):
         else:
             return self.get('link_text_de')
 
+    def url(self):
+        if self.get('link'):
+            page = self.get('link')
+            return page.url
+        else:
+            return self.get('external_link')
+
 
 class LinkBlock(StructBlock):
-    link = PageChooserBlock(required=True)
+    link = PageChooserBlock(
+        required=True,
+    )
 
     link_text_de = CharBlock(required=True)
     link_text_en = CharBlock(required=False)
@@ -27,3 +37,20 @@ class LinkBlock(StructBlock):
     class Meta:
         value_class = TranslatedStructValue
         icon = 'link'
+
+
+class ExternalLinkBlock(StructBlock):
+    external_link = URLBlock(
+        required=True,
+        help_text=('Please enter a full url which starts with https:// '
+                   'or http://'),
+        max_length=500,
+    )
+
+    link_text_de = CharBlock(required=True)
+    link_text_en = CharBlock(required=False)
+    link_text_de_ls = CharBlock(required=False)
+
+    class Meta:
+        value_class = TranslatedStructValue
+        icon = 'link-external'

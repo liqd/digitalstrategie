@@ -37,19 +37,21 @@ class MenuItem(models.Model):
         help_text=(
             'Creates a link to a single wagtail page. '
             'Leave empty if you add subpages. '
-            'In the footer items with subpages will not be shown.'
+            'In the footers only subpages will be shown.'
         ),
         on_delete=models.CASCADE
     )
 
     subpages = StreamField(
         [
-            ('link', snippets_blocks.LinkBlock())
+            ('link', snippets_blocks.LinkBlock()),
+            ('external_link', snippets_blocks.ExternalLinkBlock())
         ],
         blank=True,
         null=True,
         help_text=(
-            'These Links will be displayed in a dropdown menu'
+            'These Links will be displayed as sebmenu items. '
+            'Either in dropdowns or as items below a headline.'
         ),
         verbose_name='Submenu'
     )
@@ -94,7 +96,9 @@ class NavigationMenu(ClusterableModel):
         null=False,
         blank=False,
         help_text=('Call the menu "header" to use as upper menu or '
-                   '"footer" to use in the footer.')
+                   '"footer" to use in the lower dark grey footer. '
+                   'To display the upper light grey footer, call the '
+                   'menu snippet “content-footer”.')
     )
 
     def __str__(self):

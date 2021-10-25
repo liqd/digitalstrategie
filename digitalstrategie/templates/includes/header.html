@@ -157,7 +157,7 @@
                                           <a href="#">{{ menuitem.title }}</a>
                                           <ul class="navigation-tree">
                                               {% for subpage in menuitem.subpages %}
-                                              <li><a href="{{ subpage.value.link.url }}">{{ subpage.value.link_text }}</a></li>
+                                              <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
                                               {% endfor %}
                                             </ul>
                                       </li>

@@ -15,7 +15,7 @@
                 <ul>
                     {% if menuitem.subpages %}
                         {% for subpage in menuitem.subpages %}
-                            <li><a href="{{ subpage.value.link.url }}">{{ subpage.value.link_text }}</a></li>
+                            <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
                         {% endfor %}
                     {% else %}
                         <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
@@ -45,7 +45,7 @@
                     <ul>
                         {% if menuitem.subpages %}
                             {% for subpage in menuitem.subpages %}
-                                <li><a href="{{ subpage.value.link.url }}">{{ subpage.value.link_text }}</a></li>
+                                <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
                             {% endfor %}
                         {% else %}
                             <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>

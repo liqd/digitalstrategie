@@ -158,10 +158,15 @@ img.textimg-ds-block__img {
     }
 }
 
-.teaser-block-img__left {
+.teaser-ds-block-img__left img,
+.teaser-ds-block-img__right img {
+    display: block; //rm automatic whitespace from inline elements
+}
+
+.teaser-ds-block-img__left {
     float: left;
 }
 
-.teaser-block-img__right {
+.teaser-ds-block-img__right {
     float: right;
 }

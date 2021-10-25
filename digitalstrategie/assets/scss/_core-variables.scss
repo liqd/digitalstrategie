@@ -1,13 +1,12 @@
 $mobile-headline-size: 0.8 !default;
-
 $spacer: 1rem !default;
 
 // use for min-width media-queries
-$breakpoint-xs: map-get($grid-breakpoints, "sm") !default;
-$breakpoint-sm: map-get($grid-breakpoints, "md") !default;
-$breakpoint-md: map-get($grid-breakpoints, "lg") !default;
-$breakpoint-lg: map-get($grid-breakpoints, "xl") !default;
-$breakpoint-xl: map-get($grid-breakpoints, "xxl") !default;
+$breakpoint-xs: map.get($grid-breakpoints, "sm") !default;
+$breakpoint-sm: map.get($grid-breakpoints, "md") !default;
+$breakpoint-md: map.get($grid-breakpoints, "lg") !default;
+$breakpoint-lg: map.get($grid-breakpoints, "xl") !default;
+$breakpoint-xl: map.get($grid-breakpoints, "xxl") !default;
 
 // use for max-width media queries
 $breakpoint-xs-down: $breakpoint-xs - 0.1px !default;
@@ -17,4 +16,4 @@ $breakpoint-lg-down: $breakpoint-lg - 0.1px !default;
 $breakpoint-xl-down: $breakpoint-xl - 0.1px !default;
 
 // light accordion icon
-$accordion-button-icon--light:   url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'><path fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z'/></svg>");
+$accordion-button-icon--light: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'><path fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z'/></svg>");

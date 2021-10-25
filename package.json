@@ -47,8 +47,9 @@
     "husky": "7.0.4",
     "lint-staged": "11.2.5",
     "postcss": "8.3.11",
-    "stylelint": "13.13.1",
+    "stylelint": "14.0.0",
     "stylelint-config-standard": "23.0.0",
+    "stylelint-config-standard-scss": "2.0.0",
     "stylelint-declaration-strict-value": "1.7.12",
     "webpack-cli": "4.9.1"
   },
@@ -56,7 +57,7 @@
     "build:prod": "webpack --config webpack.prod.js --mode production",
     "build": "webpack --config webpack.dev.js --mode development",
     "watch": "webpack --config webpack.dev.js --watch --mode development",
-    "lint": "eslint digitalstrategie/assets --ext .js,.jsx && stylelint 'digitalstrategie/assets/scss/**/*.scss' --syntax scss",
+    "lint": "eslint digitalstrategie/assets --ext .js,.jsx && stylelint 'digitalstrategie/assets/scss/**/*.scss'",
     "lint-staged": "lint-staged",
     "lint-fix": "eslint --fix --ext .js,.jsx .",
     "postinstall": "husky install"

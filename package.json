@@ -1,5 +1,10 @@
 {
   "name": "digitalstrategie",
+  "license" : "MIT license",
+  "repository" : {
+     "type" : "git",
+     "url" : "https://github.com/liqd/digitalstrategie.git"
+   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.4",
     "@popperjs/core": "2.10.2",
@@ -10,6 +15,7 @@
     "css-loader": "6.4.0",
     "file-loader": "6.2.0",
     "flatpickr": "4.6.9",
+    "jquery": "3.6.0",
     "mini-css-extract-plugin": "2.4.3",
     "node-sass": "6.0.1",
     "path-browserify": "1.0.1",

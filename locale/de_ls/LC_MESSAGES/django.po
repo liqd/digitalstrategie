@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 15:44+0000\n"
+"POT-Creation-Date: 2021-10-25 16:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -126,15 +126,13 @@ msgstr ""
 #: digitalstrategie/templates/includes/footer.html:61
 msgid ""
 "Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
-"GmbH & Co. KG. "
+"GmbH & Co. KG."
 msgstr ""
 
-#: digitalstrategie/templates/includes/footer.html:61
+#: digitalstrategie/templates/includes/footer.html:62
 #, python-format
 msgid ""
-"\n"
-"            For more information, please see the <a href=\"%(imprint_url)s"
-"\">imprint</a>."
+"For more information, please see the <a href=\"%(imprint_url)s\">imprint</a>."
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:18
@@ -159,6 +157,7 @@ msgid "Accessible"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:50
+#: digitalstrategie/templates/includes/header_language_switch.html:15
 msgid "Accessibility"
 msgstr ""
 
@@ -234,13 +233,9 @@ msgid "Page navigation"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header_language_switch.html:7
-msgid "Sprachen"
-msgstr ""
-
-#: digitalstrategie/templates/includes/header_language_switch.html:15
-msgid "Barrierefreiheit"
+msgid "Languages"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header_language_switch.html:25
-msgid "select "
+msgid "select"
 msgstr ""

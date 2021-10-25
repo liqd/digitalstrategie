@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 15:44+0000\n"
+"POT-Creation-Date: 2021-10-25 16:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,19 +129,25 @@ msgid "To the home page of Berlin.de"
 msgstr "To the home page of Berlin.de"
 
 #: digitalstrategie/templates/includes/footer.html:61
+#, fuzzy
+#| msgid ""
+#| "Berlin.de is a service of the State of Berlin and BerlinOnline "
+#| "Stadtportal GmbH & Co. KG. "
 msgid ""
 "Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
-"GmbH & Co. KG. "
+"GmbH & Co. KG."
 msgstr ""
 "Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
 "GmbH & Co. KG. "
 
-#: digitalstrategie/templates/includes/footer.html:61
-#, python-format
+#: digitalstrategie/templates/includes/footer.html:62
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "            For more information, please see the <a href=\"%(imprint_url)s"
+#| "\">imprint</a>."
 msgid ""
-"\n"
-"            For more information, please see the <a href=\"%(imprint_url)s"
-"\">imprint</a>."
+"For more information, please see the <a href=\"%(imprint_url)s\">imprint</a>."
 msgstr ""
 "\n"
 "            For more information, please see the <a href=\"%(imprint_url)s"
@@ -171,6 +177,7 @@ msgid "Accessible"
 msgstr "Accessible"
 
 #: digitalstrategie/templates/includes/header.html:50
+#: digitalstrategie/templates/includes/header_language_switch.html:15
 msgid "Accessibility"
 msgstr "Accessibility"
 
@@ -256,19 +263,22 @@ msgid "Page navigation"
 msgstr "Toggle navigation"
 
 #: digitalstrategie/templates/includes/header_language_switch.html:7
-msgid "Sprachen"
-msgstr "Sprachen"
-
-#: digitalstrategie/templates/includes/header_language_switch.html:15
-msgid "Barrierefreiheit"
-msgstr "Barrierefreiheit"
+#, fuzzy
+#| msgid "Language selector, "
+msgid "Languages"
+msgstr "Language selector, "
 
 #: digitalstrategie/templates/includes/header_language_switch.html:25
-msgid "select "
+#, fuzzy
+#| msgid "select "
+msgid "select"
 msgstr "select "
 
-#~ msgid "Language selector, "
-#~ msgstr "Language selector, "
+#~ msgid "Sprachen"
+#~ msgstr "Sprachen"
+
+#~ msgid "Barrierefreiheit"
+#~ msgstr "Barrierefreiheit"
 
 #~ msgid " selected"
 #~ msgstr " selected"

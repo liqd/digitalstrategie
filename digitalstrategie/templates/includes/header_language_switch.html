@@ -4,7 +4,7 @@
 
 <li class="menu__section">
   <span class="fw-bolder">
-    {% trans 'Sprachen' %}
+    {% trans 'Languages' %}
   </span>
 </li>
 {% for lang_code, lang_name in languages %}
@@ -12,7 +12,7 @@
   {% if language.code == 'de-ls' %}
     <li class="menu__section">
       <span class="fw-bolder">
-        {% trans 'Barrierefreiheit' %}
+        {% trans 'Accessibility' %}
       </span>
     </li>
   {% endif %}
@@ -22,7 +22,7 @@
       <input name="next" type="hidden" value="{{ redirect_to }}" />
       <input name="language" type="hidden" value="{{ lang_code }}">
       <span>
-        <button role="button" type="submit" aria-label="{% trans 'select ' %}{{ lang_name }}">
+        <button role="button" type="submit" aria-label="{% trans 'select' %}{{ lang_name }}">
             {{ language.name_local }}
         </button>
       </span>

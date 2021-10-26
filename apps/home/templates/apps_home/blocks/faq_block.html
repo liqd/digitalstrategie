@@ -23,7 +23,7 @@
                               data-bs-target="#collapse{{ identifier }}{{ forloop.counter }}"
                               aria-expanded="false"
                               aria-controls="collapse{{ identifier }}{{ forloop.counter }}">
-                                {{ item.title }}
+                                <span class="pe-5">{{ item.title }}</span>
                             </button>
                         </h3>
                         <div id="collapse{{ identifier }}{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ identifier }}{{ forloop.counter }}">

@@ -157,7 +157,6 @@ class DetailPage(Page, TeaserFieldsMixin):
     )
 
     de_content_panels = [
-        StreamFieldPanel('body_de'),
         MultiFieldPanel([
             FieldPanel('teaser_title_de'),
             FieldPanel('teaser_intro_de'),
@@ -165,10 +164,10 @@ class DetailPage(Page, TeaserFieldsMixin):
             heading="Teaser content",
             classname="collapsible"
         ),
+        StreamFieldPanel('body_de'),
     ]
 
     en_content_panels = [
-        StreamFieldPanel('body_en'),
         MultiFieldPanel([
             FieldPanel('teaser_title_en'),
             FieldPanel('teaser_intro_en'),
@@ -176,10 +175,10 @@ class DetailPage(Page, TeaserFieldsMixin):
             heading="Teaser content",
             classname="collapsible"
         ),
+        StreamFieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
-        StreamFieldPanel('body_de_ls'),
         MultiFieldPanel([
             FieldPanel('teaser_title_de_ls'),
             FieldPanel('teaser_intro_de_ls'),
@@ -187,6 +186,7 @@ class DetailPage(Page, TeaserFieldsMixin):
             heading="Teaser content",
             classname="collapsible"
         ),
+        StreamFieldPanel('body_de_ls'),
     ]
 
     common_panels = [

@@ -1,9 +1,12 @@
 {% extends "base.html" %}
-
 {% load wagtailcore_tags i18n %}
+
+{% block title %}
+{{ page.book.title }}
+{% endblock %}
+
 {% block content %}
   <div class="book__wrapper">
-    {{ page.book.title }}
     <div class="container">
       <div class="row py-5">
         <nav class="mt-2 col-md-4">

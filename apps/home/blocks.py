@@ -125,7 +125,8 @@ class TeaserBlockCentered(blocks.StructBlock):
 
     link = blocks.PageChooserBlock(
         target_model=['apps_home.DetailPage',
-                      'apps_gruenbuch.GruenbuchIndexPage'],
+                      'apps_gruenbuch.GruenbuchIndexPage',
+                      'apps_forms.FormPage'],
         help_text='Make sure that teaser title and teaser intro '
                   'of the chosen page are set.'
     )
@@ -145,7 +146,8 @@ class TeaserBlockTwoColumns(blocks.StructBlock):
 
     link_1 = blocks.PageChooserBlock(
         target_model=['apps_home.DetailPage',
-                      'apps_gruenbuch.GruenbuchIndexPage'],
+                      'apps_gruenbuch.GruenbuchIndexPage',
+                      'apps_forms.FormPage'],
         help_text='Make sure that teaser title and teaser intro '
                   'of the chosen page are set.'
     )
@@ -174,7 +176,8 @@ class TeaserBlockImage(blocks.StructBlock):
 
     link = blocks.PageChooserBlock(
         target_model=['apps_home.DetailPage',
-                      'apps_gruenbuch.GruenbuchIndexPage'],
+                      'apps_gruenbuch.GruenbuchIndexPage',
+                      'apps_forms.FormPage'],
         help_text='Make sure that teaser title, teaser intro and teaser image '
                   'of the chosen page are set.'
     )

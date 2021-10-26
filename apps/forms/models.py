@@ -10,7 +10,9 @@ from wagtail.admin.edit_handlers import ObjectList
 from wagtail.admin.edit_handlers import TabbedInterface
 from wagtail.contrib.forms.models import AbstractEmailForm
 from wagtail.contrib.forms.models import AbstractFormField
+from wagtail.images.edit_handlers import ImageChooserPanel
 
+from apps.contrib.mixins import TeaserFieldsMixin
 from apps.contrib.translations import TranslatedField
 from apps.settings import helpers
 
@@ -21,7 +23,7 @@ class FormField(AbstractFormField):
                        related_name='form_fields')
 
 
-class FormPage(AbstractEmailForm):
+class FormPage(AbstractEmailForm, TeaserFieldsMixin):
 
     to_address = models.CharField(
         verbose_name=_('to address'), max_length=255,
@@ -108,21 +110,43 @@ class FormPage(AbstractEmailForm):
     en_content_panels = [
         FieldPanel('header_en'),
         FieldPanel('thank_you_text_en'),
+        MultiFieldPanel([
+            FieldPanel('teaser_title_en'),
+            FieldPanel('teaser_intro_en'),
+        ],
+            heading="Teaser content",
+            classname="collapsible"
+        ),
     ]
 
     de_content_panels = [
         FieldPanel('header_de'),
         FieldPanel('thank_you_text_de'),
+        MultiFieldPanel([
+            FieldPanel('teaser_title_de'),
+            FieldPanel('teaser_intro_de'),
+        ],
+            heading="Teaser content",
+            classname="collapsible"
+        ),
     ]
 
     de_ls_content_panels = [
         FieldPanel('header_de_ls'),
         FieldPanel('thank_you_text_de_ls'),
+        MultiFieldPanel([
+            FieldPanel('teaser_title_de_ls'),
+            FieldPanel('teaser_intro_de_ls'),
+        ],
+            heading="Teaser content",
+            classname="collapsible"
+        ),
     ]
 
     common_panels = [
         FieldPanel('title'),
         FieldPanel('slug'),
+        ImageChooserPanel('teaser_image'),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname="col6"),

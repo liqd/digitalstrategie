@@ -46,9 +46,10 @@ h2 {
     font-size: $h2-font-size;
 }
 
-h3 {
-    font-size: $h3-font-size;
-}
+// clashes with Berlin.de styles
+// h3 {
+//     font-size: $h3-font-size;
+// }
 
 h4 {
     font-size: $h4-font-size;

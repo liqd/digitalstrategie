@@ -98,11 +98,11 @@ class OverviewPage(Page):
     ]
 
     page_intro_de = fields.RichTextField(
-        blank=True, default="", verbose_name="Teasertext")
+        blank=True, default="", verbose_name="Overview page introduction")
     page_intro_en = fields.RichTextField(
-        blank=True, default="", verbose_name="Teasertext")
+        blank=True, default="", verbose_name="Overview page introduction")
     page_intro_de_ls = fields.RichTextField(
-        blank=True, default="", verbose_name="Teasertext")
+        blank=True, default="", verbose_name="Overview page introduction")
 
     page_intro = TranslatedField(
         'page_intro_de',

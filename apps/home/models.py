@@ -23,11 +23,11 @@ class HomePage(Page):
     ]
 
     subtitle_de = models.CharField(
-        max_length=120, blank=True, verbose_name=('Home page title'))
+        max_length=120, blank=True, verbose_name=('Home page title de'))
     subtitle_en = models.CharField(
-        max_length=120, blank=True, verbose_name=('Home page title'))
+        max_length=120, blank=True, verbose_name=('Home page title en'))
     subtitle_de_ls = models.CharField(
-        max_length=120, blank=True, verbose_name=('Home page title'))
+        max_length=120, blank=True, verbose_name=('Home page title de ls'))
 
     body_de = fields.StreamField(page_blocks)
     body_en = fields.StreamField(page_blocks, blank=True)
@@ -97,12 +97,25 @@ class OverviewPage(Page):
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
     ]
 
+    page_title_de = models.CharField(
+        max_length=120, blank=True)
+    page_title_en = models.CharField(
+        max_length=120, blank=True)
+    page_title_de_ls = models.CharField(
+        max_length=120, blank=True)
+
     page_intro_de = fields.RichTextField(
         blank=True, default="", verbose_name="Overview page introduction")
     page_intro_en = fields.RichTextField(
         blank=True, default="", verbose_name="Overview page introduction")
     page_intro_de_ls = fields.RichTextField(
         blank=True, default="", verbose_name="Overview page introduction")
+
+    page_title = TranslatedField(
+        'page_title_de',
+        'page_title_en',
+        'page_title_de_ls',
+    )
 
     page_intro = TranslatedField(
         'page_intro_de',
@@ -113,14 +126,17 @@ class OverviewPage(Page):
     teasers = fields.StreamField(teaser_blocks)
 
     de_content_panels = [
+        FieldPanel('page_title_de'),
         FieldPanel('page_intro_de')
     ]
 
     en_content_panels = [
+        FieldPanel('page_title_en'),
         FieldPanel('page_intro_en')
     ]
 
     de_ls_content_panels = [
+        FieldPanel('page_title_de_ls'),
         FieldPanel('page_intro_de_ls')
     ]
 
@@ -209,9 +225,22 @@ class SimplePage(Page):
         ('paragraph', blocks.RichTextBlock())
     ]
 
+    page_title_de = models.CharField(
+        max_length=120, blank=True)
+    page_title_en = models.CharField(
+        max_length=120, blank=True)
+    page_title_de_ls = models.CharField(
+        max_length=120, blank=True)
+
     body_de = fields.StreamField(page_blocks)
     body_en = fields.StreamField(page_blocks, blank=True)
     body_de_ls = fields.StreamField(page_blocks, blank=True)
+
+    page_title = TranslatedField(
+        'page_title_de',
+        'page_title_en',
+        'page_title_de_ls',
+    )
 
     body = TranslatedField(
         'body_de',
@@ -220,14 +249,17 @@ class SimplePage(Page):
     )
 
     de_content_panels = [
+        FieldPanel('page_title_de'),
         StreamFieldPanel('body_de'),
     ]
 
     en_content_panels = [
+        FieldPanel('page_title_en'),
         StreamFieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
+        FieldPanel('page_title_de_ls'),
         StreamFieldPanel('body_de_ls'),
     ]
 

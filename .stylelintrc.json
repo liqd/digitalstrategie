@@ -53,7 +53,9 @@
     "selector-class-pattern": "^([a-z][a-z0-9]*)((-|--|_|__)[a-z0-9]+)*$",
     "declaration-colon-newline-after": null,
     "scss/at-extend-no-missing-placeholder": null,
-    "alpha-value-notation": null
+    "alpha-value-notation": null,
+    "scss/no-global-function-names": null,
+    "color-function-notation": null
   },
   "ignoreFiles": [
     "**/_variables.scss"

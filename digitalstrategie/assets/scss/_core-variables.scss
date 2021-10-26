@@ -2,11 +2,11 @@ $mobile-headline-size: 0.8 !default;
 $spacer: 1rem !default;
 
 // use for min-width media-queries
-$breakpoint-xs: map.get($grid-breakpoints, "sm") !default;
-$breakpoint-sm: map.get($grid-breakpoints, "md") !default;
-$breakpoint-md: map.get($grid-breakpoints, "lg") !default;
-$breakpoint-lg: map.get($grid-breakpoints, "xl") !default;
-$breakpoint-xl: map.get($grid-breakpoints, "xxl") !default;
+$breakpoint-xs: map-get($grid-breakpoints, "sm") !default;
+$breakpoint-sm: map-get($grid-breakpoints, "md") !default;
+$breakpoint-md: map-get($grid-breakpoints, "lg") !default;
+$breakpoint-lg: map-get($grid-breakpoints, "xl") !default;
+$breakpoint-xl: map-get($grid-breakpoints, "xxl") !default;
 
 // use for max-width media queries
 $breakpoint-xs-down: $breakpoint-xs - 0.1px !default;

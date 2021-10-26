@@ -23,6 +23,22 @@ class FormField(AbstractFormField):
 
 class FormPage(AbstractEmailForm):
 
+    to_address = models.CharField(
+        verbose_name=_('to address'), max_length=255,
+        help_text=_("Form submissions will be emailed to "
+                    "these addresses. Separate multiple addresses by comma.")
+    )
+    from_address = models.CharField(
+        verbose_name=_('from address'), max_length=255, blank=True,
+        help_text=_("Optional - submitted forms will be displayed as sent "
+                    "from this email address.")
+    )
+    subject = models.CharField(
+        verbose_name=_('subject'), max_length=255, blank=True,
+        help_text=_("Optional - will be displayed as the subject of the email "
+                    "of the submitted form.")
+    )
+
     landing_page_template = 'apps_forms/form_page_landing.html'
 
     header_de = models.CharField(

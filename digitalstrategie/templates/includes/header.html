@@ -16,7 +16,7 @@
         <div class="pageheader__logo">
             <p class="textlogo">
                 <a href="/" title="{% trans 'To the home page' %}">
-                  <img class="logo" title="{% trans 'To the home page' %}" src="{% static 'images/logo_sm.png' %}" alt="{% trans 'Digital strategy' %}">
+                  <img class="logo" title="{% trans 'To the home page' %}" src="{% static 'images/logo.svg' %}" alt="{% trans 'Digital strategy' %}">
                 </a>
             </p>
         </div>
@@ -154,7 +154,7 @@
                                   {% for menuitem in header_menu_items %}
                                     {% if menuitem.subpages %}
                                       <li class="">
-                                          <a href="#">{{ menuitem.title }}</a>
+                                          <a href="{{ menuitem.url }}">{{ menuitem.title }}</a>
                                           <ul class="navigation-tree">
                                               {% for subpage in menuitem.subpages %}
                                               <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>

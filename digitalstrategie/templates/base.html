@@ -5,6 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8" />
+        <title>{% block title %}{% trans 'Digital strategy' %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -24,7 +25,6 @@
         {% wagtailuserbar %}
         {% include 'includes/header.html' %}
         <div class="base__wrapper">
-            {% block title %}{% endblock %}
             {% if messages %}
               {% for message in messages %}
                   <div class="alert alert--{{ message.level_tag }}" role="alert">
@@ -33,8 +33,8 @@
                       </div>
                   </div>
               {% endfor %}
-              {% endif %}
-              {% block extra_messages %}{% endblock %}
+            {% endif %}
+            {% block extra_messages %}{% endblock %}
 
             <div class="content">
             {% block content %}

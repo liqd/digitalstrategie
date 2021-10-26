@@ -56,13 +56,13 @@
 @import "~bootstrap/scss/helpers";
 
 // Utilities
-@import '~bootstrap/scss/utilities/api';
+@import "~bootstrap/scss/utilities/api";
 
-//Project components
-@import 'components/button';
-@import 'components/document';
-@import 'components/ds-block';
-@import 'components/footer';
-@import 'components/menu';
-@import 'components/book';
-@import 'components/form';
+// Project components
+@import "components/button";
+@import "components/document";
+@import "components/ds-block";
+@import "components/footer";
+@import "components/menu";
+@import "components/book";
+@import "components/form";

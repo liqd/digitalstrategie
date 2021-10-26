@@ -6,7 +6,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 form--overwrite">
-            <form action="{% pageurl page %}" method="POST">
+            <form action="{% pageurl page %}" method="POST" novalidate>
                 <div class="form-group">
                     {% csrf_token %}
                     {% for field in form %}

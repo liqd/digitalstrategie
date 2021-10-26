@@ -12,7 +12,9 @@
     button.ui-multiselect,
     select,
     textarea {
-        border: solid 1px $text-gray;
+        &:not(.is-invalid):not(.is-valid) {
+            border: solid 1px $text-gray;
+        }
 
         &:focus {
             border-color: $blue;
@@ -59,8 +61,14 @@
         }
     }
 
-    .alert-danger {
-        color: $red;
-        background: rgba($red, 0.2);
+    .form-group + .message,
+    .form-group + .message--info,
+    .form-group + .message--success,
+    .form-group + .message--error,
+    .control-group + .message,
+    .control-group + .message--info,
+    .control-group + .message--success,
+    .control-group + .message--error {
+        margin-top: -1.25rem;
     }
 }

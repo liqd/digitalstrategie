@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 16:35+0000\n"
+"POT-Creation-Date: 2021-10-26 14:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,101 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps/forms/models.py:58
+#: apps/forms/models.py:27
+msgid "to address"
+msgstr ""
+
+#: apps/forms/models.py:28
+msgid ""
+"Form submissions will be emailed to these addresses. Separate multiple "
+"addresses by comma."
+msgstr ""
+
+#: apps/forms/models.py:32
+msgid "from address"
+msgstr ""
+
+#: apps/forms/models.py:33
+msgid ""
+"Optional - submitted forms will be displayed as sent from this email address."
+msgstr ""
+
+#: apps/forms/models.py:37
+msgid "subject"
+msgstr ""
+
+#: apps/forms/models.py:38
+msgid ""
+"Optional - will be displayed as the subject of the email of the submitted "
+"form."
+msgstr ""
+
+#: apps/forms/models.py:81
 msgid "First Name"
 msgstr "Vorname"
 
-#: apps/forms/models.py:65
+#: apps/forms/models.py:88
 msgid "Surname"
 msgstr "Nachname"
 
-#: apps/forms/models.py:72
+#: apps/forms/models.py:95
 msgid "Organisation"
 msgstr "Organisation"
 
-#: apps/forms/models.py:79
+#: apps/forms/models.py:102
 msgid "E-Mail"
 msgstr "Email"
 
-#: apps/forms/models.py:133 apps/forms/models.py:193
+#: apps/forms/models.py:157 apps/forms/models.py:221
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr "Ich habe die {}Datenschutzbestimmungen{} gelesen."
 
-#: apps/forms/models.py:139
+#: apps/forms/models.py:163
 msgid "Title"
 msgstr "Titel"
 
-#: apps/forms/models.py:146
+#: apps/forms/models.py:170
 msgid "Your message to us..."
 msgstr "Ihr Nachricht an uns..."
 
-#: apps/forms/models.py:192
+#: apps/forms/models.py:195
+msgid ""
+"The selected categories                     are displayed in the "
+"participation form."
+msgstr ""
+
+#: apps/forms/models.py:220
 msgid "I agree that my contact data is stored"
 msgstr ""
 "Hiermit erkläre ich mich einverstanden, dass meine Kontaktdaten gespeichert "
 "werden."
 
-#: apps/forms/models.py:199
+#: apps/forms/models.py:227
 msgid "I am interested in the following fields of action"
 msgstr "Ich habe Interesse an folgenden Handlungsfeldern"
 
-#: apps/forms/templates/apps_forms/form_page_landing.html:7
-#: digitalstrategie/templates/base_errors.html:11
-msgid "Back to landing page"
+#: apps/forms/templates/apps_forms/form_page_landing.html:10
+#, fuzzy
+#| msgid "Back to landing page"
+msgid "Back to Homepage"
 msgstr "Zurück zur Startseite"
 
 #: apps/forms/templates/apps_forms/includes/form.html:17
+msgid "Required fields"
+msgstr ""
+
+#: apps/forms/templates/apps_forms/includes/form.html:20
+#, python-format
+msgid ""
+"\n"
+"                                If you wish to have your personal data "
+"deleted\n"
+"                                please write an e-mail to:\n"
+"                                <span>%(remove_email)s</span>\n"
+"                            "
+msgstr ""
+
+#: apps/forms/templates/apps_forms/includes/form.html:30
 msgid "Send"
 msgstr "Senden"
 
@@ -113,6 +164,10 @@ msgstr "Interner Serverfehler."
 msgid "Error"
 msgstr "Fehler"
 
+#: digitalstrategie/templates/base_errors.html:11
+msgid "Back to landing page"
+msgstr "Zurück zur Startseite"
+
 #: digitalstrategie/templates/email_base.html:19
 msgid "Hello"
 msgstr "Hallo"
@@ -121,12 +176,12 @@ msgstr "Hallo"
 msgid "To the top of the page"
 msgstr "Zum Seitenanfang"
 
-#: digitalstrategie/templates/includes/footer.html:35
+#: digitalstrategie/templates/includes/footer.html:34
 #: digitalstrategie/templates/includes/header.html:9
 msgid "To the home page of Berlin.de"
 msgstr "Zur Startseite von Berlin.de"
 
-#: digitalstrategie/templates/includes/footer.html:61
+#: digitalstrategie/templates/includes/footer.html:60
 #, fuzzy
 msgid ""
 "Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
@@ -135,13 +190,13 @@ msgstr ""
 "Berlin.de ist ein Angebot des Landes Berlin und der BerlinOnline Stadtportal "
 "GmbH & Co. KG."
 
-#: digitalstrategie/templates/includes/footer.html:62
+#: digitalstrategie/templates/includes/footer.html:61
 #, fuzzy, python-format
 msgid ""
 "For more information, please see the <a href=\"%(imprint_url)s\">imprint</a>."
 msgstr ""
-"Weitere Informationen hierzu finden Sie im <a href="
-"\"%(imprint_url)s\">Impressum</a>."
+"Weitere Informationen hierzu finden Sie im <a href=\"%(imprint_url)s"
+"\">Impressum</a>."
 
 #: digitalstrategie/templates/includes/header.html:18
 #: digitalstrategie/templates/includes/header.html:19

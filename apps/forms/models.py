@@ -174,7 +174,11 @@ class ContactFormPage(FormPage):
 
 class ParticipationFormPage(FormPage):
 
-    fields_of_action = ParentalManyToManyField('apps_snippets.FieldOfAction')
+    fields_of_action = ParentalManyToManyField(
+        'apps_snippets.FieldOfAction',
+        help_text=_('The selected categories \
+                    are displayed in the participation form.')
+    )
 
     common_panels = FormPage.common_panels +\
         [FieldPanel('fields_of_action', widget=forms.CheckboxSelectMultiple)]

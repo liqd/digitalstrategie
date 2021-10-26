@@ -153,7 +153,10 @@ class OverviewPage(Page):
     ])
 
     subpage_types = ['apps_home.DetailPage',
-                     'apps_home.SimplePage']
+                     'apps_home.SimplePage',
+                     'apps_gruenbuch.GruenbuchIndexPage',
+                     'apps_forms.ContactFormPage',
+                     'apps_forms.ParticipationFormPage']
 
 
 class DetailPage(Page, TeaserFieldsMixin):

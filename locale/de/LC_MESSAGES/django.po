@@ -27,6 +27,8 @@ msgid ""
 "Form submissions will be emailed to these addresses. Separate multiple "
 "addresses by comma."
 msgstr ""
+"Eingereichte Formulare werden an diese E-Mail-Adressen verschickt. Trennen "
+"Sie mehrere Adressen mit einem Komma voneinander ab."
 
 #: apps/forms/models.py:32
 msgid "from address"
@@ -36,6 +38,8 @@ msgstr ""
 msgid ""
 "Optional - submitted forms will be displayed as sent from this email address."
 msgstr ""
+"Optional – eingereichte Formulare werden als von dieser E-Mail-Adresse "
+"verschickt angezeigt."
 
 #: apps/forms/models.py:37
 msgid "subject"
@@ -46,6 +50,8 @@ msgid ""
 "Optional - will be displayed as the subject of the email of the submitted "
 "form."
 msgstr ""
+"Optional. Dieser Betreff wird in der Mail des eingereichten Formulars "
+"angezeigt."
 
 #: apps/forms/models.py:81
 msgid "First Name"

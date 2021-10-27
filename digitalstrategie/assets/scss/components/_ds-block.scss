@@ -89,11 +89,17 @@
 .faq-ds-block__item--dark {
     // important to overwrite bootstraps accordion-item:last-child
     border-bottom: solid 1px $text-gray;
+
+    // fixes thick borders on safari
+    background-color: transparent;
 }
 
 .faq-ds-block__item--light {
     // important to overwrite bootstraps accordion-item:last-child
     border-bottom: solid 1px $body-bg;
+
+    // fixes thick borders on safari
+    background-color: transparent;
 }
 
 .faq-ds-block__button {
@@ -118,6 +124,11 @@
 
 .accordion-button.faq-ds-block__button--light:after {
     background-image: $accordion-button-icon--light;
+}
+
+.accordion-button:not(.collapsed) {
+    // removes line on safari
+    box-shadow: none;
 }
 
 .faq-ds-block__body {

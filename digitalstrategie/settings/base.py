@@ -178,3 +178,14 @@ WAGTAILADMIN_RICH_TEXT_EDITORS = {
         'WIDGET': 'wagtail.admin.rich_text.HalloRichTextArea'
     }
 }
+
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': 'wagtail.search.backends.elasticsearch7',
+        'URLS': ['http://localhost:9200'],
+        'INDEX': 'wagtail',
+        'TIMEOUT': 5,
+        'OPTIONS': {},
+        'INDEX_SETTINGS': {}
+    }
+}

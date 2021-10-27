@@ -8,6 +8,7 @@ from wagtail.core import blocks
 from wagtail.core import fields
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
 
 from apps.contrib.mixins import TeaserFieldsMixin
 from apps.contrib.translations import TranslatedField
@@ -87,9 +88,21 @@ class HomePage(Page):
                      'apps_forms.ContactFormPage',
                      'apps_forms.ParticipationFormPage']
 
+    search_fields = Page.search_fields + [
+        index.SearchField('subtitle_de',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('subtitle_en',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('subtitle_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'})
+    ]
+
 
 class OverviewPage(Page):
-
     teaser_blocks = [
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
         ('teaser_two_columns', apps_blocks.TeaserBlockTwoColumns()),
@@ -232,6 +245,13 @@ class DetailPage(Page, TeaserFieldsMixin):
 
     subpage_types = []
 
+    search_fields = Page.search_fields + [
+        index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'})
+    ]
+
 
 class SimplePage(Page):
     page_blocks = [
@@ -288,3 +308,10 @@ class SimplePage(Page):
     ])
 
     subpage_types = []
+
+    search_fields = Page.search_fields + [
+        index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'})
+    ]

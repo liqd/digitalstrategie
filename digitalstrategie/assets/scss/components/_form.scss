@@ -12,12 +12,12 @@
     button.ui-multiselect,
     select,
     textarea {
-        &:not(.is-invalid):not(.is-valid) {
-            border: solid 1px $text-gray;
-        }
-
         &:focus {
             border-color: $blue;
+        }
+
+        &:not(.is-invalid):not(.is-valid) {
+            border: solid 1px $text-gray;
         }
     }
 

@@ -97,6 +97,15 @@ class OverviewPage(Page):
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
     ]
 
+    background_color = models.CharField(
+        choices=apps_blocks.ColorChoiceBlock.choices,
+        help_text='This sets the background colour of the introduction part '
+                  'of this page. Not choosing a colour will result in '
+                  'a white background.',
+        blank=True,
+        max_length=50
+    )
+
     page_title_de = models.CharField(
         max_length=120, blank=True)
     page_title_en = models.CharField(
@@ -142,6 +151,7 @@ class OverviewPage(Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('background_color'),
         StreamFieldPanel('teasers'),
     ]
 

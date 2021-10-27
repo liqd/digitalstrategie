@@ -116,7 +116,7 @@
                     </div>
                     <div class="overlay__body">
                         <div class="search-container">
-                            <form class="search-form">
+                            <form class="search-form" action="{% url 'search' %}" method="get">
                                 <label for="searchFormInput_q">{% trans 'Search on the website "Digitalstrategie Berlin"' %}</label>
                                 <div class="form-group">
                                     <input name="q" class="form-control" id="searchFormInput_q" placeholder="Suchbegriff">

@@ -8,6 +8,7 @@ from wagtail.core import blocks
 from wagtail.core import fields
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
 
 from apps.contrib.mixins import TeaserFieldsMixin
 from apps.contrib.translations import TranslatedField
@@ -106,12 +107,6 @@ class GruenbuchDetailPage(Page):
     body_en = fields.StreamField(page_blocks, blank=True)
     body_de_ls = fields.StreamField(page_blocks, blank=True)
 
-    body = TranslatedField(
-        'body_de',
-        'body_en',
-        'body_de_ls',
-    )
-
     page_title = TranslatedField(
         'page_title_de',
         'page_title_en',
@@ -122,6 +117,12 @@ class GruenbuchDetailPage(Page):
         'subtitle_de',
         'subtitle_en',
         'subtitle_de_ls',
+    )
+
+    body = TranslatedField(
+        'body_de',
+        'body_en',
+        'body_de_ls',
     )
 
     de_content_panels = [
@@ -181,3 +182,22 @@ class GruenbuchDetailPage(Page):
             return ''
 
     subpage_types = []
+
+    search_fields = Page.search_fields + [
+        index.SearchField('page_title_de',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_en',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('subtitle_de',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('subtitle_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('subtitle_en',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),
+    ]

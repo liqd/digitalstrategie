@@ -31,3 +31,14 @@ class TranslatedField(object):
             return de_ls
         else:
             return de
+
+
+def get_search_fields():
+    fields = [
+        '*page_title_',
+        '*page_intro_'
+        '*subtitle_',
+        '*body_',
+    ]
+    lang = translation.get_language()
+    return [f + lang for f in fields]

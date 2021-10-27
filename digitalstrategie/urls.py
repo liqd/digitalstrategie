@@ -8,6 +8,8 @@ from wagtail.contrib.sitemaps.views import sitemap as wagtail_sitemap
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
+from apps.contrib.views import SearchResultsView
+
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
     url(r'^admin/', include(wagtailadmin_urls)),
@@ -17,6 +19,7 @@ urlpatterns = [
     url(r'^robots\.txt$', TemplateView.as_view(
         template_name='robots.txt',
         content_type="text/plain"), name="robots_file"),
+    url(r'^search/', SearchResultsView.as_view(), name="search"),
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in

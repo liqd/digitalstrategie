@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <div class="search-container">
+        <form class="search-form" action="{% url 'search' %}" method="get">
+            <div class="form-group">
+                <input name="q" class="form-control" id="searchFormInput_q" placeholder="Suchbegriff">
+                <button type="submit" class="button"><i class="fas fa-search" aria-hidden="true"></i> <span>Suchen</span></button>
+            </div>
+        </form>
+    </div>
+
+    {% if object_list %}
+        <ul>
+            {% for result in object_list %}
+                <li>
+                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+                    {% if result.specific.body %}
+                        {{ result.specific.body|safe|slice:300 }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif request.GET.q %}
+        No results found
+    {% endif %}
+{% endblock %}

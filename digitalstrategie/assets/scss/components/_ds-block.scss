@@ -175,13 +175,20 @@ img.textimg-ds-block__img {
 .teaser-ds-block-img__left img,
 .teaser-ds-block-img__right img {
     display: block; //rm automatic whitespace from inline elements
-    position: relative;
 }
 
 .teaser-ds-block-img__left {
     float: left;
+    position: relative;
 }
 
 .teaser-ds-block-img__right {
     float: right;
+    position: relative;
+}
+
+.teaser-ds-block-img__copyright {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

@@ -7,15 +7,15 @@
                 {{ self.text }}
                     <div>
                         {% if value.link %}
-                        <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %}&#8594;</a>
+                        <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                         {% endif %}
                     </div>
             </div>
             <div class="col-12 offset-md-1 col-md-4">
                 <p class="quote-ds-block__text">
-                    <i class="fas fa-quote-left fa-xs"></i>
+                    <i class="fas fa-quote-left fa-xs" aria-hidden="true"></i>
                     {{ self.quote }}
-                    <i class="fas fa-quote-right fa-xs"></i>
+                    <i class="fas fa-quote-right fa-xs" aria-hidden="true"></i>
                 </p>
                 <p>
                     {{ self.author }}

@@ -17,7 +17,8 @@
                         {% for subpage in menuitem.subpages %}
                             <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
                         {% endfor %}
-                    {% else %}
+                    {% endif %}
+                    {% if menuitem.url and not menuitem.subpages %}
                         <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
                     {% endif %}
                 </ul>
@@ -46,7 +47,8 @@
                             {% for subpage in menuitem.subpages %}
                                 <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
                             {% endfor %}
-                        {% else %}
+                        {% endif %}
+                        {% if menuitem.url and not menuitem.subpages %}
                             <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
                         {% endif %}
                     </ul>

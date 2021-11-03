@@ -93,6 +93,7 @@ class TextWithImageBlock(blocks.StructBlock):
     title = blocks.CharBlock(required=True)
     body = blocks.RichTextBlock(required=True)
     image = ImageChooserBlock(required=True)
+    link = blocks.PageChooserBlock(required=False)
 
     background_color = ColorChoiceBlock(
         help_text='Not choosing a colour will result in a block with '

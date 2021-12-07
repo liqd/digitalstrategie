@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.views.generic import ListView
 from wagtail.core.models import Page
 from wagtail.search.backends import get_search_backend
@@ -18,7 +19,8 @@ class SearchResultsView(ListView):
         # needs to be set otherwise _get_results_from_hits will fail
         sb._score_field = False
         query = self.request.GET.get('q')
-        res = sb.es.search(index="wagtail__wagtailcore_page",
+        res = sb.es.search(index=settings.WAGTAILSEARCH_BACKENDS["default"]
+                           ["INDEX"] + "__wagtailcore_page",
                            _source=False,
                            size=100, stored_fields="pk",
                            query={"multi_match":

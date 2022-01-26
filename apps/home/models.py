@@ -220,6 +220,21 @@ class OverviewPage(Page):
                      'apps_forms.ContactFormPage',
                      'apps_forms.ParticipationFormPage']
 
+    search_fields = Page.search_fields + [
+        index.SearchField('page_title_de',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_en',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_intro_de',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_intro_en',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_intro_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+    ]
+
 
 class DetailPage(Page):
     page_blocks = [

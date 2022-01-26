@@ -181,7 +181,7 @@ WAGTAILADMIN_RICH_TEXT_EDITORS = {
 
 WAGTAILSEARCH_BACKENDS = {
     'default': {
-        'BACKEND': 'wagtail.search.backends.elasticsearch7',
+        'BACKEND': 'apps.contrib.elasticsearch',
         'URLS': ['http://localhost:9200'],
         'INDEX': 'wagtail',
         'TIMEOUT': 5,

@@ -6,16 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    digitalstrategie_external: [ // array of entry points
-      './digitalstrategie/assets/external_css/berlin_marketing.css',
-      './digitalstrategie/assets/external_css/swiper.min.css',
-      './digitalstrategie/assets/external_css/shariff.min.css',
-      'jquery',
-      './digitalstrategie/assets/external_js/berlin_marketing.js',
-      './digitalstrategie/assets/external_js/swiper.min.js',
-      './digitalstrategie/assets/external_js/shariff.min.js',
-      './digitalstrategie/assets/external_js/bo-foot-rebrush.js'
-    ],
     digitalstrategie: [
       '@fortawesome/fontawesome-free/scss/fontawesome.scss',
       '@fortawesome/fontawesome-free/scss/brands.scss',

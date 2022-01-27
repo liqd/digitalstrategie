@@ -28,8 +28,6 @@
   "ignorePatterns": [
     "node_modules/",
     "venv/",
-    "static/",
-    "external_css/",
-    "external_js/"
+    "static/"
   ]
 }

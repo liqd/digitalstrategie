@@ -1,26 +1,22 @@
 {% load i18n wagtailcore_tags %}
 
-<div class="ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %} container-fluid px-0">
-    <div class="container">
-        <div class="row ds-block__row">
-            <div class="col-12 offset-md-1 col-md-5">
-                {{ self.text }}
-                    <div>
-                        {% if value.link %}
-                        <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                        {% endif %}
-                    </div>
-            </div>
-            <div class="col-12 offset-md-1 col-md-4">
-                <p class="quote-ds-block__text">
-                    <i class="fas fa-quote-left fa-xs" aria-hidden="true"></i>
-                    {{ self.quote }}
-                    <i class="fas fa-quote-right fa-xs" aria-hidden="true"></i>
-                </p>
-                <p>
-                    {{ self.author }}
-                </p>
-            </div>
+<div class="ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}px-0">
+    <div id="layout-grid">
+        <div id="layout-grid__area--maincontent" class="ds-block__maincontent">
+            {{ self.text }}
+                <div>
+                    {% if value.link %}
+                    <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    {% endif %}
+                </div>
+            <p class="quote-ds-block__text">
+                <i class="fas fa-quote-left fa-xs" aria-hidden="true"></i>
+                {{ self.quote }}
+                <i class="fas fa-quote-right fa-xs" aria-hidden="true"></i>
+            </p>
+            <p>
+                {{ self.author }}
+            </p>
         </div>
 
     </div>

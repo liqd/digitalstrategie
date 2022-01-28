@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
-        {% include 'apps_forms/includes/form.html' with page=page form=form %}
-    </div>
+    {% include 'apps_forms/includes/form.html' with page=page form=form %}
 {% endblock %}

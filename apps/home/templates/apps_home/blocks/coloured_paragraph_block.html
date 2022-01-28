@@ -1,11 +1,9 @@
 {% load block_tags %}
 
 <div class="ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
-    <div class="container">
-        <div class="row ds-block__row">
-            <div class="offset-md-2 col-md-8">
-                {{ self.body }}
-            </div>
+    <div id="layout-grid">
+        <div id="layout-grid__area--maincontent" class="ds-block__maincontent">
+            {{ self.body }}
         </div>
     </div>
 </div>

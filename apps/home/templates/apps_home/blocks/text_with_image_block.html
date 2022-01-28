@@ -2,23 +2,19 @@
 {% image value.image width-500 as image %}
 
 <div class="{% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
-    <div class="container-fluid gx-0">
-        <div class="row align-items-center">
-            <div class="col-12 col-sm-5">
-                <img src="{{ image.url }}" alt="{{ image.alt }}" class="textimg-ds-block__img" />
-            </div>
-            <div class="offset-md-1 col d-flex align-items-center">
-                <div class="textimg-ds-block__text-wrapper">
-                    <h2>
-                        {{ value.title }}
-                    </h2>
-                    {{ value.body|richtext }}
-                    <div>
-                        {% if value.link %}
-                        <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                        {% endif %}
-                    </div>
-                </div>
+    <div id="layout-grid">
+        <div id="layout-grid__area--maincontent" class="ds-block__maincontent">
+            <img src="{{ image.url }}" alt="{{ image.alt }}" class="textimg-ds-block__img" />
+        </div>
+        <div class="textimg-ds-block__text-wrapper">
+            <h2>
+                {{ value.title }}
+            </h2>
+            {{ value.body|richtext }}
+            <div>
+                {% if value.link %}
+                <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                {% endif %}
             </div>
         </div>
     </div>

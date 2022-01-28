@@ -6,73 +6,71 @@
 {% endblock %}
 
 {% block content %}
-  <div class="book__wrapper">
-    <div class="container">
-      <div class="row py-5">
-        <nav class="mt-2 col-md-4">
-          {% for chapter in page.chapters %}
-            {% if chapter.url == page.active_chapter.url %}
-              <div class="book__chapter-link book__chapter-link--active">
-                <i class="fas fa-arrow-right"></i>
-                <a href="{{ chapter.url }}">
-                  {{ chapter.page_title }}
-                </a>
-              </div>
-            {% else %}
-              <div class="book__chapter-link">
-                <a href="{{ chapter.url }}">
-                  {{ chapter.page_title }}
-                </a>
-              </div>
-            {% endif %}
-          {% empty %}
-            <div>{% trans 'No chapters have been added yet.' %}</div>
-          {% endfor %}
-          {% if settings.apps_settings.Downloads.gruenbuch %}
-          <div class="d-grid d-md-block mb-5">
-            <a class="btn btn-outline-light" href="{{ settings.apps_settings.Downloads.gruenbuch.url }}" target="_blank">
-              <i class="fas fa-download" aria-hidden="true"></i>
-              {% trans 'Download' %}
-            </a>
-          </div>
+  <main class="book__wrapper">
+    <div id="layout-grid">
+      <nav id="layout-grid__area--leftcolumn" class="mt-2">
+        {% for chapter in page.chapters %}
+          {% if chapter.url == page.active_chapter.url %}
+            <div class="book__chapter-link book__chapter-link--active">
+              <i class="fas fa-arrow-right"></i>
+              <a href="{{ chapter.url }}">
+                {{ chapter.page_title }}
+              </a>
+            </div>
+          {% else %}
+            <div class="book__chapter-link">
+              <a href="{{ chapter.url }}">
+                {{ chapter.page_title }}
+              </a>
+            </div>
           {% endif %}
-        </nav>
-        <div class="col-md-6 book__content">
-          <h1>
-            {{ page.active_chapter.page_title }}
-          </h1>
-          {% if page.active_chapter.subtitle %}
-            <h2>
-              {{ page.active_chapter.subtitle }}
-            </h2>
+        {% empty %}
+          <div>{% trans 'No chapters have been added yet.' %}</div>
+        {% endfor %}
+        {% if settings.apps_settings.Downloads.gruenbuch %}
+        <div class="d-grid d-md-block mb-5">
+          <a class="btn btn-outline-light" href="{{ settings.apps_settings.Downloads.gruenbuch.url }}" target="_blank">
+            <i class="fas fa-download" aria-hidden="true"></i>
+            {% trans 'Download' %}
+          </a>
+        </div>
+        {% endif %}
+      </nav>
+      <div id="layout-grid__area--maincontent" class="book__content">
+        <h1>
+          {{ page.active_chapter.page_title }}
+        </h1>
+        {% if page.active_chapter.subtitle %}
+          <h2>
+            {{ page.active_chapter.subtitle }}
+          </h2>
+        {% endif %}
+        <p>
+          {{ page.active_chapter.body }}
+        </p>
+        <div>
+          {% if page.prev_chapter %}
+            <div class="my-4 float-start">
+              <a
+                href="{{ page.prev_chapter.url }}"
+                class="btn btn-outline-light"
+              >
+                {% trans 'Previous Chapter' %}
+              </a>
+            </div>
           {% endif %}
-          <p>
-            {{ page.active_chapter.body }}
-          </p>
-          <div>
-            {% if page.prev_chapter %}
-              <div class="my-4 float-start">
-                <a
-                  href="{{ page.prev_chapter.url }}"
-                  class="btn btn-outline-light"
-                >
-                  {% trans 'Previous Chapter' %}
-                </a>
-              </div>
-            {% endif %}
-            {% if page.next_chapter %}
-              <div class="my-4 float-end">
-                <a
-                  href="{{ page.next_chapter.url }}"
-                  class="btn btn-outline-light"
-                >
-                  {% trans 'Next Chapter' %}
-                </a>
-              </div>
-            {% endif %}
-          </div>
+          {% if page.next_chapter %}
+            <div class="my-4 float-end">
+              <a
+                href="{{ page.next_chapter.url }}"
+                class="btn btn-outline-light"
+              >
+                {% trans 'Next Chapter' %}
+              </a>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
-  </div>
+  </main>
 {% endblock content %}

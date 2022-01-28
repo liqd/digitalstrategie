@@ -1,28 +1,24 @@
 {% load i18n wagtailcore_tags %}
 
 <div class="ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
-    <div class="container">
-        <div class="row ds-block__row">
-            <div class="col-12 col-md-5 text-center">
-                <h2 class="cta-ds-block__title">
-                    {{ value.link_1.specific.teaser_title }}
-                </h2>
-                <div class="text-center">
-                    {{ value.link_1.specific.teaser_intro }}
-                    <div class="container pt-5">
-                        <a href="{{ value.link_1.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_1_text }}</a>
-                    </div>
+    <div id="layout-grid">
+        <div id="layout-grid__area--maincontent" class="ds-block__maincontent text-center">
+            <h2 class="cta-ds-block__title">
+                {{ value.link_1.specific.teaser_title }}
+            </h2>
+            <div class="text-center">
+                {{ value.link_1.specific.teaser_intro }}
+                <div class="pt-5">
+                    <a href="{{ value.link_1.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_1_text }}</a>
                 </div>
             </div>
-            <div class="col-12 offset-md-2 col-md-5 text-center">
-                <h2 class="cta-ds-block__title">
-                    {{ value.link_2.specific.teaser_title }}
-                </h2>
-                <div class="text-center">
-                    {{ value.link_2.specific.teaser_intro }}
-                    <div class="container pt-5">
-                        <a href="{{ value.link_2.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_2_text }}</a>
-                    </div>
+            <h2 class="cta-ds-block__title">
+                {{ value.link_2.specific.teaser_title }}
+            </h2>
+            <div class="text-center">
+                {{ value.link_2.specific.teaser_intro }}
+                <div class="pt-5">
+                    <a href="{{ value.link_2.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_2_text }}</a>
                 </div>
             </div>
         </div>

@@ -4,25 +4,28 @@
 {% block content %}
 
 {% image page.header_image max-1920x560 as header_image %}
-<div class="ds-block__header_img d-none d-md-block" {% if page.header_image %} style="background-image: url({{ header_image.url }});  background-repeat: no-repeat; background-position: center; background-size: cover; " {% endif %}>
-    {% if page.subtitle %}
-    <div class="ds-block__header_img_overlay">
-        <div class="container text-center">
-            <h1>{{ page.subtitle }}</h1>
+<div id="layout-grid">
+    <div id="layout-grid__area--herounit" class="fullwidth ds-block__header_img d-none d-md-block" {% if page.header_image %} style="background-image: url({{ header_image.url }});  background-repeat: no-repeat; background-position: center; background-size: cover; " {% endif %}>
+        {% if page.subtitle or page.header_image.caption %}
+        <div class="ds-block__header_img_overlay">
+            {% if page.subtitle %}
+            <div class="text-center">
+                <h1>{{ page.subtitle }}</h1>
+            </div>
+            {% endif %}
+            {% if page.header_image.caption %}
+            {# FIXME: caption currently not shown, fix when design is there #}
+            <div class="btn" data-bs-toggle="tooltip" data-placement="top" aria-label="'Header image: '{{ page.header_image.caption }}" title="{{ page.header_image.caption }}" tabindex="0">
+                <i class="fas fa-info" aria-hidden="true"></i>
+            </div>
+            {% endif %}
         </div>
+        {% endif %}
     </div>
-    {% endif %}
-    {% if page.header_image.caption %}
-    {# FIXME: caption currently not shown, fix when design is there #}
-    <div class="ds-block__header_img_overlay">
-        <div class="btn" data-bs-toggle="tooltip" data-placement="top" aria-label="'Header image: '{{ page.header_image.caption }}" title="{{ page.header_image.caption }}" tabindex="0">
-            <i class="fas fa-info" aria-hidden="true"></i>
-        </div>
-    </div>
-    {% endif %}
 </div>
-
+<main role="main">
     {% for block in self.body %}
         {{ block }}
     {% endfor %}
+</main>
 {% endblock %}

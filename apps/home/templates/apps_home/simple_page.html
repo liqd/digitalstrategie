@@ -3,14 +3,12 @@
 
 
 {% block content %}
-<div class="container">
-    <div class="row py-5">
-        <div class="col-md-8 offset-md-2">
-            {% if page.page_title %}
-            <h1>{{ page.page_title }}</h1>
-            {% endif %}
-            {{ page.body }}
-        </div>
+<main id="layout-grid" role="main">
+    <div id="layout-grid__area--maincontent">
+        {% if page.page_title %}
+        <h1>{{ page.page_title }}</h1>
+        {% endif %}
+        {{ page.body }}
     </div>
-</div>
+</main>
 {% endblock %}

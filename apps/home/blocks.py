@@ -201,3 +201,28 @@ class TeaserBlockImage(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/teaser_block_image.html'
         icon = 'image'
+
+
+class ThesisBlock(blocks.StructBlock):
+    thesis = blocks.CharBlock(label='One thesis')
+
+    class Meta:
+        template = 'apps_home/blocks/thesis_block.html'
+        icon = 'pick'
+
+
+class ThesisListBlock(blocks.StructBlock):
+    title = blocks.CharBlock()
+    theses = blocks.ListBlock(
+        ThesisBlock,
+        label='All theses'
+    )
+    background_color = ColorChoiceBlock(
+        help_text='Not choosing a colour will result in a '
+                  'block with a white background.',
+        required=False
+    )
+
+    class Meta:
+        template = 'apps_home/blocks/thesis_list_block.html'
+        icon = 'list-ul'

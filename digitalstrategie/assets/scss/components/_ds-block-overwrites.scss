@@ -1,0 +1,17 @@
+// overwrite spacing of #layout-grid__area--maincontent
+.ds-block__maincontent {
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+// overwrite white slider backround
+.ds-block__swiper-pagination {
+    background: inherit !important;
+}
+
+// overwrite left margin for slider controls normally displayed with image
+.ds-block__swiper-controls {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}

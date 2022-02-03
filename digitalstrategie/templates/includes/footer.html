@@ -1,5 +1,4 @@
-{% load snippet_tags i18n static %}
-{% load_site_menu "footer" as footer_menu_items %}
+{% load snippet_tags i18n static contrib_tags %}
 {% load_site_menu "content-footer" as content_footer_menu_items %}
 
 {% if content_footer_menu_items %}
@@ -29,39 +28,4 @@
 </div>
 {% endif %}
 
-<footer id="footer" class="kiekma">
-
-    <div class="footer__brand">
-        <a href="https://www.berlin.de/" title="{% trans 'To the home page of Berlin.de' %}">
-            <img src="{% static 'images/logo_berlin_negative.svg' %}" alt="Berlin.de">
-        </a>
-    </div>
-
-    <div class="footer__links">
-        <ul class="js-collapse-palm">
-            {% for menuitem in footer_menu_items %}
-            <li>
-                <h3 class="heading js-trigger">{{ menuitem.title }}</h3>
-                    <ul>
-                        {% if menuitem.subpages %}
-                            {% for subpage in menuitem.subpages %}
-                                <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
-                            {% endfor %}
-                        {% endif %}
-                        {% if menuitem.url and not menuitem.subpages %}
-                            <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
-                        {% endif %}
-                    </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <div class="footer__claim">
-        <p>
-            {% blocktrans %}Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal GmbH & Co. KG.{% endblocktrans %}
-            {% if settings.apps_settings.ImportantPages.imprint %}{% blocktrans with imprint_url=settings.apps_settings.ImportantPages.imprint.url %}For more information, please see the <a href="{{ imprint_url }}">imprint</a>.{% endblocktrans %}{% endif %}
-        </p>
-    </div>
-
-</footer>
+{% get_external_footer %}

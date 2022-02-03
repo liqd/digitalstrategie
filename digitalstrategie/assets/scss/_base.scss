@@ -10,8 +10,6 @@ html {
     color: contrast-color($body-bg);
     box-sizing: border-box;
     font-family: $font-family-base;
-    font-family: $font-family-sans-serif;
-    line-height: 1.4;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -23,54 +21,16 @@ body {
     margin: 0;
 }
 
-p,
-address,
-blockquote,
-pre,
-table,
-dl,
-ul,
-ol,
-figure,
-fieldset {
-    margin-top: 0;
-    margin-bottom: $spacer;
-}
-
-h1 {
-    font-size: $h1-font-size;
-}
-
-h2 {
-    font-size: $h2-font-size;
-}
-
-// clashes with Berlin.de styles
-// h3 {
-//     font-size: $h3-font-size;
+// p,
+// address,
+// blockquote,
+// pre,
+// table,
+// dl,
+// ul,
+// ol,
+// figure,
+// fieldset {
+//     margin-top: 0;
+//     margin-bottom: $spacer;
 // }
-
-h4 {
-    font-size: $h4-font-size;
-}
-
-h5 {
-    font-size: $h5-font-size;
-}
-
-// mobile sizes
-@media screen and (max-width: $breakpoint-md-down) {
-    h1 {
-        font-size: $mobile-headline-size * $h1-font-size;
-    }
-
-    h2 {
-        font-size: $mobile-headline-size * $h2-font-size;
-    }
-
-    h3,
-    h4,
-    h5 {
-        font-size: $font-size-lg;
-    }
-}

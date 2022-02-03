@@ -3,13 +3,13 @@
 <div class="ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
     <div id="layout-grid">
         <div id="layout-grid__area--maincontent" class="ds-block__maincontent">
-            <h2>{{ value.title }}</h2>
+            <h2 class="text-center">{{ value.title }}</h2>
             <div class="modul-buehne">
                 <div class="swiper-container">
-                    <div class="swiper-controls">
+                    <div class="swiper-controls ds-block__swiper-controls">
                         <div class="swiper-button-prev" title={% trans 'Previous slide' %}></div>
                         <div class="swiper-button-next" title={% trans 'Next slide' %}></div>
-                        <div class="swiper-pagination" aria-hidden="true"></div>
+                        <div class="swiper-pagination ds-block__swiper-pagination" aria-hidden="true"></div>
                     </div>
                     <ul class="swiper-wrapper">
                         {% for thesis in value.theses %}

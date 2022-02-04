@@ -5,6 +5,14 @@
     margin-bottom: 0 !important;
 }
 
+// using a media-query from berlin_marketing.css
+@media print, (min-width: 64.001rem) {
+    .ds-block__maincontent--small {
+        max-width: 60%;
+        margin: auto;
+    }
+}
+
 // overwrite white slider backround
 .ds-block__swiper-pagination {
     background: inherit !important;

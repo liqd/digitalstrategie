@@ -95,10 +95,10 @@ class NavigationMenu(ClusterableModel):
         max_length=255,
         null=False,
         blank=False,
-        help_text=('Call the menu "header" to use as upper menu or '
-                   '"footer" to use in the lower dark grey footer. '
-                   'To display the upper light grey footer, call the '
-                   'menu snippet “content-footer”.')
+        help_text=('Call the menu "header" to use as upper menu. '
+                   'Call the menu "footer" to use as'
+                   'the upper light grey footer. The lower '
+                   'footer is loaded externally.')
     )
 
     def __str__(self):

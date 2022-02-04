@@ -219,6 +219,10 @@ msgstr ""
 msgid "To the home page"
 msgstr "Zur Startseite"
 
+#: digitalstrategie/templates/includes/header.html:19
+msgid "Digital strategy"
+msgstr "Digitalstrategie"
+
 #: digitalstrategie/templates/includes/header.html:25
 msgid "Area navigation"
 msgstr "Bereichsnavigation"

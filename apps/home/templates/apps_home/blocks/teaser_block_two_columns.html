@@ -1,7 +1,7 @@
 {% load i18n wagtailcore_tags %}
 
 <!-- FIXME 2 column full width element in their styleguide so this is combined with their flex grid-->
-<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
+<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
     <div class="servicepanel__main flexgrid grid--2 text-center">
         <div class="">
             <h2 class="cta-ds-block__title">

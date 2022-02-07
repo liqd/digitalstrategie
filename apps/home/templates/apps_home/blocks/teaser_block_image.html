@@ -2,7 +2,7 @@
 
 {% image value.link.specific.teaser_image width-800 as teaser_image %}
 
-<div class="modul-servicepanel fullwidth py-0 {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
+<div class="modul-servicepanel fullwidth py-0 {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
     <div class="servicepanel__{% if self.image_alignment == 'left' %}left{% else %}right{% endif %} teaser-ds-block-img__{% if self.image_alignment == 'left' %}left{% else %}right{% endif %}">
         <img src="{{ teaser_image.url }}"/>
         {% if value.link.specific.teaser_image.caption %}

@@ -3,7 +3,7 @@
 {% get_identifier value as identifier %}
 
 
-<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
+<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
     <div class="servicepanel__main">
         <h2 class="faq-ds-block__title faq-ds-block__title--dark">
         {% if self.faq_title %}

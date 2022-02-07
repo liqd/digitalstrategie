@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-26 14:36+0000\n"
+"POT-Creation-Date: 2022-02-07 14:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +17,90 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps/forms/models.py:27
+#: apps/contrib/django_standard_messages.py:6
+msgid "This field is required."
+msgstr ""
+
+#: apps/forms/models.py:29
 msgid "to address"
 msgstr ""
 
-#: apps/forms/models.py:28
+#: apps/forms/models.py:30
 msgid ""
 "Form submissions will be emailed to these addresses. Separate multiple "
 "addresses by comma."
 msgstr ""
 
-#: apps/forms/models.py:32
+#: apps/forms/models.py:34
 msgid "from address"
 msgstr ""
 
-#: apps/forms/models.py:33
+#: apps/forms/models.py:35
 msgid ""
 "Optional - submitted forms will be displayed as sent from this email address."
 msgstr ""
 
-#: apps/forms/models.py:37
+#: apps/forms/models.py:39
 msgid "subject"
 msgstr ""
 
-#: apps/forms/models.py:38
+#: apps/forms/models.py:40
 msgid ""
 "Optional - will be displayed as the subject of the email of the submitted "
 "form."
 msgstr ""
 
-#: apps/forms/models.py:81
+#: apps/forms/models.py:83
 msgid "First Name"
 msgstr ""
 
-#: apps/forms/models.py:88
+#: apps/forms/models.py:90
 msgid "Surname"
 msgstr ""
 
-#: apps/forms/models.py:95
+#: apps/forms/models.py:97
 msgid "Organisation"
 msgstr ""
 
-#: apps/forms/models.py:102
+#: apps/forms/models.py:104
 msgid "E-Mail"
 msgstr ""
 
-#: apps/forms/models.py:157 apps/forms/models.py:221
+#: apps/forms/models.py:181 apps/forms/models.py:245
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr ""
 
-#: apps/forms/models.py:163
+#: apps/forms/models.py:187
 msgid "Title"
 msgstr ""
 
-#: apps/forms/models.py:170
+#: apps/forms/models.py:194
 msgid "Your message to us..."
 msgstr ""
 
-#: apps/forms/models.py:195
+#: apps/forms/models.py:219
 msgid ""
 "The selected categories                     are displayed in the "
 "participation form."
 msgstr ""
 
-#: apps/forms/models.py:220
+#: apps/forms/models.py:244
 msgid "I agree that my contact data is stored"
 msgstr ""
 
-#: apps/forms/models.py:227
+#: apps/forms/models.py:251
 msgid "I am interested in the following fields of action"
 msgstr ""
 
-#: apps/forms/templates/apps_forms/form_page_landing.html:10
+#: apps/forms/templates/apps_forms/form_page_landing.html:9
 msgid "Back to Homepage"
 msgstr ""
 
-#: apps/forms/templates/apps_forms/includes/form.html:17
+#: apps/forms/templates/apps_forms/includes/form.html:15
 msgid "Required fields"
 msgstr ""
 
-#: apps/forms/templates/apps_forms/includes/form.html:20
+#: apps/forms/templates/apps_forms/includes/form.html:18
 #, python-format
 msgid ""
 "\n"
@@ -107,27 +111,28 @@ msgid ""
 "                            "
 msgstr ""
 
-#: apps/forms/templates/apps_forms/includes/form.html:30
+#: apps/forms/templates/apps_forms/includes/form.html:28
 msgid "Send"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_page.html:26
+#: apps/gruenbuch/templates/gruenbuch_page.html:28
 msgid "No chapters have been added yet."
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_page.html:32
+#: apps/gruenbuch/templates/gruenbuch_page.html:34
 msgid "Download"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_page.html:56
+#: apps/gruenbuch/templates/gruenbuch_page.html:58
 msgid "Previous Chapter"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_page.html:66
+#: apps/gruenbuch/templates/gruenbuch_page.html:68
 msgid "Next Chapter"
 msgstr ""
 
-#: apps/home/templates/apps_home/blocks/quote_block.html:10
+#: apps/home/templates/apps_home/blocks/quote_block.html:9
+#: apps/home/templates/apps_home/blocks/text_with_image_block.html:16
 msgid "Read more"
 msgstr ""
 
@@ -155,6 +160,11 @@ msgstr ""
 msgid "Internal server error."
 msgstr ""
 
+#: digitalstrategie/templates/base.html:8
+#: digitalstrategie/templates/includes/header.html:19
+msgid "Digital strategy"
+msgstr ""
+
 #: digitalstrategie/templates/base_errors.html:4
 msgid "Error"
 msgstr ""
@@ -171,18 +181,18 @@ msgstr ""
 msgid "To the top of the page"
 msgstr ""
 
-#: digitalstrategie/templates/includes/footer.html:34
+#: digitalstrategie/templates/includes/footer.html:35
 #: digitalstrategie/templates/includes/header.html:9
 msgid "To the home page of Berlin.de"
 msgstr ""
 
-#: digitalstrategie/templates/includes/footer.html:60
+#: digitalstrategie/templates/includes/footer.html:62
 msgid ""
 "Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
 "GmbH & Co. KG."
 msgstr ""
 
-#: digitalstrategie/templates/includes/footer.html:61
+#: digitalstrategie/templates/includes/footer.html:63
 #, python-format
 msgid ""
 "For more information, please see the <a href=\"%(imprint_url)s\">imprint</a>."
@@ -191,10 +201,6 @@ msgstr ""
 #: digitalstrategie/templates/includes/header.html:18
 #: digitalstrategie/templates/includes/header.html:19
 msgid "To the home page"
-msgstr ""
-
-#: digitalstrategie/templates/includes/header.html:19
-msgid "Digital strategy"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:25

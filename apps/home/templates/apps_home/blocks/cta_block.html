@@ -1,6 +1,6 @@
 {% load wagtailcore_tags %}
 
-<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
+<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
     <div class="servicepanel__main text-center">
         <h2 class="cta-ds-block__title">
             {{ self.title }}

@@ -1,44 +1,3 @@
-.ds-block__yellow {
-    background-color: $yellow;
-
-    .accordion-button,
-    .accordion-body {
-        background-color: $yellow;
-    }
-}
-
-.ds-block__pink {
-    background-color: $pink;
-
-    .accordion-button,
-    .accordion-body {
-        background-color: $pink;
-    }
-}
-
-.ds-block__purple {
-    background-color: $purple;
-
-    .accordion-button,
-    .accordion-body {
-        background-color: $purple;
-    }
-}
-
-.ds-block__green {
-    .accordion-button,
-    .accordion-body {
-        background-color: $green;
-        color: $body-bg;
-    }
-}
-
-.ds-block__body-bg {
-    .accordion-button {
-        background-color: $body-bg;
-    }
-}
-
 .ds-block {
     padding-top: 5 * $spacer;
     padding-bottom: 5 * $spacer;
@@ -47,6 +6,58 @@
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     border: none !important;
+
+    .content-container * {
+        color: $black !important;
+    }
+
+    &--yellow,
+    &--pink,
+    &--purple,
+    &--body-bg {
+        opacity: 1 !important; // overwrite
+    }
+}
+
+.ds-block--yellow {
+    background-color: $yellow;
+
+    .accordion-button,
+    .accordion-body {
+        background-color: $yellow;
+    }
+}
+
+.ds-block--pink {
+    background-color: $pink;
+
+    .accordion-button,
+    .accordion-body {
+        background-color: $pink;
+    }
+}
+
+.ds-block--purple {
+    background-color: $purple;
+
+    .accordion-button,
+    .accordion-body {
+        background-color: $purple;
+    }
+}
+
+.ds-block--green {
+    .accordion-button,
+    .accordion-body {
+        background-color: $green;
+        color: $body-bg;
+    }
+}
+
+.ds-block--body-bg {
+    .accordion-button {
+        background-color: $body-bg;
+    }
 }
 
 .ds-block__row {

@@ -1,0 +1,14 @@
+// new styles that are fine with berlin.de styling
+.thesis-ds-block__title {
+    padding-bottom: 2 * $spacer;
+}
+
+.thesis-ds-block__thesis {
+    padding-left: $spacer;
+
+    // copied from berlin_marketing.css
+    font-size: 1.375rem;
+    color: #000;
+    line-height: 1.182em;
+    font-weight: 700;
+}

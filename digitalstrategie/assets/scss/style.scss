@@ -20,8 +20,8 @@
 // @import "~bootstrap/scss/reboot";
 // @import "~bootstrap/scss/type";
 // @import "~bootstrap/scss/images";
-@import "~bootstrap/scss/containers";
-@import "~bootstrap/scss/grid";
+// @import "~bootstrap/scss/containers";
+// @import "~bootstrap/scss/grid";
 
 // @import "~bootstrap/scss/tables";
 // @import "~bootstrap/scss/forms";
@@ -64,7 +64,11 @@
 @import "components/document";
 @import "components/ds-block";
 @import "components/ds-block-overwrites";
+@import "components/faq-ds-block";
 @import "components/footer";
 @import "components/menu";
 @import "components/book";
 @import "components/form";
+@import "components/teaser-ds-block";
+@import "components/text-img-ds-block";
+@import "components/thesis-ds-block";

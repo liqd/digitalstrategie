@@ -2,6 +2,7 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-{{ page.body }}
+<div id="layout-grid__area--maincontent">
+    {{ page.body }}
+</div>
 {% endblock %}
-

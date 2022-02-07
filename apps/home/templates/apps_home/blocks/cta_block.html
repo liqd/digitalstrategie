@@ -1,17 +1,15 @@
 {% load wagtailcore_tags %}
 
-<div class="ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
-    <div id="layout-grid">
-        <div id="layout-grid__area--maincontent" class="ds-block__maincontent text-center">
-            <h2 class="cta-ds-block__title">
-                {{ self.title }}
-            </h2>
-            <div>
-                {{ value.body|richtext }}
-                {% if value.link %}
-                <a href="{{ value.link.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_text }}</a>
-                {% endif %}
-            </div>
+<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
+    <div class="servicepanel__main text-center">
+        <h2 class="cta-ds-block__title">
+            {{ self.title }}
+        </h2>
+        <div>
+            {{ value.body|richtext }}
+            {% if value.link %}
+            <a href="{{ value.link.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_text }}</a>
+            {% endif %}
         </div>
     </div>
 </div>

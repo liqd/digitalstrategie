@@ -1,8 +1,9 @@
 {% load i18n wagtailcore_tags %}
 
-<div class="ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
-    <div id="layout-grid">
-        <div id="layout-grid__area--maincontent" class="ds-block__maincontent text-center">
+<!-- FIXME 2 column full width element in their styleguide so this is combined with their flex grid-->
+<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
+    <div class="servicepanel__main flexgrid grid--2 text-center">
+        <div class="">
             <h2 class="cta-ds-block__title">
                 {{ value.link_1.specific.teaser_title }}
             </h2>
@@ -12,6 +13,8 @@
                     <a href="{{ value.link_1.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_1_text }}</a>
                 </div>
             </div>
+        </div>
+        <div class="col">
             <h2 class="cta-ds-block__title">
                 {{ value.link_2.specific.teaser_title }}
             </h2>
@@ -22,6 +25,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

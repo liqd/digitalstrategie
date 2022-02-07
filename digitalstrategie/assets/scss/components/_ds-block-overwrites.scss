@@ -1,15 +1,15 @@
 // overwrite spacing of #layout-grid__area--maincontent
-.ds-block__maincontent {
-    min-height: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
+// .ds-block__maincontent {
+//     min-height: 0 !important;
+//     margin-top: 0 !important;
+//     margin-bottom: 0 !important;
+// }
 
 // using a media-query from berlin_marketing.css
 @media print, (min-width: 64.001rem) {
     .ds-block__maincontent--small {
         max-width: 60%;
-        margin: auto;
+        margin: auto !important;
     }
 }
 
@@ -22,4 +22,13 @@
 .ds-block__swiper-controls {
     margin-left: 0 !important;
     padding-left: 0 !important;
+}
+
+// FIXME temporary to see if it'll work, not sure if we want to do this?
+.servicepanel__left.teaser-ds-block-img__left {
+    grid-column: first !important;
+}
+
+.servicepanel__right.teaser-ds-block-img__right {
+    grid-column: last !important;
 }

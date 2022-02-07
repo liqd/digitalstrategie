@@ -34,33 +34,33 @@
 
     </head>
     <body>
+        <div id="page-wrapper">
+          {% wagtailuserbar %}
+          {% include 'includes/header.html' %}
+          <main id="layout-grid" role="main">
+              {% include 'includes/breadcrumb.html' %}
+              {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert--{{ message.level_tag }}" role="alert">
+                        <div class="text-center alert-text">
+                        {{ message }}
+                        </div>
+                    </div>
+                {% endfor %}
+              {% endif %}
+              {% block extra_messages %}{% endblock %}
 
-        {% wagtailuserbar %}
-        {% include 'includes/header.html' %}
-        {% include 'includes/breadcrumb.html' %}
-        <div class="base__wrapper">
-            {% if messages %}
-              {% for message in messages %}
-                  <div class="alert alert--{{ message.level_tag }}" role="alert">
-                      <div class="text-center alert-text">
-                      {{ message }}
-                      </div>
-                  </div>
-              {% endfor %}
-            {% endif %}
-            {% block extra_messages %}{% endblock %}
+              {% block content %}
 
-            <div class="content">
-            {% block content %}
-            {% endblock %}
-            </div>
-            {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-            {% endblock %}
-            {% block extra_css %}
-            {# Override this in templates to add extra javascript #}
-            {% endblock %}
+              {% endblock %}
+              {% block extra_js %}
+              {# Override this in templates to add extra javascript #}
+              {% endblock %}
+              {% block extra_css %}
+              {# Override this in templates to add extra javascript #}
+              {% endblock %}
+            </main>
+            {% include 'includes/footer.html' %}
         </div>
-        {% include 'includes/footer.html' %}
     </body>
 </html>

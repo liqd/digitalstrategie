@@ -1,20 +1,18 @@
 {% load wagtailcore_tags %}
-<div id="layout-grid" class="kiekma ">
-    <div id="layout-grid__area--contentheader">
-        <div id="content-header">
-            {% if self.get_ancestors|length > 1 %}
-            <nav class="breadcrumb" aria-label="Breadcrumb">
-                <h2 class="aural">Sie befinden sich hier:</h2>
-                <ol>
-                    {% for page in self.get_ancestors %}
-                    {% if page.is_root == False %}
-                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-                    {% endif %}
-                    {% endfor %}
-                    <li class=”active” aria-current="page">{{ self.title }}</li>
-                </ol>
-            </nav>
-            {% endif %}
-        </div>
+<div id="layout-grid__area--contentheader">
+    <div id="content-header">
+        {% if self.get_ancestors|length > 1 %}
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <h2 class="aural">Sie befinden sich hier:</h2>
+            <ol>
+                {% for page in self.get_ancestors %}
+                {% if page.is_root == False %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+                <li class=”active” aria-current="page">{{ self.title }}</li>
+            </ol>
+        </nav>
+        {% endif %}
     </div>
 </div>

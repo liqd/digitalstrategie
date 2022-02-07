@@ -4,11 +4,9 @@
 {% block title %}{% trans 'Error' %} &mdash; {{ block.super }}{% endblock %}
 
 {% block content %}
-<main id="layout-grid" role="main">
-    <div id="layout-grid__area--maincontent">
-        <h1>{% block error_status %}{% endblock %}</h1>
-        {% block error_description %}{% endblock %}
-        <a href="/">{% trans 'Back to landing page' %}</a>
-    </div>
-</main>
+<div id="layout-grid__area--maincontent">
+    <h1>{% block error_status %}{% endblock %}</h1>
+    {% block error_description %}{% endblock %}
+    <a href="/">{% trans 'Back to landing page' %}</a>
+</div>
 {% endblock %}

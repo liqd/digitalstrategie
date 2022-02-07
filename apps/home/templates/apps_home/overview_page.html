@@ -2,17 +2,13 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-<div class="{% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
-    <div id="layout-grid">
-        <div id="layout-grid__area--maincontent">
-            {% if page.page_title %}
-            <h1>{{ page.page_title }}</h1>
-            {% endif %}
-            {{ self.page_intro|richtext }}
-        </div>
-    </div>
+<div id="layout-grid__area--maincontent">
+    {% if page.page_title %}
+    <h1>{{ page.page_title }}</h1>
+    {% endif %}
+    {{ self.page_intro|richtext }}
+    {% for teaser in self.teasers %}
+        {{ teaser }}
+    {% endfor %}
 </div>
-{% for teaser in self.teasers %}
-    {{ teaser }}
-{% endfor %}
 {% endblock %}

@@ -22,10 +22,11 @@
         </div>
         {% endif %}
     </div>
+    {% endif %}
 </div>
-<main role="main">
+<div id="layout-grid__area--maincontent">
     {% for block in self.body %}
         {{ block }}
     {% endfor %}
-</main>
+</div>
 {% endblock %}

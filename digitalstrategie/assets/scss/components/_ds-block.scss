@@ -52,12 +52,12 @@
     }
 }
 
-.ds-block__header_img {
+.hero-ds-block__img {
     position: relative;
     padding: 10 * $spacer 0;
 }
 
-.ds-block__header_img_overlay {
+.hero-ds-block__img-overlay {
     display: block;
     position: absolute;
     height: 100%;
@@ -65,83 +65,6 @@
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0);
-}
-
-// FIXME: when we have more ds-blocks, they should get their own components
-// and only common stuff stays in here?!
-// -> for now leave here to identify common stuff
-
-.faq-ds-block__title {
-    font-weight: $font-weight-bold;
-    padding-top: $spacer;
-    padding-bottom: $spacer;
-    margin-bottom: 0;
-
-    &--dark {
-        border-bottom: solid 1px $text-gray;
-    }
-
-    &--light {
-        border-bottom: solid 1px $body-bg;
-    }
-}
-
-.faq-ds-block__item--dark {
-    // important to overwrite bootstraps accordion-item:last-child
-    border-bottom: solid 1px $text-gray;
-
-    // fixes thick borders on safari
-    background-color: transparent;
-}
-
-.faq-ds-block__item--light {
-    // important to overwrite bootstraps accordion-item:last-child
-    border-bottom: solid 1px $body-bg;
-
-    // fixes thick borders on safari
-    background-color: transparent;
-}
-
-.faq-ds-block__button {
-    padding-left: 0;
-    padding-right: 0;
-    border-radius: 0 !important; // overwrite of default bs
-    font-size: $h4-font-size;
-    font-weight: $font-weight-bold;
-
-    &:focus {
-        box-shadow: none;
-    }
-
-    &--dark:focus {
-        color: $text-gray;
-    }
-
-    &--light:focus {
-        color: $body-bg;
-    }
-}
-
-.accordion-button.faq-ds-block__button--light:after {
-    background-image: $accordion-button-icon--light;
-}
-
-.accordion-button:not(.collapsed) {
-    // removes line on safari
-    box-shadow: none;
-}
-
-.faq-ds-block__body {
-    padding-left: 0;
-    padding-right: 0;
-
-    p:first-child {
-        margin-top: 0;
-    }
-
-    p:last-child {
-        margin-bottom: 0;
-    }
 }
 
 .cta-ds-block__title {
@@ -156,66 +79,4 @@
 .quote-ds-block__link {
     text-decoration: none;
     color: $black;
-}
-
-// FIXME: own component?
-img.textimg-ds-block__img {
-    width: 100%;
-    height: 100%;
-    vertical-align: bottom;
-}
-
-// this helps to align text symmetrical on mobile,
-// but kind of leftish if viewed on bigger screen
-.textimg-ds-block__text-wrapper {
-    width: 100%;
-    padding: 0 1 * $spacer;
-
-    & h2 {
-        margin: 1 * $spacer 0;
-    }
-
-    @media screen and (min-width: $breakpoint-sm) {
-        width: 70%;
-    }
-
-    @media screen and (min-width: $breakpoint-md) {
-        width: 60%;
-    }
-}
-
-.teaser-ds-block-img__left img,
-.teaser-ds-block-img__right img {
-    display: block; // rm automatic whitespace from inline elements
-}
-
-.teaser-ds-block-img__left {
-    float: left;
-    position: relative;
-}
-
-.teaser-ds-block-img__right {
-    float: right;
-    position: relative;
-}
-
-.teaser-ds-block-img__copyright {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-// new styles that are fine with berlin.de styling
-.thesis-ds-block__title {
-    padding-bottom: 2 * $spacer;
-}
-
-.thesis-ds-block__thesis {
-    padding-left: $spacer;
-
-    // copied from berlin_marketing.css
-    font-size: 1.375rem;
-    color: #000;
-    line-height: 1.182em;
-    font-weight: 700;
 }

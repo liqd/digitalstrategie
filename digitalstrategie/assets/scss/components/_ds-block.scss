@@ -42,6 +42,11 @@
 .ds-block {
     padding-top: 5 * $spacer;
     padding-bottom: 5 * $spacer;
+
+    // overwrites for styleguide
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border: none !important;
 }
 
 .ds-block__row {

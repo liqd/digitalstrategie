@@ -1,23 +1,16 @@
 {% load i18n wagtailcore_tags %}
 
-<div class="ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}px-0">
-    <div id="layout-grid">
-        <div id="layout-grid__area--maincontent" class="ds-block__maincontent">
-            {{ self.text }}
-                <div>
-                    {% if value.link %}
-                    <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                    {% endif %}
-                </div>
-            <p class="quote-ds-block__text">
-                <i class="fas fa-quote-left fa-xs" aria-hidden="true"></i>
-                {{ self.quote }}
-                <i class="fas fa-quote-right fa-xs" aria-hidden="true"></i>
-            </p>
-            <p>
-                {{ self.author }}
-            </p>
-        </div>
-
+<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
+    <div class="servicepanel__main text-center">
+        <p class="quote-ds-block__text">
+            <i class="fas fa-quote-left fa-xs" aria-hidden="true"></i>
+            {{ self.quote }}
+            <i class="fas fa-quote-right fa-xs" aria-hidden="true"></i>
+        </p>
+        <hr class="medium-space">
+        <p>
+            {{ self.author }}
+        </p>
     </div>
+
 </div>

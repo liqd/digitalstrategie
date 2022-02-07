@@ -1,21 +1,25 @@
 {% load i18n wagtailcore_tags wagtailimages_tags %}
 {% image value.image width-500 as image %}
 
-<div class="{% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
-    <div id="layout-grid">
-        <div id="layout-grid__area--maincontent" class="ds-block__maincontent">
-            <img src="{{ image.url }}" alt="{{ image.alt }}" class="text-img-ds-block__img" />
-        </div>
-        <div class="text-img-ds-block__text-wrapper">
-            <h2>
-                {{ value.title }}
-            </h2>
-            {{ value.body|richtext }}
-            <div>
-                {% if value.link %}
-                <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                {% endif %}
-            </div>
-        </div>
+<article class="modul-teaser-marketing imageteaser fullwidth ds-block">
+    <div class="background-image {% if self.background_color %}ds-block__{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
     </div>
-</div>
+    <div class="content-container fullwidth__inner">
+        <div class="image">
+            <div class="image__image">
+                <img src="{{ image.url }}" alt="{{ image.alt }}" class="textimg-ds-block__img" />
+            </div>
+            <p class="image__copyright">
+              <!-- FIXME do we have copyright -->
+                copyright by photograph
+            </p>
+        </div>
+        <h3>{{ value.title }}</h3>
+        {{ value.body|richtext }}
+        {% if value.link %}
+        <div class="controls">
+            <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        {% endif %}
+    </div>
+</article>

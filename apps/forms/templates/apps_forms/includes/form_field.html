@@ -28,9 +28,9 @@
     <div class="form-group">
       <label class="mb-1">{{ field.help_text }} {% if field.field.required %} *{% endif %}</label>
       {% render_field field class="form-control is-invalid" %}
-    </div>
-    <div class="message message--error" role="alert">
-      {{ field.errors }}
+      <div class="message message--error" role="alert">
+        {{ field.errors }}
+      </div>
     </div>
   {% else %}
     <div class="form-group">

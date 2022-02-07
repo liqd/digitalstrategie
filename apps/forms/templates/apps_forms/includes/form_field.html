@@ -1,16 +1,22 @@
 {% load i18n widget_tweaks form_field_tags %}
 
 {% if field|is_checkbox %}
-  <div class="form-check">
-    <label class="form-check__label" for="id_{{ field.name }}">
-      {% render_field field %}
-      {{ field.help_text }} {% if field.field.required %} *{% endif %}
-    </label>
-    {% if field.errors %}
-      <div class="message message--error" role="alert">
-      {{ field.errors }}
-      </div>
-    {% endif %}
+  <div class="form-group">
+    <div class="form-check">
+      {% if field.errors %}
+        {% render_field field class="form-check-input is-invalid" %}
+      {% else %}
+        {% render_field field class="form-check-input" %}
+      {% endif %}
+      <label class="form-check-label" for="id_{{ field.name }}">
+        {{ field.help_text }} {% if field.field.required %} *{% endif %}
+      </label>
+      {% if field.errors %}
+        <div class="message message--error" role="alert">
+        {{ field.errors }}
+        </div>
+      {% endif %}
+    </div>
   </div>
 {% elif field|is_checkbox_select_multiple %}
   <div class="form-group">

@@ -1,6 +1,5 @@
 .form--overwrite {
     label {
-        font-weight: normal;
         font-size: $font-size-md;
     }
 
@@ -14,10 +13,6 @@
     textarea {
         &:focus {
             border-color: $blue;
-        }
-
-        &:not(.is-invalid):not(.is-valid) {
-            border: solid 1px $text-gray;
         }
     }
 

@@ -6,8 +6,14 @@
     margin-bottom: 0 !important;
     border: none !important;
 
-    .content-container * {
+    .content-container p {
         color: $black !important;
+    }
+
+    &--green {
+        .content-container * {
+            color: $body-bg !important;
+        }
     }
 
     &--yellow,

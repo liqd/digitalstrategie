@@ -189,3 +189,5 @@ WAGTAILSEARCH_BACKENDS = {
         'INDEX_SETTINGS': {}
     }
 }
+
+BERLIN_FOOTER_URL = 'https://www.berlin.de/rbmskzl/__i9/ohne/foot.inc'

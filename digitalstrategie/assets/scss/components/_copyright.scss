@@ -5,3 +5,9 @@
     padding: 0 0.2em;
     position: right;
 }
+
+.image__caption {
+    font-size: $font-size-base * 0.6875;
+    font-weight: normal;
+    margin: 0.3rem 0 4rem;
+}

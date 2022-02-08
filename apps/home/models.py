@@ -111,6 +111,14 @@ class OverviewPage(Page):
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
     ]
 
+    intro_image = models.ForeignKey(
+        'apps_images.CustomImage',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
     background_color = models.CharField(
         choices=apps_blocks.ColorChoiceBlock.choices,
         help_text='This sets the background colour of the introduction part '
@@ -165,6 +173,7 @@ class OverviewPage(Page):
 
     common_panels = [
         FieldPanel('title'),
+        ImageChooserPanel('intro_image'),
         FieldPanel('background_color'),
         StreamFieldPanel('teasers'),
     ]

@@ -6,7 +6,8 @@ class ColorChoiceBlock(blocks.ChoiceBlock):
     choices = [
         ('yellow', 'Yellow'),
         ('pink', 'Pink'),
-        ('purple', 'Purple')
+        ('purple', 'Purple'),
+        ('green', 'Green')
     ]
 
 
@@ -52,6 +53,9 @@ class FaqBlock(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/faq_block.html'
         icon = 'arrow-down'
+
+# this does not use the text or the link in the designs and has been removed
+# from template for now
 
 
 class QuoteBlock(blocks.StructBlock):
@@ -122,6 +126,7 @@ class CoulouredParagraphBlock(blocks.StructBlock):
 
 # teaser blocks
 
+# this is now exactly same as cta block
 class TeaserBlockCentered(blocks.StructBlock):
 
     link = blocks.PageChooserBlock(
@@ -143,6 +148,7 @@ class TeaserBlockCentered(blocks.StructBlock):
         icon = 'arrow-down'
 
 
+# this is now not used anywhere?
 class TeaserBlockTwoColumns(blocks.StructBlock):
 
     link_1 = blocks.PageChooserBlock(
@@ -171,6 +177,8 @@ class TeaserBlockTwoColumns(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/teaser_block_two_columns.html'
         icon = 'arrow-down'
+
+# this is the same as TextWithImage also link text is no longer needed
 
 
 class TeaserBlockImage(blocks.StructBlock):

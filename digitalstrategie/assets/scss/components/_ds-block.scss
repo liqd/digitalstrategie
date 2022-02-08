@@ -1,8 +1,7 @@
+// overwrites for styleguide
 .ds-block {
-    padding-top: 5 * $spacer !important;
-    padding-bottom: 5 * $spacer !important;
-
-    // overwrites for styleguide
+    padding-top: 3 * $spacer !important;
+    padding-bottom: 3 * $spacer !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     border: none !important;
@@ -14,8 +13,14 @@
     &--yellow,
     &--pink,
     &--purple,
+    &--green,
     &--body-bg {
         opacity: 1 !important; // overwrite
+    }
+
+    @media print, (min-width: 64.001rem) {
+        padding-top: 5 * $spacer !important;
+        padding-bottom: 5 * $spacer !important;
     }
 }
 
@@ -47,6 +52,9 @@
 }
 
 .ds-block--green {
+    background-color: $green;
+    color: $body-bg;
+
     .accordion-button,
     .accordion-body {
         background-color: $green;
@@ -92,7 +100,7 @@
     font-weight: $font-weight-bold;
 }
 
-.quote-ds-block__link {
+.ds-block__link {
     text-decoration: none;
     color: $black;
 }

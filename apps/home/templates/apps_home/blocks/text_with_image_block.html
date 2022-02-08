@@ -7,7 +7,7 @@
     <div class="content-container fullwidth__inner">
         <div class="image">
             <div class="image__image">
-                <img src="{{ image.url }}" alt="{{ image.alt }}" class="textimg-ds-block__img" />
+                <img src="{{ image.url }}" alt="{{ image.alt }}" />
             </div>
             <p class="image__copyright">
               <!-- FIXME do we have copyright -->
@@ -18,7 +18,7 @@
         {{ value.body|richtext }}
         {% if value.link %}
         <div class="controls">
-            <a class="quote-ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="ds-block__link" href="{{ value.link.url }}">{% trans 'Read more' %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         {% endif %}
     </div>

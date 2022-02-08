@@ -3,26 +3,29 @@
 
 {% image value.link.specific.teaser_image width-800 as teaser_image %}
 
-<article class="modul-teaser-marketing imageteaser fullwidth ds-block">
-    <div class="background-image {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
-    </div>
-    <div class="content-container fullwidth__inner">
-        <div class="image">
-            <div class="image__image">
-                <img src="{{ teaser_image.url }}" alt="{{ image.alt }}" />
-            </div>
-            {% if value.link.specific.teaser_image.caption %}
-            <p class="image__copyright">
-                {{ value.link.specific.teaser_image.caption }}
-            </p>
-            {% endif %}
+<article class="modul-teaser" data-add-clickable-area="smart">
+    <div class="image">
+        <div class="image__image">
+            <img src="{{ teaser_image.url }}" alt="{{ image.alt }}" />
         </div>
-        <h3 class="title">{{ value.link.specific.teaser_title }}</h3>
-        {{ value.link.specific.teaser_intro }}
-        {% if value.link %}
-        <div class="controls">
-            <a href="{{ value.link.url }}" class="ds-block__link">{{ value.link_text }}</a>
-        </div>
+        {% if value.link.specific.teaser_image.caption %}
+        <p class="image__caption">
+            {{ value.link.specific.teaser_image.caption }}
+        </p>
         {% endif %}
+        {% if value.link.specific.teaser_image.copyright %}
+        <p class="image__copyright">
+            {{ value.link.specific.teaser_image.copyright }}
+        </p>
+        {% endif %}
+    </div>
+    <h3 class="title">{{ value.link.specific.teaser_title }}</h3>
+    <div class="inner">
+        <p>
+            {{ value.link.specific.teaser_intro }}
+            {% if value.link %}
+                <a href="{{ value.link.url }}">{{ value.link_text }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            {% endif %}
+        </p>
     </div>
 </article>

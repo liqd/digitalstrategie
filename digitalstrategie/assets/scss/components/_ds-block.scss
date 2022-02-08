@@ -10,10 +10,19 @@
         color: $black;
     }
 
+    .content-container p {
+        color: $black !important;
+
     &--green {
         opacity: 1 !important;
         color: $body-bg !important;
         background-color: $green;
+    }
+
+    &--green {
+        .content-container * {
+            color: $body-bg !important;
+        }
     }
 
     &--yellow,

@@ -14,6 +14,20 @@
         opacity: 1 !important;
         color: $body-bg !important;
         background-color: $green;
+    }
+
+    &--yellow,
+    &--pink,
+    &--purple,
+    &--body-bg {
+        opacity: 1 !important; // overwrite
+    }
+
+    @media print, (min-width: 64.001rem) {
+        padding-top: 5 * $spacer !important;
+        padding-bottom: 5 * $spacer !important;
+    }
+
 
         .accordion-button,
         .accordion-body,
@@ -47,6 +61,17 @@
         .accordion-button,
         .accordion-body {
             background-color: $purple;
+        }
+    }
+
+    .ds-block--green {
+        background-color: $green;
+        color: $body-bg;
+
+        .accordion-button,
+        .accordion-body {
+            background-color: $green;
+            color: $body-bg;
         }
     }
 

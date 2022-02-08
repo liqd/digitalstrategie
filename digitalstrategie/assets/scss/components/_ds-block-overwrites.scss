@@ -16,12 +16,3 @@
     margin-left: 0 !important;
     padding-left: 0 !important;
 }
-
-// FIXME temporary to see if it'll work, not sure if we want to do this?
-.servicepanel__left.teaser-ds-block-img__left {
-    grid-column: first !important;
-}
-
-.servicepanel__right.teaser-ds-block-img__right {
-    grid-column: last !important;
-}

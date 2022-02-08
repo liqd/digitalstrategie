@@ -1,6 +1,6 @@
 .ds-block {
-    padding-top: 5 * $spacer;
-    padding-bottom: 5 * $spacer;
+    padding-top: 5 * $spacer !important;
+    padding-bottom: 5 * $spacer !important;
 
     // overwrites for styleguide
     margin-top: 0 !important;

@@ -6,7 +6,8 @@ class ColorChoiceBlock(blocks.ChoiceBlock):
     choices = [
         ('yellow', 'Yellow'),
         ('pink', 'Pink'),
-        ('purple', 'Purple')
+        ('purple', 'Purple'),
+        ('green', 'Green')
     ]
 
 
@@ -119,8 +120,6 @@ class CoulouredParagraphBlock(blocks.StructBlock):
         template = 'apps_home/blocks/coloured_paragraph_block.html'
         icon = 'doc-full'
 
-
-# teaser blocks
 
 class TeaserBlockCentered(blocks.StructBlock):
 

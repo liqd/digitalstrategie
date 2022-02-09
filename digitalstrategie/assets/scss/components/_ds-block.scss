@@ -1,14 +1,60 @@
+// overwrites for styleguide
 .ds-block {
-    padding-top: 5 * $spacer !important;
-    padding-bottom: 5 * $spacer !important;
-
-    // overwrites for styleguide
+    padding-top: 3 * $spacer !important;
+    padding-bottom: 3 * $spacer !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     border: none !important;
 
-    .content-container * {
+    .content-container p {
         color: $black !important;
+    }
+
+    &--green {
+        opacity: 1 !important;
+        color: $body-bg !important;
+        background-color: $green;
+
+        .accordion-button,
+        .accordion-body,
+        .content-container h3,
+        .content-container p {
+            background-color: $green;
+            color: $body-bg;
+        }
+    }
+
+    &--yellow {
+        background-color: $yellow;
+
+        .accordion-button,
+        .accordion-body {
+            background-color: $yellow;
+        }
+    }
+
+    &--pink {
+        background-color: $pink;
+
+        .accordion-button,
+        .accordion-body {
+            background-color: $pink;
+        }
+    }
+
+    &--purple {
+        background-color: $purple;
+
+        .accordion-button,
+        .accordion-body {
+            background-color: $purple;
+        }
+    }
+
+    &--body-bg {
+        .accordion-button {
+            background-color: $body-bg;
+        }
     }
 
     &--yellow,
@@ -17,46 +63,10 @@
     &--body-bg {
         opacity: 1 !important; // overwrite
     }
-}
 
-.ds-block--yellow {
-    background-color: $yellow;
-
-    .accordion-button,
-    .accordion-body {
-        background-color: $yellow;
-    }
-}
-
-.ds-block--pink {
-    background-color: $pink;
-
-    .accordion-button,
-    .accordion-body {
-        background-color: $pink;
-    }
-}
-
-.ds-block--purple {
-    background-color: $purple;
-
-    .accordion-button,
-    .accordion-body {
-        background-color: $purple;
-    }
-}
-
-.ds-block--green {
-    .accordion-button,
-    .accordion-body {
-        background-color: $green;
-        color: $body-bg;
-    }
-}
-
-.ds-block--body-bg {
-    .accordion-button {
-        background-color: $body-bg;
+    @media print, (min-width: 64.001rem) {
+        padding-top: 5 * $spacer !important;
+        padding-bottom: 5 * $spacer !important;
     }
 }
 
@@ -92,7 +102,7 @@
     font-weight: $font-weight-bold;
 }
 
-.quote-ds-block__link {
+.ds-block__link {
     text-decoration: none;
     color: $black;
 }

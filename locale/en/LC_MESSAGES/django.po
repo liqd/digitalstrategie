@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 14:03+0000\n"
+"POT-Creation-Date: 2022-02-10 13:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,10 +151,19 @@ msgstr "previous chapter"
 msgid "Next Chapter"
 msgstr "next chapter"
 
-#: apps/home/templates/apps_home/blocks/quote_block.html:9
-#: apps/home/templates/apps_home/blocks/text_with_image_block.html:16
+#: apps/home/templates/apps_home/blocks/text_with_image_block.html:21
 msgid "Read more"
 msgstr "Read more"
+
+#: apps/home/templates/apps_home/blocks/thesis_list_block.html:10
+#, fuzzy
+#| msgid "previous chapter"
+msgid "Previous slide"
+msgstr "previous chapter"
+
+#: apps/home/templates/apps_home/blocks/thesis_list_block.html:11
+msgid "Next slide"
+msgstr "Next slide"
 
 #: digitalstrategie/settings/base.py:120
 msgid "English"
@@ -189,7 +198,7 @@ msgstr "Digital strategy"
 msgid "Error"
 msgstr "Error"
 
-#: digitalstrategie/templates/base_errors.html:11
+#: digitalstrategie/templates/base_errors.html:10
 msgid "Back to landing page"
 msgstr "Back to landing page"
 
@@ -197,39 +206,13 @@ msgstr "Back to landing page"
 msgid "Hello"
 msgstr "Hello"
 
-#: digitalstrategie/templates/includes/footer.html:9
+#: digitalstrategie/templates/includes/footer.html:8
 msgid "To the top of the page"
 msgstr "To the top of the page"
 
-#: digitalstrategie/templates/includes/footer.html:35
 #: digitalstrategie/templates/includes/header.html:9
 msgid "To the home page of Berlin.de"
 msgstr "To the home page of Berlin.de"
-
-#: digitalstrategie/templates/includes/footer.html:62
-#, fuzzy
-#| msgid ""
-#| "Berlin.de is a service of the State of Berlin and BerlinOnline "
-#| "Stadtportal GmbH & Co. KG. "
-msgid ""
-"Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
-"GmbH & Co. KG."
-msgstr ""
-"Berlin.de is a service of the State of Berlin and BerlinOnline Stadtportal "
-"GmbH & Co. KG. "
-
-#: digitalstrategie/templates/includes/footer.html:63
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "            For more information, please see the <a href=\"%(imprint_url)s"
-#| "\">imprint</a>."
-msgid ""
-"For more information, please see the <a href=\"%(imprint_url)s\">imprint</a>."
-msgstr ""
-"\n"
-"            For more information, please see the <a href=\"%(imprint_url)s"
-"\">imprint</a>."
 
 #: digitalstrategie/templates/includes/header.html:18
 #: digitalstrategie/templates/includes/header.html:19
@@ -347,6 +330,30 @@ msgstr "Language selector, "
 #| msgid "select "
 msgid "select"
 msgstr "select "
+
+#, fuzzy
+#~| msgid ""
+#~| "Berlin.de is a service of the State of Berlin and BerlinOnline "
+#~| "Stadtportal GmbH & Co. KG. "
+#~ msgid ""
+#~ "Berlin.de is a service of the State of Berlin and BerlinOnline "
+#~ "Stadtportal GmbH & Co. KG."
+#~ msgstr ""
+#~ "Berlin.de is a service of the State of Berlin and BerlinOnline "
+#~ "Stadtportal GmbH & Co. KG. "
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "            For more information, please see the <a href="
+#~| "\"%(imprint_url)s\">imprint</a>."
+#~ msgid ""
+#~ "For more information, please see the <a href=\"%(imprint_url)s\">imprint</"
+#~ "a>."
+#~ msgstr ""
+#~ "\n"
+#~ "            For more information, please see the <a href=\"%(imprint_url)s"
+#~ "\">imprint</a>."
 
 #~ msgid "Sprachen"
 #~ msgstr "Sprachen"

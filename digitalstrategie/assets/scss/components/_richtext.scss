@@ -1,0 +1,11 @@
+.richtext-image.left {
+    max-width: 65%;
+    float: left;
+    margin-right: $spacer;
+}
+
+.richtext-image.right {
+    max-width: 65%;
+    float: right;
+    margin-left: $spacer;
+}

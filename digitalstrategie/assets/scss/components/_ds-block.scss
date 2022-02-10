@@ -6,8 +6,8 @@
     margin-bottom: 0 !important;
     border: none !important;
 
-    .content-container p {
-        color: $black !important;
+    .content-container * {
+        color: $black;
     }
 
     &--green {
@@ -17,8 +17,7 @@
 
         .accordion-button,
         .accordion-body,
-        .content-container h3,
-        .content-container p {
+        .content-container * {
             background-color: $green;
             color: $body-bg;
         }

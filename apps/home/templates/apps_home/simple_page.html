@@ -3,10 +3,10 @@
 
 
 {% block content %}
-<main id="layout-grid__area--maincontent">
+<div id="layout-grid__area--maincontent">
     {% if page.page_title %}
     <h1>{{ page.page_title }}</h1>
     {% endif %}
     {{ page.body }}
-</main>
+</div>
 {% endblock %}

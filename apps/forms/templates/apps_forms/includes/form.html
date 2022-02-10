@@ -1,34 +1,29 @@
 {% load wagtailcore_tags widget_tweaks i18n wagtailsettings_tags wagtailimages_tags %}
 {% get_settings %}
-<main id="layout-grid" class="contact_form pb-3 pb-md-5">
-    <div id="layout-grid__area--maincontent" class="mb-md-5">
-        <h2>{{ page.header }}</h2>
-        <div class="form--overwrite">
-            <form action="{% pageurl page %}" method="POST" novalidate>
-                <div class="form-group">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        {% include 'apps_forms/includes/form_field.html' with field=field %}
-                    {% endfor %}
-                </div>
-                <div class="info-section__form">
-                    <span>*{% trans 'Required fields' %}</span>
-                    {% if page.remove_data_email %}
-                        <p>
-                            {% blocktrans with remove_email=page.remove_data_email %}
-                                If you wish to have your personal data deleted
-                                please write an e-mail to:
-                                <span>{{ remove_email }}</span>
-                            {% endblocktrans %}
-                        </p>
-                    {% endif %}
-                </div>
-                <div class="form-actions">
-                    <div class="form-actions__right">
-                        <button class="button" type="submit">{% trans "Send" %}</button>
-                    </div>
-                </div>
-            </form>
+
+<h2>{{ page.header }}</h2>
+<form action="{% pageurl page %}" method="POST" novalidate>
+    <div class="form-group">
+        {% csrf_token %}
+        {% for field in form %}
+            {% include 'apps_forms/includes/form_field.html' with field=field %}
+        {% endfor %}
+    </div>
+    <div class="info-section__form">
+        <span>*{% trans 'Required fields' %}</span>
+        {% if page.remove_data_email %}
+            <p>
+                {% blocktrans with remove_email=page.remove_data_email %}
+                    If you wish to have your personal data deleted
+                    please write an e-mail to:
+                    <span>{{ remove_email }}</span>
+                {% endblocktrans %}
+            </p>
+        {% endif %}
+    </div>
+    <div class="form-actions">
+        <div class="form-actions__right">
+            <button class="button" type="submit">{% trans "Send" %}</button>
         </div>
     </div>
-</main>
+</form>

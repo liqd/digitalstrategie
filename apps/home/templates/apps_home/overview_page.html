@@ -5,18 +5,20 @@
 {% image page.intro_image max-1920x560 as intro_image %}
 
 <div id="layout-grid__area--maincontent">
-    {% if page.intro_image %}
-      <img src="{{ intro_image.url }}" class="w-100" />
-      {% if page.intro_image.caption %}
-        <span class="image__caption">
-          {{ page.intro_image.caption }}
-        </span>
-      {% endif %}
-    {% endif %}
-    {% if page.page_title %}
-    <h1>{{ page.page_title }}</h1>
-    {% endif %}
-    {{ self.page_intro|richtext }}
+    <section>
+        {% if page.intro_image %}
+          <img src="{{ intro_image.url }}" class="w-100" />
+          {% if page.intro_image.caption %}
+            <span class="image__caption">
+              {{ page.intro_image.caption }}
+            </span>
+          {% endif %}
+        {% endif %}
+        {% if page.page_title %}
+        <h1>{{ page.page_title }}</h1>
+        {% endif %}
+        {{ self.page_intro|richtext }}
+    </section>
     {% for teaser in self.teasers %}
         {{ teaser }}
     {% endfor %}

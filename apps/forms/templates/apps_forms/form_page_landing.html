@@ -2,12 +2,10 @@
 {% load wagtailcore_tags i18n %}
 
 {% block content %}
-<main id="layout-grid" class="my-5">
-    <div id="layout-grid__area--maincontent" class="py-5">
-        <p class="fs-5 text-center">{{ page.thank_you_text }}</p>
-        <div class="d-flex justify-content-center">
-            <a class="button" href="/">{% trans 'Back to Homepage' %}</a>
-        </div>
+<div id="layout-grid__area--maincontent" class="py-5">
+    <p class="fs-5 text-center">{{ page.thank_you_text }}</p>
+    <div class="d-flex justify-content-center">
+        <a class="button" href="/">{% trans 'Back to Homepage' %}</a>
     </div>
-</main>
+</div>
 {% endblock %}

@@ -1,4 +1,5 @@
 {% load i18n wagtailcore_tags %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <!-- FIXME 2 column full width element in their styleguide so this is combined with their flex grid-->
 <div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
@@ -10,7 +11,15 @@
             <div class="text-center">
                 {{ value.link_1.specific.teaser_intro }}
                 <div class="pt-5">
-                    <a href="{{ value.link_1.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_1_text }}</a>
+                    <a href="{{ value.link_1.url }}" class="btn btn--huge btn-outline-dark">
+                    {% if LANGUAGE_CODE == 'en' and value.link_1_text_en %}
+                        {{ value.link_1_text_en }}
+                    {% elif LANGUAGE_CODE == 'de_ls' and value.link_1_text_de_ls %}
+                        {{ value.link_1_text_de_ls }}
+                    {% else %}
+                        {{ value.link_1_text_de }}
+                    {% endif %}
+                    </a>
                 </div>
             </div>
         </div>
@@ -21,7 +30,15 @@
             <div class="text-center">
                 {{ value.link_2.specific.teaser_intro }}
                 <div class="pt-5">
-                    <a href="{{ value.link_2.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_2_text }}</a>
+                    <a href="{{ value.link_2.url }}" class="btn btn--huge btn-outline-dark">
+                    {% if LANGUAGE_CODE == 'en' and value.link_2_text_en %}
+                        {{ value.link_2_text_en }}
+                    {% elif LANGUAGE_CODE == 'de_ls' and value.link_2_text_de_ls %}
+                        {{ value.link_2_text_de_ls }}
+                    {% else %}
+                        {{ value.link_2_text_de }}
+                    {% endif %}
+                    </a>
                 </div>
             </div>
         </div>

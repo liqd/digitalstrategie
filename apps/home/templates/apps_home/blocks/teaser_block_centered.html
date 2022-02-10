@@ -1,4 +1,5 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <article class="modul-teaser-marketing boxed fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
     <div class="background-image {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}" aria-hidden="true">
@@ -9,7 +10,15 @@
           {{ value.link.specific.teaser_intro }}
         </p>
         <div class="controls">
-            <a href="{{ value.link.url }}" class="button">{{ value.link_text }}</a>
+            <a href="{{ value.link.url }}" class="button">
+              {% if LANGUAGE_CODE == 'en' and value.link_text_en %}
+                {{ value.link_text_en }}
+              {% elif LANGUAGE_CODE == 'de_ls' and value.link_text_de_ls %}
+                {{ value.link_text_de_ls }}
+              {% else %}
+                {{ value.link_text_de }}
+              {% endif %}
+            </a>
         </div>
     </div>
 </article>

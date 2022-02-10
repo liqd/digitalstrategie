@@ -1,4 +1,5 @@
 {% load i18n wagtailcore_tags wagtailimages_tags %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% image value.link.specific.teaser_image width-800 as teaser_image %}
 
@@ -15,7 +16,15 @@
         </h2>
         {{ value.link.specific.teaser_intro }}
         <div class="pt-5">
-            <a href="{{ value.link.url }}" class="btn btn--huge btn-outline-dark">{{ value.link_text }}</a>
+            <a href="{{ value.link.url }}" class="btn btn--huge btn-outline-dark">
+                {% if LANGUAGE_CODE == 'en' and value.link_text_en %}
+                    {{ value.link_text_en }}
+                {% elif LANGUAGE_CODE == 'de_ls' and value.link_text_de_ls %}
+                    {{ value.link_text_de_ls }}
+                {% else %}
+                    {{ value.link_text_de }}
+                {% endif %}
+            </a>
         </div>
     </div>
     <div class="clearfix"></div>

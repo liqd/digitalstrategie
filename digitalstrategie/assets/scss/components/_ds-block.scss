@@ -6,7 +6,7 @@
     margin-bottom: 0 !important;
     border: none !important;
 
-    .content-container * {
+    .background-image + .content-container * {
         color: $black;
     }
 
@@ -17,7 +17,7 @@
 
         .accordion-button,
         .accordion-body,
-        .content-container * {
+        .background-image + .content-container * {
             background-color: $green;
             color: $body-bg;
         }

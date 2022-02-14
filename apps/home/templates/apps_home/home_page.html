@@ -3,7 +3,7 @@
 
 {% block content %}
 
-{% image page.header_image max-1920x560 as header_image %}
+{% image page.header_image original as header_image %}
 <section id="layout-grid__area--herounit" class="fullwidth hero-ds-block__img d-none d-md-block" {% if page.header_image %} style="background-image: url({{ header_image.url }});  background-repeat: no-repeat; background-position: center; background-size: cover; " {% endif %}>
     {% if page.subtitle or page.header_image.caption %}
     <div class="hero-ds-block__img-overlay">

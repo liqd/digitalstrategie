@@ -1,67 +1,24 @@
-.form--overwrite {
-    label {
-        font-size: $font-size-md;
+// django forms uses lists for errors and we must overwrite the bullet points
+form {
+    ul > li:before {
+        content: none;
+    }
+}
+
+.ds-form-overwrite__form-check {
+    padding-left: 0 !important;
+
+    input[type="checkbox"] {
+        font-size: 1rem;
+        width: 1em !important;
+        height: 1em !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        min-height: auto !important;
+        margin: 0 0.5em 0 0 !important;
     }
 
-    input[type="text"],
-    input[type="date"],
-    input[type="password"],
-    input[type="file"],
-    input[type="email"],
-    button.ui-multiselect,
-    select,
-    textarea {
-        &:focus {
-            border-color: $blue;
-        }
-    }
-
-    ul {
-        padding: 0;
-
-        & > li > label {
-            font-size: $font-size-sm;
-        }
-
-        & > li:before {
-            content: none;
-        }
-    }
-
-    .form-check {
-        & > label {
-            font-size: $font-size-base;
-        }
-    }
-
-    hr {
-        border-top: 1px solid $light-gray;
-        margin: 0 0 1rem;
-    }
-
-    .info-section__form {
-        & > span {
-            margin: 1rem 0;
-        }
-
-        & > p {
-            margin: 1rem 0;
-        }
-
-        & > p > span {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-    }
-
-    .form-group + .message,
-    .form-group + .message--info,
-    .form-group + .message--success,
-    .form-group + .message--error,
-    .control-group + .message,
-    .control-group + .message--info,
-    .control-group + .message--success,
-    .control-group + .message--error {
-        margin-top: -1.25rem;
+    &.is-invalid {
+        color: $red;
     }
 }

@@ -1,14 +1,12 @@
 {% load wagtailcore_tags widget_tweaks i18n wagtailsettings_tags wagtailimages_tags %}
 {% get_settings %}
 
-<h2>{{ page.header }}</h2>
+<h1>{{ page.header }}</h1>
 <form action="{% pageurl page %}" method="POST" novalidate>
-    <div class="form-group">
         {% csrf_token %}
         {% for field in form %}
             {% include 'apps_forms/includes/form_field.html' with field=field %}
         {% endfor %}
-    </div>
     <div class="info-section__form">
         <span>*{% trans 'Required fields' %}</span>
         {% if page.remove_data_email %}

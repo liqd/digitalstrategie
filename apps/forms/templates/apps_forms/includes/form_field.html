@@ -1,8 +1,7 @@
 {% load i18n widget_tweaks form_field_tags %}
 
 {% if field|is_checkbox %}
-  <div class="form-group">
-    <div class="form-check">
+  <div class="form-group form-check">
       {% if field.errors %}
         {% render_field field class="form-check-input is-invalid" %}
       {% else %}
@@ -16,32 +15,36 @@
         {{ field.errors }}
         </div>
       {% endif %}
-    </div>
   </div>
 {% elif field|is_checkbox_select_multiple %}
-  <div class="form-group">
-    <label class="mb-1">{{ field.help_text }} {% if field.field.required %} *{% endif %}</label>
-    {% render_field field %}
+<fieldset>
+  <legend>{{ field.help_text }} {% if field.field.required %} *{% endif %}</legend>
+    {% for item in field %}
+      <div class="form-check ds-form-overwrite__form-check {% if field.errors %}is-invalid{% endif %}">
+          {{ item }}
+      </div>
+    {% endfor %}
     {% if field.errors %}
-      <div class="message message--error" role="alert">
-      {{ field.errors }}
+      <div class="form-group form-check">
+          <div class="message message--error" role="alert">
+          {{ field.errors }}
+          </div>
       </div>
     {% endif %}
-  </div>
-  <hr>
+</fieldset>
+<hr>
 {% else %}
-  {% if field.errors %}
-    <div class="form-group">
-      <label class="mb-1">{{ field.help_text }} {% if field.field.required %} *{% endif %}</label>
-      {% render_field field class="form-control is-invalid" %}
-      <div class="message message--error" role="alert">
-        {{ field.errors }}
-      </div>
-    </div>
-  {% else %}
-    <div class="form-group">
-      <label class="mb-1">{{ field.help_text }} {% if field.field.required %} *{% endif %}</label>
-      {% render_field field %}
-    </div>
-  {% endif %}
+  <div class="form-group">
+      <label class="form-label" for="id_{{ field.name }}">
+        {{ field.help_text }} {% if field.field.required %} *{% endif %}
+      </label>
+      {% if field.errors %}
+          {% render_field field class="form-control is-invalid" %}
+          <div class="message message--error" role="alert">
+            {{ field.errors }}
+          </div>
+      {% else %}
+          {% render_field field %}
+      {% endif %}
+  </div>
 {% endif %}

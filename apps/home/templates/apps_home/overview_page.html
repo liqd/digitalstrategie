@@ -4,21 +4,21 @@
 {% block content %}
 {% image page.intro_image max-1920x560 as intro_image %}
 
+<section id="layout-grid__area--herounit">
+    {% if page.intro_image %}
+      <img src="{{ intro_image.url }}" class="w-100" />
+      <span class="image__caption">
+      {% if page.intro_image.caption %}
+          {{ page.intro_image.caption }}
+      {% endif %}
+      </span>
+    {% endif %}
+    {% if page.page_title %}
+    <h1>{{ page.page_title }}</h1>
+    {% endif %}
+    {{ self.page_intro|richtext }}
+</section>
 <div id="layout-grid__area--maincontent">
-    <section>
-        {% if page.intro_image %}
-          <img src="{{ intro_image.url }}" class="w-100" />
-          <span class="image__caption">
-          {% if page.intro_image.caption %}
-              {{ page.intro_image.caption }}
-          {% endif %}
-          </span>
-        {% endif %}
-        {% if page.page_title %}
-        <h1>{{ page.page_title }}</h1>
-        {% endif %}
-        {{ self.page_intro|richtext }}
-    </section>
     {% for teaser in self.teasers %}
         {{ teaser }}
     {% endfor %}

@@ -20,7 +20,7 @@
 <fieldset>
   <legend>{{ field.help_text }} {% if field.field.required %} *{% endif %}</legend>
     {% for item in field %}
-      <div class="form-check ds-form-overwrite__form-check {% if field.errors %}is-invalid{% endif %}">
+      <div class="form-check ds-form__overwrite--form-check {% if field.errors %}is-invalid{% endif %}">
           {{ item }}
       </div>
     {% endfor %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 13:45+0000\n"
+"POT-Creation-Date: 2022-02-21 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,26 +92,22 @@ msgstr ""
 msgid "I am interested in the following fields of action"
 msgstr ""
 
-#: apps/forms/templates/apps_forms/form_page_landing.html:9
+#: apps/forms/templates/apps_forms/form_page_landing.html:8
 msgid "Back to Homepage"
 msgstr ""
 
-#: apps/forms/templates/apps_forms/includes/form.html:15
+#: apps/forms/templates/apps_forms/includes/form.html:11
 msgid "Required fields"
 msgstr ""
 
-#: apps/forms/templates/apps_forms/includes/form.html:18
+#: apps/forms/templates/apps_forms/includes/form.html:13
 #, python-format
 msgid ""
-"\n"
-"                                If you wish to have your personal data "
-"deleted\n"
-"                                please write an e-mail to:\n"
-"                                <span>%(remove_email)s</span>\n"
-"                            "
+"If you wish to have your personal data deleted please write an e-mail to: <a "
+"href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
 
-#: apps/forms/templates/apps_forms/includes/form.html:28
+#: apps/forms/templates/apps_forms/includes/form.html:18
 msgid "Send"
 msgstr ""
 
@@ -184,8 +180,12 @@ msgstr ""
 msgid "Hello"
 msgstr ""
 
-#: digitalstrategie/templates/includes/footer.html:8
+#: digitalstrategie/templates/includes/footer.html:9
 msgid "To the top of the page"
+msgstr ""
+
+#: digitalstrategie/templates/includes/footer.html:10
+msgid "Related Links"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:9

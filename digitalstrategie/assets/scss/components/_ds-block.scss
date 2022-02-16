@@ -51,6 +51,8 @@
     }
 
     &--body-bg {
+        background-color: $body-bg;
+
         .accordion-button {
             background-color: $body-bg;
         }

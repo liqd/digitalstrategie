@@ -1,7 +1,12 @@
 {% load wagtailcore_tags i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-<article class="modul-teaser-marketing boxed fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
+<!-- colours are needed for text colour styling and imageteaser for nested btn styling -->
+<article class="modul-teaser-marketing boxed fullwidth ds-block
+  {% if self.background_color == 'green' %} imageteaser ds-block--{{ self.background_color }}
+  {% elif self.background_color %}ds-block--{{ self.background_color }}
+  {% else %}ds-block__body-bg{% endif %}"
+>
     <div class="background-image {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}" aria-hidden="true">
     </div>
     <div class="content-container fullwidth__inner">

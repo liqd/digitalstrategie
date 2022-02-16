@@ -122,7 +122,7 @@ class CoulouredParagraphBlock(blocks.StructBlock):
 
 
 class ThesisBlock(blocks.StructBlock):
-    thesis = blocks.CharBlock(label='One thesis')
+    thesis = blocks.CharBlock(max_length=255, label='One thesis')
 
     class Meta:
         template = 'apps_home/blocks/thesis_block.html'

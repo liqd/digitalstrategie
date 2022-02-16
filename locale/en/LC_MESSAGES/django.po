@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 13:45+0000\n"
+"POT-Creation-Date: 2022-02-21 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,25 +100,28 @@ msgstr "I agree that my contact data is stored"
 msgid "I am interested in the following fields of action"
 msgstr "I am interested in the following fields of action"
 
-#: apps/forms/templates/apps_forms/form_page_landing.html:9
+#: apps/forms/templates/apps_forms/form_page_landing.html:8
 #, fuzzy
 #| msgid "Back to landing page"
 msgid "Back to Homepage"
 msgstr "Back to landing page"
 
-#: apps/forms/templates/apps_forms/includes/form.html:15
+#: apps/forms/templates/apps_forms/includes/form.html:11
 msgid "Required fields"
 msgstr "Required fields"
 
-#: apps/forms/templates/apps_forms/includes/form.html:18
-#, python-format
+#: apps/forms/templates/apps_forms/includes/form.html:13
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                                If you wish to have your personal data "
+#| "deleted\n"
+#| "                                please write an e-mail to:\n"
+#| "                                <span>%(remove_email)s</span>\n"
+#| "                            "
 msgid ""
-"\n"
-"                                If you wish to have your personal data "
-"deleted\n"
-"                                please write an e-mail to:\n"
-"                                <span>%(remove_email)s</span>\n"
-"                            "
+"If you wish to have your personal data deleted please write an e-mail to: <a "
+"href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
 "\n"
 "                                If you wish to have your personal data "
@@ -127,7 +130,7 @@ msgstr ""
 "                                <span>%(remove_email)s</span>\n"
 "                            "
 
-#: apps/forms/templates/apps_forms/includes/form.html:28
+#: apps/forms/templates/apps_forms/includes/form.html:18
 msgid "Send"
 msgstr "Send"
 
@@ -206,9 +209,13 @@ msgstr "Back to landing page"
 msgid "Hello"
 msgstr "Hello"
 
-#: digitalstrategie/templates/includes/footer.html:8
+#: digitalstrategie/templates/includes/footer.html:9
 msgid "To the top of the page"
 msgstr "To the top of the page"
+
+#: digitalstrategie/templates/includes/footer.html:10
+msgid "Related Links"
+msgstr "Related Links"
 
 #: digitalstrategie/templates/includes/header.html:9
 msgid "To the home page of Berlin.de"

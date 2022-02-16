@@ -2,19 +2,19 @@
 {% get_settings %}
 
 <h1>{{ page.header }}</h1>
-<form action="{% pageurl page %}" method="POST" novalidate>
+<form class="ds-form__overwrite" action="{% pageurl page %}" method="POST" novalidate>
         {% csrf_token %}
         {% for field in form %}
             {% include 'apps_forms/includes/form_field.html' with field=field %}
         {% endfor %}
-    <div class="info-section__form">
-        <span>*{% trans 'Required fields' %}</span>
+    <div class="ds-form__info-section">
+        <p>*{% trans 'Required fields' %}</p>
         {% if page.remove_data_email %}
             <p>
                 {% blocktrans with remove_email=page.remove_data_email %}
                     If you wish to have your personal data deleted
                     please write an e-mail to:
-                    <span>{{ remove_email }}</span>
+                    <a href="mailto:{{ remove_email }}">{{ remove_email }}</a>
                 {% endblocktrans %}
             </p>
         {% endif %}

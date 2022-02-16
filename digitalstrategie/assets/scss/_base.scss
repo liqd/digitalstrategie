@@ -9,7 +9,7 @@ html {
     overflow-y: scroll;
     color: contrast-color($body-bg);
     box-sizing: border-box;
-    font-family: $font-family-base;
+    font-family: $font-family-sans-serif;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -22,6 +22,7 @@ body {
 }
 
 header,
-footer {
+footer,
+.content-footer {
     font-family: $font-family-arial;
 }

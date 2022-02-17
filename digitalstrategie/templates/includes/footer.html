@@ -2,28 +2,30 @@
 {% load_site_menu "footer" as footer_menu_items %}
 
 {% if footer_menu_items %}
-<div class="content-footer" id="content-footer" role="contentinfo">
-    <div class="content-footer__brand">
-    </div>
-    <a class="to-top" href="#top">{% trans 'To the top of the page' %}</a>
-    <div class="content-footer__links">
-        <ul class="js-collapse-palm">
-            {% for menuitem in footer_menu_items %}
-            <li class="initial-open">
-                <h3 class="heading js-trigger">{{ menuitem.title }}</h3>
-                <ul>
-                    {% if menuitem.subpages %}
-                        {% for subpage in menuitem.subpages %}
-                            <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
-                        {% endfor %}
-                    {% endif %}
-                    {% if menuitem.url and not menuitem.subpages %}
-                        <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
-                    {% endif %}
-                </ul>
-            </li>
-            {% endfor %}
-        </ul>
+<div id="layout-grid__area--contentfooter">
+    <div class="content-footer" id="content-footer" role="contentinfo">
+        <div class="content-footer__brand">
+        </div>
+        <a class="to-top" href="#top">{% trans 'To the top of the page' %}</a>
+        <nav class="content-footer__links" aria-label="{% trans 'Related Links' %}">
+            <ul class="js-collapse-palm">
+              {% for menuitem in footer_menu_items %}
+              <li>
+                  <h3 class="heading js-trigger">{{ menuitem.title }}</h3>
+                  <ul>
+                      {% if menuitem.subpages %}
+                          {% for subpage in menuitem.subpages %}
+                              <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
+                          {% endfor %}
+                      {% endif %}
+                      {% if menuitem.url and not menuitem.subpages %}
+                          <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
+                      {% endif %}
+                  </ul>
+              </li>
+              {% endfor %}
+            </ul>
+        </nav>
     </div>
 </div>
 {% endif %}

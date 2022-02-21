@@ -24,7 +24,7 @@ msgstr "Bitte füllen Sie dieses Feld aus."
 
 #: apps/forms/models.py:29
 msgid "to address"
-msgstr ""
+msgstr "An-Adresse"
 
 #: apps/forms/models.py:30
 msgid ""
@@ -36,7 +36,7 @@ msgstr ""
 
 #: apps/forms/models.py:34
 msgid "from address"
-msgstr ""
+msgstr "Von-Adresse"
 
 #: apps/forms/models.py:35
 msgid ""
@@ -47,7 +47,7 @@ msgstr ""
 
 #: apps/forms/models.py:39
 msgid "subject"
-msgstr ""
+msgstr "Betreff"
 
 #: apps/forms/models.py:40
 msgid ""
@@ -89,7 +89,7 @@ msgstr "Ihr Nachricht an uns..."
 msgid ""
 "The selected categories                     are displayed in the "
 "participation form."
-msgstr ""
+msgstr "Die ausgewählten Kategorien werden im Partizipationsformular dargestellt."
 
 #: apps/forms/models.py:244
 msgid "I agree that my contact data is stored"
@@ -109,7 +109,7 @@ msgstr "Zurück zur Startseite"
 
 #: apps/forms/templates/apps_forms/includes/form.html:11
 msgid "Required fields"
-msgstr ""
+msgstr "Pflichtfelder"
 
 #: apps/forms/templates/apps_forms/includes/form.html:13
 #, python-format
@@ -117,6 +117,8 @@ msgid ""
 "If you wish to have your personal data deleted please write an e-mail to: <a "
 "href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
+"Wenn Sie ihre personenbezogenen Daten löschen lassen möchten, kontaktieren Sie: "
+"<span>%(remove_email)s</span>"
 
 #: apps/forms/templates/apps_forms/includes/form.html:18
 msgid "Send"
@@ -150,7 +152,7 @@ msgstr "Vorherige Seite"
 
 #: apps/home/templates/apps_home/blocks/thesis_list_block.html:11
 msgid "Next slide"
-msgstr ""
+msgstr "Nächstes Bild"
 
 #: digitalstrategie/settings/base.py:120
 msgid "English"
@@ -199,7 +201,7 @@ msgstr "Zum Seitenanfang"
 
 #: digitalstrategie/templates/includes/footer.html:10
 msgid "Related Links"
-msgstr ""
+msgstr "Weiterführende Links"
 
 #: digitalstrategie/templates/includes/header.html:9
 msgid "To the home page of Berlin.de"

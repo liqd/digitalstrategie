@@ -4,6 +4,6 @@ django-cloudflare-push==0.2.1
 django-widget-tweaks==1.4.12
 sentry-sdk==1.5.6
 wagtail==2.16.1
-whitenoise==5.3.0
+whitenoise==6.0.0
 psycopg2-binary==2.9.3
 elasticsearch==7.17.0

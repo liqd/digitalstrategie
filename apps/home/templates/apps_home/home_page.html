@@ -4,26 +4,32 @@
 {% block content %}
 
 {% image page.header_image original as header_image %}
-<section id="layout-grid__area--herounit" class="fullwidth hero-ds-block__img d-none d-md-block" {% if page.header_image %} style="background-image: url({{ header_image.url }});  background-repeat: no-repeat; background-position: center; background-size: cover; " {% endif %}>
-    {% if page.subtitle or page.header_image.caption %}
-    <div class="hero-ds-block__img-overlay">
-        {% if page.subtitle %}
-        <div class="text-center">
-            <h1>{{ page.subtitle }}</h1>
-        </div>
-        {% endif %}
-        {% if page.header_image.caption %}
-        {# FIXME: caption currently not shown, fix when design is there #}
-        <div class="btn" data-bs-toggle="tooltip" data-placement="top" aria-label="'Header image: '{{ page.header_image.caption }}" title="{{ page.header_image.caption }}" tabindex="0">
-            <i class="fas fa-info" aria-hidden="true"></i>
-        </div>
-        {% endif %}
-    </div>
-    {% endif %}
+<section id="layout-grid__area--herounit" class="fullwidth">
+  <div class="herounit-landingpage herounit-landingpage--default">
+      <div class="image">
+          <div class="image__image mb-0" style="">
+              <img src="{{ header_image.url }}" alt="{{ image.alt }}" loading="lazy">
+          </div>
+          {% if page.header_image.caption %}
+          <div class="ds-hero-image__copyright">
+              <p class="ds-hero-copyright">{{ page.header_image.caption }}</p>
+          </div>
+          {% endif %}
+
+          <div class="image__overlay ds-hero-image__overlay">
+              {% if page.subtitle %}
+              <h1 class="title">{{ page.subtitle }}</h1>
+              {% endif %}
+              {% if page.headertext %}
+              <p>{{ page.headertext }}</p>
+              {% endif %}
+          </div>
+      </div>
+  </div>
 </section>
 <div id="layout-grid__area--maincontent">
     {% for block in self.body %}
-        {{ block }}
+    {{ block }}
     {% endfor %}
 </div>
 {% endblock %}

@@ -19,8 +19,8 @@
     {{ self.page_intro|richtext }}
 </section>
 <div id="layout-grid__area--maincontent">
-    {% for teaser in self.teasers %}
-        {{ teaser }}
-    {% endfor %}
+  {% for block in self.body %}
+      {{ block }}
+  {% endfor %}
 </div>
 {% endblock %}

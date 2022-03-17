@@ -10,19 +10,13 @@
     <div class="background-image {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}" aria-hidden="true">
     </div>
     <div class="content-container fullwidth__inner">
-        <h3 class="title">{{ value.link.specific.teaser_title }}</h3>
+        <h3 class="title">{{ value.title }}</h3>
         <p class="text">
-          {{ value.link.specific.teaser_intro }}
+          {{ value.body }}
         </p>
         <div class="controls">
             <a href="{{ value.link.url }}" class="button">
-              {% if LANGUAGE_CODE == 'en' and value.link_text_en %}
-                {{ value.link_text_en }}
-              {% elif LANGUAGE_CODE == 'de_ls' and value.link_text_de_ls %}
-                {{ value.link_text_de_ls }}
-              {% else %}
-                {{ value.link_text_de }}
-              {% endif %}
+                {{ value.link_text }}
             </a>
         </div>
     </div>

@@ -148,29 +148,10 @@ class ThesisListBlock(blocks.StructBlock):
 
 # Teaser blocks
 class TeaserBlockCentered(blocks.StructBlock):
-
-    link = blocks.PageChooserBlock(
-        target_model=['apps_home.DetailPage',
-                      'apps_gruenbuch.GruenbuchIndexPage',
-                      'apps_forms.FormPage'],
-        help_text='Make sure that teaser title and teaser intro '
-                  'of the chosen page are set.'
-    )
-    link_text_de = blocks.CharBlock(
-        max_length=50,
-        label='Link Text de'
-    )
-    link_text_en = blocks.CharBlock(
-        max_length=50,
-        label='Link Text en',
-        required=False
-    )
-    link_text_de_ls = blocks.CharBlock(
-        max_length=50,
-        label='Link Text de ls',
-        required=False
-    )
-
+    title = blocks.CharBlock(max_length=50)
+    body = blocks.TextBlock(max_length=300, blank=True, rows=3)
+    link = blocks.PageChooserBlock()
+    link_text = blocks.CharBlock(max_length=50, label='Link Text')
     background_color = ColorChoiceBlock(
         help_text='Not choosing a colour will result in a '
                   'block with a white background.',
@@ -183,49 +164,15 @@ class TeaserBlockCentered(blocks.StructBlock):
 
 
 class TeaserBlockTwoColumns(blocks.StructBlock):
+    title_1 = blocks.CharBlock(max_length=50)
+    body_1 = blocks.TextBlock(max_length=300, blank=True, rows=3)
+    link_1 = blocks.PageChooserBlock()
+    link_text_1 = blocks.CharBlock(max_length=50, label='Link Text')
 
-    link_1 = blocks.PageChooserBlock(
-        target_model=['apps_home.DetailPage',
-                      'apps_gruenbuch.GruenbuchIndexPage',
-                      'apps_forms.FormPage'],
-        help_text='Make sure that teaser title and teaser intro '
-                  'of the chosen page are set.'
-    )
-    link_1_text_de = blocks.CharBlock(
-        max_length=50,
-        label='Link Text de'
-    )
-    link_1_text_en = blocks.CharBlock(
-        max_length=50,
-        label='Link Text en',
-        required=False
-    )
-    link_1_text_de_ls = blocks.CharBlock(
-        max_length=50,
-        label='Link Text de ls',
-        required=False
-    )
-
-    link_2 = blocks.PageChooserBlock(
-        target_model=['apps_home.DetailPage',
-                      'apps_gruenbuch.GruenbuchIndexPage'],
-        help_text='Make sure that teaser title and teaser intro '
-                  'of the chosen page are set.'
-    )
-    link_2_text_de = blocks.CharBlock(
-        max_length=50,
-        label='Link Text de'
-    )
-    link_2_text_en = blocks.CharBlock(
-        max_length=50,
-        label='Link Text en',
-        required=False
-    )
-    link_2_text_de_ls = blocks.CharBlock(
-        max_length=50,
-        label='Link Text de ls',
-        required=False
-    )
+    title_2 = blocks.CharBlock()
+    body_2 = blocks.TextBlock(max_length=300, blank=True, rows=3)
+    link_2 = blocks.PageChooserBlock()
+    link_text_2 = blocks.CharBlock(max_length=50, label='Link Text')
 
     background_color = ColorChoiceBlock(
         help_text='Not choosing a colour will result in a '
@@ -239,33 +186,17 @@ class TeaserBlockTwoColumns(blocks.StructBlock):
 
 
 class TeaserBlockImage(blocks.StructBlock):
+    title = blocks.CharBlock(max_length=50)
+    body = blocks.TextBlock(max_length=300, blank=True, rows=3)
+    image = ImageChooserBlock()
+    link = blocks.PageChooserBlock()
 
-    link = blocks.PageChooserBlock(
-        target_model=['apps_home.DetailPage',
-                      'apps_gruenbuch.GruenbuchIndexPage',
-                      'apps_forms.FormPage'],
-        help_text='Make sure that teaser title, teaser intro and teaser image '
-                  'of the chosen page are set.'
-    )
-    link_text_de = blocks.CharBlock(
-        max_length=50,
-        label='Link Text de'
-    )
-    link_text_en = blocks.CharBlock(
-        max_length=50,
-        label='Link Text en',
-        required=False
-    )
-    link_text_de_ls = blocks.CharBlock(
-        max_length=50,
-        label='Link Text de ls',
-        required=False
-    )
     background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in a '
-                  'block with a white background.',
+        help_text='Not choosing a colour will result in a block with '
+                  'a white background.',
         required=False
     )
+
     image_alignment = blocks.ChoiceBlock(
         choices=[
             ('left', 'left'),

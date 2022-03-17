@@ -6,38 +6,26 @@
     <div class="servicepanel__main flexgrid grid--2 text-center">
         <div class="">
             <h2>
-                {{ value.link_1.specific.teaser_title }}
+                {{ value.title_1 }}
             </h2>
             <div class="text-center">
-                {{ value.link_1.specific.teaser_intro }}
+                {{ value.body_1 }}
                 <div class="pt-5">
                     <a href="{{ value.link_1.url }}" class="btn btn--huge btn-outline-dark">
-                    {% if LANGUAGE_CODE == 'en' and value.link_1_text_en %}
-                        {{ value.link_1_text_en }}
-                    {% elif LANGUAGE_CODE == 'de_ls' and value.link_1_text_de_ls %}
-                        {{ value.link_1_text_de_ls }}
-                    {% else %}
-                        {{ value.link_1_text_de }}
-                    {% endif %}
+                        {{ value.link_text_1 }}
                     </a>
                 </div>
             </div>
         </div>
         <div class="col">
             <h2>
-                {{ value.link_2.specific.teaser_title }}
+                {{ value.title_2 }}
             </h2>
             <div class="text-center">
-                {{ value.link_2.specific.teaser_intro }}
+                {{ value.body_2 }}
                 <div class="pt-5">
                     <a href="{{ value.link_2.url }}" class="btn btn--huge btn-outline-dark">
-                    {% if LANGUAGE_CODE == 'en' and value.link_2_text_en %}
-                        {{ value.link_2_text_en }}
-                    {% elif LANGUAGE_CODE == 'de_ls' and value.link_2_text_de_ls %}
-                        {{ value.link_2_text_de_ls }}
-                    {% else %}
-                        {{ value.link_2_text_de }}
-                    {% endif %}
+                        {{ value.link_text_2 }}
                     </a>
                 </div>
             </div>

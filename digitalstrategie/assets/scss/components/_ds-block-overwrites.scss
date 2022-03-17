@@ -11,17 +11,6 @@
         margin-bottom: 5 * $spacer !important;
         text-align: center;
     }
-
-    .ds-hero-image__copyright {
-        min-width: max-content;
-        margin-top: -1.5rem;
-        background-color: $white;
-
-        p {
-            margin-bottom: 0;
-            padding: 0 0.5 * $spacer;
-        }
-    }
 }
 
 // overwrite white slider backround
@@ -33,4 +22,15 @@
 .ds-block__swiper-controls {
     margin-left: 0 !important;
     padding-left: 0 !important;
+}
+
+.ds-hero-image__copyright {
+    min-width: max-content;
+    margin-top: -1.5rem;
+    background-color: $white;
+
+    p {
+        margin-bottom: 0;
+        padding: 0 0.5 * $spacer;
+    }
 }

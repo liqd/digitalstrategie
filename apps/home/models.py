@@ -22,12 +22,19 @@ class HomePage(Page):
         ('theses', apps_blocks.ThesisListBlock())
     ]
 
-    subtitle_de = models.CharField(
+    page_title_de = models.CharField(
         max_length=120, blank=True, verbose_name=('Home page title de'))
-    subtitle_en = models.CharField(
+    page_title_en = models.CharField(
         max_length=120, blank=True, verbose_name=('Home page title en'))
-    subtitle_de_ls = models.CharField(
+    page_title_de_ls = models.CharField(
         max_length=120, blank=True, verbose_name=('Home page title de ls'))
+
+    page_subtitle_de = models.CharField(
+        max_length=255, blank=True, verbose_name=('Home page subtitle de'))
+    page_subtitle_en = models.CharField(
+        max_length=255, blank=True, verbose_name=('Home page subtitle en'))
+    page_subtitle_de_ls = models.CharField(
+        max_length=255, blank=True, verbose_name=('Home page subtitle de ls'))
 
     body_de = fields.StreamField(page_blocks)
     body_en = fields.StreamField(page_blocks, blank=True)
@@ -41,10 +48,16 @@ class HomePage(Page):
         related_name='+'
     )
 
-    subtitle = TranslatedField(
-        'subtitle_de',
-        'subtitle_en',
-        'subtitle_de_ls',
+    page_title = TranslatedField(
+        'page_title_de',
+        'page_title_en',
+        'page_title_de_ls',
+    )
+
+    page_subtitle = TranslatedField(
+        'page_subtitle_de',
+        'page_subtitle_en',
+        'page_subtitle_de_ls',
     )
 
     body = TranslatedField(
@@ -54,17 +67,20 @@ class HomePage(Page):
     )
 
     de_content_panels = [
-        FieldPanel('subtitle_de'),
+        FieldPanel('page_title_de'),
+        FieldPanel('page_subtitle_de'),
         StreamFieldPanel('body_de'),
     ]
 
     en_content_panels = [
-        FieldPanel('subtitle_en'),
+        FieldPanel('page_title_en'),
+        FieldPanel('page_subtitle_en'),
         StreamFieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
-        FieldPanel('subtitle_de_ls'),
+        FieldPanel('page_title_de_ls'),
+        FieldPanel('page_subtitle_de_ls'),
         StreamFieldPanel('body_de_ls'),
     ]
 
@@ -88,11 +104,17 @@ class HomePage(Page):
                      'apps_forms.ParticipationFormPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('subtitle_de',
+        index.SearchField('page_title_de',
                           es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('subtitle_en',
+        index.SearchField('page_title_en',
                           es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('subtitle_de_ls',
+        index.SearchField('page_title_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_subtitle_de',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_subtitle_en',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_subtitle_de_ls',
                           es_extra={'analyzer': 'ngram_analyzer'}),
         index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
         index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),

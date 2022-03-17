@@ -1,64 +1,27 @@
 from django.db import models
 from wagtail.admin.edit_handlers import FieldPanel
-from wagtail.admin.edit_handlers import MultiFieldPanel
 from wagtail.admin.edit_handlers import ObjectList
 from wagtail.admin.edit_handlers import StreamFieldPanel
 from wagtail.admin.edit_handlers import TabbedInterface
 from wagtail.core import blocks
 from wagtail.core import fields
 from wagtail.core.models import Page
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
-from apps.contrib.mixins import TeaserFieldsMixin
 from apps.contrib.translations import TranslatedField
 from apps.home import blocks as apps_blocks
 
 
-class GruenbuchIndexPage(Page, TeaserFieldsMixin):
+class GruenbuchIndexPage(Page):
     template = 'gruenbuch_page.html'
-
-    de_content_panels = [
-        MultiFieldPanel([
-            FieldPanel('teaser_title_de'),
-            FieldPanel('teaser_intro_de'),
-        ],
-            heading="Teaser content",
-            classname="collapsible"
-        ),
-    ]
-
-    en_content_panels = [
-        MultiFieldPanel([
-            FieldPanel('teaser_title_en'),
-            FieldPanel('teaser_intro_en'),
-        ],
-            heading="Teaser content",
-            classname="collapsible"
-        ),
-    ]
-
-    de_ls_content_panels = [
-        MultiFieldPanel([
-            FieldPanel('teaser_title_de_ls'),
-            FieldPanel('teaser_intro_de_ls'),
-        ],
-            heading="Teaser content",
-            classname="collapsible"
-        ),
-    ]
 
     common_panels = [
         FieldPanel('title'),
         FieldPanel('slug'),
-        ImageChooserPanel('teaser_image'),
     ]
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading='Common'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
     @property

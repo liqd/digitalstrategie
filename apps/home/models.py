@@ -1,6 +1,5 @@
 from django.db import models
 from wagtail.admin.edit_handlers import FieldPanel
-from wagtail.admin.edit_handlers import MultiFieldPanel
 from wagtail.admin.edit_handlers import ObjectList
 from wagtail.admin.edit_handlers import StreamFieldPanel
 from wagtail.admin.edit_handlers import TabbedInterface
@@ -10,7 +9,6 @@ from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
-from apps.contrib.mixins import TeaserFieldsMixin
 from apps.contrib.translations import TranslatedField
 from apps.home import blocks as apps_blocks
 
@@ -141,6 +139,10 @@ class OverviewPage(Page):
     page_intro_de_ls = fields.RichTextField(
         blank=True, default="", verbose_name="Overview page introduction")
 
+    body_de = fields.StreamField(teaser_blocks, blank=True)
+    body_en = fields.StreamField(teaser_blocks, blank=True)
+    body_de_ls = fields.StreamField(teaser_blocks, blank=True)
+
     page_title = TranslatedField(
         'page_title_de',
         'page_title_en',
@@ -153,28 +155,34 @@ class OverviewPage(Page):
         'page_intro_de_ls'
     )
 
-    teasers = fields.StreamField(teaser_blocks)
+    body = TranslatedField(
+        'body_de',
+        'body_en',
+        'body_de_ls',
+    )
 
     de_content_panels = [
         FieldPanel('page_title_de'),
-        FieldPanel('page_intro_de')
+        FieldPanel('page_intro_de'),
+        StreamFieldPanel('body_de'),
     ]
 
     en_content_panels = [
         FieldPanel('page_title_en'),
-        FieldPanel('page_intro_en')
+        FieldPanel('page_intro_en'),
+        StreamFieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
         FieldPanel('page_title_de_ls'),
-        FieldPanel('page_intro_de_ls')
+        FieldPanel('page_intro_de_ls'),
+        StreamFieldPanel('body_de_ls'),
     ]
 
     common_panels = [
         FieldPanel('title'),
         ImageChooserPanel('intro_image'),
         FieldPanel('background_color'),
-        StreamFieldPanel('teasers'),
     ]
 
     edit_handler = TabbedInterface([
@@ -191,7 +199,7 @@ class OverviewPage(Page):
                      'apps_forms.ParticipationFormPage']
 
 
-class DetailPage(Page, TeaserFieldsMixin):
+class DetailPage(Page):
     page_blocks = [
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock())
@@ -208,41 +216,19 @@ class DetailPage(Page, TeaserFieldsMixin):
     )
 
     de_content_panels = [
-        MultiFieldPanel([
-            FieldPanel('teaser_title_de'),
-            FieldPanel('teaser_intro_de'),
-        ],
-            heading="Teaser content",
-            classname="collapsible"
-        ),
         StreamFieldPanel('body_de'),
     ]
 
     en_content_panels = [
-        MultiFieldPanel([
-            FieldPanel('teaser_title_en'),
-            FieldPanel('teaser_intro_en'),
-        ],
-            heading="Teaser content",
-            classname="collapsible"
-        ),
         StreamFieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
-        MultiFieldPanel([
-            FieldPanel('teaser_title_de_ls'),
-            FieldPanel('teaser_intro_de_ls'),
-        ],
-            heading="Teaser content",
-            classname="collapsible"
-        ),
         StreamFieldPanel('body_de_ls'),
     ]
 
     common_panels = [
         FieldPanel('title'),
-        ImageChooserPanel('teaser_image'),
     ]
 
     edit_handler = TabbedInterface([

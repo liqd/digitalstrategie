@@ -6,7 +6,7 @@
 
 <section id="layout-grid__area--herounit">
     {% if page.intro_image %}
-      <img src="{{ intro_image.url }}" class="w-100" />
+      <img src="{{ intro_image.url }}" class="w-100" alt="{{ page.intro_image.alt }}"/>
       <span class="image__caption">
       {% if page.intro_image.caption %}
           {{ page.intro_image.caption }}

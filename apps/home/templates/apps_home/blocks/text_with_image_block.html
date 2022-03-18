@@ -10,8 +10,7 @@
                 <img src="{{ image.url }}" alt="{{ image.alt }}" />
             </div>
             <p class="image__copyright">
-              <!-- FIXME do we have copyright -->
-                copyright by photograph
+                {{ image.image.copyright}}
             </p>
         </div>
         <h3 class="title">{{ value.title }}</h3>

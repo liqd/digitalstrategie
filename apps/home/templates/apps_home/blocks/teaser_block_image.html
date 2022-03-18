@@ -5,7 +5,7 @@
 
 <div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block__body-bg{% endif %}">
     <div class="servicepanel__{% if self.image_alignment == 'left' %}left{% else %}right{% endif %} teaser-ds-block-img__{% if self.image_alignment == 'left' %}left{% else %}right{% endif %}">
-        <img src="{{ teaser_image.url }}"/>
+        <img src="{{ teaser_image.url }}" alt="{{ teaser_image.alt }}" />
         {% if value.link.specific.teaser_image.caption %}
             <div class="teaser-ds-block-img__copyright copyright">{{ value.link.specific.teaser_image.caption }}</div>
         {% endif %}

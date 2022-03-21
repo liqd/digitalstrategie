@@ -16,7 +16,7 @@
     "file-loader": "6.2.0",
     "flatpickr": "4.6.11",
     "jquery": "3.6.0",
-    "mini-css-extract-plugin": "2.5.3",
+    "mini-css-extract-plugin": "2.6.0",
     "node-sass": "7.0.1",
     "path-browserify": "1.0.1",
     "postcss-loader": "6.2.1",

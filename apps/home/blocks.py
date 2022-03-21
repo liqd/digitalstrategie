@@ -193,21 +193,12 @@ class TeaserBlockImage(blocks.StructBlock):
     body = blocks.TextBlock(max_length=300, blank=True, rows=3)
     image = ImageChooserBlock()
     link = blocks.PageChooserBlock()
+    link_text = blocks.CharBlock(max_length=50, label='Link Text')
 
     background_color = ColorChoiceBlock(
         help_text='Not choosing a colour will result in a block with '
                   'a white background.',
         required=False
-    )
-
-    image_alignment = blocks.ChoiceBlock(
-        choices=[
-            ('left', 'left'),
-            ('right', 'right'),
-        ],
-        icon='cup',
-        default='left',
-        help_text='How should the image be aligned?'
     )
 
     class Meta:

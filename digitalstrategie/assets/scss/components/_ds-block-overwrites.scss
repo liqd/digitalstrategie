@@ -11,6 +11,16 @@
         margin-bottom: 5 * $spacer !important;
         text-align: center;
     }
+
+    .ds-hero-image__copyright {
+        margin-top: -1.5rem;
+    }
+}
+
+@media screen and (max-width: 37.4375rem) {
+    .ds-hero-image__copyright {
+        margin-left: -12px;
+    }
 }
 
 // overwrite white slider backround
@@ -26,11 +36,15 @@
 
 .ds-hero-image__copyright {
     min-width: max-content;
-    margin-top: -1.5rem;
+    max-width: fit-content;
     background-color: $white;
 
     p {
         margin-bottom: 0;
         padding: 0 0.5 * $spacer;
     }
+}
+
+.ds-hero-image__overlay {
+    text-align: center;
 }

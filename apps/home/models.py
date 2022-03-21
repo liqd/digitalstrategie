@@ -19,7 +19,8 @@ class HomePage(Page):
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),
-        ('theses', apps_blocks.ThesisListBlock())
+        ('theses', apps_blocks.ThesisListBlock()),
+        ('teaser_image', apps_blocks.TeaserBlockImage()),
     ]
 
     page_title_de = models.CharField(

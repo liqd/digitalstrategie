@@ -2,17 +2,25 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-    <div class="search-container">
-        <form class="search-form" action="{% url 'search' %}" method="get">
+    <form action="{% url 'search' %}" method="get">
+        <div class="searchform-slot ">
             <div class="form-group">
-                <input name="q" class="form-control" id="searchFormInput_q" placeholder="Suchbegriff">
-                <button type="submit" class="button"><i class="fas fa-search" aria-hidden="true"></i> <span>Suchen</span></button>
+                <label class="aural" for="q">Suchbegriff</label> 
+                <div class="searchterm">
+                    <div class="input-wrapper">
+                        <i class="fas fa-search lens" aria-hidden="true"></i>
+                        <input class="form-control search" value="" placeholder="Suchbegriff" name="q">
+                    </div>
+                    <button class="button button--clean submit " type="submit" title="Suchen">
+                        <span class="aural">Suchen</span><i class="fas fa-arrow-right icon" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 
     {% if object_list %}
-        <ul>
+        <ul class="search-results-container">
             {% for result in object_list %}
                 {% for highlight in result.highlights %}
                     <li>
@@ -26,3 +34,4 @@
         No results found
     {% endif %}
 {% endblock %}
+

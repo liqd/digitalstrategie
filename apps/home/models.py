@@ -127,8 +127,8 @@ class HomePage(Page):
 class OverviewPage(Page):
     teaser_blocks = [
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
-        ('teaser_two_columns', apps_blocks.TeaserBlockTwoColumns()),
         ('teaser_image', apps_blocks.TeaserBlockImage()),
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
     ]
 
     intro_image = models.ForeignKey(

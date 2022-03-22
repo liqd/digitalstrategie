@@ -1,0 +1,43 @@
+{% load i18n wagtailcore_tags wagtailimages_tags %}
+
+<section class="modul-multiteaser ds-block">
+
+    <ul class="flexgrid grid--{{self.column_count}}">
+      {% for value in self.column %}
+
+       <li>
+         <article class="modul-teaser" data-add-clickable-area="smart">
+            <div class="image">
+                <div class="image__image">
+                    {% image value.image width-800 as image %}
+                    <img src="{{ image.url }}" alt="{{ image.alt }}">
+                </div>
+                {% if value.image.caption %}
+                <p class="image__caption">
+                    {{ value.image.caption }}
+                </p>
+                {% endif %}
+                {% if value.image.copyright %}
+                <p class="image__copyright">
+                  {{ value.image.copyright }}
+                </p>
+                {% endif %}
+            </div>
+            <h3 class="title">{{ value.title }}</h3>
+
+            <div class="inner">
+                <p class="text">
+                    {{ value.body }}
+                    {% if value.button.internal_link %}
+                        <a href="{{ value.internal_link.url }}" class="more" data-mainlink="true" title="">{{ value.button.link_text }}</a>
+                    {% endif %}
+                    {% if value.button.external_link %}
+                        <a href="{{ value.external_link.url }}" class="extern" data-mainlink="true" title="">{{ value.button.link_text }}</a>
+                    {% endif %}
+                </p>
+            </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+</section>

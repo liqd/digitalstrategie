@@ -166,28 +166,6 @@ class TeaserBlockCentered(blocks.StructBlock):
         icon = 'arrow-down'
 
 
-class TeaserBlockTwoColumns(blocks.StructBlock):
-    title_1 = blocks.CharBlock(max_length=50)
-    body_1 = blocks.TextBlock(max_length=300, blank=True, rows=3)
-    link_1 = blocks.PageChooserBlock()
-    link_text_1 = blocks.CharBlock(max_length=50, label='Link Text')
-
-    title_2 = blocks.CharBlock()
-    body_2 = blocks.TextBlock(max_length=300, blank=True, rows=3)
-    link_2 = blocks.PageChooserBlock()
-    link_text_2 = blocks.CharBlock(max_length=50, label='Link Text')
-
-    background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in a '
-                  'block with a white background.',
-        required=False
-    )
-
-    class Meta:
-        template = 'apps_home/blocks/teaser_block_two_columns.html'
-        icon = 'arrow-down'
-
-
 class TeaserBlockImage(blocks.StructBlock):
     title = blocks.CharBlock(max_length=50)
     body = blocks.TextBlock(max_length=300, blank=True, rows=3)
@@ -204,3 +182,35 @@ class TeaserBlockImage(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/teaser_block_image.html'
         icon = 'image'
+
+
+# sub-block
+class LinkBlock(blocks.StructBlock):
+    internal_link = blocks.PageChooserBlock(required=False)
+    external_link = blocks.URLBlock(required=False)
+    link_text = blocks.TextBlock(max_length=50, label='Link Text')
+
+
+# sub-block
+class ImgTextLinkBlock(blocks.StructBlock):
+    image = ImageChooserBlock()
+    title = blocks.CharBlock(max_length=50)
+    body = blocks.TextBlock(max_length=500, blank=True, rows=3)
+    button = LinkBlock(
+        help_text='Add either an external or internal link, not both'
+    )
+
+
+# 2-3 column block with image and CTA
+class TeaserBlockColumn(blocks.StructBlock):
+    column_count = blocks.ChoiceBlock(choices=[
+        ('2', 'two columns'),
+        ('3', 'three columns')
+    ], icon='cup', required=False,
+        help_text='Only add this number of columns below')
+    column = blocks.ListBlock(ImgTextLinkBlock())
+
+    class Meta:
+        template = 'apps_home/blocks/teaser_columns.html'
+        icon = 'image'
+        label = 'Teaser Columns'

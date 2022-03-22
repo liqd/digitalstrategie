@@ -129,6 +129,7 @@ class OverviewPage(Page):
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
         ('teaser_image', apps_blocks.TeaserBlockImage()),
         ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_tile', apps_blocks.TeaserBlockTile()),
     ]
 
     intro_image = models.ForeignKey(

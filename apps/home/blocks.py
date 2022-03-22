@@ -212,5 +212,22 @@ class TeaserBlockColumn(blocks.StructBlock):
 
     class Meta:
         template = 'apps_home/blocks/teaser_columns.html'
-        icon = 'image'
+        icon = 'grip'
         label = 'Teaser Columns'
+
+
+class IconTextLinkBlock(blocks.StructBlock):
+    icon = ImageChooserBlock()
+    title = blocks.CharBlock(max_length=70)
+    link = blocks.PageChooserBlock()
+
+
+# tile teaser block with icon
+class TeaserBlockTile(blocks.StructBlock):
+    title = blocks.CharBlock(max_length=70)
+    tile = blocks.ListBlock(IconTextLinkBlock())
+
+    class Meta:
+        template = 'apps_home/blocks/teaser_block_tiles.html'
+        icon = 'pick'
+        label = 'Teaser Tiles'

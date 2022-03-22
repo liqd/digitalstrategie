@@ -48,3 +48,33 @@
 .ds-hero-image__overlay {
     text-align: center;
 }
+
+// teaser tile overwrites
+.ds-teasertile {
+    padding: $spacer;
+
+    .ds-action {
+        top: 0;
+        bottom: auto !important;
+        background: $black !important;
+        padding: (0.5 * $spacer) (0.7 * $spacer) (0.5 * $spacer) (0.5 * $spacer) !important;
+
+        a.more:after {
+            color: $body-bg !important;
+        }
+    }
+
+    .ds-teasertile__info {
+        display: flex;
+        align-items: flex-end;
+        min-height: 150px;
+
+        .ds-teasertile__info-img {
+            flex: none;
+        }
+
+        .ds-teasertile__info-title {
+            padding-left: 0.5 * $spacer;
+        }
+    }
+}

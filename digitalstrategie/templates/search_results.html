@@ -36,11 +36,11 @@
                   Ergebnisse der Volltextsuche
                 </h2>
             </div>
+            <p>
+            Ihre Suche nach "{{ request.GET.q }}".<br />
+            </p>
             {% for result in object_list %}
-                <p>
-                Ihre Suche nach "{{ request.GET.q }}".<br />
-                </p>
-                {% for highlight in result.highlights %}
+               {% for highlight in result.highlights %}
                     <div class="searchresult-item">
                         <h3 class="title">
                             <a href="{% pageurl result %}">{{ result }}</a>

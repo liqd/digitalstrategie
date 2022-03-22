@@ -6,48 +6,94 @@ from wagtail.admin.edit_handlers import TabbedInterface
 from wagtail.core import blocks
 from wagtail.core import fields
 from wagtail.core.models import Page
+from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 from apps.contrib.translations import TranslatedField
 from apps.home import blocks as apps_blocks
 
 
-class GruenbuchIndexPage(Page):
-    template = 'gruenbuch_page.html'
+class GruenbuchOverviewPage(Page):
+    template = 'gruenbuch_overview_page.html'
+
+    intro_image = models.ForeignKey(
+        'apps_images.CustomImage',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    page_title_de = models.CharField(
+        max_length=120, blank=True)
+    page_title_en = models.CharField(
+        max_length=120, blank=True)
+    page_title_de_ls = models.CharField(
+        max_length=120, blank=True)
+
+    page_intro_de = fields.RichTextField(
+        blank=True, default="",
+        verbose_name="Grünbuch Overview page introduction")
+    page_intro_en = fields.RichTextField(
+        blank=True, default="",
+        verbose_name="Grünbuch Overview page introduction")
+    page_intro_de_ls = fields.RichTextField(
+        blank=True, default="",
+        verbose_name="Grünbuch Overview page introduction")
+
+    page_title = TranslatedField(
+        'page_title_de',
+        'page_title_en',
+        'page_title_de_ls',
+    )
+
+    page_intro = TranslatedField(
+        'page_intro_de',
+        'page_intro_en',
+        'page_intro_de_ls'
+    )
+
+    de_content_panels = [
+        FieldPanel('page_title_de'),
+        FieldPanel('page_intro_de'),
+    ]
+
+    en_content_panels = [
+        FieldPanel('page_title_en'),
+        FieldPanel('page_intro_en'),
+    ]
+
+    de_ls_content_panels = [
+        FieldPanel('page_title_de_ls'),
+        FieldPanel('page_intro_de_ls'),
+    ]
 
     common_panels = [
         FieldPanel('title'),
-        FieldPanel('slug'),
+        ImageChooserPanel('intro_image'),
     ]
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading='Common'),
+        ObjectList(de_content_panels, heading='German'),
+        ObjectList(en_content_panels, heading='English'),
+        ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
-    @property
-    def book(self):
-        return self
-
-    @property
-    def chapters(self):
-        if self.get_children():
-            return self.get_children().specific()
-
-    @property
-    def active_chapter(self):
-        if self.chapters:
-            return self.chapters.first()
-        else:
-            return ''
-
-    @property
-    def next_chapter(self):
-        if self.active_chapter:
-            return self.active_chapter.get_next_sibling()
-        else:
-            return ''
-
-    subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
+    search_fields = Page.search_fields + [
+        index.SearchField('page_title_de',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_en',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_intro_de',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_intro_en',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_intro_de_ls',
+                          es_extra={'analyzer': 'ngram_analyzer'}),
+    ]
 
 
 class GruenbuchDetailPage(Page):
@@ -116,35 +162,6 @@ class GruenbuchDetailPage(Page):
         ObjectList(en_content_panels, heading='English'),
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
-
-    @property
-    def book(self):
-        return self.get_parent().specific
-
-    @property
-    def chapters(self):
-        if self.book.get_children():
-            return self.book.get_children().specific()
-
-    @property
-    def active_chapter(self):
-        return self
-
-    @property
-    def next_chapter(self):
-        if self.get_next_sibling():
-            return self.get_next_sibling().specific
-        else:
-            return ''
-
-    @property
-    def prev_chapter(self):
-        if self.get_prev_sibling():
-            return self.get_prev_sibling().specific
-        else:
-            return ''
-
-    subpage_types = []
 
     search_fields = Page.search_fields + [
         index.SearchField('page_title_de',

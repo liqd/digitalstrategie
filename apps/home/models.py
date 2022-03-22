@@ -100,7 +100,7 @@ class HomePage(Page):
     subpage_types = ['apps_home.OverviewPage',
                      'apps_home.DetailPage',
                      'apps_home.SimplePage',
-                     'apps_gruenbuch.GruenbuchIndexPage',
+                     'apps_gruenbuch.GruenbuchOverviewPage',
                      'apps_forms.ContactFormPage',
                      'apps_forms.ParticipationFormPage']
 
@@ -217,7 +217,7 @@ class OverviewPage(Page):
 
     subpage_types = ['apps_home.DetailPage',
                      'apps_home.SimplePage',
-                     'apps_gruenbuch.GruenbuchIndexPage',
+                     'apps_gruenbuch.GruenbuchOverviewPage',
                      'apps_forms.ContactFormPage',
                      'apps_forms.ParticipationFormPage']
 

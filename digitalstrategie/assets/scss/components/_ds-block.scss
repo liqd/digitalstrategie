@@ -17,9 +17,17 @@
 
         .accordion-button,
         .accordion-body,
-        .background-image + .content-container *:not(.button) {
+        // teaser centered styling
+        .background-image + .content-container *:not(.button),
+        // richtext and cta centered styling
+        .button,
+        h2,
+        h3,
+        h4 {
             background-color: $green;
             color: $body-bg;
+            border-color: $body-bg;
+            border-width: 1px;
         }
     }
 
@@ -63,6 +71,11 @@
     &--purple,
     &--body-bg {
         opacity: 1 !important; // overwrite
+
+        .ds-block__button-clear {
+            color: $black !important;
+            border-color: $black !important;
+        }
     }
 
     @media print, (min-width: 64.001rem) {
@@ -71,34 +84,6 @@
     }
 }
 
-.ds-block__row {
-    padding: 0 1 * $spacer;
-
-    @media screen and (min-width: $breakpoint-md) {
-        padding: 0;
-    }
-}
-
-.hero-ds-block__img {
-    position: relative;
-    padding: 10 * $spacer 0;
-}
-
-.hero-ds-block__img-overlay {
-    display: block;
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0);
-}
-
 .quote-ds-block__text {
     font-weight: $font-weight-bold;
-}
-
-.ds-block__link {
-    text-decoration: none;
-    color: $black;
 }

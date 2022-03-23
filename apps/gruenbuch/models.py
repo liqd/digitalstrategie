@@ -24,6 +24,11 @@ class GruenbuchOverviewPage(Page):
         related_name='+'
     )
 
+    page_blocks = [
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_tiles', apps_blocks.TeaserBlockTile())
+    ]
+
     page_title_de = models.CharField(
         max_length=120, blank=True)
     page_title_en = models.CharField(
@@ -41,6 +46,10 @@ class GruenbuchOverviewPage(Page):
         blank=True, default="",
         verbose_name="Grünbuch Overview page introduction")
 
+    body_de = fields.StreamField(page_blocks, blank=True)
+    body_en = fields.StreamField(page_blocks, blank=True)
+    body_de_ls = fields.StreamField(page_blocks, blank=True)
+
     page_title = TranslatedField(
         'page_title_de',
         'page_title_en',
@@ -53,19 +62,28 @@ class GruenbuchOverviewPage(Page):
         'page_intro_de_ls'
     )
 
+    body = TranslatedField(
+        'body_de',
+        'body_en',
+        'body_de_ls',
+    )
+
     de_content_panels = [
         FieldPanel('page_title_de'),
         FieldPanel('page_intro_de'),
+        StreamFieldPanel('body_de'),
     ]
 
     en_content_panels = [
         FieldPanel('page_title_en'),
         FieldPanel('page_intro_en'),
+        StreamFieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
         FieldPanel('page_title_de_ls'),
         FieldPanel('page_intro_de_ls'),
+        StreamFieldPanel('body_de_ls'),
     ]
 
     common_panels = [

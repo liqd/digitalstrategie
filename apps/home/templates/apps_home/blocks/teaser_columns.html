@@ -12,16 +12,17 @@
                     {% image value.image width-800 as image %}
                     <img src="{{ image.url }}" alt="{{ image.alt }}">
                 </div>
-                {% if value.image.caption %}
-                <p class="image__caption">
-                    {{ value.image.caption }}
-                </p>
-                {% endif %}
-                {% if value.image.copyright %}
-                <p class="image__copyright">
-                  {{ value.image.copyright }}
-                </p>
-                {% endif %}
+                <div class="image__copyright">
+
+                  {% if value.image.caption %}
+                    <figcaption>{{ value.image.caption }}</figcaption>
+                  {% endif %}
+
+                  {% if value.image.copyright %}
+                    {{ value.image.copyright }}
+                  {% endif %}
+                </div>
+
             </div>
             <h3 class="title">{{ value.title }}</h3>
 

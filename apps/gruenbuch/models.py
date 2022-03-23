@@ -98,6 +98,8 @@ class GruenbuchOverviewPage(Page):
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
+    subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
+
     search_fields = Page.search_fields + [
         index.SearchField('page_title_de',
                           es_extra={'analyzer': 'ngram_analyzer'}),
@@ -119,7 +121,7 @@ class GruenbuchDetailPage(Page):
 
     page_blocks = [
         ('paragraph', blocks.RichTextBlock()),
-        ('faq_accordion', apps_blocks.GruenbuchFaqBlock())
+        ('faq_accordion', apps_blocks.FaqBlock())
     ]
 
     page_title_de = models.CharField(max_length=120)

@@ -19,5 +19,8 @@
     {{ self.page_intro|richtext }}
 </section>
 <div id="layout-grid__area--maincontent">
+  {% for block in self.body %}
+      {{ block }}
+  {% endfor %}
 </div>
 {% endblock %}

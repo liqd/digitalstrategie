@@ -1,0 +1,32 @@
+.download__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5 * $spacer;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 2 * $spacer;
+}
+
+.download__section--start {
+    flex: 1;
+    border-right: 1px solid $gray;
+
+    h3 {
+        margin-top: 0.25 * $spacer;
+    }
+}
+
+.download__section--end {
+    padding-left: 2 * $spacer;
+}
+
+.download-info__meta {
+    margin-bottom: 0.25 * $spacer;
+}
+
+.download__link {
+    i {
+        color: $text-gray;
+        font-size: $font-size-lg;
+    }
+}

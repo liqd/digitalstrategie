@@ -15,17 +15,16 @@
         color: $body-bg !important;
         background-color: $green;
 
-        .accordion-button,
-        .accordion-body,
         // teaser centered styling
         .background-image + .content-container *:not(.button),
         // richtext and cta centered styling
         .button,
         h2,
         h3,
+        h3:after,
         h4 {
             background-color: $green;
-            color: $body-bg;
+            color: $body-bg !important;
             border-color: $body-bg;
             border-width: 1px;
         }
@@ -33,37 +32,18 @@
 
     &--yellow {
         background-color: $yellow;
-
-        .accordion-button,
-        .accordion-body {
-            background-color: $yellow;
-        }
     }
 
     &--pink {
         background-color: $pink;
-
-        .accordion-button,
-        .accordion-body {
-            background-color: $pink;
-        }
     }
 
     &--purple {
         background-color: $purple;
-
-        .accordion-button,
-        .accordion-body {
-            background-color: $purple;
-        }
     }
 
     &--body-bg {
         background-color: $body-bg;
-
-        .accordion-button {
-            background-color: $body-bg;
-        }
     }
 
     &--yellow,
@@ -71,6 +51,10 @@
     &--purple,
     &--body-bg {
         opacity: 1 !important; // overwrite
+
+        .js-accordion {
+            border-color: $black !important;
+        }
 
         .ds-block__button-clear {
             color: $black !important;

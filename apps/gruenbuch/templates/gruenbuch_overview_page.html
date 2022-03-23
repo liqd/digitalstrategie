@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block content %}
 {% image page.intro_image max-1920x560 as intro_image %}
@@ -19,8 +19,34 @@
     {{ self.page_intro|richtext }}
 </section>
 <div id="layout-grid__area--maincontent">
-  {% for block in self.body %}
-      {{ block }}
-  {% endfor %}
+    {% for block in self.body %}
+        {{ block }}
+    {% endfor %}
+    {% if settings.apps_settings.Downloads.gruenbuch %}
+        {% with download=settings.apps_settings.Downloads.gruenbuch %}
+        <h2>{% trans 'Downloads' %}</h2>
+        <div class="download__section">
+            <div class="download__section--start">
+                <h3>{{ download.title }}</h3>
+                <p class="download-info__meta">
+                    {% trans 'Document' %} ({{ download.file_size|filesizeformat }}) -
+                    {% trans 'Date:' %} {{ download.created_at|date:"m/Y" }}
+                    <br>
+                    {% trans 'Document' %}: {{ download.file_extension }}
+                </p>
+            </div>
+            <div class="download__section--end">
+                <a
+                  class="download__link"
+                  href="{{ download.url }}"
+                  target="_blank"
+                >
+                    <i class="fas fa-download me-2" aria-hidden="true"></i>
+                    <span>{% trans 'Download' %}</span>
+                </a>
+            </div>
+        </div>
+        {% endwith %}
+    {% endif %}
 </div>
 {% endblock %}

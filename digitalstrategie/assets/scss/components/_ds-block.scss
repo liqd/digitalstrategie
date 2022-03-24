@@ -1,6 +1,10 @@
 // overwrites for styleguide
 .ds-block {
     padding-top: 3 * $spacer !important;
+}
+
+.ds-block,
+.ds-block--img {
     padding-bottom: 3 * $spacer !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -13,7 +17,7 @@
     &--green {
         opacity: 1 !important;
         color: $body-bg !important;
-        background-color: $green;
+        background-color: $green !important;
 
         // teaser centered styling
         .background-image + .content-container *:not(.button),
@@ -23,7 +27,7 @@
         h3,
         h3:after,
         h4 {
-            background-color: $green;
+            background-color: $green !important;
             color: $body-bg !important;
             border-color: $body-bg;
             border-width: 1px;
@@ -31,19 +35,19 @@
     }
 
     &--yellow {
-        background-color: $yellow;
+        background-color: $yellow !important;
     }
 
     &--pink {
-        background-color: $pink;
+        background-color: $pink !important;
     }
 
     &--purple {
-        background-color: $purple;
+        background-color: $purple !important;
     }
 
     &--body-bg {
-        background-color: $body-bg;
+        background-color: $body-bg !important;
     }
 
     &--yellow,

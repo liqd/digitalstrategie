@@ -25,15 +25,14 @@
 
             </div>
             <h3 class="title">{{ value.title }}</h3>
-
             <div class="inner">
                 <p class="text">
                     {{ value.body }}
                     {% if value.button.internal_link %}
-                        <a href="{{ value.internal_link.url }}" class="more ms-1" data-mainlink="true" title="">{{ value.button.link_text }}</a>
+                        <a href="{{ value.button.internal_link.url }}" class="more ms-1" data-mainlink="true" title="">{{ value.button.link_text }}</a>
                     {% endif %}
                     {% if value.button.external_link %}
-                        <a href="{{ value.external_link.url }}" class="extern ms-1" data-mainlink="true" title="">{{ value.button.link_text }}</a>
+                        <a href="{{ value.button.external_link }}" class="extern ms-1" data-mainlink="true" title="">{{ value.button.link_text }}</a>
                     {% endif %}
                 </p>
             </div>

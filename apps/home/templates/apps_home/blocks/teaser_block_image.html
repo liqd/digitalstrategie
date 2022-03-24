@@ -1,5 +1,5 @@
 {% load i18n wagtailcore_tags wagtailimages_tags %}
-{% image value.image width-800 as image %}
+{% image value.image fill-800x600 as image %}
 
 <article class="modul-teaser-marketing imageteaser fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}" >
     <div class="background-image {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}" aria-hidden="true">

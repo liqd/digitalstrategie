@@ -31,6 +31,7 @@ class CallToActionBlock(blocks.StructBlock):
 
 class AccordionItemBlock(blocks.StructBlock):
     title = blocks.CharBlock(
+        max_length=130,
         verbose_name='FAQ Question'
     )
     body = blocks.RichTextBlock(

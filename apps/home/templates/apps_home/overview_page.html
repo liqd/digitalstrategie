@@ -3,21 +3,24 @@
 
 {% block content %}
 {% image page.intro_image max-1920x560 as intro_image %}
-
-<section id="layout-grid__area--herounit">
-    {% if page.intro_image %}
-      <img src="{{ intro_image.url }}" class="w-100" alt="{{ page.intro_image.alt }}"/>
-      {% if page.intro_image.copyright %}
-      <span class="image__copyright">
-          {{ page.intro_image.copyright }}
-      </span>
-      {% endif %}
-    {% endif %}
-    {% if page.page_title %}
-    <h1>{{ page.page_title }}</h1>
-    {% endif %}
-    {{ self.page_intro|richtext }}
-</section>
+<div class="fullwidth {% if page.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+    <div id="layout-grid">
+    <section id="layout-grid__area--herounit">
+        {% if page.intro_image %}
+          <img src="{{ intro_image.url }}" class="w-100" alt="{{ page.intro_image.alt }}"/>
+          {% if page.intro_image.copyright %}
+          <span class="image__copyright">
+              {{ page.intro_image.copyright }}
+          </span>
+          {% endif %}
+        {% endif %}
+        {% if page.page_title %}
+        <h1>{{ page.page_title }}</h1>
+        {% endif %}
+        {{ self.page_intro|richtext }}
+    </section>
+    </div>
+</div>
 <div id="layout-grid__area--maincontent">
   {% for block in self.body %}
       {{ block }}

@@ -105,22 +105,15 @@ class HomePage(Page):
                      'apps_forms.ParticipationFormPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_title_en',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_title_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_subtitle_de',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_subtitle_en',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_subtitle_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'})
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_subtitle_de'),
+        index.SearchField('page_subtitle_en'),
+        index.SearchField('page_subtitle_de_ls'),
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls')
     ]
 
 
@@ -223,18 +216,12 @@ class OverviewPage(Page):
                      'apps_forms.ParticipationFormPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_title_en',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_title_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_intro_de',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_intro_en',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_intro_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_intro_de'),
+        index.SearchField('page_intro_en'),
+        index.SearchField('page_intro_de_ls'),
     ]
 
 
@@ -280,10 +267,9 @@ class DetailPage(Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
-        index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'})
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls')
     ]
 
 
@@ -344,8 +330,7 @@ class SimplePage(Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
-        index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'})
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls')
     ]

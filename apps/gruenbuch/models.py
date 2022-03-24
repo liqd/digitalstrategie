@@ -101,18 +101,12 @@ class GruenbuchOverviewPage(Page):
     subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_title_en',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_title_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_intro_de',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_intro_en',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_intro_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_intro_de'),
+        index.SearchField('page_intro_en'),
+        index.SearchField('page_intro_de_ls'),
     ]
 
 
@@ -184,20 +178,13 @@ class GruenbuchDetailPage(Page):
     ])
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_title_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('page_title_en',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('subtitle_de',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('subtitle_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('subtitle_en',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_de', es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_de_ls',
-                          es_extra={'analyzer': 'ngram_analyzer'}),
-        index.SearchField('body_en', es_extra={'analyzer': 'ngram_analyzer'}),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_title_en'),
+        index.SearchField('subtitle_de'),
+        index.SearchField('subtitle_de_ls'),
+        index.SearchField('subtitle_en'),
+        index.SearchField('body_de'),
+        index.SearchField('body_de_ls'),
+        index.SearchField('body_en'),
     ]

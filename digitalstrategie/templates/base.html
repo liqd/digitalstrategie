@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-{% load i18n wagtailuserbar static %}
+{% load i18n wagtailuserbar static wagtailmetadata_tags %}
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8" />
-        <title>{% block title %}{% trans 'Digital strategy' %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
         <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon-96x96.png' %}">
         <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+
+        {% block meta_tag %}
+            {% meta_tags %}
+        {% endblock %}
 
         <!-- Berlin theme css start -->
             <link rel="stylesheet" type="text/css" href="//www.berlin.de/i9f/r1/bundle/berlin_marketing.css">

@@ -8,12 +8,13 @@ from wagtail.core import fields
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
+from wagtailmetadata.models import MetadataPageMixin
 
 from apps.contrib.translations import TranslatedField
 from apps.home import blocks as apps_blocks
 
 
-class HomePage(Page):
+class HomePage(MetadataPageMixin, Page):
     page_blocks = [
         ('call_to_action', apps_blocks.CallToActionBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
@@ -92,6 +93,7 @@ class HomePage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading='Common'),
+        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
         ObjectList(de_content_panels, heading='German'),
         ObjectList(en_content_panels, heading='English'),
         ObjectList(de_ls_content_panels, heading='Easy German'),

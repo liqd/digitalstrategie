@@ -175,7 +175,13 @@ WAGTAILIMAGES_IMAGE_MODEL = 'apps_images.CustomImage'
 
 WAGTAILADMIN_RICH_TEXT_EDITORS = {
     'default': {
-        'WIDGET': 'wagtail.admin.rich_text.HalloRichTextArea'
+        'WIDGET': 'wagtail.admin.rich_text.HalloRichTextArea',
+        'OPTIONS': {
+            'features': [
+                'bold', 'italic', 'p', 'h2', 'h3', 'h4', 'ol',
+                'ul', 'hr', 'link', 'document-link', 'image'
+            ]
+        }
     }
 }
 

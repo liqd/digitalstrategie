@@ -10,9 +10,9 @@
           <div class="image__image mb-0" style="">
               <img src="{{ header_image.url }}" alt="{{ header_image.alt }}" loading="lazy">
           </div>
-          {% if page.header_image.caption %}
-          <div class="ds-hero-image__copyright">
-              <p class="ds-hero-copyright">{{ page.header_image.caption }}</p>
+          {% if page.header_image.copyright %}
+          <div class="image__copyright ds-hero-image__copyright">
+              <p>{{ page.header_image.copyright }}</p>
           </div>
           {% endif %}
 

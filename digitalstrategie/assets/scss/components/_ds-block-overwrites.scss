@@ -13,13 +13,18 @@
     }
 
     .ds-hero-image__copyright {
-        margin-top: -1.5rem;
+        margin-top: -0.75 * $spacer !important;
+        padding-left: 0.5 * $spacer !important;
     }
 }
 
 @media screen and (max-width: 37.4375rem) {
     .ds-hero-image__copyright {
-        margin-left: -12px;
+        margin-left: -12px !important;
+
+        p {
+            padding: 0 (0.5 * $spacer) !important;
+        }
     }
 }
 
@@ -35,13 +40,14 @@
 }
 
 .ds-hero-image__copyright {
-    min-width: max-content;
-    max-width: fit-content;
+    min-width: max-content !important;
+    max-width: fit-content !important;
     background-color: $white;
+    z-index: 1;
 
     p {
         margin-bottom: 0;
-        padding: 0 0.5 * $spacer;
+        padding: 0 (0.5 * $spacer) 0 0;
     }
 }
 

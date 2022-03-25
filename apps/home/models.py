@@ -228,7 +228,8 @@ class OverviewPage(Page):
 class DetailPage(Page):
     page_blocks = [
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
-        ('faq_accordion', apps_blocks.FaqBlock())
+        ('faq_accordion', apps_blocks.FaqBlock()),
+        ('text_with_image', apps_blocks.TextWithImageBlock())
     ]
 
     body_de = fields.StreamField(page_blocks)

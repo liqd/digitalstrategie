@@ -24,14 +24,14 @@ class HomePage(Page):
     ]
 
     page_title_de = models.CharField(
-        max_length=120, blank=True, verbose_name=('Home page title de'))
+        max_length=120, blank=False, verbose_name=('Home page title de'))
     page_title_en = models.CharField(
         max_length=120, blank=True, verbose_name=('Home page title en'))
     page_title_de_ls = models.CharField(
         max_length=120, blank=True, verbose_name=('Home page title de ls'))
 
     page_subtitle_de = models.CharField(
-        max_length=255, blank=True, verbose_name=('Home page subtitle de'))
+        max_length=255, blank=False, verbose_name=('Home page subtitle de'))
     page_subtitle_en = models.CharField(
         max_length=255, blank=True, verbose_name=('Home page subtitle en'))
     page_subtitle_de_ls = models.CharField(

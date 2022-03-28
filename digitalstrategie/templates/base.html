@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load i18n wagtailuserbar static wagtailmetadata_tags %}
+{% load i18n wagtailuserbar static custom_metadata_tags %}
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
     <head>
@@ -11,7 +11,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
 
         {% block meta_tag %}
-            {% meta_tags %}
+            {% custom_meta_tags %}
         {% endblock %}
 
         <!-- Berlin theme css start -->

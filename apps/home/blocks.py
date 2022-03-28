@@ -45,11 +45,6 @@ class FaqBlock(blocks.StructBlock):
         required=False
     )
     accordion_items = blocks.ListBlock(AccordionItemBlock())
-    background_color = ColorChoiceBlock(
-        help_text=('Not choosing a colour will result in a block with '
-                   'a white background.'),
-        required=False
-    )
 
     class Meta:
         template = 'apps_home/blocks/faq_block.html'

@@ -77,7 +77,7 @@ class QuoteBlock(blocks.StructBlock):
 
 class TextWithImageBlock(blocks.StructBlock):
     title = blocks.CharBlock(required=True)
-    body = blocks.RichTextBlock(required=True)
+    body = blocks.TextBlock(required=True, max_length=800)
     image = ImageChooserBlock(required=True)
 
     image_alignment = blocks.ChoiceBlock(

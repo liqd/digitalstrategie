@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<div id="layout-grid__area--maincontent">
+  <h1>{{ page.page_title }}</h1>
+  {% if page.subtitle %}
+  <p>{{ page.subtitle }}</p>
+  {% endif %}
+  {% for block in self.body %}
+      {{ block }}
+  {% endfor %}
+</div>
+{% endblock %}

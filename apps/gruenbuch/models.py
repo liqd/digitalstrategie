@@ -111,7 +111,7 @@ class GruenbuchOverviewPage(Page):
 
 
 class GruenbuchDetailPage(Page):
-    template = 'gruenbuch_page.html'
+    template = 'gruenbuch_detail_page.html'
 
     page_blocks = [
         ('paragraph', blocks.RichTextBlock()),

@@ -107,15 +107,15 @@ class HomePage(MetadataPageMixin, Page):
                      'apps_forms.ParticipationFormPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de'),
-        index.SearchField('page_title_en'),
-        index.SearchField('page_title_de_ls'),
-        index.SearchField('page_subtitle_de'),
-        index.SearchField('page_subtitle_en'),
-        index.SearchField('page_subtitle_de_ls'),
-        index.SearchField('body_de'),
-        index.SearchField('body_en'),
-        index.SearchField('body_de_ls')
+        index.SearchField('page_title_de', partial_match=True),
+        index.SearchField('page_title_en', partial_match=True),
+        index.SearchField('page_title_de_ls', partial_match=True),
+        index.SearchField('page_subtitle_de', partial_match=True),
+        index.SearchField('page_subtitle_en', partial_match=True),
+        index.SearchField('page_subtitle_de_ls', partial_match=True),
+        index.SearchField('body_de', partial_match=True),
+        index.SearchField('body_en', partial_match=True),
+        index.SearchField('body_de_ls', partial_match=True)
     ]
 
 
@@ -218,12 +218,12 @@ class OverviewPage(Page):
                      'apps_forms.ParticipationFormPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de'),
-        index.SearchField('page_title_en'),
-        index.SearchField('page_title_de_ls'),
-        index.SearchField('page_intro_de'),
-        index.SearchField('page_intro_en'),
-        index.SearchField('page_intro_de_ls'),
+        index.SearchField('page_title_de', partial_match=True),
+        index.SearchField('page_title_en', partial_match=True),
+        index.SearchField('page_title_de_ls', partial_match=True),
+        index.SearchField('page_intro_de', partial_match=True),
+        index.SearchField('page_intro_en', partial_match=True),
+        index.SearchField('page_intro_de_ls', partial_match=True),
     ]
 
 
@@ -270,9 +270,9 @@ class DetailPage(Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
-        index.SearchField('body_de'),
-        index.SearchField('body_en'),
-        index.SearchField('body_de_ls')
+        index.SearchField('body_de', partial_match=True),
+        index.SearchField('body_en', partial_match=True),
+        index.SearchField('body_de_ls', partial_match=True)
     ]
 
 
@@ -333,7 +333,7 @@ class SimplePage(Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
-        index.SearchField('body_de'),
-        index.SearchField('body_en'),
-        index.SearchField('body_de_ls')
+        index.SearchField('body_de', partial_match=True),
+        index.SearchField('body_en', partial_match=True),
+        index.SearchField('body_de_ls', partial_match=True)
     ]

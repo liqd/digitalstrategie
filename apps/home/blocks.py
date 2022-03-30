@@ -204,7 +204,8 @@ class TeaserBlockColumn(blocks.StructBlock):
 class IconTextLinkBlock(blocks.StructBlock):
     icon = ImageChooserBlock()
     title = blocks.CharBlock(max_length=70)
-    link = blocks.PageChooserBlock()
+    link = blocks.PageChooserBlock(
+        page_type=['apps_gruenbuch.GruenbuchDetailPage'])
 
 
 # tile teaser block with icon

@@ -1,7 +1,7 @@
 {% load i18n wagtailcore_tags wagtailimages_tags %}
 
 <section class="modul-teasertiles">
-    <h2>{{ value.title }}</h2>
+    <h2 class="title">{{ value.title }}</h2>
     <ul class="flexgrid grid--4">
       {% for value in self.tile %}
         <li>

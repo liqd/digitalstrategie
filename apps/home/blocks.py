@@ -42,7 +42,8 @@ class AccordionItemBlock(blocks.StructBlock):
 
 class FaqBlock(blocks.StructBlock):
     faq_title = blocks.CharBlock(
-        required=False
+        required=False,
+        max_length=150
     )
     accordion_items = blocks.ListBlock(AccordionItemBlock())
 
@@ -191,7 +192,7 @@ class TeaserBlockColumn(blocks.StructBlock):
     column_count = blocks.ChoiceBlock(choices=[
         ('2', 'two columns'),
         ('3', 'three columns')
-    ], icon='cup', required=False,
+    ], icon='cup', required=True,
         help_text='Only add this number of columns below')
     column = blocks.ListBlock(ImgTextLinkBlock())
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-21 09:26+0000\n"
+"POT-Creation-Date: 2022-03-31 15:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,74 +21,74 @@ msgstr ""
 msgid "This field is required."
 msgstr ""
 
-#: apps/forms/models.py:29
+#: apps/forms/models.py:27
 msgid "to address"
 msgstr ""
 
-#: apps/forms/models.py:30
+#: apps/forms/models.py:28
 msgid ""
 "Form submissions will be emailed to these addresses. Separate multiple "
 "addresses by comma."
 msgstr ""
 
-#: apps/forms/models.py:34
+#: apps/forms/models.py:32
 msgid "from address"
 msgstr ""
 
-#: apps/forms/models.py:35
+#: apps/forms/models.py:33
 msgid ""
 "Optional - submitted forms will be displayed as sent from this email address."
 msgstr ""
 
-#: apps/forms/models.py:39
+#: apps/forms/models.py:37
 msgid "subject"
 msgstr ""
 
-#: apps/forms/models.py:40
+#: apps/forms/models.py:38
 msgid ""
 "Optional - will be displayed as the subject of the email of the submitted "
 "form."
 msgstr ""
 
-#: apps/forms/models.py:83
+#: apps/forms/models.py:81
 msgid "First Name"
 msgstr ""
 
-#: apps/forms/models.py:90
+#: apps/forms/models.py:88
 msgid "Surname"
 msgstr ""
 
-#: apps/forms/models.py:97
+#: apps/forms/models.py:95
 msgid "Organisation"
 msgstr ""
 
-#: apps/forms/models.py:104
+#: apps/forms/models.py:102
 msgid "E-Mail"
 msgstr ""
 
-#: apps/forms/models.py:181 apps/forms/models.py:245
+#: apps/forms/models.py:157 apps/forms/models.py:221
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr ""
 
-#: apps/forms/models.py:187
+#: apps/forms/models.py:163
 msgid "Title"
 msgstr ""
 
-#: apps/forms/models.py:194
+#: apps/forms/models.py:170
 msgid "Your message to us..."
 msgstr ""
 
-#: apps/forms/models.py:219
+#: apps/forms/models.py:195
 msgid ""
 "The selected categories                     are displayed in the "
 "participation form."
 msgstr ""
 
-#: apps/forms/models.py:244
+#: apps/forms/models.py:220
 msgid "I agree that my contact data is stored"
 msgstr ""
 
-#: apps/forms/models.py:251
+#: apps/forms/models.py:227
 msgid "I am interested in the following fields of action"
 msgstr ""
 
@@ -111,24 +111,21 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_page.html:28
-msgid "No chapters have been added yet."
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:27
+msgid "Downloads"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_page.html:34
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:32
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:35
+msgid "Document"
+msgstr ""
+
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:33
+msgid "Date:"
+msgstr ""
+
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:45
 msgid "Download"
-msgstr ""
-
-#: apps/gruenbuch/templates/gruenbuch_page.html:58
-msgid "Previous Chapter"
-msgstr ""
-
-#: apps/gruenbuch/templates/gruenbuch_page.html:68
-msgid "Next Chapter"
-msgstr ""
-
-#: apps/home/templates/apps_home/blocks/text_with_image_block.html:21
-msgid "Read more"
 msgstr ""
 
 #: apps/home/templates/apps_home/blocks/thesis_list_block.html:10
@@ -139,15 +136,15 @@ msgstr ""
 msgid "Next slide"
 msgstr ""
 
-#: digitalstrategie/settings/base.py:120
+#: digitalstrategie/settings/base.py:121
 msgid "English"
 msgstr ""
 
-#: digitalstrategie/settings/base.py:121
+#: digitalstrategie/settings/base.py:122
 msgid "German"
 msgstr ""
 
-#: digitalstrategie/settings/base.py:122
+#: digitalstrategie/settings/base.py:123
 msgid "Easy German"
 msgstr ""
 
@@ -161,11 +158,6 @@ msgstr ""
 
 #: digitalstrategie/templates/500.html:7
 msgid "Internal server error."
-msgstr ""
-
-#: digitalstrategie/templates/base.html:8
-#: digitalstrategie/templates/includes/header.html:19
-msgid "Digital strategy"
 msgstr ""
 
 #: digitalstrategie/templates/base_errors.html:4
@@ -195,6 +187,10 @@ msgstr ""
 #: digitalstrategie/templates/includes/header.html:18
 #: digitalstrategie/templates/includes/header.html:19
 msgid "To the home page"
+msgstr ""
+
+#: digitalstrategie/templates/includes/header.html:19
+msgid "Digital strategy"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:25
@@ -291,4 +287,35 @@ msgstr ""
 
 #: digitalstrategie/templates/includes/header_language_switch.html:25
 msgid "select"
+msgstr ""
+
+#: digitalstrategie/templates/search_results.html:5
+msgid "Digital strategy - full-text search"
+msgstr ""
+
+#: digitalstrategie/templates/search_results.html:12
+msgid "Full-text search"
+msgstr ""
+
+#: digitalstrategie/templates/search_results.html:18
+#: digitalstrategie/templates/search_results.html:25
+msgid "Search term"
+msgstr ""
+
+#: digitalstrategie/templates/search_results.html:29
+#: digitalstrategie/templates/search_results.html:30
+msgctxt "verb"
+msgid "Search"
+msgstr ""
+
+#: digitalstrategie/templates/search_results.html:40
+msgid "Results of the full-text search"
+msgstr ""
+
+#: digitalstrategie/templates/search_results.html:44
+msgid "Your search for"
+msgstr ""
+
+#: digitalstrategie/templates/search_results.html:70
+msgid "No results found"
 msgstr ""

@@ -8,12 +8,13 @@ from wagtail.core import fields
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
+from wagtailmetadata.models import MetadataPageMixin
 
 from apps.contrib.translations import TranslatedField
 from apps.home import blocks as apps_blocks
 
 
-class GruenbuchOverviewPage(Page):
+class GruenbuchOverviewPage(MetadataPageMixin, Page):
     template = 'gruenbuch_overview_page.html'
 
     intro_image = models.ForeignKey(
@@ -93,6 +94,7 @@ class GruenbuchOverviewPage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading='Common'),
+        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
         ObjectList(de_content_panels, heading='German'),
         ObjectList(en_content_panels, heading='English'),
         ObjectList(de_ls_content_panels, heading='Easy German'),

@@ -7,10 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   entry: {
     digitalstrategie: [
-      '@fortawesome/fontawesome-free/scss/fontawesome.scss',
-      '@fortawesome/fontawesome-free/scss/brands.scss',
-      '@fortawesome/fontawesome-free/scss/regular.scss',
-      '@fortawesome/fontawesome-free/scss/solid.scss',
       './digitalstrategie/assets/scss/style.scss',
       './digitalstrategie/assets/js/app.js'
     ]

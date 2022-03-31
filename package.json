@@ -6,7 +6,6 @@
      "url" : "https://github.com/liqd/digitalstrategie.git"
    },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "6.1.0",
     "@popperjs/core": "2.11.4",
     "autoprefixer": "10.4.4",
     "babel-loader": "8.2.4",

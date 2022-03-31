@@ -27,6 +27,7 @@
         h3,
         h3:after,
         h4 {
+            background-color: $green !important;
             color: $body-bg !important;
             border-color: $body-bg;
             border-width: 1px;
@@ -74,3 +75,8 @@
 .quote-ds-block__text {
     font-weight: $font-weight-bold;
 }
+
+.modul-teaser-marketing.imageteaser .image {
+    z-index: 5;
+}
+

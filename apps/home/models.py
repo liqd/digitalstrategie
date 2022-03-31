@@ -119,7 +119,7 @@ class HomePage(MetadataPageMixin, Page):
     ]
 
 
-class OverviewPage(Page):
+class OverviewPage(MetadataPageMixin, Page):
     teaser_blocks = [
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
         ('teaser_image', apps_blocks.TeaserBlockImage()),
@@ -206,6 +206,7 @@ class OverviewPage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading='Common'),
+        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
         ObjectList(de_content_panels, heading='German'),
         ObjectList(en_content_panels, heading='English'),
         ObjectList(de_ls_content_panels, heading='Easy German'),

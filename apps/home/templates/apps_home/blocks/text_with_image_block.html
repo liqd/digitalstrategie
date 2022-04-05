@@ -6,9 +6,16 @@
         <div class="image__image">
             <img src="{{ image.url }}" alt="{{ image.alt }}">
         </div>
+        {% if value.image.caption %}
+        <p class="image__caption">
+          {{ image.image.caption}}
+        </p>
+        {% endif %}
+        {% if value.image.copyright %}
         <p class="image__copyright">
             {{ image.image.copyright}}
         </p>
+        {% endif %}
     </div>
     <h2 class="title">{{ value.title }}</h2>
 

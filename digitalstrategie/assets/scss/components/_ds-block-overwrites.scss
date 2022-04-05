@@ -73,14 +73,14 @@
     .ds-teasertile__info {
         display: flex;
         align-items: flex-end;
-        min-height: 150px;
+        min-height: 140px;
 
         .ds-teasertile__info-img {
             flex: none;
         }
 
         .ds-teasertile__info-title {
-            padding-left: 0.5 * $spacer;
+            padding-left: 0.75 * $spacer;
         }
     }
 }

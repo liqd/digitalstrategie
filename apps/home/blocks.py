@@ -53,21 +53,10 @@ class FaqBlock(blocks.StructBlock):
 
 
 class QuoteBlock(blocks.StructBlock):
-    text = blocks.RichTextBlock(
-        required=True
-    )
     quote = blocks.CharBlock(
         required=True
     )
     author = blocks.CharBlock(
-        required=False
-    )
-    link = blocks.PageChooserBlock(
-        required=False
-    )
-    background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in a block with '
-                  'a white background.',
         required=False
     )
 

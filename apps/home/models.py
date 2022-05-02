@@ -128,6 +128,7 @@ class OverviewPage(MetadataPageMixin, Page):
         ('teaser_tile', apps_blocks.TeaserBlockTile()),
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
+        ('quote', apps_blocks.QuoteBlock()),
     ]
 
     intro_image = models.ForeignKey(
@@ -235,7 +236,8 @@ class DetailPage(Page):
     page_blocks = [
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
-        ('text_with_image', apps_blocks.TextWithImageBlock())
+        ('text_with_image', apps_blocks.TextWithImageBlock()),
+        ('quote', apps_blocks.QuoteBlock()),
     ]
 
     body_de = fields.StreamField(page_blocks)

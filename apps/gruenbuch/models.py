@@ -27,7 +27,9 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
 
     page_blocks = [
         ('teaser_columns', apps_blocks.TeaserBlockColumn()),
-        ('teaser_tiles', apps_blocks.TeaserBlockTile())
+        ('teaser_tiles', apps_blocks.TeaserBlockTile()),
+        ('paragraph', apps_blocks.CoulouredParagraphBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock()),
     ]
 
     page_title_de = models.CharField(
@@ -117,7 +119,8 @@ class GruenbuchDetailPage(Page):
 
     page_blocks = [
         ('paragraph', blocks.RichTextBlock()),
-        ('faq_accordion', apps_blocks.FaqBlock())
+        ('faq_accordion', apps_blocks.FaqBlock()),
+        ('text_with_image', apps_blocks.TextWithImageBlock())
     ]
 
     page_title_de = models.CharField(max_length=120)

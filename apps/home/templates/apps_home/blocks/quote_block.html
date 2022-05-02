@@ -1,16 +1,15 @@
 {% load i18n wagtailcore_tags %}
 
-<div class="modul-servicepanel fullwidth ds-block ds-block--body-bg">
-    <div class="servicepanel__main text-center">
-        <p class="quote-ds-block__text">
-            <i class="fas fa-quote-left fa-xs" aria-hidden="true"></i>
-            {{ self.quote }}
-            <i class="fas fa-quote-right fa-xs" aria-hidden="true"></i>
-        </p>
-        <hr class="medium-space">
-        <p>
-            {{ self.author }}
-        </p>
-    </div>
-
+<div class="ds-block ds-block--body-bg">
+    <blockquote class="modul-testimonial">
+        <div class="textbox">
+            <i class="fas fa-quote-left quote" aria-hidden="true"></i>
+            <div class="text">
+                {{ self.quote }}
+            </div>
+            <div class="caption">
+                {{ self.author }}
+            </div>
+        </div>
+    </blockquote>
 </div>

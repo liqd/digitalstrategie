@@ -28,10 +28,20 @@
                 <p class="text">
                     {{ value.body }}
                     {% if value.button.internal_link %}
-                        <a href="{{ value.button.internal_link.url }}" class="more ms-1" data-mainlink="true" title="">{{ value.button.link_text }}</a>
+                        <a href="{{ value.button.internal_link.url }}" class="more ms-1" data-mainlink="true" title="{{ value.button.link_description }}">
+                          {{ value.button.link_text }}
+                          {% if value.button.link_description %}
+                          <span class="aural">{{ value.button.link_description }}</span>
+                          {% endif %}
+                        </a>
                     {% endif %}
                     {% if value.button.external_link %}
-                        <a href="{{ value.button.external_link }}" class="extern ms-1" data-mainlink="true" title="" target="_blank">{{ value.button.link_text }}</a>
+                        <a href="{{ value.button.external_link }}" class="extern ms-1" data-mainlink="true" title="{{ value.button.link_description }}" target="_blank">
+                          {{ value.button.link_text }}
+                          {% if value.button.link_description %}
+                          <span class="aural">{{ value.button.link_description }}</span>
+                          {% endif %}
+                        </a>
                     {% endif %}
                 </p>
             </div>

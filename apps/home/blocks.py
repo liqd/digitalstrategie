@@ -126,7 +126,7 @@ class ThesisListBlock(blocks.StructBlock):
 
 # Teaser blocks
 class TeaserBlockCentered(blocks.StructBlock):
-    title = blocks.CharBlock(max_length=50)
+    title = blocks.CharBlock(max_length=130)
     body = blocks.TextBlock(max_length=300, blank=True, rows=3)
     link = blocks.PageChooserBlock()
     link_text = blocks.CharBlock(max_length=50, label='Link Text')
@@ -142,7 +142,7 @@ class TeaserBlockCentered(blocks.StructBlock):
 
 
 class TeaserBlockImage(blocks.StructBlock):
-    title = blocks.CharBlock(max_length=50)
+    title = blocks.CharBlock(max_length=130)
     body = blocks.TextBlock(max_length=300, blank=True, rows=3)
     image = ImageChooserBlock()
     link = blocks.PageChooserBlock()
@@ -164,12 +164,17 @@ class LinkBlock(blocks.StructBlock):
     internal_link = blocks.PageChooserBlock(required=False)
     external_link = blocks.URLBlock(required=False)
     link_text = blocks.TextBlock(max_length=50, label='Link Text')
+    link_description = blocks.TextBlock(
+        max_length=70,
+        label='Link Description',
+        help_text='describe link for accessible technology'
+    )
 
 
 # sub-block
 class ImgTextLinkBlock(blocks.StructBlock):
     image = ImageChooserBlock()
-    title = blocks.CharBlock(max_length=50)
+    title = blocks.CharBlock(max_length=130)
     body = blocks.TextBlock(max_length=500, blank=True, rows=3)
     button = LinkBlock(
         help_text='Add either an external or internal link, not both'
@@ -186,7 +191,7 @@ class TeaserBlockColumn(blocks.StructBlock):
     column = blocks.ListBlock(ImgTextLinkBlock())
 
     class Meta:
-        template = 'apps_home/blocks/teaser_columns.html'
+        template = 'apps_home/blocks/teaser_block_columns.html'
         icon = 'grip'
         label = 'Teaser Columns'
 
@@ -207,3 +212,17 @@ class TeaserBlockTile(blocks.StructBlock):
         template = 'apps_home/blocks/teaser_block_tiles.html'
         icon = 'pick'
         label = 'Teaser Tiles'
+
+
+class TeaserBlockSingle(blocks.StructBlock):
+    image = ImageChooserBlock()
+    title = blocks.CharBlock(max_length=130)
+    body = blocks.TextBlock(max_length=500)
+    link = LinkBlock(
+        help_text='Add either an external or internal link, not both'
+    )
+
+    class Meta:
+        template = 'apps_home/blocks/teaser_block_single.html'
+        icon = 'pick'
+        label = 'Teaser Single'

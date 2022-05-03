@@ -23,6 +23,7 @@ class HomePage(MetadataPageMixin, Page):
         ('theses', apps_blocks.ThesisListBlock()),
         ('teaser_image', apps_blocks.TeaserBlockImage()),
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
     ]
 
     page_title_de = models.CharField(
@@ -129,6 +130,7 @@ class OverviewPage(MetadataPageMixin, Page):
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
     ]
 
     intro_image = models.ForeignKey(

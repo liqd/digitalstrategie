@@ -30,6 +30,7 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
         ('teaser_tiles', apps_blocks.TeaserBlockTile()),
         ('paragraph', apps_blocks.CoulouredParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
     ]
 
     page_title_de = models.CharField(

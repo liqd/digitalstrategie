@@ -34,8 +34,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'].map(require.resolve),
-            plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-transform-modules-commonjs']
+            presets: ['@babel/preset-env'].map(require.resolve),
           }
         }
       },
@@ -86,13 +85,6 @@ module.exports = {
     fallback: { path: require.resolve('path-browserify') },
     // attempt to resolve these extensions in this order.
     extensions: ['*', '.js', '.jsx', '.scss', '.css'],
-    // when using `npm link` for a4 dev env, dependencies are resolved against the linked
-    // folder by default. This may result in dependencies being included twice.
-    // Resolving against node_modules will prevent this.
-    // concat merges node_modules and assets and syncs both to ensure no duplication.
-    alias: {
-      jquery$: 'jquery/dist/jquery.min.js'
-    },
     modules: [
       path.resolve('./node_modules')
     ].concat(
@@ -100,12 +92,6 @@ module.exports = {
     )
   },
   plugins: [
-    // automatically load modules instead of import or require them everywhere.
-    new webpack.ProvidePlugin({
-      timeago: 'timeago.js', // do we need this?
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
     // extracts CSS into separate files
     new MiniCssExtractPlugin({
       filename: '[name].css',

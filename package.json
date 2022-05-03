@@ -1,10 +1,10 @@
 {
   "name": "digitalstrategie",
-  "license" : "MIT license",
-  "repository" : {
-     "type" : "git",
-     "url" : "https://github.com/liqd/digitalstrategie.git"
-   },
+  "license": "MIT license",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liqd/digitalstrategie.git"
+  },
   "dependencies": {
     "@popperjs/core": "2.11.5",
     "autoprefixer": "10.4.7",
@@ -12,37 +12,18 @@
     "bootstrap": "5.1.3",
     "copy-webpack-plugin": "10.2.4",
     "css-loader": "6.7.1",
-    "file-loader": "6.2.0",
-    "flatpickr": "4.6.11",
-    "jquery": "3.6.0",
     "mini-css-extract-plugin": "2.6.0",
     "node-sass": "7.0.1",
     "path-browserify": "1.0.1",
     "postcss-loader": "6.2.1",
-    "roboto-fontface": "0.10.0",
     "sass-loader": "12.6.0",
-    "sass-planifolia": "0.6.0",
     "terser-webpack-plugin": "5.3.1",
     "webpack": "5.72.0",
     "webpack-merge": "5.8.0"
   },
   "devDependencies": {
     "@babel/core": "7.17.10",
-    "@babel/eslint-parser": "7.17.0",
-    "@babel/plugin-transform-modules-commonjs": "7.17.9",
-    "@babel/plugin-transform-runtime": "7.17.10",
     "@babel/preset-env": "7.17.10",
-    "@babel/preset-react": "7.16.7",
-    "@babel/runtime": "7.17.9",
-    "eslint": "8.14.0",
-    "eslint-config-standard": "16.0.3",
-    "eslint-config-standard-jsx": "11.0.0",
-    "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "6.0.0",
-    "eslint-plugin-react": "7.29.4",
-    "eslint-plugin-standard": "4.1.0",
     "husky": "7.0.4",
     "lint-staged": "12.4.1",
     "postcss": "8.4.13",
@@ -55,16 +36,12 @@
     "build:prod": "webpack --config webpack.prod.js --mode production",
     "build": "webpack --config webpack.dev.js --mode development",
     "watch": "webpack --config webpack.dev.js --watch --mode development",
-    "lint": "eslint digitalstrategie/assets --ext .js,.jsx && stylelint 'digitalstrategie/assets/scss/**/*.scss'",
+    "lint": "stylelint 'digitalstrategie/assets/scss/**/*.scss'",
     "lint-staged": "lint-staged",
-    "lint-fix": "eslint --fix --ext .js,.jsx .",
     "postinstall": "husky install"
   },
   "browserslist": "defaults and not dead and >= 0.5%, ie >= 11",
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint"
-    ],
     "*.scss": [
       "stylelint"
     ],

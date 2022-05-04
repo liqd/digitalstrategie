@@ -126,7 +126,7 @@ class TeaserBlockCentered(blocks.StructBlock):
 
 class TeaserBlockImage(blocks.StructBlock):
     title = blocks.CharBlock(max_length=130)
-    body = blocks.TextBlock(max_length=300, blank=True, rows=3)
+    body = blocks.TextBlock(max_length=630, blank=True, rows=3)
     image = ImageChooserBlock()
     link = blocks.PageChooserBlock()
     link_text = blocks.CharBlock(max_length=50, label='Link Text')

@@ -14,17 +14,20 @@
 
     .ds-hero-image__copyright {
         margin-top: -0.75 * $spacer !important;
-        padding-left: 0.5 * $spacer !important;
+        padding: 0 (0.5 * $spacer) 0 0;
     }
 }
 
-@media screen and (max-width: 37.4375rem) {
-    .ds-hero-image__copyright {
-        margin-left: -12px !important;
+.ds-hero-image__copyright {
+    min-width: max-content !important;
+    max-width: fit-content !important;
+    background-color: $white;
+    z-index: 1;
+    top: -15px;
 
-        p {
-            padding: 0 (0.5 * $spacer) !important;
-        }
+    p {
+        margin-bottom: 0;
+        padding: 0 (0.5 * $spacer);
     }
 }
 
@@ -39,20 +42,10 @@
     padding-left: 0 !important;
 }
 
-.ds-hero-image__copyright {
-    min-width: max-content !important;
-    max-width: fit-content !important;
-    background-color: $white;
-    z-index: 1;
-
-    p {
-        margin-bottom: 0;
-        padding: 0 (0.5 * $spacer) 0 0;
-    }
-}
-
 .ds-hero-image__overlay {
     text-align: center;
+    padding-left: $spacer;
+    padding-right: $spacer;
 }
 
 // teaser tile overwrites

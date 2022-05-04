@@ -70,10 +70,10 @@
         padding-top: 4 * $spacer !important;
         padding-bottom: 4 * $spacer !important;
     }
-}
 
-.modul-teaser-marketing.imageteaser .image {
-    z-index: 5;
+    .modul-teaser-marketing.imageteaser .image {
+        z-index: 5;
+    }
 }
 
 .hero__parallax {
@@ -93,6 +93,6 @@
     }
 }
 
-.image-back {
+.hero__image-back {
     z-index: -1;
 }

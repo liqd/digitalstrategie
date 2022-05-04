@@ -5,7 +5,6 @@
 @import "variables";
 
 // Non-bootstrap project specific variables
-@import "core-variables";
 @import "base";
 @import "fonts";
 
@@ -60,14 +59,10 @@
 
 // Project components
 @import "components/button";
-@import "components/copyright";
-@import "components/document";
-@import "components/ds-block";
 @import "components/ds-block-overwrites";
-@import "components/footer";
-@import "components/menu";
+@import "components/ds-block";
 @import "components/form";
-@import "components/richtext";
-@import "components/teaser-ds-block";
-@import "components/thesis-ds-block";
 @import "components/gruenbuch";
+@import "components/menu";
+@import "components/richtext";
+@import "components/thesis-ds-block";

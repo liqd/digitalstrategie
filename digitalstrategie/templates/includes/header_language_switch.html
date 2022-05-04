@@ -17,7 +17,7 @@
     </li>
   {% endif %}
   <li class="menu__btn">
-    <form action="{% url 'set_language' %}" method="post">
+    <form class="mb-0" action="{% url 'set_language' %}" method="post">
       {% csrf_token %}
       <input name="next" type="hidden" value="{{ redirect_to }}" />
       <input name="language" type="hidden" value="{{ lang_code }}">

@@ -61,6 +61,7 @@ class QuoteBlock(blocks.StructBlock):
     )
 
     class Meta:
+        label = 'Testimonial'
         template = 'apps_home/blocks/quote_block.html'
         icon = 'openquote'
 

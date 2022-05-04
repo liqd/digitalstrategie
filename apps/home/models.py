@@ -16,7 +16,6 @@ from apps.home import blocks as apps_blocks
 
 class HomePage(MetadataPageMixin, Page):
     page_blocks = [
-        ('call_to_action', apps_blocks.CallToActionBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),

@@ -11,24 +11,6 @@ class ColorChoiceBlock(blocks.ChoiceBlock):
     ]
 
 
-class CallToActionBlock(blocks.StructBlock):
-    title = blocks.CharBlock()
-    body = blocks.RichTextBlock(
-        required=True
-    )
-    link = blocks.PageChooserBlock(required=False)
-    link_text = blocks.CharBlock(max_length=50, label='Link Text')
-    background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in a '
-                  'block with a white background.',
-        required=False
-    )
-
-    class Meta:
-        template = 'apps_home/blocks/cta_block.html'
-        icon = 'plus-inverse'
-
-
 class AccordionItemBlock(blocks.StructBlock):
     title = blocks.CharBlock(
         max_length=130,

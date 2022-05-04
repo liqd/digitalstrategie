@@ -67,8 +67,8 @@
     }
 
     @media print, (min-width: 64.001rem) {
-        padding-top: 5 * $spacer !important;
-        padding-bottom: 5 * $spacer !important;
+        padding-top: 4 * $spacer !important;
+        padding-bottom: 4 * $spacer !important;
     }
 }
 
@@ -76,3 +76,23 @@
     z-index: 5;
 }
 
+.hero__parallax {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: -$spacer;
+
+    @media print, (min-width: 64.001rem) {
+
+        /* Set a specific height same as hero */
+        min-height: 70vh;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: bottom;
+    }
+}
+
+.image-back {
+    z-index: -1;
+}

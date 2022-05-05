@@ -7,7 +7,7 @@
 // fixes horizontal scroll issue cause by header+footer width
 html {
     overflow-y: scroll;
-    color: contrast-color($body-bg);
+    color: $black;
     box-sizing: border-box;
     font-family: $font-family-sans-serif;
     scroll-behavior: smooth;

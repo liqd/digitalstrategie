@@ -1,6 +1,13 @@
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
+NEWSLETTER_EMAIL_DEFAULT = 'Ihre E-Mail-Adresse'
+NEWSLETTER_DSGVO_DEFAULT = (
+    'Ich willige in die Speicherung und Nutzung meiner E-Mail-Adresse für '
+    'den Newsletterversand ein. Die Einwilligung gilt für den Zeitraum des '
+    'Abonnements und kann jederzeit über den Link „Abmelden“ widerrufen '
+    'werden. Die Datenschutzerklärung habe ich zur Kenntnis genommen.')
+
 
 class ColorChoiceBlock(blocks.ChoiceBlock):
     choices = [
@@ -208,3 +215,47 @@ class TeaserBlockSingle(blocks.StructBlock):
         template = 'apps_home/blocks/teaser_block_single.html'
         icon = 'pick'
         label = 'Teaser Single'
+
+
+class NewsletterBlock(blocks.StructBlock):
+    title = blocks.CharBlock(max_length=150)
+    email_field_label = blocks.CharBlock(
+        max_length=130,
+        required=True,
+        default=NEWSLETTER_EMAIL_DEFAULT
+    )
+    dsgvo_checkbox_label = blocks.CharBlock(
+        max_length=500,
+        required=True,
+        default=NEWSLETTER_DSGVO_DEFAULT
+    )
+    sendinblue_list_id = blocks.CharBlock(
+        max_length=4,
+        required=True,
+        help_text='The list ID of the list you want to subscribe to.'
+    )
+    sendinblue_template_id = blocks.CharBlock(
+        max_length=4,
+        required=True,
+        help_text='The template id of the newsletter.'
+    )
+    sendinblue_email_link = blocks.CharBlock(
+        max_length=255,
+        required=True,
+        help_text='Page being displayed after clicking on link in email.'
+    )
+    api_url = blocks.URLBlock(
+        required=True,
+        help_text='Please add your sendinblue api url.'
+    )
+    background_color = ColorChoiceBlock(
+        help_text='Not choosing a colour will result in a '
+                  'block with a white background.',
+        required=False
+    )
+
+    class Meta:
+        template = 'apps_home/blocks/newsletter_block.html'
+        icon = 'mail'
+        help_text = ('This form only works with sendinblue. Please find your ',
+                     'API-url and copy it into the field.')

@@ -101,3 +101,11 @@
 .hero__image-back {
     z-index: -1;
 }
+
+.ds-block__paragraph {
+    h2:nth-child(1),
+    h3:nth-child(1),
+    h4:nth-child(1) {
+        margin-top: 0 !important;
+    }
+}

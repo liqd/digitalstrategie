@@ -20,7 +20,12 @@
         background-color: $green !important;
 
         // teaser centered styling
-        .background-image + .content-container *:not(.button),
+        .background-image + .content-container *:not(.button) {
+            color: $white !important;
+            border-color: $white;
+            border-width: 1px;
+        }
+
         // richtext and cta centered styling
         .button,
         h2,

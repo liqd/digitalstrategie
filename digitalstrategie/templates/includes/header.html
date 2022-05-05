@@ -150,14 +150,16 @@
                         <nav id="navigation-primary" class="js-navigation-primary">
                             <div class="tree-wrapper js-navigation-tree-wrapper">
                                 <h3 class="aural">{% trans 'Page navigation' %}</h3>
-                                <ul class="navigation-tree">
+                                <ul class="navigation-tree tree__root">
                                   {% for menuitem in header_menu_items %}
                                     {% if menuitem.subpages %}
-                                      <li class="">
+                                      <li>
                                           <a href="{{ menuitem.url }}">{{ menuitem.title }}</a>
-                                          <ul class="navigation-tree">
+                                          <ul class="navigation-tree tree__subtree">
                                               {% for subpage in menuitem.subpages %}
-                                              <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
+                                              <li class="{% if request.path == subpage.value.url %}active{% endif %}">
+                                                <a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a>
+                                              </li>
                                               {% endfor %}
                                             </ul>
                                       </li>
@@ -166,14 +168,12 @@
                                         <a href="{{ menuitem.url }}" {% if request.path == menuitem.url %}aria-current="page" {% endif %}>{{ menuitem.title }}</a>
                                     </li>
                                     {% endif %}
-
                                   {% endfor %}
-                                  <li>
-                                      {% include 'includes/header_language_switch.html' %}
-                                  </li>
                                 </ul>
                             </div>
-
+                            <div class="navigation-meta">
+                                {% include 'includes/header_language_switch.html' %}
+                            </div>
                         </nav>
                     </div>
                 </div>

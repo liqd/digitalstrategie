@@ -8,7 +8,6 @@ module.exports = {
   entry: {
     digitalstrategie: [
       './digitalstrategie/assets/scss/style.scss',
-      './digitalstrategie/assets/js/app.js'
     ]
   },
   output: {

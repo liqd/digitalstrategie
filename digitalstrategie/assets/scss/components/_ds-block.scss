@@ -16,7 +16,7 @@
 
     &--green {
         opacity: 1 !important;
-        color: $body-bg !important;
+        color: $white !important;
         background-color: $green !important;
 
         // teaser centered styling
@@ -28,8 +28,8 @@
         h3:after,
         h4 {
             background-color: $green !important;
-            color: $body-bg !important;
-            border-color: $body-bg;
+            color: $white !important;
+            border-color: $white;
             border-width: 1px;
         }
     }
@@ -47,7 +47,7 @@
     }
 
     &--body-bg {
-        background-color: $body-bg !important;
+        background-color: $white !important;
     }
 
     &--yellow,

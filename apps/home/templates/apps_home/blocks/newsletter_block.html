@@ -1,0 +1,123 @@
+{% load i18n %}
+
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
+<section class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+    <div class="servicepanel__main">
+        {% if self.title %}
+        <h2 class="title">
+            {{ self.title }}
+        </h2>
+        {% endif %}
+        <div class="{% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+          <div id="sib-form-container">
+            <div id="sib-container" style="background-color: transparent; padding: 0">
+                <form id="sib-form" method="POST" action="javascript:void(0)" onsubmit="submitForm(this)" novalidate>
+                <div style="padding: 8px 0;">
+                  <div class="sib-input sib-form-block">
+                    <div class="form__entry entry_block">
+                      <div class="form__label-row ">
+                        <label class="entry__label" for="EMAIL" data-required="*">
+                            {{ self.email_field_label }}
+                        </label>
+                        <div class="entry__field">
+                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="{{ self.email_field_label }}" data-required="true" required />
+                        </div>
+                        <div id="EMAIL-error" style="display: none" class="message message--error">{% trans 'Please fill in your email.' %}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="padding: 8px 0;">
+                  <div class="sib-optin sib-form-block">
+                    <div class="form__entry entry_mcq">
+                      <div class="form__label-row ">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="1" id="OPT_IN" name="OPT_IN" />
+                            <label class="form-check-label" for="OPT_IN">{{ self.dsgvo_checkbox_label }}</label>
+                            <div id="OPT_IN-error" style="display: none" class="message message--error">{% trans 'Please accept the terms of conditions' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="message--success" id="success-message" role="alert" style="display: none">
+                    <h3 class="title">{% trans 'Your subscription was successful.' %}</h3>
+                    <p>{% trans 'Your subscription to our E-Mail Newsletter was successful.' %}</p>
+                </div>
+                <div style="padding: 8px 0;">
+                  <div class="sib-form-block" style="text-align: right">
+                    <button class="sib-form-block__button sib-form-block__button-with-loader button" form="sib-form" type="submit">
+                      {% trans 'Subscribe' %}
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function getInvalidFields() {
+        var email = document.getElementById('EMAIL');
+        var opt_in = document.getElementById('OPT_IN');
+
+        if (email.value.length > 0 && opt_in.checked) {
+            return false;
+        } else {
+            var invalids = []
+            email.value.length <= 0 && invalids.push(email);
+            !opt_in.checked && invalids.push(opt_in);
+            return invalids;
+        }
+    }
+
+    function setInvalidFields(fields, display) {
+        fields.forEach(function(field) {
+            if (display) {
+                field.classList.add('is-invalid');
+                var error = document.getElementById(field.id + '-error');
+                error.style.display = 'block';
+            } else {
+                field.classList.remove('is-invalid');
+                var error = document.getElementById(field.id + '-error');
+                error.style.display = 'none';
+            }
+        });
+    }
+
+    function submitForm(event) {
+        var prevInvalidFields = document.querySelectorAll('.is-invalid');
+        prevInvalidFields && setInvalidFields(prevInvalidFields, false);
+        var invalidFields = getInvalidFields();
+
+        if (invalidFields) {
+            setInvalidFields(invalidFields, true);
+        } else {
+            var payload = {
+                email: document.getElementById('EMAIL').value,
+                includeListIds: [parseInt('{{ self.sendinblue_list_id }}')],
+                templateId: parseInt('{{ self.sendinblue_template_id }}'),
+                redirectionUrl: '{{ self.sendinblue_email_link }}'
+            }
+
+            var http = new XMLHttpRequest();
+
+            var url = '{{ self.api_url }}';
+            http.open('POST', url, true);
+            http.setRequestHeader('Accept', 'application/json');
+            http.setRequestHeader('Content-Type', 'application/json');
+
+            http.onreadystatechange = function() {
+                if (http.readyState == 4 && http.status == 204) {
+                    document.getElementById('sib-form').reset();
+                    document.getElementById('success-message').style.display = 'block';
+                }
+            }
+
+            http.send(JSON.stringify(payload));
+        }
+    }
+</script>

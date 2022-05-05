@@ -2,30 +2,40 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% get_available_languages as languages %}
 
-<li class="menu__section">
-  <span class="fw-bolder">
-    {% trans 'Languages' %}
-  </span>
-</li>
-{% for lang_code, lang_name in languages %}
+<h3 class="heading">{% trans 'Languages' %}</h3>
+<ul>
+  {% for lang_code, lang_name in languages %}
   {% get_language_info for lang_code as language %}
-  {% if language.code == 'de-ls' %}
-    <li class="menu__section">
-      <span class="fw-bolder">
-        {% trans 'Accessibility' %}
-      </span>
-    </li>
-  {% endif %}
-  <li class="menu__btn">
-    <form class="mb-0" action="{% url 'set_language' %}" method="post">
-      {% csrf_token %}
-      <input name="next" type="hidden" value="{{ redirect_to }}" />
-      <input name="language" type="hidden" value="{{ lang_code }}">
-      <span>
-        <button role="button" type="submit" aria-label="{% trans 'select' %}{{ lang_name }}">
-            {{ language.name_local }}
-        </button>
-      </span>
-    </form>
+  {% if language.code != 'de-ls' %}
+  <li class="header-menu__btn">
+      <form action="{% url 'set_language' %}" method="post">
+          {% csrf_token %}
+          <input name="next" type="hidden" value="{{ redirect_to }}" />
+          <input name="language" type="hidden" value="{{ lang_code }}">
+          <span>
+            <button role="button" type="submit" aria-label="{% trans 'select' %}{{ lang_name }}">
+                {{ language.name_local }}
+            </button>
+          </span>
+      </form>
   </li>
-{% endfor %}
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<h3 class="heading">{% trans 'Accessibility' %}</h3>
+<ul>
+    {% get_language_info for 'de-ls' as language %}
+    <li class="header-menu__btn">
+        <form action="{% url 'set_language' %}" method="post">
+          {% csrf_token %}
+          <input name="next" type="hidden" value="{{ redirect_to }}" />
+          <input name="language" type="hidden" value="{{ language.code }}">
+          <span>
+            <button role="button" type="submit" aria-label="{% trans 'select' %}{{ language.name }}">
+                {{ language.name_local }}
+            </button>
+          </span>
+        </form>
+    </li>
+</ul>

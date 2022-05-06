@@ -68,17 +68,11 @@ class TextWithImageBlock(blocks.StructBlock):
         icon = 'image'
 
 
-class CoulouredParagraphBlock(blocks.StructBlock):
+class ParagraphBlock(blocks.StructBlock):
     body = blocks.RichTextBlock(required=True)
 
-    background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in a block with '
-                  'a white background.',
-        required=False
-    )
-
     class Meta:
-        template = 'apps_home/blocks/coloured_paragraph_block.html'
+        template = 'apps_home/blocks/paragraph_block.html'
         icon = 'doc-full'
 
 

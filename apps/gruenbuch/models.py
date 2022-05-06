@@ -28,7 +28,7 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
     page_blocks = [
         ('teaser_columns', apps_blocks.TeaserBlockColumn()),
         ('teaser_tiles', apps_blocks.TeaserBlockTile()),
-        ('paragraph', apps_blocks.CoulouredParagraphBlock()),
+        ('paragraph', apps_blocks.ParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
     ]

@@ -126,7 +126,7 @@ class OverviewPage(MetadataPageMixin, Page):
         ('teaser_image', apps_blocks.TeaserBlockImage()),
         ('teaser_columns', apps_blocks.TeaserBlockColumn()),
         ('teaser_tile', apps_blocks.TeaserBlockTile()),
-        ('paragraph', apps_blocks.CoulouredParagraphBlock()),
+        ('paragraph', apps_blocks.ParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
@@ -235,7 +235,7 @@ class OverviewPage(MetadataPageMixin, Page):
 
 class DetailPage(Page):
     page_blocks = [
-        ('paragraph', apps_blocks.CoulouredParagraphBlock()),
+        ('paragraph', apps_blocks.ParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('quote', apps_blocks.QuoteBlock()),

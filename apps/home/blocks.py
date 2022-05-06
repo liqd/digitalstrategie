@@ -90,10 +90,15 @@ class ThesisListBlock(blocks.StructBlock):
         ThesisBlock,
         label='All theses'
     )
-    background_color = ColorChoiceBlock(
+    background_color = blocks.ChoiceBlock(
         help_text='Not choosing a colour will result in a '
                   'block with a white background.',
-        required=False
+        required=False,
+        choices=[
+            ('yellow', 'Yellow'),
+            ('pink', 'Pink'),
+            ('purple', 'Purple')
+        ]
     )
 
     class Meta:

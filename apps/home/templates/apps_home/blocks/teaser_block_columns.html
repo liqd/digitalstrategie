@@ -34,8 +34,7 @@
                           <span class="aural">{{ value.button.link_description }}</span>
                           {% endif %}
                         </a>
-                    {% endif %}
-                    {% if value.button.external_link %}
+                    {% elif value.button.external_link %}
                         <a href="{{ value.button.external_link }}" class="extern ms-1" data-mainlink="true" title="{{ value.button.link_description }}" target="_blank">
                           {{ value.button.link_text }}
                           {% if value.button.link_description %}

@@ -25,13 +25,12 @@
           {{ value.body }}
 
             {% if value.link.internal_link %}
-                <a href="{{ value.button.internal_link.url }}" class="more ms-1" data-mainlink="true" title="{{ value.link.link_description }}">
+                <a href="{{ value.link.internal_link.url }}" class="more ms-1" data-mainlink="true" title="{{ value.link.link_description }}">
                   {{ value.link.link_text }}
                   <span class="aural">{{ value.link.link_description }}</span>
                 </a>
-            {% endif %}
-            {% if value.link.external_link %}
-                <a href="{{ value.button.external_link }}" class="extern ms-1" data-mainlink="true" title="{{ value.link.link_description }}" target="_blank">
+            {% elif value.link.external_link %}
+                <a href="{{ value.link.external_link }}" class="extern ms-1" data-mainlink="true" title="{{ value.link.link_description }}" target="_blank">
                   {{ value.link.link_text }}
                   <span class="aural">{{ value.link.link_description }}</span>
                 </a>

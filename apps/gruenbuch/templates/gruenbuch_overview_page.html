@@ -2,7 +2,7 @@
 {% load wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block content %}
-{% image page.intro_image max-1920x560 as intro_image %}
+{% image page.intro_image fill-1000x750 as intro_image %}
 
 <section id="layout-grid__area--herounit">
     {% if page.intro_image %}

@@ -150,7 +150,7 @@ class OverviewPage(MetadataPageMixin, Page):
     )
 
     page_title_de = models.CharField(
-        max_length=120, blank=True)
+        max_length=120, blank=False)
     page_title_en = models.CharField(
         max_length=120, blank=True)
     page_title_de_ls = models.CharField(
@@ -240,10 +240,22 @@ class DetailPage(Page):
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('quote', apps_blocks.QuoteBlock()),
     ]
+    page_title_de = models.CharField(
+        max_length=120, blank=False)
+    page_title_en = models.CharField(
+        max_length=120, blank=True)
+    page_title_de_ls = models.CharField(
+        max_length=120, blank=True)
 
     body_de = fields.StreamField(page_blocks)
     body_en = fields.StreamField(page_blocks, blank=True)
     body_de_ls = fields.StreamField(page_blocks, blank=True)
+
+    page_title = TranslatedField(
+        'page_title_de',
+        'page_title_en',
+        'page_title_de_ls',
+    )
 
     body = TranslatedField(
         'body_de',
@@ -252,14 +264,17 @@ class DetailPage(Page):
     )
 
     de_content_panels = [
+        FieldPanel('page_title_de'),
         StreamFieldPanel('body_de'),
     ]
 
     en_content_panels = [
+        FieldPanel('page_title_en'),
         StreamFieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
+        FieldPanel('page_title_de_ls'),
         StreamFieldPanel('body_de_ls'),
     ]
 
@@ -289,7 +304,7 @@ class SimplePage(Page):
     ]
 
     page_title_de = models.CharField(
-        max_length=120, blank=True)
+        max_length=120, blank=False)
     page_title_en = models.CharField(
         max_length=120, blank=True)
     page_title_de_ls = models.CharField(

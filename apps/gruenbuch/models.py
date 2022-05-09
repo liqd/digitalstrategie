@@ -34,7 +34,7 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
     ]
 
     page_title_de = models.CharField(
-        max_length=120, blank=True)
+        max_length=120, blank=False)
     page_title_en = models.CharField(
         max_length=120, blank=True)
     page_title_de_ls = models.CharField(

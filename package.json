@@ -22,7 +22,7 @@
   "devDependencies": {
     "@babel/core": "7.17.10",
     "@babel/preset-env": "7.17.10",
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "lint-staged": "12.4.1",
     "postcss": "8.4.16",
     "stylelint": "14.8.2",

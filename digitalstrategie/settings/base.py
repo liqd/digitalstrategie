@@ -179,7 +179,7 @@ WAGTAILADMIN_RICH_TEXT_EDITORS = {
         'WIDGET': 'wagtail.admin.rich_text.HalloRichTextArea',
         'OPTIONS': {
             'features': [
-                'bold', 'italic', 'p', 'h2', 'h3', 'h4', 'ol',
+                'bold', 'italic', 'p', 'h2', 'h3', 'ol',
                 'ul', 'hr', 'link', 'document-link', 'image'
             ]
         }

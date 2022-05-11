@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n widget_tweaks form_field_tags %}
 
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
@@ -9,116 +9,69 @@
             {{ self.title }}
         </h2>
         {% endif %}
-        <div class="{% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
-          <div id="sib-form-container">
-            <div id="sib-container" style="background-color: transparent; padding: 0">
-                <form id="sib-form" method="POST" action="javascript:void(0)" onsubmit="submitForm(this)" novalidate>
-                <div style="padding: 8px 0;">
-                  <div class="sib-input sib-form-block">
-                    <div class="form__entry entry_block">
-                      <div class="form__label-row ">
-                        <label class="entry__label" for="EMAIL" data-required="*">
-                            {{ self.email_field_label }}
-                        </label>
-                        <div class="entry__field">
-                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="{{ self.email_field_label }}" data-required="true" required />
-                        </div>
-                        <div id="EMAIL-error" style="display: none" class="message message--error">{% trans 'Please fill in your email.' %}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div style="padding: 8px 0;">
-                  <div class="sib-optin sib-form-block">
-                    <div class="form__entry entry_mcq">
-                      <div class="form__label-row ">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" value="1" id="OPT_IN" name="OPT_IN" />
-                            <label class="form-check-label" for="OPT_IN">{{ self.dsgvo_checkbox_label }}</label>
-                            <div id="OPT_IN-error" style="display: none" class="message message--error">{% trans 'Please accept the terms of conditions' %}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="message--success" id="success-message" role="alert" style="display: none">
-                    <h3 class="title">{% trans 'Your subscription was successful.' %}</h3>
-                    <p>{% trans 'Your subscription to our E-Mail Newsletter was successful.' %}</p>
-                </div>
-                <div style="padding: 8px 0;">
-                  <div class="sib-form-block" style="text-align: right">
-                    <button class="sib-form-block__button sib-form-block__button-with-loader button" form="sib-form" type="submit">
-                      {% trans 'Subscribe' %}
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
+
+        <form name="form1" action="#">
+
+          <label for="id_email" class="form-label">{{ self.email_field_label }}<span class="icon-required" aria-hidden="true">*</span><span class="aural">({% trans 'required' %})</span></label>
+          <input class="form-control" type="text" id="id_email" required="" aria-riquired="true">
+
+          <div class="message message--error u-d-none" id="id_email_invalid" role="alert">{% trans 'Please fill in valid email address.' %}</div>
+          <div class="message message--success u-d-none" id="id_email_valid" role="alert">{% trans 'Your subscription to our E-Mail Newsletter was successful.' %}</div>
+
+          <div class="form-group form-check">
+              <input type="checkbox" name="data_protection" class="form-check-input" required="" id="id_data_protection">
+              <label class="form-check-label" for="id_data_protection">{{ self.dsgvo_checkbox_label }}</label>
+              <div class="message message--error u-d-none" role="alert" id="id_data_protection_invalid">{% trans 'Please accept the terms of conditions' %}</div>
           </div>
-        </div>
-    </div>
+
+          <div class="ds-form__info-section">
+            <p>*{% trans 'required' %}</p>
+          </div>
+
+          <div class="form-actions">
+              <div class="form-actions__right">
+                  <button type="submit" name="submit" value="Submit" class="button" onclick="ValidateForm(document.form1)">{% trans 'Subscribe' %}</button>
+              </div>
+          </div>
+        </form>
 </section>
 
-<script>
-    function getInvalidFields() {
-        var email = document.getElementById('EMAIL');
-        var opt_in = document.getElementById('OPT_IN');
+<script type="text/javascript">
+  function ValidateForm()
+  {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var formInput = document.getElementById('id_email');
+  var inputValid = document.getElementById("id_email_valid");
+  var inputInvalid = document.getElementById("id_email_invalid");
+  var formCheckbox = document.getElementById('id_data_protection');
+  var formCheckboxInvalid = document.getElementById("id_data_protection_invalid");
 
-        if (email.value.length > 0 && opt_in.checked) {
-            return false;
-        } else {
-            var invalids = []
-            email.value.length <= 0 && invalids.push(email);
-            !opt_in.checked && invalids.push(opt_in);
-            return invalids;
-        }
+  if(formInput.value.match(mailformat) && formCheckbox.checked)
+    {
+      formInput.classList.add("u-d-none");
+      formCheckbox.classList.add("u-d-none");
+      inputValid.classList.remove("u-d-none");
+      formCheckboxInvalid.classList.add("u-d-none");
+      inputInvalid.classList.add("u-d-none");
     }
-
-    function setInvalidFields(fields, display) {
-        fields.forEach(function(field) {
-            if (display) {
-                field.classList.add('is-invalid');
-                var error = document.getElementById(field.id + '-error');
-                error.style.display = 'block';
-            } else {
-                field.classList.remove('is-invalid');
-                var error = document.getElementById(field.id + '-error');
-                error.style.display = 'none';
-            }
-        });
+    else if (formInput.value.match(mailformat))
+    {
+      formCheckbox.classList.add("is-invalid");
+      formCheckboxInvalid.classList.remove("u-d-none");
     }
-
-    function submitForm(event) {
-        var prevInvalidFields = document.querySelectorAll('.is-invalid');
-        prevInvalidFields && setInvalidFields(prevInvalidFields, false);
-        var invalidFields = getInvalidFields();
-
-        if (invalidFields) {
-            setInvalidFields(invalidFields, true);
-        } else {
-            var payload = {
-                email: document.getElementById('EMAIL').value,
-                includeListIds: [parseInt('{{ self.sendinblue_list_id }}')],
-                templateId: parseInt('{{ self.sendinblue_template_id }}'),
-                redirectionUrl: '{{ self.sendinblue_email_link }}'
-            }
-
-            var http = new XMLHttpRequest();
-
-            var url = '{{ self.api_url }}';
-            http.open('POST', url, true);
-            http.setRequestHeader('Accept', 'application/json');
-            http.setRequestHeader('Content-Type', 'application/json');
-            http.setRequestHeader('api-key', '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');
-
-            http.onreadystatechange = function() {
-                if (http.readyState == 4 && http.status == 204) {
-                    document.getElementById('sib-form').reset();
-                    document.getElementById('success-message').style.display = 'block';
-                }
-            }
-
-            http.send(JSON.stringify(payload));
-        }
+    else if (formCheckbox.checked)
+    {
+      formInput.classList.add("is-invalid");
+      inputInvalid.classList.remove("u-d-none");
     }
+    else
+    {
+      formInput.classList.add("is-invalid");
+      formCheckbox.classList.add("is-invalid");
+      formCheckboxInvalid.classList.remove("u-d-none");
+      inputInvalid.classList.remove("u-d-none");
+    document.form1.input2.focus();
+    return false;
+    }
+  }
 </script>

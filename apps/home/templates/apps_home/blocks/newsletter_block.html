@@ -1,4 +1,4 @@
-{% load i18n widget_tweaks form_field_tags %}
+{% load i18n widget_tweaks form_field_tags %}%}
 
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
@@ -10,10 +10,9 @@
         </h2>
         {% endif %}
 
-        <form name="form1" action="#">
-
+        <form name="form1" id="form1" action="/newsletter-signup/" method="POST" >
           <label for="id_email" class="form-label">{{ self.email_field_label }}<span class="icon-required" aria-hidden="true">*</span><span class="aural">({% trans 'required' %})</span></label>
-          <input class="form-control" type="text" id="id_email" required="" aria-riquired="true">
+          <input class="form-control" type="text" id="id_email" name="email" required="" aria-required="true">
 
           <div class="message message--error u-d-none" id="id_email_invalid" role="alert">{% trans 'Please fill in valid email address.' %}</div>
           <div class="message message--success u-d-none" id="id_email_valid" role="alert">{% trans 'Your subscription to our E-Mail Newsletter was successful.' %}</div>
@@ -34,9 +33,33 @@
               </div>
           </div>
         </form>
+    </div>
 </section>
 
 <script type="text/javascript">
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var form = document.getElementById('form1'),
+    input = document.createElement('input');
+
+input.name = "csrfmiddlewaretoken";
+input.type = "hidden";
+input.value = getCookie('csrftoken');
+
+form.appendChild(input);
   function ValidateForm()
   {
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -53,6 +76,7 @@
       inputValid.classList.remove("u-d-none");
       formCheckboxInvalid.classList.add("u-d-none");
       inputInvalid.classList.add("u-d-none");
+      return false;
     }
     else if (formInput.value.match(mailformat))
     {

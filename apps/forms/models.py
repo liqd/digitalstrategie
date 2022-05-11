@@ -42,7 +42,7 @@ class FormPage(AbstractEmailForm):
     landing_page_template = 'apps_forms/form_page_landing.html'
 
     header_de = models.CharField(
-        max_length=500, blank=True, verbose_name="Header")
+        max_length=500, blank=False, verbose_name="Header")
     header_en = models.CharField(
         max_length=500, blank=True, verbose_name="Header")
 

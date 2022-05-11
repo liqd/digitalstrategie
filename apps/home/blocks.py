@@ -1,6 +1,11 @@
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
+HELPTEXT_RICHTEXT_A11Y = '''For accessibility please make sure that you do not
+                            leave out levels when using the headlines. That
+                            means, that there should always be an h2 before
+                            using an h3.'''
+
 
 class ColorChoiceBlock(blocks.ChoiceBlock):
     choices = [
@@ -18,7 +23,8 @@ class AccordionItemBlock(blocks.StructBlock):
     )
     body = blocks.RichTextBlock(
         required=False,
-        verbose_name='FAQ Answer'
+        verbose_name='FAQ Answer',
+        help_text=HELPTEXT_RICHTEXT_A11Y
     )
 
 
@@ -69,7 +75,10 @@ class TextWithImageBlock(blocks.StructBlock):
 
 
 class ParagraphBlock(blocks.StructBlock):
-    body = blocks.RichTextBlock(required=True)
+    body = blocks.RichTextBlock(
+        required=True,
+        help_text=HELPTEXT_RICHTEXT_A11Y
+    )
 
     class Meta:
         template = 'apps_home/blocks/paragraph_block.html'

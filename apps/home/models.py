@@ -157,11 +157,14 @@ class OverviewPage(MetadataPageMixin, Page):
         max_length=120, blank=True)
 
     page_intro_de = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction")
+        blank=True, default="", verbose_name="Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_en = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction")
+        blank=True, default="", verbose_name="Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_de_ls = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction")
+        blank=True, default="", verbose_name="Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
 
     body_de = fields.StreamField(teaser_blocks, blank=True)
     body_en = fields.StreamField(teaser_blocks, blank=True)

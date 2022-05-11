@@ -3,7 +3,6 @@ from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.admin.edit_handlers import ObjectList
 from wagtail.admin.edit_handlers import StreamFieldPanel
 from wagtail.admin.edit_handlers import TabbedInterface
-from wagtail.core import blocks
 from wagtail.core import fields
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
@@ -42,13 +41,16 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
 
     page_intro_de = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Grünbuch Overview page introduction")
+        verbose_name="Grünbuch Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_en = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Grünbuch Overview page introduction")
+        verbose_name="Grünbuch Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_de_ls = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Grünbuch Overview page introduction")
+        verbose_name="Grünbuch Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
 
     body_de = fields.StreamField(page_blocks, blank=True)
     body_en = fields.StreamField(page_blocks, blank=True)
@@ -119,7 +121,7 @@ class GruenbuchDetailPage(Page):
     template = 'gruenbuch_detail_page.html'
 
     page_blocks = [
-        ('paragraph', blocks.RichTextBlock()),
+        ('paragraph', apps_blocks.ParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock())
     ]

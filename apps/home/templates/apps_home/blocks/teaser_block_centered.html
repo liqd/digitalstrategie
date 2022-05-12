@@ -10,13 +10,16 @@
     <div class="background-image {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}" aria-hidden="true">
     </div>
     <div class="content-container fullwidth__inner">
-        <h3 class="title">{{ value.title }}</h3>
+        <h2 class="title">{{ value.title }}</h2>
         <p class="text">
           {{ value.body }}
         </p>
         <div class="controls">
             <a href="{{ value.link.url }}" class="button">
                 {{ value.link_text }}
+                {% if value.link_description %}
+                <span class="aural">{{ value.link_description }}</span>
+                {% endif %}
             </a>
         </div>
     </div>

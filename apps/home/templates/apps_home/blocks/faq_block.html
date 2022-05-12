@@ -11,7 +11,7 @@
         </h2>
         {% endif %}
         {% for item in self.accordion_items %}
-        <div class="modul-faq js-accordion" id="accordion_{{ identifier }}{{ forloop.counter }}">
+        <article class="modul-faq js-accordion" id="accordion_{{ identifier }}{{ forloop.counter }}">
            <h3 class="title js-accordion__heading">
                {{ item.title }}
            </h3>
@@ -22,7 +22,7 @@
                    </div>
                </div>
            </div>
-       </div>
+       </article>
         {% endfor %}
     </div>
 </section>

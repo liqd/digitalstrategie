@@ -20,13 +20,17 @@
             </p>
             {% endif %}
         </div>
-        <h3 class="title">{{ value.title }}</h3>
+        <h2 class="title">{{ value.title }}</h2>
         <p class="text">
           {{ value.body }}
         </p>
         {% if value.link %}
         <div class="controls">
-            <a href="{{ value.link.url }}" class="button ds-block__button-clear">{{ value.link_text }}</a>
+            <a href="{{ value.link.url }}" class="button ds-block__button-clear">{{ value.link_text }}
+                {% if value.link_description %}
+                <span class="aural">{{ value.link_description }}</span>
+                {% endif %}
+            </a>
         </div>
         {% endif %}
     </div>

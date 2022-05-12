@@ -127,6 +127,12 @@ class TeaserBlockCentered(blocks.StructBlock):
     body = blocks.TextBlock(max_length=300, blank=True, rows=3)
     link = blocks.PageChooserBlock()
     link_text = blocks.CharBlock(max_length=50, label='Link Text')
+    link_description = blocks.TextBlock(
+        max_length=70,
+        label='Link Description',
+        help_text='describe link for assistive technology if needed',
+        required=False
+    )
     background_color = ColorChoiceBlock(
         help_text='Not choosing a colour will result in a '
                   'block with a white background.',
@@ -144,6 +150,12 @@ class TeaserBlockImage(blocks.StructBlock):
     image = ImageChooserBlock()
     link = blocks.PageChooserBlock()
     link_text = blocks.CharBlock(max_length=50, label='Link Text')
+    link_description = blocks.TextBlock(
+        max_length=70,
+        label='Link Description',
+        help_text='describe link for assistive technology if needed',
+        required=False
+    )
 
     background_color = ColorChoiceBlock(
         help_text='Not choosing a colour will result in a block with '
@@ -164,7 +176,8 @@ class LinkBlock(blocks.StructBlock):
     link_description = blocks.TextBlock(
         max_length=70,
         label='Link Description',
-        help_text='describe link for accessible technology'
+        help_text='describe link for assistive technology if needed',
+        required=False
     )
 
 
@@ -180,6 +193,7 @@ class ImgTextLinkBlock(blocks.StructBlock):
 
 # 2-3 column block with image and CTA
 class TeaserBlockColumn(blocks.StructBlock):
+    title = blocks.CharBlock(max_length=130)
     column_count = blocks.ChoiceBlock(choices=[
         ('2', 'two columns'),
         ('3', 'three columns')
@@ -198,6 +212,12 @@ class IconTextLinkBlock(blocks.StructBlock):
     title = blocks.CharBlock(max_length=70)
     link = blocks.PageChooserBlock(
         page_type=['apps_gruenbuch.GruenbuchDetailPage'])
+    link_description = blocks.TextBlock(
+        max_length=70,
+        label='Link Description',
+        help_text='describe link for assistive technology if needed',
+        required=False
+    )
 
 
 # tile teaser block with icon

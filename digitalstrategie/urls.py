@@ -10,6 +10,7 @@ from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from apps.contrib.views import SearchResultsView
+from apps.home.views import newsletter_view
 
 urlpatterns = [
     path('django-admin/', admin.site.urls),
@@ -21,6 +22,7 @@ urlpatterns = [
         template_name='robots.txt',
         content_type="text/plain"), name="robots_file"),
     path('search/', SearchResultsView.as_view(), name="search"),
+    path('newsletter-signup/', newsletter_view, name="newsletter-signup"),
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in

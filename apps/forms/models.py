@@ -210,7 +210,6 @@ class ParticipationFormPage(FormPage):
         return super().process_form_submission(form)
 
     def get_field_of_action_choices(self):
-
         return ','.join([str(field_of_action) for field_of_action
                          in self.fields_of_action.all()])
 
@@ -253,3 +252,8 @@ class ParticipationFormPage(FormPage):
         # remove data_storage
         data_fields.pop()
         return data_fields
+
+
+class NewsletterForm(forms.Form):
+    email = forms.EmailField()
+    data_protection = forms.BooleanField()

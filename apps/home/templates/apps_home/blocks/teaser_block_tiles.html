@@ -7,7 +7,10 @@
         <li>
             <div class="teasertile ds-teasertile" data-add-clickable-area="full">
                 <div class="action ds-action">
-                    <a class="more" href="{{ value.link.url }}"></a>
+                    <a class="more" href="{{ value.link.url }}">
+                      {% if value.link.link_description %}
+                      <span class="aural">{{ value.link.link_description }}</span>
+                      {% endif %}</a>
                 </div>
                 <div class="ds-teasertile__info">
                     <div class="ds-teasertile__info-img">

@@ -2,7 +2,7 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 <!-- FIXME 2 column full width element in their styleguide so this is combined with their flex grid-->
-<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+<section class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
     <div class="servicepanel__main flexgrid grid--2 text-center">
         <div class="">
             <h2>
@@ -31,4 +31,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

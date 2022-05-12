@@ -1,15 +1,13 @@
 {% load i18n wagtailcore_tags %}
 
-<div class="ds-block ds-block--body-bg">
-    <blockquote class="modul-testimonial">
-        <div class="textbox">
-            <i class="fas fa-quote-left quote" aria-hidden="true"></i>
-            <div class="text">
-                {{ self.quote }}
-            </div>
-            <div class="caption">
-                {{ self.author }}
-            </div>
+<blockquote class="modul-testimonial">
+    <div class="textbox">
+        <i class="fas fa-quote-left quote" aria-hidden="true"></i>
+        <div class="text">
+            {{ self.quote }}
         </div>
-    </blockquote>
-</div>
+        <div class="caption">
+            {{ self.author }}
+        </div>
+    </div>
+</blockquote>

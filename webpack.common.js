@@ -8,9 +8,14 @@ module.exports = {
   entry: {
     digitalstrategie: [
       './digitalstrategie/assets/scss/style.scss',
+    ],
+    newsletter: [
+        './apps/home/assets/newsletter.js'
     ]
   },
   output: {
+    libraryTarget: 'this',
+    library: '[name]',
     // creates a folder to store all assets
     path: path.resolve('./digitalstrategie/static/'),
     // location they can be accessed, can also be a url

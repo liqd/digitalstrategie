@@ -5,6 +5,12 @@ HELPTEXT_RICHTEXT_A11Y = '''For accessibility please make sure that you do not
                             leave out levels when using the headlines. That
                             means, that there should always be an h2 before
                             using an h3.'''
+NEWSLETTER_EMAIL_DEFAULT = 'Ihre E-Mail-Adresse'
+NEWSLETTER_DSGVO_DEFAULT = (
+    'Ich willige in die Speicherung und Nutzung meiner E-Mail-Adresse für '
+    'den Newsletterversand ein. Die Einwilligung gilt für den Zeitraum des '
+    'Abonnements und kann jederzeit über den Link „Abmelden“ widerrufen '
+    'werden. Die Datenschutzerklärung habe ich zur Kenntnis genommen.')
 
 
 class ColorChoiceBlock(blocks.ChoiceBlock):
@@ -217,3 +223,27 @@ class TeaserBlockSingle(blocks.StructBlock):
         template = 'apps_home/blocks/teaser_block_single.html'
         icon = 'pick'
         label = 'Teaser Single'
+
+
+class NewsletterBlock(blocks.StructBlock):
+    title = blocks.CharBlock(max_length=150)
+    email_field_label = blocks.CharBlock(
+        max_length=130,
+        required=True,
+        default=NEWSLETTER_EMAIL_DEFAULT
+    )
+    dsgvo_checkbox_label = blocks.CharBlock(
+        max_length=500,
+        required=True,
+        default=NEWSLETTER_DSGVO_DEFAULT
+    )
+    background_color = ColorChoiceBlock(
+        help_text='Not choosing a colour will result in a '
+                  'block with a white background.',
+        required=False
+    )
+
+    class Meta:
+        template = 'apps_home/blocks/newsletter_block.html'
+        icon = 'mail'
+        help_text = 'This form only works with sendinblue'

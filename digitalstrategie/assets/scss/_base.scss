@@ -26,3 +26,8 @@ footer,
 .content-footer {
     font-family: $font-family-arial;
 }
+
+// sendinblue overwrites
+.u-d-none {
+    display: none !important;
+}

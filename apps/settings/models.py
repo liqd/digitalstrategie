@@ -35,6 +35,21 @@ class ImportantPages(BaseSetting):
 
 
 @register_setting
+class Newsletter(BaseSetting):
+    sendinblue_api_key = models.CharField(
+        max_length=90,
+        help_text='Your Sendinblue api key')
+    sendinblue_list_id = models.PositiveIntegerField(
+        default=0,
+        help_text='The id of the list you want to subscribe to')
+    sendinblue_template_id = models.PositiveIntegerField(
+        default=0,
+        help_text='The template id of the newsletter double opt-in')
+    redirect_url = models.URLField(help_text="Page being displayed after"
+                                             " clicking on link in email")
+
+
+@register_setting
 class Downloads(BaseSetting):
     gruenbuch = models.ForeignKey(
         'wagtaildocs.Document',

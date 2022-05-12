@@ -23,6 +23,7 @@ class HomePage(MetadataPageMixin, Page):
         ('teaser_image', apps_blocks.TeaserBlockImage()),
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('newsletter_block', apps_blocks.NewsletterBlock()),
     ]
 
     page_title_de = models.CharField(
@@ -130,6 +131,7 @@ class OverviewPage(MetadataPageMixin, Page):
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('newsletter_block', apps_blocks.NewsletterBlock()),
     ]
 
     intro_image = models.ForeignKey(
@@ -242,6 +244,7 @@ class DetailPage(Page):
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('quote', apps_blocks.QuoteBlock()),
+        ('newsletter_block', apps_blocks.NewsletterBlock()),
     ]
     page_title_de = models.CharField(
         max_length=120, blank=False)

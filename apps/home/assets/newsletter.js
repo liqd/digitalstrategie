@@ -17,7 +17,7 @@ function ValidateForm() {
         formCheckboxInvalid.classList.add("u-d-none")
         inputInvalid.classList.add("u-d-none")
         formAction.classList.add("u-d-none")
-        document.getElementById("newsletter_form").submit
+        document.getElementById("newsletter_form").submit()
         return false
       }
       else if (formInput.value.match(mailformat))

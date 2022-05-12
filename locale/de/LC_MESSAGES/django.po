@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-31 15:07+0000\n"
+"POT-Creation-Date: 2022-05-12 13:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,22 +125,22 @@ msgstr ""
 msgid "Send"
 msgstr "Senden"
 
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:27
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:34
 #, fuzzy
 #| msgid "Download"
 msgid "Downloads"
 msgstr "Herunterladen"
 
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:32
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:35
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:39
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:42
 msgid "Document"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:33
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:40
 msgid "Date:"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:45
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:52
 msgid "Download"
 msgstr "Herunterladen"
 
@@ -208,8 +208,8 @@ msgid "To the home page"
 msgstr "Zur Startseite"
 
 #: digitalstrategie/templates/includes/header.html:19
-msgid "Digital strategy"
-msgstr "Digitalstrategie"
+msgid "Gemeinsam Digital: Berlin"
+msgstr "Gemeinsam Digital: Berlin"
 
 #: digitalstrategie/templates/includes/header.html:25
 msgid "Area navigation"
@@ -224,7 +224,7 @@ msgid "Accessible"
 msgstr "Barrierefrei"
 
 #: digitalstrategie/templates/includes/header.html:50
-#: digitalstrategie/templates/includes/header_language_switch.html:15
+#: digitalstrategie/templates/includes/header_language_switch.html:26
 msgid "Accessibility"
 msgstr "Barrierefreiheit"
 
@@ -282,8 +282,10 @@ msgid "Close: Search"
 msgstr "Schließen: Suche"
 
 #: digitalstrategie/templates/includes/header.html:120
-msgid "Search on the website \"Digitalstrategie Berlin\""
-msgstr "Suche auf der Internetseite \"Digitalstrategie Berlin\""
+#, fuzzy
+#| msgid "Search on the website \"Digitalstrategie Berlin\""
+msgid "Search on the website \"Gemeinsam Digital: Berlin\""
+msgstr "Suche auf der Internetseite \"Gemeinsam Digital: Berlin\""
 
 #: digitalstrategie/templates/includes/header.html:137
 msgid "Open: Menu"
@@ -302,17 +304,20 @@ msgstr "Schließen: Menü"
 msgid "Page navigation"
 msgstr "Seitennavigation"
 
-#: digitalstrategie/templates/includes/header_language_switch.html:7
+#: digitalstrategie/templates/includes/header_language_switch.html:5
 msgid "Languages"
 msgstr "Sprachen"
 
-#: digitalstrategie/templates/includes/header_language_switch.html:25
+#: digitalstrategie/templates/includes/header_language_switch.html:16
+#: digitalstrategie/templates/includes/header_language_switch.html:35
 msgid "select"
 msgstr "auswählen"
 
 #: digitalstrategie/templates/search_results.html:5
-msgid "Digital strategy - full-text search"
-msgstr "Digitalstrategie - Volltextsuche"
+#, fuzzy
+#| msgid "Digital strategy - full-text search"
+msgid "Gemeinsam Digital: Berlin - full-text search"
+msgstr "Gemeinsam Digital: Berlin - Volltextsuche"
 
 #: digitalstrategie/templates/search_results.html:12
 msgid "Full-text search"
@@ -340,6 +345,9 @@ msgstr "Ihre Suche nach"
 #: digitalstrategie/templates/search_results.html:70
 msgid "No results found"
 msgstr "Keine Ergebnisse gefunden"
+
+#~ msgid "Digital strategy"
+#~ msgstr "Digitalstrategie"
 
 #~ msgid "No chapters have been added yet."
 #~ msgstr "Es wurden noch keine Kapitel hinzugefügt."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-31 15:07+0000\n"
+"POT-Creation-Date: 2022-05-12 13:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,20 +111,20 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:27
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:34
 msgid "Downloads"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:32
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:35
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:39
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:42
 msgid "Document"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:33
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:40
 msgid "Date:"
 msgstr ""
 
-#: apps/gruenbuch/templates/gruenbuch_overview_page.html:45
+#: apps/gruenbuch/templates/gruenbuch_overview_page.html:52
 msgid "Download"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgid "To the home page"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:19
-msgid "Digital strategy"
+msgid "Gemeinsam Digital: Berlin"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:25
@@ -206,7 +206,7 @@ msgid "Accessible"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:50
-#: digitalstrategie/templates/includes/header_language_switch.html:15
+#: digitalstrategie/templates/includes/header_language_switch.html:26
 msgid "Accessibility"
 msgstr ""
 
@@ -261,7 +261,7 @@ msgid "Close: Search"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:120
-msgid "Search on the website \"Digitalstrategie Berlin\""
+msgid "Search on the website \"Gemeinsam Digital: Berlin\""
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:137
@@ -281,16 +281,17 @@ msgstr ""
 msgid "Page navigation"
 msgstr ""
 
-#: digitalstrategie/templates/includes/header_language_switch.html:7
+#: digitalstrategie/templates/includes/header_language_switch.html:5
 msgid "Languages"
 msgstr ""
 
-#: digitalstrategie/templates/includes/header_language_switch.html:25
+#: digitalstrategie/templates/includes/header_language_switch.html:16
+#: digitalstrategie/templates/includes/header_language_switch.html:35
 msgid "select"
 msgstr ""
 
 #: digitalstrategie/templates/search_results.html:5
-msgid "Digital strategy - full-text search"
+msgid "Gemeinsam Digital: Berlin - full-text search"
 msgstr ""
 
 #: digitalstrategie/templates/search_results.html:12

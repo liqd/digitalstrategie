@@ -21,14 +21,16 @@ INSTALLED_APPS += ('wagtail.contrib.styleguide',)
 
 if os.getenv("DATABASE") == "postgresql":
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '5557',
-        'OPTIONS': {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'django',
+            'USER': 'django',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '5557',
+            'OPTIONS': {
             },
         }
     }
+
+SENDINBLUE_API_KEY = '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'

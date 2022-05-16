@@ -3,6 +3,17 @@
     padding-top: 3 * $spacer !important;
 }
 
+.ds-block--fullwidth {
+    @media print, (max-width: 64.001rem) {
+        // to ensure coloured blocks with no images go to page edge on mobile
+        margin-left: -12px !important;
+        margin-right: -12px !important;
+        padding-left: 12px;
+        padding-right: 12px;
+        min-width: 100vw !important;
+    }
+}
+
 .ds-block,
 .ds-block--img {
     padding-bottom: 3 * $spacer !important;
@@ -74,6 +85,10 @@
     @media print, (min-width: 64.001rem) {
         padding-top: 4 * $spacer !important;
         padding-bottom: 4 * $spacer !important;
+    }
+
+    @media print {
+        background-color: none !important;
     }
 
     .modul-teaser-marketing.imageteaser .image {

@@ -1,7 +1,7 @@
 {% load block_tags i18n wagtailcore_tags %}
 
-<div class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
-    <div class="servicepanel__main">
+<section class="modul-teaser-marketing fullwidth ds-block--fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+    <div class="content-container fullwidth__inner">
         <div class="ds-block__maincontent--small">
             <h2 class="title thesis-ds-block__title">{{ value.title }}</h2>
             <div class="modul-buehne">
@@ -20,4 +20,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

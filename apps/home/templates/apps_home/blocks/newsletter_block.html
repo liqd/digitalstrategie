@@ -1,7 +1,7 @@
 {% load static i18n widget_tweaks form_field_tags %}
 
-<section class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
-    <div class="servicepanel__main">
+<section class="modul-teaser-marketing fullwidth ds-block--fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+    <div class="content-container fullwidth__inner">
         {% if self.title %}
         <h2 class="title">
             {{ self.title }}

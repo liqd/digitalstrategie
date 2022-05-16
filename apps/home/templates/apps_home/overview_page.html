@@ -3,7 +3,7 @@
 
 {% block content %}
 {% image page.intro_image max-1920x560 as intro_image %}
-<div class="fullwidth {% if page.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+<div class="fullwidth ds-block--fullwidth {% if page.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
     <div id="layout-grid">
     <section id="layout-grid__area--herounit">
         {% if page.intro_image %}

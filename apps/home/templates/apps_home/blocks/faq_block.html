@@ -3,8 +3,8 @@
 {% get_identifier value as identifier %}
 
 
-<section class="modul-servicepanel fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
-    <div class="servicepanel__main">
+<section class="modul-teaser-marketing fullwidth ds-block--fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+    <div class="content-container fullwidth__inner">
         {% if self.faq_title %}
         <h2 class="title">
             {{ self.faq_title }}

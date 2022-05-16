@@ -40,10 +40,10 @@
               {% include 'includes/breadcrumb.html' %}
               {% if messages %}
                 {% for message in messages %}
-                    <div class="alert alert--{{ message.level_tag }}" role="alert">
-                        <div class="text-center alert-text">
+                    <div class="message message--{{ message.level_tag }}" role="alert">
+                        <p>
                         {{ message }}
-                        </div>
+                      </p>
                     </div>
                 {% endfor %}
               {% endif %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 13:56+0000\n"
+"POT-Creation-Date: 2022-05-31 14:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgstr "Organisation"
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: apps/forms/models.py:157 apps/forms/models.py:221
+#: apps/forms/models.py:157 apps/forms/models.py:220
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr "I have read and accepted the {}data protection policy{}."
 
@@ -92,53 +92,38 @@ msgstr ""
 "The selected categories                     are displayed in the "
 "participation form."
 
-#: apps/forms/models.py:220
+#: apps/forms/models.py:219
 msgid "I agree that my contact data is stored"
 msgstr "I agree that my contact data is stored"
 
-#: apps/forms/models.py:227
+#: apps/forms/models.py:226
 msgid "I am interested in the following fields of action"
 msgstr "I am interested in the following fields of action"
 
-#: apps/forms/templates/apps_forms/form_page_landing.html:8
-#, fuzzy
-#| msgid "Back to landing page"
+#: apps/forms/templates/apps_forms/form_page_landing.html:7
 msgid "Back to Homepage"
-msgstr "Back to landing page"
+msgstr "Back to Homepage"
 
 #: apps/forms/templates/apps_forms/includes/form.html:11
 msgid "Required fields"
 msgstr "Required fields"
 
 #: apps/forms/templates/apps_forms/includes/form.html:13
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                                If you wish to have your personal data "
-#| "deleted\n"
-#| "                                please write an e-mail to:\n"
-#| "                                <span>%(remove_email)s</span>\n"
-#| "                            "
+#, python-format
 msgid ""
 "If you wish to have your personal data deleted please write an e-mail to: <a "
 "href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
-"\n"
-"                                If you wish to have your personal data "
-"deleted\n"
-"                                please write an e-mail to:\n"
-"                                <span>%(remove_email)s</span>\n"
-"                            "
+"If you wish to have your personal data deleted please write an e-mail to: <a "
+"href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 
 #: apps/forms/templates/apps_forms/includes/form.html:18
 msgid "Send"
 msgstr "Send"
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:34
-#, fuzzy
-#| msgid "Download"
 msgid "Downloads"
-msgstr "Download"
+msgstr "Downloads"
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:39
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:42
@@ -153,11 +138,29 @@ msgstr "Date:"
 msgid "Download"
 msgstr "Download"
 
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:15
+msgid "Please fill in valid email address."
+msgstr "Please fill in valid email address."
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:16
+msgid "Your subscription to our E-Mail Newsletter was successful."
+msgstr "Your subscription to our E-Mail Newsletter was successful."
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:23
+msgid "required"
+msgstr "required"
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:26
+msgid "Please accept the terms of conditions"
+msgstr "Please accept the terms of conditions"
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:31
+msgid "Subscribe"
+msgstr "Subscribe"
+
 #: apps/home/templates/apps_home/blocks/thesis_list_block.html:10
-#, fuzzy
-#| msgid "previous chapter"
 msgid "Previous slide"
-msgstr "previous chapter"
+msgstr "Previous slide"
 
 #: apps/home/templates/apps_home/blocks/thesis_list_block.html:11
 msgid "Next slide"
@@ -221,10 +224,8 @@ msgid "Gemeinsam Digital: Berlin"
 msgstr "Gemeinsam Digital: Berlin"
 
 #: digitalstrategie/templates/includes/header.html:25
-#, fuzzy
-#| msgid "Toggle navigation"
 msgid "Area navigation"
-msgstr "Toggle navigation"
+msgstr "Area navigation"
 
 #: digitalstrategie/templates/includes/header.html:44
 msgid "Open: Accessibility"
@@ -280,10 +281,8 @@ msgstr ""
 "Berlin?"
 
 #: digitalstrategie/templates/includes/header.html:105
-#, fuzzy
-#| msgid "Search"
 msgid "Open: Search"
-msgstr "Search"
+msgstr "Open: Search"
 
 #: digitalstrategie/templates/includes/header.html:106
 #: digitalstrategie/templates/includes/header.html:111
@@ -292,16 +291,12 @@ msgid "Search"
 msgstr "Search"
 
 #: digitalstrategie/templates/includes/header.html:114
-#, fuzzy
-#| msgid "Search"
 msgid "Close: Search"
-msgstr "Search"
+msgstr "Close: Search"
 
 #: digitalstrategie/templates/includes/header.html:120
-#, fuzzy
-#| msgid "Search on the website \"Digitalstrategie Berlin\""
 msgid "Search on the website \"Gemeinsam Digital: Berlin\""
-msgstr "Search on the website \"Gemeinsam Digital: Berlin Berlin\""
+msgstr "Search on the website \"Gemeinsam Digital: Berlin\""
 
 #: digitalstrategie/templates/includes/header.html:137
 msgid "Open: Menu"
@@ -317,27 +312,19 @@ msgid "Close: Menu"
 msgstr "Close: Menu"
 
 #: digitalstrategie/templates/includes/header.html:152
-#, fuzzy
-#| msgid "Toggle navigation"
 msgid "Page navigation"
-msgstr "Toggle navigation"
+msgstr "Page navigation"
 
 #: digitalstrategie/templates/includes/header_language_switch.html:5
-#, fuzzy
-#| msgid "Language selector, "
 msgid "Languages"
-msgstr "Language selector, "
+msgstr "Languages"
 
 #: digitalstrategie/templates/includes/header_language_switch.html:16
 #: digitalstrategie/templates/includes/header_language_switch.html:35
-#, fuzzy
-#| msgid "select "
 msgid "select"
-msgstr "select "
+msgstr "select"
 
 #: digitalstrategie/templates/search_results.html:5
-#, fuzzy
-#| msgid "Digital strategy - full-text search"
 msgid "Gemeinsam Digital: Berlin - full-text search"
 msgstr "Gemeinsam Digital: Berlin - full-text search"
 
@@ -367,59 +354,3 @@ msgstr "Your search for"
 #: digitalstrategie/templates/search_results.html:70
 msgid "No results found"
 msgstr "No results found"
-
-#~ msgid "Digital strategy"
-#~ msgstr "Digital strategy"
-
-#~ msgctxt "month name"
-#~ msgid "May"
-#~ msgstr "May"
-
-#~ msgid "No chapters have been added yet."
-#~ msgstr "No chapters have been added yet."
-
-#, fuzzy
-#~| msgid "previous chapter"
-#~ msgid "Previous Chapter"
-#~ msgstr "previous chapter"
-
-#, fuzzy
-#~| msgid "next chapter"
-#~ msgid "Next Chapter"
-#~ msgstr "next chapter"
-
-#~ msgid "Read more"
-#~ msgstr "Read more"
-
-#, fuzzy
-#~| msgid ""
-#~| "Berlin.de is a service of the State of Berlin and BerlinOnline "
-#~| "Stadtportal GmbH & Co. KG. "
-#~ msgid ""
-#~ "Berlin.de is a service of the State of Berlin and BerlinOnline "
-#~ "Stadtportal GmbH & Co. KG."
-#~ msgstr ""
-#~ "Berlin.de is a service of the State of Berlin and BerlinOnline "
-#~ "Stadtportal GmbH & Co. KG. "
-
-#, fuzzy
-#~| msgid ""
-#~| "\n"
-#~| "            For more information, please see the <a href="
-#~| "\"%(imprint_url)s\">imprint</a>."
-#~ msgid ""
-#~ "For more information, please see the <a href=\"%(imprint_url)s\">imprint</"
-#~ "a>."
-#~ msgstr ""
-#~ "\n"
-#~ "            For more information, please see the <a href=\"%(imprint_url)s"
-#~ "\">imprint</a>."
-
-#~ msgid "Sprachen"
-#~ msgstr "Sprachen"
-
-#~ msgid "Barrierefreiheit"
-#~ msgstr "Barrierefreiheit"
-
-#~ msgid " selected"
-#~ msgstr " selected"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 13:56+0000\n"
+"POT-Creation-Date: 2022-05-31 14:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "E-Mail"
 msgstr ""
 
-#: apps/forms/models.py:157 apps/forms/models.py:221
+#: apps/forms/models.py:157 apps/forms/models.py:220
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr ""
 
@@ -84,15 +84,15 @@ msgid ""
 "participation form."
 msgstr ""
 
-#: apps/forms/models.py:220
+#: apps/forms/models.py:219
 msgid "I agree that my contact data is stored"
 msgstr ""
 
-#: apps/forms/models.py:227
+#: apps/forms/models.py:226
 msgid "I am interested in the following fields of action"
 msgstr ""
 
-#: apps/forms/templates/apps_forms/form_page_landing.html:8
+#: apps/forms/templates/apps_forms/form_page_landing.html:7
 msgid "Back to Homepage"
 msgstr ""
 
@@ -126,6 +126,26 @@ msgstr ""
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:52
 msgid "Download"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:15
+msgid "Please fill in valid email address."
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:16
+msgid "Your subscription to our E-Mail Newsletter was successful."
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:23
+msgid "required"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:26
+msgid "Please accept the terms of conditions"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:31
+msgid "Subscribe"
 msgstr ""
 
 #: apps/home/templates/apps_home/blocks/thesis_list_block.html:10

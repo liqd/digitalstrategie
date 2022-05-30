@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-12 13:56+0000\n"
+"POT-Creation-Date: 2022-05-31 14:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgstr "Organisation"
 msgid "E-Mail"
 msgstr "Email"
 
-#: apps/forms/models.py:157 apps/forms/models.py:221
+#: apps/forms/models.py:157 apps/forms/models.py:220
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr "Ich habe die {}Datenschutzbestimmungen{} gelesen."
 
@@ -92,19 +92,17 @@ msgid ""
 msgstr ""
 "Die ausgewählten Kategorien werden im Partizipationsformular dargestellt."
 
-#: apps/forms/models.py:220
+#: apps/forms/models.py:219
 msgid "I agree that my contact data is stored"
 msgstr ""
 "Hiermit erkläre ich mich einverstanden, dass meine Kontaktdaten gespeichert "
 "werden."
 
-#: apps/forms/models.py:227
+#: apps/forms/models.py:226
 msgid "I am interested in the following fields of action"
 msgstr "Ich habe Interesse an folgenden Handlungsfeldern"
 
-#: apps/forms/templates/apps_forms/form_page_landing.html:8
-#, fuzzy
-#| msgid "Back to landing page"
+#: apps/forms/templates/apps_forms/form_page_landing.html:7
 msgid "Back to Homepage"
 msgstr "Zurück zur Startseite"
 
@@ -126,27 +124,43 @@ msgid "Send"
 msgstr "Senden"
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:34
-#, fuzzy
-#| msgid "Download"
 msgid "Downloads"
-msgstr "Herunterladen"
+msgstr "Downloads"
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:39
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:42
 msgid "Document"
-msgstr ""
+msgstr "Dokument"
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:40
 msgid "Date:"
-msgstr ""
+msgstr "Datum:"
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:52
 msgid "Download"
 msgstr "Herunterladen"
 
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:15
+msgid "Please fill in valid email address."
+msgstr "Bitte geben Sie eine gültige E-Mailadresse ein."
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:16
+msgid "Your subscription to our E-Mail Newsletter was successful."
+msgstr "Sie haben sich erfolgreich für unseren E-Mail Newsletter eingetragen."
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:23
+msgid "required"
+msgstr "Pflichtfeld"
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:26
+msgid "Please accept the terms of conditions"
+msgstr "Bitte akzeptieren Sie die Nutzungsbedingungen"
+
+#: apps/home/templates/apps_home/blocks/newsletter_block.html:31
+msgid "Subscribe"
+msgstr "Anmelden"
+
 #: apps/home/templates/apps_home/blocks/thesis_list_block.html:10
-#, fuzzy
-#| msgid "Previous Chapter"
 msgid "Previous slide"
 msgstr "Vorherige Seite"
 
@@ -282,8 +296,6 @@ msgid "Close: Search"
 msgstr "Schließen: Suche"
 
 #: digitalstrategie/templates/includes/header.html:120
-#, fuzzy
-#| msgid "Search on the website \"Digitalstrategie Berlin\""
 msgid "Search on the website \"Gemeinsam Digital: Berlin\""
 msgstr "Suche auf der Internetseite \"Gemeinsam Digital: Berlin\""
 
@@ -314,8 +326,6 @@ msgid "select"
 msgstr "auswählen"
 
 #: digitalstrategie/templates/search_results.html:5
-#, fuzzy
-#| msgid "Digital strategy - full-text search"
 msgid "Gemeinsam Digital: Berlin - full-text search"
 msgstr "Gemeinsam Digital: Berlin - Volltextsuche"
 
@@ -345,34 +355,3 @@ msgstr "Ihre Suche nach"
 #: digitalstrategie/templates/search_results.html:70
 msgid "No results found"
 msgstr "Keine Ergebnisse gefunden"
-
-#~ msgid "Digital strategy"
-#~ msgstr "Digitalstrategie"
-
-#~ msgid "No chapters have been added yet."
-#~ msgstr "Es wurden noch keine Kapitel hinzugefügt."
-
-#~ msgid "Previous Chapter"
-#~ msgstr "Vorherige Seite"
-
-#~ msgid "Next Chapter"
-#~ msgstr "Nächste Seite"
-
-#~ msgid "Read more"
-#~ msgstr "Mehr lesen"
-
-#, fuzzy
-#~ msgid ""
-#~ "Berlin.de is a service of the State of Berlin and BerlinOnline "
-#~ "Stadtportal GmbH & Co. KG."
-#~ msgstr ""
-#~ "Berlin.de ist ein Angebot des Landes Berlin und der BerlinOnline "
-#~ "Stadtportal GmbH & Co. KG."
-
-#, fuzzy
-#~ msgid ""
-#~ "For more information, please see the <a href=\"%(imprint_url)s\">imprint</"
-#~ "a>."
-#~ msgstr ""
-#~ "Weitere Informationen hierzu finden Sie im <a href=\"%(imprint_url)s"
-#~ "\">Impressum</a>."

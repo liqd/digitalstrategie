@@ -8,4 +8,4 @@ whitenoise==6.2.0
 psycopg2-binary==2.9.3
 elasticsearch==7.17.4 # pyup: <8.0
 wagtail-metadata==4.0.0
-sib-api-v3-sdk==7.4.0
+sib-api-v3-sdk==7.5.0

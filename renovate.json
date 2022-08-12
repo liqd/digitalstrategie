@@ -1,5 +1,41 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+
+  "dependencies": {
+    "updateTypes": ["minor", "patch"],
+    "automerge": true
+  },
+  "devDependencies": {
+    "updateTypes": ["minor", "patch"],
+    "automerge": true
+  },
+
+  "digest": {
+    "enabled": false
+  },
+
+  "labels": [
+    "renovate"
+  ],
+
+  "packageRules": [
+      {
+        "packagePatterns": ["^eslint"],
+        "groupName": "eslint packages"
+      },
+      {
+        "matchPackageNames": ["Django"],
+        "allowedVersions": "=3.2"
+      },
+      {
+        "matchPackageNames": ["elasticsearch"],
+        "allowedVersions": "=7"
+      }
+    ],
+
+  "pip_requirements": {
+    "fileMatch": ["^requirements/.*\\.txt$"]
+  }
 }

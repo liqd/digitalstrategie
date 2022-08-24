@@ -8,11 +8,16 @@ from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
+from wagtail.contrib.forms.forms import FormBuilder
 from wagtail.contrib.forms.models import AbstractEmailForm
 from wagtail.contrib.forms.models import AbstractFormField
 
+from apps.captcha.fields import CaptcheckCaptchaField
 from apps.contrib.translations import TranslatedField
 from apps.settings import helpers
+
+CAPTCHA_HELP = _('If you are having difficulty please contact us'
+                 ' by {}email{}.')
 
 
 class FormField(AbstractFormField):
@@ -21,7 +26,21 @@ class FormField(AbstractFormField):
                        related_name='form_fields')
 
 
+class WagtailCaptchaFormBuilder(FormBuilder):
+    @property
+    def formfields(self):
+        # Add captcha to formfields property
+        fields = super().formfields
+        fields['captcha'] = CaptcheckCaptchaField(
+            label=_('I am not a robot'),
+            help_text=helpers.add_email_link_to_helptext('', CAPTCHA_HELP)
+        )
+        return fields
+
+
 class FormPage(AbstractEmailForm):
+
+    form_builder = WagtailCaptchaFormBuilder
 
     to_address = models.CharField(
         verbose_name=_('to address'), max_length=255,
@@ -71,6 +90,11 @@ class FormPage(AbstractEmailForm):
         help_text=('If you add an email address, users can contact you \
                    in order to request the removal of personal data.')
     )
+
+    def process_form_submission(self, form):
+        form.fields.pop('captcha', None)
+
+        return super().process_form_submission(form)
 
     def get_form_fields(self):
         fields = list(super().get_form_fields())
@@ -242,7 +266,6 @@ class ParticipationFormPage(FormPage):
             help_text=helpers.add_link_to_helptext(data_protection_help,
                                                    'data_protection_policy'),
             required=True))
-
         return fields
 
     def get_data_fields(self):

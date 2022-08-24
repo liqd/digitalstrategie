@@ -33,6 +33,37 @@
     {% endif %}
 </fieldset>
 <hr>
+{% elif field|is_captcha %}
+<div class="form-group">
+    <label class="test" for="{{ field.id_for_label }}" {% if tabindex is not None %}tabindex="{{ tabindex }}"{% endif %}>
+        {{ field.label }}{% if field.field.required %}<span role="presentation" title="{% trans 'This field is required' %}">*</span>{% endif %}
+        {% block after_label %}
+        {% endblock %}
+    </label>
+    {% block help_text %}
+    {% if field.help_text %}
+    <p class="form-hint" id="hint_{{ field.id_for_label }}" {% if tabindex is not None %}tabindex="{{ tabindex }}"{% endif %}>
+        {{ field.help_text }}
+    </p>
+    {% endif %}
+    {% endblock %}
+    {% block field %}
+        <div class="widget widget--{{ field|widget_type }}">
+          {% with describedby="hint_"|add:field.id_for_label %}
+          {% if field.errors %}
+                {% render_field field aria-invalid="true" aria-describedby=describedby %}
+          {% else %}
+            {% render_field field aria-describedby=describedby %}
+          {% endif %}
+          {% endwith %}
+        </div>
+    {% endblock %}
+    {% if field.errors %}
+        <div class="message message--error" role="alert">
+        {{ field.errors }}
+        </div>
+    {% endif %}
+</div>
 {% else %}
   <div class="form-group">
       <label class="form-label" for="id_{{ field.name }}">

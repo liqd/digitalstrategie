@@ -16,7 +16,12 @@ module.exports = {
     ],
     newsletter: [
         './apps/home/assets/newsletter.js'
-    ]
+    ],
+    captcheck: {
+      import: [
+        './apps/captcha/assets/captcheck.js'
+      ],
+    },
   },
   output: {
     libraryTarget: 'this',

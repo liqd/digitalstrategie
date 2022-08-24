@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'widget_tweaks',
 
+    'apps.captcha',
     'apps.contrib',
     'apps.forms',
     'apps.home',
@@ -210,3 +211,4 @@ WAGTAILSEARCH_BACKENDS = {
 }
 
 BERLIN_FOOTER_URL = 'https://www.berlin.de/rbmskzl/aktuelles/__i9/std/landesfooter.inc'
+CONTACT_EMAIL = 'contact@domain'

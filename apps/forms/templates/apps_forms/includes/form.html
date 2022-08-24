@@ -5,7 +5,12 @@
 <form class="ds-form__overwrite" action="{% pageurl page %}" method="POST" novalidate>
         {% csrf_token %}
         {% for field in form %}
-            {% include 'apps_forms/includes/form_field.html' with field=field %}
+            {% if field is not form.captcha %}
+                {% include 'apps_forms/includes/form_field.html' with field=field %}
+            {% else %}
+                {{ form.media }}
+                {% include 'apps_forms/includes/form_field.html' with field=form.captcha tabindex=0 %}
+            {% endif %}
         {% endfor %}
     <div class="ds-form__info-section">
         <p>*{% trans 'Required fields' %}</p>

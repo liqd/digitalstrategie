@@ -197,4 +197,4 @@ WAGTAILSEARCH_BACKENDS = {
     }
 }
 
-BERLIN_FOOTER_URL = 'https://www.berlin.de/rbmskzl/__i9/ohne/foot.inc'
+BERLIN_FOOTER_URL = 'https://www.berlin.de/rbmskzl/aktuelles/__i9/std/landesfooter.inc'

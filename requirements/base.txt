@@ -2,7 +2,7 @@ brotli==1.0.9
 Django==3.2.16
 django-cloudflare-push==0.2.2
 django-widget-tweaks==1.4.12
-sentry-sdk==1.5.11
+sentry-sdk==1.10.1
 wagtail==2.16.3
 whitenoise==6.0.0
 psycopg2-binary==2.9.5

@@ -5,3 +5,6 @@ omit =
     */migrations/*
     */tests.py
     */test_*.py
+concurrency = multiprocessing
+parallel = true
+sigterm = true

@@ -6,7 +6,7 @@
     "url": "https://github.com/liqd/digitalstrategie.git"
   },
   "dependencies": {
-    "autoprefixer": "10.4.7",
+    "autoprefixer": "10.4.12",
     "babel-loader": "8.2.5",
     "copy-webpack-plugin": "11.0.0",
     "css-loader": "6.7.1",

@@ -7,5 +7,5 @@ wagtail==3.0
 whitenoise==6.0.0
 psycopg2-binary==2.9.5
 elasticsearch==7.17.7
-wagtail-metadata==3.5.0
+wagtail-metadata==4.0.2
 sib-api-v3-sdk==7.5.0

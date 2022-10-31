@@ -1,9 +1,9 @@
 from django.utils import translation
-from wagtail.core.blocks import CharBlock
-from wagtail.core.blocks import PageChooserBlock
-from wagtail.core.blocks import StructBlock
-from wagtail.core.blocks import StructValue
-from wagtail.core.blocks import URLBlock
+from wagtail.blocks import CharBlock
+from wagtail.blocks import PageChooserBlock
+from wagtail.blocks import StructBlock
+from wagtail.blocks import StructValue
+from wagtail.blocks import URLBlock
 
 
 class TranslatedStructValue(StructValue):

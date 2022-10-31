@@ -3,11 +3,11 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from modelcluster.fields import ParentalKey
 from modelcluster.fields import ParentalManyToManyField
-from wagtail.admin.edit_handlers import FieldPanel
-from wagtail.admin.edit_handlers import FieldRowPanel
-from wagtail.admin.edit_handlers import MultiFieldPanel
-from wagtail.admin.edit_handlers import ObjectList
-from wagtail.admin.edit_handlers import TabbedInterface
+from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldRowPanel
+from wagtail.admin.panels import MultiFieldPanel
+from wagtail.admin.panels import ObjectList
+from wagtail.admin.panels import TabbedInterface
 from wagtail.contrib.forms.models import AbstractEmailForm
 from wagtail.contrib.forms.models import AbstractFormField
 

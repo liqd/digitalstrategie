@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.search',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail',
     'wagtailmetadata',
     'modelcluster',
     'taggit',
@@ -176,10 +176,10 @@ WAGTAILIMAGES_IMAGE_MODEL = 'apps_images.CustomImage'
 
 WAGTAILADMIN_RICH_TEXT_EDITORS = {
     'default': {
-        'WIDGET': 'wagtail.admin.rich_text.HalloRichTextArea',
+        'WIDGET': 'wagtail.admin.rich_text.DraftailRichTextArea',
         'OPTIONS': {
             'features': [
-                'bold', 'italic', 'p', 'h2', 'h3', 'ol',
+                'bold', 'italic', 'h2', 'h3', 'ol',
                 'ul', 'hr', 'link', 'document-link', 'image'
             ]
         }

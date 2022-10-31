@@ -3,7 +3,7 @@ Django==3.2.16
 django-cloudflare-push==0.2.2
 django-widget-tweaks==1.4.12
 sentry-sdk==1.10.1
-wagtail==2.16.3
+wagtail==3.0
 whitenoise==6.0.0
 psycopg2-binary==2.9.5
 elasticsearch==7.17.7

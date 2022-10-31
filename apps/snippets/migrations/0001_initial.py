@@ -3,8 +3,8 @@
 from django.db import migrations, models
 import django.db.models.deletion
 import modelcluster.fields
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('sort_order', models.IntegerField(blank=True, editable=False, null=True)),
                 ('title_de', models.CharField(max_length=255)),
                 ('title_en', models.CharField(blank=True, max_length=255, null=True)),
-                ('subpages', wagtail.core.fields.StreamField([('link', wagtail.core.blocks.StructBlock([('link', wagtail.core.blocks.PageChooserBlock(required=True)), ('link_text_de', wagtail.core.blocks.CharBlock(required=True)), ('link_text_en', wagtail.core.blocks.CharBlock(required=False))]))], blank=True, help_text='These Links will be displayed in a dropdown menu', null=True, verbose_name='Submenu')),
+                ('subpages', wagtail.fields.StreamField([('link', wagtail.blocks.StructBlock([('link', wagtail.blocks.PageChooserBlock(required=True)), ('link_text_de', wagtail.blocks.CharBlock(required=True)), ('link_text_en', wagtail.blocks.CharBlock(required=False))]))], blank=True, help_text='These Links will be displayed in a dropdown menu', null=True, verbose_name='Submenu')),
                 ('link_page', models.ForeignKey(blank=True, help_text='Creates a link to a single wagtail page. Leave empty if you add subpages. In the footer items with subpages will not be shown.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='+', to='wagtailcore.page')),
                 ('parent', modelcluster.fields.ParentalKey(on_delete=django.db.models.deletion.CASCADE, related_name='menu_items', to='apps_snippets.navigationmenu')),
             ],

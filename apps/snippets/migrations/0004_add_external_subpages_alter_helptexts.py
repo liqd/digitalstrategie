@@ -2,8 +2,8 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -27,6 +27,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='navigationmenuitem',
             name='subpages',
-            field=wagtail.core.fields.StreamField([('link', wagtail.core.blocks.StructBlock([('link', wagtail.core.blocks.PageChooserBlock(required=True)), ('link_text_de', wagtail.core.blocks.CharBlock(required=True)), ('link_text_en', wagtail.core.blocks.CharBlock(required=False)), ('link_text_de_ls', wagtail.core.blocks.CharBlock(required=False))])), ('external_link', wagtail.core.blocks.StructBlock([('external_link', wagtail.core.blocks.URLBlock(help_text='Please enter a full url which starts with https:// or http://', max_length=500, required=True)), ('link_text_de', wagtail.core.blocks.CharBlock(required=True)), ('link_text_en', wagtail.core.blocks.CharBlock(required=False)), ('link_text_de_ls', wagtail.core.blocks.CharBlock(required=False))]))], blank=True, help_text='These Links will be displayed as sebmenu items. Either in dropdowns or as items below a headline.', null=True, verbose_name='Submenu'),
+            field=wagtail.fields.StreamField([('link', wagtail.blocks.StructBlock([('link', wagtail.blocks.PageChooserBlock(required=True)), ('link_text_de', wagtail.blocks.CharBlock(required=True)), ('link_text_en', wagtail.blocks.CharBlock(required=False)), ('link_text_de_ls', wagtail.blocks.CharBlock(required=False))])), ('external_link', wagtail.blocks.StructBlock([('external_link', wagtail.blocks.URLBlock(help_text='Please enter a full url which starts with https:// or http://', max_length=500, required=True)), ('link_text_de', wagtail.blocks.CharBlock(required=True)), ('link_text_en', wagtail.blocks.CharBlock(required=False)), ('link_text_de_ls', wagtail.blocks.CharBlock(required=False))]))], blank=True, help_text='These Links will be displayed as sebmenu items. Either in dropdowns or as items below a headline.', null=True, verbose_name='Submenu'),
         ),
     ]

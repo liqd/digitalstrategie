@@ -1,7 +1,7 @@
 from django.db import models
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import ObjectList
-from wagtail.admin.panels import StreamFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import TabbedInterface
 from wagtail import blocks
 from wagtail import fields
@@ -73,19 +73,19 @@ class HomePage(MetadataPageMixin, Page):
     de_content_panels = [
         FieldPanel('page_title_de'),
         FieldPanel('page_subtitle_de'),
-        StreamFieldPanel('body_de'),
+        FieldPanel('body_de'),
     ]
 
     en_content_panels = [
         FieldPanel('page_title_en'),
         FieldPanel('page_subtitle_en'),
-        StreamFieldPanel('body_en'),
+        FieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
         FieldPanel('page_title_de_ls'),
         FieldPanel('page_subtitle_de_ls'),
-        StreamFieldPanel('body_de_ls'),
+        FieldPanel('body_de_ls'),
     ]
 
     common_panels = [
@@ -193,19 +193,19 @@ class OverviewPage(MetadataPageMixin, Page):
     de_content_panels = [
         FieldPanel('page_title_de'),
         FieldPanel('page_intro_de'),
-        StreamFieldPanel('body_de'),
+        FieldPanel('body_de'),
     ]
 
     en_content_panels = [
         FieldPanel('page_title_en'),
         FieldPanel('page_intro_en'),
-        StreamFieldPanel('body_en'),
+        FieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
         FieldPanel('page_title_de_ls'),
         FieldPanel('page_intro_de_ls'),
-        StreamFieldPanel('body_de_ls'),
+        FieldPanel('body_de_ls'),
     ]
 
     common_panels = [
@@ -271,17 +271,17 @@ class DetailPage(Page):
 
     de_content_panels = [
         FieldPanel('page_title_de'),
-        StreamFieldPanel('body_de'),
+        FieldPanel('body_de'),
     ]
 
     en_content_panels = [
         FieldPanel('page_title_en'),
-        StreamFieldPanel('body_en'),
+        FieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
         FieldPanel('page_title_de_ls'),
-        StreamFieldPanel('body_de_ls'),
+        FieldPanel('body_de_ls'),
     ]
 
     common_panels = [
@@ -334,17 +334,17 @@ class SimplePage(Page):
 
     de_content_panels = [
         FieldPanel('page_title_de'),
-        StreamFieldPanel('body_de'),
+        FieldPanel('body_de'),
     ]
 
     en_content_panels = [
         FieldPanel('page_title_en'),
-        StreamFieldPanel('body_en'),
+        FieldPanel('body_en'),
     ]
 
     de_ls_content_panels = [
         FieldPanel('page_title_de_ls'),
-        StreamFieldPanel('body_de_ls'),
+        FieldPanel('body_de_ls'),
     ]
 
     common_panels = [

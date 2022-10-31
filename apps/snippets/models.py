@@ -4,7 +4,7 @@ from modelcluster.models import ClusterableModel
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import InlinePanel
 from wagtail.admin.panels import PageChooserPanel
-from wagtail.admin.panels import StreamFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Orderable
 from wagtail.snippets.models import register_snippet
@@ -79,7 +79,7 @@ class MenuItem(models.Model):
         FieldPanel('title_en'),
         FieldPanel('title_de_ls'),
         PageChooserPanel('link_page'),
-        StreamFieldPanel('subpages')
+        FieldPanel('subpages')
     ]
 
 

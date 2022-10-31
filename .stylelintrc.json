@@ -58,6 +58,7 @@
     "color-function-notation": null
   },
   "ignoreFiles": [
-    "**/_variables.scss"
+    "**/_variables.scss",
+    "**/berlin_css/*"
   ]
 }

@@ -32,6 +32,10 @@
       {
         "matchPackageNames": ["elasticsearch"],
         "allowedVersions": "=7"
+      },
+      {
+        "matchPackageNames": ["wagtail"],
+        "allowedVersions": "=4.1"
       }
     ],
 

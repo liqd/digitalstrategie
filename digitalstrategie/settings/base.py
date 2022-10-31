@@ -174,6 +174,10 @@ MEDIA_URL = '/media/'
 WAGTAIL_SITE_NAME = "digitalstrategie"
 WAGTAILIMAGES_IMAGE_MODEL = 'apps_images.CustomImage'
 
+# Base URL to use when referring to full URLs within the Wagtail admin backend -
+# e.g. in notification emails. Don't include '/admin' or a trailing slash
+WAGTAILADMIN_BASE_URL = 'http://localhost:8006'
+
 WAGTAILADMIN_RICH_TEXT_EDITORS = {
     'default': {
         'WIDGET': 'wagtail.admin.rich_text.DraftailRichTextArea',

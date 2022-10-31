@@ -4,14 +4,14 @@ from wagtail.admin.panels import MultiFieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import PageChooserPanel
 from wagtail.admin.panels import TabbedInterface
-from wagtail.contrib.settings.models import BaseSetting
+from wagtail.contrib.settings.models import BaseSiteSetting
 from wagtail.contrib.settings.models import register_setting
 
 from apps.contrib.translations import TranslatedField
 
 
 @register_setting
-class ImportantPages(BaseSetting):
+class ImportantPages(BaseSiteSetting):
     imprint = models.ForeignKey(
         'wagtailcore.Page',
         related_name='important_page_imprint',
@@ -34,7 +34,7 @@ class ImportantPages(BaseSetting):
 
 
 @register_setting
-class Newsletter(BaseSetting):
+class Newsletter(BaseSiteSetting):
     sendinblue_api_key = models.CharField(
         max_length=90,
         help_text='Your Sendinblue api key')
@@ -49,7 +49,7 @@ class Newsletter(BaseSetting):
 
 
 @register_setting
-class Downloads(BaseSetting):
+class Downloads(BaseSiteSetting):
     gruenbuch = models.ForeignKey(
         'wagtaildocs.Document',
         null=True,
@@ -64,7 +64,7 @@ class Downloads(BaseSetting):
 
 
 @register_setting
-class Accessibility(BaseSetting):
+class Accessibility(BaseSiteSetting):
     feedback_name = models.CharField(max_length=255, blank=True)
     feedback_email = models.EmailField(max_length=255, blank=True)
     feedback_phone = models.CharField(max_length=255, blank=True)

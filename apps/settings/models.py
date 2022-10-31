@@ -6,7 +6,7 @@ from wagtail.admin.panels import PageChooserPanel
 from wagtail.admin.panels import TabbedInterface
 from wagtail.contrib.settings.models import BaseSetting
 from wagtail.contrib.settings.models import register_setting
-from wagtail.documents.edit_handlers import DocumentChooserPanel
+from wagtail.documents.edit_handlers import FieldPanel
 
 from apps.contrib.translations import TranslatedField
 
@@ -60,7 +60,7 @@ class Downloads(BaseSetting):
     )
 
     panels = [
-        DocumentChooserPanel('gruenbuch'),
+        FieldPanel('gruenbuch'),
     ]
 
 

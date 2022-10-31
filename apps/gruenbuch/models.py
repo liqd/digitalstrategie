@@ -5,7 +5,7 @@ from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import TabbedInterface
 from wagtail import fields
 from wagtail.models import Page
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.images.edit_handlers import FieldPanel
 from wagtail.search import index
 from wagtailmetadata.models import MetadataPageMixin
 
@@ -94,7 +94,7 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
-        ImageChooserPanel('intro_image'),
+        FieldPanel('intro_image'),
     ]
 
     edit_handler = TabbedInterface([

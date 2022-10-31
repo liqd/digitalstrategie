@@ -1,5 +1,5 @@
 from django.utils.html import mark_safe
-from wagtail.core.models import Site
+from wagtail.models import Site
 
 from apps.settings.models import ImportantPages
 

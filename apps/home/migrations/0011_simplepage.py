@@ -2,8 +2,8 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -18,9 +18,9 @@ class Migration(migrations.Migration):
             name='SimplePage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.page')),
-                ('body_de', wagtail.core.fields.StreamField([('paragraph', wagtail.core.blocks.RichTextBlock())])),
-                ('body_en', wagtail.core.fields.StreamField([('paragraph', wagtail.core.blocks.RichTextBlock())], blank=True)),
-                ('body_de_ls', wagtail.core.fields.StreamField([('paragraph', wagtail.core.blocks.RichTextBlock())], blank=True)),
+                ('body_de', wagtail.fields.StreamField([('paragraph', wagtail.blocks.RichTextBlock())])),
+                ('body_en', wagtail.fields.StreamField([('paragraph', wagtail.blocks.RichTextBlock())], blank=True)),
+                ('body_de_ls', wagtail.fields.StreamField([('paragraph', wagtail.blocks.RichTextBlock())], blank=True)),
             ],
             options={
                 'abstract': False,

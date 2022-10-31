@@ -1,4 +1,4 @@
-from wagtail.core import blocks
+from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
 HELPTEXT_RICHTEXT_A11Y = '''For accessibility please make sure that you do not

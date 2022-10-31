@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.fields
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -24,9 +24,9 @@ class Migration(migrations.Migration):
                 ('page_title_de', models.CharField(blank=True, max_length=120)),
                 ('page_title_en', models.CharField(blank=True, max_length=120)),
                 ('page_title_de_ls', models.CharField(blank=True, max_length=120)),
-                ('page_intro_de', wagtail.core.fields.RichTextField(blank=True, default='', verbose_name='Grünbuch Overview page introduction')),
-                ('page_intro_en', wagtail.core.fields.RichTextField(blank=True, default='', verbose_name='Grünbuch Overview page introduction')),
-                ('page_intro_de_ls', wagtail.core.fields.RichTextField(blank=True, default='', verbose_name='Grünbuch Overview page introduction')),
+                ('page_intro_de', wagtail.fields.RichTextField(blank=True, default='', verbose_name='Grünbuch Overview page introduction')),
+                ('page_intro_en', wagtail.fields.RichTextField(blank=True, default='', verbose_name='Grünbuch Overview page introduction')),
+                ('page_intro_de_ls', wagtail.fields.RichTextField(blank=True, default='', verbose_name='Grünbuch Overview page introduction')),
                 ('intro_image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='apps_images.customimage')),
             ],
             options={

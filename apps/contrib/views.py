@@ -1,5 +1,5 @@
 from django.views.generic import ListView
-from wagtail.core.models import Page
+from wagtail.models import Page
 from wagtail.search.backends import get_search_backend
 
 from apps.contrib.translations import get_search_fields

@@ -1,5 +1,5 @@
 from django import template
-from wagtail.core.models import Site
+from wagtail.models import Site
 from wagtailmetadata import tags
 
 register = template.Library()

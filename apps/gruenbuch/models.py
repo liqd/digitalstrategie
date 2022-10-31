@@ -1,11 +1,9 @@
 from django.db import models
+from wagtail import fields
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import ObjectList
-from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import TabbedInterface
-from wagtail import fields
 from wagtail.models import Page
-from wagtail.images.edit_handlers import FieldPanel
 from wagtail.search import index
 from wagtailmetadata.models import MetadataPageMixin
 

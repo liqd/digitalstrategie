@@ -38,9 +38,10 @@ class HomePage(MetadataPageMixin, Page):
     page_subtitle_de_ls = models.CharField(
         max_length=255, blank=True, verbose_name=('Home page subtitle de ls'))
 
-    body_de = fields.StreamField(page_blocks)
-    body_en = fields.StreamField(page_blocks, blank=True)
-    body_de_ls = fields.StreamField(page_blocks, blank=True)
+    body_de = fields.StreamField(page_blocks, use_json_field=True)
+    body_en = fields.StreamField(page_blocks, blank=True, use_json_field=True)
+    body_de_ls = fields.StreamField(
+        page_blocks, blank=True, use_json_field=True)
 
     header_image = models.ForeignKey(
         'apps_images.CustomImage',
@@ -166,9 +167,12 @@ class OverviewPage(MetadataPageMixin, Page):
         blank=True, default="", verbose_name="Overview page introduction",
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
 
-    body_de = fields.StreamField(teaser_blocks, blank=True)
-    body_en = fields.StreamField(teaser_blocks, blank=True)
-    body_de_ls = fields.StreamField(teaser_blocks, blank=True)
+    body_de = fields.StreamField(
+        teaser_blocks, blank=True, use_json_field=True)
+    body_en = fields.StreamField(
+        teaser_blocks, blank=True, use_json_field=True)
+    body_de_ls = fields.StreamField(
+        teaser_blocks, blank=True, use_json_field=True)
 
     page_title = TranslatedField(
         'page_title_de',
@@ -251,9 +255,10 @@ class DetailPage(Page):
     page_title_de_ls = models.CharField(
         max_length=120, blank=True)
 
-    body_de = fields.StreamField(page_blocks)
-    body_en = fields.StreamField(page_blocks, blank=True)
-    body_de_ls = fields.StreamField(page_blocks, blank=True)
+    body_de = fields.StreamField(page_blocks, use_json_field=True)
+    body_en = fields.StreamField(page_blocks, blank=True, use_json_field=True)
+    body_de_ls = fields.StreamField(
+        page_blocks, blank=True, use_json_field=True)
 
     page_title = TranslatedField(
         'page_title_de',
@@ -314,9 +319,10 @@ class SimplePage(Page):
     page_title_de_ls = models.CharField(
         max_length=120, blank=True)
 
-    body_de = fields.StreamField(page_blocks)
-    body_en = fields.StreamField(page_blocks, blank=True)
-    body_de_ls = fields.StreamField(page_blocks, blank=True)
+    body_de = fields.StreamField(page_blocks, use_json_field=True)
+    body_en = fields.StreamField(page_blocks, blank=True, use_json_field=True)
+    body_de_ls = fields.StreamField(
+        page_blocks, blank=True, use_json_field=True)
 
     page_title = TranslatedField(
         'page_title_de',

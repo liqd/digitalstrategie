@@ -52,7 +52,8 @@ class MenuItem(models.Model):
             'These Links will be displayed as sebmenu items. '
             'Either in dropdowns or as items below a headline.'
         ),
-        verbose_name='Submenu'
+        verbose_name='Submenu',
+        use_json_field=True
     )
 
     title = TranslatedField(

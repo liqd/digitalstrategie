@@ -1,8 +1,4 @@
 // overwrites for styleguide
-.ds-block {
-    padding-top: 3 * $spacer !important;
-}
-
 .ds-block--fullwidth {
     @media print, (max-width: 64.001rem) {
         // to ensure coloured blocks with no images go to page edge on mobile
@@ -14,15 +10,24 @@
     }
 }
 
-.ds-block,
-.ds-block--img {
-    padding-bottom: 3 * $spacer !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    border: none !important;
+.ds-block--base {
+    margin-top: 50px; // to be inline with styleguide
+}
 
-    .background-image + .content-container *:not(.button) {
-        color: $black;
+.ds-block {
+    &--green,
+    &--yellow,
+    &--pink,
+    &--purple {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+        margin-bottom: 0; // overwrite
+        margin-top: 0 !important;
+        border: none !important;
+
+        .background-image + .content-container *:not(.button) {
+            color: $black;
+        }
     }
 
     &--green {
@@ -33,8 +38,6 @@
         // teaser centered styling
         .background-image + .content-container *:not(.button) {
             color: $white !important;
-            border-color: $white;
-            border-width: 1px;
         }
 
         // richtext and cta centered styling
@@ -42,11 +45,13 @@
         h2,
         h3,
         h3:after,
-        h4 {
-            background-color: $green !important;
+        h4,
+        .button.ds-block__button-clear,
+        .button.ds-block__button-clear:after {
             color: $white !important;
-            border-color: $white;
+            border-color: $white !important;
             border-width: 1px;
+            background-color: inherit !important;
         }
     }
 
@@ -62,14 +67,9 @@
         background-color: $purple !important;
     }
 
-    &--body-bg {
-        background-color: $white !important;
-    }
-
     &--yellow,
     &--pink,
-    &--purple,
-    &--body-bg {
+    &--purple {
         opacity: 1 !important; // overwrite
 
         .js-accordion {
@@ -80,13 +80,11 @@
         .button.ds-block__button-clear:after {
             color: $black !important;
             border-color: $black !important;
+            border-width: 1px;
+            background-color: inherit !important;
         }
     }
 
-    @media print, (min-width: 64.001rem) {
-        padding-top: 4 * $spacer !important;
-        padding-bottom: 4 * $spacer !important;
-    }
 
     @media print {
         background-color: none !important;
@@ -124,4 +122,8 @@
     h4:nth-child(1) {
         margin-top: 0 !important;
     }
+}
+
+.ds-block__form {
+    margin-bottom: 0;
 }

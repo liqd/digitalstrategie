@@ -1,6 +1,6 @@
 {% load static i18n widget_tweaks form_field_tags %}
 
-<section class="modul-teaser-marketing fullwidth ds-block--fullwidth ds-block {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}ds-block--body-bg{% endif %}">
+<section class="modul-teaser-marketing fullwidth ds-block--base {% if self.background_color %}ds-block--fullwidth ds-block--{{ self.background_color }}{% endif %}">
     <div class="content-container fullwidth__inner">
         {% if self.title %}
         <h2 class="title">
@@ -8,7 +8,7 @@
         </h2>
         {% endif %}
 
-        <form name="form1" id="newsletter_form" action="/newsletter-signup/" method="POST" novalidate>
+        <form name="form1" class="{% if self.background_color %}ds-block__form{% endif %}" id="newsletter_form" action="/newsletter-signup/" method="POST" novalidate>
             <div class="form-group">
               <label for="id_email" class="form-label">{{ self.email_field_label }}</label>
               <input class="form-control" type="email" id="id_email" name="email" required="" aria-required="true">
@@ -28,7 +28,7 @@
 
           <div class="form-actions" id="id_form_action">
               <div class="form-actions__right">
-                  <button value="{% trans 'Subscribe' %}" class="button" type="button" onclick="window.ValidateForm(document.newsletter_form)">{% trans 'Subscribe' %}</button>
+                  <button value="{% trans 'Subscribe' %}" class="button ds-block__button-clear" type="button" onclick="window.ValidateForm(document.newsletter_form)">{% trans 'Subscribe' %}</button>
               </div>
           </div>
         </form>

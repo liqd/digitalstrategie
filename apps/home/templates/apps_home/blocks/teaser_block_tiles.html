@@ -3,7 +3,7 @@
 <section class="modul-teasertiles">
     <h2 class="title">{{ value.title }}</h2>
     <div class=teasertiles__inner>
-        <ul class="flexgrid grid--4">
+        <ul>
           {% for value in self.tile %}
             <li>
                 <div class="teasertile ds-teasertile" data-add-clickable-area="full">
@@ -15,7 +15,7 @@
                     </div>
                     <div class="ds-teasertile__info">
                         <div class="ds-teasertile__info-img">
-                            {% image value.icon fill-50x50 as image %}
+                            {% image value.icon max-200x200 as image %}
                             <img src="{{ image.url }}" alt="{{ image.alt }}">
                         </div>
                         <div class="ds-teasertile__info-title">

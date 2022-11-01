@@ -1,4 +1,8 @@
 // new styles that are fine with berlin.de styling
+.thesis-ds-block {
+    background-color: inherit;
+}
+
 .thesis-ds-block__title {
     padding-bottom: 2 * $spacer;
     text-align: center;
@@ -7,7 +11,7 @@
 .thesis-ds-block__thesis {
     padding-left: $spacer;
 
-    // copied from berlin_marketing.css
+    // overwrite body style, copied from old version of berlin styles
     font-size: $font-size-md;
     color: #000;
     line-height: $line-height-md;

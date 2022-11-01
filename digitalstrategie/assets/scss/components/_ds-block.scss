@@ -76,7 +76,8 @@
             border-color: $black !important;
         }
 
-        .ds-block__button-clear {
+        .button.ds-block__button-clear,
+        .button.ds-block__button-clear:after {
             color: $black !important;
             border-color: $black !important;
         }

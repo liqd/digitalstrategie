@@ -10,19 +10,18 @@
             {{ self.faq_title }}
         </h2>
         {% endif %}
+        <ul aria-label="Faq" class="js-accordion" id="accordion{{ identifier }}">
         {% for item in self.accordion_items %}
-        <article class="modul-faq js-accordion" id="accordion_{{ identifier }}{{ forloop.counter }}">
-           <h3 class="title js-accordion__heading">
-               {{ item.title }}
-           </h3>
-           <div class="panel js-accordion__panel">
-               <div class="text">
-                   <div class="textile">
-                     <p>{{ item.body }}</p>
-                   </div>
-               </div>
-           </div>
-       </article>
+            <li>
+              <strong class="js-accordion__heading">{{ item.title }}</strong>
+              <div class="js-accordion__panel">
+                        <div class="text">
+                    <div class="textile">
+                      <p>{{ item.body }}</p>
+                    </div>
+                </div>
+              </div>
+            </li>
         {% endfor %}
     </div>
 </section>

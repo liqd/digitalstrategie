@@ -31,3 +31,11 @@ footer,
 .u-d-none {
     display: none !important;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    overflow: visible; // overwrite of berlin auto
+}

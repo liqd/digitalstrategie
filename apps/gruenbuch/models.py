@@ -39,15 +39,15 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
 
     page_intro_de = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Grünbuch Overview page introduction",
+        verbose_name="Page introduction de",
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_en = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Grünbuch Overview page introduction",
+        verbose_name="Page introduction en",
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_de_ls = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Grünbuch Overview page introduction",
+        verbose_name="Page introduction de ls",
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
 
     body_de = fields.StreamField(page_blocks, blank=True)
@@ -103,7 +103,8 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
-    subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
+    subpage_types = ['apps_gruenbuch.GruenbuchDetailPage',
+                     'apps_gruenbuch.GruenbuchIndexPage']
 
     search_fields = Page.search_fields + [
         index.SearchField('page_title_de', partial_match=True),
@@ -113,6 +114,15 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
         index.SearchField('page_intro_en', partial_match=True),
         index.SearchField('page_intro_de_ls', partial_match=True),
     ]
+
+
+class GruenbuchIndexPage(GruenbuchOverviewPage):
+    template = 'gruenbuch_overview_page.html'
+
+    class Meta:
+        verbose_name = 'Gruenbuch Index Page'
+
+    subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
 
 
 class GruenbuchDetailPage(Page):

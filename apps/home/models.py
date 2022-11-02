@@ -240,6 +240,8 @@ class DetailPage(Page):
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('quote', apps_blocks.QuoteBlock()),
         ('newsletter_block', apps_blocks.NewsletterBlock()),
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle())
     ]
     page_title_de = models.CharField(
         max_length=120, blank=False)

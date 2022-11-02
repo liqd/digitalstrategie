@@ -105,7 +105,9 @@ class HomePage(MetadataPageMixin, Page):
                      'apps_home.SimplePage',
                      'apps_gruenbuch.GruenbuchOverviewPage',
                      'apps_forms.ContactFormPage',
-                     'apps_forms.ParticipationFormPage']
+                     'apps_forms.ParticipationFormPage',
+                     'apps_home.MicrositeOverviewPage',
+                     'apps_home.MicrositeDetailPage']
 
     search_fields = Page.search_fields + [
         index.SearchField('page_title_de', partial_match=True),
@@ -139,15 +141,6 @@ class OverviewPage(MetadataPageMixin, Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+'
-    )
-
-    background_color = models.CharField(
-        choices=apps_blocks.ColorChoiceBlock.choices,
-        help_text='This sets the background colour of the introduction part '
-                  'of this page. Not choosing a colour will result in '
-                  'a white background.',
-        blank=True,
-        max_length=50
     )
 
     page_title_de = models.CharField(
@@ -213,7 +206,6 @@ class OverviewPage(MetadataPageMixin, Page):
     common_panels = [
         FieldPanel('title'),
         FieldPanel('intro_image'),
-        FieldPanel('background_color'),
     ]
 
     edit_handler = TabbedInterface([
@@ -228,7 +220,8 @@ class OverviewPage(MetadataPageMixin, Page):
                      'apps_home.SimplePage',
                      'apps_gruenbuch.GruenbuchOverviewPage',
                      'apps_forms.ContactFormPage',
-                     'apps_forms.ParticipationFormPage']
+                     'apps_forms.ParticipationFormPage',
+                     'apps_home.MicrositeOverviewPage']
 
     search_fields = Page.search_fields + [
         index.SearchField('page_title_de', partial_match=True),
@@ -312,6 +305,193 @@ class SimplePage(Page):
         ('paragraph', blocks.RichTextBlock())
     ]
 
+    page_title_de = models.CharField(
+        max_length=120, blank=False)
+    page_title_en = models.CharField(
+        max_length=120, blank=True)
+    page_title_de_ls = models.CharField(
+        max_length=120, blank=True)
+
+    body_de = fields.StreamField(page_blocks, use_json_field=True)
+    body_en = fields.StreamField(page_blocks, blank=True, use_json_field=True)
+    body_de_ls = fields.StreamField(
+        page_blocks, blank=True, use_json_field=True)
+
+    page_title = TranslatedField(
+        'page_title_de',
+        'page_title_en',
+        'page_title_de_ls',
+    )
+
+    body = TranslatedField(
+        'body_de',
+        'body_en',
+        'body_de_ls',
+    )
+
+    de_content_panels = [
+        FieldPanel('page_title_de'),
+        FieldPanel('body_de'),
+    ]
+
+    en_content_panels = [
+        FieldPanel('page_title_en'),
+        FieldPanel('body_en'),
+    ]
+
+    de_ls_content_panels = [
+        FieldPanel('page_title_de_ls'),
+        FieldPanel('body_de_ls'),
+    ]
+
+    common_panels = [
+        FieldPanel('title'),
+    ]
+
+    edit_handler = TabbedInterface([
+        ObjectList(common_panels, heading='Common'),
+        ObjectList(de_content_panels, heading='German'),
+        ObjectList(en_content_panels, heading='English'),
+        ObjectList(de_ls_content_panels, heading='Easy German'),
+    ])
+
+    subpage_types = []
+
+    search_fields = Page.search_fields + [
+        index.SearchField('body_de', partial_match=True),
+        index.SearchField('body_en', partial_match=True),
+        index.SearchField('body_de_ls', partial_match=True)
+    ]
+
+
+class MicrositeOverviewPage(MetadataPageMixin, Page):
+    """
+    (Almost) copy of OverviewPage.
+
+    To be used by certain editors, that will only have permission to edit
+    Microsite page types.
+    """
+
+    template = 'apps_home/overview_page.html'
+
+    teaser_blocks = [
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_tile', apps_blocks.TeaserBlockTile()),
+        ('paragraph', apps_blocks.ParagraphBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock()),
+        ('quote', apps_blocks.QuoteBlock()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
+    ]
+
+    intro_image = models.ForeignKey(
+        'apps_images.CustomImage',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    page_title_de = models.CharField(
+        max_length=120, blank=False)
+    page_title_en = models.CharField(
+        max_length=120, blank=True)
+    page_title_de_ls = models.CharField(
+        max_length=120, blank=True)
+
+    page_intro_de = fields.RichTextField(
+        blank=True, default="", verbose_name="Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
+    page_intro_en = fields.RichTextField(
+        blank=True, default="", verbose_name="Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
+    page_intro_de_ls = fields.RichTextField(
+        blank=True, default="", verbose_name="Overview page introduction",
+        help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
+
+    body_de = fields.StreamField(
+        teaser_blocks, blank=True, use_json_field=True)
+    body_en = fields.StreamField(
+        teaser_blocks, blank=True, use_json_field=True)
+    body_de_ls = fields.StreamField(
+        teaser_blocks, blank=True, use_json_field=True)
+
+    page_title = TranslatedField(
+        'page_title_de',
+        'page_title_en',
+        'page_title_de_ls',
+    )
+
+    page_intro = TranslatedField(
+        'page_intro_de',
+        'page_intro_en',
+        'page_intro_de_ls'
+    )
+
+    body = TranslatedField(
+        'body_de',
+        'body_en',
+        'body_de_ls',
+    )
+
+    de_content_panels = [
+        FieldPanel('page_title_de'),
+        FieldPanel('page_intro_de'),
+        FieldPanel('body_de'),
+    ]
+
+    en_content_panels = [
+        FieldPanel('page_title_en'),
+        FieldPanel('page_intro_en'),
+        FieldPanel('body_en'),
+    ]
+
+    de_ls_content_panels = [
+        FieldPanel('page_title_de_ls'),
+        FieldPanel('page_intro_de_ls'),
+        FieldPanel('body_de_ls'),
+    ]
+
+    common_panels = [
+        FieldPanel('title'),
+        FieldPanel('intro_image'),
+    ]
+
+    edit_handler = TabbedInterface([
+        ObjectList(common_panels, heading='Common'),
+        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
+        ObjectList(de_content_panels, heading='German'),
+        ObjectList(en_content_panels, heading='English'),
+        ObjectList(de_ls_content_panels, heading='Easy German'),
+    ])
+
+    subpage_types = ['apps_home.MicrositeDetailPage']
+
+    search_fields = Page.search_fields + [
+        index.SearchField('page_title_de', partial_match=True),
+        index.SearchField('page_title_en', partial_match=True),
+        index.SearchField('page_title_de_ls', partial_match=True),
+        index.SearchField('page_intro_de', partial_match=True),
+        index.SearchField('page_intro_en', partial_match=True),
+        index.SearchField('page_intro_de_ls', partial_match=True),
+    ]
+
+
+class MicrositeDetailPage(Page):
+    """
+    (Almost) copy of DetailPage.
+
+    To be used by certain editors, that will only have permission to edit
+    Microsite page types.
+    """
+
+    template = 'apps_home/detail_page.html'
+
+    page_blocks = [
+        ('paragraph', apps_blocks.ParagraphBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock()),
+        ('text_with_image', apps_blocks.TextWithImageBlock()),
+        ('quote', apps_blocks.QuoteBlock()),
+    ]
     page_title_de = models.CharField(
         max_length=120, blank=False)
     page_title_en = models.CharField(

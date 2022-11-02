@@ -19,7 +19,8 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name='+',
+        help_text='Image ratio has to be 2:1 or 4:3.'
     )
 
     page_blocks = [

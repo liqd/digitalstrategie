@@ -50,9 +50,10 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
         verbose_name="Page introduction de ls",
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
 
-    body_de = fields.StreamField(page_blocks, blank=True)
-    body_en = fields.StreamField(page_blocks, blank=True)
-    body_de_ls = fields.StreamField(page_blocks, blank=True)
+    body_de = fields.StreamField(page_blocks, blank=True, use_json_field=True)
+    body_en = fields.StreamField(page_blocks, blank=True, use_json_field=True)
+    body_de_ls = fields.StreamField(
+        page_blocks, blank=True, use_json_field=True)
 
     page_title = TranslatedField(
         'page_title_de',
@@ -117,6 +118,12 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
 
 
 class GruenbuchIndexPage(GruenbuchOverviewPage):
+    """
+    Copy of OverviewPage with new name.
+
+    To be used by as 'chapter overview' page.
+    """
+
     template = 'gruenbuch_overview_page.html'
 
     class Meta:
@@ -145,9 +152,10 @@ class GruenbuchDetailPage(Page):
     subtitle_en = models.CharField(max_length=120, blank=True)
     subtitle_de_ls = models.CharField(max_length=120, blank=True)
 
-    body_de = fields.StreamField(page_blocks)
-    body_en = fields.StreamField(page_blocks, blank=True)
-    body_de_ls = fields.StreamField(page_blocks, blank=True)
+    body_de = fields.StreamField(page_blocks, use_json_field=True)
+    body_en = fields.StreamField(page_blocks, blank=True, use_json_field=True)
+    body_de_ls = fields.StreamField(
+        page_blocks, blank=True, use_json_field=True)
 
     page_title = TranslatedField(
         'page_title_de',

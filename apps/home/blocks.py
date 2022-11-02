@@ -210,8 +210,7 @@ class TeaserBlockColumn(blocks.StructBlock):
 class IconTextLinkBlock(blocks.StructBlock):
     icon = ImageChooserBlock()
     title = blocks.CharBlock(max_length=70)
-    link = blocks.PageChooserBlock(
-        page_type=['apps_gruenbuch.GruenbuchDetailPage'])
+    link = blocks.PageChooserBlock()
     link_description = blocks.TextBlock(
         max_length=70,
         label='Link Description',

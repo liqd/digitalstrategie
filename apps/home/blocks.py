@@ -1,4 +1,5 @@
 from wagtail import blocks
+from wagtail.embeds import blocks as embed_blocks
 from wagtail.images.blocks import ImageChooserBlock
 
 HELPTEXT_RICHTEXT_A11Y = '''For accessibility please make sure that you do not
@@ -266,3 +267,29 @@ class NewsletterBlock(blocks.StructBlock):
         template = 'apps_home/blocks/newsletter_block.html'
         icon = 'mail'
         help_text = 'This form only works with sendinblue'
+
+
+class VideoBlock(blocks.StructBlock):
+
+    title = blocks.CharBlock(max_length=130, required=False)
+    caption = blocks.CharBlock(
+        max_length=255,
+        required=False,
+        help_text='Please insert a short description of the video '
+                  '(character limit 255).')
+    video = embed_blocks.EmbedBlock(help_text='You can only add links to '
+                                    'YouTube or Vimeo videos.')
+    preview_image = ImageChooserBlock(
+        required=False,
+        help_text='Add a preview image for the dsgvo video overlay.')
+    transcript = blocks.RichTextBlock(features=['bold', 'italic', 'ol', 'ul',
+                                                'link', 'document-link'],
+                                      help_text='You can add the video\'s '
+                                      'transcript here (unlimited '
+                                      'characters).',
+                                      required=False)
+
+    class Meta:
+        template = 'apps_home/blocks/video_block.html'
+        icon = 'placeholder'
+        label = 'Video Block'

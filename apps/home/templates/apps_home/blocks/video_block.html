@@ -1,0 +1,82 @@
+{% load static i18n wagtailimages_tags wagtailembeds_tags block_tags %}
+
+{% get_identifier value as identifier %}
+
+<section class="modul-video ds-block--base">
+    <h2 class="title">{{ value.title }}</h2>
+    <div class="video-container">
+        <div class="block-video__container">
+            <div class="accept_video block-video__video" id="accept-video{{ identifier }}">
+                {% if value.preview_image %}
+                  {% image value.preview_image fill-980x550 as image %}
+                  <img
+                    class="preview_image"
+                    src="{{ image.url }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy" />
+                {% endif %}
+                <p class="overlay_text">
+                  {% if 'youtube' in value.video.url %}
+                    {% trans 'By viewing the video, you agree that your data will be transmitted to <strong>YouTube</strong>. For more information see' %}
+                    <a target="_blank" href="https://www.google.de/intl/de/policies/privacy/">{% trans 'Data protection' %}</a>.
+                  {% elif 'vimeo' in value.video.url %}
+                    {% trans 'By viewing the video, you agree that your data will be transmitted to <strong>Vimeo</strong>.For more information see' %}
+                    <a target="_blank" href="https://vimeo.com/privacy">{% trans 'Data protection' %}</a>.
+                  {% else %}
+                    {% trans 'DSGVO compliant videos are not supproted by your browser' %}
+                  {% endif %}
+                </p>
+                <button
+                  id="video_accept_{{ identifier }}"
+                  class="button button--play setcookie overlay_video_go"
+                  type="button"
+                  onclick="window.showVideo()">
+                    {% trans 'Accept and play' %}
+                </button>
+
+                <template id="video-template{{ identifier }}">{% embed value.video.url "500" %}</template>
+            </div>
+            <div class="block-video__video" id="video-player{{ identifier }}"></div>
+        </div>
+        <p class="player-formats" id="player__{{ identifier }}">
+          {% trans 'Format:' %}
+            <a href="{{value.video.url}}" target="_blank">
+              {% if 'youtube' in value.video.url %}
+                video/youtube
+              {% elif 'vimeo' in value.video.url %}
+                video/vimeo
+              {% else %}
+                video/unknown
+              {% endif %}
+            </a>
+        </p>
+    </div>
+    <div class="caption">
+        <p>{{ value.caption }}</p>
+    </div>
+    {% if value.transcript %}
+    <ul aria-label="Faq" class="js-accordion" id="accordion{{ identifier }}">
+        <li>
+          <strong class="js-accordion__heading">{% trans 'Video transcript'%}</strong>
+          <div class="js-accordion__panel">
+            <div class="text">
+                <div class="textile">
+                  <p>{{ value.transcript }}</p>
+                </div>
+            </div>
+          </div>
+        </li>
+    </ul>
+    {% endif %}
+</section>
+
+<!-- function to show video, added with script tag due to need of identifier -->
+<script type="text/javascript">
+  function showVideo() {
+    var templateTag = document.getElementById("video-template{{ identifier }}")
+    var videoTag = document.getElementById("video-player{{ identifier }}")
+    var overlayTag = document.getElementById("accept-video{{ identifier }}").style.display = "none"
+    var showVideo = templateTag.content.cloneNode(true)
+    videoTag.appendChild(showVideo)
+  }
+</script>

@@ -6,6 +6,8 @@ import os
 
 from django.conf import locale
 from django.utils.translation import gettext_lazy as _
+from wagtail.embeds.oembed_providers import vimeo
+from wagtail.embeds.oembed_providers import youtube
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -173,6 +175,12 @@ MEDIA_URL = '/media/'
 # Wagtail settings
 WAGTAIL_SITE_NAME = "digitalstrategie"
 WAGTAILIMAGES_IMAGE_MODEL = 'apps_images.CustomImage'
+WAGTAILEMBEDS_FINDERS = [
+    {
+        'class': 'wagtail.embeds.finders.oembed',
+        'providers': [youtube, vimeo],
+    }
+]
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash

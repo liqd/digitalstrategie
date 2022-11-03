@@ -29,6 +29,7 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
         ('paragraph', apps_blocks.ParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('video_block', apps_blocks.VideoBlock())
     ]
 
     page_title_de = models.CharField(
@@ -142,7 +143,8 @@ class GruenbuchDetailPage(Page):
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('teaser_columns', apps_blocks.TeaserBlockColumn()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
-        ('teaser_tile', apps_blocks.TeaserBlockTile())
+        ('teaser_tile', apps_blocks.TeaserBlockTile()),
+        ('video_block', apps_blocks.VideoBlock())
     ]
 
     page_title_de = models.CharField(max_length=120)

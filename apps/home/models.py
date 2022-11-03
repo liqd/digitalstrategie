@@ -22,6 +22,7 @@ class HomePage(MetadataPageMixin, Page):
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
         ('newsletter_block', apps_blocks.NewsletterBlock()),
+        ('video_block', apps_blocks.VideoBlock())
     ]
 
     page_title_de = models.CharField(
@@ -133,6 +134,7 @@ class OverviewPage(MetadataPageMixin, Page):
         ('quote', apps_blocks.QuoteBlock()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
         ('newsletter_block', apps_blocks.NewsletterBlock()),
+        ('video_block', apps_blocks.VideoBlock())
     ]
 
     intro_image = models.ForeignKey(
@@ -241,7 +243,8 @@ class DetailPage(Page):
         ('quote', apps_blocks.QuoteBlock()),
         ('newsletter_block', apps_blocks.NewsletterBlock()),
         ('teaser_columns', apps_blocks.TeaserBlockColumn()),
-        ('teaser_single', apps_blocks.TeaserBlockSingle())
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('video_block', apps_blocks.VideoBlock())
     ]
     page_title_de = models.CharField(
         max_length=120, blank=False)
@@ -383,6 +386,7 @@ class MicrositeOverviewPage(MetadataPageMixin, Page):
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('video_block', apps_blocks.VideoBlock())
     ]
 
     intro_image = models.ForeignKey(
@@ -494,7 +498,8 @@ class MicrositeDetailPage(Page):
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('quote', apps_blocks.QuoteBlock()),
         ('teaser_columns', apps_blocks.TeaserBlockColumn()),
-        ('teaser_single', apps_blocks.TeaserBlockSingle())
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('video_block', apps_blocks.VideoBlock())
     ]
 
     page_title_de = models.CharField(

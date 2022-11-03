@@ -1,5 +1,4 @@
 from wagtail import blocks
-from wagtail import fields
 from wagtail.images.blocks import ImageChooserBlock
 
 HELPTEXT_RICHTEXT_A11Y = '''For accessibility please make sure that you do not
@@ -81,11 +80,11 @@ class TextWithImageBlock(blocks.StructBlock):
         icon = 'image'
 
 
-# RichTextField required to ensure same richtext options throughout site
-# editing fetaures of RichTextBlock broken in Wagtail4.1
 class ParagraphBlock(blocks.StructBlock):
-    body = fields.RichTextField(
-        help_text=HELPTEXT_RICHTEXT_A11Y
+    body = blocks.RichTextBlock(
+        required=True,
+        help_text=HELPTEXT_RICHTEXT_A11Y,
+        editor='default'
     )
 
     class Meta:

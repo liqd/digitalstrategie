@@ -10,9 +10,14 @@
     }
 }
 
-.ds-block--base {
+// needed for if non coloured blocks come straight after hero
+/* stylelint-disable */
+.ds-block--base,
+#layout-grid #layout-grid__area--maincontent > .ds-block--base {
     margin-top: 50px; // to be inline with styleguide
 }
+/* stylelint-enable */
+
 
 .ds-block {
     &--green,
@@ -99,7 +104,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: -$spacer;
 
     @media print, (min-width: 64.001rem) {
 

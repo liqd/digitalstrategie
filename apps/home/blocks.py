@@ -84,7 +84,8 @@ class ParagraphBlock(blocks.StructBlock):
     body = blocks.RichTextBlock(
         required=True,
         help_text=HELPTEXT_RICHTEXT_A11Y,
-        editor='default'
+        features=['bold', 'italic', 'h2', 'h3', 'ol', 'ul', 'hr', 'link',
+                  'document-link', 'image']
     )
 
     class Meta:

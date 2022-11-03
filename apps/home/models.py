@@ -304,7 +304,7 @@ class DetailPage(Page):
 
 class SimplePage(Page):
     page_blocks = [
-        ('paragraph', blocks.RichTextBlock())
+        ('paragraph', apps_blocks.ParagraphBlock())
     ]
 
     page_title_de = models.CharField(

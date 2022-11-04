@@ -83,7 +83,7 @@ msgstr "Titel"
 
 #: apps/forms/models.py:170
 msgid "Your message to us..."
-msgstr "Ihr Nachricht an uns..."
+msgstr "Ihre Nachricht an uns..."
 
 #: apps/forms/models.py:195
 msgid ""
@@ -116,7 +116,7 @@ msgid ""
 "If you wish to have your personal data deleted please write an e-mail to: <a "
 "href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
-"Wenn Sie ihre personenbezogenen Daten löschen lassen möchten, kontaktieren "
+"Wenn Sie Ihre personenbezogenen Daten löschen lassen möchten, kontaktieren "
 "Sie: <span>%(remove_email)s</span>"
 
 #: apps/forms/templates/apps_forms/includes/form.html:18

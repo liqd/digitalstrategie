@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 14:46+0000\n"
+"POT-Creation-Date: 2022-11-08 14:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,15 +156,45 @@ msgstr ""
 msgid "Next slide"
 msgstr ""
 
-#: digitalstrategie/settings/base.py:121
-msgid "English"
+#: apps/home/templates/apps_home/blocks/video_block.html:21
+msgid "By viewing the video, you agree that your data will be transmitted to"
 msgstr ""
 
-#: digitalstrategie/settings/base.py:122
-msgid "German"
+#: apps/home/templates/apps_home/blocks/video_block.html:27
+msgid ". For more information see"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/video_block.html:31
+msgid "Data protection"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/video_block.html:38
+msgid "Accept and play"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/video_block.html:42
+msgid ""
+"To protect your privacy this video can't be loaded because it's hosted by an "
+"unknown external provider."
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/video_block.html:51
+msgid "Format:"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/video_block.html:69
+msgid "Video transcript"
 msgstr ""
 
 #: digitalstrategie/settings/base.py:123
+msgid "English"
+msgstr ""
+
+#: digitalstrategie/settings/base.py:124
+msgid "German"
+msgstr ""
+
+#: digitalstrategie/settings/base.py:125
 msgid "Easy German"
 msgstr ""
 
@@ -190,14 +220,6 @@ msgstr ""
 
 #: digitalstrategie/templates/email_base.html:19
 msgid "Hello"
-msgstr ""
-
-#: digitalstrategie/templates/includes/footer.html:9
-msgid "To the top of the page"
-msgstr ""
-
-#: digitalstrategie/templates/includes/footer.html:10
-msgid "Related Links"
 msgstr ""
 
 #: digitalstrategie/templates/includes/header.html:9
@@ -308,6 +330,14 @@ msgstr ""
 #: digitalstrategie/templates/includes/header_language_switch.html:16
 #: digitalstrategie/templates/includes/header_language_switch.html:35
 msgid "select"
+msgstr ""
+
+#: digitalstrategie/templates/includes/upper_footer.html:9
+msgid "To the top of the page"
+msgstr ""
+
+#: digitalstrategie/templates/includes/upper_footer.html:10
+msgid "Related Links"
 msgstr ""
 
 #: digitalstrategie/templates/search_results.html:5

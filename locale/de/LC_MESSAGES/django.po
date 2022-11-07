@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 14:46+0000\n"
+"POT-Creation-Date: 2022-11-08 14:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,15 +168,51 @@ msgstr "Vorherige Seite"
 msgid "Next slide"
 msgstr "Nächstes Bild"
 
-#: digitalstrategie/settings/base.py:121
+#: apps/home/templates/apps_home/blocks/video_block.html:21
+msgid "By viewing the video, you agree that your data will be transmitted to"
+msgstr ""
+"Mit dem Aufruf des Videos erklären Sie sich einverstanden, dass Ihre Daten "
+"an "
+
+#: apps/home/templates/apps_home/blocks/video_block.html:27
+msgid ". For more information see"
+msgstr ""
+"übermittelt werden. Weitere Informationen finden Sie in unserer "
+"Datenschutzerklärung."
+
+#: apps/home/templates/apps_home/blocks/video_block.html:31
+msgid "Data protection"
+msgstr "Datenschutzerklärung"
+
+#: apps/home/templates/apps_home/blocks/video_block.html:38
+msgid "Accept and play"
+msgstr "Akzeptieren und Abspielen"
+
+#: apps/home/templates/apps_home/blocks/video_block.html:42
+msgid ""
+"To protect your privacy this video can't be loaded because it's hosted by an "
+"unknown external provider."
+msgstr ""
+"Zum Schutz Ihrer Privatsphäre kann dieses Video nicht geladen werden, da es "
+"von einem unbekannten externen Anbieter gehostet wird."
+
+#: apps/home/templates/apps_home/blocks/video_block.html:51
+msgid "Format:"
+msgstr "Formate:"
+
+#: apps/home/templates/apps_home/blocks/video_block.html:69
+msgid "Video transcript"
+msgstr "Videoabschrift"
+
+#: digitalstrategie/settings/base.py:123
 msgid "English"
 msgstr "Englisch"
 
-#: digitalstrategie/settings/base.py:122
+#: digitalstrategie/settings/base.py:124
 msgid "German"
 msgstr "Deutsch"
 
-#: digitalstrategie/settings/base.py:123
+#: digitalstrategie/settings/base.py:125
 msgid "Easy German"
 msgstr "Leichte Sprache"
 
@@ -203,14 +239,6 @@ msgstr "Zurück zur Startseite"
 #: digitalstrategie/templates/email_base.html:19
 msgid "Hello"
 msgstr "Hallo"
-
-#: digitalstrategie/templates/includes/footer.html:9
-msgid "To the top of the page"
-msgstr "Zum Seitenanfang"
-
-#: digitalstrategie/templates/includes/footer.html:10
-msgid "Related Links"
-msgstr "Weiterführende Links"
 
 #: digitalstrategie/templates/includes/header.html:9
 msgid "To the home page of Berlin.de"
@@ -325,6 +353,14 @@ msgstr "Sprachen"
 msgid "select"
 msgstr "auswählen"
 
+#: digitalstrategie/templates/includes/upper_footer.html:9
+msgid "To the top of the page"
+msgstr "Zum Seitenanfang"
+
+#: digitalstrategie/templates/includes/upper_footer.html:10
+msgid "Related Links"
+msgstr "Weiterführende Links"
+
 #: digitalstrategie/templates/search_results.html:5
 msgid "Gemeinsam Digital: Berlin - full-text search"
 msgstr "Gemeinsam Digital: Berlin - Volltextsuche"
@@ -355,3 +391,22 @@ msgstr "Ihre Suche nach"
 #: digitalstrategie/templates/search_results.html:70
 msgid "No results found"
 msgstr "Keine Ergebnisse gefunden"
+
+#~ msgid ""
+#~ "By viewing the video, you agree that your data will be transmitted to "
+#~ "<strong>YouTube</strong>. For more information see"
+#~ msgstr ""
+#~ "Mit dem Aufruf des Videos erklären Sie sich einverstanden, dass Ihre "
+#~ "Daten an <strong>YouTube</strong> übermittelt werden. Weitere "
+#~ "Informationen finden Sie in unserer "
+
+#~ msgid ""
+#~ "By viewing the video, you agree that your data will be transmitted to "
+#~ "<strong>Vimeo</strong>.For more information see"
+#~ msgstr ""
+#~ "Mit dem Aufruf des Videos erklären Sie sich einverstanden, dass Ihre "
+#~ "Daten an <strong>Vimeo</strong> übermittelt werden. Weitere Informationen "
+#~ "finden Sie in unserer "
+
+#~ msgid "DSGVO compliant videos are not supproted by your browser."
+#~ msgstr "DSGVO-konforme Videos werden von Ihrem Browser nicht unterstützt."

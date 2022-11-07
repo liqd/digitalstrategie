@@ -33,6 +33,18 @@
         .background-image + .content-container *:not(.button) {
             color: $black;
         }
+
+        @media print {
+            background-color: none !important;
+        }
+
+        @media screen and (max-width: 37.4375rem) {
+            /* stylelint-disable */
+            &.modul-teaser-marketing.imageteaser .image {
+                margin-top: -38px !important; // ensure even margins on mobile
+            }
+            /* stylelint-enable */
+        }
     }
 
     &--green {
@@ -89,21 +101,13 @@
             background-color: inherit !important;
         }
     }
-
-
-    @media print {
-        background-color: none !important;
-    }
-
-    .modul-teaser-marketing.imageteaser .image {
-        z-index: 5;
-    }
 }
 
 .hero__parallax {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: -1rem;
 
     @media print, (min-width: 64.001rem) {
 
@@ -113,6 +117,7 @@
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: bottom;
+        margin: initial;
     }
 }
 

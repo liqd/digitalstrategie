@@ -493,7 +493,10 @@ class MicrositeDetailPage(Page):
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('quote', apps_blocks.QuoteBlock()),
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle())
     ]
+
     page_title_de = models.CharField(
         max_length=120, blank=False)
     page_title_en = models.CharField(

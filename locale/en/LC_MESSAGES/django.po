@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 14:46+0000\n"
+"POT-Creation-Date: 2022-11-08 14:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,15 +166,47 @@ msgstr "Previous slide"
 msgid "Next slide"
 msgstr "Next slide"
 
-#: digitalstrategie/settings/base.py:121
+#: apps/home/templates/apps_home/blocks/video_block.html:21
+msgid "By viewing the video, you agree that your data will be transmitted to"
+msgstr "By viewing the video, you agree that your data will be transmitted to"
+
+#: apps/home/templates/apps_home/blocks/video_block.html:27
+msgid ". For more information see"
+msgstr ". For more information see"
+
+#: apps/home/templates/apps_home/blocks/video_block.html:31
+msgid "Data protection"
+msgstr "Data protection"
+
+#: apps/home/templates/apps_home/blocks/video_block.html:38
+msgid "Accept and play"
+msgstr "Accept and play"
+
+#: apps/home/templates/apps_home/blocks/video_block.html:42
+msgid ""
+"To protect your privacy this video can't be loaded because it's hosted by an "
+"unknown external provider."
+msgstr ""
+"To protect your privacy this video can't be loaded because it's hosted by an "
+"unknown external provider."
+
+#: apps/home/templates/apps_home/blocks/video_block.html:51
+msgid "Format:"
+msgstr "Format:"
+
+#: apps/home/templates/apps_home/blocks/video_block.html:69
+msgid "Video transcript"
+msgstr "Video transcript"
+
+#: digitalstrategie/settings/base.py:123
 msgid "English"
 msgstr "English"
 
-#: digitalstrategie/settings/base.py:122
+#: digitalstrategie/settings/base.py:124
 msgid "German"
 msgstr "German"
 
-#: digitalstrategie/settings/base.py:123
+#: digitalstrategie/settings/base.py:125
 msgid "Easy German"
 msgstr "Easy German"
 
@@ -201,14 +233,6 @@ msgstr "Back to landing page"
 #: digitalstrategie/templates/email_base.html:19
 msgid "Hello"
 msgstr "Hello"
-
-#: digitalstrategie/templates/includes/footer.html:9
-msgid "To the top of the page"
-msgstr "To the top of the page"
-
-#: digitalstrategie/templates/includes/footer.html:10
-msgid "Related Links"
-msgstr "Related Links"
 
 #: digitalstrategie/templates/includes/header.html:9
 msgid "To the home page of Berlin.de"
@@ -324,6 +348,14 @@ msgstr "Languages"
 msgid "select"
 msgstr "select"
 
+#: digitalstrategie/templates/includes/upper_footer.html:9
+msgid "To the top of the page"
+msgstr "To the top of the page"
+
+#: digitalstrategie/templates/includes/upper_footer.html:10
+msgid "Related Links"
+msgstr "Related Links"
+
 #: digitalstrategie/templates/search_results.html:5
 msgid "Gemeinsam Digital: Berlin - full-text search"
 msgstr "Gemeinsam Digital: Berlin - full-text search"
@@ -354,3 +386,32 @@ msgstr "Your search for"
 #: digitalstrategie/templates/search_results.html:70
 msgid "No results found"
 msgstr "No results found"
+
+#~ msgid "For more information see"
+#~ msgstr "For more information see"
+
+#~ msgid "To protect your privacy this video can\\\\"
+#~ msgstr "To protect your privacy this video can\\\\"
+
+#~ msgid "To protect your privacy this video can\\"
+#~ msgstr "To protect your privacy this video can\\"
+
+#~ msgid ""
+#~ "By viewing the video, you agree that your data will be transmitted to "
+#~ "<strong>YouTube</strong>. For more information see"
+#~ msgstr ""
+#~ "By viewing the video, you agree that your data will be transmitted to "
+#~ "<strong>YouTube</strong>. For more information see"
+
+#~ msgid ""
+#~ "By viewing the video, you agree that your data will be transmitted to "
+#~ "<strong>Vimeo</strong>.For more information see"
+#~ msgstr ""
+#~ "By viewing the video, you agree that your data will be transmitted to "
+#~ "<strong>Vimeo</strong>.For more information see"
+
+#~ msgid "DSGVO compliant videos are not supported by your browser."
+#~ msgstr "DSGVO compliant videos are not supported by your browser."
+
+#~ msgid "DSGVO compliant videos are not supproted by your browser"
+#~ msgstr "DSGVO compliant videos are not supproted by your browser"

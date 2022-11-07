@@ -1,18 +1,23 @@
 ---
 name: Issue template
-about: Please, fill in this template in order to help us understand the issue better
+about: Please fill in this template in order to help us understand the issue better, without the essential information we will not work on the issue
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-**URL:** 
-**user:** 
-**expected behaviour:** 
-**behaviour:** 
-**important screensize:**
-**device & browser:** 
-**Comment/Question:** 
+**Essential Information**
+**URL:**
+**device & browser:**
+**operating system (incl. version):**
+**behaviour:**
+**expected behaviour:**
 
-Screenshot?
+**Additional information if relevant**
+**user role:**
+**important screensize:**
+**Comment/Question:**
+
+**Screenshot if design related**:
+Since issues are public, make sure to not display personal or secret data.

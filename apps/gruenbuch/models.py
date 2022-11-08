@@ -29,7 +29,8 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
         ('paragraph', apps_blocks.ParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
-        ('video_block', apps_blocks.VideoBlock())
+        ('video_block', apps_blocks.VideoBlock()),
+        ('text_with_image', apps_blocks.TextWithImageBlock()),
     ]
 
     page_title_de = models.CharField(

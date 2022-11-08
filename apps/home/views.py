@@ -1,6 +1,7 @@
 import sib_api_v3_sdk
 from django.conf import settings
 from django.http import HttpResponse
+from django.http import HttpResponseNotFound
 from django.http import JsonResponse
 from sentry_sdk import capture_exception
 from sib_api_v3_sdk.rest import ApiException
@@ -34,3 +35,4 @@ def newsletter_view(request):
                 else:
                     capture_exception(e)
         return JsonResponse(form.errors, status=400)
+    return HttpResponseNotFound()

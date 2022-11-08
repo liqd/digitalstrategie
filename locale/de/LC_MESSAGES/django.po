@@ -391,22 +391,3 @@ msgstr "Ihre Suche nach"
 #: digitalstrategie/templates/search_results.html:70
 msgid "No results found"
 msgstr "Keine Ergebnisse gefunden"
-
-#~ msgid ""
-#~ "By viewing the video, you agree that your data will be transmitted to "
-#~ "<strong>YouTube</strong>. For more information see"
-#~ msgstr ""
-#~ "Mit dem Aufruf des Videos erklären Sie sich einverstanden, dass Ihre "
-#~ "Daten an <strong>YouTube</strong> übermittelt werden. Weitere "
-#~ "Informationen finden Sie in unserer "
-
-#~ msgid ""
-#~ "By viewing the video, you agree that your data will be transmitted to "
-#~ "<strong>Vimeo</strong>.For more information see"
-#~ msgstr ""
-#~ "Mit dem Aufruf des Videos erklären Sie sich einverstanden, dass Ihre "
-#~ "Daten an <strong>Vimeo</strong> übermittelt werden. Weitere Informationen "
-#~ "finden Sie in unserer "
-
-#~ msgid "DSGVO compliant videos are not supproted by your browser."
-#~ msgstr "DSGVO-konforme Videos werden von Ihrem Browser nicht unterstützt."

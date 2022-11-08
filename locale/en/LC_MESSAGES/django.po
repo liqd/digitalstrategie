@@ -386,32 +386,3 @@ msgstr "Your search for"
 #: digitalstrategie/templates/search_results.html:70
 msgid "No results found"
 msgstr "No results found"
-
-#~ msgid "For more information see"
-#~ msgstr "For more information see"
-
-#~ msgid "To protect your privacy this video can\\\\"
-#~ msgstr "To protect your privacy this video can\\\\"
-
-#~ msgid "To protect your privacy this video can\\"
-#~ msgstr "To protect your privacy this video can\\"
-
-#~ msgid ""
-#~ "By viewing the video, you agree that your data will be transmitted to "
-#~ "<strong>YouTube</strong>. For more information see"
-#~ msgstr ""
-#~ "By viewing the video, you agree that your data will be transmitted to "
-#~ "<strong>YouTube</strong>. For more information see"
-
-#~ msgid ""
-#~ "By viewing the video, you agree that your data will be transmitted to "
-#~ "<strong>Vimeo</strong>.For more information see"
-#~ msgstr ""
-#~ "By viewing the video, you agree that your data will be transmitted to "
-#~ "<strong>Vimeo</strong>.For more information see"
-
-#~ msgid "DSGVO compliant videos are not supported by your browser."
-#~ msgstr "DSGVO compliant videos are not supported by your browser."
-
-#~ msgid "DSGVO compliant videos are not supproted by your browser"
-#~ msgstr "DSGVO compliant videos are not supproted by your browser"

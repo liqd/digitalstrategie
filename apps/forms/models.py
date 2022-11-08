@@ -167,7 +167,7 @@ class ContactFormPage(FormPage):
         fields.append(FormField(
             label='message',
             clean_name='message',
-            help_text=_('Your message to us...'),
+            help_text=_('Your message to us…'),
             field_type='multiline',
             required=True))
 
@@ -216,7 +216,7 @@ class ParticipationFormPage(FormPage):
     def get_form_fields(self):
         fields = list(super().get_form_fields())
 
-        data_storage_help = _('I agree that my contact data is stored')
+        data_storage_help = _('I agree that my contact data is stored.')
         data_protection_help = _('I have read and accepted the '
                                  '{}data protection policy{}.')
 

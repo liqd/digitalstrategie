@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-08 14:26+0000\n"
+"POT-Creation-Date: 2022-11-09 12:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: apps/captcha/fields.py:37 apps/captcha/fields.py:45
+msgid "Something about the answer to the captcha was wrong."
+msgstr "Something about the answer to the captcha was wrong."
+
+#: apps/captcha/fields.py:50
+msgid "Your answer to the captcha was wrong."
+msgstr "Your answer to the captcha was wrong."
+
 #: apps/contrib/django_standard_messages.py:6
 msgid "This field is required."
 msgstr "This field is required."
 
-#: apps/forms/models.py:27
+#: apps/forms/models.py:19
+msgid "If you are having difficulty please contact us by {}email{}."
+msgstr "If you are having difficulty please contact us by {}email{}."
+
+#: apps/forms/models.py:35
+msgid "I am not a robot"
+msgstr "I am not a robot"
+
+#: apps/forms/models.py:46
 msgid "to address"
 msgstr "to address"
 
-#: apps/forms/models.py:28
+#: apps/forms/models.py:47
 msgid ""
 "Form submissions will be emailed to these addresses. Separate multiple "
 "addresses by comma."
@@ -34,21 +50,21 @@ msgstr ""
 "Form submissions will be emailed to these addresses. Separate multiple "
 "addresses by comma."
 
-#: apps/forms/models.py:32
+#: apps/forms/models.py:51
 msgid "from address"
 msgstr "from address"
 
-#: apps/forms/models.py:33
+#: apps/forms/models.py:52
 msgid ""
 "Optional - submitted forms will be displayed as sent from this email address."
 msgstr ""
 "Optional - submitted forms will be displayed as sent from this email address."
 
-#: apps/forms/models.py:37
+#: apps/forms/models.py:56
 msgid "subject"
 msgstr "subject"
 
-#: apps/forms/models.py:38
+#: apps/forms/models.py:57
 msgid ""
 "Optional - will be displayed as the subject of the email of the submitted "
 "form."
@@ -56,35 +72,35 @@ msgstr ""
 "Optional - will be displayed as the subject of the email of the submitted "
 "form."
 
-#: apps/forms/models.py:81
+#: apps/forms/models.py:105
 msgid "First Name"
 msgstr "First Name"
 
-#: apps/forms/models.py:88
+#: apps/forms/models.py:112
 msgid "Surname"
 msgstr "Surname"
 
-#: apps/forms/models.py:95
+#: apps/forms/models.py:119
 msgid "Organisation"
 msgstr "Organisation"
 
-#: apps/forms/models.py:102
+#: apps/forms/models.py:126
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: apps/forms/models.py:157 apps/forms/models.py:220
+#: apps/forms/models.py:181 apps/forms/models.py:244
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr "I have read and accepted the {}data protection policy{}."
 
-#: apps/forms/models.py:163
+#: apps/forms/models.py:187
 msgid "Title"
 msgstr "Title"
 
-#: apps/forms/models.py:170
+#: apps/forms/models.py:194
 msgid "Your message to us..."
 msgstr "Your message to us..."
 
-#: apps/forms/models.py:195
+#: apps/forms/models.py:219
 msgid ""
 "The selected categories                     are displayed in the "
 "participation form."
@@ -92,11 +108,11 @@ msgstr ""
 "The selected categories                     are displayed in the "
 "participation form."
 
-#: apps/forms/models.py:219
+#: apps/forms/models.py:243
 msgid "I agree that my contact data is stored"
 msgstr "I agree that my contact data is stored"
 
-#: apps/forms/models.py:226
+#: apps/forms/models.py:250
 msgid "I am interested in the following fields of action"
 msgstr "I am interested in the following fields of action"
 
@@ -104,11 +120,11 @@ msgstr "I am interested in the following fields of action"
 msgid "Back to Homepage"
 msgstr "Back to Homepage"
 
-#: apps/forms/templates/apps_forms/includes/form.html:11
+#: apps/forms/templates/apps_forms/includes/form.html:16
 msgid "Required fields"
 msgstr "Required fields"
 
-#: apps/forms/templates/apps_forms/includes/form.html:13
+#: apps/forms/templates/apps_forms/includes/form.html:18
 #, python-format
 msgid ""
 "If you wish to have your personal data deleted please write an e-mail to: <a "
@@ -117,9 +133,13 @@ msgstr ""
 "If you wish to have your personal data deleted please write an e-mail to: <a "
 "href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 
-#: apps/forms/templates/apps_forms/includes/form.html:18
+#: apps/forms/templates/apps_forms/includes/form.html:23
 msgid "Send"
 msgstr "Send"
+
+#: apps/forms/templates/apps_forms/includes/form_field.html:39
+msgid "This field is required"
+msgstr "This field is required"
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:34
 msgid "Downloads"
@@ -198,15 +218,19 @@ msgstr "Format:"
 msgid "Video transcript"
 msgstr "Video transcript"
 
-#: digitalstrategie/settings/base.py:123
+#: apps/settings/helpers.py:8
+msgid "Please look {}here{} for more information."
+msgstr "Please look {}here{} for more information."
+
+#: digitalstrategie/settings/base.py:124
 msgid "English"
 msgstr "English"
 
-#: digitalstrategie/settings/base.py:124
+#: digitalstrategie/settings/base.py:125
 msgid "German"
 msgstr "German"
 
-#: digitalstrategie/settings/base.py:125
+#: digitalstrategie/settings/base.py:126
 msgid "Easy German"
 msgstr "Easy German"
 

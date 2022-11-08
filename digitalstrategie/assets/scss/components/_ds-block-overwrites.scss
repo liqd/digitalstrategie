@@ -32,6 +32,11 @@
 }
 
 // overwrite white slider backround
+
+.ds-block__swiper {
+    margin-bottom: 0 !important; // not needed on coloured blocks
+}
+
 .ds-block__swiper-pagination {
     background: inherit !important;
 }

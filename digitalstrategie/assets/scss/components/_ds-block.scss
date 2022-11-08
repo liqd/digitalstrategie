@@ -38,6 +38,14 @@
             background-color: none !important;
         }
 
+        @media (max-width: 64.001rem) {
+            /* stylelint-disable */
+            &.modul-teaser-marketing.imageteaser .image {
+                margin-left: 0.5em; // ensure even margins on tablet
+            }
+            /* stylelint-enable */
+        }
+
         @media screen and (max-width: 37.4375rem) {
             /* stylelint-disable */
             &.modul-teaser-marketing.imageteaser .image {

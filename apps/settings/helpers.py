@@ -5,7 +5,7 @@ from wagtail.models import Site
 
 from apps.settings.models import ImportantPages
 
-LINK_TEXT = _('Please look {}here{} for more information.')
+LINK_TEXT = _('Please click {}here{} for more information.')
 
 
 def add_link_to_helptext(help_text, important_page_name):

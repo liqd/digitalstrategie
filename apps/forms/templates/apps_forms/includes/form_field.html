@@ -36,7 +36,7 @@
 {% elif field|is_captcha %}
 <div class="form-group">
     <label class="test" for="{{ field.id_for_label }}" {% if tabindex is not None %}tabindex="{{ tabindex }}"{% endif %}>
-        {{ field.label }}{% if field.field.required %}<span role="presentation" title="{% trans 'This field is required' %}">*</span>{% endif %}
+        {{ field.label }}{% if field.field.required %}<span role="presentation" title="{% trans 'This field is required.' %}">*</span>{% endif %}
         {% block after_label %}
         {% endblock %}
     </label>

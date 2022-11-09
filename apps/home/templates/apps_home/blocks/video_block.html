@@ -6,7 +6,7 @@
     <h2 class="title">{{ value.title }}</h2>
     <div class="video-container">
         <div class="block-video__container">
-            <div class="accept_video block-video__video" id="accept-video{{ identifier }}">
+            <div class="accept_video block-video__video" id="accept-video-{{ identifier }}">
                 {% if value.preview_image %}
                   {% image value.preview_image fill-980x550 as image %}
                   <img
@@ -31,10 +31,9 @@
                         {% trans "Data protection" %}</a>.
                 </p>
                 <button
-                  id="video_accept_{{ identifier }}"
                   class="button button--play setcookie overlay_video_go"
                   type="button"
-                  onclick="window.showVideo()">
+                  onclick="window.showVideo{{ identifier }}()">
                     {% trans "Accept and play" %}
                 </button>
                 {% else %}
@@ -43,11 +42,11 @@
                 </p>
                 {% endif %}
 
-                <template id="video-template{{ identifier }}">{% embed value.video.url "500" %}</template>
+                <template id="video-template-{{ identifier }}">{% embed value.video.url "500" %}</template>
             </div>
-            <div class="block-video__video" id="video-player{{ identifier }}"></div>
+            <div class="block-video__video" id="video-player-{{ identifier }}"></div>
         </div>
-        <p class="player-formats" id="player__{{ identifier }}">
+        <p class="player-formats">
           {% trans "Format:" %}
             <a href="{{value.video.url}}" target="_blank">
               {% if 'youtube' in value.video.url %}
@@ -64,7 +63,7 @@
         <p>{{ value.caption }}</p>
     </div>
     {% if value.transcript %}
-    <ul aria-label="Faq" class="js-accordion" id="accordion{{ identifier }}">
+    <ul aria-label="Faq" class="js-accordion" id="accordion-{{ identifier }}">
         <li>
           <strong class="js-accordion__heading">{% trans "Video transcript" %}</strong>
           <div class="js-accordion__panel">
@@ -81,10 +80,10 @@
 
 <!-- function to show video, added with script tag due to need of identifier -->
 <script type="text/javascript">
-  function showVideo() {
-    var templateTag = document.getElementById("video-template{{ identifier }}")
-    var videoTag = document.getElementById("video-player{{ identifier }}")
-    var overlayTag = document.getElementById("accept-video{{ identifier }}").style.display = "none"
+  function showVideo{{ identifier }}() {
+    var templateTag = document.getElementById("video-template-{{ identifier }}")
+    var videoTag = document.getElementById("video-player-{{ identifier }}")
+    var overlayTag = document.getElementById("accept-video-{{ identifier }}").style.display = "none"
     var showVideo = templateTag.content.cloneNode(true)
     videoTag.appendChild(showVideo)
   }

@@ -16,7 +16,7 @@ from apps.captcha.fields import CaptcheckCaptchaField
 from apps.contrib.translations import TranslatedField
 from apps.settings import helpers
 
-CAPTCHA_HELP = _('If you are having difficulty please contact us'
+CAPTCHA_HELP = _('If you are having difficulty, please contact us'
                  ' by {}email{}.')
 
 
@@ -32,7 +32,7 @@ class WagtailCaptchaFormBuilder(FormBuilder):
         # Add captcha to formfields property
         fields = super().formfields
         fields['captcha'] = CaptcheckCaptchaField(
-            label=_('I am not a robot'),
+            label=_('I am not a robot.'),
             help_text=helpers.add_email_link_to_helptext('', CAPTCHA_HELP)
         )
         return fields
@@ -123,7 +123,7 @@ class FormPage(AbstractEmailForm):
         fields.append(FormField(
             label='email',
             clean_name='email',
-            help_text=_('E-Mail'),
+            help_text=_('Email'),
             field_type='email',
             required=True))
 

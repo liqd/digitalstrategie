@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 12:35+0000\n"
+"POT-Creation-Date: 2022-11-09 16:43+0000\n"
 "PO-Revision-Date: 2022-11-09 16:01+0000\n"
 "Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
-"Language-Team: German <https://trans.liqd.net/projects/"
-"gemeinsam-digital-berlin/main/de/>\n"
+"Language-Team: German <https://trans.liqd.net/projects/gemeinsam-digital-"
+"berlin/main/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,17 +28,17 @@ msgid "Your answer to the captcha was wrong."
 msgstr "Ihre Antwort zum Captcha war falsch."
 
 #: apps/contrib/django_standard_messages.py:6
+#: apps/forms/templates/apps_forms/includes/form_field.html:39
 msgid "This field is required."
 msgstr "Bitte füllen Sie dieses Feld aus."
 
 #: apps/forms/models.py:19
-msgid "If you are having difficulty please contact us by {}email{}."
+msgid "If you are having difficulty, please contact us by {}email{}."
 msgstr ""
-"Sollten Sie Schwierigkeiten haben, kontaktieren Sie uns gerne per  {}Email{}."
 
 #: apps/forms/models.py:35
-msgid "I am not a robot"
-msgstr "Ich bin kein Roboter."
+msgid "I am not a robot."
+msgstr ""
 
 #: apps/forms/models.py:46
 msgid "to address"
@@ -87,9 +87,8 @@ msgstr "Nachname"
 msgid "Organisation"
 msgstr "Organisation"
 
-#: apps/forms/models.py:126
-#, fuzzy
-msgid "E-Mail"
+#: apps/forms/models.py:126 digitalstrategie/templates/includes/header.html:81
+msgid "Email"
 msgstr "Email"
 
 #: apps/forms/models.py:181 apps/forms/models.py:244
@@ -101,8 +100,8 @@ msgid "Title"
 msgstr "Titel"
 
 #: apps/forms/models.py:194
-msgid "Your message to us..."
-msgstr "Ihre Nachricht an uns..."
+msgid "Your message to us…"
+msgstr ""
 
 #: apps/forms/models.py:219
 msgid ""
@@ -112,11 +111,8 @@ msgstr ""
 "Die ausgewählten Kategorien werden im Partizipationsformular dargestellt."
 
 #: apps/forms/models.py:243
-#, fuzzy
-msgid "I agree that my contact data is stored"
+msgid "I agree that my contact data is stored."
 msgstr ""
-"Hiermit erkläre ich mich einverstanden, dass meine Kontaktdaten gespeichert "
-"werden."
 
 #: apps/forms/models.py:250
 msgid "I am interested in the following fields of action"
@@ -131,22 +127,15 @@ msgid "Required fields"
 msgstr "Pflichtfelder"
 
 #: apps/forms/templates/apps_forms/includes/form.html:18
-#, fuzzy, python-format
+#, python-format
 msgid ""
-"If you wish to have your personal data deleted please write an e-mail to: <a "
+"If you wish to have your personal data deleted, please write an email to: <a "
 "href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
-"Wenn Sie Ihre personenbezogenen Daten löschen lassen möchten, kontaktieren "
-"Sie: <a href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 
 #: apps/forms/templates/apps_forms/includes/form.html:23
 msgid "Send"
 msgstr "Senden"
-
-#: apps/forms/templates/apps_forms/includes/form_field.html:39
-#, fuzzy
-msgid "This field is required"
-msgstr "Dies ist ein Pflichtfeld."
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:34
 msgid "Downloads"
@@ -193,24 +182,19 @@ msgstr "Vorherige Seite"
 msgid "Next slide"
 msgstr "Nächstes Bild"
 
-#: apps/home/templates/apps_home/blocks/video_block.html:21
-msgid "By viewing the video, you agree that your data will be transmitted to"
+#: apps/home/templates/apps_home/blocks/video_block.html:22
+#, python-format
+msgid ""
+"By viewing the video, you agree that your data will be transmitted to "
+"<strong>%(name)s</strong>. For more information see <a target=\"_blank\" "
+"href=\"%(data_protection)s\"> data protection</a>."
 msgstr ""
-"Mit dem Aufruf des Videos erklären Sie sich einverstanden, dass Ihre Daten an"
 
-#: apps/home/templates/apps_home/blocks/video_block.html:27
-msgid ". For more information see"
-msgstr "übermittelt werden. Weitere Informationen finden Sie in der"
-
-#: apps/home/templates/apps_home/blocks/video_block.html:31
-msgid "Data protection"
-msgstr "Datenschutzerklärung"
-
-#: apps/home/templates/apps_home/blocks/video_block.html:38
+#: apps/home/templates/apps_home/blocks/video_block.html:28
 msgid "Accept and play"
 msgstr "Akzeptieren und Abspielen"
 
-#: apps/home/templates/apps_home/blocks/video_block.html:42
+#: apps/home/templates/apps_home/blocks/video_block.html:32
 msgid ""
 "To protect your privacy this video can't be loaded because it's hosted by an "
 "unknown external provider."
@@ -218,18 +202,17 @@ msgstr ""
 "Zum Schutz Ihrer Privatsphäre kann dieses Video nicht geladen werden, da es "
 "von einem unbekannten externen Anbieter gehostet wird."
 
-#: apps/home/templates/apps_home/blocks/video_block.html:51
+#: apps/home/templates/apps_home/blocks/video_block.html:41
 msgid "Format:"
 msgstr "Formate:"
 
-#: apps/home/templates/apps_home/blocks/video_block.html:69
+#: apps/home/templates/apps_home/blocks/video_block.html:59
 msgid "Video transcript"
 msgstr "Videoabschrift"
 
 #: apps/settings/helpers.py:8
-#, fuzzy
-msgid "Please look {}here{} for more information."
-msgstr "Weitere Informationen finden Sie {}hier{}."
+msgid "Please click {}here{} for more information."
+msgstr ""
 
 #: digitalstrategie/settings/base.py:124
 msgid "English"
@@ -320,10 +303,6 @@ msgstr ""
 #: digitalstrategie/templates/includes/header.html:78
 msgid "Name"
 msgstr "Name"
-
-#: digitalstrategie/templates/includes/header.html:81
-msgid "Email"
-msgstr "Email"
 
 #: digitalstrategie/templates/includes/header.html:84
 msgid "Phone"

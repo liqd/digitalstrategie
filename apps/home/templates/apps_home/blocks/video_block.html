@@ -1,6 +1,7 @@
 {% load static i18n wagtailimages_tags wagtailembeds_tags block_tags %}
 
 {% get_identifier value as identifier %}
+{% get_video_provider value.video.url as video_provider %}
 
 <section class="modul-video ds-block--base">
     <h2 class="title">{{ value.title }}</h2>
@@ -16,19 +17,9 @@
                     loading="lazy" />
                 {% endif %}
 
-                {% if 'youtube' in value.video.url or 'vimeo' in value.video.url %}
+                {% if 'YouTube' in video_provider.0 or 'Vimeo' in video_provider.0 %}
                 <p class="overlay_text">
-                    {% trans "By viewing the video, you agree that your data will be transmitted to" %}
-                    {% if 'youtube' in value.video.url %}
-                      <strong>YouTube</strong>
-                    {% elif 'vimeo' in value.video.url %}
-                      <strong>Vimeo</strong>
-                    {% endif %}
-                    {% trans ". For more information see" %}
-                    <a target="_blank"
-                      href="{% if 'youtube' in value.video.url %}https://www.google.de/intl/de/policies/privacy/
-                      {% elif 'vimeo' in value.video.url %}https://vimeo.com/privacy{% endif %}">
-                        {% trans "Data protection" %}</a>.
+                {% blocktranslate with name=video_provider.0 data_protection=video_provider.1 %}By viewing the video, you agree that your data will be transmitted to <strong>{{ name }}</strong>. For more information see <a target="_blank" href="{{ data_protection }}"> data protection</a>.{% endblocktranslate %}
                 </p>
                 <button
                   class="button button--play setcookie overlay_video_go"

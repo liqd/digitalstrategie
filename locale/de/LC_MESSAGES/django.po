@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-09 16:43+0000\n"
-"PO-Revision-Date: 2022-11-09 16:01+0000\n"
+"PO-Revision-Date: 2022-11-10 15:16+0000\n"
 "Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
-"Language-Team: German <https://trans.liqd.net/projects/gemeinsam-digital-"
-"berlin/main/de/>\n"
+"Language-Team: German <https://trans.liqd.net/projects/"
+"gemeinsam-digital-berlin/main/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,10 +35,11 @@ msgstr "Bitte füllen Sie dieses Feld aus."
 #: apps/forms/models.py:19
 msgid "If you are having difficulty, please contact us by {}email{}."
 msgstr ""
+"Sollten Sie Schwierigkeiten haben, kontaktieren Sie uns gerne per {}email{}."
 
 #: apps/forms/models.py:35
 msgid "I am not a robot."
-msgstr ""
+msgstr "Ich bin kein Roboter."
 
 #: apps/forms/models.py:46
 msgid "to address"
@@ -101,7 +102,7 @@ msgstr "Titel"
 
 #: apps/forms/models.py:194
 msgid "Your message to us…"
-msgstr ""
+msgstr "Ihre Nachricht an uns…"
 
 #: apps/forms/models.py:219
 msgid ""
@@ -113,6 +114,7 @@ msgstr ""
 #: apps/forms/models.py:243
 msgid "I agree that my contact data is stored."
 msgstr ""
+"Hiermit erkläre ich mich einverstanden, dass meine Daten gespeichert werden."
 
 #: apps/forms/models.py:250
 msgid "I am interested in the following fields of action"
@@ -132,6 +134,9 @@ msgid ""
 "If you wish to have your personal data deleted, please write an email to: <a "
 "href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
+"Wenn Sie Ihre personenbezogenen Daten löschen lassen möchten, kontaktieren "
+"Sie uns bitte unter dieser Emailadresse: <a href=\"mailto:%(remove_email)s\""
+">%(remove_email)s</a>"
 
 #: apps/forms/templates/apps_forms/includes/form.html:23
 msgid "Send"
@@ -189,6 +194,10 @@ msgid ""
 "<strong>%(name)s</strong>. For more information see <a target=\"_blank\" "
 "href=\"%(data_protection)s\"> data protection</a>."
 msgstr ""
+"Mit dem Aufruf des Videos erklären Sie sich einverstanden, dass Ihre Daten "
+"an <strong>%(name)s</strong> übermittelt werden. Weitere Informationen "
+"finden Sie in der <a target=\"_blank\" href=\"%(data_protection)s\"> "
+"Datenschutzerklärung</a>."
 
 #: apps/home/templates/apps_home/blocks/video_block.html:28
 msgid "Accept and play"
@@ -212,7 +221,7 @@ msgstr "Videoabschrift"
 
 #: apps/settings/helpers.py:8
 msgid "Please click {}here{} for more information."
-msgstr ""
+msgstr "Weitere Informationen finden Sie {}hier{}."
 
 #: digitalstrategie/settings/base.py:124
 msgid "English"

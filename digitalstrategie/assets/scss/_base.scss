@@ -9,7 +9,7 @@ html {
     overflow-y: scroll;
     color: $black;
     box-sizing: border-box;
-    font-family: $font-family-sans-serif;
+    font-family: $font-family-sans-serif !important;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

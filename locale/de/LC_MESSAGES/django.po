@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-09 16:43+0000\n"
-"PO-Revision-Date: 2022-11-10 15:16+0000\n"
+"PO-Revision-Date: 2022-11-24 20:37+0000\n"
 "Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
 "Language-Team: German <https://trans.liqd.net/projects/"
 "gemeinsam-digital-berlin/main/de/>\n"
@@ -35,7 +35,7 @@ msgstr "Bitte füllen Sie dieses Feld aus."
 #: apps/forms/models.py:19
 msgid "If you are having difficulty, please contact us by {}email{}."
 msgstr ""
-"Sollten Sie Schwierigkeiten haben, kontaktieren Sie uns gerne per {}email{}."
+"Sollten Sie Schwierigkeiten haben, kontaktieren Sie uns gerne per {}Email{}."
 
 #: apps/forms/models.py:35
 msgid "I am not a robot."

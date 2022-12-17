@@ -23,7 +23,7 @@
     "sass": "1.57.0",
     "sass-loader": "13.2.0",
     "stylelint": "14.16.0",
-    "stylelint-config-standard-scss": "3.0.0",
+    "stylelint-config-standard-scss": "6.1.0",
     "stylelint-declaration-strict-value": "1.9.1",
     "terser-webpack-plugin": "5.3.6",
     "webpack": "5.75.0",

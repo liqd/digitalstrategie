@@ -20,6 +20,7 @@ def custom_meta_tags(context, model=None):
                 not model.seo_title and
                 not model.get_meta_description()):
             site = Site.find_for_request(request)
-            model = site.root_page.specific
+            if site:
+                model = site.root_page.specific
 
     return tags.meta_tags(request, model)

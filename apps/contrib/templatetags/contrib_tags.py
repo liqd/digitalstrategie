@@ -9,7 +9,10 @@ register = template.Library()
 @register.simple_tag
 def get_external_footer():
     if hasattr(settings, 'BERLIN_FOOTER_URL') and settings.BERLIN_FOOTER_URL:
-        response = requests.get(settings.BERLIN_FOOTER_URL)
+        try:
+            response = requests.get(settings.BERLIN_FOOTER_URL, timeout=2.0)
+        except (requests.ConnectTimeout, requests.HTTPError, requests.Timeout):
+            return ''
         return mark_safe(response.text)
     else:
         return ''

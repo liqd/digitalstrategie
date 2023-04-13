@@ -6,5 +6,5 @@ sentry-sdk==1.19.1
 wagtail==4.1.4
 whitenoise==6.2.0
 elasticsearch==7.17.9
-wagtail-metadata==4.0.2
+wagtail-metadata==4.0.3
 sib-api-v3-sdk==7.5.0

@@ -1,0 +1,12 @@
+.meta-information__row {
+    display: flex;
+    margin: $spacer * 2 0;
+}
+
+.meta-information__column {
+    flex: 1;
+}
+
+.meta-information__column__head {
+    font-weight: bold;
+}

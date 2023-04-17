@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+
+{% block content %}
+<div id="layout-grid__area--maincontent">
+    <h1>{{ page.page_title }}</h1>
+    <dl class="meta-information__row">
+        <div class="meta-information__column">
+            <dt class="meta-information__column__head">
+                {% trans 'Responsible organisations' %}
+            </dt>
+            <dd class="meta-information__column__content">
+                {{ page.responsible_organisation }}
+            </dd>
+        </div>
+        <div class="meta-information__column">
+            <div class="meta-information__column__head">
+                {% trans 'District' %}
+            </div>
+            <div class="meta-information__column__content">
+                {% with districts=page.get_districts_display %}
+                    {{ districts }}
+                {% endwith %}
+            </div>
+        </div>
+    </dl>
+    <dl class="meta-information__row">
+        <div class="meta-information__column">
+            <dt class="meta-information__column__head">
+                {% trans 'Involved organisations' %}
+            </dt>
+            <dd class="meta-information__column__content">
+                {{ page.involved_organisations }}
+            </dd>
+        </div>
+        <div class="meta-information__column">
+            <dt class="meta-information__column__head">
+                {% trans 'Period' %}
+            </dt>
+            <dd class="meta-information__column__content">
+                {{ page.period }}
+            </dd>
+        </div>
+    </dl>
+    <dl class="meta-information__row">
+        <div class="meta-information__column">
+            <dt class="meta-information__column__head">
+                {% trans 'Handlungsfelder' %}
+            </dt>
+            <dd class="meta-information__column__content">
+                tbd
+            </dd>
+        </div>
+        <div class="meta-information__column">
+            <dt class="meta-information__column__head">
+                {% trans 'Status' %}
+            </dt>
+            <dd class="meta-information__column__content">
+                {{ page.get_status_display }}
+            </dd>
+        </div>
+    </dl>
+    <section class="modul-text_bild imagealignleft">
+        {% image page.text_image original as text_image %}
+        <div class="image">
+            <div class="image__image">
+                <img
+                    src="{{ text_image.url }}"
+                    alt="{{ text_image.alt }}"
+                />
+                {% if text_image.copyright %}
+                    <p class="image__copyright">{{ text_image.copyright }}</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="text textile">
+            {{ page.body|richtext }}
+            {% if page.body_participation %}
+                <h2 class="title">{% trans 'Participation' %}</h2>
+                <section>{{ page.body_participation|richtext }}</section>
+            {% endif %}
+            {% if page.body_effect %}
+                <h2 class="title">{% trans 'Effect' %}</h2>
+                <section>{{ page.body_effect|richtext }}</section>
+            {% endif %}
+        </div>
+    </section>
+    <section>
+        <h2 class="title">{% trans 'Contact' %}</h2>
+        <ul class="list--contact" aria-label="{% trans 'contact information' %}">
+            <li class="loc">{{ page.contact_organisation_name }}</li>
+            <li class="name">{{ page.contact_name }}</li>
+            {% if page.contact_email %}
+                <li class="email"><a href="mailto:{{page.contact_email}}">{{ page.contact_email }}</a></li>
+            {% endif %}
+            {% if page.contact_phone %}
+                <li class="tel"><a href="tel:{{page.contact_phone}}">{{ page.contact_phone }}</a></li>
+            {% endif %}
+            {% if page.contact_website %}
+                <li class="homepage"><a href="{{page.contact_website}}">{{ page.contact_website }}</a></li>
+            {% endif %}
+        </ul>
+    </section>
+</div>
+{% endblock %}

@@ -293,3 +293,15 @@ class VideoBlock(blocks.StructBlock):
         template = 'apps_home/blocks/video_block.html'
         icon = 'placeholder'
         label = 'Video Block'
+
+
+class ImageSwiperBlock(blocks.StructBlock):
+    swiper_item = blocks.ListBlock(
+        ImgTextLinkBlock(
+            help_text='Please note that images will be displayed in a 16:9 '
+            'aspect ratio. Crop or resize your images accordingly before '
+            'uploading to ensure they display correctly.'))
+
+    class Meta:
+        template = 'apps_home/blocks/image_swiper_block.html'
+        icon = 'arrow-down'

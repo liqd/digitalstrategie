@@ -1,0 +1,72 @@
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+
+<div class="modul-buehne ds-block--base">
+    <div class="swiper-container swiper">
+        <div class="swiper-controls">
+            <div class="swiper-button-prev" title="{% trans 'Previous picture' %}"></div>
+            <div class="swiper-button-next" title="{% trans 'Next picture' %}"></div>
+            <div class="swiper-pagination" aria-hidden="true"></div>
+        </div>
+        <ul class="swiper-wrapper">
+
+            {% for value in self.swiper_item %}
+            <li class="swiper-slide">
+                <div class="modul-teaser_buehne">
+                    <div class="teaser_buehne__left">
+                        <div class="image">
+                            <div class="image__image">
+                                {% image value.image fill-800x450 as image %}
+                                <img src="{{ image.url }}" alt="{{ image.alt }}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="teaser_buehne__right">
+                        <div class="inner">
+                            <h2 class="title">{{ value.title }}</h2>
+                            <p class="text">{{ value.body }}</p>
+                            {% if value.button.internal_link %}
+                                <span class="action">
+                                    <a
+                                        href="{{ value.button.internal_link.url }}"
+                                        class="more ms-1"
+                                        data-mainlink="true"
+                                        title="{{ value.button.link_description }}"
+                                    >
+                                    {{ value.button.link_text }}
+                                    {% if value.button.link_description %}
+                                        <span class="aural">{% trans 'Link to:' %}{{ value.button.link_description }}</span>
+                                    {% endif %}
+                                    </a>
+                                </span>
+                            {% elif value.button.external_link %}
+                                <span class="action">
+                                    <a
+                                        href="{{ value.button.external_link }}"
+                                        class="extern ms-1"
+                                        data-mainlink="true"
+                                        title="{{ value.button.link_description }}"
+                                        target="_blank"
+                                    >
+                                    {{ value.button.link_text }}
+                                    {% if value.button.link_description %}
+                                        <span class="aural">{% trans 'Link to:' %}{{ value.button.link_description }}</span>
+                                    {% endif %}
+                                    </a>
+                                </span>
+                            {% endif %}
+                            {% if value.image.copyright or value.image.caption %}
+                            <span class="image__copyright">
+                                <strong>Bild:</strong>
+                                {{ value.image.copyright }}
+                                {{ value.image.caption }}
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>

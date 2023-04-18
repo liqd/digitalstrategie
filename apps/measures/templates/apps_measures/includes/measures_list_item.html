@@ -1,0 +1,22 @@
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+
+<li>
+  <article class="modul-text_bild imagealignleft fifty" data-add-clickable-area="smart">
+      <div class="image">
+          <div class="image__image">
+            {% image value.image fill-800x600 as image %}
+            <img src="{{ image.url }}" alt="{{ image.alt }}" />
+          </div>
+          <p class="image__copyright">
+              copyright by photograph
+          </p>
+      </div>
+      <h2 class="title">Title of the thing</h2>
+
+      <div class="text textile">
+          <p>categories of the thing</p>
+          <p>intro text</p>
+          <a href="" class="more" data-mainlink="true" title="This is a single Teaser">Mehr <span class="aural">zu: This is a single Teaser</span></a>
+      </div>
+ </article>
+</li>

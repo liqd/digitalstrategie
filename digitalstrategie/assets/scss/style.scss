@@ -1,9 +1,10 @@
-// Project specific values
+// Non-bootstrap project specific variables
 @import "variables";
 
-// Non-bootstrap project specific variables
+// Project specific values
 @import "base";
 @import "fonts";
+@import "utilities";
 
 // Project components
 @import "components/button";

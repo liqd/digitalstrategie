@@ -108,7 +108,8 @@ class HomePage(MetadataPageMixin, Page):
                      'apps_forms.ContactFormPage',
                      'apps_forms.ParticipationFormPage',
                      'apps_home.MicrositeOverviewPage',
-                     'apps_home.MicrositeDetailPage']
+                     'apps_home.MicrositeDetailPage',
+                     'apps_measures.MeasuresOverviewPage',]
 
     search_fields = Page.search_fields + [
         index.SearchField('page_title_de', partial_match=True),

@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'apps.settings',
     'apps.snippets',
     'apps.gruenbuch',
+    'apps.measures',
 ]
 
 MIDDLEWARE = (

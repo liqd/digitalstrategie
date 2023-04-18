@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+
+{% block content %}
+
+<section id="layout-grid__area--herounit">
+    <h1 class="u-center">{{ page.page_title }}</h1>
+    <p class="u-center">{{ page.page_intro }}</p>
+    {% for block in self.swiper %}
+        {{ block }}
+    {% endfor %}
+</section>
+<div id="layout-grid__area--maincontent">
+    <section class="modul-multiteaser">
+        <div class="row">
+            <div class="span4"></div>
+            <div class="span8">
+                <ul class="list--clean">
+                    {% include "apps_measures/includes/measures_list_item.html" %}
+                </ul>
+
+                {% include "apps_measures/includes/pagination.html" %}
+
+            </div>
+        </div>
+
+    </section>
+    <section>
+        {% for block in self.body %}
+            {{ block }}
+        {% endfor %}
+    </section>
+</div>
+{% endblock %}

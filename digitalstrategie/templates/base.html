@@ -6,9 +6,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
-        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon-96x96.png' %}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+
+        <!-- Berlin.de favicon -->
+        <meta name="og:image" content="/static/images/Berlin_de_FB_Social.png" />
+        <meta name="og:image:secure_url" content="/static/images/Berlin_de_FB_Social.png" />
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="msapplication-config" content="/static/images/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="icon" href="/static/images/favicon.ico" sizes="any">
+        <link rel="icon" href="/static/images/Berlin_de.svg" type="image/svg+xml">
+        <link rel="mask-icon" href="/static/images/safari-pinned-tab.svg" color="#000000">
+        <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+        <link rel="manifest" href="/static/images/manifest.json">
 
         {% block meta_tag %}
             {% custom_meta_tags %}

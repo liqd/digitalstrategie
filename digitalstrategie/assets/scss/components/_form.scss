@@ -28,3 +28,21 @@
 .ds-form__info-section {
     margin-top: $spacer;
 }
+
+.ds-form__facet-accordion {
+    border: none;
+    margin-bottom: 0 !important;
+}
+
+.ds-form__facet-accordion > .js-accordion__heading {
+    display: flex !important;
+
+    &:after {
+        font-size: 16px;
+        content: "\f067";
+    }
+
+    &[aria-expanded="true"]:after {
+        content: "\f068";
+    }
+}

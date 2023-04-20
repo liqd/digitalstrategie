@@ -1,0 +1,137 @@
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+
+<div class="modul-facetingform js-facetingform" id="measuresFilter">
+  <div class="facetingform__container">
+    <div class="container__head">
+      <h2 class="title">{% trans 'Filter by' %}
+      </h2>
+    </div>
+    <div class="container__body">
+      <!-- Form start -->
+      <form class="facets">
+
+        <!-- project status -->
+        <div class="facet">
+          <div class="facet__head">
+            <button data-collapsible-trigger="opened" class="facet-title" type="button" aria-controls="statusFacet">
+              <span class="text">
+                <label for="statusSelect" class="form-label facet__head">
+                  {% trans 'Project status' %}
+                </label>
+              </span>
+            </button>
+          </div>
+          <div class="facet__body" id="statusFacet">
+            <div class="form-group" id="group_statusSelect">
+              <select class="form-control" id="statusSelect" name="statusSelect">
+                <option value="">{% trans 'Please choose' %}</option>
+                {% for status_key,status_string in page.status.items %}
+                  <option value="statusOption{{ forloop.counter }}">{{ status_string }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- district -->
+        <fieldset class="facet">
+          <legend class="facet__head">
+            <button data-collapsible-trigger="opened" class="facet-title" type="button"
+              aria-controls="districtFacet">
+              <span class="text">
+                {% trans 'District' %}
+              </span>
+            </button>
+          </legend>
+          <div class="facet__body" id="districtFacet">
+            <div class="form-check">
+              {% for district_key,district_string in page.district.items %}
+                <input class="form-check-input" type="checkbox" id="districtCheckbox{{ forloop.counter }}" name="districtCheckbox{{ forloop.counter }}" />
+                <label class="form-check-label" for="districtCheckbox{{ forloop.counter }}">{{ district_string }}</label>
+              {% endfor %}
+            </div>
+          </div>
+        </fieldset>
+
+
+        <!-- fields of action -->
+        <section class="facet">
+          <h3 class="facet__head">
+            <button data-collapsible-trigger="opened" class="facet-title" type="button"
+              aria-controls="fieldsActionFacet">
+              <span class="text">
+                {% trans 'Fields of action' %}
+              </span>
+            </button>
+          </h3>
+
+          <!-- fields of action sub-categories -->
+          <div class="facet__body" id="fieldsActionFacet">
+
+            <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction01">
+              <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">Regenerative Management</legend>
+              <div class="js-accordion__panel">
+                {% for regenerative_management_key,regenerative_management_string in page.regenerative_management.items %}
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkboxRegMan{{ forloop.counter }}" name="checkboxRegMan{{ forloop.counter }}" />
+                    <label class="form-check-label" for="checkboxRegMan{{ forloop.counter }}">{{ regenerative_management_string }}</label>
+                  </div>
+                {% endfor %}
+                </div>
+            </fieldset>
+
+            <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction02">
+              <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">Future Opportunities for All</legend>
+              <div class="js-accordion__panel">
+                {% for future_opportunities_for_all_key,future_opportunities_for_all_string in page.future_opportunities_for_all.items %}
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkboxFutOp{{ forloop.counter }}" name="checkboxFutOp{{ forloop.counter }}" />
+                    <label class="form-check-label" for="checkboxFutOp{{ forloop.counter }}">{{ future_opportunities_for_all_string }}</label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+
+              <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction03">
+                <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">Inclusive Shaping of Urban Life</legend>
+                <div class="js-accordion__panel">
+                  {% for inclusive_shaping_of_urban_life_key,inclusive_shaping_of_urban_life_string in page.inclusive_shaping_of_urban_life.items %}
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkboxInclUrb{{ forloop.counter }}" name="checkboxInclUrb{{ forloop.counter }}" />
+                      <label class="form-check-label" for="checkboxInclUrb{{ forloop.counter }}">{{ inclusive_shaping_of_urban_life_string }}</label>
+                    </div>
+                  {% endfor %}
+                </div>
+              </fieldset>
+
+              <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction04">
+                <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">Facilitative Administration</legend>
+                <div class="js-accordion__panel">
+                  {% for facilitative_administration_key,facilitative_administration_string in page.facilitative_administration.items %}
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkboxFacAdmin{{ forloop.counter }}" name="checkboxFacAdmin{{ forloop.counter }}" />
+                      <label class="form-check-label" for="checkboxFacAdmin{{ forloop.counter }}">{{ facilitative_administration_string }}</label>
+                    </div>
+                  {% endfor %}
+                </div>
+              </fieldset>
+
+          </div>
+        </section>
+        <div class="form-actions">
+          <div class="form-actions__left">
+            <button type="reset" class="link reset">
+              {% trans 'Reset filters' %}
+            </button>
+          </div>
+          <div class="form-actions__right">
+            <button type="submit" class="button button--light">
+              {% trans 'Filter now' %}
+            </button>
+          </div>
+        </div>
+      </form>
+      <!-- Form end -->
+    </div>
+  </div>
+</div>

@@ -24,7 +24,8 @@
                 <button
                   class="button button--play setcookie overlay_video_go"
                   type="button"
-                  onclick="window.showVideo{{ identifier }}()">
+                  data-identifier="{{ identifier }}"
+                  >
                     {% trans "Accept and play" %}
                 </button>
                 {% else %}
@@ -69,13 +70,6 @@
     {% endif %}
 </section>
 
-<!-- function to show video, added with script tag due to need of identifier -->
-<script type="text/javascript">
-  function showVideo{{ identifier }}() {
-    var templateTag = document.getElementById("video-template-{{ identifier }}")
-    var videoTag = document.getElementById("video-player-{{ identifier }}")
-    var overlayTag = document.getElementById("accept-video-{{ identifier }}").style.display = "none"
-    var showVideo = templateTag.content.cloneNode(true)
-    videoTag.appendChild(showVideo)
-  }
-</script>
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'video.js' %}"></script>
+{% endblock %}

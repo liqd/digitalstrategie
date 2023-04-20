@@ -17,6 +17,9 @@ module.exports = {
     newsletter: [
         './apps/home/assets/newsletter.js'
     ],
+    video: [
+        './apps/home/assets/video.js'
+    ],
     captcheck: {
       import: [
         './apps/captcha/assets/captcheck.js'

@@ -11,24 +11,25 @@
     {% endfor %}
 </section>
 <div id="layout-grid__area--maincontent">
+
     <section class="modul-multiteaser">
         <div class="row">
             <div class="span4"></div>
             <div class="span8">
                 <ul class="list--clean">
-                    {% include "apps_measures/includes/measures_list_item.html" %}
+                    {% for content in measures_pages %}
+                        {% include "apps_measures/includes/measures_list_item.html" with content=content %}
+                    {% endfor %}
                 </ul>
 
                 {% include "apps_measures/includes/pagination.html" %}
 
             </div>
         </div>
+    </section>
 
-    </section>
-    <section>
-        {% for block in self.body %}
-            {{ block }}
-        {% endfor %}
-    </section>
+    {% for block in self.teaser %}
+        {{ block }}
+    {% endfor %}
 </div>
 {% endblock %}

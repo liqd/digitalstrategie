@@ -1,0 +1,44 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "standard",
+    "plugin:import/recommended",
+    "plugin:n/recommended"
+  ],
+  "rules": {
+    "jsx-quotes": [2, "prefer-double"],
+    "n/no-missing-require": "off",
+    "n/no-unsupported-features/es-syntax": "off",
+    "n/no-missing-import": "off",
+    "n/no-unpublished-import": "off",
+    "n/no-extraneous-import": "off",
+    "no-restricted-syntax": ["error", "TemplateLiteral"]
+  },
+  "plugins": [
+    "promise"
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "venv/",
+    "static/"
+  ],
+  "settings": {
+    "import/core-modules": [ django ],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  }
+}

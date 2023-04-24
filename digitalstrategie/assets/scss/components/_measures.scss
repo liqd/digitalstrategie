@@ -1,5 +1,6 @@
 .meta-information__row {
     display: flex;
+    column-gap: $spacer;
     margin: $spacer * 2 0;
 }
 

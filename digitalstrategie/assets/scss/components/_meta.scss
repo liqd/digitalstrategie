@@ -1,0 +1,24 @@
+.meta-information__row {
+    display: flex;
+    column-gap: $spacer;
+    margin: ($spacer * 1.25) 0;
+}
+
+.meta-information__column {
+    flex: 1;
+}
+
+.meta-information__column__head {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 37.4375rem) {
+    .meta-information__row {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .meta-information__column {
+        margin-bottom: ($spacer * 1.25);
+    }
+}

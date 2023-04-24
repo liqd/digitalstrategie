@@ -3,6 +3,8 @@ from django.utils.translation import gettext_lazy as _
 from multiselectfield import MultiSelectField
 from wagtail import fields
 from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldRowPanel
+from wagtail.admin.panels import MultiFieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
 from wagtail.models import Page
@@ -32,6 +34,34 @@ BEZIRK_CHOICES = [
     ('11', _('Steglitz-Zehlendorf')),
     ('12', _('Tempelhof-Schöneberg')),
     ('13', _('Treptow-Köpenick')),
+]
+
+REGENERATIVE_MANAGEMENT = [
+    ('1', _('Smart Economic Models')),
+    ('2', _('IT Ecosystems')),
+    ('3', _('Smart Capital Region')),
+    ('4', _('Regeneration of Natural Resources')),
+]
+
+FUTURE_OPPORTUNITIES_FOR_ALL = [
+    ('1', _('Capacities for Change')),
+    ('2', _('Meeting and Learning Places')),
+    ('3', _('Liveable Urban Development')),
+    ('4', _('Smart Cities Learning Together')),
+]
+
+INCLUSIVE_SHAPING_OF_URBAN_LIFE = [
+    ('1', _('Participation')),
+    ('2', _('Transparent Decision Processes')),
+    ('3', _('Citizen Services')),
+    ('4', _('Digital Citizens Rights and Privacy')),
+]
+
+FACILITATIVE_ADMINISTRATION = [
+    ('1', _('Effective Administrative Processes')),
+    ('2', _('Transparent and Innovative Procurement')),
+    ('3', _('Intelligent Data Use')),
+    ('4', _('Fail-Safe Critical and Digital Infrastructure')),
 ]
 
 
@@ -139,7 +169,43 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
         ObjectList(de_ls_content_panels, heading='Easy German'),
     ])
 
-    subpage_types = ['MeasuresDetailPage']
+    subpage_types = ['apps_measures.MeasuresDetailPage']
+
+    @property
+    def status(self):
+        return dict(STATUS_CHOICES)
+
+    @property
+    def district(self):
+        return dict(BEZIRK_CHOICES)
+
+    @property
+    def regenerative_management(self):
+        return dict(REGENERATIVE_MANAGEMENT)
+
+    @property
+    def future_opportunities_for_all(self):
+        return dict(FUTURE_OPPORTUNITIES_FOR_ALL)
+
+    @property
+    def inclusive_shaping_of_urban_life(self):
+        return dict(INCLUSIVE_SHAPING_OF_URBAN_LIFE)
+
+    @property
+    def facilitative_administration(self):
+        return dict(FACILITATIVE_ADMINISTRATION)
+
+    @property
+    def measures_pages(self):
+        measures_pages = MeasuresDetailPage.objects.live().descendant_of(self)
+
+        return measures_pages
+
+    def get_context(self, request):
+        measures_pages = self.measures_pages
+        context = super().get_context(request)
+        context['measures_pages'] = measures_pages
+        return context
 
     search_fields = Page.search_fields + [
         index.SearchField('page_title_de', partial_match=True),
@@ -178,6 +244,30 @@ class MeasuresDetailPage(Page):
         max_choices=3,
         choices=BEZIRK_CHOICES,
         help_text='Up to 3 choices are allowed.'
+    )
+
+    regenerative_management = MultiSelectField(
+        blank=True,
+        max_choices=3,
+        choices=REGENERATIVE_MANAGEMENT,
+    )
+
+    future_opportunities_for_all = MultiSelectField(
+        blank=True,
+        max_choices=3,
+        choices=FUTURE_OPPORTUNITIES_FOR_ALL,
+    )
+
+    inclusive_shaping_of_urban_life = MultiSelectField(
+        blank=True,
+        max_choices=3,
+        choices=INCLUSIVE_SHAPING_OF_URBAN_LIFE,
+    )
+
+    facilitative_administration = MultiSelectField(
+        blank=True,
+        max_choices=3,
+        choices=FACILITATIVE_ADMINISTRATION,
     )
 
     period_de = models.CharField(
@@ -322,6 +412,16 @@ class MeasuresDetailPage(Page):
         FieldPanel('text_image'),
         FieldPanel('districts'),
         FieldPanel('status'),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('regenerative_management'),
+                FieldPanel('future_opportunities_for_all'),
+            ], help_text='Up to 3 choices are allowed.',),
+            FieldRowPanel([
+                FieldPanel('inclusive_shaping_of_urban_life'),
+                FieldPanel('facilitative_administration'),
+            ]),
+        ], 'handlungsfelder'),
         FieldPanel('contact_organisation_name_de'),
         FieldPanel('contact_organisation_name_en'),
         FieldPanel('contact_organisation_name_de_ls'),

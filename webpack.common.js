@@ -14,6 +14,9 @@ module.exports = {
     digitalstrategie: [
       './digitalstrategie/assets/scss/style.scss',
     ],
+    header_image: [
+      './apps/home/assets/header-image.js'
+    ],
     newsletter: [
         './apps/home/assets/newsletter.js'
     ],

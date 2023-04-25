@@ -4,58 +4,54 @@
 {% block content %}
 <div id="layout-grid__area--maincontent">
     <h1>{{ page.page_title }}</h1>
-    <dl class="meta-information__row">
-        <div class="meta-information__column">
-            <dt class="meta-information__column__head">
+    <dl class="meta-information__list">
+        <div class="meta-information__item">
+            <dt class="meta-information__item__head">
                 {% trans 'Responsible organisations' %}
             </dt>
-            <dd class="meta-information__column__content">
+            <dd class="meta-information__item__content">
                 {{ page.responsible_organisation }}
             </dd>
         </div>
-        <div class="meta-information__column">
-            <div class="meta-information__column__head">
+        <div class="meta-information__item">
+            <dt class="meta-information__item__head">
                 {% trans 'District' %}
-            </div>
-            <div class="meta-information__column__content">
+            </dt>
+            <dd class="meta-information__item__content">
                 {% with districts=page.get_districts_display %}
                     {{ districts }}
                 {% endwith %}
-            </div>
+            </dd>
         </div>
-    </dl>
-    <dl class="meta-information__row">
-        <div class="meta-information__column">
-            <dt class="meta-information__column__head">
+        <div class="meta-information__item">
+            <dt class="meta-information__item__head">
                 {% trans 'Involved organisations' %}
             </dt>
-            <dd class="meta-information__column__content">
+            <dd class="meta-information__item__content">
                 {{ page.involved_organisations }}
             </dd>
         </div>
-        <div class="meta-information__column">
-            <dt class="meta-information__column__head">
+        <div class="meta-information__item">
+            <dt class="meta-information__item__head">
                 {% trans 'Period' %}
             </dt>
-            <dd class="meta-information__column__content">
+            <dd class="meta-information__item__content">
                 {{ page.period }}
             </dd>
         </div>
-    </dl>
-    <dl class="meta-information__row">
-        <div class="meta-information__column">
-            <dt class="meta-information__column__head">
+        <div class="meta-information__item">
+            <dt class="meta-information__item__head">
                 {% trans 'Handlungsfelder' %}
             </dt>
-            <dd class="meta-information__column__content">
+            <dd class="meta-information__item__content">
                 {{ page.get_fields_of_action_display }}
             </dd>
         </div>
-        <div class="meta-information__column">
-            <dt class="meta-information__column__head">
+        <div class="meta-information__item">
+            <dt class="meta-information__item__head">
                 {% trans 'Status' %}
             </dt>
-            <dd class="meta-information__column__content">
+            <dd class="meta-information__item__content">
                 {{ page.get_status_display }}
             </dd>
         </div>

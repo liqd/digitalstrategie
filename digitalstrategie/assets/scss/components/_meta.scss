@@ -1,11 +1,12 @@
-.meta-information__row {
+.meta-information__list {
     display: flex;
+    flex-flow: row wrap;
     column-gap: $spacer;
-    margin: ($spacer * 1.25) 0;
 }
 
-.meta-information__column {
-    flex: 1;
+.meta-information__item {
+    flex-basis: 49%; // space for gap
+    margin-bottom: ($spacer * 1.25);
 }
 
 .meta-information__column__head {
@@ -13,12 +14,11 @@
 }
 
 @media screen and (max-width: 37.4375rem) {
-    .meta-information__row {
+    .meta-information__list {
         flex-direction: column;
-        margin: 0;
     }
 
-    .meta-information__column {
-        margin-bottom: ($spacer * 1.25);
+    .meta-information__item {
+        flex: 1;
     }
 }

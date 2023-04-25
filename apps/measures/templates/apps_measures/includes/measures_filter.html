@@ -26,7 +26,7 @@
               <select class="form-control" id="statusSelect" name="statusSelect">
                 <option value="">{% trans 'Please choose' %}</option>
                 {% for status_key,status_string in page.status.items %}
-                  <option value="statusOption{{ forloop.counter }}">{{ status_string }}</option>
+                  <option value="statusOption{{ status_key }}">{{ status_string }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -44,12 +44,12 @@
             </button>
           </legend>
           <div class="facet__body" id="districtFacet">
+            {% for district_key,district_string in page.district.items %}
             <div class="form-check">
-              {% for district_key,district_string in page.district.items %}
-                <input class="form-check-input" type="checkbox" id="districtCheckbox{{ forloop.counter }}" name="districtCheckbox{{ forloop.counter }}" />
-                <label class="form-check-label" for="districtCheckbox{{ forloop.counter }}">{{ district_string }}</label>
-              {% endfor %}
+                <input class="form-check-input" type="checkbox" id="districtCheckbox{{ district_key }}" name="districtCheckbox{{ district_key }}" />
+                <label class="form-check-label" for="districtCheckbox{{ district_key }}">{{ district_string }}</label>
             </div>
+            {% endfor %}
           </div>
         </fieldset>
 
@@ -73,8 +73,8 @@
               <div class="js-accordion__panel">
                 {% for regenerative_management_key,regenerative_management_string in page.regenerative_management.items %}
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="checkboxRegMan{{ forloop.counter }}" name="checkboxRegMan{{ forloop.counter }}" />
-                    <label class="form-check-label" for="checkboxRegMan{{ forloop.counter }}">{{ regenerative_management_string }}</label>
+                    <input class="form-check-input" type="checkbox" id="checkboxRegMan{{ regenerative_management_key }}" name="checkboxRegMan{{ regenerative_management_key }}" />
+                    <label class="form-check-label" for="checkboxRegMan{{ regenerative_management_key }}">{{ regenerative_management_string }}</label>
                   </div>
                 {% endfor %}
                 </div>
@@ -85,8 +85,8 @@
               <div class="js-accordion__panel">
                 {% for future_opportunities_for_all_key,future_opportunities_for_all_string in page.future_opportunities_for_all.items %}
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="checkboxFutOp{{ forloop.counter }}" name="checkboxFutOp{{ forloop.counter }}" />
-                    <label class="form-check-label" for="checkboxFutOp{{ forloop.counter }}">{{ future_opportunities_for_all_string }}</label>
+                    <input class="form-check-input" type="checkbox" id="checkboxFutOp{{ future_opportunities_for_all_key }}" name="checkboxFutOp{{ future_opportunities_for_all_key }}" />
+                    <label class="form-check-label" for="checkboxFutOp{{ future_opportunities_for_all_key }}">{{ future_opportunities_for_all_string }}</label>
                   </div>
                 {% endfor %}
               </div>
@@ -97,8 +97,8 @@
                 <div class="js-accordion__panel">
                   {% for inclusive_shaping_of_urban_life_key,inclusive_shaping_of_urban_life_string in page.inclusive_shaping_of_urban_life.items %}
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="checkboxInclUrb{{ forloop.counter }}" name="checkboxInclUrb{{ forloop.counter }}" />
-                      <label class="form-check-label" for="checkboxInclUrb{{ forloop.counter }}">{{ inclusive_shaping_of_urban_life_string }}</label>
+                      <input class="form-check-input" type="checkbox" id="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}" name="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}" />
+                      <label class="form-check-label" for="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}">{{ inclusive_shaping_of_urban_life_string }}</label>
                     </div>
                   {% endfor %}
                 </div>
@@ -109,8 +109,8 @@
                 <div class="js-accordion__panel">
                   {% for facilitative_administration_key,facilitative_administration_string in page.facilitative_administration.items %}
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="checkboxFacAdmin{{ forloop.counter }}" name="checkboxFacAdmin{{ forloop.counter }}" />
-                      <label class="form-check-label" for="checkboxFacAdmin{{ forloop.counter }}">{{ facilitative_administration_string }}</label>
+                      <input class="form-check-input" type="checkbox" id="checkboxFacAdmin{{ facilitative_administration_key }}" name="checkboxFacAdmin{{ facilitative_administration_key }}" />
+                      <label class="form-check-label" for="checkboxFacAdmin{{ facilitative_administration_key }}">{{ facilitative_administration_string }}</label>
                     </div>
                   {% endfor %}
                 </div>

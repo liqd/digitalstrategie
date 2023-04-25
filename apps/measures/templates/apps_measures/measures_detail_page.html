@@ -71,7 +71,7 @@
             </dd>
         </div>
     </dl>
-    <section class="modul-text_bild imagealignleft">
+    <section class="modul-text_bild imagealignleft fifty">
         {% image page.text_image original as text_image %}
         <div class="image">
             <div class="image__image">
@@ -79,28 +79,43 @@
                     src="{{ text_image.url }}"
                     alt="{{ text_image.alt }}"
                 />
-                {% if text_image.copyright %}
-                    <p class="image__copyright">{{ text_image.copyright }}</p>
-                {% endif %}
             </div>
+            {% if text_image.copyright %}
+                <p class="image__copyright">{{ text_image.copyright }}</p>
+            {% endif %}
         </div>
         <div class="text textile">
             {{ page.body|richtext }}
-            {% if page.body_participation %}
-                <h2 class="title">{% trans 'Participation' %}</h2>
-                <section>{{ page.body_participation|richtext }}</section>
-            {% endif %}
-            {% if page.body_effect %}
-                <h2 class="title">{% trans 'Effect' %}</h2>
-                <section>{{ page.body_effect|richtext }}</section>
-            {% endif %}
         </div>
     </section>
+
+    {% if page.body_participation %}
+    <section class="modul-text_bild">
+        <h2 class="title">{% trans 'Participation' %}</h2>
+        <div class="text textile">
+            {{ page.body_participation|richtext }}
+        </div>
+    </section>
+    {% endif %}
+    {% if page.body_effect %}
+    <section class="modul-text_bild">
+        <h2 class="title">{% trans 'Effect' %}</h2>
+        <div class="text textile">
+            {{ page.body_effect|richtext }}
+        </div>
+    </section>
+    {% endif %}
     <section>
         <h2 class="title">{% trans 'Contact' %}</h2>
         <ul class="list--contact" aria-label="{% trans 'contact information' %}">
-            <li class="loc">{{ page.contact_organisation_name }}</li>
-            <li class="name">{{ page.contact_name }}</li>
+            <li class="name">
+                <strong class="u-d-block">{% trans 'Organisation' %}</strong>
+                {{ page.contact_organisation_name }}
+            </li>
+            <li class="name">
+                <strong class="u-d-block">{% trans 'Contact person' %}</strong>
+                {{ page.contact_name }}
+            </li>
             {% if page.contact_email %}
                 <li class="email"><a href="mailto:{{page.contact_email}}">{{ page.contact_email }}</a></li>
             {% endif %}

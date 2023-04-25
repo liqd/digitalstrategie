@@ -13,6 +13,10 @@ from apps.home import blocks as apps_blocks
 
 
 class HomePage(MetadataPageMixin, Page):
+    # there should only be 1
+    max_count = 1
+    # only allow as root page
+    parent_page_types = ['wagtailcore.Page']
     page_blocks = [
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),

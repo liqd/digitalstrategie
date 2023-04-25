@@ -17,13 +17,19 @@
     "plugin:n/recommended"
   ],
   "rules": {
-    "jsx-quotes": [2, "prefer-double"],
+    "jsx-quotes": [
+      2,
+      "prefer-double"
+    ],
     "n/no-missing-require": "off",
     "n/no-unsupported-features/es-syntax": "off",
     "n/no-missing-import": "off",
     "n/no-unpublished-import": "off",
     "n/no-extraneous-import": "off",
-    "no-restricted-syntax": ["error", "TemplateLiteral"]
+    "no-restricted-syntax": [
+      "error",
+      "TemplateLiteral"
+    ]
   },
   "plugins": [
     "promise"
@@ -33,11 +39,27 @@
     "venv/",
     "static/"
   ],
+  "overrides": [
+    {
+      "files": [
+        "webpack.dev.js",
+        "webpack.common.js",
+        "webpack.prod.js"
+      ],
+      "rules": {
+        "n/no-unpublished-require": "off",
+        "n/no-unpublished-import": "off",
+      }
+    }
+  ],
   "settings": {
-    "import/core-modules": [ django ],
+    "import/core-modules": [django],
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx"]
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     }
   }

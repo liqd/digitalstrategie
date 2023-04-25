@@ -5,8 +5,6 @@
     "type": "git",
     "url": "https://github.com/liqd/digitalstrategie.git"
   },
-  "dependencies": {
-  },
   "devDependencies": {
     "@babel/core": "7.21.4",
     "@babel/preset-env": "7.21.4",
@@ -18,6 +16,7 @@
     "eslint-config-standard": "17.0.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-promise": "6.1.1",
+    "glob": "10.2.2",
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
     "mini-css-extract-plugin": "2.7.5",

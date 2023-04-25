@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+require('webpack')
 const path = require('path')
 const glob = require('glob')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -12,22 +12,22 @@ module.exports = {
       './digitalstrategie/assets/berlin_css/fontawesome.all.min.css'
     ],
     digitalstrategie: [
-      './digitalstrategie/assets/scss/style.scss',
+      './digitalstrategie/assets/scss/style.scss'
     ],
     header_image: [
       './apps/home/assets/header-image.js'
     ],
     newsletter: [
-        './apps/home/assets/newsletter.js'
+      './apps/home/assets/newsletter.js'
     ],
     video: [
-        './apps/home/assets/video.js'
+      './apps/home/assets/video.js'
     ],
     captcheck: {
       import: [
         './apps/captcha/assets/captcheck.js'
-      ],
-    },
+      ]
+    }
   },
   output: {
     libraryTarget: 'this',
@@ -48,7 +48,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'].map(require.resolve),
+            presets: ['@babel/preset-env'].map(require.resolve)
           }
         }
       },

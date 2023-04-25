@@ -445,3 +445,11 @@ class MeasuresDetailPage(Page):
         index.SearchField('body_en', partial_match=True),
         index.SearchField('body_de_ls', partial_match=True)
     ]
+
+    @property
+    def get_fields_of_action_display(self):
+        fields_of_action = [self.get_regenerative_management_display(),
+                            self.get_future_opportunities_for_all_display(),
+                            self.get_inclusive_shaping_of_urban_life_display(),
+                            self.get_facilitative_administration_display()]
+        return ', '.join(filter(None, fields_of_action))

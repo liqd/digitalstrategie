@@ -48,18 +48,7 @@
                 {% trans 'Handlungsfelder' %}
             </dt>
             <dd class="meta-information__column__content">
-                {% with element=page.get_regenerative_management_display %}
-                    {{ element }}
-                {% endwith %}
-                {% with element=page.get_future_opportunities_for_all_display %}
-                    {{ element }}
-                {% endwith %}
-                {% with element=page.get_inclusive_shaping_of_urban_life_display %}
-                    {{ element }}
-                {% endwith %}
-                {% with element=page.get_facilitative_administration_display %}
-                    {{ element }}
-                {% endwith %}
+                {{ page.get_fields_of_action_display }}
             </dd>
         </div>
         <div class="meta-information__column">

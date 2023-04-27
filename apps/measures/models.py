@@ -1,4 +1,7 @@
+from django.core.paginator import InvalidPage
+from django.core.paginator import Paginator
 from django.db import models
+from django.http import Http404
 from django.utils.translation import gettext_lazy as _
 from multiselectfield import MultiSelectField
 from wagtail import fields
@@ -197,12 +200,22 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
 
     @property
     def measures_pages(self):
-        measures_pages = MeasuresDetailPage.objects.live().descendant_of(self)
+        measures_pages = MeasuresDetailPage.objects.live()\
+            .descendant_of(self).order_by("title", "-first_published_at")
 
         return measures_pages
 
     def get_context(self, request):
         measures_pages = self.measures_pages
+
+        page = request.GET.get('page', 1)
+        paginator = Paginator(measures_pages, 6)
+
+        try:
+            measures_pages = paginator.page(page)
+        except InvalidPage:
+            raise Http404
+
         context = super().get_context(request)
         context['measures_pages'] = measures_pages
         return context

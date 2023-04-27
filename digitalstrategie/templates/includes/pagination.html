@@ -1,0 +1,45 @@
+{% load i18n contrib_tags %}
+
+{% if page_obj.has_previous or page_obj.has_next %}
+{% get_proper_elided_page_range page_obj.paginator page_obj.number as paginated_page_range %}
+<nav class="pagination" aria-label="{% trans 'Pagination navigation' %}">
+    <ul>
+        {% if page_obj.has_previous %}
+        {% combined_url_parameter request.GET page=page_obj.previous_page_number as url_par %}
+        <li class="pager-item-previous">
+            <a href="{{ url_par }}" title="{% translate 'Scroll one page back' %}"><i class="fas fa-chevron-left" aria-hidden="true"></i></a>
+        </li>
+        {% else %}
+        <li aria-disabled="true" class="pager-item-previous disabled">
+            <div><i class="fas fa-chevron-left" aria-hidden="true"></i> <span class="aural">{% translate 'Scroll one page back' %}</span></div>
+        </li>
+        {% endif %}
+
+        {% for page_number in paginated_page_range %}
+            {% if page_number >= 0 %}
+            <li {% ifequal page_number page_obj.number %}class="active" aria-current="page"{% endifequal %}>
+                {% combined_url_parameter request.GET page=page_number as url_par %}
+                <a href="{{ url_par }}">{{ page_number }}</a>
+            </li>
+            {% else %}
+            <li>
+                <span aria-hidden="true">{{ page_number }}</span>
+            </li>
+            {% endif %}
+        {% endfor %}
+
+        <li class="mobile-counter"><span>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span></li>
+
+        {% if page_obj.has_next %}
+        {% combined_url_parameter request.GET page=page_obj.next_page_number as url_par %}
+        <li class="pager-item-next">
+            <a href="{{ url_par }}" title="{% translate 'Scroll one page further' %}"><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+        </li>
+        {% else %}
+        <li aria-disabled="true" class="pager-item-next disabled">
+            <div><i class="fas fa-chevron-right" aria-hidden="true"></i> <span class="aural">{% translate 'Scroll one page further' %}</span></div>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}

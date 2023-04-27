@@ -4,6 +4,7 @@ from django import template
 from django.conf import settings
 from django.core import management
 from django.core.cache import cache
+from django.core.paginator import Paginator
 from django.utils.html import mark_safe
 
 register = template.Library()
@@ -28,3 +29,20 @@ def get_external_footer():
             cache.set('footer', footer)
             return footer
     return ''
+
+
+@register.simple_tag
+def combined_url_parameter(request_query_dict, **kwargs):
+    combined_query_dict = request_query_dict.copy()
+    for key in kwargs:
+        combined_query_dict.setlist(key, [kwargs[key]])
+    encoded_parameter = "?" + combined_query_dict.urlencode()
+    return encoded_parameter
+
+
+@register.simple_tag
+def get_proper_elided_page_range(p, number, on_each_side=1, on_ends=1):
+    paginator = Paginator(p.object_list, p.per_page)
+    return paginator.get_elided_page_range(
+        number=number, on_each_side=on_each_side, on_ends=on_ends
+    )

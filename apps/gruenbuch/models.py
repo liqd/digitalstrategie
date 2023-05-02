@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from wagtail import fields
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import ObjectList
@@ -20,7 +21,8 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text='Image ratio has to be 2:1 or 4:3.'
+        help_text=_('Image ratio has to be 2:1 or 4:3. Intro image is not '
+                    'shown for Easy Language.')
     )
 
     page_blocks = [

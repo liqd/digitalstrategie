@@ -14,6 +14,8 @@ def custom_meta_tags(context, model=None):
     but uses homepage meta tags if current site does not have own tags.
     """
     request = context.get('request', None)
+    if request is None:
+        return ""
     if not model:
         model = context.get('self', None)
         if not hasattr(model, 'get_meta_title') or (

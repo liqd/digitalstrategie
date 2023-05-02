@@ -1,9 +1,9 @@
-{% load wagtailcore_tags wagtailimages_tags i18n %}
+{% load wagtailcore_tags i18n %}
 
 <div class="modul-facetingform js-facetingform" id="measuresFilter">
   <div class="facetingform__container">
     <div class="container__head">
-      <h2 class="title">{% trans 'Filter by' %}
+      <h2 class="title">{% translate 'Filter by' %}
       </h2>
     </div>
     <div class="container__body">
@@ -16,17 +16,17 @@
             <button data-collapsible-trigger="opened" class="facet-title" type="button" aria-controls="statusFacet">
               <span class="text">
                 <label for="statusSelect" class="form-label facet__head">
-                  {% trans 'Project status' %}
+                  {% translate 'Project status' %}
                 </label>
               </span>
             </button>
           </div>
           <div class="facet__body" id="statusFacet">
             <div class="form-group" id="group_statusSelect">
-              <select class="form-control" id="statusSelect" name="statusSelect">
-                <option value="">{% trans 'Please choose' %}</option>
-                {% for status_key,status_string in page.status.items %}
-                  <option value="statusOption{{ status_key }}">{{ status_string }}</option>
+              <select class="form-control" id="statusSelect" name="status">
+                <option value="">{% translate 'Please choose' %}</option>
+                {% for status_key, status_string in page.status.items %}
+                  <option value="{{ status_key }}" {% if status_key == request.GET.status %}selected{% endif %}>{{ status_string }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -39,14 +39,14 @@
             <button data-collapsible-trigger="opened" class="facet-title" type="button"
               aria-controls="districtFacet">
               <span class="text">
-                {% trans 'District' %}
+                {% translate 'District' %}
               </span>
             </button>
           </legend>
           <div class="facet__body" id="districtFacet">
-            {% for district_key,district_string in page.district.items %}
+            {% for district_key, district_string in page.district.items %}
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="districtCheckbox{{ district_key }}" name="districtCheckbox{{ district_key }}" />
+                <input class="form-check-input" type="checkbox" id="districtCheckbox{{ district_key }}" name="district" value="{{ district_key }}" {% if district_key in selected_districts %}checked{% endif %} />
                 <label class="form-check-label" for="districtCheckbox{{ district_key }}">{{ district_string }}</label>
             </div>
             {% endfor %}
@@ -60,7 +60,7 @@
             <button data-collapsible-trigger="opened" class="facet-title" type="button"
               aria-controls="fieldsActionFacet">
               <span class="text">
-                {% trans 'Fields of action' %}
+                {% translate 'Fields of action' %}
               </span>
             </button>
           </h3>
@@ -69,11 +69,11 @@
           <div class="facet__body" id="fieldsActionFacet">
 
             <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction01">
-              <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">Regenerative Management</legend>
+              <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Regenerative Management' %}</legend>
               <div class="js-accordion__panel">
-                {% for regenerative_management_key,regenerative_management_string in page.regenerative_management.items %}
+                {% for regenerative_management_key, regenerative_management_string in page.regenerative_management.items %}
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="checkboxRegMan{{ regenerative_management_key }}" name="checkboxRegMan{{ regenerative_management_key }}" />
+                    <input class="form-check-input" type="checkbox" id="checkboxRegMan{{ regenerative_management_key }}" name="reg" value="{{ regenerative_management_key }}" {% if regenerative_management_key in selected_reg %}checked{% endif %} />
                     <label class="form-check-label" for="checkboxRegMan{{ regenerative_management_key }}">{{ regenerative_management_string }}</label>
                   </div>
                 {% endfor %}
@@ -81,11 +81,11 @@
             </fieldset>
 
             <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction02">
-              <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">Future Opportunities for All</legend>
+              <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Future Opportunities for All' %}</legend>
               <div class="js-accordion__panel">
-                {% for future_opportunities_for_all_key,future_opportunities_for_all_string in page.future_opportunities_for_all.items %}
+                {% for future_opportunities_for_all_key, future_opportunities_for_all_string in page.future_opportunities_for_all.items %}
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="checkboxFutOp{{ future_opportunities_for_all_key }}" name="checkboxFutOp{{ future_opportunities_for_all_key }}" />
+                    <input class="form-check-input" type="checkbox" id="checkboxFutOp{{ future_opportunities_for_all_key }}" name="fut" value="{{ future_opportunities_for_all_key }}" {% if future_opportunities_for_all_key in selected_fut %}checked{% endif %} />
                     <label class="form-check-label" for="checkboxFutOp{{ future_opportunities_for_all_key }}">{{ future_opportunities_for_all_string }}</label>
                   </div>
                 {% endfor %}
@@ -93,11 +93,11 @@
             </fieldset>
 
               <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction03">
-                <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">Inclusive Shaping of Urban Life</legend>
+                <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Inclusive Shaping of Urban Life' %}</legend>
                 <div class="js-accordion__panel">
-                  {% for inclusive_shaping_of_urban_life_key,inclusive_shaping_of_urban_life_string in page.inclusive_shaping_of_urban_life.items %}
+                  {% for inclusive_shaping_of_urban_life_key, inclusive_shaping_of_urban_life_string in page.inclusive_shaping_of_urban_life.items %}
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}" name="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}" />
+                      <input class="form-check-input" type="checkbox" id="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}" name="inc" value="{{ inclusive_shaping_of_urban_life_key }}" {% if inclusive_shaping_of_urban_life_key in selected_inc %}checked{% endif %} />
                       <label class="form-check-label" for="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}">{{ inclusive_shaping_of_urban_life_string }}</label>
                     </div>
                   {% endfor %}
@@ -105,11 +105,11 @@
               </fieldset>
 
               <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction04">
-                <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">Facilitative Administration</legend>
+                <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Facilitative Administration' %}</legend>
                 <div class="js-accordion__panel">
-                  {% for facilitative_administration_key,facilitative_administration_string in page.facilitative_administration.items %}
+                  {% for facilitative_administration_key, facilitative_administration_string in page.facilitative_administration.items %}
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="checkboxFacAdmin{{ facilitative_administration_key }}" name="checkboxFacAdmin{{ facilitative_administration_key }}" />
+                      <input class="form-check-input" type="checkbox" id="checkboxFacAdmin{{ facilitative_administration_key }}" name="fac" value="{{ facilitative_administration_key }}" {% if facilitative_administration_key in selected_fac %}checked{% endif %} />
                       <label class="form-check-label" for="checkboxFacAdmin{{ facilitative_administration_key }}">{{ facilitative_administration_string }}</label>
                     </div>
                   {% endfor %}
@@ -121,12 +121,12 @@
         <div class="form-actions">
           <div class="form-actions__left">
             <button type="reset" class="link reset">
-              {% trans 'Reset filters' %}
+              <a href="?page=1">{% translate 'Reset filters' %}</a>
             </button>
           </div>
           <div class="form-actions__right">
             <button type="submit" class="button button--light">
-              {% trans 'Filter now' %}
+              {% translate 'Filter now' %}
             </button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 from django.core.paginator import InvalidPage
 from django.core.paginator import Paginator
 from django.db import models
+from django.db.models import Q
 from django.http import Http404
 from django.utils.translation import gettext_lazy as _
 from multiselectfield import MultiSelectField
@@ -205,8 +206,60 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
 
         return measures_pages
 
+    def _q_filter(self, filter_list, field_name):
+        """
+        Return Q object for filtering MultiSelectField by list of values.
+
+        filter_list = ['3', '8']
+        field_name = 'districts'
+        would return
+        <Q: (OR: ('districts__contains', '3'), ('districts__contains', '8'))>
+        """
+        filter_params = Q()
+        for element in filter_list:
+            kwargs = {'{}__contains'.format(field_name): element}
+            filter_params = filter_params | Q(**kwargs)
+        return filter_params
+
     def get_context(self, request):
         measures_pages = self.measures_pages
+
+        status = request.GET.get('status')
+        dis = request.GET.getlist('district')
+        reg = request.GET.getlist('reg')
+        fut = request.GET.getlist('fut')
+        inc = request.GET.getlist('inc')
+        fac = request.GET.getlist('fac')
+
+        filter_params = Q()
+
+        if status and status in dict(STATUS_CHOICES):
+            filter_params = filter_params & Q(status=status)
+
+        if dis:
+            filter_params = filter_params & self._q_filter(dis, 'districts')
+
+        if reg or fut or inc or fac:
+            fields_filter_params = Q()
+            if reg:
+                fields_filter_params = fields_filter_params | self._q_filter(
+                    reg, 'regenerative_management'
+                )
+            if fut:
+                fields_filter_params = fields_filter_params | self._q_filter(
+                    fut, 'future_opportunities_for_all'
+                )
+            if inc:
+                fields_filter_params = fields_filter_params | self._q_filter(
+                    inc, 'inclusive_shaping_of_urban_life'
+                )
+            if fac:
+                fields_filter_params = fields_filter_params | self._q_filter(
+                    fac, 'facilitative_administration'
+                )
+            filter_params = filter_params & fields_filter_params
+
+        measures_pages = measures_pages.filter(filter_params)
 
         page = request.GET.get('page', 1)
         paginator = Paginator(measures_pages, 6)
@@ -218,6 +271,11 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
 
         context = super().get_context(request)
         context['measures_pages'] = measures_pages
+        context['selected_districts'] = dis
+        context['selected_reg'] = reg
+        context['selected_fut'] = fut
+        context['selected_inc'] = inc
+        context['selected_fac'] = fac
         return context
 
     search_fields = Page.search_fields + [

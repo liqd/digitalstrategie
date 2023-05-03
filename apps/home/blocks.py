@@ -1,13 +1,14 @@
+from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
 from wagtail.embeds import blocks as embed_blocks
 from wagtail.images.blocks import ImageChooserBlock
 
-HELPTEXT_RICHTEXT_A11Y = '''For accessibility please make sure that you do not
-                            leave out levels when using the headlines. That
-                            means, that there should always be an h2 before
-                            using an h3.'''
-NEWSLETTER_EMAIL_DEFAULT = 'Ihre E-Mail-Adresse'
-NEWSLETTER_DSGVO_DEFAULT = (
+HELPTEXT_RICHTEXT_A11Y = _('For accessibility please make sure that you do not'
+                           ' leave out levels when using the headlines. That'
+                           ' means, that there should always be an h2 before'
+                           ' using an h3.')
+NEWSLETTER_EMAIL_DEFAULT = _('Ihre E-Mail-Adresse')
+NEWSLETTER_DSGVO_DEFAULT = _(
     'Ich willige in die Speicherung und Nutzung meiner E-Mail-Adresse für '
     'den Newsletterversand ein. Die Einwilligung gilt für den Zeitraum des '
     'Abonnements und kann jederzeit über den Link „Abmelden“ widerrufen '
@@ -56,7 +57,7 @@ class QuoteBlock(blocks.StructBlock):
     )
 
     class Meta:
-        label = 'Testimonial'
+        label = _('Testimonial')
         template = 'apps_home/blocks/quote_block.html'
         icon = 'openquote'
 
@@ -73,7 +74,7 @@ class TextWithImageBlock(blocks.StructBlock):
         ],
         icon='cup',
         default='left',
-        help_text='How should the image be aligned?'
+        help_text=_('How should the image be aligned?')
     )
 
     class Meta:
@@ -93,7 +94,7 @@ class ParagraphBlock(blocks.StructBlock):
 
 
 class ThesisBlock(blocks.StructBlock):
-    thesis = blocks.CharBlock(max_length=255, label='One thesis')
+    thesis = blocks.CharBlock(max_length=255, label=_('One thesis'))
 
     class Meta:
         template = 'apps_home/blocks/thesis_block.html'
@@ -107,8 +108,8 @@ class ThesisListBlock(blocks.StructBlock):
         label='All theses'
     )
     background_color = blocks.ChoiceBlock(
-        help_text='Not choosing a colour will result in a '
-                  'block with a white background.',
+        help_text=_('Not choosing a colour will result in a '
+                    'block with a white background.'),
         required=False,
         choices=[
             ('yellow', 'Yellow'),
@@ -130,13 +131,13 @@ class TeaserBlockCentered(blocks.StructBlock):
     link_text = blocks.CharBlock(max_length=50, label='Link Text')
     link_description = blocks.TextBlock(
         max_length=70,
-        label='Link Description',
-        help_text='describe link for assistive technology if needed',
+        label=_('Link Description'),
+        help_text=_('describe link for assistive technology if needed'),
         required=False
     )
     background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in a '
-                  'block with a white background.',
+        help_text=_('Not choosing a colour will result in a '
+                    'block with a white background.'),
         required=False
     )
 
@@ -153,14 +154,14 @@ class TeaserBlockImage(blocks.StructBlock):
     link_text = blocks.CharBlock(max_length=50, label='Link Text')
     link_description = blocks.TextBlock(
         max_length=70,
-        label='Link Description',
-        help_text='describe link for assistive technology if needed',
+        label=_('Link Description'),
+        help_text=_('describe link for assistive technology if needed'),
         required=False
     )
 
     background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in a block with '
-                  'a white background.',
+        help_text=_('Not choosing a colour will result in a block with '
+                    'a white background.'),
         required=False
     )
 
@@ -176,8 +177,8 @@ class LinkBlock(blocks.StructBlock):
     link_text = blocks.TextBlock(max_length=50, label='Link Text')
     link_description = blocks.TextBlock(
         max_length=70,
-        label='Link Description',
-        help_text='describe link for assistive technology if needed',
+        label=_('Link Description'),
+        help_text=_('describe link for assistive technology if needed'),
         required=False
     )
 
@@ -188,7 +189,7 @@ class ImgTextLinkBlock(blocks.StructBlock):
     title = blocks.CharBlock(max_length=130)
     body = blocks.TextBlock(max_length=500, blank=True, rows=3)
     button = LinkBlock(
-        help_text='Add either an external or internal link, not both'
+        help_text=_('Add either an external or internal link, not both')
     )
 
 
@@ -199,13 +200,13 @@ class TeaserBlockColumn(blocks.StructBlock):
         ('2', 'two columns'),
         ('3', 'three columns')
     ], icon='cup', required=True,
-        help_text='Only add this number of columns below')
+        help_text=_('Only add this number of columns below'))
     column = blocks.ListBlock(ImgTextLinkBlock())
 
     class Meta:
         template = 'apps_home/blocks/teaser_block_columns.html'
         icon = 'grip'
-        label = 'Teaser Columns'
+        label = _('Teaser Columns')
 
 
 class IconTextLinkBlock(blocks.StructBlock):
@@ -214,8 +215,8 @@ class IconTextLinkBlock(blocks.StructBlock):
     link = blocks.PageChooserBlock()
     link_description = blocks.TextBlock(
         max_length=70,
-        label='Link Description',
-        help_text='describe link for assistive technology if needed',
+        label=_('Link Description'),
+        help_text=_('describe link for assistive technology if needed'),
         required=False
     )
 
@@ -228,7 +229,7 @@ class TeaserBlockTile(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/teaser_block_tiles.html'
         icon = 'pick'
-        label = 'Teaser Tiles'
+        label = _('Teaser Tiles')
 
 
 class TeaserBlockSingle(blocks.StructBlock):
@@ -236,13 +237,13 @@ class TeaserBlockSingle(blocks.StructBlock):
     title = blocks.CharBlock(max_length=130)
     body = blocks.TextBlock(max_length=500)
     link = LinkBlock(
-        help_text='Add either an external or internal link, not both'
+        help_text=_('Add either an external or internal link, not both')
     )
 
     class Meta:
         template = 'apps_home/blocks/teaser_block_single.html'
         icon = 'pick'
-        label = 'Teaser Single'
+        label = _('Teaser Single')
 
 
 class NewsletterBlock(blocks.StructBlock):
@@ -258,15 +259,15 @@ class NewsletterBlock(blocks.StructBlock):
         default=NEWSLETTER_DSGVO_DEFAULT
     )
     background_color = ColorChoiceBlock(
-        help_text='Not choosing a colour will result in a '
-                  'block with a white background.',
+        help_text=_('Not choosing a colour will result in a '
+                    'block with a white background.'),
         required=False
     )
 
     class Meta:
         template = 'apps_home/blocks/newsletter_block.html'
         icon = 'mail'
-        help_text = 'This form only works with sendinblue'
+        help_text = _('This form only works with sendinblue')
 
 
 class VideoBlock(blocks.StructBlock):
@@ -275,32 +276,32 @@ class VideoBlock(blocks.StructBlock):
     caption = blocks.CharBlock(
         max_length=255,
         required=False,
-        help_text='Please insert a short description of the video '
-                  '(character limit 255).')
-    video = embed_blocks.EmbedBlock(help_text='You can only add links to '
-                                    'YouTube or Vimeo videos.')
+        help_text=_('Please insert a short description of the video '
+                    '(character limit 255).'))
+    video = embed_blocks.EmbedBlock(help_text=_('You can only add links to '
+                                    'YouTube or Vimeo videos.'))
     preview_image = ImageChooserBlock(
         required=False,
-        help_text='Add a preview image for the dsgvo video overlay.')
+        help_text=_('Add a preview image for the dsgvo video overlay.'))
     transcript = blocks.RichTextBlock(features=['bold', 'italic', 'ol', 'ul',
                                                 'link', 'document-link'],
-                                      help_text='You can add the video\'s '
-                                      'transcript here (unlimited '
-                                      'characters).',
+                                      help_text=_('You can add the video\'s '
+                                                  'transcript here (unlimited '
+                                                  'characters).'),
                                       required=False)
 
     class Meta:
         template = 'apps_home/blocks/video_block.html'
         icon = 'placeholder'
-        label = 'Video Block'
+        label = _('Video Block')
 
 
 class ImageSwiperBlock(blocks.StructBlock):
     swiper_item = blocks.ListBlock(
         ImgTextLinkBlock(
-            help_text='Please note that images will be displayed in a 16:9 '
-            'aspect ratio. Crop or resize your images accordingly before '
-            'uploading to ensure they display correctly.'))
+            help_text=_('Please note that images will be displayed in a 16:9 '
+                        'aspect ratio. Crop or resize your images accordingly '
+                        'before uploading to ensure they display correctly.')))
 
     class Meta:
         template = 'apps_home/blocks/image_swiper_block.html'

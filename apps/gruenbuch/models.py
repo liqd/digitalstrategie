@@ -44,15 +44,15 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
 
     page_intro_de = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Page introduction de",
+        verbose_name=_('Page introduction de'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_en = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Page introduction en",
+        verbose_name=_('Page introduction en'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_de_ls = fields.RichTextField(
         blank=True, default="",
-        verbose_name="Page introduction de ls",
+        verbose_name=_('Page introduction de ls'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
 
     body_de = fields.StreamField(page_blocks, blank=True, use_json_field=True)
@@ -102,11 +102,11 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(MetadataPageMixin.promote_panels, heading=_('Meta Tags')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     subpage_types = ['apps_gruenbuch.GruenbuchDetailPage',
@@ -132,7 +132,7 @@ class GruenbuchIndexPage(GruenbuchOverviewPage):
     template = 'gruenbuch_overview_page.html'
 
     class Meta:
-        verbose_name = 'Gruenbuch Index Page'
+        verbose_name = _('Gruenbuch Index Page')
 
     subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
 
@@ -204,10 +204,10 @@ class GruenbuchDetailPage(Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     search_fields = Page.search_fields + [

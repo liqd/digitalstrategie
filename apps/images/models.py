@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from wagtail.images.models import AbstractImage
 from wagtail.images.models import AbstractRendition
 from wagtail.images.models import Image
@@ -15,23 +16,23 @@ class CustomImage(AbstractImage):
     alt_de = models.CharField(
         max_length=255,
         blank=True,
-        help_text='Add an alternative text for image accessibility'
+        help_text=_('Add an alternative text for image accessibility')
     )
     alt_en = models.CharField(
         max_length=255,
         blank=True,
-        help_text='Add an alternative text for image accessibility'
+        help_text=_('Add an alternative text for image accessibility')
     )
     alt_de_ls = models.CharField(
         max_length=255,
         blank=True,
-        help_text='Add an alternative text for image accessibility'
+        help_text=_('Add an alternative text for image accessibility')
     )
 
     copyright = models.CharField(
         max_length=255,
         blank=True,
-        help_text='Add copyright information for image'
+        help_text=_('Add copyright information for image')
     )
 
     admin_form_fields = Image.admin_form_fields + (

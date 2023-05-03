@@ -1,5 +1,9 @@
 {% load snippet_tags i18n static contrib_tags %}
-{% load_site_menu "footer" as footer_menu_items %}
+{% if 'de-ls' in request.path %}
+    {% load_site_menu "footer_ls" as footer_menu_items %}
+{% else %}
+    {% load_site_menu "footer" as footer_menu_items %}
+{% endif %}
 
 {% if footer_menu_items %}
 <div id="layout-grid__area--contentfooter">
@@ -11,19 +15,41 @@
             <ul class="js-collapse-palm">
               {% for menuitem in footer_menu_items %}
               <li {% if forloop.first %}class="initial-open"{% endif %}>
-                  <h3 class="heading js-trigger">{{ menuitem.title }}</h3>
-                  <ul>
-                      {% if menuitem.subpages %}
-                          {% for subpage in menuitem.subpages %}
-                              <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
-                          {% endfor %}
-                      {% endif %}
-                      {% if menuitem.url and not menuitem.subpages %}
-                          <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
-                      {% endif %}
-                  </ul>
-              </li>
-              {% endfor %}
+                    <h3 class="heading js-trigger">{{ menuitem.title }}</h3>
+                    <ul>
+                        {% if forloop.first %}
+                        {% get_language_info for 'de-ls' as language %}
+                        <li>
+                            <form class="footer-menu__btn" action="{% url 'set_language' %}" method="post">
+                              {% csrf_token %}
+                              <input name="next" type="hidden" value="{{ redirect_to }}" />
+                              <input name="language" type="hidden" value="{{ language.code }}">
+                              <span>
+                                <button role="button" type="submit" aria-label="{% trans 'select' %}{{ language.name }}">
+                                    <img
+                                        class="misc-icon"
+                                        src="https://www.berlin.de/i9f/v4/css/images/misc/leichtesprache.svg"
+                                        title="{% trans 'Leichte Sprache' %}"
+                                        aria-hidden="true"
+                                        alt="{% trans 'Leichte Sprache' %}"
+                                    >
+                                    {{ language.name_local }}
+                                </button>
+                              </span>
+                            </form>
+                        </li>
+                        {% endif %}
+                        {% if menuitem.subpages %}
+                            {% for subpage in menuitem.subpages %}
+                                <li><a href="{{ subpage.value.url }}">{{ subpage.value.link_text }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                        {% if menuitem.url and not menuitem.subpages %}
+                            <li><a href="{{ menuitem.url }}">{{ menuitem.title }}</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+                {% endfor %}
             </ul>
         </nav>
     </div>

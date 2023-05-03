@@ -1,0 +1,15 @@
+.footer-menu__btn {
+    margin-bottom: 0;
+
+    & button {
+        @extend .btn--reset;
+
+        font-family: $font-family-arial;
+    }
+
+    &:hover {
+        & button {
+            text-decoration: underline;
+        }
+    }
+}

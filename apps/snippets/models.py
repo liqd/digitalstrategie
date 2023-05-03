@@ -35,9 +35,9 @@ class MenuItem(models.Model):
         blank=True,
         null=True,
         help_text=_(
-            'Creates a link to a single wagtail page. '
+            'Header: creates a link to a single wagtail page. '
             'Leave empty if you add subpages. '
-            'In the footers only subpages will be shown.'
+            'Footer: only subpage links will be shown.'
         ),
         on_delete=models.CASCADE
     )
@@ -96,8 +96,10 @@ class NavigationMenu(ClusterableModel):
         max_length=255,
         null=False,
         blank=False,
-        help_text=_('Call the menu "header" to use as upper menu. '
-                    'Call the menu "footer" to use as'
+        help_text=_('Call the menu "header" for use on de and en pages '
+                    'and "header_ls" for ls pages as the upper menu. '
+                    'Call the menu "footer" for use on de and en pages '
+                    'and "footer_ls" for ls pages to use as'
                     'the upper light grey footer. The lower '
                     'footer is loaded externally.')
     )

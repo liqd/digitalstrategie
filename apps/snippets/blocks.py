@@ -1,4 +1,5 @@
 from django.utils import translation
+from django.utils.translation import gettext_lazy as _
 from wagtail.blocks import CharBlock
 from wagtail.blocks import PageChooserBlock
 from wagtail.blocks import StructBlock
@@ -42,8 +43,8 @@ class LinkBlock(StructBlock):
 class ExternalLinkBlock(StructBlock):
     external_link = URLBlock(
         required=True,
-        help_text=('Please enter a full url which starts with https:// '
-                   'or http://'),
+        help_text=_('Please enter a full url which starts with https:// '
+                    'or http://'),
         max_length=500,
     )
 

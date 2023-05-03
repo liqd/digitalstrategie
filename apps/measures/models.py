@@ -78,7 +78,7 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
 
     page_teaser = [
         ('teaser_single', apps_blocks.TeaserBlockSingle(
-            help_text='Only add 1 teaser block per overview page.'
+            help_text=_('Only add 1 teaser block per overview page.')
         )),
     ]
 
@@ -92,15 +92,15 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
     page_intro_de = models.TextField(
         max_length=200,
         blank=False,
-        verbose_name="Page introduction de")
+        verbose_name=_('Page introduction de'))
     page_intro_en = models.TextField(
         max_length=200,
         blank=True,
-        verbose_name="Page introduction en")
+        verbose_name=_('Page introduction en'))
     page_intro_de_ls = models.TextField(
         max_length=200,
         blank=True,
-        verbose_name="Page introduction de ls")
+        verbose_name=_('Page introduction de ls'))
 
     swiper_de = fields.StreamField(
         page_swiper, blank=False, use_json_field=True)
@@ -166,11 +166,11 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(MetadataPageMixin.promote_panels, heading=_('Meta Tags')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     subpage_types = ['apps_measures.MeasuresDetailPage']
@@ -314,7 +314,7 @@ class MeasuresDetailPage(Page):
         blank=True,
         max_choices=3,
         choices=BEZIRK_CHOICES,
-        help_text='Up to 3 choices are allowed.'
+        help_text=_('Up to 3 choices are allowed.')
     )
 
     regenerative_management = MultiSelectField(
@@ -487,7 +487,7 @@ class MeasuresDetailPage(Page):
             FieldRowPanel([
                 FieldPanel('regenerative_management'),
                 FieldPanel('future_opportunities_for_all'),
-            ], help_text='Up to 3 choices are allowed.',),
+            ], help_text=_('Up to 3 choices are allowed.'),),
             FieldRowPanel([
                 FieldPanel('inclusive_shaping_of_urban_life'),
                 FieldPanel('facilitative_administration'),
@@ -505,10 +505,10 @@ class MeasuresDetailPage(Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     search_fields = Page.search_fields + [

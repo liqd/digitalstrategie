@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.admin.panels import ObjectList
@@ -37,15 +38,15 @@ class ImportantPages(BaseSiteSetting):
 class Newsletter(BaseSiteSetting):
     sendinblue_api_key = models.CharField(
         max_length=90,
-        help_text='Your Sendinblue api key')
+        help_text=_('Your Sendinblue api key'))
     sendinblue_list_id = models.PositiveIntegerField(
         default=0,
-        help_text='The id of the list you want to subscribe to')
+        help_text=_('The id of the list you want to subscribe to'))
     sendinblue_template_id = models.PositiveIntegerField(
         default=0,
-        help_text='The template id of the newsletter double opt-in')
-    redirect_url = models.URLField(help_text="Page being displayed after"
-                                             " clicking on link in email")
+        help_text=_('The template id of the newsletter double opt-in'))
+    redirect_url = models.URLField(help_text=_('Page being displayed after'
+                                             ' clicking on link in email'))
 
 
 @register_setting
@@ -70,7 +71,7 @@ class Accessibility(BaseSiteSetting):
     feedback_phone = models.CharField(max_length=255, blank=True)
 
     additional_external_info = models.URLField(
-        help_text='Add link to further information',
+        help_text=_('Add link to further information'),
         blank=True
     )
     additional_external_info_title_de = models.CharField(
@@ -119,7 +120,7 @@ class Accessibility(BaseSiteSetting):
                 FieldPanel('feedback_email'),
                 FieldPanel('feedback_phone')
             ],
-            heading="Accessibility Feedback Contact Information",
+            heading=_('Accessibility Feedback Contact Information'),
         ),
         MultiFieldPanel(
             [
@@ -138,10 +139,10 @@ class Accessibility(BaseSiteSetting):
                 FieldPanel('additional_external_info_title_en'),
                 FieldPanel('additional_external_info_title_de_ls'),
             ],
-            heading="Further Information on Accessibility"
+            heading=_('Further Information on Accessibility')
         )
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Accessibility Information')
+        ObjectList(content_panels, heading=_('Accessibility Information'))
     ])

@@ -31,18 +31,18 @@ class HomePage(MetadataPageMixin, Page):
     ]
 
     page_title_de = models.CharField(
-        max_length=120, blank=False, verbose_name=('Home page title de'))
+        max_length=120, blank=False, verbose_name=_('Home page title de'))
     page_title_en = models.CharField(
-        max_length=120, blank=True, verbose_name=('Home page title en'))
+        max_length=120, blank=True, verbose_name=_('Home page title en'))
     page_title_de_ls = models.CharField(
-        max_length=120, blank=True, verbose_name=('Home page title de ls'))
+        max_length=120, blank=True, verbose_name=_('Home page title de ls'))
 
     page_subtitle_de = models.CharField(
-        max_length=255, blank=False, verbose_name=('Home page subtitle de'))
+        max_length=255, blank=False, verbose_name=_('Home page subtitle de'))
     page_subtitle_en = models.CharField(
-        max_length=255, blank=True, verbose_name=('Home page subtitle en'))
+        max_length=255, blank=True, verbose_name=_('Home page subtitle en'))
     page_subtitle_de_ls = models.CharField(
-        max_length=255, blank=True, verbose_name=('Home page subtitle de ls'))
+        max_length=255, blank=True, verbose_name=_('Home page subtitle de ls'))
 
     body_de = fields.StreamField(page_blocks, use_json_field=True)
     body_en = fields.StreamField(page_blocks, blank=True, use_json_field=True)
@@ -100,10 +100,10 @@ class HomePage(MetadataPageMixin, Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading='Common'),
-        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(MetadataPageMixin.promote_panels, heading=_('Meta Tags')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     subpage_types = ['apps_home.OverviewPage',
@@ -160,13 +160,13 @@ class OverviewPage(MetadataPageMixin, Page):
         max_length=120, blank=True)
 
     page_intro_de = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction",
+        blank=True, default="", verbose_name=_('Overview page introduction'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_en = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction",
+        blank=True, default="", verbose_name=_('Overview page introduction'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_de_ls = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction",
+        blank=True, default="", verbose_name=_('Overview page introduction'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
 
     body_de = fields.StreamField(
@@ -218,11 +218,11 @@ class OverviewPage(MetadataPageMixin, Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(MetadataPageMixin.promote_panels, heading=_('Meta Tags')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     subpage_types = ['apps_home.DetailPage',
@@ -297,10 +297,10 @@ class DetailPage(Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     subpage_types = []
@@ -361,10 +361,10 @@ class SimplePage(Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     subpage_types = []
@@ -413,13 +413,13 @@ class MicrositeOverviewPage(MetadataPageMixin, Page):
         max_length=120, blank=True)
 
     page_intro_de = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction",
+        blank=True, default="", verbose_name=_('Overview page introduction'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_en = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction",
+        blank=True, default="", verbose_name=_('Overview page introduction'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
     page_intro_de_ls = fields.RichTextField(
-        blank=True, default="", verbose_name="Overview page introduction",
+        blank=True, default="", verbose_name=_('Overview page introduction'),
         help_text=apps_blocks.HELPTEXT_RICHTEXT_A11Y)
 
     body_de = fields.StreamField(
@@ -471,11 +471,11 @@ class MicrositeOverviewPage(MetadataPageMixin, Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(MetadataPageMixin.promote_panels, heading='Meta Tags'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(MetadataPageMixin.promote_panels, heading=_('Meta Tags')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     subpage_types = ['apps_home.MicrositeDetailPage']
@@ -554,10 +554,10 @@ class MicrositeDetailPage(Page):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German'),
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German')),
     ])
 
     subpage_types = []

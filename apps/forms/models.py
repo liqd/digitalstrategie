@@ -61,12 +61,12 @@ class FormPage(AbstractEmailForm):
     landing_page_template = 'apps_forms/form_page_landing.html'
 
     header_de = models.CharField(
-        max_length=500, blank=False, verbose_name="Header")
+        max_length=500, blank=False, verbose_name=_('Header'))
     header_en = models.CharField(
-        max_length=500, blank=True, verbose_name="Header")
+        max_length=500, blank=True, verbose_name=_('Header'))
 
     header_de_ls = models.CharField(
-        max_length=500, blank=True, verbose_name="Header")
+        max_length=500, blank=True, verbose_name=_('Header'))
 
     thank_you_text_de = models.TextField()
     thank_you_text_en = models.TextField(blank=True)
@@ -87,7 +87,7 @@ class FormPage(AbstractEmailForm):
     remove_data_email = models.EmailField(
         max_length=120,
         blank=True,
-        help_text=('If you add an email address, users can contact you \
+        help_text=_('If you add an email address, users can contact you \
                    in order to request the removal of personal data.')
     )
 
@@ -158,10 +158,10 @@ class FormPage(AbstractEmailForm):
     ]
 
     edit_handler = TabbedInterface([
-        ObjectList(common_panels, heading='Common'),
-        ObjectList(de_content_panels, heading='German'),
-        ObjectList(en_content_panels, heading='English'),
-        ObjectList(de_ls_content_panels, heading='Easy German')
+        ObjectList(common_panels, heading=_('Common')),
+        ObjectList(de_content_panels, heading=_('German')),
+        ObjectList(en_content_panels, heading=_('English')),
+        ObjectList(de_ls_content_panels, heading=_('Easy German'))
     ])
 
     def get_template(self, request, *args, **kwargs):

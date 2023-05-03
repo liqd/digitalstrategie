@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
 from wagtail.admin.panels import FieldPanel
@@ -33,7 +34,7 @@ class MenuItem(models.Model):
         related_name='+',
         blank=True,
         null=True,
-        help_text=(
+        help_text=_(
             'Creates a link to a single wagtail page. '
             'Leave empty if you add subpages. '
             'In the footers only subpages will be shown.'
@@ -48,7 +49,7 @@ class MenuItem(models.Model):
         ],
         blank=True,
         null=True,
-        help_text=(
+        help_text=_(
             'These Links will be displayed as sebmenu items. '
             'Either in dropdowns or as items below a headline.'
         ),
@@ -95,10 +96,10 @@ class NavigationMenu(ClusterableModel):
         max_length=255,
         null=False,
         blank=False,
-        help_text=('Call the menu "header" to use as upper menu. '
-                   'Call the menu "footer" to use as'
-                   'the upper light grey footer. The lower '
-                   'footer is loaded externally.')
+        help_text=_('Call the menu "header" to use as upper menu. '
+                    'Call the menu "footer" to use as'
+                    'the upper light grey footer. The lower '
+                    'footer is loaded externally.')
     )
 
     def __str__(self):
@@ -107,7 +108,7 @@ class NavigationMenu(ClusterableModel):
     panels = [
         FieldPanel('menu_name', classname='full title'),
         InlinePanel('menu_items',
-                    label="Menu Items",
+                    label=_('Menu Items'),
                     max_num=6)
     ]
 
@@ -143,4 +144,4 @@ class FieldOfAction(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'fields of action'
+        verbose_name_plural = _('fields of action')

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 16:43+0000\n"
+"POT-Creation-Date: 2023-05-04 09:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,6 +67,16 @@ msgid ""
 "form."
 msgstr ""
 
+#: apps/forms/models.py:64 apps/forms/models.py:66 apps/forms/models.py:69
+msgid "Header"
+msgstr ""
+
+#: apps/forms/models.py:90
+msgid ""
+"If you add an email address, users can contact you                    in "
+"order to request the removal of personal data."
+msgstr ""
+
 #: apps/forms/models.py:105
 msgid "First Name"
 msgstr ""
@@ -76,11 +86,43 @@ msgid "Surname"
 msgstr ""
 
 #: apps/forms/models.py:119
+#: apps/measures/templates/apps_measures/measures_detail_page.html:97
 msgid "Organisation"
 msgstr ""
 
 #: apps/forms/models.py:126 digitalstrategie/templates/includes/header.html:81
 msgid "Email"
+msgstr ""
+
+#: apps/forms/models.py:161 apps/gruenbuch/models.py:105
+#: apps/gruenbuch/models.py:207 apps/home/models.py:221 apps/home/models.py:300
+#: apps/home/models.py:364 apps/home/models.py:474 apps/home/models.py:557
+#: apps/measures/models.py:169 apps/measures/models.py:508
+msgid "Common"
+msgstr ""
+
+#: apps/forms/models.py:162 apps/gruenbuch/models.py:107
+#: apps/gruenbuch/models.py:208 apps/home/models.py:104 apps/home/models.py:223
+#: apps/home/models.py:301 apps/home/models.py:365 apps/home/models.py:476
+#: apps/home/models.py:558 apps/measures/models.py:171
+#: apps/measures/models.py:509 digitalstrategie/settings/base.py:127
+msgid "German"
+msgstr ""
+
+#: apps/forms/models.py:163 apps/gruenbuch/models.py:108
+#: apps/gruenbuch/models.py:209 apps/home/models.py:105 apps/home/models.py:224
+#: apps/home/models.py:302 apps/home/models.py:366 apps/home/models.py:477
+#: apps/home/models.py:559 apps/measures/models.py:172
+#: apps/measures/models.py:510 digitalstrategie/settings/base.py:126
+msgid "English"
+msgstr ""
+
+#: apps/forms/models.py:164 apps/gruenbuch/models.py:109
+#: apps/gruenbuch/models.py:210 apps/home/models.py:106 apps/home/models.py:225
+#: apps/home/models.py:303 apps/home/models.py:367 apps/home/models.py:478
+#: apps/home/models.py:560 apps/measures/models.py:173
+#: apps/measures/models.py:511 digitalstrategie/settings/base.py:128
+msgid "Easy German"
 msgstr ""
 
 #: apps/forms/models.py:181 apps/forms/models.py:244
@@ -128,6 +170,32 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
+#: apps/gruenbuch/models.py:24
+msgid ""
+"Image ratio has to be 2:1 or 4:3. Intro image is not shown for Easy Language."
+msgstr ""
+
+#: apps/gruenbuch/models.py:47 apps/measures/models.py:95
+msgid "Page introduction de"
+msgstr ""
+
+#: apps/gruenbuch/models.py:51 apps/measures/models.py:99
+msgid "Page introduction en"
+msgstr ""
+
+#: apps/gruenbuch/models.py:55 apps/measures/models.py:103
+msgid "Page introduction de ls"
+msgstr ""
+
+#: apps/gruenbuch/models.py:106 apps/home/models.py:103 apps/home/models.py:222
+#: apps/home/models.py:475 apps/measures/models.py:170
+msgid "Meta Tags"
+msgstr ""
+
+#: apps/gruenbuch/models.py:135
+msgid "Gruenbuch Index Page"
+msgstr ""
+
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:34
 msgid "Downloads"
 msgstr ""
@@ -143,6 +211,149 @@ msgstr ""
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:52
 msgid "Download"
+msgstr ""
+
+#: apps/home/blocks.py:6
+msgid ""
+"For accessibility please make sure that you do not leave out levels when "
+"using the headlines. That means, that there should always be an h2 before "
+"using an h3."
+msgstr ""
+
+#: apps/home/blocks.py:10
+msgid "Ihre E-Mail-Adresse"
+msgstr ""
+
+#: apps/home/blocks.py:12
+msgid ""
+"Ich willige in die Speicherung und Nutzung meiner E-Mail-Adresse für den "
+"Newsletterversand ein. Die Einwilligung gilt für den Zeitraum des "
+"Abonnements und kann jederzeit über den Link „Abmelden“ widerrufen werden. "
+"Die Datenschutzerklärung habe ich zur Kenntnis genommen."
+msgstr ""
+
+#: apps/home/blocks.py:60
+msgid "Testimonial"
+msgstr ""
+
+#: apps/home/blocks.py:77
+msgid "How should the image be aligned?"
+msgstr ""
+
+#: apps/home/blocks.py:97
+msgid "One thesis"
+msgstr ""
+
+#: apps/home/blocks.py:111 apps/home/blocks.py:139 apps/home/blocks.py:163
+#: apps/home/blocks.py:262
+msgid "Not choosing a colour will result in a block with a white background."
+msgstr ""
+
+#: apps/home/blocks.py:134 apps/home/blocks.py:157 apps/home/blocks.py:180
+#: apps/home/blocks.py:218
+msgid "Link Description"
+msgstr ""
+
+#: apps/home/blocks.py:135 apps/home/blocks.py:158 apps/home/blocks.py:181
+#: apps/home/blocks.py:219
+msgid "describe link for assistive technology if needed"
+msgstr ""
+
+#: apps/home/blocks.py:192 apps/home/blocks.py:240
+msgid "Add either an external or internal link, not both"
+msgstr ""
+
+#: apps/home/blocks.py:203
+msgid "Only add this number of columns below"
+msgstr ""
+
+#: apps/home/blocks.py:209
+msgid "Teaser Columns"
+msgstr ""
+
+#: apps/home/blocks.py:232
+msgid "Teaser Tiles"
+msgstr ""
+
+#: apps/home/blocks.py:246
+msgid "Teaser Single"
+msgstr ""
+
+#: apps/home/blocks.py:270
+msgid "This form only works with sendinblue"
+msgstr ""
+
+#: apps/home/blocks.py:279
+msgid "Please insert a short description of the video (character limit 255)."
+msgstr ""
+
+#: apps/home/blocks.py:281
+msgid "You can only add links to YouTube or Vimeo videos."
+msgstr ""
+
+#: apps/home/blocks.py:285
+msgid "Add a preview image for the dsgvo video overlay."
+msgstr ""
+
+#: apps/home/blocks.py:288
+msgid "You can add the video's transcript here (unlimited characters)."
+msgstr ""
+
+#: apps/home/blocks.py:296
+msgid "Video Block"
+msgstr ""
+
+#: apps/home/blocks.py:302
+msgid ""
+"Please note that images will be displayed in a 16:9 aspect ratio. Crop or "
+"resize your images accordingly before uploading to ensure they display "
+"correctly."
+msgstr ""
+
+#: apps/home/models.py:34
+msgid "Home page title de"
+msgstr ""
+
+#: apps/home/models.py:36
+msgid "Home page title en"
+msgstr ""
+
+#: apps/home/models.py:38
+msgid "Home page title de ls"
+msgstr ""
+
+#: apps/home/models.py:41
+msgid "Home page subtitle de"
+msgstr ""
+
+#: apps/home/models.py:43
+msgid "Home page subtitle en"
+msgstr ""
+
+#: apps/home/models.py:45
+msgid "Home page subtitle de ls"
+msgstr ""
+
+#: apps/home/models.py:152 apps/home/models.py:405
+msgid "Intro image is not shown for Easy Language"
+msgstr ""
+
+#: apps/home/models.py:163 apps/home/models.py:166 apps/home/models.py:169
+#: apps/home/models.py:416 apps/home/models.py:419 apps/home/models.py:422
+msgid "Overview page introduction"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/image_swiper_block.html:6
+msgid "Previous picture"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/image_swiper_block.html:7
+msgid "Next picture"
+msgstr ""
+
+#: apps/home/templates/apps_home/blocks/image_swiper_block.html:37
+#: apps/home/templates/apps_home/blocks/image_swiper_block.html:52
+msgid "Link to:"
 msgstr ""
 
 #: apps/home/templates/apps_home/blocks/newsletter_block.html:15
@@ -181,38 +392,341 @@ msgid ""
 "href=\"%(data_protection)s\"> data protection</a>."
 msgstr ""
 
-#: apps/home/templates/apps_home/blocks/video_block.html:28
+#: apps/home/templates/apps_home/blocks/video_block.html:29
 msgid "Accept and play"
 msgstr ""
 
-#: apps/home/templates/apps_home/blocks/video_block.html:32
+#: apps/home/templates/apps_home/blocks/video_block.html:33
 msgid ""
 "To protect your privacy this video can't be loaded because it's hosted by an "
 "unknown external provider."
 msgstr ""
 
-#: apps/home/templates/apps_home/blocks/video_block.html:41
+#: apps/home/templates/apps_home/blocks/video_block.html:42
 msgid "Format:"
 msgstr ""
 
-#: apps/home/templates/apps_home/blocks/video_block.html:59
+#: apps/home/templates/apps_home/blocks/video_block.html:60
 msgid "Video transcript"
+msgstr ""
+
+#: apps/images/models.py:19 apps/images/models.py:24 apps/images/models.py:29
+msgid "Add an alternative text for image accessibility"
+msgstr ""
+
+#: apps/images/models.py:35
+msgid "Add copyright information for image"
+msgstr ""
+
+#: apps/measures/models.py:22
+msgid "in planning"
+msgstr ""
+
+#: apps/measures/models.py:23
+msgid "running"
+msgstr ""
+
+#: apps/measures/models.py:24
+msgid "finished"
+msgstr ""
+
+#: apps/measures/models.py:28
+msgid "gesamtstädtisch"
+msgstr ""
+
+#: apps/measures/models.py:29
+msgid "Charlottenburg-Wilmersdorf"
+msgstr ""
+
+#: apps/measures/models.py:30
+msgid "Friedrichshain-Kreuzberg"
+msgstr ""
+
+#: apps/measures/models.py:31
+msgid "Lichtenberg"
+msgstr ""
+
+#: apps/measures/models.py:32
+msgid "Marzahn-Hellersdorf"
+msgstr ""
+
+#: apps/measures/models.py:33
+msgid "Mitte"
+msgstr ""
+
+#: apps/measures/models.py:34
+msgid "Neukölln"
+msgstr ""
+
+#: apps/measures/models.py:35
+msgid "Pankow"
+msgstr ""
+
+#: apps/measures/models.py:36
+msgid "Reinickendorf"
+msgstr ""
+
+#: apps/measures/models.py:37
+msgid "Spandau"
+msgstr ""
+
+#: apps/measures/models.py:38
+msgid "Steglitz-Zehlendorf"
+msgstr ""
+
+#: apps/measures/models.py:39
+msgid "Tempelhof-Schöneberg"
+msgstr ""
+
+#: apps/measures/models.py:40
+msgid "Treptow-Köpenick"
+msgstr ""
+
+#: apps/measures/models.py:44
+msgid "Smart Economic Models"
+msgstr ""
+
+#: apps/measures/models.py:45
+msgid "IT Ecosystems"
+msgstr ""
+
+#: apps/measures/models.py:46
+msgid "Smart Capital Region"
+msgstr ""
+
+#: apps/measures/models.py:47
+msgid "Regeneration of Natural Resources"
+msgstr ""
+
+#: apps/measures/models.py:51
+msgid "Capacities for Change"
+msgstr ""
+
+#: apps/measures/models.py:52
+msgid "Meeting and Learning Places"
+msgstr ""
+
+#: apps/measures/models.py:53
+msgid "Liveable Urban Development"
+msgstr ""
+
+#: apps/measures/models.py:54
+msgid "Smart Cities Learning Together"
+msgstr ""
+
+#: apps/measures/models.py:58
+#: apps/measures/templates/apps_measures/measures_detail_page.html:79
+msgid "Participation"
+msgstr ""
+
+#: apps/measures/models.py:59
+msgid "Transparent Decision Processes"
+msgstr ""
+
+#: apps/measures/models.py:60
+msgid "Citizen Services"
+msgstr ""
+
+#: apps/measures/models.py:61
+msgid "Digital Citizens Rights and Privacy"
+msgstr ""
+
+#: apps/measures/models.py:65
+msgid "Effective Administrative Processes"
+msgstr ""
+
+#: apps/measures/models.py:66
+msgid "Transparent and Innovative Procurement"
+msgstr ""
+
+#: apps/measures/models.py:67
+msgid "Intelligent Data Use"
+msgstr ""
+
+#: apps/measures/models.py:68
+msgid "Fail-Safe Critical and Digital Infrastructure"
+msgstr ""
+
+#: apps/measures/models.py:81
+msgid "Only add 1 teaser block per overview page."
+msgstr ""
+
+#: apps/measures/models.py:317 apps/measures/models.py:490
+msgid "Up to 3 choices are allowed."
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:6
+msgid "Filter by"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:19
+msgid "Project status"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:27
+msgid "Please choose"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:42
+#: apps/measures/templates/apps_measures/measures_detail_page.html:18
+msgid "District"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:63
+msgid "Fields of action"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:72
+msgid "Regenerative Management"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:84
+msgid "Future Opportunities for All"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:96
+msgid "Inclusive Shaping of Urban Life"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:108
+msgid "Facilitative Administration"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:124
+msgid "Reset filters"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_filter.html:129
+msgid "Filter now"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_list_item.html:23
+msgid "More"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/includes/measures_list_item.html:24
+msgid "to: "
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:10
+msgid "Responsible organisations"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:28
+msgid "Involved organisations"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:36
+msgid "Period"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:44
+msgid "Handlungsfelder"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:52
+msgid "Status"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:87
+msgid "Effect"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:94
+msgid "Contact"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:95
+msgid "contact information"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:101
+msgid "Contact person"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_overview_page.html:21
+#: apps/measures/templates/apps_measures/measures_overview_page.html:25
+#: digitalstrategie/templates/search_results.html:18
+#: digitalstrategie/templates/search_results.html:25
+msgid "Search term"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_overview_page.html:27
+#: apps/measures/templates/apps_measures/measures_overview_page.html:28
+#: digitalstrategie/templates/includes/header.html:106
+#: digitalstrategie/templates/includes/header.html:111
+#: digitalstrategie/templates/includes/header.html:123
+msgid "Search"
+msgstr ""
+
+#: apps/measures/templates/apps_measures/measures_overview_page.html:37
+msgid "Filter"
 msgstr ""
 
 #: apps/settings/helpers.py:8
 msgid "Please click {}here{} for more information."
 msgstr ""
 
-#: digitalstrategie/settings/base.py:124
-msgid "English"
+#: apps/settings/models.py:41
+msgid "Your Sendinblue api key"
 msgstr ""
 
-#: digitalstrategie/settings/base.py:125
-msgid "German"
+#: apps/settings/models.py:44
+msgid "The id of the list you want to subscribe to"
 msgstr ""
 
-#: digitalstrategie/settings/base.py:126
-msgid "Easy German"
+#: apps/settings/models.py:47
+msgid "The template id of the newsletter double opt-in"
+msgstr ""
+
+#: apps/settings/models.py:48
+msgid "Page being displayed after clicking on link in email"
+msgstr ""
+
+#: apps/settings/models.py:74
+msgid "Add link to further information"
+msgstr ""
+
+#: apps/settings/models.py:123
+msgid "Accessibility Feedback Contact Information"
+msgstr ""
+
+#: apps/settings/models.py:142
+msgid "Further Information on Accessibility"
+msgstr ""
+
+#: apps/settings/models.py:147
+msgid "Accessibility Information"
+msgstr ""
+
+#: apps/snippets/blocks.py:46
+msgid "Please enter a full url which starts with https:// or http://"
+msgstr ""
+
+#: apps/snippets/models.py:38
+msgid ""
+"Creates a link to a single wagtail page. Leave empty if you add subpages. In "
+"the footers only subpages will be shown."
+msgstr ""
+
+#: apps/snippets/models.py:53
+msgid ""
+"These Links will be displayed as sebmenu items. Either in dropdowns or as "
+"items below a headline."
+msgstr ""
+
+#: apps/snippets/models.py:99
+msgid ""
+"Call the menu \"header\" to use as upper menu. Call the menu \"footer\" to "
+"use asthe upper light grey footer. The lower footer is loaded externally."
+msgstr ""
+
+#: apps/snippets/models.py:111
+msgid "Menu Items"
+msgstr ""
+
+#: apps/snippets/models.py:147
+msgid "fields of action"
 msgstr ""
 
 #: digitalstrategie/templates/403.html:7
@@ -305,12 +819,6 @@ msgstr ""
 msgid "Open: Search"
 msgstr ""
 
-#: digitalstrategie/templates/includes/header.html:106
-#: digitalstrategie/templates/includes/header.html:111
-#: digitalstrategie/templates/includes/header.html:123
-msgid "Search"
-msgstr ""
-
 #: digitalstrategie/templates/includes/header.html:114
 msgid "Close: Search"
 msgstr ""
@@ -345,6 +853,20 @@ msgstr ""
 msgid "select"
 msgstr ""
 
+#: digitalstrategie/templates/includes/pagination.html:5
+msgid "Pagination navigation"
+msgstr ""
+
+#: digitalstrategie/templates/includes/pagination.html:10
+#: digitalstrategie/templates/includes/pagination.html:14
+msgid "Scroll one page back"
+msgstr ""
+
+#: digitalstrategie/templates/includes/pagination.html:36
+#: digitalstrategie/templates/includes/pagination.html:40
+msgid "Scroll one page further"
+msgstr ""
+
 #: digitalstrategie/templates/includes/upper_footer.html:9
 msgid "To the top of the page"
 msgstr ""
@@ -359,11 +881,6 @@ msgstr ""
 
 #: digitalstrategie/templates/search_results.html:12
 msgid "Full-text search"
-msgstr ""
-
-#: digitalstrategie/templates/search_results.html:18
-#: digitalstrategie/templates/search_results.html:25
-msgid "Search term"
 msgstr ""
 
 #: digitalstrategie/templates/search_results.html:29

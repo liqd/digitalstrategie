@@ -1,5 +1,11 @@
 {% load snippet_tags i18n static %}
-{% load_site_menu "header" as header_menu_items %}
+{% if 'de-ls' in request.path %}
+    {% load_site_menu "header_ls" as header_menu_items %}
+{% else %}
+    {% load_site_menu "header" as header_menu_items %}
+{% endif %}
+
+
 <header id="header">
 
     <!-- Portallogo Berlin Brand -->

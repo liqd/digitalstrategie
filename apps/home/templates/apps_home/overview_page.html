@@ -6,7 +6,7 @@
 <div class="fullwidth">
     <div id="layout-grid">
     <section id="layout-grid__area--herounit">
-        {% if page.intro_image %}
+        {% if page.intro_image and request.LANGUAGE_CODE != 'de-ls' %}
         <div class="image">
             <div class="image__image">
                 <img src="{{ intro_image.url }}" class="w-100" alt="{{ page.intro_image.alt }}"/>

@@ -35,7 +35,7 @@
         }
 
         @media print {
-            background-color: none !important;
+            background-color: transparent !important;
         }
 
         @media (max-width: 64.001rem) {
@@ -118,7 +118,6 @@
     margin: -1rem;
 
     @media print, (min-width: 64.001rem) {
-
         /* Set a specific height same as hero */
         min-height: 70vh;
 
@@ -153,10 +152,7 @@
 
 .block-video__video {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    inset: 0;
 
     iframe {
         height: 100%;

@@ -1,4 +1,4 @@
-{% load static i18n %}
+{% load static i18n contrib_tags %}
 {% get_current_language as LANGUAGE_CODE %}
 {% get_available_languages as languages %}
 
@@ -26,10 +26,11 @@
 <h3 class="heading">{% trans 'Accessibility' %}</h3>
 <ul>
     {% get_language_info for 'de-ls' as language %}
+    {% get_has_translation page 'de_ls' as has_translation_de_ls %}
     <li class="header-menu__btn">
         <form action="{% url 'set_language' %}" method="post">
           {% csrf_token %}
-          <input name="next" type="hidden" value="{{ redirect_to }}" />
+          <input name="next" type="hidden" value="{% if has_translation_de_ls %}{{ redirect_to }}{% else %}/{% endif %}" />
           <input name="language" type="hidden" value="{{ language.code }}">
           <span>
             <button role="button" type="submit" aria-label="{% trans 'select' %}{{ language.name }}">

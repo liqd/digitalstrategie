@@ -46,3 +46,19 @@ def get_proper_elided_page_range(p, number, on_each_side=1, on_ends=1):
     return paginator.get_elided_page_range(
         number=number, on_each_side=on_each_side, on_ends=on_ends
     )
+
+
+@register.simple_tag
+def get_has_translation(page, lang_code):
+    """Return true if there is content in the specified language.
+
+    There is content, if any of the translated fields has content. Relies on
+    naming the panels of the language tab {lang_code}_content_panels.
+    """
+    if hasattr(page, '{}_content_panels'.format(lang_code)):
+        content_panels = getattr(page, '{}_content_panels'.format(lang_code))
+        for panel in content_panels:
+            field_name = panel.field_name
+            if getattr(page, field_name):
+                return True
+    return False

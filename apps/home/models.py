@@ -57,6 +57,14 @@ class HomePage(MetadataPageMixin, Page):
         related_name='+'
     )
 
+    ls_header_image = models.ForeignKey(
+        'apps_images.CustomImage',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
     page_title = TranslatedField(
         'page_title_de',
         'page_title_en',
@@ -90,6 +98,7 @@ class HomePage(MetadataPageMixin, Page):
     de_ls_content_panels = [
         FieldPanel('page_title_de_ls'),
         FieldPanel('page_subtitle_de_ls'),
+        FieldPanel('ls_header_image'),
         FieldPanel('body_de_ls'),
     ]
 

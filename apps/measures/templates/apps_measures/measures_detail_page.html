@@ -44,7 +44,12 @@
                 {% trans 'Handlungsfelder' %}
             </dt>
             <dd class="meta-information__item__content">
-                {{ page.get_fields_of_action_display }}
+                {% for foa in page.get_fields_of_action %}
+                    <a href="{{page.get_parent.url}}?{{foa.subset_id}}={{foa.id}}">
+                        {{ foa.subset_name }}
+                    </a>
+                    {% if not forloop.last %}, {% endif %}
+                {% endfor %}
             </dd>
         </div>
         <div class="meta-information__item">

@@ -518,9 +518,31 @@ class MeasuresDetailPage(Page):
     ]
 
     @property
-    def get_fields_of_action_display(self):
-        fields_of_action = [self.get_regenerative_management_display(),
-                            self.get_future_opportunities_for_all_display(),
-                            self.get_inclusive_shaping_of_urban_life_display(),
-                            self.get_facilitative_administration_display()]
-        return ', '.join(filter(None, fields_of_action))
+    def get_fields_of_action(self):
+        """Return a dict of selected fields of action and their subsets."""
+        fields_of_action = self.get_selected_foa(
+            self.regenerative_management, 'reg',
+            REGENERATIVE_MANAGEMENT
+        ) + self.get_selected_foa(
+            self.future_opportunities_for_all, 'fut',
+            FUTURE_OPPORTUNITIES_FOR_ALL
+        ) + self.get_selected_foa(
+            self.inclusive_shaping_of_urban_life, 'inc',
+            INCLUSIVE_SHAPING_OF_URBAN_LIFE
+        ) + self.get_selected_foa(
+            self.facilitative_administration, 'fac',
+            FACILITATIVE_ADMINISTRATION
+        )
+        return fields_of_action
+
+    def get_selected_foa(self, selected_foa_ids, subset_id, subset):
+        """Return an object for given fields of action and given subset."""
+        selected_foa = []
+        for foa_id in selected_foa_ids:
+            subset_name = [t[1] for t in subset if t[0] == foa_id][0]
+            selected_foa.append({
+                'id': foa_id,
+                'subset_id': subset_id,
+                'subset_name': subset_name
+            })
+        return selected_foa

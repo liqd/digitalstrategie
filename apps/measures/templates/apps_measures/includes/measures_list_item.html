@@ -17,7 +17,12 @@
 
         <div class="text textile">
             <p class="text">{{ content.contact_organisation_name }}</p>
-            <p class="u-b-none">{{ content.get_fields_of_action_display }}</p>
+            <p class="u-b-none">
+                {% for foa in content.get_fields_of_action %}
+                    {{ foa.subset_name }}
+                    {% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
 
             <a href="{% pageurl content %}" class="more" data-mainlink="true" title="This is a single Teaser">
                 {% trans 'More' %}

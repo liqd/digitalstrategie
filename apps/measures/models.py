@@ -221,9 +221,9 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
             filter_params = filter_params | Q(**kwargs)
         return filter_params
 
-    def get_context(self, request):
-        measures_pages = self.measures_pages
+    def get_filter_params(self, request):
 
+        # filters for status, district and fields of action (four sets)
         status = request.GET.get('status')
         dis = request.GET.getlist('district')
         reg = request.GET.getlist('reg')
@@ -259,8 +259,24 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
                 )
             filter_params = filter_params & fields_filter_params
 
-        measures_pages = measures_pages.filter(filter_params)
+        return filter_params
 
+    def get_context(self, request):
+        measures_pages = self.measures_pages
+        filter_params = self.get_filter_params(request)
+
+        # FIXME: when wagtail issue fixed
+        # https://github.com/wagtail/wagtail/issues/6616
+        measures_page_ids = measures_pages.filter(
+            filter_params).values_list('id', flat=True)
+        measures_pages = measures_pages.filter(id__in=measures_page_ids)
+
+        # search
+        search = request.GET.get('search')
+        if search:
+            measures_pages = measures_pages.search(search)
+
+        # pagination
         page = request.GET.get('page', 1)
         paginator = Paginator(measures_pages, 6)
 
@@ -271,11 +287,11 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
 
         context = super().get_context(request)
         context['measures_pages'] = measures_pages
-        context['selected_districts'] = dis
-        context['selected_reg'] = reg
-        context['selected_fut'] = fut
-        context['selected_inc'] = inc
-        context['selected_fac'] = fac
+        context['selected_districts'] = request.GET.getlist('district')
+        context['selected_reg'] = request.GET.getlist('reg')
+        context['selected_fut'] = request.GET.getlist('fut')
+        context['selected_inc'] = request.GET.getlist('inc')
+        context['selected_fac'] = request.GET.getlist('fac')
         return context
 
     search_fields = Page.search_fields + [
@@ -512,9 +528,24 @@ class MeasuresDetailPage(Page):
     ])
 
     search_fields = Page.search_fields + [
+        index.SearchField('page_title_de', partial_match=True),
+        index.SearchField('page_title_en', partial_match=True),
+        index.SearchField('page_title_de_ls', partial_match=True),
         index.SearchField('body_de', partial_match=True),
         index.SearchField('body_en', partial_match=True),
-        index.SearchField('body_de_ls', partial_match=True)
+        index.SearchField('body_de_ls', partial_match=True),
+        index.SearchField('body_participation_de', partial_match=True),
+        index.SearchField('body_participation_en', partial_match=True),
+        index.SearchField('body_participation_de_ls', partial_match=True),
+        index.SearchField('body_effect_de', partial_match=True),
+        index.SearchField('body_effect_en', partial_match=True),
+        index.SearchField('body_effect_de_ls', partial_match=True),
+        index.SearchField('contact_organisation_name_de', partial_match=True),
+        index.SearchField('contact_organisation_name_en', partial_match=True),
+        index.SearchField(
+            'contact_organisation_name_de_ls', partial_match=True
+        ),
+        index.SearchField('contact_name', partial_match=True),
     ]
 
     @property

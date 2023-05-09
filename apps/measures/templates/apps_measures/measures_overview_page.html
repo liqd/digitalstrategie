@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags i18n %}
+{% load wagtailcore_tags wagtailimages_tags i18n contrib_tags  %}
 
 {% block content %}
 
@@ -22,9 +22,15 @@
                         <div class="searchterm">
                             <div class="input-wrapper">
                                 <i class="fas fa-search lens" aria-hidden="true"></i>
-                                <input type="search" class="form-control search" value="" placeholder="{% trans 'Search term' %}" name="searchInputField" id="searchInputField"  />
+                                <input type="search" class="form-control search" value="{{ request.GET.search }}" placeholder="{% trans 'Search term' %}" name="search" id="searchInputField"  />
+                                {% url_parameter_items request.GET page='1' as url_par_items %}
+                                {% for par_name, value in url_par_items %}
+                                    {% if par_name != 'search' %}
+                                        <input type="hidden" name="{{ par_name }}" value="{{ value }}">
+                                    {% endif %}
+                                {% endfor %}
                             </div>
-                            <button class="button button--clean submit " type="submit" title="{% trans 'Search' %}">
+                            <button class="button button--clean submit" type="submit" title="{% trans 'Search' %}">
                                 <span class="aural">{% trans 'Search' %}</span><i class="fas fa-arrow-right icon" aria-hidden="true"></i>
                             </button>
                         </div>

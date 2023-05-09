@@ -115,13 +115,13 @@
                   {% endfor %}
                 </div>
               </fieldset>
-
+              <input type="hidden" name="search" value="{{ request.GET.search }}">
           </div>
         </section>
         <div class="form-actions">
           <div class="form-actions__left">
             <button type="reset" class="link reset">
-              <a href="?page=1">{% translate 'Reset filters' %}</a>
+              <a href="?search={{ request.GET.search }}">{% translate 'Reset filters' %}</a>
             </button>
           </div>
           <div class="form-actions__right">

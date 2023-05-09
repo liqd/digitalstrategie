@@ -41,6 +41,18 @@ def combined_url_parameter(request_query_dict, **kwargs):
 
 
 @register.simple_tag
+def url_parameter_items(request_query_dict, **kwargs):
+    combined_query_dict = request_query_dict.copy()
+    for key in kwargs:
+        combined_query_dict.setlist(key, [kwargs[key]])
+    url_parameter_items = []
+    for key in combined_query_dict.keys():
+        value_list = combined_query_dict.getlist(key)
+        url_parameter_items += [(key, item) for item in value_list]
+    return url_parameter_items
+
+
+@register.simple_tag
 def get_proper_elided_page_range(p, number, on_each_side=1, on_ends=1):
     paginator = Paginator(p.object_list, p.per_page)
     return paginator.get_elided_page_range(

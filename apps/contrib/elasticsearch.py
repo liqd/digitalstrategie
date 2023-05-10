@@ -43,17 +43,17 @@ class ElasticsearchResults(Elasticsearch7SearchResults):
             hs = hit['highlight']
             hs.pop('content_type')
             for highlight in hs.values():
+                # we only need one highlight
                 if hit['fields']['pk'][0] not in highlights:
-                    highlights[str(hit['fields']['pk'][0])] = highlight
-                else:
-                    highlights[str(hit['fields']['pk'][0])].extend(highlight)
+                    highlights[str(hit['fields']['pk'][0])] = highlight[0]
+                    break
 
         for obj in self.query_compiler.queryset.filter(pk__in=pks):
             results[str(obj.pk)] = obj
 
             if self._score_field:
                 setattr(obj, self._score_field, scores.get(str(obj.pk)))
-            setattr(obj, 'highlights', highlights.get(str(obj.pk)))
+            setattr(obj, 'highlight', highlights.get(str(obj.pk)))
         for pk in pks:
             result = results[str(pk)]
             if result:

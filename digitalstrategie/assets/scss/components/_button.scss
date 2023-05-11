@@ -8,3 +8,8 @@
     margin: 0;
     padding: 0;
 }
+
+// ensure clear search button does not overlap
+.searchterm .button--clear-input {
+    margin-right: 35px;
+}

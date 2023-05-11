@@ -26,9 +26,16 @@
                                 {% url_parameter_items request.GET page='1' as url_par_items %}
                                 {% for par_name, value in url_par_items %}
                                     {% if par_name != 'search' %}
-                                        <input type="hidden" name="{{ par_name }}" value="{{ value }}">
+                                        <input type="hidden" name="{{ par_name }}" value="{{ value }}" />
                                     {% endif %}
                                 {% endfor %}
+                                <button class="button button--clean button--clear-input" type="button" title="{% trans 'Empty field' %}">
+                                    {% combined_url_parameter request.GET search='' page='1' as url_par %}
+                                    <a href="{{ url_par }}">
+                                        <span class="aural">{% trans 'Empty field' %}</span>
+                                        <i class="fas fa-times icon" aria-hidden="true"></i>
+                                    </a>
+                                </button>
                             </div>
                             <button class="button button--clean submit" type="submit" title="{% trans 'Search' %}">
                                 <span class="aural">{% trans 'Search' %}</span><i class="fas fa-arrow-right icon" aria-hidden="true"></i>

@@ -4,6 +4,7 @@ from django import template
 from django.conf import settings
 from django.core import management
 from django.core.cache import cache
+from django.core.exceptions import ImproperlyConfigured
 from django.core.paginator import Paginator
 from django.utils.html import mark_safe
 
@@ -74,3 +75,29 @@ def get_has_translation(page, lang_code):
             if getattr(page, field_name):
                 return True
     return False
+
+
+@register.simple_tag()
+def matomo_enabled():
+    if hasattr(settings, "MATOMO_ENABLED"):
+        return settings.MATOMO_ENABLED
+    return False
+
+
+@register.inclusion_tag("matomo/tracking_code.html")
+def matomo_tracking_code():
+    if not hasattr(settings, "MATOMO_SITE_ID"):
+        raise ImproperlyConfigured("MATOMO_SITE_ID does not exist.")
+
+    if not hasattr(settings, "MATOMO_URL"):
+        raise ImproperlyConfigured("MATOMO_URL does not exist.")
+
+    cookie_disabled = True
+    if hasattr(settings, "MATOMO_COOKIE_DISABLED"):
+        cookie_disabled = settings.MATOMO_COOKIE_DISABLED
+
+    return {
+        "id": settings.MATOMO_SITE_ID,
+        "url": settings.MATOMO_URL,
+        "cookie_disabled": cookie_disabled,
+    }

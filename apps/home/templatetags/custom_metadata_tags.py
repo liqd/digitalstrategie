@@ -19,7 +19,7 @@ def custom_meta_tags(context, model=None):
     if not model:
         model = context.get('self', None)
         if not hasattr(model, 'get_meta_title') or (
-                not model.seo_title and
+                not model.meta_title and
                 not model.get_meta_description()):
             site = Site.find_for_request(request)
             if site:

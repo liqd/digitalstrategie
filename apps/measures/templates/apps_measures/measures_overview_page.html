@@ -53,6 +53,11 @@
             </div>
             <div class="span8">
                 <ul class="list--clean">
+                    <p>
+                        {{ search_string }}
+                        {{ filter_string }}
+                        {{ result_string }}
+                    </p>
                     {% for content in measures_pages %}
                         {% include "apps_measures/includes/measures_list_item.html" with content=content %}
                     {% endfor %}

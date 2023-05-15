@@ -222,7 +222,46 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
             filter_params = filter_params | Q(**kwargs)
         return filter_params
 
-    def get_filter_params(self, request):
+    def get_foa_filter_info(self, reg, fut, inc, fac):
+        fields_filter_params = Q()
+        filter_display_list = []
+        if reg:
+            fields_filter_params = fields_filter_params | self._q_filter(
+                reg, 'regenerative_management'
+            )
+            for item in reg:
+                filter_display_list.append(
+                    dict(REGENERATIVE_MANAGEMENT).get(item)
+                )
+        if fut:
+            fields_filter_params = fields_filter_params | self._q_filter(
+                fut, 'future_opportunities_for_all'
+            )
+            for item in fut:
+                filter_display_list.append(
+                    dict(FUTURE_OPPORTUNITIES_FOR_ALL).get(item)
+                )
+        if inc:
+            fields_filter_params = fields_filter_params | self._q_filter(
+                inc, 'inclusive_shaping_of_urban_life'
+            )
+            for item in inc:
+                filter_display_list.append(
+                    dict(INCLUSIVE_SHAPING_OF_URBAN_LIFE).get(item)
+                )
+        if fac:
+            fields_filter_params = fields_filter_params | self._q_filter(
+                fac, 'facilitative_administration'
+            )
+            for item in fac:
+                filter_display_list.append(
+                    dict(FACILITATIVE_ADMINISTRATION).get(item)
+                )
+
+        return fields_filter_params, filter_display_list
+
+    def get_context(self, request):
+        measures_pages = self.measures_pages
 
         # filters for status, district and fields of action (four sets)
         status = request.GET.get('status')
@@ -245,54 +284,16 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
                 filter_display_list.append(dict(BEZIRK_CHOICES).get(district))
 
         if reg or fut or inc or fac:
-            fields_filter_params = Q()
-            if reg:
-                fields_filter_params = fields_filter_params | self._q_filter(
-                    reg, 'regenerative_management'
-                )
-                for item in reg:
-                    filter_display_list.append(
-                        dict(REGENERATIVE_MANAGEMENT).get(item)
-                    )
-            if fut:
-                fields_filter_params = fields_filter_params | self._q_filter(
-                    fut, 'future_opportunities_for_all'
-                )
-                for item in fut:
-                    filter_display_list.append(
-                        dict(FUTURE_OPPORTUNITIES_FOR_ALL).get(item)
-                    )
-            if inc:
-                fields_filter_params = fields_filter_params | self._q_filter(
-                    inc, 'inclusive_shaping_of_urban_life'
-                )
-                for item in inc:
-                    filter_display_list.append(
-                        dict(INCLUSIVE_SHAPING_OF_URBAN_LIFE).get(item)
-                    )
-            if fac:
-                fields_filter_params = fields_filter_params | self._q_filter(
-                    fac, 'facilitative_administration'
-                )
-                for item in fac:
-                    filter_display_list.append(
-                        dict(FACILITATIVE_ADMINISTRATION).get(item)
-                    )
-            filter_params = filter_params & fields_filter_params
+            foa_filter_params, foa_filter_display_list = \
+                self.get_foa_filter_info(reg, fut, inc, fac)
+            filter_params = filter_params & foa_filter_params
+            filter_display_list += foa_filter_display_list
 
         filter_string = ''
         if filter_display_list:
             filter_string = _('Filtered by "{filter_term}".').format(
                 filter_term='", "'.join(map(str, filter_display_list))
             )
-
-        return filter_params, filter_string
-
-    def get_context(self, request):
-        measures_pages = self.measures_pages
-
-        # filters
-        filter_params, filter_string = self.get_filter_params(request)
 
         # FIXME: when wagtail issue fixed
         # https://github.com/wagtail/wagtail/issues/6616
@@ -329,11 +330,11 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
 
         context = super().get_context(request)
         context['measures_pages'] = measures_pages
-        context['selected_districts'] = request.GET.getlist('dis')
-        context['selected_reg'] = request.GET.getlist('reg')
-        context['selected_fut'] = request.GET.getlist('fut')
-        context['selected_inc'] = request.GET.getlist('inc')
-        context['selected_fac'] = request.GET.getlist('fac')
+        context['selected_districts'] = dis
+        context['selected_reg'] = reg
+        context['selected_fut'] = fut
+        context['selected_inc'] = inc
+        context['selected_fac'] = fac
         context['search_string'] = search_string
         context['filter_string'] = filter_string
         context['result_string'] = result_string

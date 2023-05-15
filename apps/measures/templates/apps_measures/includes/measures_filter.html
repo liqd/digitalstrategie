@@ -69,7 +69,7 @@
           <div class="facet__body" id="fieldsActionFacet">
 
             <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction01">
-              <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Regenerative Management' %}</legend>
+              <legend {% if selected_reg %}data-collapsible-trigger="opened"{% endif %} class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Regenerative Management' %}</legend>
               <div class="js-accordion__panel">
                 {% for regenerative_management_key, regenerative_management_string in page.regenerative_management.items %}
                   <div class="form-check">
@@ -81,7 +81,7 @@
             </fieldset>
 
             <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction02">
-              <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Future Opportunities for All' %}</legend>
+              <legend {% if selected_fut %}data-collapsible-trigger="opened"{% endif %} class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Future Opportunities for All' %}</legend>
               <div class="js-accordion__panel">
                 {% for future_opportunities_for_all_key, future_opportunities_for_all_string in page.future_opportunities_for_all.items %}
                   <div class="form-check">
@@ -93,7 +93,7 @@
             </fieldset>
 
               <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction03">
-                <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Inclusive Shaping of Urban Life' %}</legend>
+                <legend {% if selected_inc %}data-collapsible-trigger="opened"{% endif %} class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Inclusive Shaping of Urban Life' %}</legend>
                 <div class="js-accordion__panel">
                   {% for inclusive_shaping_of_urban_life_key, inclusive_shaping_of_urban_life_string in page.inclusive_shaping_of_urban_life.items %}
                     <div class="form-check">
@@ -105,7 +105,7 @@
               </fieldset>
 
               <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction04">
-                <legend class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Facilitative Administration' %}</legend>
+                <legend {% if selected_fac %}data-collapsible-trigger="opened"{% endif %} class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Facilitative Administration' %}</legend>
                 <div class="js-accordion__panel">
                   {% for facilitative_administration_key, facilitative_administration_string in page.facilitative_administration.items %}
                     <div class="form-check">

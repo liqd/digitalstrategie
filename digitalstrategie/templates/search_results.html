@@ -1,33 +1,40 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags i18n %}
+{% load wagtailcore_tags i18n contrib_tags %}
 
 {% block meta_tag %}
-    <title>{% trans 'Gemeinsam Digital: Berlin - full-text search' %}</title>
+    <title>{% translate 'Gemeinsam Digital: Berlin - full-text search' %}</title>
 {% endblock %}
 
 {% block content %}
     <div class="layout-grid__area--maincontent">
         <div class="modul-headline">
             <h1 class="title">
-                {% trans 'Full-text search' %}
+                {% translate 'Full-text search' %}
             </h1>
         </div>
         <form action="{% url 'search' %}" method="get">
             <div class="searchform-slot ">
                 <div class="form-group">
-                    <label class="aural" for="q">{% trans 'Search term' %}</label>
+                    <label class="aural" for="q">{% translate 'Search term' %}</label>
                     <div class="searchterm">
                         <div class="input-wrapper">
                             <i class="fas fa-search lens" aria-hidden="true"></i>
                             <input
                               class="form-control search"
                               value="{% if request.GET.q %}{{ request.GET.q }}{% endif %}"
-                              placeholder="{% trans 'Search term' %}"
+                              placeholder="{% translate 'Search term' %}"
                               name="q"
-                            >
+                            />
+                            <button class="button button--clean button--clear-input" type="button" title="{% translate 'Empty field' %}">
+                                {% combined_url_parameter request.GET q='' as url_par %}
+                                <a href="{{ url_par }}">
+                                    <span class="aural">{% translate 'Empty field' %}</span>
+                                    <i class="fas fa-times icon" aria-hidden="true"></i>
+                                </a>
+                            </button>
                         </div>
-                        <button class="button button--clean submit " type="submit" title="{% trans 'Search' context 'verb' %}">
-                            <span class="aural">{% trans 'Search' context 'verb' %}</span><i class="fas fa-arrow-right icon" aria-hidden="true"></i>
+                        <button class="button button--clean submit " type="submit" title="{% translate 'Search' context 'verb' %}">
+                            <span class="aural">{% translate 'Search' context 'verb' %}</span><i class="fas fa-arrow-right icon" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
@@ -37,11 +44,16 @@
         {% if object_list %}
             <div class="modul-headline">
                 <h2 class="title">
-                    {% trans "Results of the full-text search" %}
+                    {% translate "Results of the full-text search" %}
                 </h2>
             </div>
             <p>
-            {% trans 'Your search for' %}"{{ request.GET.q }}".<br />
+            {% blocktranslate with search_term=request.GET.q %}Search for "{{ search_term }}".{% endblocktranslate %}
+            {% blocktranslate count counter=object_list|length %}
+            {{ counter }} measure.
+            {% plural %}
+            {{ counter }} measures.
+            {% endblocktranslate %}
             </p>
             {% for result in object_list %}
                {% if result.highlight %}
@@ -67,7 +79,7 @@
         {% elif request.GET.q %}
             <div class="modul-headline">
                 <h2 class="title">
-                    {% trans 'No results found' %}
+                    {% translate 'No results found' %}
                 </h2>
             </div>
         {% endif %}

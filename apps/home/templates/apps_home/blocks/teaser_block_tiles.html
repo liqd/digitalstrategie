@@ -1,26 +1,30 @@
 {% load i18n wagtailcore_tags wagtailimages_tags %}
 
-<section class="modul-teasertiles ds-block--base">
+<section class="modul-icontiles">
     <h2 class="title">{{ value.title }}</h2>
-    <div class=teasertiles__inner>
+    <div class=icontiles__inner>
         <ul>
           {% for value in self.tile %}
             <li>
-                <div class="teasertile ds-teasertile" data-add-clickable-area="full">
-                    <div class="action ds-action">
-                        <a class="more" href="{{ value.link.url }}">
-                          {% if value.link.link_description %}
-                          <span class="aural">{{ value.link.link_description }}</span>
-                          {% endif %}</a>
+                <div class="icontile" data-add-clickable-area="full">
+                    <div class="decoration">
+                        {% image value.icon max-200x200 as image %}
+                        <img src="{{ image.url }}" alt="{{ image.alt }}">
                     </div>
-                    <div class="ds-teasertile__info">
-                        <div class="ds-teasertile__info-img">
-                            {% image value.icon max-200x200 as image %}
-                            <img src="{{ image.url }}" alt="{{ image.alt }}">
-                        </div>
-                        <div class="ds-teasertile__info-title">
-                            <h3 class="title">{{ value.title }}</h3>
-                        </div>
+                    <div class="inner">
+                        <a
+                            class="title"
+                            data-mainlink="true"
+                            href="{{ value.link.url }}"
+                            title="{{value.title}}"
+                        >
+                            {{ value.title }}
+                            {% if value.link.link_description %}
+                                <span class="aural">
+                                    {{ value.link.link_description }}
+                                </span>
+                            {% endif %}
+                        </a>
                     </div>
                 </div>
             </li>

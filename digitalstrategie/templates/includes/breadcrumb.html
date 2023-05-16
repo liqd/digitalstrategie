@@ -1,16 +1,16 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags i18n %}
 <div id="layout-grid__area--contentheader">
     <div id="content-header">
         {% if self.get_ancestors|length > 1 %}
         <nav class="breadcrumb" aria-label="Breadcrumb">
-            <h2 class="aural">Sie befinden sich hier:</h2>
+            <h2 class="aural">{% translate 'You are here:' %}</h2>
             <ol>
-                {% for page in self.get_ancestors %}
+                {% for page in self.get_ancestors.specific %}
                 {% if page.is_root == False %}
-                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                <li><a href="{{ page.url }}">{% if page.page_title %}{{ page.page_title }}{% else %}{{ page.title }}{% endif %}</a></li>
                 {% endif %}
                 {% endfor %}
-                <li class=”active” aria-current="page">{{ self.title }}</li>
+                <li class=”active” aria-current="page">{% if self.page_title %}{{ self.page_title }}{% else %}{{ self.title }}{% endif %}</li>
             </ol>
         </nav>
         {% endif %}

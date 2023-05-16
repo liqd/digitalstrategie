@@ -7,7 +7,7 @@
         {% if page_obj.has_previous %}
         {% combined_url_parameter request.GET page=page_obj.previous_page_number as url_par %}
         <li class="pager-item-previous">
-            <a href="{{ url_par }}" title="{% translate 'Scroll one page back' %}"><i class="fas fa-chevron-left" aria-hidden="true"></i></a>
+            <a href="{{ url_par }}{% if anchor %}{{ anchor }}{% endif %}" title="{% translate 'Scroll one page back' %}"><i class="fas fa-chevron-left" aria-hidden="true"></i></a>
         </li>
         {% else %}
         <li aria-disabled="true" class="pager-item-previous disabled">
@@ -19,7 +19,7 @@
             {% if page_number >= 0 %}
             <li {% ifequal page_number page_obj.number %}class="active" aria-current="page"{% endifequal %}>
                 {% combined_url_parameter request.GET page=page_number as url_par %}
-                <a href="{{ url_par }}">{{ page_number }}</a>
+                <a href="{{ url_par }}{% if anchor %}{{ anchor }}{% endif %}">{{ page_number }}</a>
             </li>
             {% else %}
             <li>
@@ -33,7 +33,7 @@
         {% if page_obj.has_next %}
         {% combined_url_parameter request.GET page=page_obj.next_page_number as url_par %}
         <li class="pager-item-next">
-            <a href="{{ url_par }}" title="{% translate 'Scroll one page further' %}"><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="{{ url_par }}{% if anchor %}{{ anchor }}{% endif %}" title="{% translate 'Scroll one page further' %}"><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
         </li>
         {% else %}
         <li aria-disabled="true" class="pager-item-next disabled">

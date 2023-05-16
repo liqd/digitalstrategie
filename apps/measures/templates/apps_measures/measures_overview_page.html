@@ -14,8 +14,8 @@
 
     <section class="modul-multiteaser">
         <div class="row">
-            <h2>{% translate 'List of Measures' %}</h2>
-            <form class="u-b-none">
+            <h2 id="measures">{% translate 'List of Measures' %}</h2>
+            <form class="u-b-none" action="#measures">
                 <div class="searchform-slot ">
                     <div class="form-group">
                         <label class="aural" for="searchInputField">{% translate 'Search term' %}</label>
@@ -31,7 +31,7 @@
                                 {% endfor %}
                                 <button class="button button--clean button--clear-input" type="button" title="{% translate 'Empty field' %}">
                                     {% combined_url_parameter request.GET search='' page='1' as url_par %}
-                                    <a href="{{ url_par }}">
+                                    <a href="{{ url_par }}#measures">
                                         <span class="aural">{% translate 'Empty field' %}</span>
                                         <i class="fas fa-times icon" aria-hidden="true"></i>
                                     </a>
@@ -63,7 +63,7 @@
                     {% endfor %}
                 </ul>
 
-                {% include "includes/pagination.html" with page_obj=measures_pages %}
+                {% include "includes/pagination.html" with page_obj=measures_pages anchor="#measures" %}
 
             </div>
         </div>

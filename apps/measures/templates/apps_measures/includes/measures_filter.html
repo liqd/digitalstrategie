@@ -8,7 +8,7 @@
     </div>
     <div class="container__body">
       <!-- Form start -->
-      <form class="facets">
+      <form class="facets" action="#measures">
 
         <!-- project status -->
         <div class="facet">
@@ -121,7 +121,7 @@
         <div class="form-actions">
           <div class="form-actions__left">
             <button type="reset" class="link reset">
-              <a href="?search={{ request.GET.search }}">{% translate 'Reset filters' %}</a>
+              <a href="?search={{ request.GET.search }}#measures">{% translate 'Reset filters' %}</a>
             </button>
           </div>
           <div class="form-actions__right">

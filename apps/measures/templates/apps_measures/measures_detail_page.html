@@ -7,7 +7,7 @@
     <dl class="meta-information__list">
         <div class="meta-information__item">
             <dt class="meta-information__item__head">
-                {% trans 'Responsible organisations' %}
+                {% translate 'Responsible organisation' %}
             </dt>
             <dd class="meta-information__item__content">
                 {{ page.responsible_organisation }}
@@ -15,7 +15,7 @@
         </div>
         <div class="meta-information__item">
             <dt class="meta-information__item__head">
-                {% trans 'District' %}
+                {% translate 'District' %}
             </dt>
             <dd class="meta-information__item__content">
                 {% with districts=page.get_districts_display %}
@@ -25,7 +25,7 @@
         </div>
         <div class="meta-information__item">
             <dt class="meta-information__item__head">
-                {% trans 'Involved organisations' %}
+                {% translate 'Involved organisations' %}
             </dt>
             <dd class="meta-information__item__content">
                 {{ page.involved_organisations }}
@@ -33,7 +33,7 @@
         </div>
         <div class="meta-information__item">
             <dt class="meta-information__item__head">
-                {% trans 'Period' %}
+                {% translate 'Period' %}
             </dt>
             <dd class="meta-information__item__content">
                 {{ page.period }}
@@ -41,7 +41,7 @@
         </div>
         <div class="meta-information__item">
             <dt class="meta-information__item__head">
-                {% trans 'Handlungsfelder' %}
+                {% translate 'Fields of action' %}
             </dt>
             <dd class="meta-information__item__content">
                 {% for foa in page.get_fields_of_action %}
@@ -54,7 +54,7 @@
         </div>
         <div class="meta-information__item">
             <dt class="meta-information__item__head">
-                {% trans 'Status' %}
+                {% translate 'Status' %}
             </dt>
             <dd class="meta-information__item__content">
                 {{ page.get_status_display }}
@@ -81,7 +81,7 @@
 
     {% if page.body_participation %}
     <section class="modul-text_bild">
-        <h2 class="title">{% trans 'Participation' %}</h2>
+        <h2 class="title">{% translate 'Participation' %}</h2>
         <div class="text textile">
             {{ page.body_participation|richtext }}
         </div>
@@ -89,21 +89,21 @@
     {% endif %}
     {% if page.body_effect %}
     <section class="modul-text_bild">
-        <h2 class="title">{% trans 'Effect' %}</h2>
+        <h2 class="title">{% translate 'Impact' %}</h2>
         <div class="text textile">
             {{ page.body_effect|richtext }}
         </div>
     </section>
     {% endif %}
     <section>
-        <h2 class="title">{% trans 'Contact' %}</h2>
-        <ul class="list--contact" aria-label="{% trans 'contact information' %}">
+        <h2 class="title">{% translate 'Contact' %}</h2>
+        <ul class="list--contact" aria-label="{% translate 'contact information' %}">
             <li class="name">
-                <strong class="u-d-block">{% trans 'Organisation' %}</strong>
+                <strong class="u-d-block">{% translate 'Organisation' %}</strong>
                 {{ page.contact_organisation_name }}
             </li>
             <li class="name">
-                <strong class="u-d-block">{% trans 'Contact person' %}</strong>
+                <strong class="u-d-block">{% translate 'Contact person' %}</strong>
                 {{ page.contact_name }}
             </li>
             {% if page.contact_email %}

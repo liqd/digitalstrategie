@@ -1,21 +1,33 @@
-# digitalstrategie
-
-[![Coverage Status](https://coveralls.io/repos/github/liqd/digitalstrategie/badge.svg?branch=main)](https://coveralls.io/github/liqd/digitalstrategie?branch=main)
-
-Welcome to digitalstrategie
+# Gemeinsam Digital: Berlin
 
 ## How to run
 
-Install dependencies
+#### Install dependencies
 ```
 $ make install
 ```
 
-### Start a local server:
+#### Start a local server:
 ```
 $ make watch
 ```
-### Create superuser:
+
+Start local server with elastic search:
+
+Open two terminal windows.
+1. Start elastic search in the first one:
+```
+$ sudo docker run -p 127.0.0.1:9200:9200 -p 127.0.0.1:9300:9300 -e "discovery.type=single-node" -e "logger.level=DEBUG" docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+```
+
+2. Run the server in the second one. But before you do that, update the search index.
+```
+$ source venv/bin/activate  # to start the virtual env
+$ python manage.py update_index
+$ make watch
+```
+
+#### Create superuser:
 ```
 $ source venv/bin/activate  # to start the virtual env
 $ python manage.py createsuperuser

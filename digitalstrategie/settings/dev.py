@@ -58,7 +58,7 @@ CSP_MEDIA_SRC = ["'self'"]
 CSP_FRAME_SRC = ["'self'", "youtube.com",
                  "www.youtube.com", "vimeo.com", "www.vimeo.com"]
 CSP_FONT_SRC = ["'self'", "berlin.de", "www.berlin.de"]
-CSP_CONNECT_SRC = ["'self'", "captcha-numbers-stage.liqd.net" "releases.wagtail.io"]
+CSP_CONNECT_SRC = ["'self'", "captcha-numbers-stage.liqd.net", "releases.wagtail.io"]
 CSP_STYLE_SRC = ["'none'"]
 # wagtail userbar requires unsafe-inline for wagtail <= 4.1
 CSP_STYLE_SRC_ATTR = ["'self'", "'unsafe-inline'"]

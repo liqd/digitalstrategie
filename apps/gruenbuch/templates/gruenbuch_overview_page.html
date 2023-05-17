@@ -23,9 +23,13 @@
     </div>
     {% endif %}
     <h1>{{ page.page_title }}</h1>
-    {{ self.page_intro|richtext }}
 </section>
 <div id="layout-grid__area--maincontent">
+    <section class="modul-text_bild">
+        <div class="text textile">
+        {{ self.page_intro|richtext }}
+        </div>
+    </section>
     {% for block in self.body %}
         {{ block }}
     {% endfor %}

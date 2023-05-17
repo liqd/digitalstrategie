@@ -3,34 +3,35 @@
 
 {% block content %}
 {% image page.intro_image max-1920x560 as intro_image %}
-<div class="fullwidth">
-    <div id="layout-grid">
-    <section id="layout-grid__area--herounit">
-        {% if page.intro_image and request.LANGUAGE_CODE != 'de-ls' %}
-        <div class="image">
-            <div class="image__image">
-                <img src="{{ intro_image.url }}" class="w-100" alt="{{ page.intro_image.alt }}"/>
-            </div>
-            {% if page.intro_image.caption %}
-            <p class="image__caption">
-                {{ page.intro_image.caption }}
-            </p>
-            {% endif %}
-            {% if page.intro_image.copyright %}
-            <p class="image__copyright">
-                {{ page.intro_image.copyright }}
-            </p>
-            {% endif %}
+
+<section id="layout-grid__area--herounit">
+    {% if page.intro_image and request.LANGUAGE_CODE != 'de-ls' %}
+    <div class="image">
+        <div class="image__image">
+            <img src="{{ intro_image.url }}" class="w-100" alt="{{ page.intro_image.alt }}"/>
         </div>
+        {% if page.intro_image.caption %}
+        <p class="image__caption">
+            {{ page.intro_image.caption }}
+        </p>
         {% endif %}
-        <h1>{{ page.page_title }}</h1>
+        {% if page.intro_image.copyright %}
+        <p class="image__copyright">
+            {{ page.intro_image.copyright }}
+        </p>
+        {% endif %}
+    </div>
+    {% endif %}
+    <h1>{{ page.page_title }}</h1>
+</section>
+
+<div id="layout-grid__area--maincontent">
+    <section class="modul-text_bild">
+        <div class="text textile">
         {{ self.page_intro|richtext }}
     </section>
-    </div>
-</div>
-<div id="layout-grid__area--maincontent">
-  {% for block in self.body %}
-      {{ block }}
-  {% endfor %}
+    {% for block in self.body %}
+        {{ block }}
+    {% endfor %}
 </div>
 {% endblock %}

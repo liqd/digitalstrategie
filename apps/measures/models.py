@@ -14,8 +14,8 @@ from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
 from wagtail.models import Page
 from wagtail.search import index
-from wagtailmetadata.models import MetadataPageMixin
 
+from apps.contrib.mixins import TranslatedMetadataPageMixin
 from apps.contrib.translations import TranslatedField
 from apps.home import blocks as apps_blocks
 
@@ -70,7 +70,7 @@ FACILITATIVE_ADMINISTRATION = [
 ]
 
 
-class MeasuresOverviewPage(MetadataPageMixin, Page):
+class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
     template = 'apps_measures/measures_overview_page.html'
 
     page_swiper = [
@@ -168,7 +168,8 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading=_('Common')),
-        ObjectList(MetadataPageMixin.promote_panels, heading=_('Meta Tags')),
+        ObjectList(TranslatedMetadataPageMixin.promote_panels,
+                   heading=_('Meta Tags')),
         ObjectList(de_content_panels, heading=_('German')),
         ObjectList(en_content_panels, heading=_('English')),
         ObjectList(de_ls_content_panels, heading=_('Easy German')),

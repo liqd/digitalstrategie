@@ -6,13 +6,13 @@ from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
 from wagtail.models import Page
 from wagtail.search import index
-from wagtailmetadata.models import MetadataPageMixin
 
+from apps.contrib.mixins import TranslatedMetadataPageMixin
 from apps.contrib.translations import TranslatedField
 from apps.home import blocks as apps_blocks
 
 
-class GruenbuchOverviewPage(MetadataPageMixin, Page):
+class GruenbuchOverviewPage(TranslatedMetadataPageMixin, Page):
     template = 'gruenbuch_overview_page.html'
 
     intro_image = models.ForeignKey(
@@ -103,7 +103,8 @@ class GruenbuchOverviewPage(MetadataPageMixin, Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading=_('Common')),
-        ObjectList(MetadataPageMixin.promote_panels, heading=_('Meta Tags')),
+        ObjectList(TranslatedMetadataPageMixin.promote_panels,
+                   heading=_('Meta Tags')),
         ObjectList(de_content_panels, heading=_('German')),
         ObjectList(en_content_panels, heading=_('English')),
         ObjectList(de_ls_content_panels, heading=_('Easy German')),

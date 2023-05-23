@@ -80,7 +80,7 @@ CSP_CONNECT_SRC = [
     "stats.liqd.net",
     "releases.wagtail.io",
 ]
-CSP_STYLE_SRC = ["'none'"]
+CSP_STYLE_SRC = ["'self'", "berlin.de", "www.berlin.de"]
 # wagtail userbar requires unsafe-inline for wagtail <= 4.1
 CSP_STYLE_SRC_ATTR = ["'self'", "'unsafe-inline'"]
 # wagtail admin vendor.js requires unsafe-inline

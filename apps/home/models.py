@@ -253,7 +253,7 @@ class OverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
 
-class DetailPage(Page):
+class DetailPage(TranslatedMetadataPageMixin, Page):
     page_blocks = [
         ('paragraph', apps_blocks.ParagraphBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
@@ -309,6 +309,8 @@ class DetailPage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading=_('Common')),
+        ObjectList(TranslatedMetadataPageMixin.promote_panels,
+                   heading=_('Meta Tags')),
         ObjectList(de_content_panels, heading=_('German')),
         ObjectList(en_content_panels, heading=_('English')),
         ObjectList(de_ls_content_panels, heading=_('Easy German')),
@@ -323,7 +325,7 @@ class DetailPage(Page):
     ]
 
 
-class SimplePage(Page):
+class SimplePage(TranslatedMetadataPageMixin, Page):
     page_blocks = [
         ('paragraph', blocks.RichTextBlock())
     ]
@@ -373,6 +375,8 @@ class SimplePage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading=_('Common')),
+        ObjectList(TranslatedMetadataPageMixin.promote_panels,
+                   heading=_('Meta Tags')),
         ObjectList(de_content_panels, heading=_('German')),
         ObjectList(en_content_panels, heading=_('English')),
         ObjectList(de_ls_content_panels, heading=_('Easy German')),
@@ -502,7 +506,7 @@ class MicrositeOverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
 
-class MicrositeDetailPage(Page):
+class MicrositeDetailPage(TranslatedMetadataPageMixin, Page):
     """
     (Almost) copy of DetailPage.
 
@@ -567,6 +571,8 @@ class MicrositeDetailPage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading=_('Common')),
+        ObjectList(TranslatedMetadataPageMixin.promote_panels,
+                   heading=_('Meta Tags')),
         ObjectList(de_content_panels, heading=_('German')),
         ObjectList(en_content_panels, heading=_('English')),
         ObjectList(de_ls_content_panels, heading=_('Easy German')),

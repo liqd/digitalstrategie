@@ -138,7 +138,7 @@ class GruenbuchIndexPage(GruenbuchOverviewPage):
     subpage_types = ['apps_gruenbuch.GruenbuchDetailPage']
 
 
-class GruenbuchDetailPage(Page):
+class GruenbuchDetailPage(TranslatedMetadataPageMixin, Page):
     template = 'gruenbuch_detail_page.html'
 
     page_blocks = [
@@ -206,6 +206,8 @@ class GruenbuchDetailPage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading=_('Common')),
+        ObjectList(TranslatedMetadataPageMixin.promote_panels,
+                   heading=_('Meta Tags')),
         ObjectList(de_content_panels, heading=_('German')),
         ObjectList(en_content_panels, heading=_('English')),
         ObjectList(de_ls_content_panels, heading=_('Easy German')),

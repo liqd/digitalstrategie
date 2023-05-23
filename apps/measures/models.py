@@ -352,7 +352,7 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
 
-class MeasuresDetailPage(Page):
+class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
     page_title_de = models.CharField(
         max_length=120, blank=False)
     page_title_en = models.CharField(
@@ -570,6 +570,8 @@ class MeasuresDetailPage(Page):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading=_('Common')),
+        ObjectList(TranslatedMetadataPageMixin.promote_panels,
+                   heading=_('Meta Tags')),
         ObjectList(de_content_panels, heading=_('German')),
         ObjectList(en_content_panels, heading=_('English')),
         ObjectList(de_ls_content_panels, heading=_('Easy German')),

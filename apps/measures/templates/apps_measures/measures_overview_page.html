@@ -48,6 +48,7 @@
             <div class="span4">
                 <button type="button" class="button button--filter js-facetingform-toggler" data-containerid="measuresFilter">
                 {% translate 'Filter' %}
+                <span class="pill">{{ filter_count }}</span>
                 </button>
                 {% include "apps_measures/includes/measures_filter.html" %}
             </div>

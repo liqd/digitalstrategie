@@ -338,6 +338,7 @@ class MeasuresOverviewPage(MetadataPageMixin, Page):
         context['search_string'] = search_string
         context['filter_string'] = filter_string
         context['result_string'] = result_string
+        context['filter_count'] = len(filter_display_list)
         return context
 
     search_fields = Page.search_fields + [

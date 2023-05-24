@@ -262,7 +262,7 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
         return fields_filter_params, filter_display_list
 
     def get_context(self, request):
-        measures_pages = self.measures_pages
+        filtered_measures = self.measures_pages
 
         # filters for status, district and fields of action (four sets)
         status = request.GET.get('status')
@@ -298,25 +298,25 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
 
         # FIXME: when wagtail issue fixed
         # https://github.com/wagtail/wagtail/issues/6616
-        measures_page_ids = measures_pages.filter(
+        measures_page_ids = filtered_measures.filter(
             filter_params).values_list('id', flat=True)
-        measures_pages = measures_pages.filter(id__in=measures_page_ids)
+        filtered_measures = filtered_measures.filter(id__in=measures_page_ids)
 
         # search
         search = request.GET.get('search')
         search_string = ''
         if search:
-            measures_pages = measures_pages.search(search)
+            filtered_measures = filtered_measures.search(search)
             search_string = _('Search for "{search_term}".').format(
                 search_term=search
             )
 
         # pagination
         page = request.GET.get('page', 1)
-        paginator = Paginator(measures_pages, 6)
+        paginator = Paginator(filtered_measures, 6)
 
         try:
-            measures_pages = paginator.page(page)
+            paginated_measures = paginator.page(page)
         except InvalidPage:
             raise Http404
 
@@ -324,13 +324,13 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
         result_string = ngettext_lazy(
             '{count} measure.',
             '{count} measures.',
-            paginator.count
+            filtered_measures.count()
         ).format(
-            count=str(paginator.count)
+            count=str(filtered_measures.count())
         )
 
         context = super().get_context(request)
-        context['measures_pages'] = measures_pages
+        context['measures_pages'] = paginated_measures
         context['selected_districts'] = dis
         context['selected_reg'] = reg
         context['selected_fut'] = fut

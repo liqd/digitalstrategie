@@ -9,8 +9,9 @@
     {% image page.ls_header_image original as header_image %}
 {% endif %}
 <section id="layout-grid__area--herounit" class="fullwidth">
-  <div class="hero__parallax" style="background-image: url('{{ header_image.url }}')">
-    <div class="herounit-landingpage herounit-landingpage--default">
+
+    <!-- Mobile -->
+    <div class="herounit-landingpage herounit-landingpage--default hero__mobile">
         <div class="image">
             <div class="image__image mb-0">
                 <img class="hero__image-back" src="{{ header_image.url }}" alt="{{ header_image.alt }}" loading="lazy">
@@ -27,7 +28,28 @@
             </div>
         </div>
     </div>
-  </div>
+
+
+<!-- Desktop  -->
+    <div class="hero__parallax hero__desktop" style="background-image: url('{{ header_image.url }}')">
+        <div class="herounit-landingpage herounit-landingpage--default">
+            <div class="image">
+                <div class="image__image mb-0">
+                    <img class="hero__image-back" src="{{ header_image.url }}" alt="{{ header_image.alt }}" loading="lazy">
+                </div>
+                {% if page.header_image.copyright %}
+                <div class="image__copyright ds-hero-image__copyright">
+                    <p>{{ page.header_image.copyright }}</p>
+                </div>
+                {% endif %}
+
+                <div class="image__overlay ds-hero-image__overlay">
+                    <h1 class="title">{{ page.page_title }}</h1>
+                    <p>{{ page.page_subtitle }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <div id="layout-grid__area--maincontent">
     {% for block in self.body %}

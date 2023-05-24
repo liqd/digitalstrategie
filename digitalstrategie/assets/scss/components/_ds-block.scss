@@ -111,6 +111,20 @@
     }
 }
 
+.hero__mobile {
+    @media (min-width: 64.001rem) {
+        display: none;
+    }
+}
+
+.hero__desktop {
+    display: none;
+
+    @media (min-width: 64.001rem) {
+        display: block;
+    }
+}
+
 .hero__parallax {
     background-position: center;
     background-repeat: no-repeat;

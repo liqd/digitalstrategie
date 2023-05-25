@@ -13,6 +13,7 @@ from wagtail.contrib.forms.models import AbstractEmailForm
 from wagtail.contrib.forms.models import AbstractFormField
 
 from apps.captcha.fields import CaptcheckCaptchaField
+from apps.contrib.mixins import TranslatedMetadataPageMixin
 from apps.contrib.translations import TranslatedField
 from apps.settings import helpers
 
@@ -38,7 +39,7 @@ class WagtailCaptchaFormBuilder(FormBuilder):
         return fields
 
 
-class FormPage(AbstractEmailForm):
+class FormPage(TranslatedMetadataPageMixin, AbstractEmailForm):
 
     form_builder = WagtailCaptchaFormBuilder
 
@@ -146,7 +147,6 @@ class FormPage(AbstractEmailForm):
 
     common_panels = [
         FieldPanel('title'),
-        FieldPanel('slug'),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname="col6"),
@@ -159,6 +159,8 @@ class FormPage(AbstractEmailForm):
 
     edit_handler = TabbedInterface([
         ObjectList(common_panels, heading=_('Common')),
+        ObjectList(TranslatedMetadataPageMixin.promote_panels,
+                   heading=_('Meta Tags')),
         ObjectList(de_content_panels, heading=_('German')),
         ObjectList(en_content_panels, heading=_('English')),
         ObjectList(de_ls_content_panels, heading=_('Easy German'))

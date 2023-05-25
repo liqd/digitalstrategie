@@ -18,11 +18,12 @@ def custom_meta_tags(context, model=None):
         return ""
     if not model:
         model = context.get('self', None)
-        if not hasattr(model, 'get_meta_title') or (
-                not model.meta_title and
+        root = Site.find_for_request(request).root_page.specific
+        while not hasattr(model, 'get_meta_title') or (
+                not model.get_meta_title() and
                 not model.get_meta_description()):
-            site = Site.find_for_request(request)
-            if site:
-                model = site.root_page.specific
+            if model == root:
+                return tags.meta_tags(request, model)
+            model = model.specific.get_parent().specific
 
     return tags.meta_tags(request, model)

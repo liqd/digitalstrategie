@@ -26,20 +26,20 @@ class TranslatedMetadataPageMixin(WagtailImageMetadataMixin, models.Model):
 
     meta_title_de = models.CharField(
         null=True,
+        blank=True,
         max_length=120,
-        blank=False,
         verbose_name=_('Meta title de')
     )
     meta_title_en = models.CharField(
         null=True,
-        max_length=120,
         blank=True,
+        max_length=120,
         verbose_name=_('Meta title en')
     )
 
     meta_description_de = models.TextField(
         null=True,
-        blank=False,
+        blank=True,
         verbose_name=_('Meta description de')
     )
     meta_description_en = models.TextField(

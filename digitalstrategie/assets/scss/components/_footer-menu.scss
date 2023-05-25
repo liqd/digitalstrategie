@@ -2,9 +2,14 @@
     margin-bottom: 0;
 
     & button {
+        padding: 1em 12px; // to mimic link on mobile
+        font-family: $font-family-arial;
+
         @extend .btn--reset;
 
-        font-family: $font-family-arial;
+        @media print, (min-width: 64.001rem) {
+            padding: inherit;
+        }
     }
 
     &:hover {

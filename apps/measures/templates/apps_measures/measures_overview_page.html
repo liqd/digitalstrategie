@@ -29,6 +29,7 @@
                                         <input type="hidden" name="{{ par_name }}" value="{{ value }}" />
                                     {% endif %}
                                 {% endfor %}
+                                {% if request.GET.search %}
                                 <button class="button button--clean button--clear-input" type="button" title="{% translate 'Empty field' %}">
                                     {% combined_url_parameter request.GET search='' page='1' as url_par %}
                                     <a href="{{ url_par }}#measures">
@@ -36,6 +37,7 @@
                                         <i class="fas fa-times icon" aria-hidden="true"></i>
                                     </a>
                                 </button>
+                                {% endif %}
                             </div>
                             <button class="button button--clean submit" type="submit" title="{% translate 'Search' %}">
                                 <span class="aural">{% translate 'Search' %}</span><i class="fas fa-arrow-right icon" aria-hidden="true"></i>

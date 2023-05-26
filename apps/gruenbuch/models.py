@@ -98,6 +98,7 @@ class GruenbuchOverviewPage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
         FieldPanel('intro_image'),
     ]
 
@@ -202,6 +203,7 @@ class GruenbuchDetailPage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
     ]
 
     edit_handler = TabbedInterface([

@@ -147,6 +147,7 @@ class FormPage(TranslatedMetadataPageMixin, AbstractEmailForm):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname="col6"),

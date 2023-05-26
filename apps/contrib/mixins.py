@@ -62,7 +62,6 @@ class TranslatedMetadataPageMixin(WagtailImageMetadataMixin, models.Model):
 
     promote_panels = [
         MultiFieldPanel([
-            FieldPanel('slug'),
             FieldPanel('meta_title_de'),
             FieldPanel('meta_title_en'),
             FieldPanel('show_in_menus'),

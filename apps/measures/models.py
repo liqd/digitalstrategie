@@ -164,6 +164,7 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
     ]
 
     edit_handler = TabbedInterface([
@@ -544,6 +545,7 @@ class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
         FieldPanel('text_image'),
         FieldPanel('districts'),
         FieldPanel('status'),

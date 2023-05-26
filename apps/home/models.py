@@ -104,6 +104,7 @@ class HomePage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
         FieldPanel('header_image'),
     ]
 
@@ -224,6 +225,7 @@ class OverviewPage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
         FieldPanel('intro_image'),
     ]
 
@@ -305,6 +307,7 @@ class DetailPage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
     ]
 
     edit_handler = TabbedInterface([
@@ -371,6 +374,7 @@ class SimplePage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
     ]
 
     edit_handler = TabbedInterface([
@@ -482,6 +486,7 @@ class MicrositeOverviewPage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
         FieldPanel('intro_image'),
     ]
 
@@ -567,6 +572,7 @@ class MicrositeDetailPage(TranslatedMetadataPageMixin, Page):
 
     common_panels = [
         FieldPanel('title'),
+        FieldPanel('slug'),
     ]
 
     edit_handler = TabbedInterface([

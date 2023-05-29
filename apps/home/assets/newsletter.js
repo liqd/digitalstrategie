@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('newsletter_subscribe').addEventListener('click', function() {
+    var newsletterForm = document.getElementById('newsletter_form')
+    window.ValidateForm(newsletterForm)
+  })
+})
+
 function ValidateForm() {
     var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     var formInput = document.getElementById('id_email')

@@ -4,13 +4,18 @@
 }
 
 .richtext-image.left {
-    max-width: 65%;
     float: left;
     margin-right: $spacer;
 }
 
 .richtext-image.right {
-    max-width: 65%;
     float: right;
     margin-left: $spacer;
+}
+
+@media print, (min-width: 64.001rem) {
+    .richtext-image.right,
+    .richtext-image.left {
+        max-width: 65%;
+    }
 }

@@ -28,7 +28,11 @@
 
           <div class="form-actions" id="id_form_action">
               <div class="form-actions__right">
-                  <button value="{% trans 'Subscribe' %}" class="button ds-block__button-clear" type="button" onclick="window.ValidateForm(document.newsletter_form)">{% trans 'Subscribe' %}</button>
+                  <button
+                    id="newsletter_subscribe"
+                    value="{% trans 'Subscribe' %}"
+                    class="button ds-block__button-clear"
+                    type="button">{% trans 'Subscribe' %}</button>
               </div>
           </div>
         </form>

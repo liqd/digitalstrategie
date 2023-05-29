@@ -3,15 +3,14 @@
 
 {% block content %}
 
-<section id="layout-grid__area--herounit">
+<section id="layout-grid__area--herounit" class="inner">
     <h1 class="u-center">{{ page.page_title }}</h1>
     <p class="u-center">{{ page.page_intro }}</p>
+</section>
+<div id="layout-grid__area--maincontent">
     {% for block in self.swiper %}
         {{ block }}
     {% endfor %}
-</section>
-<div id="layout-grid__area--maincontent">
-
     <section class="modul-multiteaser">
         <div class="row">
             <h2 id="measures">{% translate 'List of Measures' %}</h2>
@@ -48,7 +47,7 @@
             </form>
 
             <div class="span4">
-                <button type="button" class="button button--filter js-facetingform-toggler" data-containerid="measuresFilter">
+                <button type="button" class="button button--filter js-facetingform-toggler btn--filter" data-containerid="measuresFilter">
                 {% translate 'Filter' %}
                 <span class="pill">{{ filter_count }}</span>
                 </button>

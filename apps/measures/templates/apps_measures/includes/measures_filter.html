@@ -12,15 +12,13 @@
 
         <!-- project status -->
         <div class="facet">
-          <div class="facet__head">
+          <h3 class="facet__head">
             <button data-collapsible-trigger="opened" class="facet-title" type="button" aria-controls="statusFacet">
-              <span class="text">
-                <label for="statusSelect" class="form-label facet__head">
-                  {% translate 'Project status' %}
-                </label>
-              </span>
+              <label for="statusSelect" class="form-label facet__head">
+                {% translate 'Project status' %}
+              </label>
             </button>
-          </div>
+          </h3>
           <div class="facet__body" id="statusFacet">
             <div class="form-group" id="group_statusSelect">
               <select class="form-control" id="statusSelect" name="status">
@@ -36,12 +34,12 @@
         <!-- district -->
         <fieldset class="facet">
           <legend class="facet__head">
-            <button data-collapsible-trigger="opened" class="facet-title" type="button"
-              aria-controls="districtFacet">
-              <span class="text">
-                {% translate 'District' %}
-              </span>
-            </button>
+            <h3>
+              <button data-collapsible-trigger="opened" class="facet-title" type="button"
+                aria-controls="districtFacet">
+                  {% translate 'District' %}
+              </button>
+            </h3>
           </legend>
           <div class="facet__body" id="districtFacet">
             {% for district_key, district_string in page.district.items %}

@@ -212,5 +212,5 @@ WAGTAILSEARCH_BACKENDS = {
     }
 }
 
-BERLIN_FOOTER_URL = 'https://www.berlin.de/rbmskzl/aktuelles/__i9/std/landesfooter.inc'
+BERLIN_FOOTER_URL = 'https://www.berlin.de/rbmskzl/aktuelles/__i9/std/landesfooter.inc?js=0'
 CONTACT_EMAIL = 'contact@domain'

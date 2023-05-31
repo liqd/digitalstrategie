@@ -19,8 +19,6 @@ urlpatterns = [
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
     path('i18n/', include('django.conf.urls.i18n')),
-    re_path(r'^jsi18n/$', JavaScriptCatalog.as_view(),
-            name='javascript-catalog'),
     re_path(r'^robots\.txt$', TemplateView.as_view(
         template_name='robots.txt',
         content_type="text/plain"), name="robots_file"),
@@ -28,6 +26,8 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
+    re_path(r'^jsi18n/$', JavaScriptCatalog.as_view(),
+            name='javascript-catalog'),
     path('search/', SearchResultsView.as_view(), name="search"),
     re_path(r'^sitemap\.xml$', wagtail_sitemap),
     path('', include(wagtail_urls)),

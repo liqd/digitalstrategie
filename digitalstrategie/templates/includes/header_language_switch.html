@@ -7,17 +7,8 @@
   {% for lang_code, lang_name in languages %}
   {% get_language_info for lang_code as language %}
   {% if language.code != 'de-ls' %}
-  <li class="header-menu__btn">
-      <form action="{% url 'set_language' %}" method="post">
-          {% csrf_token %}
-          <input name="next" type="hidden" value="{{ redirect_to }}" />
-          <input name="language" type="hidden" value="{{ lang_code }}">
-          <span>
-            <button role="button" type="submit" aria-label="{% trans 'select' %}{{ lang_name }}">
-                {{ language.name_local }}
-            </button>
-          </span>
-      </form>
+  <li>
+      <a href="{% translate_url lang_code %}" aria-label="{% trans 'select' %}">{{ language.name_local }}</a>
   </li>
   {% endif %}
   {% endfor %}
@@ -27,16 +18,7 @@
 <ul>
     {% get_language_info for 'de-ls' as language %}
     {% get_has_translation page 'de_ls' as has_translation_de_ls %}
-    <li class="header-menu__btn">
-        <form action="{% url 'set_language' %}" method="post">
-          {% csrf_token %}
-          <input name="next" type="hidden" value="{% if has_translation_de_ls %}{{ redirect_to }}{% else %}/{% endif %}" />
-          <input name="language" type="hidden" value="{{ language.code }}">
-          <span>
-            <button role="button" type="submit" aria-label="{% trans 'select' %}{{ language.name }}">
-                {{ language.name_local }}
-            </button>
-          </span>
-        </form>
+    <li>
+        <a href="{% if has_translation_de_ls %}{% translate_url language.code %}{% else %}/{% endif %}" aria-label="{% trans 'select' %}">{{ language.name_local }}</a>
     </li>
 </ul>

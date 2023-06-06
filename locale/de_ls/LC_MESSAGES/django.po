@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-06 13:38+0000\n"
+"POT-Creation-Date: 2023-06-06 15:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,19 +43,26 @@ msgstr ""
 msgid "Meta title de"
 msgstr ""
 
-#: apps/contrib/mixins.py:37
+#: apps/contrib/mixins.py:32
+msgid ""
+"Please note, search engines choose what page information to display based on "
+"algorithms for selecting meta tags. Provide relevant and accurate "
+"information, but remember that visibility is not guaranteed."
+msgstr ""
+
+#: apps/contrib/mixins.py:41
 msgid "Meta title en"
 msgstr ""
 
-#: apps/contrib/mixins.py:43
+#: apps/contrib/mixins.py:47
 msgid "Meta description de"
 msgstr ""
 
-#: apps/contrib/mixins.py:48
+#: apps/contrib/mixins.py:52
 msgid "Meta description en"
 msgstr ""
 
-#: apps/contrib/mixins.py:71
+#: apps/contrib/mixins.py:75
 msgid "Common page configuration"
 msgstr ""
 
@@ -119,68 +126,77 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: apps/forms/models.py:162 apps/gruenbuch/models.py:106
-#: apps/gruenbuch/models.py:210 apps/home/models.py:233 apps/home/models.py:314
-#: apps/home/models.py:381 apps/home/models.py:494 apps/home/models.py:579
-#: apps/measures/models.py:171 apps/measures/models.py:574
+#: apps/forms/models.py:149 apps/gruenbuch/models.py:100
+#: apps/gruenbuch/models.py:206 apps/home/models.py:106 apps/home/models.py:228
+#: apps/home/models.py:311 apps/home/models.py:379 apps/home/models.py:492
+#: apps/home/models.py:579 apps/measures/models.py:166
+#: apps/measures/models.py:548
+msgid ""
+"Add the page title you'd like to be seen in Wagtail in the list of pages."
+msgstr ""
+
+#: apps/forms/models.py:163 apps/gruenbuch/models.py:107
+#: apps/gruenbuch/models.py:212 apps/home/models.py:235 apps/home/models.py:317
+#: apps/home/models.py:385 apps/home/models.py:499 apps/home/models.py:585
+#: apps/measures/models.py:172 apps/measures/models.py:576
 msgid "Common"
 msgstr ""
 
-#: apps/forms/models.py:164 apps/gruenbuch/models.py:108
-#: apps/gruenbuch/models.py:212 apps/home/models.py:114 apps/home/models.py:235
-#: apps/home/models.py:316 apps/home/models.py:383 apps/home/models.py:496
-#: apps/home/models.py:581 apps/measures/models.py:173
-#: apps/measures/models.py:576
+#: apps/forms/models.py:165 apps/gruenbuch/models.py:109
+#: apps/gruenbuch/models.py:214 apps/home/models.py:115 apps/home/models.py:237
+#: apps/home/models.py:319 apps/home/models.py:387 apps/home/models.py:501
+#: apps/home/models.py:587 apps/measures/models.py:174
+#: apps/measures/models.py:578
 msgid "Meta Tags"
 msgstr ""
 
-#: apps/forms/models.py:165 apps/gruenbuch/models.py:109
-#: apps/gruenbuch/models.py:213 apps/home/models.py:115 apps/home/models.py:236
-#: apps/home/models.py:317 apps/home/models.py:384 apps/home/models.py:497
-#: apps/home/models.py:582 apps/measures/models.py:174
-#: apps/measures/models.py:577 digitalstrategie/settings/base.py:127
+#: apps/forms/models.py:166 apps/gruenbuch/models.py:110
+#: apps/gruenbuch/models.py:215 apps/home/models.py:116 apps/home/models.py:238
+#: apps/home/models.py:320 apps/home/models.py:388 apps/home/models.py:502
+#: apps/home/models.py:588 apps/measures/models.py:175
+#: apps/measures/models.py:579 digitalstrategie/settings/base.py:127
 msgid "German"
 msgstr ""
 
-#: apps/forms/models.py:166 apps/gruenbuch/models.py:110
-#: apps/gruenbuch/models.py:214 apps/home/models.py:116 apps/home/models.py:237
-#: apps/home/models.py:318 apps/home/models.py:385 apps/home/models.py:498
-#: apps/home/models.py:583 apps/measures/models.py:175
-#: apps/measures/models.py:578 digitalstrategie/settings/base.py:126
+#: apps/forms/models.py:167 apps/gruenbuch/models.py:111
+#: apps/gruenbuch/models.py:216 apps/home/models.py:117 apps/home/models.py:239
+#: apps/home/models.py:321 apps/home/models.py:389 apps/home/models.py:503
+#: apps/home/models.py:589 apps/measures/models.py:176
+#: apps/measures/models.py:580 digitalstrategie/settings/base.py:126
 msgid "English"
 msgstr ""
 
-#: apps/forms/models.py:167 apps/gruenbuch/models.py:111
-#: apps/gruenbuch/models.py:215 apps/home/models.py:117 apps/home/models.py:238
-#: apps/home/models.py:319 apps/home/models.py:386 apps/home/models.py:499
-#: apps/home/models.py:584 apps/measures/models.py:176
-#: apps/measures/models.py:579 digitalstrategie/settings/base.py:128
+#: apps/forms/models.py:168 apps/gruenbuch/models.py:112
+#: apps/gruenbuch/models.py:217 apps/home/models.py:118 apps/home/models.py:240
+#: apps/home/models.py:322 apps/home/models.py:390 apps/home/models.py:504
+#: apps/home/models.py:590 apps/measures/models.py:177
+#: apps/measures/models.py:581 digitalstrategie/settings/base.py:128
 msgid "Easy German"
 msgstr ""
 
-#: apps/forms/models.py:184 apps/forms/models.py:247
+#: apps/forms/models.py:185 apps/forms/models.py:248
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr ""
 
-#: apps/forms/models.py:190
+#: apps/forms/models.py:191
 msgid "Title"
 msgstr ""
 
-#: apps/forms/models.py:197
+#: apps/forms/models.py:198
 msgid "Your message to us…"
 msgstr ""
 
-#: apps/forms/models.py:222
+#: apps/forms/models.py:223
 msgid ""
 "The selected categories                     are displayed in the "
 "participation form."
 msgstr ""
 
-#: apps/forms/models.py:246
+#: apps/forms/models.py:247
 msgid "I agree that my contact data is stored."
 msgstr ""
 
-#: apps/forms/models.py:253
+#: apps/forms/models.py:254
 msgid "I am interested in the following fields of action"
 msgstr ""
 
@@ -220,7 +236,7 @@ msgstr ""
 msgid "Page introduction de ls"
 msgstr ""
 
-#: apps/gruenbuch/models.py:137
+#: apps/gruenbuch/models.py:138
 msgid "Gruenbuch Index Page"
 msgstr ""
 
@@ -331,7 +347,7 @@ msgstr ""
 msgid "Video Block"
 msgstr ""
 
-#: apps/home/blocks.py:302
+#: apps/home/blocks.py:305
 msgid ""
 "Please note that images will be displayed in a 16:9 aspect ratio. Crop or "
 "resize your images accordingly before uploading to ensure they display "
@@ -362,12 +378,12 @@ msgstr ""
 msgid "Home page subtitle de ls"
 msgstr ""
 
-#: apps/home/models.py:163 apps/home/models.py:424
+#: apps/home/models.py:164 apps/home/models.py:428
 msgid "Intro image is not shown for Easy Language"
 msgstr ""
 
-#: apps/home/models.py:174 apps/home/models.py:177 apps/home/models.py:180
-#: apps/home/models.py:435 apps/home/models.py:438 apps/home/models.py:441
+#: apps/home/models.py:175 apps/home/models.py:178 apps/home/models.py:181
+#: apps/home/models.py:439 apps/home/models.py:442 apps/home/models.py:445
 msgid "Overview page introduction"
 msgstr ""
 
@@ -580,24 +596,24 @@ msgstr ""
 msgid "Only add 1 teaser block per overview page."
 msgstr ""
 
-#: apps/measures/models.py:296
+#: apps/measures/models.py:297
 #, python-brace-format
 msgid "Filtered by \"{filter_term}\"."
 msgstr ""
 
-#: apps/measures/models.py:311
+#: apps/measures/models.py:312
 #, python-brace-format
 msgid "Search for \"{search_term}\"."
 msgstr ""
 
-#: apps/measures/models.py:326
+#: apps/measures/models.py:327
 #, python-brace-format
 msgid "{count} measure."
 msgid_plural "{count} measures."
 msgstr[0] ""
 msgstr[1] ""
 
-#: apps/measures/models.py:382 apps/measures/models.py:556
+#: apps/measures/models.py:383 apps/measures/models.py:558
 msgid "Up to 3 choices are allowed."
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-06 13:38+0000\n"
+"POT-Creation-Date: 2023-06-06 15:33+0000\n"
 "PO-Revision-Date: 2022-11-09 16:01+0000\n"
 "Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
 "Language-Team: German <https://trans.liqd.net/projects/gemeinsam-digital-"
@@ -30,12 +30,3 @@ msgstr ""
 #: apps/captcha/assets/captcheck.js:31
 msgid "Captcha, switch between image and text question"
 msgstr ""
-
-#~ msgid "Image mode"
-#~ msgstr "Bildmodus"
-
-#~ msgid "Text mode"
-#~ msgstr "Textmodus"
-
-#~ msgid "Captcha: switch between image and text question"
-#~ msgstr "Captcha: zwischen Bild- und Textfrage wechseln"

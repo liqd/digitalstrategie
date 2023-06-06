@@ -163,7 +163,8 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title'),
+        FieldPanel('title', help_text=_('Add the page title you\'d like '
+                   'to be seen in Wagtail in the list of pages.')),
         FieldPanel('slug'),
     ]
 
@@ -544,7 +545,8 @@ class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title'),
+        FieldPanel('title', help_text=_('Add the page title you\'d like '
+                   'to be seen in Wagtail in the list of pages.')),
         FieldPanel('slug'),
         FieldPanel('text_image'),
         FieldPanel('districts'),

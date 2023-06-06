@@ -116,8 +116,8 @@ lint-fix:
 
 .PHONY: po
 po:
-	$(VIRTUAL_ENV)/bin/python manage.py makemessages --all --extension html,email,py --ignore venv --ignore node_modules
-	$(VIRTUAL_ENV)/bin/python manage.py makemessages --all -d djangojs --ignore venv --ignore node_modules
+	$(VIRTUAL_ENV)/bin/python manage.py makemessages --all --no-obsolete --extension html,email,py --ignore venv --ignore node_modules
+	$(VIRTUAL_ENV)/bin/python manage.py makemessages --all --no-obsolete -d djangojs --ignore venv --ignore node_modules
 	msgen locale/en/LC_MESSAGES/django.po -o locale/en/LC_MESSAGES/django.po
 	msgen locale/en/LC_MESSAGES/djangojs.po -o locale/en/LC_MESSAGES/djangojs.po
 

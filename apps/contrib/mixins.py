@@ -28,7 +28,11 @@ class TranslatedMetadataPageMixin(WagtailImageMetadataMixin, models.Model):
         null=True,
         blank=True,
         max_length=120,
-        verbose_name=_('Meta title de')
+        verbose_name=_('Meta title de'),
+        help_text=_('Please note, search engines choose what page information '
+                    'to display based on algorithms for selecting meta tags. '
+                    'Provide relevant and accurate information, but remember '
+                    'that visibility is not guaranteed.')
     )
     meta_title_en = models.CharField(
         null=True,

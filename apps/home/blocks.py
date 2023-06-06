@@ -297,8 +297,11 @@ class VideoBlock(blocks.StructBlock):
 
 
 class ImageSwiperBlock(blocks.StructBlock):
+    class CustomImgTextLinkBlock(ImgTextLinkBlock):
+        title = blocks.CharBlock(max_length=80)  # Set a new max_length
+        body = blocks.TextBlock(max_length=200, blank=True, rows=3)
     swiper_item = blocks.ListBlock(
-        ImgTextLinkBlock(
+        CustomImgTextLinkBlock(
             help_text=_('Please note that images will be displayed in a 16:9 '
                         'aspect ratio. Crop or resize your images accordingly '
                         'before uploading to ensure they display correctly.')))

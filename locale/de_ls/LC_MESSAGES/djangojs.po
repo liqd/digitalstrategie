@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-16 13:35+0000\n"
+"POT-Creation-Date: 2023-06-06 13:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: apps/captcha/assets/captcheck.js:29
-msgid "Image mode"
+msgid "View image mode"
 msgstr ""
 
 #: apps/captcha/assets/captcheck.js:30
-msgid "Text mode"
+msgid "View text mode"
 msgstr ""
 
 #: apps/captcha/assets/captcheck.js:31
-msgid "Captcha: switch between image and text question"
+msgid "Captcha, switch between image and text question"
 msgstr ""

@@ -54,11 +54,10 @@
                                     </a>
                                 </span>
                             {% endif %}
-                            {% if value.image.copyright or value.image.caption %}
+                            {% if value.image.copyright %}
                             <span class="image__copyright">
                                 <strong>Bild:</strong>
                                 {{ value.image.copyright }}
-                                {{ value.image.caption }}
                             </span>
                             {% endif %}
                         </div>

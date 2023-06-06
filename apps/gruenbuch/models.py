@@ -97,7 +97,8 @@ class GruenbuchOverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title'),
+        FieldPanel('title', help_text=_('Add the page title you\'d like '
+                   'to be seen in Wagtail in the list of pages.')),
         FieldPanel('slug'),
         FieldPanel('intro_image'),
     ]
@@ -202,7 +203,8 @@ class GruenbuchDetailPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title'),
+        FieldPanel('title', help_text=_('Add the page title you\'d like '
+                   'to be seen in Wagtail in the list of pages.')),
         FieldPanel('slug'),
     ]
 

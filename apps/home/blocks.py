@@ -7,7 +7,7 @@ HELPTEXT_RICHTEXT_A11Y = _('For accessibility please make sure that you do not'
                            ' leave out levels when using the headlines. That'
                            ' means, that there should always be an h2 before'
                            ' using an h3.')
-NEWSLETTER_EMAIL_DEFAULT = _('Ihre E-Mail-Adresse')
+NEWSLETTER_EMAIL_DEFAULT = _('Your email address')
 NEWSLETTER_DSGVO_DEFAULT = _(
     'Ich willige in die Speicherung und Nutzung meiner E-Mail-Adresse für '
     'den Newsletterversand ein. Die Einwilligung gilt für den Zeitraum des '
@@ -229,7 +229,7 @@ class TeaserBlockTile(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/teaser_block_tiles.html'
         icon = 'pick'
-        label = _('Teaser Tiles')
+        label = _('Icon Tiles')
 
 
 class TeaserBlockSingle(blocks.StructBlock):
@@ -282,7 +282,7 @@ class VideoBlock(blocks.StructBlock):
                                     'YouTube or Vimeo videos.'))
     preview_image = ImageChooserBlock(
         required=False,
-        help_text=_('Add a preview image for the dsgvo video overlay.'))
+        help_text=_('Add a preview image for the GDPR overlay.'))
     transcript = blocks.RichTextBlock(features=['bold', 'italic', 'ol', 'ul',
                                                 'link', 'document-link'],
                                       help_text=_('You can add the video\'s '

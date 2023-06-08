@@ -50,7 +50,7 @@ class MenuItem(models.Model):
         blank=True,
         null=True,
         help_text=_(
-            'These Links will be displayed as sebmenu items. '
+            'These Links will be displayed as submenu items. '
             'Either in dropdowns or as items below a headline.'
         ),
         verbose_name='Submenu',

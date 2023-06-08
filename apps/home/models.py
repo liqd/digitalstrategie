@@ -161,7 +161,7 @@ class OverviewPage(TranslatedMetadataPageMixin, Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text=_('Intro image is not shown for Easy Language')
+        help_text=_('Intro image is not shown for Easy German')
     )
 
     page_title_de = models.CharField(
@@ -425,7 +425,7 @@ class MicrositeOverviewPage(TranslatedMetadataPageMixin, Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        help_text=_('Intro image is not shown for Easy Language')
+        help_text=_('Intro image is not shown for Easy German')
     )
 
     page_title_de = models.CharField(

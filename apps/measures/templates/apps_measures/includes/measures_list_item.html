@@ -25,8 +25,8 @@
             </p>
 
             <a href="{% pageurl content %}" class="more" data-mainlink="true" title="This is a single Teaser">
-                {% trans 'More' %}
-                <span class="aural">{% trans 'to: ' %} {{ content.translated_title }}</span>
+                {% translate 'More' %}
+                <span class="aural">{% translate 'about:' context 'For SRs, reads "more about: <name of measure>"' %} {{ content.page_title }}</span>
             </a>
         </div>
  </article>

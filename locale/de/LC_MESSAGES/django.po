@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-06 15:33+0000\n"
-"PO-Revision-Date: 2022-11-24 20:37+0000\n"
-"Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
-"Language-Team: German <https://trans.liqd.net/projects/gemeinsam-digital-"
-"berlin/main/de/>\n"
+"PO-Revision-Date: 2023-06-08 12:47+0000\n"
+"Last-Translator: Max Westbrock <maxwestbrock@hotmail.com>\n"
+"Language-Team: German <https://weblate.liqd.net/projects/"
+"gemeinsam-digital-berlin/main/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #: apps/captcha/fields.py:37 apps/captcha/fields.py:45
 msgid "Something about the answer to the captcha was wrong."
@@ -35,15 +35,15 @@ msgstr "Ich bin kein Roboter."
 #: apps/captcha/templates/captcheck_captcha_widget.html:5
 #: apps/contrib/django_standard_messages.py:6
 msgid "This field is required."
-msgstr "Bitte füllen Sie dieses Feld aus."
+msgstr "Bitte fülle dieses Pflichtfeld aus."
 
 #: apps/contrib/mixins.py:24
 msgid "Search image"
-msgstr ""
+msgstr "Meta-Bild"
 
 #: apps/contrib/mixins.py:31
 msgid "Meta title de"
-msgstr ""
+msgstr "Meta-Titel deutsch"
 
 #: apps/contrib/mixins.py:32
 msgid ""
@@ -51,27 +51,29 @@ msgid ""
 "algorithms for selecting meta tags. Provide relevant and accurate "
 "information, but remember that visibility is not guaranteed."
 msgstr ""
+"Suchmaschinen entscheiden mithilfe von Algorithmen zur Auswahl von Meta-"
+"Tags, welche Seiteninformationen angezeigt werden. Gib relevante und genaue "
+"Informationen an, aber beachte, dass die Sichtbarkeit nicht garantiert ist."
 
 #: apps/contrib/mixins.py:41
 msgid "Meta title en"
-msgstr ""
+msgstr "Meta-Titel en"
 
 #: apps/contrib/mixins.py:47
 msgid "Meta description de"
-msgstr ""
+msgstr "Meta-Beschreibung de"
 
 #: apps/contrib/mixins.py:52
 msgid "Meta description en"
-msgstr ""
+msgstr "Meta-Beschreibung en"
 
 #: apps/contrib/mixins.py:75
 msgid "Common page configuration"
-msgstr ""
+msgstr "Allgemeine Seitenkonfiguration"
 
 #: apps/forms/models.py:20
 msgid "If you are having difficulty, please contact us by {}email{}."
-msgstr ""
-"Sollten Sie Schwierigkeiten haben, kontaktieren Sie uns gerne per {}Email{}."
+msgstr "Solltest du Schwierigkeiten haben, kontaktiere uns gerne per {}Email{}."
 
 #: apps/forms/models.py:47
 msgid "to address"
@@ -82,8 +84,8 @@ msgid ""
 "Form submissions will be emailed to these addresses. Separate multiple "
 "addresses by comma."
 msgstr ""
-"Eingereichte Formulare werden an diese E-Mail-Adressen verschickt. Trennen "
-"Sie mehrere Adressen mit einem Komma voneinander ab."
+"Eingereichte Formulare werden an diese E-Mail-Adressen verschickt. Trenne "
+"mehrere Adressen mit einem Komma voneinander ab."
 
 #: apps/forms/models.py:52
 msgid "from address"
@@ -110,13 +112,15 @@ msgstr ""
 
 #: apps/forms/models.py:65 apps/forms/models.py:67 apps/forms/models.py:70
 msgid "Header"
-msgstr ""
+msgstr "Header"
 
 #: apps/forms/models.py:91
 msgid ""
 "If you add an email address, users can contact you                    in "
 "order to request the removal of personal data."
 msgstr ""
+"Wenn du eine Email-Adresse hinzufügst, können Nutzer:innen dich kontaktieren "
+"und die Entfernung personenbezogener Daten verlangen."
 
 #: apps/forms/models.py:106
 msgid "First Name"
@@ -143,13 +147,15 @@ msgstr "Email"
 msgid ""
 "Add the page title you'd like to be seen in Wagtail in the list of pages."
 msgstr ""
+"Füge den Seitentitel hinzu, der in der Seitenliste von Wagtail verwendet "
+"wird."
 
 #: apps/forms/models.py:163 apps/gruenbuch/models.py:107
 #: apps/gruenbuch/models.py:212 apps/home/models.py:235 apps/home/models.py:317
 #: apps/home/models.py:385 apps/home/models.py:499 apps/home/models.py:585
 #: apps/measures/models.py:172 apps/measures/models.py:576
 msgid "Common"
-msgstr ""
+msgstr "Allgemein"
 
 #: apps/forms/models.py:165 apps/gruenbuch/models.py:109
 #: apps/gruenbuch/models.py:214 apps/home/models.py:115 apps/home/models.py:237
@@ -157,7 +163,7 @@ msgstr ""
 #: apps/home/models.py:587 apps/measures/models.py:174
 #: apps/measures/models.py:578
 msgid "Meta Tags"
-msgstr ""
+msgstr "Meta Tags"
 
 #: apps/forms/models.py:166 apps/gruenbuch/models.py:110
 #: apps/gruenbuch/models.py:215 apps/home/models.py:116 apps/home/models.py:238
@@ -225,9 +231,9 @@ msgid ""
 "If you wish to have your personal data deleted, please write an email to: <a "
 "href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
-"Wenn Sie Ihre personenbezogenen Daten löschen lassen möchten, kontaktieren "
-"Sie uns bitte unter dieser Emailadresse: <a href=\"mailto:"
-"%(remove_email)s\">%(remove_email)s</a>"
+"Wenn du deine personenbezogenen Daten löschen lassen möchten, kontaktiere "
+"uns bitte unter dieser Emailadresse: <a href=\"mailto:%(remove_email)s\""
+">%(remove_email)s</a>"
 
 #: apps/forms/templates/apps_forms/includes/form.html:23
 msgid "Send"
@@ -237,22 +243,24 @@ msgstr "Senden"
 msgid ""
 "Image ratio has to be 2:1 or 4:3. Intro image is not shown for Easy Language."
 msgstr ""
+"Das Seitenverhältnis muss 2:1 oder 4:3 sein. Das Intro-Bild wird nicht in "
+"Leichter Sprache angezeigt."
 
 #: apps/gruenbuch/models.py:47 apps/measures/models.py:96
 msgid "Page introduction de"
-msgstr ""
+msgstr "Seiteneinführung deutsch"
 
 #: apps/gruenbuch/models.py:51 apps/measures/models.py:100
 msgid "Page introduction en"
-msgstr ""
+msgstr "Seiteneinführung englisch"
 
 #: apps/gruenbuch/models.py:55 apps/measures/models.py:104
 msgid "Page introduction de ls"
-msgstr ""
+msgstr "Seiteneinführung Leichte Sprache"
 
 #: apps/gruenbuch/models.py:138
 msgid "Gruenbuch Index Page"
-msgstr ""
+msgstr "Grünbuch Indexseite"
 
 #: apps/gruenbuch/templates/gruenbuch_overview_page.html:38
 msgid "Downloads"
@@ -277,10 +285,13 @@ msgid ""
 "using the headlines. That means, that there should always be an h2 before "
 "using an h3."
 msgstr ""
+"Aus Gründen der Barrierefreiheit sollten bei der Verwendung von "
+"Überschriften keine Ebenen ausgelassen werden. Das bedeutet, dass vor einer "
+"h3-Überschrift immer eine h2-Überschrift stehen sollte."
 
 #: apps/home/blocks.py:10
 msgid "Ihre E-Mail-Adresse"
-msgstr ""
+msgstr "Deine E-Mail-Adresse"
 
 #: apps/home/blocks.py:12
 msgid ""
@@ -289,77 +300,87 @@ msgid ""
 "Abonnements und kann jederzeit über den Link „Abmelden“ widerrufen werden. "
 "Die Datenschutzerklärung habe ich zur Kenntnis genommen."
 msgstr ""
+"Ich willige in die Speicherung und Nutzung meiner E-Mail-Adresse für den "
+"Newsletterversand ein. Die Einwilligung gilt für den Zeitraum des "
+"Abonnements und kann jederzeit über den Link „Abmelden“ widerrufen werden. "
+"Die Datenschutzerklärung habe ich zur Kenntnis genommen."
 
 #: apps/home/blocks.py:60
 msgid "Testimonial"
-msgstr ""
+msgstr "Testimonial"
 
 #: apps/home/blocks.py:77
 msgid "How should the image be aligned?"
-msgstr ""
+msgstr "Wie soll das Bild ausgerichtet werden?"
 
 #: apps/home/blocks.py:97
 msgid "One thesis"
-msgstr ""
+msgstr "Eine These"
 
 #: apps/home/blocks.py:111 apps/home/blocks.py:139 apps/home/blocks.py:163
 #: apps/home/blocks.py:262
 msgid "Not choosing a colour will result in a block with a white background."
 msgstr ""
+"Wenn keine Farbe ausgewählt wird, wird der Block mit weißem Hintergrund "
+"angezeigt."
 
 #: apps/home/blocks.py:134 apps/home/blocks.py:157 apps/home/blocks.py:180
 #: apps/home/blocks.py:218
 msgid "Link Description"
-msgstr ""
+msgstr "Link-Beschreibung"
 
 #: apps/home/blocks.py:135 apps/home/blocks.py:158 apps/home/blocks.py:181
 #: apps/home/blocks.py:219
 msgid "describe link for assistive technology if needed"
 msgstr ""
+"Beschreibe den Link für unterstützende Technologie wie Screenreader, falls "
+"erforderlich"
 
 #: apps/home/blocks.py:192 apps/home/blocks.py:240
 msgid "Add either an external or internal link, not both"
-msgstr ""
+msgstr "Füge entweder einen externen ODER einen internen Link ein, nicht beide"
 
 #: apps/home/blocks.py:203
 msgid "Only add this number of columns below"
-msgstr ""
+msgstr "Füge nur diese Anzahl von Spalten unten hinzu"
 
 #: apps/home/blocks.py:209
 msgid "Teaser Columns"
-msgstr ""
+msgstr "Multiteaser (Spalten)"
 
 #: apps/home/blocks.py:232
 msgid "Teaser Tiles"
-msgstr ""
+msgstr "Teaser Icontiles"
 
 #: apps/home/blocks.py:246
 msgid "Teaser Single"
-msgstr ""
+msgstr "Single Teaser"
 
 #: apps/home/blocks.py:270
 msgid "This form only works with sendinblue"
-msgstr ""
+msgstr "Diese Formular funktioniert nur mit Sendinblue"
 
 #: apps/home/blocks.py:279
 msgid "Please insert a short description of the video (character limit 255)."
 msgstr ""
+"Bitte gib eine kurze Beschreibung des Videos ein (Zeichenbegrenzung 255)."
 
 #: apps/home/blocks.py:281
 msgid "You can only add links to YouTube or Vimeo videos."
-msgstr ""
+msgstr "Nur Links zu Videos auf YouTube oder Vimeo können eingefügt werden."
 
 #: apps/home/blocks.py:285
 msgid "Add a preview image for the dsgvo video overlay."
-msgstr ""
+msgstr "Füge ein Vorschaubild für das Einverständnis-Overlay hinzu."
 
 #: apps/home/blocks.py:288
 msgid "You can add the video's transcript here (unlimited characters)."
 msgstr ""
+"Du kannst hier ein Videotranskript einfügen (unbegrenzte Zeichenanzahl)."
 
 #: apps/home/blocks.py:296
 msgid "Video Block"
-msgstr ""
+msgstr "Video Block"
 
 #: apps/home/blocks.py:305
 msgid ""
@@ -367,60 +388,63 @@ msgid ""
 "resize your images accordingly before uploading to ensure they display "
 "correctly."
 msgstr ""
+"Bilder werden im Seitenverhältnis 16:9 angezeigt. Schneide Bilder vor dem "
+"Hochladen entsprechend zu oder ändere ihre Größe, damit sie korrekt "
+"angezeigt werden."
 
 #: apps/home/models.py:34
 msgid "Home page title de"
-msgstr ""
+msgstr "Home Page Titel de"
 
 #: apps/home/models.py:36
 msgid "Home page title en"
-msgstr ""
+msgstr "Home Page Titel en"
 
 #: apps/home/models.py:38
 msgid "Home page title de ls"
-msgstr ""
+msgstr "Home Page Titel Leichte Sprache"
 
 #: apps/home/models.py:41
 msgid "Home page subtitle de"
-msgstr ""
+msgstr "Home Page Untertitel de"
 
 #: apps/home/models.py:43
 msgid "Home page subtitle en"
-msgstr ""
+msgstr "Home Page Untertitel en"
 
 #: apps/home/models.py:45
 msgid "Home page subtitle de ls"
-msgstr ""
+msgstr "Home Page Untertitel Leichte Sprache"
 
 #: apps/home/models.py:164 apps/home/models.py:428
 msgid "Intro image is not shown for Easy Language"
-msgstr ""
+msgstr "Das Intro-Bild wird nicht für Leichte Sprache angezeigt"
 
 #: apps/home/models.py:175 apps/home/models.py:178 apps/home/models.py:181
 #: apps/home/models.py:439 apps/home/models.py:442 apps/home/models.py:445
 msgid "Overview page introduction"
-msgstr ""
+msgstr "Übersichtsseite Einführung"
 
 #: apps/home/templates/apps_home/blocks/image_swiper_block.html:6
 msgid "Previous picture"
-msgstr ""
+msgstr "Vorheriges Bild"
 
 #: apps/home/templates/apps_home/blocks/image_swiper_block.html:7
 msgid "Next picture"
-msgstr ""
+msgstr "Nächstes Bild"
 
 #: apps/home/templates/apps_home/blocks/image_swiper_block.html:37
 #: apps/home/templates/apps_home/blocks/image_swiper_block.html:52
 msgid "Link to:"
-msgstr ""
+msgstr "Link zu:"
 
 #: apps/home/templates/apps_home/blocks/newsletter_block.html:15
 msgid "Please fill in valid email address."
-msgstr "Bitte geben Sie eine gültige E-Mailadresse ein."
+msgstr "Bitte gib eine gültige E-Mailadresse ein."
 
 #: apps/home/templates/apps_home/blocks/newsletter_block.html:16
 msgid "Your subscription to our E-Mail Newsletter was successful."
-msgstr "Sie haben sich erfolgreich für unseren E-Mail Newsletter eingetragen."
+msgstr "Du hast dich erfolgreich für unseren E-Mail Newsletter eingetragen."
 
 #: apps/home/templates/apps_home/blocks/newsletter_block.html:23
 msgid "required"
@@ -428,7 +452,7 @@ msgstr "Pflichtfeld"
 
 #: apps/home/templates/apps_home/blocks/newsletter_block.html:26
 msgid "Please accept the terms of conditions"
-msgstr "Bitte akzeptieren Sie die Nutzungsbedingungen"
+msgstr "Bitte akzeptiere die Nutzungsbedingungen"
 
 #: apps/home/templates/apps_home/blocks/newsletter_block.html:33
 #: apps/home/templates/apps_home/blocks/newsletter_block.html:35
@@ -450,9 +474,9 @@ msgid ""
 "<strong>%(name)s</strong>. For more information see <a target=\"_blank\" "
 "href=\"%(data_protection)s\"> data protection</a>."
 msgstr ""
-"Mit dem Aufruf des Videos erklären Sie sich einverstanden, dass Ihre Daten "
+"Mit dem Aufruf des Videos erklärst du dich einverstanden, dass deine Daten "
 "an <strong>%(name)s</strong> übermittelt werden. Weitere Informationen "
-"finden Sie in der <a target=\"_blank\" href=\"%(data_protection)s\"> "
+"findest du in der <a target=\"_blank\" href=\"%(data_protection)s\"> "
 "Datenschutzerklärung</a>."
 
 #: apps/home/templates/apps_home/blocks/video_block.html:31
@@ -477,255 +501,255 @@ msgstr "Videoabschrift"
 
 #: apps/images/models.py:19 apps/images/models.py:24 apps/images/models.py:29
 msgid "Add an alternative text for image accessibility"
-msgstr ""
+msgstr "Gib einen Alternativtext für die Barrierefreiheit ein"
 
 #: apps/images/models.py:35
 msgid "Add copyright information for image"
-msgstr ""
+msgstr "Gib Angaben zum Urheberrecht ein"
 
 #: apps/measures/models.py:23
 msgid "in planning"
-msgstr ""
+msgstr "in Planung"
 
 #: apps/measures/models.py:24
 msgid "running"
-msgstr ""
+msgstr "laufend"
 
 #: apps/measures/models.py:25
 msgid "finished"
-msgstr ""
+msgstr "abgeschlossen"
 
 #: apps/measures/models.py:29
 msgid "gesamtstädtisch"
-msgstr ""
+msgstr "gesamtstädtisch"
 
 #: apps/measures/models.py:30
 msgid "Charlottenburg-Wilmersdorf"
-msgstr ""
+msgstr "Charlottenburg-Wilmersdorf"
 
 #: apps/measures/models.py:31
 msgid "Friedrichshain-Kreuzberg"
-msgstr ""
+msgstr "Friedrichshain-Kreuzberg"
 
 #: apps/measures/models.py:32
 msgid "Lichtenberg"
-msgstr ""
+msgstr "Lichtenberg"
 
 #: apps/measures/models.py:33
 msgid "Marzahn-Hellersdorf"
-msgstr ""
+msgstr "Marzahn-Hellersdorf"
 
 #: apps/measures/models.py:34
 msgid "Mitte"
-msgstr ""
+msgstr "Mitte"
 
 #: apps/measures/models.py:35
 msgid "Neukölln"
-msgstr ""
+msgstr "Neukölln"
 
 #: apps/measures/models.py:36
 msgid "Pankow"
-msgstr ""
+msgstr "Pankow"
 
 #: apps/measures/models.py:37
 msgid "Reinickendorf"
-msgstr ""
+msgstr "Reinickendorf"
 
 #: apps/measures/models.py:38
 msgid "Spandau"
-msgstr ""
+msgstr "Spandau"
 
 #: apps/measures/models.py:39
 msgid "Steglitz-Zehlendorf"
-msgstr ""
+msgstr "Steglitz-Zehlendorf"
 
 #: apps/measures/models.py:40
 msgid "Tempelhof-Schöneberg"
-msgstr ""
+msgstr "Tempelhof-Schöneberg"
 
 #: apps/measures/models.py:41
 msgid "Treptow-Köpenick"
-msgstr ""
+msgstr "Treptow-Köpenick"
 
 #: apps/measures/models.py:45
 msgid "Smart Economic Models"
-msgstr ""
+msgstr "Smarte Wirtschaftsmodelle"
 
 #: apps/measures/models.py:46
 msgid "IT Ecosystems"
-msgstr ""
+msgstr "Offene IT-Ökosysteme"
 
 #: apps/measures/models.py:47
 msgid "Smart Capital Region"
-msgstr ""
+msgstr "Smarte Hauptstadtregion"
 
 #: apps/measures/models.py:48
 msgid "Regeneration of Natural Resources"
-msgstr ""
+msgstr "Regeneration natürlicher Ressourcen"
 
 #: apps/measures/models.py:52
 msgid "Capacities for Change"
-msgstr ""
+msgstr "Kapazitäten für den Wandel"
 
 #: apps/measures/models.py:53
 msgid "Meeting and Learning Places"
-msgstr ""
+msgstr "Begegnungs- und Lernorte"
 
 #: apps/measures/models.py:54
 msgid "Liveable Urban Development"
-msgstr ""
+msgstr "Lebenswerte Stadtentwicklung"
 
 #: apps/measures/models.py:55
 msgid "Smart Cities Learning Together"
-msgstr ""
+msgstr "Smart Cities lernen gemeinsam"
 
 #: apps/measures/models.py:59
 #: apps/measures/templates/apps_measures/measures_detail_page.html:83
 msgid "Participation"
-msgstr ""
+msgstr "Partizipative Governance und Beteiligung"
 
 #: apps/measures/models.py:60
 msgid "Transparent Decision Processes"
-msgstr ""
+msgstr "Transparente Entscheidungsprozesse"
 
 #: apps/measures/models.py:61
 msgid "Citizen Services"
-msgstr ""
+msgstr "Bedarfsgerechte Bürgerservices"
 
 #: apps/measures/models.py:62
 msgid "Digital Citizens Rights and Privacy"
-msgstr ""
+msgstr "Digitale Bürgerrechte und Datenschutz"
 
 #: apps/measures/models.py:66
 msgid "Effective Administrative Processes"
-msgstr ""
+msgstr "Effektive (Verwaltungs-)prozesse"
 
 #: apps/measures/models.py:67
 msgid "Transparent and Innovative Procurement"
-msgstr ""
+msgstr "Transparente und innovative Vergaben"
 
 #: apps/measures/models.py:68
 msgid "Intelligent Data Use"
-msgstr ""
+msgstr "Intelligente Datennutzung"
 
 #: apps/measures/models.py:69
 msgid "Fail-Safe Critical and Digital Infrastructure"
-msgstr ""
+msgstr "Sichere kritische und digitale Infrastruktur"
 
 #: apps/measures/models.py:82
 msgid "Only add 1 teaser block per overview page."
-msgstr ""
+msgstr "Füge nur einen Teaser-Block pro Übersichtsseite hinzu."
 
 #: apps/measures/models.py:297
 #, python-brace-format
 msgid "Filtered by \"{filter_term}\"."
-msgstr ""
+msgstr "Gefiltert nach \"{filter_term}\"."
 
 #: apps/measures/models.py:312
 #, python-brace-format
 msgid "Search for \"{search_term}\"."
-msgstr ""
+msgstr "Suche nach \"{search_term}\"."
 
 #: apps/measures/models.py:327
 #, python-brace-format
 msgid "{count} measure."
 msgid_plural "{count} measures."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{count} Maßnahme."
+msgstr[1] "{count} Maßnahmen."
 
 #: apps/measures/models.py:383 apps/measures/models.py:558
 msgid "Up to 3 choices are allowed."
-msgstr ""
+msgstr "Es sind bis zu 3 Auswahlmöglichkeiten erlaubt."
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:6
 msgid "Filter by"
-msgstr ""
+msgstr "Filtern nach"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:18
 msgid "Project status"
-msgstr ""
+msgstr "Projektstatus"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:25
 msgid "Please choose"
-msgstr ""
+msgstr "Bitte auswählen"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:40
 #: apps/measures/templates/apps_measures/measures_detail_page.html:18
 msgid "District"
-msgstr ""
+msgstr "Bezirk"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:61
 #: apps/measures/templates/apps_measures/measures_detail_page.html:44
 msgid "Fields of action"
-msgstr ""
+msgstr "Handlungsfelder"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:70
 msgid "Regenerative Management"
-msgstr ""
+msgstr "Regeneratives Wirtschaften"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:82
 msgid "Future Opportunities for All"
-msgstr ""
+msgstr "Zukunftschancen für alle"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:94
 msgid "Inclusive Shaping of Urban Life"
-msgstr ""
+msgstr "Inklusive Stadtgestaltung"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:106
 msgid "Facilitative Administration"
-msgstr ""
+msgstr "Ermöglichende Verwaltung"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:122
 msgid "Reset filters"
-msgstr ""
+msgstr "Filter zurücksetzen"
 
 #: apps/measures/templates/apps_measures/includes/measures_filter.html:127
 msgid "Filter now"
-msgstr ""
+msgstr "Filtern"
 
 #: apps/measures/templates/apps_measures/includes/measures_list_item.html:28
 msgid "More"
-msgstr ""
+msgstr "Mehr"
 
 #: apps/measures/templates/apps_measures/includes/measures_list_item.html:29
 msgid "to: "
-msgstr ""
+msgstr "bis: "
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:10
 msgid "Responsible organisation"
-msgstr ""
+msgstr "Verantwortliche Organisation"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:28
 msgid "Involved organisations"
-msgstr ""
+msgstr "Beteiligte Organisationen"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:36
 msgid "Period"
-msgstr ""
+msgstr "Zeitraum"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:56
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:91
 msgid "Impact"
-msgstr ""
+msgstr "Wirkung"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:98
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:99
 msgid "contact information"
-msgstr ""
+msgstr "Kontaktinformation"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:105
 msgid "Contact person"
-msgstr ""
+msgstr "Ansprechperson"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:16
 msgid "List of Measures"
-msgstr ""
+msgstr "Maßnahmenliste"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:20
 #: apps/measures/templates/apps_measures/measures_overview_page.html:24
@@ -739,7 +763,7 @@ msgstr "Suchbegriff"
 #: digitalstrategie/templates/search_results.html:29
 #: digitalstrategie/templates/search_results.html:32
 msgid "Empty field"
-msgstr ""
+msgstr "Leeres Feld"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:41
 #: apps/measures/templates/apps_measures/measures_overview_page.html:42
@@ -751,67 +775,73 @@ msgstr "Suche"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:51
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #: apps/settings/helpers.py:8
 msgid "Please click {}here{} for more information."
-msgstr "Weitere Informationen finden Sie {}hier{}."
+msgstr "Weitere Informationen findest du {}hier{}."
 
 #: apps/settings/models.py:41
 msgid "Your Sendinblue api key"
-msgstr ""
+msgstr "Dein Sendinblue API-Schlüssel"
 
 #: apps/settings/models.py:44
 msgid "The id of the list you want to subscribe to"
-msgstr ""
+msgstr "Die ID der Liste, die du abonnieren möchtest"
 
 #: apps/settings/models.py:47
 msgid "The template id of the newsletter double opt-in"
-msgstr ""
+msgstr "Die Vorlage-ID des Newsletter double opt-in"
 
 #: apps/settings/models.py:48
 msgid "Page being displayed after clicking on link in email"
-msgstr ""
+msgstr "Seite wird nach Anklicken des Links in der E-Mail angezeigt"
 
 #: apps/settings/models.py:74
 msgid "Add link to further information"
-msgstr ""
+msgstr "Link zu weiteren Informationen hinzufügen"
 
 #: apps/settings/models.py:123
 msgid "Accessibility Feedback Contact Information"
-msgstr ""
+msgstr "Barrierefreiheit Feedback Kontaktinformationen"
 
 #: apps/settings/models.py:142
 msgid "Further Information on Accessibility"
-msgstr ""
+msgstr "Weitere Informationen zur Barrierefreiheit"
 
 #: apps/settings/models.py:147
 msgid "Accessibility Information"
-msgstr ""
+msgstr "Informationen zur Barrierefreiheit"
 
 #: apps/settings/wagtail_hooks.py:14
 msgid "Opens link in new tab"
-msgstr ""
+msgstr "Öffnet Link in einem neuen Tab"
 
 #: apps/settings/wagtail_hooks.py:28
 msgid "Opens document in new tab"
-msgstr ""
+msgstr "Öffnet Dokument in einem neuen Tab"
 
 #: apps/snippets/blocks.py:46
 msgid "Please enter a full url which starts with https:// or http://"
 msgstr ""
+"Bitte gib eine vollständige URL ein, die mit https:// oder http:// beginnt"
 
 #: apps/snippets/models.py:38
 msgid ""
 "Header: creates a link to a single wagtail page. Leave empty if you add "
 "subpages. Footer: only subpage links will be shown."
 msgstr ""
+"Header: erstellt einen Link zu einer einzelnen Wagtail-Seite. Leer lassen, "
+"wenn nur Unterseiten hinzugefügt werden. Footer: Es werden nur Unterseiten-"
+"Links angezeigt."
 
 #: apps/snippets/models.py:53
 msgid ""
 "These Links will be displayed as sebmenu items. Either in dropdowns or as "
 "items below a headline."
 msgstr ""
+"Diese Links werden als Untermenüelemente angezeigt. Entweder in Dropdowns "
+"oder als Elemente unter einer Überschrift."
 
 #: apps/snippets/models.py:99
 msgid ""
@@ -820,18 +850,23 @@ msgid ""
 "and \"footer_ls\" for ls pages to use asthe upper light grey footer. The "
 "lower footer is loaded externally."
 msgstr ""
+"Nenne das Menü \"header\" für die Verwendung auf de- und en-Seiten und "
+"\"header_ls\" für ls-Seiten als Header-Menü. Nenne das Menü \"footer\" zur "
+"Verwendung auf de- und en-Seiten und \"footer_ls\" für ls-Seiten zur "
+"Verwendung als oberer hellgrauer Seiten-Footer. Der untere dunkelgraue "
+"Portal-Footer wird von extern geladen."
 
 #: apps/snippets/models.py:113
 msgid "Menu Items"
-msgstr ""
+msgstr "Menü-Elemente"
 
 #: apps/snippets/models.py:149
 msgid "fields of action"
-msgstr ""
+msgstr "Handlungsfelder"
 
 #: digitalstrategie/templates/403.html:7
 msgid "You are not allowed to access this page."
-msgstr "Sie sind nicht berechtigt, auf diese Seite zuzugreifen."
+msgstr "Du bist nicht berechtigt, auf diese Seite zuzugreifen."
 
 #: digitalstrategie/templates/404.html:7
 msgid "This page could not be found."
@@ -855,7 +890,7 @@ msgstr "Hallo"
 
 #: digitalstrategie/templates/includes/breadcrumb.html:6
 msgid "You are here:"
-msgstr ""
+msgstr "Du befindest dich hier:"
 
 #: digitalstrategie/templates/includes/header.html:15
 msgid "To the home page of Berlin.de"
@@ -963,17 +998,17 @@ msgstr "auswählen"
 
 #: digitalstrategie/templates/includes/pagination.html:5
 msgid "Pagination navigation"
-msgstr ""
+msgstr "Paginierung Navigation"
 
 #: digitalstrategie/templates/includes/pagination.html:10
 #: digitalstrategie/templates/includes/pagination.html:14
 msgid "Scroll one page back"
-msgstr ""
+msgstr "Eine Seite zurückblättern"
 
 #: digitalstrategie/templates/includes/pagination.html:36
 #: digitalstrategie/templates/includes/pagination.html:40
 msgid "Scroll one page further"
-msgstr ""
+msgstr "Eine Seite vorblättern"
 
 #: digitalstrategie/templates/includes/upper_footer.html:13
 msgid "To the top of the page"
@@ -986,7 +1021,7 @@ msgstr "Weiterführende Links"
 #: digitalstrategie/templates/includes/upper_footer.html:33
 #: digitalstrategie/templates/includes/upper_footer.html:35
 msgid "Leichte Sprache"
-msgstr ""
+msgstr "Leichte Sprache"
 
 #: digitalstrategie/templates/search_results.html:5
 msgid "Gemeinsam Digital: Berlin - full-text search"
@@ -1009,7 +1044,7 @@ msgstr "Ergebnisse der Volltextsuche"
 #: digitalstrategie/templates/search_results.html:53
 #, python-format
 msgid "Search for \"%(search_term)s\"."
-msgstr ""
+msgstr "Suche nach \"%(search_term)s\"."
 
 #: digitalstrategie/templates/search_results.html:54
 #, python-format
@@ -1022,7 +1057,13 @@ msgid_plural ""
 "            %(counter)s measures.\n"
 "            "
 msgstr[0] ""
+"\n"
+"            %(counter)s Maßnahme.\n"
+"            "
 msgstr[1] ""
+"\n"
+"            %(counter)s Maßnahmen.\n"
+"            "
 
 #: digitalstrategie/templates/search_results.html:84
 msgid "No results found"

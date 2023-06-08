@@ -26,7 +26,7 @@ STATUS_CHOICES = [
 ]
 
 BEZIRK_CHOICES = [
-    ('1', _('gesamtstädtisch')),
+    ('1', _('citywide')),
     ('2', _('Charlottenburg-Wilmersdorf')),
     ('3', _('Friedrichshain-Kreuzberg')),
     ('4', _('Lichtenberg')),

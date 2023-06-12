@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-06 15:33+0000\n"
+"POT-Creation-Date: 2023-06-12 10:37+0000\n"
 "PO-Revision-Date: 2022-11-09 16:01+0000\n"
 "Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
 "Language-Team: English <https://trans.liqd.net/projects/gemeinsam-digital-"
@@ -286,8 +286,8 @@ msgstr ""
 "using an h3."
 
 #: apps/home/blocks.py:10
-msgid "Ihre E-Mail-Adresse"
-msgstr "Ihre E-Mail-Adresse"
+msgid "Your email address"
+msgstr "Your email address"
 
 #: apps/home/blocks.py:12
 msgid ""
@@ -341,8 +341,8 @@ msgid "Teaser Columns"
 msgstr "Teaser Columns"
 
 #: apps/home/blocks.py:232
-msgid "Teaser Tiles"
-msgstr "Teaser Tiles"
+msgid "Icon Tiles"
+msgstr "Icon Tiles"
 
 #: apps/home/blocks.py:246
 msgid "Teaser Single"
@@ -361,8 +361,8 @@ msgid "You can only add links to YouTube or Vimeo videos."
 msgstr "You can only add links to YouTube or Vimeo videos."
 
 #: apps/home/blocks.py:285
-msgid "Add a preview image for the dsgvo video overlay."
-msgstr "Add a preview image for the dsgvo video overlay."
+msgid "Add a preview image for the GDPR overlay."
+msgstr "Add a preview image for the GDPR overlay."
 
 #: apps/home/blocks.py:288
 msgid "You can add the video's transcript here (unlimited characters)."
@@ -407,8 +407,8 @@ msgid "Home page subtitle de ls"
 msgstr "Home page subtitle de ls"
 
 #: apps/home/models.py:164 apps/home/models.py:428
-msgid "Intro image is not shown for Easy Language"
-msgstr "Intro image is not shown for Easy Language"
+msgid "Intro image is not shown for Easy German"
+msgstr "Intro image is not shown for Easy German"
 
 #: apps/home/models.py:175 apps/home/models.py:178 apps/home/models.py:181
 #: apps/home/models.py:439 apps/home/models.py:442 apps/home/models.py:445
@@ -509,8 +509,8 @@ msgid "finished"
 msgstr "finished"
 
 #: apps/measures/models.py:29
-msgid "gesamtstädtisch"
-msgstr "gesamtstädtisch"
+msgid "citywide"
+msgstr "citywide"
 
 #: apps/measures/models.py:30
 msgid "Charlottenburg-Wilmersdorf"
@@ -701,8 +701,9 @@ msgid "More"
 msgstr "More"
 
 #: apps/measures/templates/apps_measures/includes/measures_list_item.html:29
-msgid "to: "
-msgstr "to: "
+msgctxt "For SRs, reads \"more about: <name of measure>\""
+msgid "about:"
+msgstr "about:"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:10
 msgid "Responsible organisation"
@@ -742,15 +743,15 @@ msgstr "List of Measures"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:20
 #: apps/measures/templates/apps_measures/measures_overview_page.html:24
-#: digitalstrategie/templates/search_results.html:18
-#: digitalstrategie/templates/search_results.html:25
+#: digitalstrategie/templates/search_results.html:14
+#: digitalstrategie/templates/search_results.html:21
 msgid "Search term"
 msgstr "Search term"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:32
 #: apps/measures/templates/apps_measures/measures_overview_page.html:35
-#: digitalstrategie/templates/search_results.html:29
-#: digitalstrategie/templates/search_results.html:32
+#: digitalstrategie/templates/search_results.html:25
+#: digitalstrategie/templates/search_results.html:28
 msgid "Empty field"
 msgstr "Empty field"
 
@@ -824,10 +825,10 @@ msgstr ""
 
 #: apps/snippets/models.py:53
 msgid ""
-"These Links will be displayed as sebmenu items. Either in dropdowns or as "
+"These Links will be displayed as submenu items. Either in dropdowns or as "
 "items below a headline."
 msgstr ""
-"These Links will be displayed as sebmenu items. Either in dropdowns or as "
+"These Links will be displayed as submenu items. Either in dropdowns or as "
 "items below a headline."
 
 #: apps/snippets/models.py:99
@@ -904,7 +905,7 @@ msgid "Accessible"
 msgstr "Accessible"
 
 #: digitalstrategie/templates/includes/header.html:56
-#: digitalstrategie/templates/includes/header_language_switch.html:26
+#: digitalstrategie/templates/includes/header_language_switch.html:17
 msgid "Accessibility"
 msgstr "Accessibility"
 
@@ -977,8 +978,8 @@ msgstr "Page navigation"
 msgid "Languages"
 msgstr "Languages"
 
-#: digitalstrategie/templates/includes/header_language_switch.html:16
-#: digitalstrategie/templates/includes/header_language_switch.html:36
+#: digitalstrategie/templates/includes/header_language_switch.html:11
+#: digitalstrategie/templates/includes/header_language_switch.html:22
 #: digitalstrategie/templates/includes/upper_footer.html:29
 msgid "select"
 msgstr "select"
@@ -1010,30 +1011,26 @@ msgstr "Related Links"
 msgid "Leichte Sprache"
 msgstr "Leichte Sprache"
 
-#: digitalstrategie/templates/search_results.html:5
-msgid "Gemeinsam Digital: Berlin - full-text search"
-msgstr "Gemeinsam Digital: Berlin - full-text search"
-
-#: digitalstrategie/templates/search_results.html:12
+#: digitalstrategie/templates/search_results.html:8
 msgid "Full-text search"
 msgstr "Full-text search"
 
-#: digitalstrategie/templates/search_results.html:38
-#: digitalstrategie/templates/search_results.html:39
+#: digitalstrategie/templates/search_results.html:34
+#: digitalstrategie/templates/search_results.html:35
 msgctxt "verb"
 msgid "Search"
 msgstr "Search"
 
-#: digitalstrategie/templates/search_results.html:49
+#: digitalstrategie/templates/search_results.html:45
 msgid "Results of the full-text search"
 msgstr "Results of the full-text search"
 
-#: digitalstrategie/templates/search_results.html:53
+#: digitalstrategie/templates/search_results.html:49
 #, python-format
 msgid "Search for \"%(search_term)s\"."
 msgstr "Search for \"%(search_term)s\"."
 
-#: digitalstrategie/templates/search_results.html:54
+#: digitalstrategie/templates/search_results.html:50
 #, python-format
 msgid ""
 "\n"
@@ -1052,6 +1049,6 @@ msgstr[1] ""
 "            %(counter)s measures.\n"
 "            "
 
-#: digitalstrategie/templates/search_results.html:84
+#: digitalstrategie/templates/search_results.html:80
 msgid "No results found"
 msgstr "No results found"

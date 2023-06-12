@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-06 15:33+0000\n"
+"POT-Creation-Date: 2023-06-12 10:37+0000\n"
 "PO-Revision-Date: 2023-06-08 12:47+0000\n"
 "Last-Translator: Max Westbrock <maxwestbrock@hotmail.com>\n"
-"Language-Team: German <https://weblate.liqd.net/projects/"
-"gemeinsam-digital-berlin/main/de/>\n"
+"Language-Team: German <https://weblate.liqd.net/projects/gemeinsam-digital-"
+"berlin/main/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,7 +73,8 @@ msgstr "Allgemeine Seitenkonfiguration"
 
 #: apps/forms/models.py:20
 msgid "If you are having difficulty, please contact us by {}email{}."
-msgstr "Solltest du Schwierigkeiten haben, kontaktiere uns gerne per {}Email{}."
+msgstr ""
+"Solltest du Schwierigkeiten haben, kontaktiere uns gerne per {}Email{}."
 
 #: apps/forms/models.py:47
 msgid "to address"
@@ -232,8 +233,8 @@ msgid ""
 "href=\"mailto:%(remove_email)s\">%(remove_email)s</a>"
 msgstr ""
 "Wenn du deine personenbezogenen Daten löschen lassen möchten, kontaktiere "
-"uns bitte unter dieser Emailadresse: <a href=\"mailto:%(remove_email)s\""
-">%(remove_email)s</a>"
+"uns bitte unter dieser Emailadresse: <a href=\"mailto:"
+"%(remove_email)s\">%(remove_email)s</a>"
 
 #: apps/forms/templates/apps_forms/includes/form.html:23
 msgid "Send"
@@ -290,8 +291,8 @@ msgstr ""
 "h3-Überschrift immer eine h2-Überschrift stehen sollte."
 
 #: apps/home/blocks.py:10
-msgid "Ihre E-Mail-Adresse"
-msgstr "Deine E-Mail-Adresse"
+msgid "Your email address"
+msgstr ""
 
 #: apps/home/blocks.py:12
 msgid ""
@@ -349,8 +350,8 @@ msgid "Teaser Columns"
 msgstr "Multiteaser (Spalten)"
 
 #: apps/home/blocks.py:232
-msgid "Teaser Tiles"
-msgstr "Teaser Icontiles"
+msgid "Icon Tiles"
+msgstr ""
 
 #: apps/home/blocks.py:246
 msgid "Teaser Single"
@@ -370,8 +371,8 @@ msgid "You can only add links to YouTube or Vimeo videos."
 msgstr "Nur Links zu Videos auf YouTube oder Vimeo können eingefügt werden."
 
 #: apps/home/blocks.py:285
-msgid "Add a preview image for the dsgvo video overlay."
-msgstr "Füge ein Vorschaubild für das Einverständnis-Overlay hinzu."
+msgid "Add a preview image for the GDPR overlay."
+msgstr ""
 
 #: apps/home/blocks.py:288
 msgid "You can add the video's transcript here (unlimited characters)."
@@ -417,8 +418,8 @@ msgid "Home page subtitle de ls"
 msgstr "Home Page Untertitel Leichte Sprache"
 
 #: apps/home/models.py:164 apps/home/models.py:428
-msgid "Intro image is not shown for Easy Language"
-msgstr "Das Intro-Bild wird nicht für Leichte Sprache angezeigt"
+msgid "Intro image is not shown for Easy German"
+msgstr ""
 
 #: apps/home/models.py:175 apps/home/models.py:178 apps/home/models.py:181
 #: apps/home/models.py:439 apps/home/models.py:442 apps/home/models.py:445
@@ -520,8 +521,8 @@ msgid "finished"
 msgstr "abgeschlossen"
 
 #: apps/measures/models.py:29
-msgid "gesamtstädtisch"
-msgstr "gesamtstädtisch"
+msgid "citywide"
+msgstr ""
 
 #: apps/measures/models.py:30
 msgid "Charlottenburg-Wilmersdorf"
@@ -712,8 +713,9 @@ msgid "More"
 msgstr "Mehr"
 
 #: apps/measures/templates/apps_measures/includes/measures_list_item.html:29
-msgid "to: "
-msgstr "bis: "
+msgctxt "For SRs, reads \"more about: <name of measure>\""
+msgid "about:"
+msgstr ""
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:10
 msgid "Responsible organisation"
@@ -753,15 +755,15 @@ msgstr "Maßnahmenliste"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:20
 #: apps/measures/templates/apps_measures/measures_overview_page.html:24
-#: digitalstrategie/templates/search_results.html:18
-#: digitalstrategie/templates/search_results.html:25
+#: digitalstrategie/templates/search_results.html:14
+#: digitalstrategie/templates/search_results.html:21
 msgid "Search term"
 msgstr "Suchbegriff"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:32
 #: apps/measures/templates/apps_measures/measures_overview_page.html:35
-#: digitalstrategie/templates/search_results.html:29
-#: digitalstrategie/templates/search_results.html:32
+#: digitalstrategie/templates/search_results.html:25
+#: digitalstrategie/templates/search_results.html:28
 msgid "Empty field"
 msgstr "Leeres Feld"
 
@@ -837,11 +839,9 @@ msgstr ""
 
 #: apps/snippets/models.py:53
 msgid ""
-"These Links will be displayed as sebmenu items. Either in dropdowns or as "
+"These Links will be displayed as submenu items. Either in dropdowns or as "
 "items below a headline."
 msgstr ""
-"Diese Links werden als Untermenüelemente angezeigt. Entweder in Dropdowns "
-"oder als Elemente unter einer Überschrift."
 
 #: apps/snippets/models.py:99
 msgid ""
@@ -918,7 +918,7 @@ msgid "Accessible"
 msgstr "Barrierefrei"
 
 #: digitalstrategie/templates/includes/header.html:56
-#: digitalstrategie/templates/includes/header_language_switch.html:26
+#: digitalstrategie/templates/includes/header_language_switch.html:17
 msgid "Accessibility"
 msgstr "Barrierefreiheit"
 
@@ -990,8 +990,8 @@ msgstr "Seitennavigation"
 msgid "Languages"
 msgstr "Sprachen"
 
-#: digitalstrategie/templates/includes/header_language_switch.html:16
-#: digitalstrategie/templates/includes/header_language_switch.html:36
+#: digitalstrategie/templates/includes/header_language_switch.html:11
+#: digitalstrategie/templates/includes/header_language_switch.html:22
 #: digitalstrategie/templates/includes/upper_footer.html:29
 msgid "select"
 msgstr "auswählen"
@@ -1023,30 +1023,26 @@ msgstr "Weiterführende Links"
 msgid "Leichte Sprache"
 msgstr "Leichte Sprache"
 
-#: digitalstrategie/templates/search_results.html:5
-msgid "Gemeinsam Digital: Berlin - full-text search"
-msgstr "Gemeinsam Digital: Berlin - Volltextsuche"
-
-#: digitalstrategie/templates/search_results.html:12
+#: digitalstrategie/templates/search_results.html:8
 msgid "Full-text search"
 msgstr "Volltextsuche"
 
-#: digitalstrategie/templates/search_results.html:38
-#: digitalstrategie/templates/search_results.html:39
+#: digitalstrategie/templates/search_results.html:34
+#: digitalstrategie/templates/search_results.html:35
 msgctxt "verb"
 msgid "Search"
 msgstr "Suchen"
 
-#: digitalstrategie/templates/search_results.html:49
+#: digitalstrategie/templates/search_results.html:45
 msgid "Results of the full-text search"
 msgstr "Ergebnisse der Volltextsuche"
 
-#: digitalstrategie/templates/search_results.html:53
+#: digitalstrategie/templates/search_results.html:49
 #, python-format
 msgid "Search for \"%(search_term)s\"."
 msgstr "Suche nach \"%(search_term)s\"."
 
-#: digitalstrategie/templates/search_results.html:54
+#: digitalstrategie/templates/search_results.html:50
 #, python-format
 msgid ""
 "\n"
@@ -1065,6 +1061,6 @@ msgstr[1] ""
 "            %(counter)s Maßnahmen.\n"
 "            "
 
-#: digitalstrategie/templates/search_results.html:84
+#: digitalstrategie/templates/search_results.html:80
 msgid "No results found"
 msgstr "Keine Ergebnisse gefunden"

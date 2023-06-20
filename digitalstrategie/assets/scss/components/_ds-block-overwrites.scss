@@ -5,11 +5,15 @@
         margin: auto !important;
     }
 
+    .ds-hero-no-image,
+    .ds-hero-image__overlay {
+        margin-bottom: 5 * $spacer !important;
+        text-align: center;
+    }
+
     // overwrite of herounit text box
     .ds-hero-image__overlay {
         margin-top: -18 * $spacer !important;
-        margin-bottom: 5 * $spacer !important;
-        text-align: center;
     }
 
     .ds-hero-image__copyright {

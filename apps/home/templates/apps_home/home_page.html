@@ -31,6 +31,7 @@
 
 
 <!-- Desktop  -->
+    {% if header_image %}
     <div class="hero__parallax hero__desktop" style="background-image: url('{{ header_image.url }}')">
         <div class="herounit-landingpage herounit-landingpage--default">
             <div class="image">
@@ -50,6 +51,12 @@
             </div>
         </div>
     </div>
+    {% else %}
+    <div class="ds-hero-no-image">
+        <h1 class="title">{{ page.page_title }}</h1>
+        <p>{{ page.page_subtitle }}</p>
+    </div>
+    {% endif %}
 </section>
 <div id="layout-grid__area--maincontent">
     {% for block in self.body %}

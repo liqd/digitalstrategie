@@ -1,4 +1,7 @@
-{% load snippet_tags i18n static %}
+{% load snippet_tags i18n static contrib_tags %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as languages %}
+
 {% if 'de-ls' in request.path %}
     {% load_site_menu "header_ls" as header_menu_items %}
 {% else %}
@@ -60,15 +63,20 @@
                         </button>
                     </div>
                     <div class="overlay__body">
+
+                        {% if request.LANGUAGE_CODE == 'de' %}
+                        {% get_language_info for 'de-ls' as language %}
+                        {% get_has_translation page 'de_ls' as has_translation_de_ls %}
                         <h3>{% trans 'Settings' %}</h3>
                         <ul class="wcag-linklist">
                             <li>
-                                <a href="#">
-                                    <img aria-hidden="true" src="https://www.berlin.de/i9f/v4/css/images/misc/leichtesprache.svg" alt="Symbol leichte Sprache">
-                                    Leichte Sprache <span class="aural">für diese Seite anzeigen</span>
+                                <a href="{% if has_translation_de_ls %}{% translate_url language.code %}{% else %}/{% endif %}" aria-label="{% trans 'select' %}">
+                                    {{ language.name_local }}
+                                    <span class="aural">für diese Seite anzeigen</span>
                                 </a>
                             </li>
                         </ul>
+                        {% endif %}
 
                         {% if settings.apps_settings.Accessibility.accessibility_declaration and settings.apps_settings.Accessibility.accessibility_declaration_title %}
                         <h3>{% trans 'How accessible is this website?' %}</h3>

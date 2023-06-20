@@ -17,13 +17,11 @@
 
         <div class="text textile">
             <p class="text">{{ content.contact_organisation_name }}</p>
-            <p class="u-b-none">
+                <ul class="measure-foa-list">
                 {% for foa in content.get_fields_of_action %}
-                    {{ foa.subset_name }}
-                    {% if not forloop.last %}, {% endif %}
+                    <li>{{ foa.subset_name }}</li>
                 {% endfor %}
-            </p>
-
+                </ul>
             <a href="{% pageurl content %}" class="more" data-mainlink="true" title="This is a single Teaser">
                 {% translate 'More' %}
                 <span class="aural">{% translate 'about:' context 'For SRs, reads "more about: <name of measure>"' %} {{ content.page_title }}</span>

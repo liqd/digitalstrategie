@@ -19,3 +19,8 @@
         max-width: 65%;
     }
 }
+
+// needed for bullet point cut off on safari
+.textile ul > li {
+    margin-left: 2px;
+}

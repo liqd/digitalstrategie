@@ -266,6 +266,18 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
     def get_context(self, request):
         filtered_measures = self.measures_pages
 
+        # search
+        search = request.GET.get('search')
+        search_string = ''
+        if search:
+            searched_measures = filtered_measures.search(search)
+            search_string = _('Search for "{search_term}".').format(
+                search_term=search
+            )
+            filtered_measures = filtered_measures.filter(
+                id__in=[m.id for m in searched_measures]
+            )
+
         # filters for status, district and fields of action (four sets)
         status = request.GET.get('status')
         dis = request.GET.getlist('district')
@@ -303,15 +315,6 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
         measures_page_ids = filtered_measures.filter(
             filter_params).values_list('id', flat=True)
         filtered_measures = filtered_measures.filter(id__in=measures_page_ids)
-
-        # search
-        search = request.GET.get('search')
-        search_string = ''
-        if search:
-            filtered_measures = filtered_measures.search(search)
-            search_string = _('Search for "{search_term}".').format(
-                search_term=search
-            )
 
         # pagination
         page = request.GET.get('page', 1)

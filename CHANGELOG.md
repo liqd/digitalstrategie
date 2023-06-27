@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 Since version v2306.1 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v2306.2 - 2023-06-27
+
+### Added
+* add initial changelog (!812)
+
+### Fixed
+* fix incorrect measures result count when using filters and search term (#821)
+
+### Changed
+* change renovate rules to include new django and wagtail lts versions (!822)
+* update dependency stylelint to v15.9.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/818
+* update dependency pytest to v7.4.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/820
+* update dependency sentry-sdk to v1.26.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/817
+
 ## v2306.1 - 2023-06-22
 
 ### Fixed

@@ -51,40 +51,40 @@ CSP_SCRIPT_SRC_ATTR = ["'none'"]
 # wagtail (and webpack during dev) requires unsafe-inline
 CSP_SCRIPT_SRC_ELEM = [
     "'self'",
-    "stats.liqd.net",
-    "berlin.de",
-    "www.berlin.de",
     "'unsafe-inline'",
+    "https://stats.liqd.net",
+    "https://berlin.de",
+    "https://www.berlin.de",
 ]
 CSP_IMG_SRC = [
     "'self'",
-    "captcha-numbers-stage.liqd.net",
-    "stats.liqd.net",
-    "berlin.de",
-    "www.berlin.de",
-    "www.gravatar.com",
+    "https://captcha-numbers-stage.liqd.net",
+    "https://stats.liqd.net",
+    "https://berlin.de",
+    "https://www.berlin.de",
+    "https://www.gravatar.com",
 ]
 CSP_OBJECT_SRC = ["'none'"]
 CSP_MEDIA_SRC = ["'self'"]
 CSP_FRAME_SRC = [
     "'self'",
-    "youtube.com",
-    "www.youtube.com",
-    "vimeo.com",
-    "www.vimeo.com",
+    "https://youtube.com",
+    "https://www.youtube.com",
+    "https://vimeo.com",
+    "https://www.vimeo.com",
 ]
 CSP_FONT_SRC = ["'self'", "berlin.de", "www.berlin.de"]
 CSP_CONNECT_SRC = [
     "'self'",
-    "captcha-numbers-stage.liqd.net",
-    "stats.liqd.net",
-    "releases.wagtail.io",
+    "https://captcha-numbers-stage.liqd.net",
+    "https://stats.liqd.net",
+    "https://releases.wagtail.io",
 ]
-CSP_STYLE_SRC = ["'self'", "berlin.de", "www.berlin.de"]
+CSP_STYLE_SRC = ["'self'", "https://berlin.de", "https://www.berlin.de"]
 # wagtail userbar requires unsafe-inline for wagtail <= 4.1
 CSP_STYLE_SRC_ATTR = ["'self'", "'unsafe-inline'"]
 # wagtail admin vendor.js requires unsafe-inline
-CSP_STYLE_SRC_ELEM = ["'self'", "berlin.de", "www.berlin.de"]
+CSP_STYLE_SRC_ELEM = ["'self'", "https://berlin.de", "https://www.berlin.de"]
 CSP_BASE_URI = ["'self'"]
 CSP_CHILD_SRC = ["'none'"]
 CSP_FRAME_ANCESTORS = ["'self'"]

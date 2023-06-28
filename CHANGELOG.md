@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 Since version v2306.1 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+### Changed
+* add https:// to development csp (!824)
+
 ## v2306.2 - 2023-06-27
 
 ### Added

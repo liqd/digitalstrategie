@@ -28,13 +28,16 @@ class GruenbuchOverviewPage(TranslatedMetadataPageMixin, Page):
     )
 
     page_blocks = [
-        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
-        ('teaser_tiles', apps_blocks.TeaserBlockTile()),
         ('paragraph', apps_blocks.ParagraphBlock()),
-        ('faq_accordion', apps_blocks.FaqBlock()),
-        ('teaser_single', apps_blocks.TeaserBlockSingle()),
-        ('video_block', apps_blocks.VideoBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_image', apps_blocks.TeaserBlockImage()),
+        ('teaser_centered', apps_blocks.TeaserBlockCentered()),
+        ('teaser_tiles', apps_blocks.TeaserBlockTile()),
+        ('video_block', apps_blocks.VideoBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock()),
+        ('quote', apps_blocks.QuoteBlock()),
     ]
 
     page_title_de = models.CharField(
@@ -153,12 +156,15 @@ class GruenbuchDetailPage(TranslatedMetadataPageMixin, Page):
 
     page_blocks = [
         ('paragraph', apps_blocks.ParagraphBlock()),
-        ('faq_accordion', apps_blocks.FaqBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),
-        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
-        ('teaser_tile', apps_blocks.TeaserBlockTile()),
-        ('video_block', apps_blocks.VideoBlock())
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_image', apps_blocks.TeaserBlockImage()),
+        ('teaser_centered', apps_blocks.TeaserBlockCentered()),
+        ('teaser_tiles', apps_blocks.TeaserBlockTile()),
+        ('video_block', apps_blocks.VideoBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock()),
+        ('quote', apps_blocks.QuoteBlock()),
     ]
 
     page_title_de = models.CharField(max_length=120)

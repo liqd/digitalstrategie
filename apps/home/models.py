@@ -5,6 +5,8 @@ from wagtail import fields
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
+from wagtail.admin.panels import TitleFieldPanel
+from wagtail.admin.widgets.slug import SlugInput
 from wagtail.models import Page
 from wagtail.search import index
 
@@ -103,9 +105,9 @@ class HomePage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
         FieldPanel('header_image'),
     ]
 
@@ -129,15 +131,24 @@ class HomePage(TranslatedMetadataPageMixin, Page):
                      'apps_measures.MeasuresOverviewPage',]
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de', partial_match=True),
-        index.SearchField('page_title_en', partial_match=True),
-        index.SearchField('page_title_de_ls', partial_match=True),
-        index.SearchField('page_subtitle_de', partial_match=True),
-        index.SearchField('page_subtitle_en', partial_match=True),
-        index.SearchField('page_subtitle_de_ls', partial_match=True),
-        index.SearchField('body_de', partial_match=True),
-        index.SearchField('body_en', partial_match=True),
-        index.SearchField('body_de_ls', partial_match=True)
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
+        index.AutocompleteField('page_subtitle_de'),
+        index.AutocompleteField('page_subtitle_en'),
+        index.AutocompleteField('page_subtitle_de_ls'),
+        index.AutocompleteField('body_de'),
+        index.AutocompleteField('body_en'),
+        index.AutocompleteField('body_de_ls'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_subtitle_de'),
+        index.SearchField('page_subtitle_en'),
+        index.SearchField('page_subtitle_de_ls'),
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls')
     ]
 
 
@@ -225,9 +236,9 @@ class OverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
         FieldPanel('intro_image'),
     ]
 
@@ -248,12 +259,18 @@ class OverviewPage(TranslatedMetadataPageMixin, Page):
                      'apps_home.MicrositeOverviewPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de', partial_match=True),
-        index.SearchField('page_title_en', partial_match=True),
-        index.SearchField('page_title_de_ls', partial_match=True),
-        index.SearchField('page_intro_de', partial_match=True),
-        index.SearchField('page_intro_en', partial_match=True),
-        index.SearchField('page_intro_de_ls', partial_match=True),
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
+        index.AutocompleteField('page_intro_de'),
+        index.AutocompleteField('page_intro_en'),
+        index.AutocompleteField('page_intro_de_ls'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_intro_de'),
+        index.SearchField('page_intro_en'),
+        index.SearchField('page_intro_de_ls'),
     ]
 
 
@@ -308,9 +325,9 @@ class DetailPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
     ]
 
     edit_handler = TabbedInterface([
@@ -325,9 +342,12 @@ class DetailPage(TranslatedMetadataPageMixin, Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
-        index.SearchField('body_de', partial_match=True),
-        index.SearchField('body_en', partial_match=True),
-        index.SearchField('body_de_ls', partial_match=True)
+        index.AutocompleteField('body_de'),
+        index.AutocompleteField('body_en'),
+        index.AutocompleteField('body_de_ls'),
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls')
     ]
 
 
@@ -376,9 +396,9 @@ class SimplePage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
     ]
 
     edit_handler = TabbedInterface([
@@ -393,9 +413,12 @@ class SimplePage(TranslatedMetadataPageMixin, Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
-        index.SearchField('body_de', partial_match=True),
-        index.SearchField('body_en', partial_match=True),
-        index.SearchField('body_de_ls', partial_match=True)
+        index.AutocompleteField('body_de'),
+        index.AutocompleteField('body_en'),
+        index.AutocompleteField('body_de_ls'),
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls')
     ]
 
 
@@ -489,9 +512,9 @@ class MicrositeOverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
         FieldPanel('intro_image'),
     ]
 
@@ -507,12 +530,18 @@ class MicrositeOverviewPage(TranslatedMetadataPageMixin, Page):
     subpage_types = ['apps_home.MicrositeDetailPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de', partial_match=True),
-        index.SearchField('page_title_en', partial_match=True),
-        index.SearchField('page_title_de_ls', partial_match=True),
-        index.SearchField('page_intro_de', partial_match=True),
-        index.SearchField('page_intro_en', partial_match=True),
-        index.SearchField('page_intro_de_ls', partial_match=True),
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
+        index.AutocompleteField('page_intro_de'),
+        index.AutocompleteField('page_intro_en'),
+        index.AutocompleteField('page_intro_de_ls'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_intro_de'),
+        index.SearchField('page_intro_en'),
+        index.SearchField('page_intro_de_ls'),
     ]
 
 
@@ -576,9 +605,9 @@ class MicrositeDetailPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
     ]
 
     edit_handler = TabbedInterface([
@@ -593,7 +622,10 @@ class MicrositeDetailPage(TranslatedMetadataPageMixin, Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
-        index.SearchField('body_de', partial_match=True),
-        index.SearchField('body_en', partial_match=True),
-        index.SearchField('body_de_ls', partial_match=True)
+        index.AutocompleteField('body_de'),
+        index.AutocompleteField('body_en'),
+        index.AutocompleteField('body_de_ls'),
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls')
     ]

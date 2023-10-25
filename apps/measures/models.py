@@ -12,6 +12,8 @@ from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
+from wagtail.admin.panels import TitleFieldPanel
+from wagtail.admin.widgets.slug import SlugInput
 from wagtail.models import Page
 from wagtail.search import index
 
@@ -163,9 +165,9 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
     ]
 
     edit_handler = TabbedInterface([
@@ -348,12 +350,18 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
         return context
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de', partial_match=True),
-        index.SearchField('page_title_en', partial_match=True),
-        index.SearchField('page_title_de_ls', partial_match=True),
-        index.SearchField('page_intro_de', partial_match=True),
-        index.SearchField('page_intro_en', partial_match=True),
-        index.SearchField('page_intro_de_ls', partial_match=True),
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
+        index.AutocompleteField('page_intro_de'),
+        index.AutocompleteField('page_intro_en'),
+        index.AutocompleteField('page_intro_de_ls'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_intro_de'),
+        index.SearchField('page_intro_en'),
+        index.SearchField('page_intro_de_ls'),
     ]
 
 
@@ -548,9 +556,9 @@ class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
         FieldPanel('text_image'),
         FieldPanel('districts'),
         FieldPanel('status'),
@@ -585,24 +593,43 @@ class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
     ])
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de', partial_match=True),
-        index.SearchField('page_title_en', partial_match=True),
-        index.SearchField('page_title_de_ls', partial_match=True),
-        index.SearchField('body_de', partial_match=True),
-        index.SearchField('body_en', partial_match=True),
-        index.SearchField('body_de_ls', partial_match=True),
-        index.SearchField('body_participation_de', partial_match=True),
-        index.SearchField('body_participation_en', partial_match=True),
-        index.SearchField('body_participation_de_ls', partial_match=True),
-        index.SearchField('body_effect_de', partial_match=True),
-        index.SearchField('body_effect_en', partial_match=True),
-        index.SearchField('body_effect_de_ls', partial_match=True),
-        index.SearchField('contact_organisation_name_de', partial_match=True),
-        index.SearchField('contact_organisation_name_en', partial_match=True),
-        index.SearchField(
-            'contact_organisation_name_de_ls', partial_match=True
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
+        index.AutocompleteField('body_de'),
+        index.AutocompleteField('body_en'),
+        index.AutocompleteField('body_de_ls'),
+        index.AutocompleteField('body_participation_de'),
+        index.AutocompleteField('body_participation_en'),
+        index.AutocompleteField('body_participation_de_ls'),
+        index.AutocompleteField('body_effect_de'),
+        index.AutocompleteField('body_effect_en'),
+        index.AutocompleteField('body_effect_de_ls'),
+        index.AutocompleteField('contact_organisation_name_de'),
+        index.AutocompleteField('contact_organisation_name_en'),
+        index.AutocompleteField(
+            'contact_organisation_name_de_ls'
         ),
-        index.SearchField('contact_name', partial_match=True),
+        index.AutocompleteField('contact_name'),
+
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls'),
+        index.SearchField('body_participation_de'),
+        index.SearchField('body_participation_en'),
+        index.SearchField('body_participation_de_ls'),
+        index.SearchField('body_effect_de'),
+        index.SearchField('body_effect_en'),
+        index.SearchField('body_effect_de_ls'),
+        index.SearchField('contact_organisation_name_de'),
+        index.SearchField('contact_organisation_name_en'),
+        index.SearchField(
+            'contact_organisation_name_de_ls'
+        ),
+        index.SearchField('contact_name'),
     ]
 
     @property

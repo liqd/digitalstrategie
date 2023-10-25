@@ -55,6 +55,10 @@ CSP_SCRIPT_SRC_ELEM = [
     "https://stats.liqd.net",
     "https://berlin.de",
     "https://www.berlin.de",
+    # only for local testing
+    "http://berlin.de",
+    "http://www.berlin.de",
+
 ]
 CSP_IMG_SRC = [
     "'self'",
@@ -80,11 +84,25 @@ CSP_CONNECT_SRC = [
     "https://stats.liqd.net",
     "https://releases.wagtail.io",
 ]
-CSP_STYLE_SRC = ["'self'", "https://berlin.de", "https://www.berlin.de"]
+CSP_STYLE_SRC = [
+    "'self'",
+    "https://berlin.de",
+    "https://www.berlin.de",
+    # only for local testing
+    "http://berlin.de",
+    "http://www.berlin.de",
+]
 # wagtail userbar requires unsafe-inline for wagtail <= 4.1
 CSP_STYLE_SRC_ATTR = ["'self'", "'unsafe-inline'"]
 # wagtail admin vendor.js requires unsafe-inline
-CSP_STYLE_SRC_ELEM = ["'self'", "https://berlin.de", "https://www.berlin.de"]
+CSP_STYLE_SRC_ELEM = [
+    "'self'",
+    "https://berlin.de",
+    "https://www.berlin.de"
+    # only for local testing
+    "http://berlin.de",
+    "http://www.berlin.de",
+]
 CSP_BASE_URI = ["'self'"]
 CSP_CHILD_SRC = ["'none'"]
 CSP_FRAME_ANCESTORS = ["'self'"]

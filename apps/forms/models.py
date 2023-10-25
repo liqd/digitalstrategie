@@ -8,6 +8,8 @@ from wagtail.admin.panels import FieldRowPanel
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
+from wagtail.admin.panels import TitleFieldPanel
+from wagtail.admin.widgets.slug import SlugInput
 from wagtail.contrib.forms.forms import FormBuilder
 from wagtail.contrib.forms.models import AbstractEmailForm
 from wagtail.contrib.forms.models import AbstractFormField
@@ -146,9 +148,9 @@ class FormPage(TranslatedMetadataPageMixin, AbstractEmailForm):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname="col6"),

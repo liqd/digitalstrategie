@@ -1,3 +1,5 @@
+from typing import List
+
 from django.utils import translation
 from wagtail.blocks.stream_block import StreamValue
 
@@ -33,7 +35,14 @@ class TranslatedField(object):
             return de
 
 
-def get_search_fields():
+def get_search_fields() -> List[str]:
+    """Create a list of fields to search in the current language of the user.
+
+    Adds _edgengrams as otherwise autocomplete() won't work.
+
+    Returns:
+        List of fields with the correct language code set
+    """
     fields = [
         '*page_title_',
         '*page_intro_'
@@ -41,4 +50,4 @@ def get_search_fields():
         '*body_',
     ]
     lang = translation.get_language()
-    return [f + lang for f in fields]
+    return [f + lang + '_edgengrams' for f in fields]

@@ -4,6 +4,8 @@ from wagtail import fields
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
+from wagtail.admin.panels import TitleFieldPanel
+from wagtail.admin.widgets.slug import SlugInput
 from wagtail.models import Page
 from wagtail.search import index
 
@@ -97,9 +99,9 @@ class GruenbuchOverviewPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
         FieldPanel('intro_image'),
     ]
 
@@ -116,12 +118,18 @@ class GruenbuchOverviewPage(TranslatedMetadataPageMixin, Page):
                      'apps_gruenbuch.GruenbuchIndexPage']
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de', partial_match=True),
-        index.SearchField('page_title_en', partial_match=True),
-        index.SearchField('page_title_de_ls', partial_match=True),
-        index.SearchField('page_intro_de', partial_match=True),
-        index.SearchField('page_intro_en', partial_match=True),
-        index.SearchField('page_intro_de_ls', partial_match=True),
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
+        index.AutocompleteField('page_intro_de'),
+        index.AutocompleteField('page_intro_en'),
+        index.AutocompleteField('page_intro_de_ls'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_intro_de'),
+        index.SearchField('page_intro_en'),
+        index.SearchField('page_intro_de_ls'),
     ]
 
 
@@ -203,9 +211,9 @@ class GruenbuchDetailPage(TranslatedMetadataPageMixin, Page):
     ]
 
     common_panels = [
-        FieldPanel('title', help_text=_('Add the page title you\'d like '
-                   'to be seen in Wagtail in the list of pages.')),
-        FieldPanel('slug'),
+        TitleFieldPanel('title', help_text=_('Add the page title you\'d like '
+                        'to be seen in Wagtail in the list of pages.')),
+        FieldPanel('slug', widget=SlugInput),
     ]
 
     edit_handler = TabbedInterface([
@@ -218,13 +226,22 @@ class GruenbuchDetailPage(TranslatedMetadataPageMixin, Page):
     ])
 
     search_fields = Page.search_fields + [
-        index.SearchField('page_title_de', partial_match=True),
-        index.SearchField('page_title_de_ls', partial_match=True),
-        index.SearchField('page_title_en', partial_match=True),
-        index.SearchField('subtitle_de', partial_match=True),
-        index.SearchField('subtitle_de_ls', partial_match=True),
-        index.SearchField('subtitle_en', partial_match=True),
-        index.SearchField('body_de', partial_match=True),
-        index.SearchField('body_de_ls', partial_match=True),
-        index.SearchField('body_en', partial_match=True),
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_de_ls'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('subtitle_de'),
+        index.AutocompleteField('subtitle_de_ls'),
+        index.AutocompleteField('subtitle_en'),
+        index.AutocompleteField('body_de'),
+        index.AutocompleteField('body_de_ls'),
+        index.AutocompleteField('body_en'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_de_ls'),
+        index.SearchField('page_title_en'),
+        index.SearchField('subtitle_de'),
+        index.SearchField('subtitle_de_ls'),
+        index.SearchField('subtitle_en'),
+        index.SearchField('body_de'),
+        index.SearchField('body_de_ls'),
+        index.SearchField('body_en'),
     ]

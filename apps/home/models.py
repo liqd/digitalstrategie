@@ -21,15 +21,18 @@ class HomePage(TranslatedMetadataPageMixin, Page):
     # only allow as root page
     parent_page_types = ['wagtailcore.Page']
     page_blocks = [
-        ('faq_accordion', apps_blocks.FaqBlock()),
-        ('quote', apps_blocks.QuoteBlock()),
+        ('paragraph', apps_blocks.ParagraphBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('theses', apps_blocks.ThesisListBlock()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
         ('teaser_image', apps_blocks.TeaserBlockImage()),
         ('teaser_centered', apps_blocks.TeaserBlockCentered()),
-        ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('teaser_tile', apps_blocks.TeaserBlockTile()),
+        ('video_block', apps_blocks.VideoBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock()),
+        ('quote', apps_blocks.QuoteBlock()),
         ('newsletter_block', apps_blocks.NewsletterBlock()),
-        ('video_block', apps_blocks.VideoBlock())
     ]
 
     page_title_de = models.CharField(
@@ -154,16 +157,17 @@ class HomePage(TranslatedMetadataPageMixin, Page):
 
 class OverviewPage(TranslatedMetadataPageMixin, Page):
     teaser_blocks = [
-        ('teaser_centered', apps_blocks.TeaserBlockCentered()),
-        ('teaser_image', apps_blocks.TeaserBlockImage()),
-        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
-        ('teaser_tile', apps_blocks.TeaserBlockTile()),
         ('paragraph', apps_blocks.ParagraphBlock()),
+        ('text_with_image', apps_blocks.TextWithImageBlock()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_image', apps_blocks.TeaserBlockImage()),
+        ('teaser_centered', apps_blocks.TeaserBlockCentered()),
+        ('teaser_tile', apps_blocks.TeaserBlockTile()),
+        ('video_block', apps_blocks.VideoBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
-        ('teaser_single', apps_blocks.TeaserBlockSingle()),
         ('newsletter_block', apps_blocks.NewsletterBlock()),
-        ('video_block', apps_blocks.VideoBlock())
     ]
 
     intro_image = models.ForeignKey(
@@ -277,13 +281,13 @@ class OverviewPage(TranslatedMetadataPageMixin, Page):
 class DetailPage(TranslatedMetadataPageMixin, Page):
     page_blocks = [
         ('paragraph', apps_blocks.ParagraphBlock()),
-        ('faq_accordion', apps_blocks.FaqBlock()),
         ('text_with_image', apps_blocks.TextWithImageBlock()),
-        ('quote', apps_blocks.QuoteBlock()),
-        ('newsletter_block', apps_blocks.NewsletterBlock()),
-        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
-        ('video_block', apps_blocks.VideoBlock())
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_tile', apps_blocks.TeaserBlockTile()),
+        ('video_block', apps_blocks.VideoBlock()),
+        ('faq_accordion', apps_blocks.FaqBlock()),
+        ('quote', apps_blocks.QuoteBlock()),
     ]
     page_title_de = models.CharField(
         max_length=120, blank=False)
@@ -433,13 +437,16 @@ class MicrositeOverviewPage(TranslatedMetadataPageMixin, Page):
     template = 'apps_home/overview_page.html'
 
     teaser_blocks = [
-        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
-        ('teaser_tile', apps_blocks.TeaserBlockTile()),
         ('paragraph', apps_blocks.ParagraphBlock()),
+        ('text_with_image', apps_blocks.TextWithImageBlock()),
+        ('teaser_single', apps_blocks.TeaserBlockSingle()),
+        ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_image', apps_blocks.TeaserBlockImage()),
+        ('teaser_centered', apps_blocks.TeaserBlockCentered()),
+        ('teaser_tile', apps_blocks.TeaserBlockTile()),
+        ('video_block', apps_blocks.VideoBlock()),
         ('faq_accordion', apps_blocks.FaqBlock()),
         ('quote', apps_blocks.QuoteBlock()),
-        ('teaser_single', apps_blocks.TeaserBlockSingle()),
-        ('video_block', apps_blocks.VideoBlock())
     ]
 
     intro_image = models.ForeignKey(
@@ -561,8 +568,9 @@ class MicrositeDetailPage(TranslatedMetadataPageMixin, Page):
         ('text_with_image', apps_blocks.TextWithImageBlock()),
         ('quote', apps_blocks.QuoteBlock()),
         ('teaser_columns', apps_blocks.TeaserBlockColumn()),
+        ('teaser_tile', apps_blocks.TeaserBlockTile()),
         ('teaser_single', apps_blocks.TeaserBlockSingle()),
-        ('video_block', apps_blocks.VideoBlock())
+        ('video_block', apps_blocks.VideoBlock()),
     ]
 
     page_title_de = models.CharField(

@@ -35,7 +35,7 @@ class TranslatedField(object):
             return de
 
 
-def get_search_fields() -> List[str]:
+def get_search_fields(fields: List[str]) -> List[str]:
     """Create a list of fields to search in the current language of the user.
 
     Adds _edgengrams as otherwise autocomplete() won't work.
@@ -43,15 +43,5 @@ def get_search_fields() -> List[str]:
     Returns:
         List of fields with the correct language code set
     """
-    fields = [
-        '*page_title_',
-        '*page_intro_'
-        '*subtitle_',
-        '*body_',
-    ]
     lang = translation.get_language()
-    localized_fields = []
-    for f in fields:
-        localized_fields.append(f + lang)
-    localized_fields.append(f + lang + "_edgengrams")
-    return localized_fields
+    return [f + "_" + lang for f in fields]

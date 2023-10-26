@@ -269,12 +269,19 @@ class OverviewPage(TranslatedMetadataPageMixin, Page):
         index.AutocompleteField('page_intro_de'),
         index.AutocompleteField('page_intro_en'),
         index.AutocompleteField('page_intro_de_ls'),
+        index.AutocompleteField('body_de'),
+        index.AutocompleteField('body_en'),
+        index.AutocompleteField('body_de_ls'),
         index.SearchField('page_title_de'),
         index.SearchField('page_title_en'),
         index.SearchField('page_title_de_ls'),
         index.SearchField('page_intro_de'),
         index.SearchField('page_intro_en'),
         index.SearchField('page_intro_de_ls'),
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls'),
+
     ]
 
 
@@ -346,9 +353,15 @@ class DetailPage(TranslatedMetadataPageMixin, Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
         index.AutocompleteField('body_de'),
         index.AutocompleteField('body_en'),
         index.AutocompleteField('body_de_ls'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
         index.SearchField('body_de'),
         index.SearchField('body_en'),
         index.SearchField('body_de_ls')
@@ -417,9 +430,15 @@ class SimplePage(TranslatedMetadataPageMixin, Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
         index.AutocompleteField('body_de'),
         index.AutocompleteField('body_en'),
         index.AutocompleteField('body_de_ls'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
         index.SearchField('body_de'),
         index.SearchField('body_en'),
         index.SearchField('body_de_ls')
@@ -543,12 +562,18 @@ class MicrositeOverviewPage(TranslatedMetadataPageMixin, Page):
         index.AutocompleteField('page_intro_de'),
         index.AutocompleteField('page_intro_en'),
         index.AutocompleteField('page_intro_de_ls'),
+        index.AutocompleteField('body_de'),
+        index.AutocompleteField('body_en'),
+        index.AutocompleteField('body_de_ls'),
         index.SearchField('page_title_de'),
         index.SearchField('page_title_en'),
         index.SearchField('page_title_de_ls'),
         index.SearchField('page_intro_de'),
         index.SearchField('page_intro_en'),
         index.SearchField('page_intro_de_ls'),
+        index.SearchField('body_de'),
+        index.SearchField('body_en'),
+        index.SearchField('body_de_ls')
     ]
 
 
@@ -630,9 +655,15 @@ class MicrositeDetailPage(TranslatedMetadataPageMixin, Page):
     subpage_types = []
 
     search_fields = Page.search_fields + [
+        index.AutocompleteField('page_title_de'),
+        index.AutocompleteField('page_title_en'),
+        index.AutocompleteField('page_title_de_ls'),
         index.AutocompleteField('body_de'),
         index.AutocompleteField('body_en'),
         index.AutocompleteField('body_de_ls'),
+        index.SearchField('page_title_de'),
+        index.SearchField('page_title_en'),
+        index.SearchField('page_title_de_ls'),
         index.SearchField('body_de'),
         index.SearchField('body_en'),
         index.SearchField('body_de_ls')

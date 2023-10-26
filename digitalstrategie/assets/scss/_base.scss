@@ -38,3 +38,9 @@ h5 {
 h1 {
     margin-bottom: 0.9em !important; // all h1 have same spacing as landing page
 }
+
+// fix for safari break on shorthand border with issue #879
+hr {
+    border: none;
+    border-bottom: 1px solid $gray;
+}

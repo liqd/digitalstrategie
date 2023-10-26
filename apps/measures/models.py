@@ -461,15 +461,15 @@ class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
     contact_phone = models.CharField(max_length=20, blank=True)
 
     contact_organisation_name_de = models.CharField(max_length=80, blank=False)
-    contact_website_de = models.CharField(max_length=2000, blank=True)
+    contact_website_de = models.URLField(max_length=2000, blank=True)
 
     contact_organisation_name_en = models.CharField(max_length=80, blank=True)
-    contact_website_en = models.CharField(max_length=2000, blank=True)
+    contact_website_en = models.URLField(max_length=2000, blank=True)
 
     contact_organisation_name_de_ls = models.CharField(
         max_length=80, blank=True
     )
-    contact_website_de_ls = models.CharField(max_length=2000, blank=True)
+    contact_website_de_ls = models.URLField(max_length=2000, blank=True)
 
     page_title = TranslatedField(
         'page_title_de',

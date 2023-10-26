@@ -57,7 +57,7 @@
                {% if result.highlight %}
                     <div class="searchresult-item">
                         <h3 class="title">
-                            <a href="{% pageurl result %}">{{ result }}</a>
+                            <a href="{% pageurl result %}">{{ result.page_title }}</a>
                         </h3>
                         <p class="text">
                             {{ result.highlight | safe }}
@@ -68,7 +68,7 @@
                               aria-hidden="true"
                               href="{% pageurl result %}"
                             >
-                                {{ result }}
+                                {{ result.page_title }}
                             </a>
                         </p>
                     </div>

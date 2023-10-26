@@ -1,21 +1,8 @@
-from wagtail.search.backends.elasticsearch7 import \
-    Elasticsearch7AutocompleteQueryCompiler
 from wagtail.search.backends.elasticsearch7 import Elasticsearch7SearchBackend
 from wagtail.search.backends.elasticsearch7 import Elasticsearch7SearchResults
 
 
 # Code below taken and modified from wagtails elasticsearch backend
-class ElasticsearchCustomQueryCompiler(
-    Elasticsearch7AutocompleteQueryCompiler
-):
-    # we override this to remove the check if the field exists on the model
-    # as we use a glob pattern (e.g. *page_title_en)
-    def check(self):
-        self._get_filters_from_where_node(self.queryset.query.where,
-                                          check_only=True)
-        list(self._get_order_by())
-
-
 class ElasticsearchResults(Elasticsearch7SearchResults):
     def _get_es_body(self, for_count=False):
         body = {
@@ -66,7 +53,6 @@ class ElasticsearchResults(Elasticsearch7SearchResults):
 
 class ElasticsearchCustomSearchBackend(Elasticsearch7SearchBackend):
     results_class = ElasticsearchResults
-    autocomplete_query_compiler_class = ElasticsearchCustomQueryCompiler
 
 
 SearchBackend = ElasticsearchCustomSearchBackend

@@ -113,6 +113,8 @@ def translate_url(context, lang=None, *args, **kwargs):
 
     Usage: {% translate_url 'en' %}
     """
+    if not hasattr(context, "request"):
+        return ''
     path = context['request'].path
     cur_language = translation.get_language()
 

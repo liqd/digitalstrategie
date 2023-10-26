@@ -46,7 +46,13 @@ if os.getenv("DATABASE") == "postgresql":
 # CSP for development (not very strict)
 CSP_DEFAULT_SRC = ["'self'"]
 # unsafe-eval only for testing
-CSP_SCRIPT_SRC = ["'unsafe-eval'"]
+CSP_SCRIPT_SRC = [
+    "'unsafe-eval'",
+    "'self'",
+    "https://stats.liqd.net",
+    "https://berlin.de",
+    "https://www.berlin.de",
+]
 CSP_SCRIPT_SRC_ATTR = ["'none'"]
 # wagtail (and webpack during dev) requires unsafe-inline
 CSP_SCRIPT_SRC_ELEM = [
@@ -111,3 +117,4 @@ CSP_MANIFEST_SRC = ["'self'"]
 CSP_WORKER_SRC = ["'none'"]
 CSP_EXCLUDE_URL_PREFIXES = "/admin"
 CSP_REPORT_ONLY = False
+CSP_UPGRADE_INSECURE_REQUESTS = True

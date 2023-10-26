@@ -50,4 +50,8 @@ def get_search_fields() -> List[str]:
         '*body_',
     ]
     lang = translation.get_language()
-    return [f + lang + '_edgengrams' for f in fields]
+    localized_fields = []
+    for f in fields:
+        localized_fields.append(f + lang)
+    localized_fields.append(f + lang + "_edgengrams")
+    return localized_fields

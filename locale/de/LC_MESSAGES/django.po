@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-12 10:37+0000\n"
-"PO-Revision-Date: 2023-06-12 13:04+0000\n"
+"PO-Revision-Date: 2023-10-27 15:41+0000\n"
 "Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
 "Language-Team: German <https://weblate.liqd.net/projects/"
 "gemeinsam-digital-berlin/main/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #: apps/captcha/fields.py:37 apps/captcha/fields.py:45
 msgid "Something about the answer to the captcha was wrong."
@@ -607,7 +607,7 @@ msgstr "Smart Cities lernen gemeinsam"
 #: apps/measures/models.py:59
 #: apps/measures/templates/apps_measures/measures_detail_page.html:83
 msgid "Participation"
-msgstr "Partizipative Governance und Beteiligung"
+msgstr "Partizipation"
 
 #: apps/measures/models.py:60
 msgid "Transparent Decision Processes"

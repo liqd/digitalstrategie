@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-12 10:37+0000\n"
+"POT-Creation-Date: 2023-10-31 13:25+0000\n"
 "PO-Revision-Date: 2022-11-09 16:01+0000\n"
 "Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
 "Language-Team: English <https://trans.liqd.net/projects/gemeinsam-digital-"
@@ -28,7 +28,7 @@ msgid "Your answer to the captcha was wrong."
 msgstr "Your answer to the captcha was wrong."
 
 #: apps/captcha/templates/captcheck_captcha_widget.html:5
-#: apps/forms/models.py:36
+#: apps/forms/models.py:38
 msgid "I am not a robot."
 msgstr "I am not a robot."
 
@@ -71,15 +71,15 @@ msgstr "Meta description en"
 msgid "Common page configuration"
 msgstr "Common page configuration"
 
-#: apps/forms/models.py:20
+#: apps/forms/models.py:22
 msgid "If you are having difficulty, please contact us by {}email{}."
 msgstr "If you are having difficulty, please contact us by {}email{}."
 
-#: apps/forms/models.py:47
+#: apps/forms/models.py:49
 msgid "to address"
 msgstr "to address"
 
-#: apps/forms/models.py:48
+#: apps/forms/models.py:50
 msgid ""
 "Form submissions will be emailed to these addresses. Separate multiple "
 "addresses by comma."
@@ -87,21 +87,21 @@ msgstr ""
 "Form submissions will be emailed to these addresses. Separate multiple "
 "addresses by comma."
 
-#: apps/forms/models.py:52
+#: apps/forms/models.py:54
 msgid "from address"
 msgstr "from address"
 
-#: apps/forms/models.py:53
+#: apps/forms/models.py:55
 msgid ""
 "Optional - submitted forms will be displayed as sent from this email address."
 msgstr ""
 "Optional - submitted forms will be displayed as sent from this email address."
 
-#: apps/forms/models.py:57
+#: apps/forms/models.py:59
 msgid "subject"
 msgstr "subject"
 
-#: apps/forms/models.py:58
+#: apps/forms/models.py:60
 msgid ""
 "Optional - will be displayed as the subject of the email of the submitted "
 "form."
@@ -109,11 +109,11 @@ msgstr ""
 "Optional - will be displayed as the subject of the email of the submitted "
 "form."
 
-#: apps/forms/models.py:65 apps/forms/models.py:67 apps/forms/models.py:70
+#: apps/forms/models.py:67 apps/forms/models.py:69 apps/forms/models.py:72
 msgid "Header"
 msgstr "Header"
 
-#: apps/forms/models.py:91
+#: apps/forms/models.py:93
 msgid ""
 "If you add an email address, users can contact you                    in "
 "order to request the removal of personal data."
@@ -121,85 +121,85 @@ msgstr ""
 "If you add an email address, users can contact you                    in "
 "order to request the removal of personal data."
 
-#: apps/forms/models.py:106
+#: apps/forms/models.py:108
 msgid "First Name"
 msgstr "First Name"
 
-#: apps/forms/models.py:113
+#: apps/forms/models.py:115
 msgid "Surname"
 msgstr "Surname"
 
-#: apps/forms/models.py:120
+#: apps/forms/models.py:122
 #: apps/measures/templates/apps_measures/measures_detail_page.html:101
 msgid "Organisation"
 msgstr "Organisation"
 
-#: apps/forms/models.py:127 digitalstrategie/templates/includes/header.html:87
+#: apps/forms/models.py:129 digitalstrategie/templates/includes/header.html:95
 msgid "Email"
 msgstr "Email"
 
-#: apps/forms/models.py:149 apps/gruenbuch/models.py:100
-#: apps/gruenbuch/models.py:206 apps/home/models.py:106 apps/home/models.py:228
-#: apps/home/models.py:311 apps/home/models.py:379 apps/home/models.py:492
-#: apps/home/models.py:579 apps/measures/models.py:166
-#: apps/measures/models.py:548
+#: apps/forms/models.py:151 apps/gruenbuch/models.py:105
+#: apps/gruenbuch/models.py:220 apps/home/models.py:111 apps/home/models.py:243
+#: apps/home/models.py:332 apps/home/models.py:403 apps/home/models.py:522
+#: apps/home/models.py:616 apps/measures/models.py:168
+#: apps/measures/models.py:559
 msgid ""
 "Add the page title you'd like to be seen in Wagtail in the list of pages."
 msgstr ""
 "Add the page title you'd like to be seen in Wagtail in the list of pages."
 
-#: apps/forms/models.py:163 apps/gruenbuch/models.py:107
-#: apps/gruenbuch/models.py:212 apps/home/models.py:235 apps/home/models.py:317
-#: apps/home/models.py:385 apps/home/models.py:499 apps/home/models.py:585
-#: apps/measures/models.py:172 apps/measures/models.py:576
+#: apps/forms/models.py:165 apps/gruenbuch/models.py:112
+#: apps/gruenbuch/models.py:226 apps/home/models.py:250 apps/home/models.py:338
+#: apps/home/models.py:409 apps/home/models.py:529 apps/home/models.py:622
+#: apps/measures/models.py:174 apps/measures/models.py:587
 msgid "Common"
 msgstr "Common"
 
-#: apps/forms/models.py:165 apps/gruenbuch/models.py:109
-#: apps/gruenbuch/models.py:214 apps/home/models.py:115 apps/home/models.py:237
-#: apps/home/models.py:319 apps/home/models.py:387 apps/home/models.py:501
-#: apps/home/models.py:587 apps/measures/models.py:174
-#: apps/measures/models.py:578
+#: apps/forms/models.py:167 apps/gruenbuch/models.py:114
+#: apps/gruenbuch/models.py:228 apps/home/models.py:120 apps/home/models.py:252
+#: apps/home/models.py:340 apps/home/models.py:411 apps/home/models.py:531
+#: apps/home/models.py:624 apps/measures/models.py:176
+#: apps/measures/models.py:589
 msgid "Meta Tags"
 msgstr "Meta Tags"
 
-#: apps/forms/models.py:166 apps/gruenbuch/models.py:110
-#: apps/gruenbuch/models.py:215 apps/home/models.py:116 apps/home/models.py:238
-#: apps/home/models.py:320 apps/home/models.py:388 apps/home/models.py:502
-#: apps/home/models.py:588 apps/measures/models.py:175
-#: apps/measures/models.py:579 digitalstrategie/settings/base.py:127
+#: apps/forms/models.py:168 apps/gruenbuch/models.py:115
+#: apps/gruenbuch/models.py:229 apps/home/models.py:121 apps/home/models.py:253
+#: apps/home/models.py:341 apps/home/models.py:412 apps/home/models.py:532
+#: apps/home/models.py:625 apps/measures/models.py:177
+#: apps/measures/models.py:590 digitalstrategie/settings/base.py:127
 msgid "German"
 msgstr "German"
 
-#: apps/forms/models.py:167 apps/gruenbuch/models.py:111
-#: apps/gruenbuch/models.py:216 apps/home/models.py:117 apps/home/models.py:239
-#: apps/home/models.py:321 apps/home/models.py:389 apps/home/models.py:503
-#: apps/home/models.py:589 apps/measures/models.py:176
-#: apps/measures/models.py:580 digitalstrategie/settings/base.py:126
+#: apps/forms/models.py:169 apps/gruenbuch/models.py:116
+#: apps/gruenbuch/models.py:230 apps/home/models.py:122 apps/home/models.py:254
+#: apps/home/models.py:342 apps/home/models.py:413 apps/home/models.py:533
+#: apps/home/models.py:626 apps/measures/models.py:178
+#: apps/measures/models.py:591 digitalstrategie/settings/base.py:126
 msgid "English"
 msgstr "English"
 
-#: apps/forms/models.py:168 apps/gruenbuch/models.py:112
-#: apps/gruenbuch/models.py:217 apps/home/models.py:118 apps/home/models.py:240
-#: apps/home/models.py:322 apps/home/models.py:390 apps/home/models.py:504
-#: apps/home/models.py:590 apps/measures/models.py:177
-#: apps/measures/models.py:581 digitalstrategie/settings/base.py:128
+#: apps/forms/models.py:170 apps/gruenbuch/models.py:117
+#: apps/gruenbuch/models.py:231 apps/home/models.py:123 apps/home/models.py:255
+#: apps/home/models.py:343 apps/home/models.py:414 apps/home/models.py:534
+#: apps/home/models.py:627 apps/measures/models.py:179
+#: apps/measures/models.py:592 digitalstrategie/settings/base.py:128
 msgid "Easy German"
 msgstr "Easy German"
 
-#: apps/forms/models.py:185 apps/forms/models.py:248
+#: apps/forms/models.py:187 apps/forms/models.py:250
 msgid "I have read and accepted the {}data protection policy{}."
 msgstr "I have read and accepted the {}data protection policy{}."
 
-#: apps/forms/models.py:191
+#: apps/forms/models.py:193
 msgid "Title"
 msgstr "Title"
 
-#: apps/forms/models.py:198
+#: apps/forms/models.py:200
 msgid "Your message to us…"
 msgstr "Your message to us…"
 
-#: apps/forms/models.py:223
+#: apps/forms/models.py:225
 msgid ""
 "The selected categories                     are displayed in the "
 "participation form."
@@ -207,11 +207,11 @@ msgstr ""
 "The selected categories                     are displayed in the "
 "participation form."
 
-#: apps/forms/models.py:247
+#: apps/forms/models.py:249
 msgid "I agree that my contact data is stored."
 msgstr "I agree that my contact data is stored."
 
-#: apps/forms/models.py:254
+#: apps/forms/models.py:256
 msgid "I am interested in the following fields of action"
 msgstr "I am interested in the following fields of action"
 
@@ -236,25 +236,25 @@ msgstr ""
 msgid "Send"
 msgstr "Send"
 
-#: apps/gruenbuch/models.py:24
+#: apps/gruenbuch/models.py:26
 msgid ""
 "Image ratio has to be 2:1 or 4:3. Intro image is not shown for Easy Language."
 msgstr ""
 "Image ratio has to be 2:1 or 4:3. Intro image is not shown for Easy Language."
 
-#: apps/gruenbuch/models.py:47 apps/measures/models.py:96
+#: apps/gruenbuch/models.py:52 apps/measures/models.py:98
 msgid "Page introduction de"
 msgstr "Page introduction de"
 
-#: apps/gruenbuch/models.py:51 apps/measures/models.py:100
+#: apps/gruenbuch/models.py:56 apps/measures/models.py:102
 msgid "Page introduction en"
 msgstr "Page introduction en"
 
-#: apps/gruenbuch/models.py:55 apps/measures/models.py:104
+#: apps/gruenbuch/models.py:60 apps/measures/models.py:106
 msgid "Page introduction de ls"
 msgstr "Page introduction de ls"
 
-#: apps/gruenbuch/models.py:138
+#: apps/gruenbuch/models.py:149
 msgid "Gruenbuch Index Page"
 msgstr "Gruenbuch Index Page"
 
@@ -305,74 +305,74 @@ msgstr ""
 msgid "Testimonial"
 msgstr "Testimonial"
 
-#: apps/home/blocks.py:77
+#: apps/home/blocks.py:79
 msgid "How should the image be aligned?"
 msgstr "How should the image be aligned?"
 
-#: apps/home/blocks.py:97
+#: apps/home/blocks.py:99
 msgid "One thesis"
 msgstr "One thesis"
 
-#: apps/home/blocks.py:111 apps/home/blocks.py:139 apps/home/blocks.py:163
-#: apps/home/blocks.py:262
+#: apps/home/blocks.py:113 apps/home/blocks.py:141 apps/home/blocks.py:165
+#: apps/home/blocks.py:264
 msgid "Not choosing a colour will result in a block with a white background."
 msgstr "Not choosing a colour will result in a block with a white background."
 
-#: apps/home/blocks.py:134 apps/home/blocks.py:157 apps/home/blocks.py:180
-#: apps/home/blocks.py:218
+#: apps/home/blocks.py:136 apps/home/blocks.py:159 apps/home/blocks.py:182
+#: apps/home/blocks.py:220
 msgid "Link Description"
 msgstr "Link Description"
 
-#: apps/home/blocks.py:135 apps/home/blocks.py:158 apps/home/blocks.py:181
-#: apps/home/blocks.py:219
+#: apps/home/blocks.py:137 apps/home/blocks.py:160 apps/home/blocks.py:183
+#: apps/home/blocks.py:221
 msgid "describe link for assistive technology if needed"
 msgstr "describe link for assistive technology if needed"
 
-#: apps/home/blocks.py:192 apps/home/blocks.py:240
+#: apps/home/blocks.py:194 apps/home/blocks.py:242
 msgid "Add either an external or internal link, not both"
 msgstr "Add either an external or internal link, not both"
 
-#: apps/home/blocks.py:203
+#: apps/home/blocks.py:205
 msgid "Only add this number of columns below"
 msgstr "Only add this number of columns below"
 
-#: apps/home/blocks.py:209
+#: apps/home/blocks.py:211
 msgid "Teaser Columns"
 msgstr "Teaser Columns"
 
-#: apps/home/blocks.py:232
+#: apps/home/blocks.py:234
 msgid "Icon Tiles"
 msgstr "Icon Tiles"
 
-#: apps/home/blocks.py:246
+#: apps/home/blocks.py:248
 msgid "Teaser Single"
 msgstr "Teaser Single"
 
-#: apps/home/blocks.py:270
+#: apps/home/blocks.py:272
 msgid "This form only works with sendinblue"
 msgstr "This form only works with sendinblue"
 
-#: apps/home/blocks.py:279
+#: apps/home/blocks.py:281
 msgid "Please insert a short description of the video (character limit 255)."
 msgstr "Please insert a short description of the video (character limit 255)."
 
-#: apps/home/blocks.py:281
+#: apps/home/blocks.py:283
 msgid "You can only add links to YouTube or Vimeo videos."
 msgstr "You can only add links to YouTube or Vimeo videos."
 
-#: apps/home/blocks.py:285
+#: apps/home/blocks.py:287
 msgid "Add a preview image for the GDPR overlay."
 msgstr "Add a preview image for the GDPR overlay."
 
-#: apps/home/blocks.py:288
+#: apps/home/blocks.py:290
 msgid "You can add the video's transcript here (unlimited characters)."
 msgstr "You can add the video's transcript here (unlimited characters)."
 
-#: apps/home/blocks.py:296
+#: apps/home/blocks.py:298
 msgid "Video Block"
 msgstr "Video Block"
 
-#: apps/home/blocks.py:305
+#: apps/home/blocks.py:307
 msgid ""
 "Please note that images will be displayed in a 16:9 aspect ratio. Crop or "
 "resize your images accordingly before uploading to ensure they display "
@@ -382,36 +382,36 @@ msgstr ""
 "resize your images accordingly before uploading to ensure they display "
 "correctly."
 
-#: apps/home/models.py:34
+#: apps/home/models.py:39
 msgid "Home page title de"
 msgstr "Home page title de"
 
-#: apps/home/models.py:36
+#: apps/home/models.py:41
 msgid "Home page title en"
 msgstr "Home page title en"
 
-#: apps/home/models.py:38
+#: apps/home/models.py:43
 msgid "Home page title de ls"
 msgstr "Home page title de ls"
 
-#: apps/home/models.py:41
+#: apps/home/models.py:46
 msgid "Home page subtitle de"
 msgstr "Home page subtitle de"
 
-#: apps/home/models.py:43
+#: apps/home/models.py:48
 msgid "Home page subtitle en"
 msgstr "Home page subtitle en"
 
-#: apps/home/models.py:45
+#: apps/home/models.py:50
 msgid "Home page subtitle de ls"
 msgstr "Home page subtitle de ls"
 
-#: apps/home/models.py:164 apps/home/models.py:428
+#: apps/home/models.py:179 apps/home/models.py:458
 msgid "Intro image is not shown for Easy German"
 msgstr "Intro image is not shown for Easy German"
 
-#: apps/home/models.py:175 apps/home/models.py:178 apps/home/models.py:181
-#: apps/home/models.py:439 apps/home/models.py:442 apps/home/models.py:445
+#: apps/home/models.py:190 apps/home/models.py:193 apps/home/models.py:196
+#: apps/home/models.py:469 apps/home/models.py:472 apps/home/models.py:475
 msgid "Overview page introduction"
 msgstr "Overview page introduction"
 
@@ -496,157 +496,156 @@ msgstr "Add an alternative text for image accessibility"
 msgid "Add copyright information for image"
 msgstr "Add copyright information for image"
 
-#: apps/measures/models.py:23
+#: apps/measures/models.py:25
 msgid "in planning"
 msgstr "in planning"
 
-#: apps/measures/models.py:24
+#: apps/measures/models.py:26
 msgid "running"
 msgstr "running"
 
-#: apps/measures/models.py:25
+#: apps/measures/models.py:27
 msgid "finished"
 msgstr "finished"
 
-#: apps/measures/models.py:29
+#: apps/measures/models.py:31
 msgid "citywide"
 msgstr "citywide"
 
-#: apps/measures/models.py:30
+#: apps/measures/models.py:32
 msgid "Charlottenburg-Wilmersdorf"
 msgstr "Charlottenburg-Wilmersdorf"
 
-#: apps/measures/models.py:31
+#: apps/measures/models.py:33
 msgid "Friedrichshain-Kreuzberg"
 msgstr "Friedrichshain-Kreuzberg"
 
-#: apps/measures/models.py:32
+#: apps/measures/models.py:34
 msgid "Lichtenberg"
 msgstr "Lichtenberg"
 
-#: apps/measures/models.py:33
+#: apps/measures/models.py:35
 msgid "Marzahn-Hellersdorf"
 msgstr "Marzahn-Hellersdorf"
 
-#: apps/measures/models.py:34
+#: apps/measures/models.py:36
 msgid "Mitte"
 msgstr "Mitte"
 
-#: apps/measures/models.py:35
+#: apps/measures/models.py:37
 msgid "Neukölln"
 msgstr "Neukölln"
 
-#: apps/measures/models.py:36
+#: apps/measures/models.py:38
 msgid "Pankow"
 msgstr "Pankow"
 
-#: apps/measures/models.py:37
+#: apps/measures/models.py:39
 msgid "Reinickendorf"
 msgstr "Reinickendorf"
 
-#: apps/measures/models.py:38
+#: apps/measures/models.py:40
 msgid "Spandau"
 msgstr "Spandau"
 
-#: apps/measures/models.py:39
+#: apps/measures/models.py:41
 msgid "Steglitz-Zehlendorf"
 msgstr "Steglitz-Zehlendorf"
 
-#: apps/measures/models.py:40
+#: apps/measures/models.py:42
 msgid "Tempelhof-Schöneberg"
 msgstr "Tempelhof-Schöneberg"
 
-#: apps/measures/models.py:41
+#: apps/measures/models.py:43
 msgid "Treptow-Köpenick"
 msgstr "Treptow-Köpenick"
 
-#: apps/measures/models.py:45
+#: apps/measures/models.py:47
 msgid "Smart Economic Models"
 msgstr "Smart Economic Models"
 
-#: apps/measures/models.py:46
+#: apps/measures/models.py:48
 msgid "IT Ecosystems"
 msgstr "IT Ecosystems"
 
-#: apps/measures/models.py:47
+#: apps/measures/models.py:49
 msgid "Smart Capital Region"
 msgstr "Smart Capital Region"
 
-#: apps/measures/models.py:48
+#: apps/measures/models.py:50
 msgid "Regeneration of Natural Resources"
 msgstr "Regeneration of Natural Resources"
 
-#: apps/measures/models.py:52
+#: apps/measures/models.py:54
 msgid "Capacities for Change"
 msgstr "Capacities for Change"
 
-#: apps/measures/models.py:53
+#: apps/measures/models.py:55
 msgid "Meeting and Learning Places"
 msgstr "Meeting and Learning Places"
 
-#: apps/measures/models.py:54
+#: apps/measures/models.py:56
 msgid "Liveable Urban Development"
 msgstr "Liveable Urban Development"
 
-#: apps/measures/models.py:55
+#: apps/measures/models.py:57
 msgid "Smart Cities Learning Together"
 msgstr "Smart Cities Learning Together"
 
-#: apps/measures/models.py:59
-#: apps/measures/templates/apps_measures/measures_detail_page.html:83
-msgid "Participation"
-msgstr "Participation"
+#: apps/measures/models.py:61
+msgid "Participatory Governance"
+msgstr "Participatory Governance"
 
-#: apps/measures/models.py:60
+#: apps/measures/models.py:62
 msgid "Transparent Decision Processes"
 msgstr "Transparent Decision Processes"
 
-#: apps/measures/models.py:61
+#: apps/measures/models.py:63
 msgid "Citizen Services"
 msgstr "Citizen Services"
 
-#: apps/measures/models.py:62
+#: apps/measures/models.py:64
 msgid "Digital Citizens Rights and Privacy"
 msgstr "Digital Citizens Rights and Privacy"
 
-#: apps/measures/models.py:66
+#: apps/measures/models.py:68
 msgid "Effective Administrative Processes"
 msgstr "Effective Administrative Processes"
 
-#: apps/measures/models.py:67
+#: apps/measures/models.py:69
 msgid "Transparent and Innovative Procurement"
 msgstr "Transparent and Innovative Procurement"
 
-#: apps/measures/models.py:68
+#: apps/measures/models.py:70
 msgid "Intelligent Data Use"
 msgstr "Intelligent Data Use"
 
-#: apps/measures/models.py:69
+#: apps/measures/models.py:71
 msgid "Fail-Safe Critical and Digital Infrastructure"
 msgstr "Fail-Safe Critical and Digital Infrastructure"
 
-#: apps/measures/models.py:82
+#: apps/measures/models.py:84
 msgid "Only add 1 teaser block per overview page."
 msgstr "Only add 1 teaser block per overview page."
 
-#: apps/measures/models.py:297
-#, python-brace-format
-msgid "Filtered by \"{filter_term}\"."
-msgstr "Filtered by \"{filter_term}\"."
-
-#: apps/measures/models.py:312
+#: apps/measures/models.py:276
 #, python-brace-format
 msgid "Search for \"{search_term}\"."
 msgstr "Search for \"{search_term}\"."
 
-#: apps/measures/models.py:327
+#: apps/measures/models.py:311
+#, python-brace-format
+msgid "Filtered by \"{filter_term}\"."
+msgstr "Filtered by \"{filter_term}\"."
+
+#: apps/measures/models.py:332
 #, python-brace-format
 msgid "{count} measure."
 msgid_plural "{count} measures."
 msgstr[0] "{count} measure."
 msgstr[1] "{count} measures."
 
-#: apps/measures/models.py:383 apps/measures/models.py:558
+#: apps/measures/models.py:394 apps/measures/models.py:569
 msgid "Up to 3 choices are allowed."
 msgstr "Up to 3 choices are allowed."
 
@@ -696,11 +695,11 @@ msgstr "Reset filters"
 msgid "Filter now"
 msgstr "Filter now"
 
-#: apps/measures/templates/apps_measures/includes/measures_list_item.html:28
+#: apps/measures/templates/apps_measures/includes/measures_list_item.html:26
 msgid "More"
 msgstr "More"
 
-#: apps/measures/templates/apps_measures/includes/measures_list_item.html:29
+#: apps/measures/templates/apps_measures/includes/measures_list_item.html:27
 msgctxt "For SRs, reads \"more about: <name of measure>\""
 msgid "about:"
 msgstr "about:"
@@ -720,6 +719,10 @@ msgstr "Period"
 #: apps/measures/templates/apps_measures/measures_detail_page.html:56
 msgid "Status"
 msgstr "Status"
+
+#: apps/measures/templates/apps_measures/measures_detail_page.html:83
+msgid "Participation"
+msgstr "Participation"
 
 #: apps/measures/templates/apps_measures/measures_detail_page.html:91
 msgid "Impact"
@@ -757,9 +760,9 @@ msgstr "Empty field"
 
 #: apps/measures/templates/apps_measures/measures_overview_page.html:41
 #: apps/measures/templates/apps_measures/measures_overview_page.html:42
-#: digitalstrategie/templates/includes/header.html:112
-#: digitalstrategie/templates/includes/header.html:117
-#: digitalstrategie/templates/includes/header.html:129
+#: digitalstrategie/templates/includes/header.html:120
+#: digitalstrategie/templates/includes/header.html:125
+#: digitalstrategie/templates/includes/header.html:137
 msgid "Search"
 msgstr "Search"
 
@@ -879,49 +882,56 @@ msgstr "Hello"
 msgid "You are here:"
 msgstr "You are here:"
 
-#: digitalstrategie/templates/includes/header.html:15
+#: digitalstrategie/templates/includes/header.html:18
 msgid "To the home page of Berlin.de"
 msgstr "To the home page of Berlin.de"
 
-#: digitalstrategie/templates/includes/header.html:24
-#: digitalstrategie/templates/includes/header.html:25
+#: digitalstrategie/templates/includes/header.html:27
+#: digitalstrategie/templates/includes/header.html:28
 msgid "To the home page"
 msgstr "To the home page"
 
-#: digitalstrategie/templates/includes/header.html:25
+#: digitalstrategie/templates/includes/header.html:28
 msgid "Gemeinsam Digital: Berlin"
 msgstr "Gemeinsam Digital: Berlin"
 
-#: digitalstrategie/templates/includes/header.html:31
+#: digitalstrategie/templates/includes/header.html:34
 msgid "Area navigation"
 msgstr "Area navigation"
 
-#: digitalstrategie/templates/includes/header.html:50
+#: digitalstrategie/templates/includes/header.html:53
 msgid "Open: Accessibility"
 msgstr "Open: Accessibility"
 
-#: digitalstrategie/templates/includes/header.html:51
+#: digitalstrategie/templates/includes/header.html:54
 msgid "Accessible"
 msgstr "Accessible"
 
-#: digitalstrategie/templates/includes/header.html:56
+#: digitalstrategie/templates/includes/header.html:59
 #: digitalstrategie/templates/includes/header_language_switch.html:17
 msgid "Accessibility"
 msgstr "Accessibility"
 
-#: digitalstrategie/templates/includes/header.html:59
+#: digitalstrategie/templates/includes/header.html:62
 msgid "Close: Accessibility"
 msgstr "Close: Accessibility"
 
-#: digitalstrategie/templates/includes/header.html:63
+#: digitalstrategie/templates/includes/header.html:70
 msgid "Settings"
 msgstr "Settings"
 
-#: digitalstrategie/templates/includes/header.html:74
+#: digitalstrategie/templates/includes/header.html:73
+#: digitalstrategie/templates/includes/header_language_switch.html:11
+#: digitalstrategie/templates/includes/header_language_switch.html:22
+#: digitalstrategie/templates/includes/upper_footer.html:30
+msgid "select"
+msgstr "select"
+
+#: digitalstrategie/templates/includes/header.html:82
 msgid "How accessible is this website?"
 msgstr "How accessible is this website?"
 
-#: digitalstrategie/templates/includes/header.html:81
+#: digitalstrategie/templates/includes/header.html:89
 msgid ""
 "Whom to contact with comments or questions about digital accessibility "
 "(feedback option)?"
@@ -929,15 +939,15 @@ msgstr ""
 "Whom to contact with comments or questions about digital accessibility "
 "(feedback option)?"
 
-#: digitalstrategie/templates/includes/header.html:84
+#: digitalstrategie/templates/includes/header.html:92
 msgid "Name"
 msgstr "Name"
 
-#: digitalstrategie/templates/includes/header.html:90
+#: digitalstrategie/templates/includes/header.html:98
 msgid "Phone"
 msgstr "Phone"
 
-#: digitalstrategie/templates/includes/header.html:96
+#: digitalstrategie/templates/includes/header.html:104
 msgid ""
 "Where can I find additional information on accessibility in the state of "
 "Berlin?"
@@ -945,44 +955,38 @@ msgstr ""
 "Where can I find additional information on accessibility in the state of "
 "Berlin?"
 
-#: digitalstrategie/templates/includes/header.html:111
+#: digitalstrategie/templates/includes/header.html:119
 msgid "Open: Search"
 msgstr "Open: Search"
 
-#: digitalstrategie/templates/includes/header.html:120
+#: digitalstrategie/templates/includes/header.html:128
 msgid "Close: Search"
 msgstr "Close: Search"
 
-#: digitalstrategie/templates/includes/header.html:126
+#: digitalstrategie/templates/includes/header.html:134
 msgid "Search on the website \"Gemeinsam Digital: Berlin\""
 msgstr "Search on the website \"Gemeinsam Digital: Berlin\""
 
-#: digitalstrategie/templates/includes/header.html:143
+#: digitalstrategie/templates/includes/header.html:151
 msgid "Open: Menu"
 msgstr "Open: Menu"
 
-#: digitalstrategie/templates/includes/header.html:144
-#: digitalstrategie/templates/includes/header.html:149
+#: digitalstrategie/templates/includes/header.html:152
+#: digitalstrategie/templates/includes/header.html:157
 msgid "Menu"
 msgstr "Menu"
 
-#: digitalstrategie/templates/includes/header.html:152
+#: digitalstrategie/templates/includes/header.html:160
 msgid "Close: Menu"
 msgstr "Close: Menu"
 
-#: digitalstrategie/templates/includes/header.html:158
+#: digitalstrategie/templates/includes/header.html:166
 msgid "Page navigation"
 msgstr "Page navigation"
 
 #: digitalstrategie/templates/includes/header_language_switch.html:5
 msgid "Languages"
 msgstr "Languages"
-
-#: digitalstrategie/templates/includes/header_language_switch.html:11
-#: digitalstrategie/templates/includes/header_language_switch.html:22
-#: digitalstrategie/templates/includes/upper_footer.html:29
-msgid "select"
-msgstr "select"
 
 #: digitalstrategie/templates/includes/pagination.html:5
 msgid "Pagination navigation"
@@ -1006,8 +1010,8 @@ msgstr "To the top of the page"
 msgid "Related Links"
 msgstr "Related Links"
 
-#: digitalstrategie/templates/includes/upper_footer.html:33
-#: digitalstrategie/templates/includes/upper_footer.html:35
+#: digitalstrategie/templates/includes/upper_footer.html:34
+#: digitalstrategie/templates/includes/upper_footer.html:36
 msgid "Leichte Sprache"
 msgstr "Leichte Sprache"
 
@@ -1034,19 +1038,19 @@ msgstr "Search for \"%(search_term)s\"."
 #, python-format
 msgid ""
 "\n"
-"            %(counter)s measure.\n"
+"            %(counter)s result.\n"
 "            "
 msgid_plural ""
 "\n"
-"            %(counter)s measures.\n"
+"            %(counter)s results.\n"
 "            "
 msgstr[0] ""
 "\n"
-"            %(counter)s measure.\n"
+"            %(counter)s result.\n"
 "            "
 msgstr[1] ""
 "\n"
-"            %(counter)s measures.\n"
+"            %(counter)s results.\n"
 "            "
 
 #: digitalstrategie/templates/search_results.html:80

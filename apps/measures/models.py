@@ -58,7 +58,7 @@ FUTURE_OPPORTUNITIES_FOR_ALL = [
 ]
 
 INCLUSIVE_SHAPING_OF_URBAN_LIFE = [
-    ('1', _('Participation')),
+    ('1', _('Participatory Governance')),
     ('2', _('Transparent Decision Processes')),
     ('3', _('Citizen Services')),
     ('4', _('Digital Citizens Rights and Privacy')),

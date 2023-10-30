@@ -22,7 +22,8 @@
                                 {% get_language_info for 'de-ls' as language %}
                                 {% get_has_translation page 'de_ls' as has_translation_de_ls %}
                                 <li>
-                                    <form class="footer-menu__btn" action="{% url 'set_language' %}" method="post">
+					<!-- following might not working bcz of django 4.0 doesn’t set the user language in request.session--> 
+                                    <form class="footer-menu__btn" action="{% url 'set_language' %}" method="post"
                                         {% csrf_token %}
                                         <input name="next" type="hidden" value="{% if has_translation_de_ls %}{{ redirect_to }}{% else %}/{% endif %}" />
                                         <input name="language" type="hidden" value="{{ language.code }}">

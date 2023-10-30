@@ -17,7 +17,7 @@
 
         {% for page_number in paginated_page_range %}
             {% if page_number >= 0 %}
-            <li {% ifequal page_number page_obj.number %}class="active" aria-current="page"{% endifequal %}>
+            <li {% if page_number == page_obj.number %}class="active" aria-current="page"{% endif %}>
                 {% combined_url_parameter request.GET page=page_number as url_par %}
                 <a href="{{ url_par }}{% if anchor %}{{ anchor }}{% endif %}">{{ page_number }}</a>
             </li>

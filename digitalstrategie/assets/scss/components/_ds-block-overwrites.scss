@@ -57,3 +57,19 @@
     padding-right: $spacer;
     padding-bottom: $spacer;
 }
+
+.ds-modul-icontiles {
+    // ensure all tiles same height despite row ref #902
+    .icontile, .modul-icontile {
+        min-height: 145px;
+
+        @media (min-width: 73.8135rem) {
+            min-height: 180px;
+        }
+    }
+
+    // ensure the alt text is not 40px
+    .decoration > img {
+        font-size: $font-size-base;
+    }
+}

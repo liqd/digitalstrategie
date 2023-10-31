@@ -40,6 +40,8 @@ class ElasticsearchResults(Elasticsearch8SearchResults):
                     break
 
         for obj in self.query_compiler.queryset.filter(pk__in=pks):
+            if not obj.live or obj.get_view_restrictions().exists():
+                continue
             results[str(obj.pk)] = obj
 
             if self._score_field:

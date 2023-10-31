@@ -378,6 +378,7 @@ class MeasuresOverviewPage(TranslatedMetadataPageMixin, Page):
 
 
 class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
+
     page_title_de = models.CharField(
         max_length=120, blank=False)
     page_title_en = models.CharField(
@@ -400,6 +401,7 @@ class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
         max_length=300, blank=True)
 
     districts = MultiSelectField(
+        max_length=120,
         blank=True,
         max_choices=3,
         choices=BEZIRK_CHOICES,
@@ -407,24 +409,28 @@ class MeasuresDetailPage(TranslatedMetadataPageMixin, Page):
     )
 
     regenerative_management = MultiSelectField(
+        max_length=120,
         blank=True,
         max_choices=3,
         choices=REGENERATIVE_MANAGEMENT,
     )
 
     future_opportunities_for_all = MultiSelectField(
+        max_length=120,
         blank=True,
         max_choices=3,
         choices=FUTURE_OPPORTUNITIES_FOR_ALL,
     )
 
     inclusive_shaping_of_urban_life = MultiSelectField(
+        max_length=120,
         blank=True,
         max_choices=3,
         choices=INCLUSIVE_SHAPING_OF_URBAN_LIFE,
     )
 
     facilitative_administration = MultiSelectField(
+        max_length=120,
         blank=True,
         max_choices=3,
         choices=FACILITATIVE_ADMINISTRATION,

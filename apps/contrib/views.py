@@ -10,6 +10,6 @@ class SearchResultsView(ListView):
 
     def get_queryset(self):
         sb = get_search_backend()
-        query = self.request.GET.get('q')
+        query = self.request.GET.get('q', '')
         res = sb.autocomplete(query, Page, fields=get_search_fields())
         return res

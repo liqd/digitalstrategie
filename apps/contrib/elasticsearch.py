@@ -1,9 +1,9 @@
-from wagtail.search.backends.elasticsearch7 import Elasticsearch7SearchBackend
-from wagtail.search.backends.elasticsearch7 import Elasticsearch7SearchResults
+from wagtail.search.backends.elasticsearch8 import Elasticsearch8SearchBackend
+from wagtail.search.backends.elasticsearch8 import Elasticsearch8SearchResults
 
 
 # Code below taken and modified from wagtails elasticsearch backend
-class ElasticsearchResults(Elasticsearch7SearchResults):
+class ElasticsearchResults(Elasticsearch8SearchResults):
     def _get_es_body(self, for_count=False):
         body = {
             'query': self.query_compiler.get_query()
@@ -51,7 +51,7 @@ class ElasticsearchResults(Elasticsearch7SearchResults):
                 yield result
 
 
-class ElasticsearchCustomSearchBackend(Elasticsearch7SearchBackend):
+class ElasticsearchCustomSearchBackend(Elasticsearch8SearchBackend):
     results_class = ElasticsearchResults
 
 

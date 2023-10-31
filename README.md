@@ -17,7 +17,7 @@ Start local server with elastic search:
 Open two terminal windows.
 1. Start elastic search in the first one:
 ```
-$ sudo docker run -p 127.0.0.1:9200:9200 -p 127.0.0.1:9300:9300 -e "discovery.type=single-node" -e "logger.level=DEBUG" docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+$ sudo docker run -p 127.0.0.1:9200:9200 -p 127.0.0.1:9300:9300 -e "discovery.type=single-node" -e "logger.level=DEBUG" -e 'xpack.security.enabled=false' -e 'xpack.security.enrollment.enabled=false' docker.elastic.co/elasticsearch/elasticsearch:8.10.2
 ```
 
 2. Run the server in the second one. But before you do that, update the search index.

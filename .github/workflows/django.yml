@@ -66,12 +66,15 @@ jobs:
           npm run build
           pip install -r requirements/dev.txt
           pip install coveralls
+          sudo apt install gettext -y
       - name: Run Tests
         env:
           PGPASSWORD: postgres
           PGHOSTADDR: 127.0.0.1
         run: |
           python manage.py collectstatic > /dev/null
+          python manage.py makemessages --all --no-obsolete --extension html,email,py --ignore venv --ignore node_modules
+          python manage.py makemessages --all --no-obsolete -d djangojs --ignore venv --ignore node_modules
           DJANGO_SETTINGS_MODULE='digitalstrategie.settings.travis' py.test --cov
           isort --diff -c digitalstrategie tests
           python manage.py makemigrations --dry-run --check --noinput

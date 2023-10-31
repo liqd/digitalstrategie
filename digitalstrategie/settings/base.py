@@ -174,7 +174,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Wagtail settings
-WAGTAIL_SITE_NAME = "digitalstrategie"
+WAGTAIL_SITE_NAME = 'digitalstrategie'
 WAGTAILIMAGES_IMAGE_MODEL = 'apps_images.CustomImage'
 WAGTAILEMBEDS_FINDERS = [
     {

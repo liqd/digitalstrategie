@@ -5,7 +5,7 @@
 <article class="modul-teaser-marketing boxed fullwidth ds-block--base
   {% if self.background_color %} ds-block--{{ self.background_color }}{% endif %}"
 >
-    <div class="background-image {% if self.background_color %}ds-block--{{ self.background_color }}{% endif %}" aria-hidden="true">
+    <div class="background-image {% if self.background_color %}ds-block--{{ self.background_color }}{% else %}pink{% endif %}" aria-hidden="true">
     </div>
     <div class="content-container fullwidth__inner">
         <h2 class="title">{{ value.title }}</h2>

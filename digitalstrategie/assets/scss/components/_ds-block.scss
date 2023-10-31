@@ -20,7 +20,6 @@
 
 
 .ds-block {
-    &--green,
     &--yellow,
     &--pink,
     &--purple {
@@ -29,9 +28,22 @@
         margin-bottom: 0; // overwrite
         margin-top: 0 !important;
         border: none !important;
+        opacity: 1 !important; // overwrite
 
         .background-image + .content-container *:not(.button) {
             color: $black;
+        }
+
+        .js-accordion {
+            border-color: $black !important;
+        }
+
+        .button.ds-block__button-clear,
+        .button.ds-block__button-clear:after {
+            color: $black !important;
+            border-color: $black !important;
+            border-width: 1px;
+            background-color: inherit !important;
         }
 
         @media print {
@@ -55,31 +67,6 @@
         }
     }
 
-    &--green {
-        opacity: 1 !important;
-        color: $white !important;
-        background-color: $green !important;
-
-        // teaser centered styling
-        .background-image + .content-container *:not(.button) {
-            color: $white !important;
-        }
-
-        // richtext and cta centered styling
-        .button,
-        h2,
-        h3,
-        h3:after,
-        h4,
-        .button.ds-block__button-clear,
-        .button.ds-block__button-clear:after {
-            color: $white !important;
-            border-color: $white !important;
-            border-width: 1px;
-            background-color: inherit !important;
-        }
-    }
-
     &--yellow {
         background-color: $yellow !important;
     }
@@ -90,24 +77,6 @@
 
     &--purple {
         background-color: $purple !important;
-    }
-
-    &--yellow,
-    &--pink,
-    &--purple {
-        opacity: 1 !important; // overwrite
-
-        .js-accordion {
-            border-color: $black !important;
-        }
-
-        .button.ds-block__button-clear,
-        .button.ds-block__button-clear:after {
-            color: $black !important;
-            border-color: $black !important;
-            border-width: 1px;
-            background-color: inherit !important;
-        }
     }
 }
 

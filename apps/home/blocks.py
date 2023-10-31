@@ -19,8 +19,7 @@ class ColorChoiceBlock(blocks.ChoiceBlock):
     choices = [
         ('yellow', 'Yellow'),
         ('pink', 'Pink'),
-        ('purple', 'Purple'),
-        ('green', 'Green')
+        ('purple', 'Purple')
     ]
 
 
@@ -126,6 +125,7 @@ class ThesisListBlock(blocks.StructBlock):
 
 
 # Teaser blocks
+# teaser block with colour and internal CTA
 class TeaserBlockCentered(blocks.StructBlock):
     title = blocks.CharBlock(max_length=130)
     body = blocks.TextBlock(max_length=300, blank=True, rows=3)
@@ -138,16 +138,17 @@ class TeaserBlockCentered(blocks.StructBlock):
         required=False
     )
     background_color = ColorChoiceBlock(
-        help_text=_('Not choosing a colour will result in a '
-                    'block with a white background.'),
-        required=False
+        help_text=_('Choose yellow, pink or purple to ensure CI conformity.'),
+        required=True
     )
 
     class Meta:
         template = 'apps_home/blocks/teaser_block_centered.html'
         icon = 'arrow-down'
+        label = _('Coloured Teaser Centered')
 
 
+# teaser block with image, colour and internal CTA
 class TeaserBlockImage(blocks.StructBlock):
     title = blocks.CharBlock(max_length=130)
     body = blocks.TextBlock(max_length=630, blank=True, rows=3)
@@ -162,14 +163,14 @@ class TeaserBlockImage(blocks.StructBlock):
     )
 
     background_color = ColorChoiceBlock(
-        help_text=_('Not choosing a colour will result in a block with '
-                    'a white background.'),
-        required=False
+        help_text=_('Choose yellow, pink or purple to ensure CI conformity.'),
+        required=True
     )
 
     class Meta:
         template = 'apps_home/blocks/teaser_block_image.html'
         icon = 'image'
+        label = _('Coloured Teaser Image')
 
 
 # sub-block
@@ -195,7 +196,7 @@ class ImgTextLinkBlock(blocks.StructBlock):
     )
 
 
-# 2-3 column block with image and CTA
+# 2-3 column block with image and internal or external link
 class TeaserBlockColumn(blocks.StructBlock):
     title = blocks.CharBlock(max_length=130)
     column_count = blocks.ChoiceBlock(choices=[
@@ -208,9 +209,10 @@ class TeaserBlockColumn(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/teaser_block_columns.html'
         icon = 'grip'
-        label = _('Teaser Columns')
+        label = _('Teaser Image Multi')
 
 
+# sub-block
 class IconTextLinkBlock(blocks.StructBlock):
     icon = ImageChooserBlock()
     title = blocks.CharBlock(max_length=70)
@@ -234,6 +236,7 @@ class TeaserBlockTile(blocks.StructBlock):
         label = _('Icon Tiles')
 
 
+# teaser block with image and internal or external link
 class TeaserBlockSingle(blocks.StructBlock):
     image = ImageChooserBlock()
     title = blocks.CharBlock(max_length=130)
@@ -245,7 +248,7 @@ class TeaserBlockSingle(blocks.StructBlock):
     class Meta:
         template = 'apps_home/blocks/teaser_block_single.html'
         icon = 'pick'
-        label = _('Teaser Single')
+        label = _('Teaser Image Single')
 
 
 class NewsletterBlock(blocks.StructBlock):

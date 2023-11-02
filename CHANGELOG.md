@@ -5,9 +5,109 @@ All notable changes to this project will be documented in this file.
 Since version v2306.1 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## v2311.1
+
+### Added
+
+- make more wagtail blocks available on various page types  (#7774)
+- better block labels and make teaser colours required fixes (#905)
+- add check for faulty po files to CI
+
 ### Changed
-* add https:// to development csp (!824)
+
+- add https:// to development csp (!824)
+- update wagtail from 4.1 to 4.2 (#7759)
+- update wagtail from 4.2 to 5.0 (#7759)
+  - adapt to changes in the elasticsearch backend (see https://docs.wagtail.org/en/stable/releases/5.0.html#elasticsearch-backend-no-longer-performs-partial-matching-on-search)
+  - add SlugInput widget to slug FieldPanels (see https://docs.wagtail.org/en/stable/releases/5.0.html#slug-field-auto-cleaning-now-relies-on-data-attributes)
+  - change FieldPanel('title') to TitleFieldPanel('title') (see https://docs.wagtail.org/en/stable/releases/5.0.html#changes-to-title-slug-field-synchronisation)
+- update wagtail from 5.0 to 5.1 (#7759)
+- update wagtail from 5.0 to 5.2 (#7759)
+- Django from 3.2.19 to 4.0 (#7782)
+  - apps: remove deprecated app config in apps init
+  - settings: LN10N is now enabled by default
+  - templates: ifequal not supported
+- Django from 4.0 to 4.1 (#7782)
+  - apps:  added max_length in multiselectfield to fix index error with
+    validators[0]=MaxValueMultiFieldValidator(self.max_length)
+  - apps:  added migration for wagtail custom renditions
+- Django from 4.1 to 4.2 (#7782)
+  - requirements: update psycopg to v3
+- changed CharField to URLField for measure detail website to ensure links works fixes 878
+- update to elasticsearch 8
+- Pages which are not published or password protected are excluded from the search results (#851, #877)
+- make wagtail toolbar sticky by default
+- update translations
+- update dependency lint-staged to v13.2.3 by @renovate in https://github.com/liqd/digitalstrategie/pull/825
+- update dependency webpack to v5.88.1 by @renovate in https://github.com/liqd/digitalstrategie/pull/826
+- update dependency eslint to v8.44.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/828
+- update babel monorepo to v7.22.6 by @renovate in https://github.com/liqd/digitalstrategie/pull/830
+- update dependency stylelint to v15.10.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/832
+- update dependency stylelint to v15.10.1 by @renovate in https://github.com/liqd/digitalstrategie/pull/833
+- update dependency postcss to v8.4.25 by @renovate in https://github.com/liqd/digitalstrategie/pull/835
+- update babel monorepo by @renovate in https://github.com/liqd/digitalstrategie/pull/834
+- update dependency babel-loader to v9.1.3 by @renovate in https://github.com/liqd/digitalstrategie/pull/836
+- update babel monorepo to v7.22.9 by @renovate in https://github.com/liqd/digitalstrategie/pull/838
+- update dependency postcss to v8.4.26 by @renovate in https://github.com/liqd/digitalstrategie/pull/839
+- update dependency eslint to v8.45.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/840
+- update dependency webpack to v5.88.2 by @renovate in https://github.com/liqd/digitalstrategie/pull/841
+- update dependency stylelint to v15.10.2 by @renovate in https://github.com/liqd/digitalstrategie/pull/842
+- update dependency sass to v1.64.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/843
+- update dependency postcss to v8.4.27 by @renovate in https://github.com/liqd/digitalstrategie/pull/845
+- update dependency sass to v1.64.1 by @renovate in https://github.com/liqd/digitalstrategie/pull/846
+- update dependency eslint-plugin-import to v2.28.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/847
+- update dependency eslint to v8.46.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/848
+- update dependency sass to v1.64.2 by @renovate in https://github.com/liqd/digitalstrategie/pull/850
+- update babel monorepo to v7.22.10 by @renovate in https://github.com/liqd/digitalstrategie/pull/856
+- update dependency sass to v1.65.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/859
+- update dependency sass to v1.65.1 by @renovate in https://github.com/liqd/digitalstrategie/pull/860
+- update dependency eslint to v8.47.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/862
+- update dependency autoprefixer to v10.4.15 by @renovate in https://github.com/liqd/digitalstrategie/pull/863
+- update dependency lint-staged to v13.3.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/864
+- update babel monorepo by @renovate in https://github.com/liqd/digitalstrategie/pull/866
+- update dependency postcss to v8.4.29 by @renovate in https://github.com/liqd/digitalstrategie/pull/867
+- update dependency autoprefixer to v10.4.16 by @renovate in https://github.com/liqd/digitalstrategie/pull/873
+- update dependency postcss to v8.4.31 by @renovate in https://github.com/liqd/digitalstrategie/pull/874
+- update dependency stylelint to v15.10.3 by @renovate in https://github.com/liqd/digitalstrategie/pull/875
+- update dependency flake8 to v6.1.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/849
+- update dependency psycopg2-binary to v2.9.9 by @renovate in https://github.com/liqd/digitalstrategie/pull/855
+- update babel monorepo to v7.23.2 by @renovate in https://github.com/liqd/digitalstrategie/pull/882
+- update dependency pytest to v7.4.3 by @renovate in https://github.com/liqd/digitalstrategie/pull/868
+- update dependency psycopg2 to v2.9.9 by @renovate in https://github.com/liqd/digitalstrategie/pull/854
+- update dependency brotli to v1.1.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/883
+- update dependency stylelint to v15.11.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/890
+- update dependency sass to v1.69.5 by @renovate in https://github.com/liqd/digitalstrategie/pull/889
+- update dependency sentry-sdk to v1.32.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/831
+- update dependency webpack to v5.89.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/892
+- update dependency webpack-merge to v5.10.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/893
+- update eslint packages by @renovate in https://github.com/liqd/digitalstrategie/pull/895
+- update dependency whitenoise to v6.6.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/894
+- update actions/checkout action to v4 by @renovate in https://github.com/liqd/digitalstrategie/pull/897
+- update actions/setup-node action to v4 by @renovate in https://github.com/liqd/digitalstrategie/pull/898
+- update dependency stylelint-config-standard-scss to v11 by @renovate in https://github.com/liqd/digitalstrategie/pull/900
+- update dependency lint-staged to v15 by @renovate in https://github.com/liqd/digitalstrategie/pull/899
+- update dependency pytest-django to v4.6.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/906
+- update dependency wagtail-metadata to v5 by @renovate in https://github.com/liqd/digitalstrategie/pull/901
+- update dependency django-widget-tweaks to v1.5.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/885
+- update dependency django-debug-toolbar to v4.2.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/861
+- update dependency sentry-sdk to v1.33.1 by @renovate in https://github.com/liqd/digitalstrategie/pull/911
+- update dependency django to v4.2.7 by @renovate in https://github.com/liqd/digitalstrategie/pull/823
+- update dependency sentry-sdk to v1.34.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/918
+
+### Fixed
+
+- search results show page title in wrong language (#852)
+- restyle hr tag as BO styles break in safari fixes #879
+- add BO js urls to script_src for older browsers and add upgrade requests config fixes #844
+- change string on search results page fixes #853
+- error when switching language on search page
+- search: add missing search indices for some model fields
+- make search results better by using search with Fuzzy instead of autocomplete
+- error json cannot be NULL by setting homepage empty body to {} in an earlier migration
+
+### Removed
+
+- removed the no longer needed ElasticSearchCustomQueryCompiler
 
 ## v2306.2 - 2023-06-27
 

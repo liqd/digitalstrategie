@@ -7,6 +7,17 @@ import wagtail.blocks
 import wagtail.fields
 
 
+def empty_to_valid_json(apps, schema_editor):
+    HomePage = apps.get_model("apps_home", "HomePage")
+
+    q_homepage = HomePage.objects.all()
+    if q_homepage:
+        for homepage in q_homepage:
+            if len(homepage.body) == 0:
+                homepage.body = "{}"
+                homepage.save()
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -14,6 +25,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.RunPython(empty_to_valid_json),
         migrations.AlterField(
             model_name='homepage',
             name='body',

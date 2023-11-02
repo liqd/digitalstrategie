@@ -29,6 +29,9 @@ module.exports = {
       import: [
         './apps/contrib/assets/matomo.js'
       ]
+    },
+    wagtail: {
+      import: './apps/contrib/assets/wagtail.js'
     }
   },
   output: {

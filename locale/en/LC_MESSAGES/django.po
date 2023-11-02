@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-31 13:25+0000\n"
+"POT-Creation-Date: 2023-11-02 14:44+0000\n"
 "PO-Revision-Date: 2022-11-09 16:01+0000\n"
 "Last-Translator: maxliqd <m.westbrock@liqd.net>\n"
 "Language-Team: English <https://trans.liqd.net/projects/gemeinsam-digital-"
@@ -139,51 +139,51 @@ msgid "Email"
 msgstr "Email"
 
 #: apps/forms/models.py:151 apps/gruenbuch/models.py:105
-#: apps/gruenbuch/models.py:220 apps/home/models.py:111 apps/home/models.py:243
-#: apps/home/models.py:332 apps/home/models.py:403 apps/home/models.py:522
-#: apps/home/models.py:616 apps/measures/models.py:168
-#: apps/measures/models.py:559
+#: apps/gruenbuch/models.py:226 apps/home/models.py:111 apps/home/models.py:243
+#: apps/home/models.py:339 apps/home/models.py:416 apps/home/models.py:541
+#: apps/home/models.py:641 apps/measures/models.py:168
+#: apps/measures/models.py:571
 msgid ""
 "Add the page title you'd like to be seen in Wagtail in the list of pages."
 msgstr ""
 "Add the page title you'd like to be seen in Wagtail in the list of pages."
 
 #: apps/forms/models.py:165 apps/gruenbuch/models.py:112
-#: apps/gruenbuch/models.py:226 apps/home/models.py:250 apps/home/models.py:338
-#: apps/home/models.py:409 apps/home/models.py:529 apps/home/models.py:622
-#: apps/measures/models.py:174 apps/measures/models.py:587
+#: apps/gruenbuch/models.py:232 apps/home/models.py:250 apps/home/models.py:345
+#: apps/home/models.py:422 apps/home/models.py:548 apps/home/models.py:647
+#: apps/measures/models.py:174 apps/measures/models.py:599
 msgid "Common"
 msgstr "Common"
 
 #: apps/forms/models.py:167 apps/gruenbuch/models.py:114
-#: apps/gruenbuch/models.py:228 apps/home/models.py:120 apps/home/models.py:252
-#: apps/home/models.py:340 apps/home/models.py:411 apps/home/models.py:531
-#: apps/home/models.py:624 apps/measures/models.py:176
-#: apps/measures/models.py:589
+#: apps/gruenbuch/models.py:234 apps/home/models.py:120 apps/home/models.py:252
+#: apps/home/models.py:347 apps/home/models.py:424 apps/home/models.py:550
+#: apps/home/models.py:649 apps/measures/models.py:176
+#: apps/measures/models.py:601
 msgid "Meta Tags"
 msgstr "Meta Tags"
 
 #: apps/forms/models.py:168 apps/gruenbuch/models.py:115
-#: apps/gruenbuch/models.py:229 apps/home/models.py:121 apps/home/models.py:253
-#: apps/home/models.py:341 apps/home/models.py:412 apps/home/models.py:532
-#: apps/home/models.py:625 apps/measures/models.py:177
-#: apps/measures/models.py:590 digitalstrategie/settings/base.py:127
+#: apps/gruenbuch/models.py:235 apps/home/models.py:121 apps/home/models.py:253
+#: apps/home/models.py:348 apps/home/models.py:425 apps/home/models.py:551
+#: apps/home/models.py:650 apps/measures/models.py:177
+#: apps/measures/models.py:602 digitalstrategie/settings/base.py:127
 msgid "German"
 msgstr "German"
 
 #: apps/forms/models.py:169 apps/gruenbuch/models.py:116
-#: apps/gruenbuch/models.py:230 apps/home/models.py:122 apps/home/models.py:254
-#: apps/home/models.py:342 apps/home/models.py:413 apps/home/models.py:533
-#: apps/home/models.py:626 apps/measures/models.py:178
-#: apps/measures/models.py:591 digitalstrategie/settings/base.py:126
+#: apps/gruenbuch/models.py:236 apps/home/models.py:122 apps/home/models.py:254
+#: apps/home/models.py:349 apps/home/models.py:426 apps/home/models.py:552
+#: apps/home/models.py:651 apps/measures/models.py:178
+#: apps/measures/models.py:603 digitalstrategie/settings/base.py:126
 msgid "English"
 msgstr "English"
 
 #: apps/forms/models.py:170 apps/gruenbuch/models.py:117
-#: apps/gruenbuch/models.py:231 apps/home/models.py:123 apps/home/models.py:255
-#: apps/home/models.py:343 apps/home/models.py:414 apps/home/models.py:534
-#: apps/home/models.py:627 apps/measures/models.py:179
-#: apps/measures/models.py:592 digitalstrategie/settings/base.py:128
+#: apps/gruenbuch/models.py:237 apps/home/models.py:123 apps/home/models.py:255
+#: apps/home/models.py:350 apps/home/models.py:427 apps/home/models.py:553
+#: apps/home/models.py:652 apps/measures/models.py:179
+#: apps/measures/models.py:604 digitalstrategie/settings/base.py:128
 msgid "Easy German"
 msgstr "Easy German"
 
@@ -254,7 +254,7 @@ msgstr "Page introduction en"
 msgid "Page introduction de ls"
 msgstr "Page introduction de ls"
 
-#: apps/gruenbuch/models.py:149
+#: apps/gruenbuch/models.py:155
 msgid "Gruenbuch Index Page"
 msgstr "Gruenbuch Index Page"
 
@@ -301,78 +301,89 @@ msgstr ""
 "Abonnements und kann jederzeit über den Link „Abmelden“ widerrufen werden. "
 "Die Datenschutzerklärung habe ich zur Kenntnis genommen."
 
-#: apps/home/blocks.py:60
+#: apps/home/blocks.py:59
 msgid "Testimonial"
 msgstr "Testimonial"
 
-#: apps/home/blocks.py:79
+#: apps/home/blocks.py:78
 msgid "How should the image be aligned?"
 msgstr "How should the image be aligned?"
 
-#: apps/home/blocks.py:99
+#: apps/home/blocks.py:98
 msgid "One thesis"
 msgstr "One thesis"
 
-#: apps/home/blocks.py:113 apps/home/blocks.py:141 apps/home/blocks.py:165
-#: apps/home/blocks.py:264
+#: apps/home/blocks.py:112 apps/home/blocks.py:267
 msgid "Not choosing a colour will result in a block with a white background."
 msgstr "Not choosing a colour will result in a block with a white background."
 
-#: apps/home/blocks.py:136 apps/home/blocks.py:159 apps/home/blocks.py:182
-#: apps/home/blocks.py:220
+#: apps/home/blocks.py:136 apps/home/blocks.py:160 apps/home/blocks.py:183
+#: apps/home/blocks.py:222
 msgid "Link Description"
 msgstr "Link Description"
 
-#: apps/home/blocks.py:137 apps/home/blocks.py:160 apps/home/blocks.py:183
-#: apps/home/blocks.py:221
+#: apps/home/blocks.py:137 apps/home/blocks.py:161 apps/home/blocks.py:184
+#: apps/home/blocks.py:223
 msgid "describe link for assistive technology if needed"
 msgstr "describe link for assistive technology if needed"
 
-#: apps/home/blocks.py:194 apps/home/blocks.py:242
+#: apps/home/blocks.py:141 apps/home/blocks.py:166
+msgid "Choose yellow, pink or purple to ensure CI conformity."
+msgstr "Choose yellow, pink or purple to ensure CI conformity."
+
+#: apps/home/blocks.py:148
+msgid "Coloured Teaser Centered"
+msgstr "Coloured Teaser Centered"
+
+#: apps/home/blocks.py:173
+msgid "Coloured Teaser Image"
+msgstr "Coloured Teaser Image"
+
+#: apps/home/blocks.py:195 apps/home/blocks.py:245
 msgid "Add either an external or internal link, not both"
 msgstr "Add either an external or internal link, not both"
 
-#: apps/home/blocks.py:205
+#: apps/home/blocks.py:206
 msgid "Only add this number of columns below"
 msgstr "Only add this number of columns below"
 
-#: apps/home/blocks.py:211
-msgid "Teaser Columns"
-msgstr "Teaser Columns"
+#: apps/home/blocks.py:212
+msgid "Teaser Image Multi"
+msgstr "Teaser Image Multi"
 
-#: apps/home/blocks.py:234
+#: apps/home/blocks.py:236
 msgid "Icon Tiles"
 msgstr "Icon Tiles"
 
-#: apps/home/blocks.py:248
-msgid "Teaser Single"
-msgstr "Teaser Single"
+#: apps/home/blocks.py:251
+msgid "Teaser Image Single"
+msgstr "Teaser Image Single"
 
-#: apps/home/blocks.py:272
+#: apps/home/blocks.py:275
 msgid "This form only works with sendinblue"
 msgstr "This form only works with sendinblue"
 
-#: apps/home/blocks.py:281
+#: apps/home/blocks.py:284
 msgid "Please insert a short description of the video (character limit 255)."
 msgstr "Please insert a short description of the video (character limit 255)."
 
-#: apps/home/blocks.py:283
+#: apps/home/blocks.py:286
 msgid "You can only add links to YouTube or Vimeo videos."
 msgstr "You can only add links to YouTube or Vimeo videos."
 
-#: apps/home/blocks.py:287
+#: apps/home/blocks.py:290
 msgid "Add a preview image for the GDPR overlay."
 msgstr "Add a preview image for the GDPR overlay."
 
-#: apps/home/blocks.py:290
+#: apps/home/blocks.py:293
 msgid "You can add the video's transcript here (unlimited characters)."
 msgstr "You can add the video's transcript here (unlimited characters)."
 
-#: apps/home/blocks.py:298
+#: apps/home/blocks.py:301
 msgid "Video Block"
 msgstr "Video Block"
 
-#: apps/home/blocks.py:307
+#: apps/home/blocks.py:310
 msgid ""
 "Please note that images will be displayed in a 16:9 aspect ratio. Crop or "
 "resize your images accordingly before uploading to ensure they display "
@@ -406,12 +417,12 @@ msgstr "Home page subtitle en"
 msgid "Home page subtitle de ls"
 msgstr "Home page subtitle de ls"
 
-#: apps/home/models.py:179 apps/home/models.py:458
+#: apps/home/models.py:179 apps/home/models.py:477
 msgid "Intro image is not shown for Easy German"
 msgstr "Intro image is not shown for Easy German"
 
 #: apps/home/models.py:190 apps/home/models.py:193 apps/home/models.py:196
-#: apps/home/models.py:469 apps/home/models.py:472 apps/home/models.py:475
+#: apps/home/models.py:488 apps/home/models.py:491 apps/home/models.py:494
 msgid "Overview page introduction"
 msgstr "Overview page introduction"
 
@@ -645,7 +656,7 @@ msgid_plural "{count} measures."
 msgstr[0] "{count} measure."
 msgstr[1] "{count} measures."
 
-#: apps/measures/models.py:394 apps/measures/models.py:569
+#: apps/measures/models.py:406 apps/measures/models.py:581
 msgid "Up to 3 choices are allowed."
 msgstr "Up to 3 choices are allowed."
 

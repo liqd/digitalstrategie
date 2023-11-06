@@ -12,5 +12,5 @@ def test_get_search_fields():
         assert all(map(lambda field: field.endswith("_de"), fields))
     with translation.override("de_ls"):
         fields = get_search_fields(["body", "page_title"])
-        assert all(map(lambda field: field.endswith("_de-ls"),
+        assert all(map(lambda field: field.endswith("_de_ls"),
                        fields))

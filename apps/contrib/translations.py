@@ -44,4 +44,7 @@ def get_search_fields(fields: List[str]) -> List[str]:
         List of fields with the correct language code set
     """
     lang = translation.get_language()
+    # workaround for different naming
+    if lang == "de-ls":
+        lang = "de_ls"
     return [f + "_" + lang for f in fields]

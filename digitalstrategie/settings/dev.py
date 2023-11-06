@@ -68,6 +68,7 @@ CSP_SCRIPT_SRC_ELEM = [
 ]
 CSP_IMG_SRC = [
     "'self'",
+    "data:",
     "https://captcha-numbers-stage.liqd.net",
     "https://stats.liqd.net",
     "https://berlin.de",

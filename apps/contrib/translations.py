@@ -38,8 +38,6 @@ class TranslatedField(object):
 def get_search_fields(fields: List[str]) -> List[str]:
     """Create a list of fields to search in the current language of the user.
 
-    Adds _edgengrams as otherwise autocomplete() won't work.
-
     Returns:
         List of fields with the correct language code set
     """

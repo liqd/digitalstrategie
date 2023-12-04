@@ -1,5 +1,5 @@
 brotli==1.1.0
-Django==4.2.7
+Django==4.2.8
 django-cloudflare-push==0.2.2
 django-csp==3.7
 django-multiselectfield==0.1.12

@@ -1,12 +1,19 @@
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
 from wagtail.embeds import blocks as embed_blocks
 from wagtail.images.blocks import ImageChooserBlock
 
-HELPTEXT_RICHTEXT_A11Y = _('For accessibility please make sure that you do not'
-                           ' leave out levels when using the headlines. That'
-                           ' means, that there should always be an h2 before'
-                           ' using an h3.')
+HELPTEXT_RICHTEXT_A11Y = mark_safe(
+    _('For accessibility please make sure that you do not'
+      ' leave out levels when using the headlines. That'
+      ' means, that there should always be an h2 before'
+      ' using an h3.<br>'
+      ' To get the anchor tag for any block: click the'
+      ' chain link symbol at the to left of the block icon and'
+      ' then copy the id from the browser url bar'
+      ' (example: block-1e495692-5fad-4133-86c5-0c42e19b4ad2-section)')
+)
 NEWSLETTER_EMAIL_DEFAULT = _('Your email address')
 NEWSLETTER_DSGVO_DEFAULT = _(
     'Ich willige in die Speicherung und Nutzung meiner E-Mail-Adresse für '

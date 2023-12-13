@@ -1,6 +1,6 @@
 {% load i18n wagtailcore_tags wagtailimages_tags %}
 
-<section class="modul-multiteaser ds-block--base">
+<section class="modul-multiteaser ds-block--base" id="block-{{ block_id }}-section">
     <h2 class="title">{{ value.title }}</h2>
     <ul class="flexgrid grid--{{self.column_count}}">
       {% for value in self.column %}

@@ -60,7 +60,7 @@
 </section>
 <div id="layout-grid__area--maincontent">
     {% for block in self.body %}
-    {{ block }}
+      {% include_block block with block_id=block.id %}
     {% endfor %}
 </div>
 

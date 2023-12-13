@@ -3,7 +3,7 @@
 {% get_identifier value as identifier %}
 
 
-<section class="modul-teaser-marketing fullwidth ds-block--base {% if self.background_color %}ds-block--fullwidth ds-block--{{ self.background_color }}{% endif %}">
+<section class="modul-teaser-marketing fullwidth ds-block--base {% if self.background_color %}ds-block--fullwidth ds-block--{{ self.background_color }}{% endif %}" id="block-{{ block_id }}-section">
     <div class="content-container fullwidth__inner">
         {% if self.faq_title %}
         <h2 class="title">

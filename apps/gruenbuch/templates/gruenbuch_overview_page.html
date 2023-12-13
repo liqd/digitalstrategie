@@ -31,7 +31,7 @@
         </div>
     </section>
     {% for block in self.body %}
-        {{ block }}
+        {% include_block block with block_id=block.id %}
     {% endfor %}
     {% if settings.apps_settings.Downloads.gruenbuch %}
         {% with download=settings.apps_settings.Downloads.gruenbuch %}

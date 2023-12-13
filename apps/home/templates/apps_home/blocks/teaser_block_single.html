@@ -1,7 +1,7 @@
 {% load i18n wagtailcore_tags wagtailimages_tags %}
 {% image value.image fill-800x600 as image %}
 
-<article class="modul-teaser ds-block--base" data-add-clickable-area="smart">
+<article class="modul-teaser ds-block--base" data-add-clickable-area="smart" id="block-{{ block_id }}-section">
     <div class="image">
         <div class="image__image">
             {% image value.image fill-800x600 as image %}

@@ -3,7 +3,7 @@
 {% get_identifier value as identifier %}
 {% get_video_provider value.video.url as video_provider %}
 
-<section class="modul-video ds-block--base">
+<section class="modul-video ds-block--base" id="block-{{ block_id }}-section">
     {% if value.title %}
       <h2 class="title">{{ value.title }}</h2>
     {% endif %}

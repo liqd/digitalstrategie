@@ -1,6 +1,6 @@
 {% load block_tags i18n wagtailcore_tags %}
 
-<section class="modul-teaser-marketing fullwidth ds-block--base {% if self.background_color %}ds-block--fullwidth ds-block--{{ self.background_color }}{% endif %}">
+<section class="modul-teaser-marketing fullwidth ds-block--base {% if self.background_color %}ds-block--fullwidth ds-block--{{ self.background_color }}{% endif %}" id="block-{{ block_id }}-section">
     <div class="content-container fullwidth__inner">
         <div class="ds-block__maincontent--small">
             <h2 class="title thesis-ds-block__title">{{ value.title }}</h2>

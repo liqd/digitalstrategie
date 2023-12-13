@@ -1,7 +1,7 @@
 {% load i18n wagtailcore_tags wagtailimages_tags %}
 {% image value.image fill-800x600 as image %}
 
-<section class="modul-text_bild ds-block--base ds-block--fullwidth imagealign{% if self.image_alignment == 'left' %}left{% else %}right{% endif %} fifty">
+<section class="modul-text_bild ds-block--base ds-block--fullwidth imagealign{% if self.image_alignment == 'left' %}left{% else %}right{% endif %} fifty" id="block-{{ block_id }}-section">
     <div class="image">
         <div class="image__image">
             <img src="{{ image.url }}" alt="{{ image.alt }}">

@@ -5,8 +5,8 @@
 {% block content %}
 <div id="layout-grid__area--maincontent">
     <h1>{{ page.page_title }}</h1>
-    {% for block in page.body %}
-    {% include_block block %}
-{% endfor %}
+    {% for block in self.body %}
+        {% include_block block with block_id=block.id %}
+    {% endfor %}
 </div>
 {% endblock %}

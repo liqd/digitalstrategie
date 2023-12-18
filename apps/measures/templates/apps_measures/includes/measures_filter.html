@@ -67,51 +67,59 @@
           <div class="facet__body" id="fieldsActionFacet">
 
             <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction01">
-              <legend data-collapsible-trigger="opened" class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Regenerative Management' %}</legend>
-              <div class="js-accordion__panel">
-                {% for regenerative_management_key, regenerative_management_string in page.regenerative_management.items %}
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="checkboxRegMan{{ regenerative_management_key }}" name="reg" value="{{ regenerative_management_key }}" {% if regenerative_management_key in selected_reg %}checked{% endif %} />
-                    <label class="form-check-label" for="checkboxRegMan{{ regenerative_management_key }}">{{ regenerative_management_string }}</label>
-                  </div>
-                {% endfor %}
+                <legend data-collapsible-trigger="opened" class="ds-form__facet-accordion-header facet-title js-accordion__heading open">{% translate 'Regenerative Management' %}</legend>
+                <div data-initial-open="true">
+                    <div class="js-accordion__panel">
+                      {% for regenerative_management_key, regenerative_management_string in page.regenerative_management.items %}
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="checkboxRegMan{{ regenerative_management_key }}" name="reg" value="{{ regenerative_management_key }}" {% if regenerative_management_key in selected_reg %}checked{% endif %} />
+                          <label class="form-check-label" for="checkboxRegMan{{ regenerative_management_key }}">{{ regenerative_management_string }}</label>
+                        </div>
+                      {% endfor %}
+                    </div>
                 </div>
             </fieldset>
 
             <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction02">
-              <legend data-collapsible-trigger="opened" class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Future Opportunities for All' %}</legend>
-              <div class="js-accordion__panel">
-                {% for future_opportunities_for_all_key, future_opportunities_for_all_string in page.future_opportunities_for_all.items %}
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="checkboxFutOp{{ future_opportunities_for_all_key }}" name="fut" value="{{ future_opportunities_for_all_key }}" {% if future_opportunities_for_all_key in selected_fut %}checked{% endif %} />
-                    <label class="form-check-label" for="checkboxFutOp{{ future_opportunities_for_all_key }}">{{ future_opportunities_for_all_string }}</label>
-                  </div>
-                {% endfor %}
-              </div>
+                <legend data-collapsible-trigger="opened" class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Future Opportunities for All' %}</legend>
+                <div data-initial-open="true">
+                    <div class="js-accordion__panel">
+                      {% for future_opportunities_for_all_key, future_opportunities_for_all_string in page.future_opportunities_for_all.items %}
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="checkboxFutOp{{ future_opportunities_for_all_key }}" name="fut" value="{{ future_opportunities_for_all_key }}" {% if future_opportunities_for_all_key in selected_fut %}checked{% endif %} />
+                          <label class="form-check-label" for="checkboxFutOp{{ future_opportunities_for_all_key }}">{{ future_opportunities_for_all_string }}</label>
+                        </div>
+                      {% endfor %}
+                    </div>
+                </div>
             </fieldset>
 
               <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction03">
-                <legend data-collapsible-trigger="opened" class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Inclusive Shaping of Urban Life' %}</legend>
-                <div class="js-accordion__panel">
-                  {% for inclusive_shaping_of_urban_life_key, inclusive_shaping_of_urban_life_string in page.inclusive_shaping_of_urban_life.items %}
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}" name="inc" value="{{ inclusive_shaping_of_urban_life_key }}" {% if inclusive_shaping_of_urban_life_key in selected_inc %}checked{% endif %} />
-                      <label class="form-check-label" for="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}">{{ inclusive_shaping_of_urban_life_string }}</label>
-                    </div>
-                  {% endfor %}
-                </div>
+                  <legend data-collapsible-trigger="opened" class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Inclusive Shaping of Urban Life' %}</legend>
+                  <div data-initial-open="true">
+                      <div class="js-accordion__panel">
+                        {% for inclusive_shaping_of_urban_life_key, inclusive_shaping_of_urban_life_string in page.inclusive_shaping_of_urban_life.items %}
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}" name="inc" value="{{ inclusive_shaping_of_urban_life_key }}" {% if inclusive_shaping_of_urban_life_key in selected_inc %}checked{% endif %} />
+                            <label class="form-check-label" for="checkboxInclUrb{{ inclusive_shaping_of_urban_life_key }}">{{ inclusive_shaping_of_urban_life_string }}</label>
+                          </div>
+                        {% endfor %}
+                      </div>
+                  </div>
               </fieldset>
 
               <fieldset class="ds-form__facet-accordion modul-accordion js-accordion" id="accordionFieldsAction04">
-                <legend data-collapsible-trigger="opened" class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Facilitative Administration' %}</legend>
-                <div class="js-accordion__panel">
-                  {% for facilitative_administration_key, facilitative_administration_string in page.facilitative_administration.items %}
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="checkboxFacAdmin{{ facilitative_administration_key }}" name="fac" value="{{ facilitative_administration_key }}" {% if facilitative_administration_key in selected_fac %}checked{% endif %} />
-                      <label class="form-check-label" for="checkboxFacAdmin{{ facilitative_administration_key }}">{{ facilitative_administration_string }}</label>
+                  <legend data-initial-open="true" data-collapsible-trigger="opened" class="ds-form__facet-accordion-header facet-title js-accordion__heading">{% translate 'Facilitative Administration' %}</legend>
+                  <div data-initial-open="true">
+                      <div class="js-accordion__panel">
+                        {% for facilitative_administration_key, facilitative_administration_string in page.facilitative_administration.items %}
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="checkboxFacAdmin{{ facilitative_administration_key }}" name="fac" value="{{ facilitative_administration_key }}" {% if facilitative_administration_key in selected_fac %}checked{% endif %} />
+                            <label class="form-check-label" for="checkboxFacAdmin{{ facilitative_administration_key }}">{{ facilitative_administration_string }}</label>
+                          </div>
+                        {% endfor %}
+                      </div>
                     </div>
-                  {% endfor %}
-                </div>
               </fieldset>
               <input type="hidden" name="search" value="{{ request.GET.search }}">
           </div>

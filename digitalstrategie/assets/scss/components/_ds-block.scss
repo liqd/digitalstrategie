@@ -80,39 +80,24 @@
     }
 }
 
-.hero__mobile {
-    @media (min-width: 64.001rem) {
-        display: none;
-    }
-}
+@media print, (min-width: 73.8135rem) {
+    .hero__parallax {
+        background-repeat: no-repeat;
+        background-size: cover;
 
-.hero__desktop {
-    display: none;
-
-    @media (min-width: 64.001rem) {
-        display: block;
-    }
-}
-
-.hero__parallax {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: -1rem;
-
-    @media print, (min-width: 64.001rem) {
         /* Set a specific height same as hero */
         min-height: 70vh;
 
-        /* Create the parallax scrolling effect */
+        /* Create the parallax scrolling effect only on desktop */
         background-attachment: fixed;
         background-position: bottom;
         margin: initial;
     }
-}
 
-.hero__image-back {
-    z-index: -1;
+    .hero__image-back {
+        /* image added for styling/a11y set to back in favour of parralax */
+        z-index: -1;
+    }
 }
 
 .ds-block__paragraph {

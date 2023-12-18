@@ -8,7 +8,6 @@ module.exports = {
   entry: {
     digitalstrategie_berlin: [
       './digitalstrategie/assets/berlin_css/berlin_marketing.css',
-      './digitalstrategie/assets/berlin_css/fontawesome.all.min.css'
     ],
     digitalstrategie: [
       './digitalstrategie/assets/scss/style.scss'

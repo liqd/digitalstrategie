@@ -105,7 +105,7 @@ CSP_STYLE_SRC_ATTR = ["'self'", "'unsafe-inline'"]
 CSP_STYLE_SRC_ELEM = [
     "'self'",
     "https://berlin.de",
-    "https://www.berlin.de"
+    "https://www.berlin.de",
     # only for local testing
     "http://berlin.de",
     "http://www.berlin.de",

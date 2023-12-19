@@ -5,6 +5,43 @@ All notable changes to this project will be documented in this file.
 Since version v2306.1 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v2312.1
+
+### Added
+
+- added option to add anchor links by wagtail block-id for all custom blocks
+- new wagtail richtext image format `Full Width Optimized` to prevent images
+  from being downsized and end up blurry
+
+### Fixed
+
+- fixed broken parallax scrolling
+- fixed manage.py permissions
+- fixed measure_filters not behaving as intended on first click
+- fix a brokendevelopment csp rule
+- fixed missing language code in homepage link
+
+### Changed
+
+- updated BO js imports according to the newest release
+- load fontawesome via script tag
+- disable parallax if reduced-motion preference is used
+- update babel monorepo to v7.23.3 by @renovate in https://github.com/liqd/digitalstrategie/pull/931
+- update dependency lint-staged to v15.1.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/932
+- update dependency eslint to v8.54.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/937
+- update babel monorepo to v7.23.5 by @renovate in https://github.com/liqd/digitalstrategie/pull/938
+- update dependency eslint to v8.55.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/939
+- update dependency postcss to v8.4.32 by @renovate in https://github.com/liqd/digitalstrategie/pull/940
+- update dependency lint-staged to v15.2.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/941
+- update babel monorepo to v7.23.6 by @renovate in https://github.com/liqd/digitalstrategie/pull/946
+- update dependency django to v4.2.8 by @renovate in https://github.com/liqd/digitalstrategie/pull/942
+- update dependency wagtail to v5.2.2 by @renovate in https://github.com/liqd/digitalstrategie/pull/935
+- update dependency pytest-django to v4.7.0 by @renovate in https://github.com/liqd/digitalstrategie/pull/930
+- update dependency sentry-sdk to v1.39.1 by @renovate in https://github.com/liqd/digitalstrategie/pull/933
+- update dependency isort to v5.13.2 by @renovate in https://github.com/liqd/digitalstrategie/pull/945
+- update actions/setup-python action to v5 by @renovate in https://github.com/liqd/digitalstrategie/pull/943
+- update eslint packages by @renovate in https://github.com/liqd/digitalstrategie/pull/954
+
 ## v2311.2
 
 ### Changed

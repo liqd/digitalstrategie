@@ -42,7 +42,7 @@
     "lint": "eslint apps && stylelint 'digitalstrategie/assets/scss/**/*.scss'",
     "lint-fix": "eslint --fix stylelint --fix 'digitalstrategie/assets/scss/**/*.scss'",
     "lint-staged": "lint-staged",
-    "postinstall": "husky install"
+    "prepare": "husky"
   },
   "browserslist": "defaults and not dead and >= 0.5%, ie >= 11",
   "lint-staged": {

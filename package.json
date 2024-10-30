@@ -5,22 +5,23 @@
     "type": "git",
     "url": "https://github.com/liqd/digitalstrategie.git"
   },
-  "dependencies": {
-  },
   "devDependencies": {
     "@babel/core": "7.26.0",
     "@babel/preset-env": "7.26.0",
+    "@eslint/js": "9.13.0",
     "autoprefixer": "10.4.20",
     "babel-loader": "9.2.1",
     "copy-webpack-plugin": "12.0.2",
     "css-loader": "7.1.2",
     "eslint": "9.13.0",
-    "eslint-config-standard": "17.1.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-promise": "7.1.0",
+    "glob": "11.0.0",
+    "globals": "15.11.0",
     "husky": "9.1.6",
     "lint-staged": "15.2.10",
     "mini-css-extract-plugin": "2.9.1",
+    "neostandard": "0.11.7",
     "path-browserify": "1.0.1",
     "postcss": "8.4.47",
     "postcss-loader": "8.1.1",
@@ -38,13 +39,16 @@
     "build:prod": "webpack --config webpack.prod.js --mode production",
     "build": "webpack --config webpack.dev.js --mode development",
     "watch": "webpack --config webpack.dev.js --watch --mode development",
-    "lint": "stylelint 'digitalstrategie/assets/scss/**/*.scss'",
-    "lint-fix": "stylelint --fix 'digitalstrategie/assets/scss/**/*.scss'",
+    "lint": "eslint apps && stylelint 'digitalstrategie/assets/scss/**/*.scss'",
+    "lint-fix": "eslint --fix stylelint --fix 'digitalstrategie/assets/scss/**/*.scss'",
     "lint-staged": "lint-staged",
     "postinstall": "husky install"
   },
   "browserslist": "defaults and not dead and >= 0.5%, ie >= 11",
   "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint"
+    ],
     "*.scss": [
       "stylelint"
     ],

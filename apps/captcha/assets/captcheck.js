@@ -82,6 +82,7 @@ window.onload = function () {
     }
   }
 
+  // eslint-disable-next-line
   let nonce = ''
   /* Loop over all the CAPTCHA containers on the page, setting up a different CAPTCHA in each */
   Array.prototype.forEach.call(document.getElementsByClassName('captcheck_container'), function (container) {

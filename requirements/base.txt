@@ -6,7 +6,7 @@ django-multiselectfield==0.1.13
 django-widget-tweaks==1.5.0
 sentry-sdk==2.17.0
 wagtail==5.2.6
-whitenoise==6.6.0
+whitenoise==6.8.2
 elasticsearch==8.15.1
 wagtail-metadata==5.0.0
 sib-api-v3-sdk==7.6.0

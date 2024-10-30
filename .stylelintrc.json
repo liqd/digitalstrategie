@@ -7,7 +7,6 @@
     "**/berlin_css/*"
   ],
   "plugins": [
-    "stylelint-declaration-strict-value"
   ],
   "rules": {
     "font-family-name-quotes": "always-unless-keyword",
@@ -26,7 +25,6 @@
     "scss/no-global-function-names": null,
 
     "scss/dollar-variable-pattern": "^([a-z][a-z0-9]*)((-|--|_|__)[a-z0-9]+)*$",
-    "declaration-colon-newline-after": null,
     "scss/at-extend-no-missing-placeholder": null,
     "alpha-value-notation": null,
     "color-function-notation": null,
@@ -49,10 +47,6 @@
     "max-nesting-depth": 2,
 
     "media-feature-range-notation": "prefix",
-
-    "scale-unlimited/declaration-strict-value": ["/color/", {
-      "ignoreKeywords": ["inherit", "transparent"]
-    }],
 
     "declaration-empty-line-before": null
   }

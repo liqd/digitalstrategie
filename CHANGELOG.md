@@ -5,6 +5,76 @@ All notable changes to this project will be documented in this file.
 Since version v2306.1 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v2411.1
+
+### Changed
+
+- update dependency sass-loader to v13.3.3
+- update dependency postcss-loader to v7.3.4
+- update dependency terser-webpack-plugin to v5.3.10
+- update dependency sass to v1.69.6
+- update babel monorepo to v7.23.7
+- update dependency sass to v1.69.7
+- update dependency postcss to v8.4.33
+- update dependency stylelint-declaration-strict-value to v1.10.1
+- update dependency stylelint-declaration-strict-value to v1.10.3
+- update dependency stylelint-declaration-strict-value to v1.10.4
+- update dependency @babel/preset-env to v7.23.8
+- update dependency css-loader to v6.9.0
+- update dependency mini-css-extract-plugin to v2.7.7
+- update dependency autoprefixer to v10.4.19
+- update dependency autoprefixer to v10.4.20
+- update dependency lint-staged to v15.2.10
+- update dependency postcss to v8.4.47
+- update dependency stylelint-declaration-strict-value to v1.10.6
+- update dependency sass to v1.80.4
+- update dependency css-loader to v6.11.0
+- update dependency webpack to v5.95.0
+- update babel monorepo to v7.26.0
+- update dependency mini-css-extract-plugin to v2.9.1
+- update dependency babel-loader to v9.2.1
+- update eslint packages
+- update dependency psycopg to v3.2.3
+- migrate renovate config
+- update dependency webpack-merge to v6
+- update dependency ubuntu to v24
+- update dependency sentry-sdk to v2
+- update dependency sass-loader to v16
+- update dependency postcss-loader to v8
+- update dependency pytest to v8
+- update dependency husky to v9
+- update dependency elasticsearch to v8.15.1
+- update dependency django to v4.2.16
+- update actions/cache action to v4
+- update dependency css-loader to v7
+- update dependency pytest-django to v4.9.0
+- update dependency wagtail to v5.2.6
+- update dependency django-csp to v3.8
+- update dependency flake8 to v7
+- update dependency django-multiselectfield to v0.1.13
+- update dependency copy-webpack-plugin to v12
+- update dependency sass to v1.80.5
+- update python to 3.12, postgres to 16, node to 20.x
+- update dependency pytest-cov to v6
+- update dependency whitenoise to v6.8.2
+- update dependency django-debug-toolbar to v4.4.6
+- update dependency stylelint to v16
+- update eslint packages (major)
+- package.json: remove deprecated install from husky
+- update dependency sass-loader to v16.0.3
+- update dependency mini-css-extract-plugin to v2.9.2
+- update dependency webpack to v5.96.0
+- update dependency webpack to v5.96.1
+- update dependency @eslint/js to v9.14.0
+- update dependency eslint to v9.14.0
+- update dependency sass to v1.80.6
+- update dependency wagtail to v5.2.7
+
+### Fixed
+
+- fix IGNORE setting of webpack loader config not being a valid regexp
+- replace deprecated staticfilesstorage with new STORAGES setting
+
 ## v2312.1
 
 ### Added

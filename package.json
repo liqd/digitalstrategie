@@ -23,7 +23,7 @@
     "mini-css-extract-plugin": "2.9.2",
     "neostandard": "0.11.7",
     "path-browserify": "1.0.1",
-    "postcss": "8.4.47",
+    "postcss": "8.4.48",
     "postcss-loader": "8.1.1",
     "sass": "1.80.6",
     "sass-loader": "16.0.3",

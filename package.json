@@ -6,8 +6,8 @@
     "url": "https://github.com/liqd/digitalstrategie.git"
   },
   "devDependencies": {
-    "@babel/core": "7.26.0",
-    "@babel/preset-env": "7.26.0",
+    "@babel/core": "7.26.7",
+    "@babel/preset-env": "7.26.7",
     "@eslint/js": "9.18.0",
     "autoprefixer": "10.4.20",
     "babel-loader": "9.2.1",

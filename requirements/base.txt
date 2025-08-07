@@ -7,6 +7,6 @@ django-widget-tweaks==1.5.0
 sentry-sdk==2.17.0
 wagtail==6.3.5
 whitenoise==6.8.2
-elasticsearch==8.15.1
+elasticsearch==8.19.0
 wagtail-metadata==5.0.0
 sib-api-v3-sdk==7.6.0

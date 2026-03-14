@@ -3,7 +3,7 @@ Django==5.2.4
 git+https://github.com/skorokithakis/django-cloudflare-push.git@fcfcfc57826ecb87b9f138fd882cfb361047d850
 django-csp==3.8
 django-multiselectfield==0.1.13
-django-widget-tweaks==1.5.0
+django-widget-tweaks==1.5.1
 sentry-sdk==2.17.0
 wagtail==6.3.5
 whitenoise==6.8.2

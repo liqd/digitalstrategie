@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 Since version v2306.1 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v2604.1
+
+### Changed
+
+- update dependency django to v5.2.13
+- update dependency wagtail to v6.3.5
+- update dependency psycopg to v3.3.3
+- update dependency elasticsearch to v8.19.3
+- update dependency sentry-sdk to v2.58.0
+- update dependency pytest to v8.4.2
+- update dependency pytest-cov to v6.3.0
+- update babel monorepo to v7.28
+- update eslint packages
+
+
 ## v2411.1
 
 ### Changed

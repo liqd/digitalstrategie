@@ -1,7 +1,7 @@
 brotli==1.1.0
 Django==5.2.13
 git+https://github.com/skorokithakis/django-cloudflare-push.git@fcfcfc57826ecb87b9f138fd882cfb361047d850
-django-csp==3.8
+django-csp==4.0
 django-multiselectfield==0.1.13
 django-widget-tweaks==1.5.1
 sentry-sdk==2.58.0

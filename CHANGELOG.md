@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 Since version v2306.1 the format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 This project (not yet) adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v2605.1
+
+### Changed
+
+- update dependency wagtail to v7.4
+- Changes in Setting (`INDEX_PREFIX` instead of deprecated `INDEX`; tolerate `_django_content_type` in Elasticsearch highlights)
+
 ## v2604.1
 
 ### Changed

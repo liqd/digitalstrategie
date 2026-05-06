@@ -38,7 +38,8 @@ class ElasticsearchResults(Elasticsearch8SearchResults):
 
         for hit in hits:
             hs = hit['highlight']
-            hs.pop('content_type')
+            hs.pop('content_type', None)
+            hs.pop('_django_content_type', None)
             if '_all_text_boost_2_0' in hs:
                 # ignore hits from the _all_text field as it doesn't work with
                 # our translations

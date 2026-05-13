@@ -4,6 +4,10 @@ function showVideo (identifier) {
   document.getElementById('accept-video-' + identifier).style.display = 'none'
   const showVideo = templateTag.content.cloneNode(true)
   videoTag.appendChild(showVideo)
+  // Match liqd/dsgvo-video-embed#8: YouTube embeds need an explicit referrer policy.
+  videoTag.querySelectorAll('iframe').forEach((iframe) => {
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin'
+  })
 }
 
 function initVideos () {
